@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../../../favicon.png">
+        
+
+	<title>Pi - Working with Serial - GL.iNet Docs</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-108265653-1', 'glinet.com');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="https://www.gl-inet.com" style="padding: 10px"><img src="../../../img/logo.png" style="height:30px"></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../..">Home</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../service/">Services</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../hardware/ar150/">GL-AR150 Series</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../hardware/ar300m/">GL-AR300M Series</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../hardware/mt300a/">GL-MT300A</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../hardware/mt300n/">GL-MT300N</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../hardware/mt300n-v2/">GL-MT300N-V2</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../hardware/ar750/">GL-AR750 Series</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../hardware/mifi/">GL-MiFi Series</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../hardware/usb150/">GL-USB150 (Microuter)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../hardware/b1300/">GL-B1300</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../hardware/6416/">GL.iNet6416</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../hardware/ar300/">GL-AR300</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setup <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../setup/first-time_setup/">First-time Setup</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../setup/internet_setting/">Internet Settings</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../setup/mac_clone/">MAC Clone</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../setup/dns/">DNS Setting</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../setup/repeater_manager/">Repeater Manager</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../setup/lan_ip/">LAN IP</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../setup/wifi_setting/">Wi-Fi Settings (AP)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../setup/firmware/">Firmware Upgrading</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../setup/modem_manager/">Momdem Manager</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../setup/rtc_setting/">RTC Setting</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../dev/serial/">UART Serial</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../dev/uboot/">Advanced Uboot</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../">Domino Kit</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Application <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../app/ssh/">SSH to the router</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../app/openvpn/">OpenVPN Client</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../app/tor/">Tor</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../app/tether/">EasyTether</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../app/ss/">Shadowsocks</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../app/wireguard/">WireGuard</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Video <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../video/product_intro/">Product Intro</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../video/tutor/">Tutorial</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../video/review/">Customer Review</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Troubleshooting <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../troubleshooting/led/">LED Indicator</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../troubleshooting/reset/">Repair or Reset</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../troubleshooting/debrick/">Debrick via Uboot</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Domino Kit <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../">Getting Started</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/core/">Domore Core</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../">Domino Pi</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../pi/">Domino Pi Baseboard</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../single_eth/">Domino Pi - Single Eth board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../dual_eth/">Domino Pi - Due Eth board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../single_usb/">Domino Pi - Signle USB board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../usb_combo/">Domino Pi - 3xUSB+MicroSD combo</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../i2s/">Domino Pi - I2S board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../spi_jtag/">Domino Pi - SPI/JTAG</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../led/">Domino Pi - LED</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../qi/mini/">Domino Qi Mini</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../qi/base/">Domino Qi baseboard</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../using/">Pi - Using the firmware</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../compile/">Pi - Compile firmware</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../flashing/">Pi - Flashing and debricking</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../audio/">Pi - Playing Music</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Pi - Working with Serial</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../spi/">Pi - Debricking using SPI/JTAG board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../qi/">Qi - Getting Started</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../qi/arduino-yun/">Qi - Using Arduino or Linino Firmware</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../qi/nodejs/">Qi - Using NodeJS and LininoIO</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../qi/serial/">Qi - Using Serial</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                
+                    <li>
+                        <a href="https://github.com/gl-inet/docs/">
+                            
+                                <i class="fa fa-github"></i>
+                            
+                            GitHub
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#working-with-serial">Working with serial</a></li>
+        
+            <li><a href="#usb-uart-adapter">USB-UART adapter</a></li>
+        
+            <li><a href="#in-windows">In Windows</a></li>
+        
+            <li><a href="#working-with-two-serials">Working with two serials</a></li>
+        
+            <li><a href="#in-linux-ubuntu">In Linux (Ubuntu)</a></li>
+        
+            <li><a href="#other-tools">Other tools</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="working-with-serial">Working with serial</h1>
+<p>It is important to have a USB-UART adapter and work with serial if you want to play with Domino. With serial, you will be able to access the console and have full control of the OpenWrt system and bootloader.</p>
+<h2 id="usb-uart-adapter">USB-UART adapter</h2>
+<p>Domino Pi has a built-in USB-UART bridge. So you have two serial connectors, one is on the MicroUSB power connector and the other is on the Ethernet board, which is connected to the Domino Core. </p>
+<p><img alt="USB-UART" src="https://static.gl-inet.com/docs/en/2.x/domino/pi/src/adapter.jpg" /></p>
+<p>Just connect Domino Pi to your computer. It will be powered up and at the same time you will have access to the serial.</p>
+<p>Sometime you need to connect directly to the Domino Core UART, and you will need a USB-UART adapter.</p>
+<p><strong>ATTENTION</strong>: If you are connecting with an external USB-UART adapter, be sure connect to the correct pins:</p>
+<p><img alt="Serial Connections" src="https://static.gl-inet.com/docs/en/2.x/domino/pi/src/serial-connection.jpg" /></p>
+<h2 id="in-windows">In Windows</h2>
+<p>If you want to use connector 1, Windows will automatically detect the USB to UART Bridge and install drivers. </p>
+<p><img alt="USB-UART" src="https://static.gl-inet.com/docs/en/2.x/domino/pi/src/driver.jpg" /></p>
+<p>Find its com number. (Which is <code>COM36</code> in my case.) </p>
+<p>If you use your own USB UART adapter, you will have a com number also. (Which is <code>COM4</code> in my case.)</p>
+<p>You need a serial term, we recommend <a href="http://http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY</a> and <a href="http://realterm.sourceforge.net/">RealTerm</a>. Download them for free.</p>
+<p>Launch PuTTY and input <code>COM36</code> as the "Serial line", <code>115200</code> as speed, check the Connection type as <code>Serial</code>, then click <code>Open</code>. </p>
+<p><img alt="USB-UART" src="https://static.gl-inet.com/docs/en/2.x/domino/pi/src/putty.jpg" /></p>
+<p>Then press <code>Enter</code> you will enter OpenWrt.</p>
+<p><img alt="USB-UART" src="https://static.gl-inet.com/docs/en/2.x/domino/pi/src/putty1.jpg" /></p>
+<p>You can also connect to <code>COM4</code> using the same way.</p>
+<p><img alt="USB-UART" src="https://static.gl-inet.com/docs/en/2.x/domino/pi/src/putty2.jpg" /></p>
+<p>At the same time, you can also connect to the serial using Connector 2. Execute realterm, fill the currect Baudrate <code>115200</code>, port number <code>36</code> and click <code>Open</code>. </p>
+<p><img alt="USB-UART" src="https://static.gl-inet.com/docs/en/2.x/domino/pi/src/realterm.jpg" /></p>
+<p><strong>ATTENTION</strong> Only one term can connect to one serial device at the same time.</p>
+<h2 id="working-with-two-serials">Working with two serials</h2>
+<p>In the above instructions, we used two terms connected to two serial ports: PuTTY connecting to Connector 2 (original uart of Domino Core) and RealTerm connecting to Connector 1 (the build in USB-UART bridge). Once you connect RealTerm, you will find that in PuTTY you cannot input anything, but you can input from RealTerm. </p>
+<p><img alt="USB-UART" src="https://static.gl-inet.com/docs/en/2.x/domino/pi/src/realterm1.jpg" /></p>
+<p>You can enable input in PuTTY by clearing <code>RTS</code> in RealTerm. Go to the "Pins" page and click "Clear" in RTS section. Now you will be able to input in PuTTY, but not in RealTerm. To enable input in RealTerm again, click "Set" in RTS section.</p>
+<h2 id="in-linux-ubuntu">In Linux (Ubuntu)</h2>
+<p>We only test in Ubuntu. For any other distro, if you have any questions, pls discuss in the community.</p>
+<p>In Ubuntu, when connecting Domino Pi to your computer's USB directly, it will be identified as <code>/dev/ttyUSB*</code>, e.g. <code>/dev/ttyUSB0</code> if you only have USB serial device.</p>
+<h3 id="ckermit">ckermit</h3>
+<p>Download ckermit from http://www.columbia.edu/~kermit/ckermit.html#download or use <code>sudo apt-get install ckermit</code> to install it.</p>
+<pre><code>$ sudo apt-get install ckermit
+</code></pre>
+
+<p>make a file with name <code>.kermrc</code> in your home directory. The content is as following:</p>
+<pre><code>#cat ~/.kermrc
+
+set line /dev/ttyUSB0
+set speed 115200
+set carrier-watch off
+set handshake none
+set flow-control none
+robust
+set file type bin
+set file name lit
+set rec pack 1000
+set send pack 1000
+set window 5
+</code></pre>
+
+<p>Now execute kermit <code>sudo kermit -c</code> to get access to the console of your Domino Pi.</p>
+<pre><code>sudo kermit -c
+</code></pre>
+
+<p>If you have multiple serial devices, create one configure file for each device, and then put the file name as parameters. For example, for ttyUSB1, use <code>sudo kermit ~/.kermrc_ttyUSB1 -c</code>. </p>
+<pre><code>sudo kermit ~/.kermrc_ttyUSB1 -c
+</code></pre>
+
+<p>The escape key for kermit is <code>Ctrl</code>+<code>\</code> followed by <code>c</code>.</p>
+<h2 id="other-tools">Other tools</h2>
+<p>You can also use <code>screen</code> or <code>cu</code> to access the serial.</p>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+/*
+var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//glinet.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <p><a href='https://www.gl-inet.com/'> GL Technologies</a> 2018</p>
+            
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script>var base_url = '../../..';</script>
+        <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+        <script src="../../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

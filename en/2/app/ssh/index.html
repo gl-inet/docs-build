@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../favicon.png">
+        
+
+	<title>SSH to the router - GL.iNet Docs</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-108265653-1', 'glinet.com');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="https://www.gl-inet.com" style="padding: 10px"><img src="../../img/logo.png" style="height:30px"></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../..">Home</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../service/">Services</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../hardware/ar150/">GL-AR150 Series</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/ar300m/">GL-AR300M Series</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/mt300a/">GL-MT300A</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/mt300n/">GL-MT300N</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/mt300n-v2/">GL-MT300N-V2</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/ar750/">GL-AR750 Series</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/mifi/">GL-MiFi Series</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/usb150/">GL-USB150 (Microuter)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/b1300/">GL-B1300</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/6416/">GL.iNet6416</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/ar300/">GL-AR300</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setup <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../setup/first-time_setup/">First-time Setup</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/internet_setting/">Internet Settings</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/mac_clone/">MAC Clone</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/dns/">DNS Setting</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/repeater_manager/">Repeater Manager</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/lan_ip/">LAN IP</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/wifi_setting/">Wi-Fi Settings (AP)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/firmware/">Firmware Upgrading</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/modem_manager/">Momdem Manager</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/rtc_setting/">RTC Setting</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../dev/serial/">UART Serial</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../dev/uboot/">Advanced Uboot</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/">Domino Kit</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Application <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">SSH to the router</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../openvpn/">OpenVPN Client</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../tor/">Tor</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../tether/">EasyTether</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../ss/">Shadowsocks</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../wireguard/">WireGuard</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Video <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../video/product_intro/">Product Intro</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../video/tutor/">Tutorial</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../video/review/">Customer Review</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Troubleshooting <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../troubleshooting/led/">LED Indicator</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../troubleshooting/reset/">Repair or Reset</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../troubleshooting/debrick/">Debrick via Uboot</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Domino Kit <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../domino/">Getting Started</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/hardware/core/">Domore Core</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/">Domino Pi</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/pi/">Domino Pi Baseboard</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/single_eth/">Domino Pi - Single Eth board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/dual_eth/">Domino Pi - Due Eth board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/single_usb/">Domino Pi - Signle USB board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/usb_combo/">Domino Pi - 3xUSB+MicroSD combo</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/i2s/">Domino Pi - I2S board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/spi_jtag/">Domino Pi - SPI/JTAG</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/led/">Domino Pi - LED</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/qi/mini/">Domino Qi Mini</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/qi/base/">Domino Qi baseboard</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/using/">Pi - Using the firmware</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/compile/">Pi - Compile firmware</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/flashing/">Pi - Flashing and debricking</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/audio/">Pi - Playing Music</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/serial/">Pi - Working with Serial</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/spi/">Pi - Debricking using SPI/JTAG board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/qi/">Qi - Getting Started</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/qi/arduino-yun/">Qi - Using Arduino or Linino Firmware</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/qi/nodejs/">Qi - Using NodeJS and LininoIO</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/qi/serial/">Qi - Using Serial</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                
+                    <li>
+                        <a href="https://github.com/gl-inet/docs/">
+                            
+                                <i class="fa fa-github"></i>
+                            
+                            GitHub
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#using-ssh-and-winscp">Using SSH and WinSCP</a></li>
+        
+    
+        <li class="main "><a href="#ssh-to-the-router-for-windows-users">SSH to the Router for Windows Users</a></li>
+        
+            <li><a href="#1-download-and-install-a-putty">1. Download and install a PuTTY</a></li>
+        
+            <li><a href="#2-install-putty">2. Install PuTTY</a></li>
+        
+            <li><a href="#3-launch-putty">3. Launch PuTTY</a></li>
+        
+    
+        <li class="main "><a href="#winscp">WinSCP</a></li>
+        
+            <li><a href="#1-download-winscp">1. Download WinSCP</a></li>
+        
+            <li><a href="#2-connect-to-the-router">2. Connect to the router</a></li>
+        
+    
+        <li class="main "><a href="#ssh-to-the-router-for-linuxmac-user">SSH to the router for Linux/Mac User</a></li>
+        
+            <li><a href="#1-launch-terminal">1. Launch Terminal</a></li>
+        
+            <li><a href="#2-log-in-router">2. Log In Router</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="using-ssh-and-winscp">Using SSH and WinSCP</h1>
+<p>SSH and WinSCP are basic tools if you want to play more with the mini router.</p>
+<p>Secure Shell (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network. The best known example application is for remote login to computer systems by users. Sometime you need to have basic tools to ssh to the server (e.g. When you need to set up Shadowsocks server ). This guide is how to SSH login to the GL.iNet routers.</p>
+<p>WinSCP is the windows tool which runs on top of SSH to connect and edit files on the router. In Linux you can use <code>scp</code>. But WinSCP is the best tool on windows.</p>
+<h1 id="ssh-to-the-router-for-windows-users">SSH to the Router for Windows Users</h1>
+<h2 id="1-download-and-install-a-putty">1. Download and install a PuTTY</h2>
+<p>Go to the following webpage to download the latest PuTTY version：  </p>
+<p>https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</p>
+<h2 id="2-install-putty">2. Install PuTTY</h2>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/PuTTY-Install-1.png" /> </p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/PuTTY-Install-2.png" /> </p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/PuTTY-Install-3.png" /> </p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/PuTTY-Install-4.png" /> </p>
+<h2 id="3-launch-putty">3. Launch PuTTY</h2>
+<p>Click <strong>PuTTY</strong> in Start Menu </p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/1522164842915.png" /> </p>
+<p>You will see the following Configuration Window: </p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/Setup-PuTTY-1.png" /> </p>
+<p>Input Host Name (or IP address) <code>192.168.8.1</code>, Keep Port as default <code>22</code>, select connection type: <code>SSH</code>,</p>
+<p>Input <code>Your Session</code> in saved sessions, and <code>Save</code> your content.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/Setup-PuTTY-2.png" />  </p>
+<p>Click <code>Open</code> at the bottom</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/Setup-PuTTY-3.png" /> </p>
+<p>A security alert will pop-up, click <code>Yes</code>.</p>
+<p>login as：<code>root</code></p>
+<p>Then input your admin password </p>
+<p><em>Note: You need to use your password which you set up the router at the first time</em></p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/SSH-in-2.png" />  </p>
+<p>When you see above picture, that means you are now ssh login the router successfully.  </p>
+<h1 id="winscp">WinSCP</h1>
+<p>WinSCP is a much easier tool to edit files on the router if you are using Windows.</p>
+<h2 id="1-download-winscp">1. Download WinSCP</h2>
+<p>Download WinSCP from here: https://winscp.net/eng/download.php and install in your Windows.</p>
+<h2 id="2-connect-to-the-router">2. Connect to the router</h2>
+<p>Run WinSCP, choose <code>SCP</code> as the protocol. If you didn't change the IP of the router it should be <code>192.168.8.1</code>. Please use your real IP of the router. Port number should be <code>22</code>. Please <code>root</code> as the username and input your real password. Then click <code>Login</code> button.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/winscp1.jpg" /></p>
+<p>After login you have full control of the router now.</p>
+<p>You can choose view, edit or transfer files from/to the router.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/winscp2.jpg" /></p>
+<p>For example, if you want edit firewall config, you can go to /etc/config and find firewall file. Then click your right key of your mouse, then <strong>Edit</strong>.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/winscp3.jpg" /></p>
+<p>Now you can edit the file content freely. Be careful not to mess up the settings.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/winscp4.jpg" /></p>
+<h1 id="ssh-to-the-router-for-linuxmac-user">SSH to the router for Linux/Mac User</h1>
+<p>The process on Linux and Mac OS are generally the same. Below we use Ubuntu as as example.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/Ubuntu-Login.png" /> </p>
+<h2 id="1-launch-terminal">1. Launch Terminal</h2>
+<p>Click the <code>Terminal</code> icon to launch Terminal. Then, input the following command: </p>
+<p><code>SSH root@192.168.8.1</code> </p>
+<p>If you have ever connected to another router, host key verification failed may displayed as follow:</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/remove-ssh-keygen.png" /> </p>
+<p>If this happens, run the command in the red box. Please copy the exact command which is displayed in your terminal.</p>
+<p><code>ssh-kengen -f "~/.ssh/known_hosts" -R "192.168.8.1"</code></p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/Removed-Host-keygen.png" /></p>
+<h2 id="2-log-in-router">2. Log In Router</h2>
+<p>retry the ssh login command: </p>
+<p><code>ssh root@192.168.8.1</code> </p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/Ubuntu-sshin-router-1.png" />  </p>
+<p>Type "<strong>yes</strong>"</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/Ubuntu-sshin-router-2.png" />   </p>
+<p>Input your router password: (you can set this password when you first connect to your router)</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/2.x/app/src/ssh/1522205896331.png" /> </p>
+<p>Finally, you login the router when the above message displayed. </p>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+/*
+var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//glinet.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <p><a href='https://www.gl-inet.com/'> GL Technologies</a> 2018</p>
+            
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

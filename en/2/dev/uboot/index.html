@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../favicon.png">
+        
+
+	<title>Advanced Uboot - GL.iNet Docs</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-108265653-1', 'glinet.com');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="https://www.gl-inet.com" style="padding: 10px"><img src="../../img/logo.png" style="height:30px"></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../..">Home</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../service/">Services</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../hardware/ar150/">GL-AR150 Series</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/ar300m/">GL-AR300M Series</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/mt300a/">GL-MT300A</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/mt300n/">GL-MT300N</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/mt300n-v2/">GL-MT300N-V2</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/ar750/">GL-AR750 Series</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/mifi/">GL-MiFi Series</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/usb150/">GL-USB150 (Microuter)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/b1300/">GL-B1300</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/6416/">GL.iNet6416</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../hardware/ar300/">GL-AR300</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setup <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../setup/first-time_setup/">First-time Setup</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/internet_setting/">Internet Settings</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/mac_clone/">MAC Clone</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/dns/">DNS Setting</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/repeater_manager/">Repeater Manager</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/lan_ip/">LAN IP</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/wifi_setting/">Wi-Fi Settings (AP)</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/firmware/">Firmware Upgrading</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/modem_manager/">Momdem Manager</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../setup/rtc_setting/">RTC Setting</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../serial/">UART Serial</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Advanced Uboot</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/">Domino Kit</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Application <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../app/ssh/">SSH to the router</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../app/openvpn/">OpenVPN Client</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../app/tor/">Tor</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../app/tether/">EasyTether</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../app/ss/">Shadowsocks</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../app/wireguard/">WireGuard</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Video <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../video/product_intro/">Product Intro</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../video/tutor/">Tutorial</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../video/review/">Customer Review</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Troubleshooting <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../troubleshooting/led/">LED Indicator</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../troubleshooting/reset/">Repair or Reset</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../troubleshooting/debrick/">Debrick via Uboot</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Domino Kit <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../domino/">Getting Started</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/hardware/core/">Domore Core</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/">Domino Pi</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/pi/">Domino Pi Baseboard</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/single_eth/">Domino Pi - Single Eth board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/dual_eth/">Domino Pi - Due Eth board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/single_usb/">Domino Pi - Signle USB board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/usb_combo/">Domino Pi - 3xUSB+MicroSD combo</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/i2s/">Domino Pi - I2S board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/spi_jtag/">Domino Pi - SPI/JTAG</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/led/">Domino Pi - LED</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/qi/mini/">Domino Qi Mini</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/qi/base/">Domino Qi baseboard</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/using/">Pi - Using the firmware</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/compile/">Pi - Compile firmware</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/flashing/">Pi - Flashing and debricking</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/audio/">Pi - Playing Music</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/serial/">Pi - Working with Serial</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/pi/spi/">Pi - Debricking using SPI/JTAG board</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/qi/">Qi - Getting Started</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/qi/arduino-yun/">Qi - Using Arduino or Linino Firmware</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/qi/nodejs/">Qi - Using NodeJS and LininoIO</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../domino/qi/serial/">Qi - Using Serial</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                
+                    <li>
+                        <a href="https://github.com/gl-inet/docs/">
+                            
+                                <i class="fa fa-github"></i>
+                            
+                            GitHub
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#advance-usage-of-uboot">Advance Usage of uboot</a></li>
+        
+            <li><a href="#about-uboot">About uboot</a></li>
+        
+            <li><a href="#uboot-console">Uboot console</a></li>
+        
+            <li><a href="#setting-up-tftp-server">Setting up tftp server</a></li>
+        
+            <li><a href="#compiling-uboot">Compiling uboot</a></li>
+        
+            <li><a href="#using-uboot">Using uboot</a></li>
+        
+            <li><a href="#discussions">Discussions</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="advance-usage-of-uboot">Advance Usage of uboot</h1>
+<p>Familiarity with uboot is a skill that you should master in order to play with the routers.</p>
+<h2 id="about-uboot">About uboot</h2>
+<p>Uboot (universial bootloader) is the bootloader we used on our boards and routers to start OpenWrt Linux. The bootloader heavily depends on the hardware so almost every device requires a different bootloader.</p>
+<p>To use the bootloader, you have to <a href="../../dev/serial/">connect a UART serial connector</a> to your device.</p>
+<p>Taking our Atheros 9331 boards for example, when powered up, uboot will output the following text:</p>
+<pre><code>*********************************************
+*   U-Boot 1.1.4  (Sep  9 2014, 09:20:16)   *
+*********************************************
+
+AP121 (AR9331) U-Boot for GL.iNet
+
+DRAM:   64 MB DDR 16-bit
+FLASH:  Winbond W25Q128 (16 MB)
+CLOCKS: 400/400/200/33 MHz (CPU/RAM/AHB/SPI)
+
+LED on during eth initialization...
+
+Hit any key to stop autobooting:  0
+</code></pre>
+
+<p>Quickly press any key to stop booting.</p>
+<h2 id="uboot-console">Uboot console</h2>
+<p>Uboot is very useful to save your router. Here is some useful command in uboot.</p>
+<p><code>printenv</code> prints out the environment variables</p>
+<pre><code>uboot&gt; printenv
+bootargs=console=ttyS0,115200 root=31:02 rootfstype=squashfs init=/sbin/init mtdparts=ar7240-nor0:128k(u-boot),1024k(kernel),2816k(rootfs),64k(config),64k(ART)
+bootcmd=bootm 0x9F020000
+bootdelay=1
+baudrate=115200
+ipaddr=192.168.1.1
+serverip=192.168.1.2
+bootfile=&quot;firmware.bin&quot;
+loadaddr=0x80800000
+ncport=6666
+uboot_addr=0x9F000000
+uboot_name=uboot.bin
+uboot_size=0x10000
+uboot_upg=if ping $serverip; then tftp $loadaddr $uboot_name &amp;&amp; if itest.l $filesize == $uboot_size; then erase $uboot_addr +$filesize &amp;&amp; cp.b $loadaddr $uboot_addr $filesize &amp;&amp; echo OK!; else echo ERROR! Wrong file size!; fi; else ERROR! Server not reachable!; fi
+firmware_addr=0x9F020000
+firmware_name=firmware.bin
+firmware_upg=if ping $serverip; then tftp $loadaddr $firmware_name &amp;&amp; erase $firmware_addr +$filesize &amp;&amp; cp.b $loadaddr $firmware_addr $filesize &amp;&amp; echo OK!; else ERROR! Server not reachable!; fi
+stdin=serial
+stdout=serial
+stderr=serial
+ethact=eth0
+
+Environment size: 937 bytes
+
+uboot&gt;
+</code></pre>
+
+<p><code>md</code> displays data in flash or memory. The following command displays the data in flash from beginning, which is the binary of uboot itself.</p>
+<pre><code>uboot&gt; md 0x9f000000
+9F000000: 100000FF 00000000 100000FD 00000000    ................
+9F000010: 1000018E 00000000 1000018C 00000000    ................
+9F000020: 1000018A 00000000 10000188 00000000    ................
+9F000030: 10000186 00000000 10000184 00000000    ................
+9F000040: 10000182 00000000 10000180 00000000    ................
+9F000050: 1000017E 00000000 1000017C 00000000    ...~.......|....
+9F000060: 1000017A 00000000 10000178 00000000    ...z.......x....
+9F000070: 10000176 00000000 10000174 00000000    ...v.......t....
+9F000080: 10000172 00000000 10000170 00000000    ...r.......p....
+9F000090: 1000016E 00000000 1000016C 00000000    ...n.......l....
+9F0000A0: 1000016A 00000000 10000168 00000000    ...j.......h....
+9F0000B0: 10000166 00000000 10000164 00000000    ...f.......d....
+9F0000C0: 10000162 00000000 10000160 00000000    ...b.......`....
+9F0000D0: 1000015E 00000000 1000015C 00000000    ...^.......\....
+9F0000E0: 1000015A 00000000 10000158 00000000    ...Z.......X....
+9F0000F0: 10000156 00000000 10000154 00000000    ...V.......T....
+</code></pre>
+
+<h2 id="setting-up-tftp-server">Setting up tftp server</h2>
+<h3 id="ubuntu-linux">Ubuntu Linux</h3>
+<p>In Ubuntu, you can install tftp using apt</p>
+<pre><code>sudo apt-get install tftpd-hpa
+</code></pre>
+
+<p>The configuration file is <code>/etc/default/tftpd-hpa</code>. Modify its content and change the TFTP_DIRECTORY to your folder which will contains your files.</p>
+<pre><code class="vim">TFTP_USERNAME=&quot;TFTP&quot;
+TFTP_DIRECTORY=&quot;/tftpboot&quot;
+TFTP_ADDRESS=&quot;[::]:69&quot;
+TFTP_OPTIONS=&quot;--secure&quot;
+</code></pre>
+
+<p>Sometime the service cannot be started because network is not available when it starts. Start the service manually.</p>
+<pre><code>sudo service tftpd-hpa restart
+</code></pre>
+
+<h3 id="windows">Windows</h3>
+<p>Download service edition of tftpd from http://tftpd32.jounin.net/tftpd32_download.html, then install it.</p>
+<p><img alt="tftp install" src="https://static.gl-inet.com/docs/en/2.x/dev/src/tftpd-install.png" /> </p>
+<p>Turn off windows firewall, which is the main reason causing tftpd failed to connect.</p>
+<p><img alt="tftp install" src="https://static.gl-inet.com/docs/en/2.x/dev/src/firewall.png" /> </p>
+<p>Run tftpd64_SE Admin, choose your tftpd root (in this example D:\tftp), choose the "Server interface" 192.168.1.2 When clients are connecting to this server, you can see them in the status window.</p>
+<p><img alt="tftp install" src="https://static.gl-inet.com/docs/en/2.x/dev/src/tftpd-status.png" /> </p>
+<h2 id="compiling-uboot">Compiling uboot</h2>
+<p>Each device has a different uboot because it is hardware related.</p>
+<h3 id="gl-ar150-glinet6416-gl-ar300-gl-ar300m">GL-AR150, GL.iNet6416, GL-AR300, GL-AR300M</h3>
+<p>For these models you can use <a href="https://github.com/pepe2k/u-boot_mod">Pepe2k's</a> uboot, you can download the source from github.</p>
+<pre><code>$ git clone https://github.com/pepe2k/u-boot_mod.git
+$ cd u-boot_mod
+</code></pre>
+
+<p>To compile the source, you need to have a cross complier toolchain. I am using openwrt toolchain. Make modification to the <code>Makefile</code>.</p>
+<pre><code class="cmake">export BUILD_TOPDIR=$(PWD)
+export STAGING_DIR=$(BUILD_TOPDIR)/tmp
+
+# **Replace the following line with your real path**
+export TOOLPATH=$(BUILD_TOPDIR)/../openwrt/staging_dir/toolchain-mips_34kc_gcc-4.8-linaro_uClibc-0.9.33.2/
+
+export PATH:=$(TOOLPATH)/bin:${PATH}
+
+export MAKECMD=make --silent --no-print-directory ARCH=mips CROSS_COMPILE=mips-openwrt-linux-uclibc-
+
+# boot delay (time to autostart boot command)
+export CONFIG_BOOTDELAY=1
+</code></pre>
+
+<p>Now start to compile the source. For example, for GL.iNet 6416, you can use:</p>
+<pre><code>make gl-inet
+
+</code></pre>
+
+<p>For GL-AR150, you can do this:</p>
+<pre><code>make 8devices_carambola2
+</code></pre>
+
+<p>For GL-AR300 and GL-AR300M, we modified the code a lot so please consult us for details.</p>
+<p>It should be very quick and finish in minutes. Then you will find <code>uboot_for_gl-inet.bin</code> in <code>bin/</code>.</p>
+<h3 id="gl-ar150-uboot-modify-as-iot-devices">GL-AR150 uboot modify as IoT devices</h3>
+<p>If you connect IoT addon to AR150's UART, which talks to AR150 using serial. When the IoT addon send some data during uboot boot, it may stop the booting process so you never have the router alive. You need to modify the uboot a little bit so that it can succesffuly boot. </p>
+<p>Use this code from github <a href="https://github.com/domino-team/uboot-domino">https://github.com/domino-team/uboot-domino</a></p>
+<p>In this uboot, you need to type <code>gl</code> quickly during uboot boot to enter uboot console.</p>
+<h3 id="mt300a-mt300n-mt750">MT300A, MT300N, MT750</h3>
+<p>MT series routers use a different uboot and different code. Consult us if you need.</p>
+<h2 id="using-uboot">Using uboot</h2>
+<p>You can use <code>printenv</code> to display the environment variables in uboot. here are some quick guide of how to use uboot.</p>
+<p>First you need to set up tftp server as above and put your files in tftp root folder.</p>
+<h3 id="basic-uboot-command">basic uboot command</h3>
+<p><strong>Download file to router</strong> (AR150, Domino, 6416 as example)</p>
+<pre><code>tftp 0x81000000 file.bin
+</code></pre>
+
+<p><strong>Erase some part of flash</strong></p>
+<pre><code>erase 0x9f050000 +0x10000
+</code></pre>
+
+<p><strong>Write file to flash</strong></p>
+<pre><code>cp.b 0x81000000 0x9f050000 0x10000
+</code></pre>
+
+<h3 id="predefined-script">predefined script</h3>
+<p>Actually it is not easy to use basic uboot command to do everyting. It is quite risky. Fortunately we have some pre-defined scripts that simplifeis the work.</p>
+<p>Plase do check using <code>printenv</code> to find out the correct filename that the script trying to download. 
+For example, if you want to update uboot for AR150, the uboot file should be named as <code>uboot_for_gl-ar150.bin</code> and put in your tftp root folder.</p>
+<p><strong>Replace uboot</strong></p>
+<pre><code>run lu
+</code></pre>
+
+<p><strong>Update firmware</strong></p>
+<pre><code>run lf
+</code></pre>
+
+<p><strong>Update mac address etc</strong></p>
+<pre><code>run lc
+</code></pre>
+
+<p><strong>Erase uboot env variables</strong>
+Be sure to use the right command for the right model
+For AR150, Domino AR300, AR300M</p>
+<pre><code>erase 0x9f040000 +0x10000
+reset
+</code></pre>
+
+<p>For 6416</p>
+<pre><code>erase 0x9f010000 +0x10000
+reset
+</code></pre>
+
+<h3 id="uboot-web-ui">Uboot Web UI</h3>
+<p>Uboot has a webUI so that you can save your device without entering uboot console.</p>
+<p><img alt="Uboot Web UI" src="https://static.gl-inet.com/docs/en/2.x/dev/src/uboot_failsafe.png" /></p>
+<p>Check <a href="../../troubleshooting/debrick/">this section</a>  for how to enter uboot web UI using the reset button.</p>
+<p>If you are in uboot console, you can start the WebUI the following command. This only works for AR series, not MT series.</p>
+<pre><code>httpd
+</code></pre>
+
+<h3 id="ar300m-specific">AR300M Specific</h3>
+<p>AR300M uses dual flash so in uboot there are a lot of things to deal with dual flash. Please refer to <a href="../../hardware/ar300m/">AR300M</a> for more details.</p>
+<h2 id="discussions">Discussions</h2>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+/*
+var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//glinet.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <p><a href='https://www.gl-inet.com/'> GL Technologies</a> 2018</p>
+            
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
