@@ -840,8 +840,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-go-to-openvpn-page" title="1) Go to OpenVPN page" class="md-nav__link">
-    1) Go to OpenVPN page
+  <a href="#1-upload-your-openvpn-configuration-file" title="1) Upload your OpenVPN configuration file" class="md-nav__link">
+    1) Upload your OpenVPN configuration file
   </a>
   
 </li>
@@ -873,8 +873,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-get-the-config-file" title="3. Get the config File" class="md-nav__link">
-    3. Get the config File
+  <a href="#3-get-your-configuration-file" title="3. Get your Configuration File" class="md-nav__link">
+    3. Get your Configuration File
   </a>
   
 </li>
@@ -1392,8 +1392,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-go-to-openvpn-page" title="1) Go to OpenVPN page" class="md-nav__link">
-    1) Go to OpenVPN page
+  <a href="#1-upload-your-openvpn-configuration-file" title="1) Upload your OpenVPN configuration file" class="md-nav__link">
+    1) Upload your OpenVPN configuration file
   </a>
   
 </li>
@@ -1425,8 +1425,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-get-the-config-file" title="3. Get the config File" class="md-nav__link">
-    3. Get the config File
+  <a href="#3-get-your-configuration-file" title="3. Get your Configuration File" class="md-nav__link">
+    3. Get your Configuration File
   </a>
   
 </li>
@@ -1451,45 +1451,34 @@
                 <h1 id="openvpn-client-setting">OpenVPN Client Setting</h1>
 <p>This docs is only related to OpenVPN client.</p>
 <p>OpenVPN client is pre-installed in GL.iNet routers GL-AR150, GL-AR300M, GL-MT300N, GL-MT300A, GL-USB150, GL-AR750, GL-B1300 from firmware v2.19.</p>
-<p>Download the firmware for each devices: http://downlaod.gl-inet.com/firmware/</p>
+<p>Download the latest firmware for each devices: http://downlaod.gl-inet.com/firmware/</p>
 <p>The newest firmware maybe put in testing folder: http://download.gl-inet.com/firmware/testing/</p>
 <p><em>Note: You need to subscribe your own VPN service and get an OpenVPN configuration file (.ovpn) from your service provider. If you have subscribed but don't know how to download the configuration file, please read the section "How to get the configuration file".</em></p>
 <p>This guide assumes that you have set up the router properly.</p>
 <h2 id="1-create-an-openvpn-connection">1. Create an OpenVPN connection</h2>
-<h3 id="1-go-to-openvpn-page">1) Go to OpenVPN page</h3>
-<p>Click the OpenVPN icon on the toolbar. It will ask you to upload the configuration files. This file can be a single .ovpn file or a zip/tar.gz file which contains multiple .ovpn files.</p>
+<h3 id="1-upload-your-openvpn-configuration-file">1) Upload your OpenVPN configuration file</h3>
+<p>Go to <code>VPN</code> &gt; <code>OpenVPN Client</code>, It will ask you to upload a configuration file. This file can be a single .ovpn file or a zip/tar.gz file which contains multiple .ovpn files.</p>
 <p>Be careful that some .ovpn files use separated ca, cert, crl files. These files must be zipped together with the .ovpn file before upload.</p>
-<p><img alt="Basic UI" src="https://static.gl-inet.com/docs/en/2.x/app/src/openvpn/11.jpg" /></p>
+<p><img alt="Basic UI" src="https://static.gl-inet.com/docs/en/3/app/openvpn/11.jpg" /></p>
+<p>You can upload your configuration file by clicking <code>Add a New VPN Configuration</code>.</p>
 <h3 id="2-upload-your-configuration-file">2) Upload your configuration file</h3>
-<p>Simply Drap and drop your file to the area indicated so that it will be uploaded to the router automatically. Next, the router will start to check the file. Refresh the page when you see the file has been successfully uploaded and the .ovpn file has been imported.</p>
-<p><img alt="Basic UI" src="https://static.gl-inet.com/docs/en/2.x/app/src/openvpn/12.jpg" /></p>
-<p>For zip/tar.gz file, the router will unzip the zip/tar.gz file  and check each .ovpn file inside.</p>
-<p><img alt="Basic UI" src="https://static.gl-inet.com/docs/en/2.x/app/src/openvpn/14.jpg" /></p>
-<p>In some cases, it will ask you to enter your username and password. This usually happen when your configuration file can be downloaded without login your personal account.</p>
-<p><img alt="Basic UI" src="https://static.gl-inet.com/docs/en/2.x/app/src/openvpn/15.jpg" /></p>
+<p>To upload your configuration file, just simply drap and drop your file to the pop up windows.</p>
+<p><img alt="Basic UI" src="https://static.gl-inet.com/docs/en/3/app/openvpn/12.jpg" /></p>
+<p>Enter a description for your OpenVPN configuration file and click <code>Submit</code> to finished the upload process. In some cases, it will ask you to enter your username and password.</p>
+<p><img alt="Basic UI" src="https://static.gl-inet.com/docs/en/3/app/openvpn/13.jpg" /></p>
+<p><img alt="Basic UI" src="https://static.gl-inet.com/docs/en/3/app/openvpn/14.jpg" /></p>
 <h3 id="3-connect-to-the-openvpn-server">3) Connect to the OpenVPN server</h3>
-<p>After refreshing the page, you will be able to configure the OpenVPN connection.</p>
-<p><img alt="Basic UI" src="https://static.gl-inet.com/docs/en/2.x/app/src/openvpn/16.jpg" /></p>
-<p>Please create the VPN connection by following the steps below:</p>
-<ul>
-<li>Check "Enable".</li>
-<li>Check "Force VPN" if you want to force all Internet traffic to go through VPN. However, you will lose Internet access if the VPN is disconnected.</li>
-<li>Then choose a .ovpn file which you want to use.</li>
-<li>Now click "Apply"</li>
-</ul>
-<p>The router will show the connection progress. Once it is connected, you will be able to see data sent and received.</p>
-<p><img alt="Basic UI" src="https://static.gl-inet.com/docs/en/2.x/app/src/openvpn/18.jpg" /></p>
+<p>You can start to create an OpenVPN connection.</p>
+<p><img alt="Basic UI" src="https://static.gl-inet.com/docs/en/3/app/openvpn/15.jpg" /></p>
+<p>Check <code>VPN Connection Only</code> if you want to force all Internet traffic to go through VPN. However, you will lose Internet access if the VPN is disconnected.</p>
+<p>Click <code>Connect</code> to create the connection and the router will show the connection progress. Once connected, you will be able to see data sent and received.</p>
+<p><img alt="Basic UI" src="https://static.gl-inet.com/docs/en/3/app/openvpn/16.jpg" /></p>
 <h2 id="2-manage-ovpn-files">2. Manage ovpn files</h2>
-<p>From firmware <code>v2.20</code>, there is a simple ovpn manager where you can check the current list of ovpn files. You can purge all the files and start to use another vpn service.</p>
-<p>We would like to add more functions in the ovpn manager, you can send us a wish list via email or in the forum. Some proposed functions (this doesn't mean this feature will come in the near future) include:</p>
-<ul>
-<li>Server and port probe: to detect if the server is online. This is useful if you are in a censored area and some servers are not accessible at all. But this process is very time consuming.</li>
-<li>To intergrate ovpn files into one. Generally the VPN service providers provides one ovpn file for each server then you will have hundreds of ovpn file. You can integrate these files into one and let the router to connect to a random sever.</li>
-<li>Delete, order and ranking servers. Now we don't have a algorithms to rank the servers, as you will not know the speed unless you try. We can record the speed if you have tried.</li>
-<li>Manage multiple VPN services. While most people just use one service, we don't know if this is necessary.</li>
-</ul>
-<p><img alt="ovpn manager" src="https://static.gl-inet.com/docs/en/2.x/app/src/openvpn/7.jpg" /></p>
-<h2 id="3-get-the-config-file">3. Get the config File</h2>
+<p>Go to <code>Management</code> to check the list of configuration files. You can modify the description, username or password for each configuration file.</p>
+<p>If your configuration file is a zip/tar.gz file which included multiple ovpn files, you can choose an individual ovpn file that you would like to connect in <code>Server</code>.</p>
+<p>Moreover, you can upload a new configuration file by clicking <code>Add a New VPN Configuration</code>.</p>
+<p><img alt="ovpn manager" src="https://static.gl-inet.com/docs/en/3/app/openvpn/17.jpg" /></p>
+<h2 id="3-get-your-configuration-file">3. Get your Configuration File</h2>
 <p>We have tested different VPN service providers. Therefore, if you don't know how to get the configuration file, you can follow the instruction below according to your service provider. However, you have to contact your service provider for the configuration file if they haven't been listed  below. </p>
 <p>If you use other service providers and have problem of setting up the OpenVPN, please contact <a href="mailto:support@gl-inet.com">support@gl-inet.com</a></p>
 <h1 id="openvpn-service-providers">OpenVPN Service providers:</h1>

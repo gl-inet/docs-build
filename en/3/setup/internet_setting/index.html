@@ -1327,46 +1327,39 @@
 <p>2)   Wireless / Wi-Fi Repeater</p>
 <p>3)   3G/4G Modem</p>
 <p>4)   USB Tethering</p>
-<p><img alt="4 methods access Internet" src="https://static.gl-inet.com/docs/en/2.x/setup/src/internet/4ways.jpg" /></p>
-<p>You can click <code>New Connection</code> to create an Internet connection.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/setup/internet/4ways.jpg" /></p>
+<p>You can click <code>INTERNET</code> to create an Internet connection.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/setup/internet/internet.jpg" /></p>
 <h1 id="cable">Cable</h1>
+<p>After plugging in the Ethernet cable to the LAN port of the router. The information of your connection will be shown on the Cable section. DHCP is the default protocol. You can click <code>Modify</code> to change the protocol.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/setup/internet/dhcp_page.jpg" /></p>
 <h2 id="dhcp">DHCP</h2>
-<p>DHCP is the default and most common method to connect to the Internet. You just need to choose <code>DHCP</code> and click <code>Submit</code>.</p>
-<p><img alt="DHCP" src="https://static.gl-inet.com/docs/en/2.x/setup/src/internet/dhcp_page.jpg" /></p>
+<p>DHCP is the default and most common method. It doesn't require any manual configuration.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/setup/internet/dhcp.jpg" /></p>
 <h2 id="static">Static</h2>
-<p>Static is required if you want your router have a fixed IP address given by your ISP or in the same subnet of your main router.</p>
-<p>The current settings will be automatically filled. Change it according to your needs, then click <code>Submit</code>.</p>
-<p><img alt="static" src="https://static.gl-inet.com/docs/en/2.x/setup/src/internet/static.jpg" /></p>
+<p>Static is required if your router needs a fixed IP address given by your ISP or in the same subnet of your main router.</p>
+<p>The current settings will be automatically filled. Change it according to your needs, then click <code>Apply</code>.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/setup/internet/static.jpg" /></p>
 <h2 id="pppoe">PPPoE</h2>
 <p>PPPoE is required by many Internet service providers (ISP). Generally, your ISP will give you a modem and provide you a username and password that you are required to enter so as to access the Internet.</p>
-<p>Enter your username and password then click <code>Submit</code>.</p>
-<p><img alt="PPPoE" src="https://static.gl-inet.com/docs/en/2.x/setup/src/internet/pppoe_page.jpg" /></p>
+<p>Enter your username and password then click <code>Apply</code>.</p>
+<p><img alt="PPPoE" src="https://static.gl-inet.com/docs/en/3/setup/internet/pppoe_page.jpg" /></p>
 <h1 id="repeater">Repeater</h1>
-<p>You can connect to an existing wireless network by setting it as a repeater. However, there are 2 different modes that you can choose. </p>
-<h2 id="wisp">WISP</h2>
-<p>In WISP (Wireless Internet Service Provider) mode, the router will create its own subnet and act as a firewall which protect you from the public network. Therefore, we highly suggest you to chose WISP if you want to connect to a  public wifi.</p>
+<p>You can connect to an existing wireless network by setting it as a repeater. </p>
+<p>Be aware that it works in WISP (Wireless Internet Service Provider) mode by default. The router will create its own subnet and act as a firewall which protect you from the public network.</p>
 <p>In the following diagram, your main router has an IP 192.168.1.1. Suppose its netmask is 255.255.255.0, GL.iNet router will have two IP address:</p>
 <p><code>192.168.1.99</code> which is obtained from your main router</p>
 <p><code>192.168.8.1</code> which is created by itself</p>
 <p>So all your devices connected to GL.iNet router will be protected by its firewall.</p>
-<p><img alt="WISP1" src="https://static.gl-inet.com/docs/en/2.x/setup/src/internet/wisp1.png" /></p>
-<p>To set up repeater in WISP mode, first Click <code>Repeater</code> tab in <code>Internet Settings</code>, the router will search for the available Wi-Fi networks automatically. Then, choose a SSID and enter its password. Choose <code>WISP</code> in mode and click <code>Submit</code>.</p>
-<p><img alt="WISP1" src="https://static.gl-inet.com/docs/en/2.x/setup/src/internet/wisp2.jpg" /></p>
-<h2 id="wds">WDS</h2>
-<p>In WDS (Wireless Distribution System), you can connect to an existing wireless network without creating a new subnet. Therefore, the router only act as a device to extend the wireless signal coverage of your main router. There is no firewall between the mini router and the main router.</p>
-<p>However, to use this mode, <strong>your main router has to support WDS. Since WDS has different implementation, you'd be better to use the same GL.iNet router</strong>. Check your main router's manual to see if it supports this function.</p>
-<p><em>Note: OpenVPN client function of the mini router will not work in bridge mode.</em></p>
-<p><img alt="WDS" src="https://static.gl-inet.com/docs/en/2.x/setup/src/internet/wds.png" /></p>
-<p>To set up repeater in WDS mode, first, <strong>ensure your main router supports WDS.</strong> Click <code>Repeater</code> tab in <code>Internet Settings</code>, the router will search for the available Wi-Fi networks automatically. Then, choose a SSID and enter its password. Choose <code>WDS</code> in mode and you can enter the LAN IP which will be used to access this router.</p>
-<p>This LAN IP should be within the subnet of your main router, but it cannot conflict with any other devices's IP within the same subnet.</p>
-<p>If you are not sure, just keep the LAN IP blank so that it will get a IP address from your main router automatically. However, you need to find out this IP in the admin UI of your main router if you want to access the web UI of GL.iNet router again.</p>
-<p><strong>Relayd</strong></p>
-<p>In case your main router doesn't support WDS, you can create a WISP connection first, then set up a relayd overlay.</p>
-<p>Here is the <a href="https://static.gl-inet.com/docs/en/2.x/setup/src/relayd.pdf">detailed instructions</a>.</p>
+<p><img alt="WISP1" src="https://static.gl-inet.com/docs/en/3/setup/internet/wisp1.png" /></p>
+<p>Click <code>Here</code> To set up repeater.</p>
+<p><img alt="WISP1" src="https://static.gl-inet.com/docs/en/3/setup/internet/wisp1.jpg" /></p>
+<p>The router will search for the available Wi-Fi networks automatically. Choose a SSID and enter its password. Finally, click <code>Join</code>.</p>
+<p><img alt="WISP1" src="https://static.gl-inet.com/docs/en/3/setup/internet/wisp2.jpg" /></p>
 <h1 id="3g4g-modem">3G/4G Modem</h1>
 <p>You can connect to the Internet using 3G or 4G modem. Plug in your modem and click the <code>3G/4G</code> tab in <code>Internet Settings</code> to enter the 3G/4G setting page. </p>
 <p>To set up 3G/4G modem in <strong>GL-MiFi</strong>, you should follow the instructions in <a href="../modem_manager/">Modem Manager</a>.</p>
-<p><img alt="modem" src="https://static.gl-inet.com/docs/en/2.x/setup/src/internet/mifi_connection.jpg" /></p>
+<p><img alt="modem" src="../src/internet/mifi_connection.jpg" /></p>
 <p>The router has pre-configured values. You can choose <code>Country/Region</code>,  <code>Service Provider</code> first. The values below will be filled automatically. But this is not necessary if you know the settings. If you found that the data is not updated, please <a href="mailto:support@gl-inet.com">write to us</a>.</p>
 <p>To make the correct settings:</p>
 <ul>
@@ -1378,7 +1371,7 @@
 </ul>
 <p><em>Note: Some modems work in host-less mode. If your modem cannot be detected in this setting page, you can click <code>tethering</code> to find you device.</em></p>
 <h2 id="example-us-verizon">Example (US Verizon)</h2>
-<p><img alt="modem" src="https://static.gl-inet.com/docs/en/2.x/setup/src/internet/verizon_apn.jpg" /></p>
+<p><img alt="modem" src="../src/internet/verizon_apn.jpg" /></p>
 <h2 id="compatible-modems">Compatible Modems</h2>
 <p>Here is a list of supported modems that we tested before. </p>
 <h3 id="qmi">QMI</h3>
@@ -1503,13 +1496,14 @@
 </tr>
 </tbody>
 </table>
-<p>You can also refer to <a href="http://ofmodemsandmen.com/modems.html">http://ofmodemsandmen.com/modems.html</a> for a well supported modem list.</p>
+<p>You can also refer to <a href="http://ofmodemsandmen.com/supported.html">http://ofmodemsandmen.com/supported.html</a> for a well supported modem list.</p>
 <h1 id="tethering">Tethering</h1>
-<p>If your modem works in host-less mode or you want to share the data of your smartphone, you can use <code>Tethering</code>. </p>
-<p>For host-less modem tethering, plug it into the USB port of GL.iNet router. Then, you should be able to find the device under the Phone Device list.</p>
-<p>For smartphone tethering, connect it to the USB port of GL.iNet router and click Trust to continue when the message pops up in your smartphone. Then, turn on the personal hotspot of your phone. Finally, choose it from the Phone Device list.</p>
+<p>If your modem works in host-less mode or you want to share the data from your smartphone, you can use <code>Tethering</code>. </p>
+<p>For host-less modem tethering, plug it into the USB port of GL.iNet router.</p>
+<p>For smartphone tethering, connect it to the USB port of GL.iNet router and click Trust to continue when the message pops up in your smartphone. Then, turn on the personal hotspot of your phone. </p>
+<p>After plugging in your device, the Tethering connection will update and your device will be shown on the device list.</p>
 <p><em>Note: A newly-added phone of host-less modem will be named beginning with <code>eth</code>or <code>usb</code>. For example, <code>eht2</code>, <code>usb0</code>.</em></p>
-<p><img alt="tethering" src="https://static.gl-inet.com/docs/en/2.x/setup/src/internet/tethering.jpg" /></p>
+<p><img alt="tethering" src="https://static.gl-inet.com/docs/en/3/setup/internet/tethering.jpg" /></p>
 <h2 id="easytether">EasyTether</h2>
 <p>Some carriers prohibit the sharing of the data and you may not able to use tethering. However, you can try <a href="../../app/tether/">easytethering</a>. </p>
 <p><em>Note: Easytether is not a free service and we have no affiliate with them.</em></p>

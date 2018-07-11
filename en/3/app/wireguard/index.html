@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#wireguard-setting" tabindex="1" class="md-skip">
+      <a href="#wireguard-setting-for-firmware-30" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -880,50 +880,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-wireguard" title="Install Wireguard" class="md-nav__link">
-    Install Wireguard
+  <a href="#1-wiregurad-server-setup" title="1. Wiregurad Server Setup" class="md-nav__link">
+    1. Wiregurad Server Setup
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" title="Configuration" class="md-nav__link">
-    Configuration
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-generate-key" title="1. Generate Key" class="md-nav__link">
-    1. Generate Key
+  <a href="#2-create-and-copy-configuration-files-for-clients" title="2. Create and Copy Configuration Files for Clients" class="md-nav__link">
+    2. Create and Copy Configuration Files for Clients
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-network-configuration" title="2. Network Configuration" class="md-nav__link">
-    2. Network Configuration
+      
+        <li class="md-nav__item">
+  <a href="#3-wireguard-client-setup" title="3. Wireguard Client Setup" class="md-nav__link">
+    3. Wireguard Client Setup
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#3-firewall-configuration" title="3. Firewall Configuration" class="md-nav__link">
-    3. Firewall Configuration
+      
+        <li class="md-nav__item">
+  <a href="#4-wireguard-client-on-mobile-devices" title="4. Wireguard Client on mobile devices" class="md-nav__link">
+    4. Wireguard Client on mobile devices
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-restart-network" title="4. Restart Network" class="md-nav__link">
-    4. Restart Network
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1384,50 +1364,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-wireguard" title="Install Wireguard" class="md-nav__link">
-    Install Wireguard
+  <a href="#1-wiregurad-server-setup" title="1. Wiregurad Server Setup" class="md-nav__link">
+    1. Wiregurad Server Setup
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" title="Configuration" class="md-nav__link">
-    Configuration
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-generate-key" title="1. Generate Key" class="md-nav__link">
-    1. Generate Key
+  <a href="#2-create-and-copy-configuration-files-for-clients" title="2. Create and Copy Configuration Files for Clients" class="md-nav__link">
+    2. Create and Copy Configuration Files for Clients
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-network-configuration" title="2. Network Configuration" class="md-nav__link">
-    2. Network Configuration
+      
+        <li class="md-nav__item">
+  <a href="#3-wireguard-client-setup" title="3. Wireguard Client Setup" class="md-nav__link">
+    3. Wireguard Client Setup
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#3-firewall-configuration" title="3. Firewall Configuration" class="md-nav__link">
-    3. Firewall Configuration
+      
+        <li class="md-nav__item">
+  <a href="#4-wireguard-client-on-mobile-devices" title="4. Wireguard Client on mobile devices" class="md-nav__link">
+    4. Wireguard Client on mobile devices
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-restart-network" title="4. Restart Network" class="md-nav__link">
-    4. Restart Network
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1448,94 +1408,51 @@
               
                 
                 
-                <h1 id="wireguard-setting">WireGuard Setting</h1>
+                <h1 id="wireguard-setting-for-firmware-30">WireGuard Setting for Firmware 3.0</h1>
 <p>The future of VPN technology</p>
 <p>WireGuard is an extremely simple yet fast and modern VPN that utilizes <strong>state-of-the-art cryptography</strong>. It aims to be <a href="https://www.wireguard.com/performance/">faster</a>, <a href="https://www.wireguard.com/quickstart/">simpler</a>, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. </p>
-<p>From firmware V2.27, you can install wireguard easily using <code>opkg</code>.</p>
-<p>You need to ssh to the router and do the following.</p>
-<h2 id="install-wireguard">Install Wireguard</h2>
-<pre><code class="bash"># opkg update
-# opkg install wireguard
-</code></pre>
-
-<h2 id="configuration">Configuration</h2>
-<p>You can install Wireguard either as Server or client.</p>
-<p>To configure the mini router as Wireguard server or client, you need to do the following.</p>
-<h3 id="1-generate-key">1. Generate Key</h3>
-<p>First you need to generate the privatekey and publickey. The following commands will generate two files for the key.</p>
-<pre><code># wg genkey &gt; privatekey
-# wg pubkey &lt; privatekey &gt; publickey
-</code></pre>
-
-<h3 id="2-network-configuration">2. Network Configuration</h3>
-<p>You need to edit <code>/etc/config/network</code> to configure client or server. Please use <code>vi</code> or "winscp" to edit these files.</p>
-<p><strong>You need to generate private key and public key in both Server side and Client side.</strong></p>
-<p>To configure Wireguard Server, add the following content to the end of <code>/etc/config/network</code>.</p>
-<p>Note: Be sure to replace the private_key and public_key using the real content.</p>
-<pre><code>config interface 'wg0'                 
-    option proto 'wireguard'                                                
-    option listen_port '55555'                                              
-    list addresses '10.0.0.1/32'         
-    option private_key '......'  # The private key generated by itself just now    
-
-config wireguard_wg0
-    option public_key '......' # Client's public key
-    option route_allowed_ips '1'
-    list allowed_ips '10.0.0.0/24'
-</code></pre>
-
-<p>To configure Wireguard Client, apply the following content to <code>/etc/config/network</code>.</p>
-<pre><code>config interface 'wg0'                 
-    option proto 'wireguard'                                                
-    option listen_port '55555'                                              
-    list addresses '10.0.0.2/32'         
-    option private_key '......'  # The private key generated by itself just now        
-
-config wireguard_wg0
-    option public_key '......' # Server's public key
-    option route_allowed_ips '1'
-    list allowed_ips '0.0.0.0/0'
-    option endpoint_host '......' # Server's public ip address
-    option endpoint_port '55555'
-    option persistent_keepalive '25'
-</code></pre>
-
-<h3 id="3-firewall-configuration">3. Firewall Configuration</h3>
-<p>Appending the following stuff to firewall configuration <code>/etc/config/firewall</code>.  </p>
-<pre><code>config rule                 
-    option target 'ACCEPT'
-    option src 'wan'      
-    option proto 'udp'     
-    option name 'Wireguard_VPN'
-    option family 'ipv4'
-    option dest_port '55555'
-
-config zone                  
-    option name 'wg-vpn'
-    option input 'ACCEPT'  
-    option forward 'ACCEPT'
-    option output 'ACCEPT'
-    option masq '1'  
-    option device 'wg0'
-
-config forwarding 'wg_wan'   
-    option src 'wg-vpn'
-    option dest 'wan'      
-
-config forwarding 'wg_lan'
-    option src 'wg-vpn'
-    option dest 'lan'
-
-config forwarding        
-    option src 'lan'
-    option dest 'wg-vpn'
-</code></pre>
-
-<h3 id="4-restart-network">4. Restart Network</h3>
-<p>Finally, restart network and firewall, or just reboot your router.</p>
-<pre><code>/etc/init.d/network restart
-/etc/init.d/firewall restart
-</code></pre>
+<p>You can setup and use Wireguard easily in firmware 3.0, wiregurad server and clients are pre-installed in firmware 3.0. </p>
+<h2 id="1-wiregurad-server-setup">1. Wiregurad Server Setup</h2>
+<p>1.1 Finish first-time setup and login the router, then make sure the internet connection. </p>
+<p>1.2 After internet connection, select <strong>VPN -&gt; Wireguard Server</strong> at left slide menu. </p>
+<p><img alt="1531199972139" src="https://static.gl-inet.com/docs/en/3/app/wireguard/WGS1.png" /></p>
+<p>1.3 Select "<strong>Create a New User</strong>" in the <strong>Wireguard Server</strong> Management Page</p>
+<p><img alt="1531200135703" src="https://static.gl-inet.com/docs/en/3/app/wireguard/WGS2.png" /></p>
+<p>Keep default parameter of Local IP and Local Port in the right table, or you can customize them. </p>
+<p>1.3 Then click green "<strong>Start</strong>", the dot before Wireguard Server will turn to green. </p>
+<p>Now the Wireguard Server is start. </p>
+<h2 id="2-create-and-copy-configuration-files-for-clients">2. Create and Copy Configuration Files for Clients</h2>
+<p>To use Wireguard VPN services, it's necessary to copy and transfer configure file. </p>
+<p>2.1 Click "<strong>Management</strong>" tab to generate configuration file for Wireguard-Client. </p>
+<p><img alt="1531200402570" src="https://static.gl-inet.com/docs/en/3/app/wireguard/WGS3.png" /></p>
+<p>The following pop-up window will display, fill in the name of the wireguard clients in right table and click "<strong>Add</strong>".</p>
+<p><img alt="1531200816379" src="https://static.gl-inet.com/docs/en/3/app/wireguard/WGS4.png" /></p>
+<p>You can add as many clients as you need, each client (peer) has its own configuration file. also you can delete any config file you don't need any more by click the "<strong>Delete</strong>" icon.</p>
+<p><img alt="1531201040561" src="C:\Users\simon\AppData\Local\Temp\1531201040561.png" /> </p>
+<p>2.2 After created all config file, just click "<strong>Copy Config</strong>" Icon, the config information will pop-up. </p>
+<p><img alt="1531201685316" src="https://static.gl-inet.com/docs/en/3/app/wireguard/WGConf1.png" /></p>
+<p>Copy the whole configuration information to a text file and save it. </p>
+<h2 id="3-wireguard-client-setup">3. Wireguard Client Setup</h2>
+<p>3.1 If you are also using our AR750S as a client, follow the step, 1.1 and 1.2. Just select Wireguard Client in the VPN option.</p>
+<p><img alt="1531201993045" src="https://static.gl-inet.com/docs/en/3/app/wireguard/WGC1.png" /></p>
+<p>3.2 Click "<strong>Add a new profile</strong>" in Wireguard Client web management page, the following window will pop-up</p>
+<p><img alt="1531202195068" src="https://static.gl-inet.com/docs/en/3/app/wireguard/WGC2.png" /></p>
+<p>3.3 Input your "<strong>Wireguard Server Name</strong>", then click "<strong>Next</strong>".  </p>
+<p><img alt="1531205464882" src="https://static.gl-inet.com/docs/en/3/app/wireguard/WGC3.png" /></p>
+<p>Paste all information copied from Step 2.2, then click "<strong>Add</strong>". </p>
+<p>Or you can select "<strong>Manual</strong>" Input tab, and input Wireguard Client setup parameter manually. </p>
+<p><img alt="1531206197642" src="https://static.gl-inet.com/docs/en/3/app/wireguard/WGC4.png" /></p>
+<p>Click "<strong>Add</strong>" to finish the Wireguard Client configuration. </p>
+<p>3.4 The Wireguard web management page will auto display and "<strong>Success!</strong>" will show on the top. </p>
+<p><img alt="1531206410246" src="https://static.gl-inet.com/docs/en/3/app/wireguard/WGC5.png" /></p>
+<p>Select the server name in drop-down list and click "<strong>Connect</strong>". </p>
+<p><img alt="1531206860821" src="https://static.gl-inet.com/docs/en/3/app/wireguard/WG6.png" /></p>
+<p>If the connect success established, the dot before <strong>Wireguard Client</strong> will turn to green and Green “<strong>Connect</strong>” change to Red “<strong>Disconnect</strong>” ， Upload/Download date meter displayed on the bottom. </p>
+<h2 id="4-wireguard-client-on-mobile-devices">4. Wireguard Client on mobile devices</h2>
+<p>You can also use wireguard client on your mobile phone, only android support now. </p>
+<p>IOS App is coming soon. </p>
+<p>Please refer to the follow path of android apk download:</p>
+<p>https://play.google.com/apps/testing/com.wireguard.android</p>
                 
                   
                 
