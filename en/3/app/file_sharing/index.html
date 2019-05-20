@@ -2365,6 +2365,19 @@
     Windows
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#samba-smb-support" title="Samba (SMB) Support:" class="md-nav__link">
+    Samba (SMB) Support:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2837,6 +2850,19 @@
     Windows
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#samba-smb-support" title="Samba (SMB) Support:" class="md-nav__link">
+    Samba (SMB) Support:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2899,13 +2925,7 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">GL-MT300N*</td>
-<td align="center">√</td>
-<td align="center">√</td>
-<td align="center">-</td>
-</tr>
-<tr>
-<td align="left">GL-MT300N-V2*</td>
+<td align="left"><a href="https://docs.gl-inet.com/en/3/setup/mini_router/applications/#file-sharing">GL-MT300N-V2</a></td>
 <td align="center">√</td>
 <td align="center">√</td>
 <td align="center">-</td>
@@ -2960,7 +2980,15 @@
 <h2 id="access-the-storage-device">Access the storage device</h2>
 <p>You can access the contents of the external storage device from your computer or smart phone. Please check the following guidance for the using of file sharing among different operating systems.</p>
 <h3 id="windows">Windows</h3>
-<p><strong>1)</strong> Your network must be Home/Private. Otherwise you may not be able to see your router in <strong>Network</strong>. if you are using Win10, you also need to enable SMB 1.0.</p>
+<p><strong>1)</strong> Your network must be Home/Private. Otherwise you may not be able to see your router in <strong>Network</strong>. </p>
+<h4 id="samba-smb-support">Samba (SMB) Support:</h4>
+<p>3.0 firmware supports SMB2, and if you need SMB3, use <a href="https://docs.gl-inet.com/en/3/app/ssh/#winscp">WinSCP to router</a>, edit /etc/samba/smb.conf.template . </p>
+<p><img alt="Network" src="https://static.gl-inet.com/docs/en/3/app/file_sharing/winscpsmb.jpg" /></p>
+<p>Change the "max protocol = SMB2" to </p>
+<p>"min protocol = SMB1"</p>
+<p>"max protocol = SMB3", then <strong>save</strong> and <strong>exit</strong> WinSCP. </p>
+<p><img alt="Network" src="https://static.gl-inet.com/docs/en/3/app/file_sharing/changesmbtemp.jpg" /></p>
+<p>If you are using Win10, you also need to enable SMB 1.0. </p>
 <ul>
 <li>Win7</li>
 </ul>
@@ -2970,6 +2998,7 @@
 </ul>
 <p>Go to Control panel -&gt; Network and Internet -&gt; HomeGroup. Click <strong>Change network location</strong>.</p>
 <p>Go to Control Panel -&gt; Programs and Features -&gt; Turn Windows features on or off -&gt; Find SMB 1.0/CIFS file sharing support, check all SMB1 related items, click apply and restart your computer.</p>
+<p><img alt="Network" src="https://static.gl-inet.com/docs/en/3/app/file_sharing/Win10SMB1.jpg" /></p>
 <p><strong>2)</strong> Open a Windows explorer, you can find <strong>Network</strong> in the folder directory. Double click your router to access its contents.</p>
 <p><img alt="Network" src="https://static.gl-inet.com/docs/en/3/app/file_sharing/network.jpg" /></p>
 <h3 id="mac">Mac</h3>
