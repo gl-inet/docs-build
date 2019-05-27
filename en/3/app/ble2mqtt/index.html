@@ -3126,19 +3126,19 @@ config service 'cloud'
    root@GL-S1300:~#</p>
 <p>```</p>
 <p>Login the GoodCloud， https://www.goodcloud.xyz，find the registered device in"device list", click the device name and you will find your message in timeline.</p>
-<p><img alt="" src="http://static.gl-inet.com/docs/en/3/app/BLE_bridge/find-device.png" /></p>
-<p><img alt="" src="http://static.gl-inet.com/docs/en/3/app/BLE_bridge/find-log.jpg" /></p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/find-device.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/find-log.jpg" /></p>
 <h3 id="send-data-to-aws-iot">Send Data to AWS IoT</h3>
 <p>Amazon AWS IoT is a good choice for business applications. AWS seems to have good security and privacy protection. Here we will give an example of how to send your data to AWS IoT platform. It is a little complicated but still OK for IT specialist. </p>
 <h4 id="1-setting-up-your-aws-iot-environment">1. Setting up your AWS IoT environment</h4>
 <p>1) On the <strong>Welcome to the AWS IoT Console</strong> page, in the navigation pane, choose <strong>Manage-&gt;Things</strong> , then <strong>Register a thing</strong>. </p>
-<p><img alt="" src="http://static.gl-inet.com/docs/en/3/app/BLE_bridge/image001.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/image001.png" /></p>
 <p>2) On the <strong>Creating AWS IoT things</strong> page, choose <strong>Create a single thing</strong>.</p>
-<p><img alt="" src="http://static.gl-inet.com/docs/en/3/app/BLE_bridge/image002.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/image002.png" /></p>
 <p>3) On the <strong>Create a thing</strong> page, in the <strong>Name</strong> field, type a name for your thing, such as <strong>x750</strong>. Choose <strong>Next</strong>.</p>
-<p><img alt="" src="http://static.gl-inet.com/docs/en/3/app/BLE_bridge/image003.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/image003.png" /></p>
 <p>4) On the <strong>Add a certificate for your thing</strong> page, choose <strong>Create certificate</strong>. This generates an X.509 certificate and key pair.</p>
-<p><img alt="" src="http://static.gl-inet.com/docs/en/3/app/BLE_bridge/image004.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/image004.png" /></p>
 <p>5) On the <strong>Certificate created!</strong> page, download your public and private keys, certificate, and root certificate authority (CA):</p>
 <ul>
 <li>
@@ -3152,16 +3152,16 @@ config service 'cloud'
 </li>
 </ul>
 <p>Most web browsers save downloaded files into a Downloads directory. You will copy these files to a different directory when you run the sample applications. Choose <strong>Activate</strong> to activate the X.509 certificate, and then choose <strong>Attach a policy</strong>.</p>
-<p><img alt="" src="http://static.gl-inet.com/docs/en/3/app/BLE_bridge/image005.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/image005.png" /></p>
 <p>The <strong>RSA 2048 bit key: Amazon Root CA1</strong> download web page:</p>
-<p><img alt="  " src="http://static.gl-inet.com/docs/en/3/app/BLE_bridge/image007.png" /></p>
+<p><img alt="  " src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/image007.png" /></p>
 <p>6) Active your thing</p>
 <p>Back to the previous site, click "<strong>Activate</strong>", then click "<strong>Done</strong>". </p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image008.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image008.png" /></p>
 <p><strong>2. Attach Policy</strong></p>
-<p>1) After you register your thing, you will need to create and attach a new <strong>policy</strong> to the <strong>certificate</strong>.<img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image009.png" /></p>
+<p>1) After you register your thing, you will need to create and attach a new <strong>policy</strong> to the <strong>certificate</strong>.<img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image009.png" /></p>
 <p>2) Enter a Name for the policy,such as x750_policy, then <strong>Advance mode</strong></p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image010.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image010.png" /></p>
 <p>3) Delete the automatically created policy code, then paste the policy below. </p>
 <pre><code>{
   &quot;Version&quot;: &quot;2012-10-17&quot;,
@@ -3183,12 +3183,12 @@ config service 'cloud'
 </code></pre>
 
 <p>4) <strong>Create</strong> Policy after you pasted policy code. </p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image012.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image012.png" /></p>
 <p>5) On the left side, Secure --&gt; Certificates, Select the certificate you just created, Actions
 --&gt; Attach policy</p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image013.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image013.png" /></p>
 <p>6) Chose the policy you created(x750_policy) and choose <strong>Attach</strong>.</p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image014.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image014.png" /></p>
 <h4 id="2-config-glinet-devices-to-connect-to-aws-iot">2. Config GL.iNet devices to connect to AWS IoT</h4>
 <p><strong>1) Upload your certificate to the router</strong> </p>
 <p>Rename the downloaded certificate files :</p>
@@ -3224,9 +3224,9 @@ config service 'cloud'
 </code></pre>
 
 <p>The sample of glconfig file: </p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image016.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image016.png" /></p>
 <p>If you already setup GoodCloud on router before, just add the code at the end of <strong>config service 'cloud'</strong></p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image017.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image017.png" /></p>
 <pre><code class="shell">option log '1'
 </code></pre>
 
@@ -3266,13 +3266,13 @@ config service 'cloud'
 </table>
 <p><strong>4) HTTP: API Endpoints add to router config file</strong> </p>
 <p>The message broker supports clients connecting with the HTTP protocol using a REST API. Clients can publish by sending a POST message to <code>*&lt;AWS IoT Endpoint&gt;*/topics/*&lt;url_encoded_topic_name&gt;*?qos=1"</code>.</p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image019.png" /></p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image020.png" /></p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image021.png" /></p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image022.png" /></p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image023.png" /></p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image024.png" /></p>
-<p><img alt="" src="http://static.gl-inet.com./docs/en/3/app/BLE_bridge/image025.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image019.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image020.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image021.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image022.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image023.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image024.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image025.png" /></p>
 <h2 id="application-and-demo">Application and Demo</h2>
 <h3 id="read-ble-thermal-sensor">Read BLE Thermal Sensor</h3>
 <p>The following demo show how to read data from a thermal sensor, pack the data in JSON format and  send to the GoodCloud.</p>
