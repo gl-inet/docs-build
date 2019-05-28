@@ -2457,8 +2457,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-config-glinet-devices-to-connect-to-aws-iot" title="2. Config GL.iNet devices to connect to AWS IoT" class="md-nav__link">
-    2. Config GL.iNet devices to connect to AWS IoT
+  <a href="#2-attach-policy" title="2. Attach Policy" class="md-nav__link">
+    2. Attach Policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-config-glinet-devices-to-connect-to-aws-iot" title="3. Config GL.iNet devices to connect to AWS IoT" class="md-nav__link">
+    3. Config GL.iNet devices to connect to AWS IoT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mqtt-communication-testing" title="4. MQTT Communication Testing" class="md-nav__link">
+    4. MQTT Communication Testing
   </a>
   
 </li>
@@ -2933,8 +2947,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-config-glinet-devices-to-connect-to-aws-iot" title="2. Config GL.iNet devices to connect to AWS IoT" class="md-nav__link">
-    2. Config GL.iNet devices to connect to AWS IoT
+  <a href="#2-attach-policy" title="2. Attach Policy" class="md-nav__link">
+    2. Attach Policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-config-glinet-devices-to-connect-to-aws-iot" title="3. Config GL.iNet devices to connect to AWS IoT" class="md-nav__link">
+    3. Config GL.iNet devices to connect to AWS IoT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mqtt-communication-testing" title="4. MQTT Communication Testing" class="md-nav__link">
+    4. MQTT Communication Testing
   </a>
   
 </li>
@@ -3117,15 +3145,16 @@ config service 'cloud'
 <p><strong>Forward data to GoodCloud</strong></p>
 <p>To forward data to GoodCloud, you can use simple shell script. </p>
 <p>After your device is connected to your cloud account, you can <a href="https://docs.gl-inet.com/en/3/app/ssh/">SSH</a> to the router, try the following command.  </p>
-<p>```shell
-   root@GL-S1300:~# ubus call mqtt pub '{"api":"/user/data", "data":"hello from S1300"
-   }'
-   {
-           "code": 0
-   }
-   root@GL-S1300:~#</p>
-<p>```</p>
-<p>Login the GoodCloud， https://www.goodcloud.xyz，find the registered device in"device list", click the device name and you will find your message in timeline.</p>
+<pre><code class="shell">root@GL-S1300:~# ubus call mqtt pub '{&quot;api&quot;:&quot;/user/data&quot;, &quot;data&quot;:&quot;hello from S1300&quot;
+}'
+{
+        &quot;code&quot;: 0
+}
+root@GL-S1300:~#
+
+</code></pre>
+
+<p>Login the <a href="https://www.goodcloud.xyz">GoodCloud</a>，find the registered device in "device list", click the device name and you will find your message in timeline.</p>
 <p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/find-device.png" /></p>
 <p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/find-log.jpg" /></p>
 <h3 id="send-data-to-aws-iot">Send Data to AWS IoT</h3>
@@ -3158,7 +3187,7 @@ config service 'cloud'
 <p>6) Active your thing</p>
 <p>Back to the previous site, click "<strong>Activate</strong>", then click "<strong>Done</strong>". </p>
 <p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image008.png" /></p>
-<p><strong>2. Attach Policy</strong></p>
+<h4 id="2-attach-policy">2. Attach Policy</h4>
 <p>1) After you register your thing, you will need to create and attach a new <strong>policy</strong> to the <strong>certificate</strong>.<img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image009.png" /></p>
 <p>2) Enter a Name for the policy,such as x750_policy, then <strong>Advance mode</strong></p>
 <p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image010.png" /></p>
@@ -3189,7 +3218,7 @@ config service 'cloud'
 <p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image013.png" /></p>
 <p>6) Chose the policy you created(x750_policy) and choose <strong>Attach</strong>.</p>
 <p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image014.png" /></p>
-<h4 id="2-config-glinet-devices-to-connect-to-aws-iot">2. Config GL.iNet devices to connect to AWS IoT</h4>
+<h4 id="3-config-glinet-devices-to-connect-to-aws-iot">3. Config GL.iNet devices to connect to AWS IoT</h4>
 <p><strong>1) Upload your certificate to the router</strong> </p>
 <p>Rename the downloaded certificate files :</p>
 <p>AmazonRootCA1.pem --&gt; root_CA.crt</p>
@@ -3266,12 +3295,45 @@ config service 'cloud'
 </table>
 <p><strong>4) HTTP: API Endpoints add to router config file</strong> </p>
 <p>The message broker supports clients connecting with the HTTP protocol using a REST API. Clients can publish by sending a POST message to <code>*&lt;AWS IoT Endpoint&gt;*/topics/*&lt;url_encoded_topic_name&gt;*?qos=1"</code>.</p>
+<p>At the left side of AWS IoT, <strong>Manage -&gt; Things</strong></p>
 <p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image019.png" /></p>
+<p>You can find your AWT IoT endpoints at <strong>Interact</strong>. </p>
 <p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image020.png" /></p>
+<p><strong>5) Connect your devices to AWS IoT Cloud</strong></p>
+<p>Start connect to AWS Cloud</p>
+<pre><code class="shell">/etc/init.d/gl_mqtt start
+</code></pre>
+
+<p>Restart the mqtt services if its process is running.</p>
+<pre><code class="shell">/etc/init.d/gl_mqtt restart
+</code></pre>
+
+<p>Check mqtt process status</p>
+<pre><code class="shell">ps | grep gl_mqtt
+</code></pre>
+
 <p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image021.png" /></p>
+<h4 id="4-mqtt-communication-testing">4. MQTT Communication Testing</h4>
+<p><strong>Test-&gt;Subscribe to a topic</strong></p>
+<p>The subscription and publish topics in glconfig file: </p>
+<pre><code class="shell">option sub_topic '/a1rLNyG2VK5/mqtt_demo/user/get'               
+option pub_topic '/sys/a1rLNyG2VK5/mqtt_demo/thing/event/property/post' 
+</code></pre>
+
+<p>So the Subscription and Publish topic in AWS IoT Cloud shall be exchanged:</p>
+<pre><code>Subscription Topic:  '/sys/a1rLNyG2VK5/mqtt_demo/thing/event/property/post' 
+Publish topic:  '/a1rLNyG2VK5/mqtt_demo/user/get'
+</code></pre>
+
 <p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image022.png" /></p>
+<p>Try <strong>Subscribe to topic</strong>, a message published by your router will be received in few seconds.</p>
 <p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image023.png" /></p>
+<p>Or <strong>Publish topic to your router a message</strong>: </p>
 <p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image024.png" /></p>
+<p>A message published by AWS IoT Cloud will be received on your router in few seconds. </p>
+<pre><code class="shell">logread
+</code></pre>
+
 <p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image025.png" /></p>
 <h2 id="application-and-demo">Application and Demo</h2>
 <h3 id="read-ble-thermal-sensor">Read BLE Thermal Sensor</h3>
