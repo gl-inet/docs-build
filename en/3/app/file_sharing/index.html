@@ -3092,8 +3092,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#samba-smb-support" title="Samba (SMB) Support:" class="md-nav__link">
-    Samba (SMB) Support:
+  <a href="#method-1-samba-20-smb20-support" title="Method 1: Samba 2.0 (SMB2.0) Support:" class="md-nav__link">
+    Method 1: Samba 2.0 (SMB2.0) Support:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-samba-10-smb10-support" title="Method 2: Samba 1.0 (SMB1.0) Support:" class="md-nav__link">
+    Method 2: Samba 1.0 (SMB1.0) Support:
   </a>
   
 </li>
@@ -3766,8 +3773,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#samba-smb-support" title="Samba (SMB) Support:" class="md-nav__link">
-    Samba (SMB) Support:
+  <a href="#method-1-samba-20-smb20-support" title="Method 1: Samba 2.0 (SMB2.0) Support:" class="md-nav__link">
+    Method 1: Samba 2.0 (SMB2.0) Support:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-samba-10-smb10-support" title="Method 2: Samba 1.0 (SMB1.0) Support:" class="md-nav__link">
+    Method 2: Samba 1.0 (SMB1.0) Support:
   </a>
   
 </li>
@@ -3937,8 +3951,21 @@
 <h3 id="general-notes">General Notes</h3>
 <p>You may be able to access the share via <code>\\192.168.8.1\</code> or <code>smb://192.168.8.1/</code> or with <code>GL-modelXXX</code> instead of <code>192.168.8.1</code> (eg <code>\\GL-AR750S\</code>)  in your system's file explorer. Since sharing is enabled to the LAN by default (this includes both wired AND wireless clients) and maps a "bad user" to Guest, then even if they don't supply a username and password or an invalid one, ANYONE connected to your router can access the files in the share in Read-Only mode. If you enable Writable mode this applies to both Guests AND the default <code>root</code> user. If you enable write access, anybody can create or delete files and folders, if you disable write access, not even the <code>root</code> user can delete them via SMB (they can through the CLI though). We can hope that in a future revision there is a simple user management and that a named user (or <code>root</code>) can read and/or write while Guests are limited by the <code>Writable</code> or a <code>Public Write</code> flag on a share (and having multiple shares would be great as well).</p>
 <h3 id="windows">Windows</h3>
+<h4 id="method-1-samba-20-smb20-support">Method 1: Samba 2.0 (SMB2.0) Support:</h4>
+<p>We suggest Samba 2.0 support for Window 10 users.</p>
+<p>Due to the security vulunerabilitiy of the Samba1.0 protocol, Samba1.0 is not enabled by default in Window 10. You may modify the router Samba configuration.</p>
+<p><img alt="Network" src="https://static.gl-inet.com/docs/en/3/app/file_sharing/smb1.0.png" /></p>
+<p>1). SSH into your router, you can gain control of both the router and the network that the rotuer is controlling. You can refer to the following link: <a href="https://docs.gl-inet.com/en/3/app/ssh/">https://docs.gl-inet.com/en/3/app/ssh/</a></p>
+<p>2). Modify the Samba configuration file, type the following command:</p>
+<p><code>sed -i 's/security = share/security = user/' /etc/samba/smb.conf.template</code></p>
+<p>3). Restart the Samba service, type the following command:</p>
+<p><code>/etc/init.d/samba restart</code></p>
+<p><img alt="Network" src="https://static.gl-inet.com/docs/en/3/app/file_sharing/ssh2.png" /></p>
+<p>4). Open 'This PC' and type <code>\\your router IP Address</code>, such as <code>\\192.168.8.1</code>.</p>
+<p><img alt="Network" src="https://static.gl-inet.com/docs/en/3/app/file_sharing/Filesharing.png" /></p>
+<p>5). You can view files in your USB flash drive through GL.iNet router now.</p>
+<h4 id="method-2-samba-10-smb10-support">Method 2: Samba 1.0 (SMB1.0) Support:</h4>
 <p><strong>1)</strong> Your network must be Home/Private. Otherwise you may not be able to see your router in <strong>Network</strong>. </p>
-<h4 id="samba-smb-support">Samba (SMB) Support:</h4>
 <p>3.0 firmware supports SMB2, and if you need SMB3, use <a href="https://docs.gl-inet.com/en/3/app/ssh/#winscp">WinSCP to router</a>, edit /etc/samba/smb.conf.template . </p>
 <p><img alt="Network" src="https://static.gl-inet.com/docs/en/3/app/file_sharing/winscpsmb.jpg" /></p>
 <p>Change the "max protocol = SMB2" to </p>
