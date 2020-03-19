@@ -1,0 +1,4345 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Documentation for GL.iNet Productions">
+      
+      
+        <link rel="canonical" href="https://docs.gl-inet.com/app/ble2mqtt/">
+      
+      
+        <meta name="author" content="Shan">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.7.3">
+    
+    
+      
+        <title>BLE MQTT Bridge - GL.iNet Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#ble-mqtt-bridge" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.gl-inet.com/" title="GL.iNet Docs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                GL.iNet Docs
+              </span>
+              <span class="md-header-nav__topic">
+                BLE MQTT Bridge
+              </span>
+            
+          
+        </div>
+      </div>
+
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <select class="select-docs-language" id="select-docs-language">
+          <option value="en">en</option>
+          <option value="jp">jp</option>
+        </select>
+      </div>
+
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <select class="select-docs-version" id="select-docs-version">
+          <option value="3.x">3.x</option>
+          <option value="2.x">2.x</option>
+        </select>
+      </div>
+
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/gl-inet/docs3.x" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      gl-inet/docs3.x
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        	
+	  
+	  
+	  <!-- Setup Tab -->
+		<li class="md-tabs__item">
+		  
+		    
+			  <a href="../.." title="Home" class="md-tabs__link">
+			    Home
+			  </a>
+		    
+		  
+		</li>
+	  
+	
+      
+        	
+	  
+	  
+	  <!-- Setup Tab -->
+		<li class="md-tabs__item">
+		  
+		    
+			  <a href="../../hardware/ar150/" title="Hardware" class="md-tabs__link">
+			    Hardware
+			  </a>
+		    
+		  
+		</li>
+	  
+	
+      
+        	
+	  
+	  
+		
+			
+	  
+	  
+	  <!-- Setup Tab -->
+		<li class="md-tabs__item">
+		  
+		    <div class="md-tabs__link">
+			    <button onclick="myFunction()" class="dropbtn">
+				  Setup<b class="caret"></b>
+					</button>
+				  <div id="myDropdown" class="dropdown-content">
+							<ul class="md-nav__list" data-md-scrollfix>
+									
+										
+									
+										
+									
+										
+											
+									    	<a href="../../setup/mini_router/first-time_setup/" title="Mini Router Series" class="md-nav__link md-nav__link--active">
+											  	Mini Router Series
+												</a>
+											
+									    	<a href="../../setup/travel_ac_router/first-time_setup/" title="Travel AC Router (GL-AR750)" class="md-nav__link md-nav__link--active">
+											  	Travel AC Router (GL-AR750)
+												</a>
+											
+									    	<a href="../../setup/slate/first-time_setup/" title="Slate (GL-AR750S-Ext)" class="md-nav__link md-nav__link--active">
+											  	Slate (GL-AR750S-Ext)
+												</a>
+											
+									    	<a href="../../setup/4g_smart_router/first-time_setup/" title="4G Smart Router (GL-MiFi)" class="md-nav__link md-nav__link--active">
+											  	4G Smart Router (GL-MiFi)
+												</a>
+											
+									    	<a href="../../setup/spitz/first-time_setup/" title="Spitz (GL-X750)" class="md-nav__link md-nav__link--active">
+											  	Spitz (GL-X750)
+												</a>
+											
+									    	<a href="../../setup/microuter/first-time_setup/" title="Microuter (GL-USB150)" class="md-nav__link md-nav__link--active">
+											  	Microuter (GL-USB150)
+												</a>
+											
+									    	<a href="../../setup/vixmini/first-time_setup/" title="VIXMINI" class="md-nav__link md-nav__link--active">
+											  	VIXMINI
+												</a>
+											
+									    	<a href="../../setup/convexa_b/first-time_setup/" title="Convexa-B (GL-B1300)" class="md-nav__link md-nav__link--active">
+											  	Convexa-B (GL-B1300)
+												</a>
+											
+									    	<a href="../../setup/convexa_s/first-time_setup/" title="Convexa-S (GL-S1300)" class="md-nav__link md-nav__link--active">
+											  	Convexa-S (GL-S1300)
+												</a>
+											
+									    	<a href="../../setup/microuter-n300/first-time_setup/" title="microuter-N300" class="md-nav__link md-nav__link--active">
+											  	microuter-N300
+												</a>
+											
+									    	<a href="../../setup/brume/first-time_setup/" title="Brume (GL-MV1000)" class="md-nav__link md-nav__link--active">
+											  	Brume (GL-MV1000)
+												</a>
+											
+									    	<a href="../../setup/mudi/first-time_setup/" title="Mudi (GL-E750)" class="md-nav__link md-nav__link--active">
+											  	Mudi (GL-E750)
+												</a>
+											
+									    	<a href="../../setup/gl-x1200/first-time_setup/" title="Amarok (GL-X1200)" class="md-nav__link md-nav__link--active">
+											  	Amarok (GL-X1200)
+												</a>
+											
+									    	<a href="../../setup/gl-s10/first-time_setup/" title="GL-S10" class="md-nav__link md-nav__link--active">
+											  	GL-S10
+												</a>
+											
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+							</ul>
+				  </div>
+				</div>
+				
+				<script>
+				function myFunction() {
+					document.getElementById("myDropdown").classList.toggle("show");
+			  }
+				window.onclick = function(event) {
+					if (!event.target.matches('.dropbtn')) {
+			
+						var dropdowns = document.getElementsByClassName("dropdown-content");
+						var i;
+						for (i = 0; i < dropdowns.length; i++) {
+							var openDropdown = dropdowns[i];
+							if (openDropdown.classList.contains('show')) {
+								openDropdown.classList.remove('show');
+							}
+						}
+					}
+				}
+				</script>
+
+      
+		</li>
+	  
+	
+	  
+	
+      
+        	
+	  
+	  
+	  <!-- Setup Tab -->
+		<li class="md-tabs__item">
+		  
+		    
+			  <a href="../../dev/serial/" title="Development" class="md-tabs__link">
+			    Development
+			  </a>
+		    
+		  
+		</li>
+	  
+	
+      
+        	
+	  
+	  
+	  <!-- Setup Tab -->
+		<li class="md-tabs__item">
+		  
+		    
+		      <a href="../ssh/" title="Application" class="md-tabs__link md-tabs__link--active">
+			    Application
+			  </a>
+			
+		    
+		  
+		</li>
+	  
+	
+      
+        	
+	  
+	  
+	  <!-- Setup Tab -->
+		<li class="md-tabs__item">
+		  
+		    
+			  <a href="../../video/product_intro/" title="Video" class="md-tabs__link">
+			    Video
+			  </a>
+		    
+		  
+		</li>
+	  
+	
+      
+        	
+	  
+	  
+	  <!-- Setup Tab -->
+		<li class="md-tabs__item">
+		  
+		    
+			  <a href="../../troubleshooting/led/" title="Troubleshooting" class="md-tabs__link">
+			    Troubleshooting
+			  </a>
+		    
+		  
+		</li>
+	  
+	
+      
+        	
+	  
+	  
+	  <!-- Setup Tab -->
+		<li class="md-tabs__item">
+		  
+		    
+			  <a href="../../release_notes/" title="Release Notes" class="md-tabs__link">
+			    Release Notes
+			  </a>
+		    
+		  
+		</li>
+	  
+	
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    GL.iNet Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/gl-inet/docs3.x" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      gl-inet/docs3.x
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Home
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../service/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Hardware
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Hardware
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/ar150/" title="GL-AR150" class="md-nav__link">
+      GL-AR150
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/ar300m/" title="GL-AR300M" class="md-nav__link">
+      GL-AR300M
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/mt300a/" title="GL-MT300A" class="md-nav__link">
+      GL-MT300A
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/mt300n/" title="GL-MT300N" class="md-nav__link">
+      GL-MT300N
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/mt300n-v2/" title="GL-MT300N-V2" class="md-nav__link">
+      GL-MT300N-V2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/ar750/" title="GL-AR750" class="md-nav__link">
+      GL-AR750
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/ar750s/" title="GL-AR750S" class="md-nav__link">
+      GL-AR750S
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/mifi/" title="GL-MiFi" class="md-nav__link">
+      GL-MiFi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/x750/" title="GL-X750" class="md-nav__link">
+      GL-X750
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/usb150/" title="GL-USB150" class="md-nav__link">
+      GL-USB150
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/b1300/" title="GL-B1300" class="md-nav__link">
+      GL-B1300
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/s1300/" title="GL-S1300" class="md-nav__link">
+      GL-S1300
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/microuter-n300/" title="microuter-N300" class="md-nav__link">
+      microuter-N300
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/mv1000/" title="GL-MV1000" class="md-nav__link">
+      GL-MV1000
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/x1200/" title="GL-X1200" class="md-nav__link">
+      GL-X1200
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/gl-e750/" title="GL-E750" class="md-nav__link">
+      GL-E750
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../hardware/domino-core/" title="Domino Core" class="md-nav__link">
+      Domino Core
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+  
+    <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+  
+    <label class="md-nav__link" for="nav-3">
+      Setup
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1" >
+      <label id="setup" class="md-nav__title" for="nav-3" style="display: none;">Setup</label>
+      <label id="mini_router_label" class="md-nav__title" for="nav-3" style="display: none;"></label>
+      <label id="travel_ac_router_label" class="md-nav__title" for="nav-3" style="display: none;"></label>
+      <label id="slate_label" class="md-nav__title" for="nav-3" style="display: none;"></label>
+      <label id="fourg_smart_router_label" class="md-nav__title" for="nav-3" style="display: none;"></label>
+      <label id="spitz_label" class="md-nav__title" for="nav-3" style="display: none;"></label>
+      <label id="microuter_label" class="md-nav__title" for="nav-3" style="display: none;"></label>
+      <label id="vixmini_label" class="md-nav__title" for="nav-3" style="display:none;"></label>
+      <label id="convexa_b_label" class="md-nav__title" for="nav-3" style="display:none;"></label>
+      <label id="convexa_s_label" class="md-nav__title" for="nav-3" style="display:none;"></label>
+      <label id="microuter-n300_label" class="md-nav__title" for="nav-3" style="display:none;"></label>
+      <label id="brume_label" class="md-nav__title" for="nav-3" style="display:none;"></label>
+      <label id="mudi_label" class="md-nav__title" for="nav-3" style="display:none;"></label>
+      <label id="gl-x1200_label" class="md-nav__title" for="nav-3" style="display:none;"></label>
+      <label id="gl-s10_label" class="md-nav__title" for="nav-3" style="display:none;"></label>
+
+      <script>
+          if (window.location.href.indexOf("mini_router") != -1) {
+            document.getElementById("mini_router_label").innerHTML = ("Mini Router");
+            document.getElementById("mini_router_label").style.display = "block";
+          }
+          if (window.location.href.indexOf("travel_ac_router") != -1) {
+            document.getElementById("travel_ac_router_label").innerHTML = ("Travel AC Router");
+            document.getElementById("travel_ac_router_label").style.display = "block";
+          }
+          if (window.location.href.indexOf("slate") != -1) {
+            document.getElementById("slate_label").innerHTML = ("Slate");
+            document.getElementById("slate_label").style.display = "block";
+          }
+          if (window.location.href.indexOf("4g_smart_router") != -1) {
+            document.getElementById("fourg_smart_router_label").innerHTML = ("4G Smart Router");
+            document.getElementById("fourg_smart_router_label").style.display = "block";
+          }
+          if (window.location.href.indexOf("spitz") != -1) {
+            document.getElementById("spitz_label").innerHTML = ("Spitz");
+            document.getElementById("spitz_label").style.display = "block";
+          }
+          if (window.location.href.indexOf("microuter/") != -1) {
+            document.getElementById("microuter_label").innerHTML = ("Microuter");
+            document.getElementById("microuter_label").style.display = "block";
+          }
+          if (window.location.href.indexOf("vixmini") != -1) {
+            document.getElementById("vixmini_label").innerHTML = ("VIXMINI");
+            document.getElementById("vixmini_label").style.display = "block";
+          }
+          if (window.location.href.indexOf("convexa_b") != -1) {
+            document.getElementById("convexa_b_label").innerHTML = ("Convexa-B");
+            document.getElementById("convexa_b_label").style.display = "block";
+          }
+          if (window.location.href.indexOf("convexa_s") != -1) {
+            document.getElementById("convexa_s_label").innerHTML = ("Convexa-S");
+            document.getElementById("convexa_s_label").style.display = "block";
+          }
+          if (window.location.href.indexOf("microuter-n300") != -1) {
+            document.getElementById("microuter-n300_label").innerHTML = ("microuter-N300");
+            document.getElementById("microuter-n300_label").style.display = "block";
+          }
+          if (window.location.href.indexOf("brume") != -1) {
+            document.getElementById("brume_label").innerHTML = ("Brume");
+            document.getElementById("brume_label").style.display = "block";
+          }
+          if (window.location.href.indexOf("mudi") != -1) {
+            document.getElementById("mudi_label").innerHTML = ("Mudi");
+            document.getElementById("mudi_label").style.display = "block";
+          }
+          if (window.location.href.indexOf("gl-x1200") != -1) {
+            document.getElementById("gl-x1200_label").innerHTML = ("GL-X1200");
+            document.getElementById("gl-x1200_label").style.display = "block";
+          }
+          if (window.location.href.indexOf("gl-s10") != -1) {
+            document.getElementById("gl-s10_label").innerHTML = ("GL-S10");
+            document.getElementById("gl-s10_label").style.display = "block";
+          }
+      </script>
+
+      <ul id="setup-fullscreen" class="md-nav__list" data-md-scrollfix>
+        <a id="mini_router_first-time_setup" href="../../mini_router/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+        <a id="mini_router_internet" href="../../mini_router/internet/" style="display: none;" class="md-nav__link"></a>
+        <a id="mini_router_wireless" href="../../mini_router/wireless/" style="display: none;" class="md-nav__link"></a>
+        <a id="mini_router_clients" href="../../mini_router/clients/" style="display: none;" class="md-nav__link"></a>
+        <a id="mini_router_upgrade" href="../../mini_router/upgrade/" style="display: none;" class="md-nav__link"></a>
+        <a id="mini_router_firewall" href="../../mini_router/firewall/" style="display: none;" class="md-nav__link"></a>
+        <a id="mini_router_vpn" href="../../mini_router/vpn/" style="display: none;" class="md-nav__link"></a>
+        <a id="mini_router_applications" href="../../mini_router/applications/" style="display: none;" class="md-nav__link"></a>
+        <a id="mini_router_more_settings" href="../../mini_router/more_settings/" style="display: none;" class="md-nav__link"></a>
+
+        <a id="travel_ac_router_first-time_setup" href="../../travel_ac_router/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+        <a id="travel_ac_router_internet" href="../../travel_ac_router/internet/" style="display: none;" class="md-nav__link"></a>
+        <a id="travel_ac_router_wireless" href="../../travel_ac_router/wireless/" style="display: none;" class="md-nav__link"></a>
+        <a id="travel_ac_router_clients" href="../../travel_ac_router/clients/" style="display: none;" class="md-nav__link"></a>
+        <a id="travel_ac_router_upgrade" href="../../travel_ac_router/upgrade/" style="display: none;" class="md-nav__link"></a>
+		    <a id="travel_ac_router_firewall" href="../../travel_ac_router/firewall/" style="display: none;" class="md-nav__link"></a>
+        <a id="travel_ac_router_vpn" href="../../travel_ac_router/vpn/" style="display: none;" class="md-nav__link"></a>
+        <a id="travel_ac_router_applications" href="../../travel_ac_router/applications/" style="display: none;" class="md-nav__link"></a>
+        <a id="travel_ac_router_more_settings" href="../../travel_ac_router/more_settings/" style="display: none;" class="md-nav__link"></a>
+
+        <a id="slate_first-time_setup" href="../../slate/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+        <a id="slate_internet" href="../../slate/internet/" style="display: none;" class="md-nav__link"></a>
+        <a id="slate_wireless" href="../../slate/wireless/" style="display: none;" class="md-nav__link"></a>
+        <a id="slate_clients" href="../../slate/clients/" style="display: none;" class="md-nav__link"></a>
+        <a id="slate_upgrade" href="../../slate/upgrade/" style="display: none;" class="md-nav__link"></a>
+		    <a id="slate_firewall" href="../../slate/firewall/" style="display: none;" class="md-nav__link"></a>
+        <a id="slate_vpn" href="../../slate/vpn/" style="display: none;" class="md-nav__link"></a>
+        <a id="slate_applications" href="../../slate/applications/"style="display: none;"  class="md-nav__link"></a>
+        <a id="slate_more_settings" href="../../slate/more_settings/" style="display: none;" class="md-nav__link"></a>
+
+        <a id="4g_smart_router_first-time_setup" href="../../4g_smart_router/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+        <a id="4g_smart_router_internet" href="../../4g_smart_router/internet/" style="display: none;" class="md-nav__link"></a>
+        <a id="4g_smart_router_wireless" href="../../4g_smart_router/wireless/" style="display: none;" class="md-nav__link"></a>
+        <a id="4g_smart_router_clients" href="../../4g_smart_router/clients/" style="display: none;" class="md-nav__link"></a>
+        <a id="4g_smart_router_upgrade" href="../../4g_smart_router/upgrade/" style="display: none;" class="md-nav__link"></a>
+        <a id="4g_smart_router_vpn" href="../../4g_smart_router/vpn/" style="display: none;" class="md-nav__link"></a>
+        <a id="4g_smart_router_applications" href="../../4g_smart_router/applications/" style="display: none;" class="md-nav__link"></a>
+        <a id="4g_smart_router_more_settings" href="../../4g_smart_router/more_settings/" style="display: none;" class="md-nav__link"></a>
+
+        <a id="spitz_first-time_setup" href="../../spitz/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+        <a id="spitz_internet" href="../../spitz/internet/" style="display: none;" class="md-nav__link"></a>
+        <a id="spitz_wireless" href="../../spitz/wireless/" style="display: none;" class="md-nav__link"></a>
+        <a id="spitz_clients" href="../../spitz/clients/" style="display: none;" class="md-nav__link"></a>
+        <a id="spitz_upgrade" href="../../spitz/upgrade/" style="display: none;" class="md-nav__link"></a>
+        <a id="spitz_vpn" href="../../spitz/vpn/" style="display: none;" class="md-nav__link"></a>
+        <a id="spitz_applications" href="../../spitz/applications/" style="display: none;" class="md-nav__link"></a>
+        <a id="spitz_more_settings" href="../../spitz/more_settings/" style="display: none;" class="md-nav__link"></a>
+
+        <a id="microuter_first-time_setup" href="../../microuter/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter_internet" href="../../microuter/internet/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter_wireless" href="../../microuter/wireless/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter_clients" href="../../microuter/clients/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter_upgrade" href="../../microuter/upgrade/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter_vpn" href="../../microuter/vpn/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter_applications" href="../../microuter/applications/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter_more_settings" href="../../microuter/more_settings/" style="display: none;" class="md-nav__link"></a>
+
+        <a id="vixmini_first-time_setup" href="../../vixmini/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+        <a id="vixmini_internet" href="../../vixmini/internet/" style="display: none;" class="md-nav__link"></a>
+        <a id="vixmini_wireless" href="../../vixmini/wireless/" style="display: none;" class="md-nav__link"></a>
+        <a id="vixmini_clients" href="../../vixmini/clients/" style="display: none;" class="md-nav__link"></a>
+        <a id="vixmini_upgrade" href="../../vixmini/upgrade/" style="display: none;" class="md-nav__link"></a>
+        <a id="vixmini_applications" href="../../vixmini/applications/" style="display: none;" class="md-nav__link"></a>
+        <a id="vixmini_more_settings" href="../../vixmini/more_settings/" style="display: none;" class="md-nav__link"></a>
+
+        <a id="convexa_b_first-time_setup" href="../../convexa_b/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_b_internet" href="../../convexa_b/internet/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_b_wireless" href="../../convexa_b/wireless/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_b_mesh" href="../../convexa_b/mesh/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_b_clients" href="../../convexa_b/clients/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_b_upgrade" href="../../convexa_b/upgrade/" style="display: none;" class="md-nav__link"></a>
+		    <a id="convexa_b_firewall" href="../../convexa_b/firewall/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_b_vpn" href="../../convexa_b/vpn/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_b_applications" href="../../convexa_b/applications/"style="display: none;"  class="md-nav__link"></a>
+        <a id="convexa_b_more_settings" href="../../convexa_b/more_settings/" style="display: none;" class="md-nav__link"></a>
+
+        <a id="convexa_s_first-time_setup" href="../../convexa_s/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_s_internet" href="../../convexa_s/internet/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_s_wireless" href="../../convexa_s/wireless/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_s_mesh" href="../../convexa_s/mesh/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_s_clients" href="../../convexa_s/clients/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_s_upgrade" href="../../convexa_s/upgrade/" style="display: none;" class="md-nav__link"></a>
+		    <a id="convexa_s_firewall" href="../../convexa_s/firewall/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_s_vpn" href="../../convexa_s/vpn/" style="display: none;" class="md-nav__link"></a>
+        <a id="convexa_s_applications" href="../../convexa_s/applications/"style="display: none;"  class="md-nav__link"></a>
+        <a id="convexa_s_more_settings" href="../../convexa_s/more_settings/" style="display: none;" class="md-nav__link"></a>
+
+        <a id="microuter-n300_first-time_setup" href="../../microuter-n300/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter-n300_internet" href="../../microuter-n300/internet/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter-n300_wireless" href="../../microuter-n300/wireless/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter-n300_clients" href="../../microuter-n300/clients/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter-n300_upgrade" href="../../microuter-n300/upgrade/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter-n300_vpn" href="../../microuter-n300/vpn/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter-n300_applications" href="../../microuter-n300/applications/" style="display: none;" class="md-nav__link"></a>
+        <a id="microuter-n300_more_settings" href="../../microuter-n300/more_settings/" style="display: none;" class="md-nav__link"></a>
+
+        <a id="brume_first-time_setup" href="../../brume/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+        <a id="brume_internet" href="../../brume/internet/" style="display: none;" class="md-nav__link"></a>
+        <a id="brume_clients" href="../../brume/clients/" style="display: none;" class="md-nav__link"></a>
+        <a id="brume_upgrade" href="../../brume/upgrade/" style="display: none;" class="md-nav__link"></a>
+        <a id="brume_firewall" href="../../brume/firewall/" style="display: none;" class="md-nav__link"></a>
+        <a id="brume_vpn" href="../../brume/vpn/" style="display: none;" class="md-nav__link"></a>
+        <a id="brume_applications" href="../../brume/applications/" style="display: none;" class="md-nav__link"></a>
+        <a id="brume_more_settings" href="../../brume/more_settings/" style="display: none;" class="md-nav__link"></a>
+
+        
+        <a id="mudi_first-time_setup" href="../../mudi/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+        <a id="mudi_internet" href="../../mudi/internet/" style="display: none;" class="md-nav__link"></a>
+        <a id="mudi_wireless" href="../../mudi/wireless/" style="display: none;" class="md-nav__link"></a>
+        <a id="mudi_clients" href="../../mudi/clients/" style="display: none;" class="md-nav__link"></a>
+        <a id="mudi_upgrade" href="../../mudi/upgrade/" style="display: none;" class="md-nav__link"></a>
+		    <a id="mudi_firewall" href="../../mudi/firewall/" style="display: none;" class="md-nav__link"></a>
+        <a id="mudi_vpn" href="../../mudi/vpn/" style="display: none;" class="md-nav__link"></a>
+        <a id="mudi_applications" href="../../mudi/applications/"style="display: none;"  class="md-nav__link"></a>
+        <a id="mudi_more_settings" href="../../mudi/more_settings/" style="display: none;" class="md-nav__link"></a>
+
+        <a id="gl-x1200_first-time_setup" href="../../gl-x1200/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+
+        <a id="gl-s10_first-time_setup" href="../../gl-s10/first-time_setup/" style="display: none;" class="md-nav__link"></a>
+        <a id="gl-s10_api_manual" href="../../gl-s10/api_manual/" style="display: none;" class="md-nav__link"></a>
+        <a id="gl-s10_firmware_compilation_guide" href="../../gl-s10/firmware_compilation_guide/" style="display: none;" class="md-nav__link"></a>
+
+        <script>
+          if (window.location.href.indexOf("mini_router") != -1) {
+            document.getElementById("mini_router_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("mini_router_first-time_setup").style.display = "block";
+            document.getElementById("mini_router_internet").innerHTML = ("Internet");
+            document.getElementById("mini_router_internet").style.display = "block";
+            document.getElementById("mini_router_wireless").innerHTML = ("Wireless");
+            document.getElementById("mini_router_wireless").style.display = "block";
+            document.getElementById("mini_router_clients").innerHTML = ("Clients");
+            document.getElementById("mini_router_clients").style.display = "block";
+            document.getElementById("mini_router_upgrade").innerHTML = ("Upgrade");
+            document.getElementById("mini_router_upgrade").style.display = "block";
+            document.getElementById("mini_router_firewall").innerHTML = ("Firewall");
+            document.getElementById("mini_router_firewall").style.display = "block";
+            document.getElementById("mini_router_vpn").innerHTML = ("VPN");
+            document.getElementById("mini_router_vpn").style.display = "block";
+            document.getElementById("mini_router_applications").innerHTML = ("Applications");
+            document.getElementById("mini_router_applications").style.display = "block";
+            document.getElementById("mini_router_more_settings").innerHTML = ("More Settings");
+            document.getElementById("mini_router_more_settings").style.display = "block";
+          }
+
+          if (window.location.href.indexOf("travel_ac_router") != -1) {
+            document.getElementById("travel_ac_router_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("travel_ac_router_first-time_setup").style.display = "block";
+            document.getElementById("travel_ac_router_internet").innerHTML = ("Internet");
+            document.getElementById("travel_ac_router_internet").style.display = "block";
+            document.getElementById("travel_ac_router_wireless").innerHTML = ("Wireless");
+            document.getElementById("travel_ac_router_wireless").style.display = "block";
+            document.getElementById("travel_ac_router_clients").innerHTML = ("Clients");
+            document.getElementById("travel_ac_router_clients").style.display = "block";
+            document.getElementById("travel_ac_router_upgrade").innerHTML = ("Upgrade");
+            document.getElementById("travel_ac_router_upgrade").style.display = "block";
+			      document.getElementById("travel_ac_router_firewall").innerHTML = ("Firewall");
+            document.getElementById("travel_ac_router_firewall").style.display = "block";
+            document.getElementById("travel_ac_router_vpn").innerHTML = ("VPN");
+            document.getElementById("travel_ac_router_vpn").style.display = "block";
+            document.getElementById("travel_ac_router_applications").innerHTML = ("Applications");
+            document.getElementById("travel_ac_router_applications").style.display = "block";
+            document.getElementById("travel_ac_router_more_settings").innerHTML = ("More Settings");
+            document.getElementById("travel_ac_router_more_settings").style.display = "block";
+          }
+
+          if (window.location.href.indexOf("slate") != -1) {
+            document.getElementById("slate_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("slate_first-time_setup").style.display = "block";
+            document.getElementById("slate_internet").innerHTML = ("Internet");
+            document.getElementById("slate_internet").style.display = "block";
+            document.getElementById("slate_wireless").innerHTML = ("Wireless");
+            document.getElementById("slate_wireless").style.display = "block";
+            document.getElementById("slate_clients").innerHTML = ("Clients");
+            document.getElementById("slate_clients").style.display = "block";
+            document.getElementById("slate_upgrade").innerHTML = ("Upgrade");
+            document.getElementById("slate_upgrade").style.display = "block";
+			      document.getElementById("slate_firewall").innerHTML = ("Firewall");
+            document.getElementById("slate_firewall").style.display = "block";
+            document.getElementById("slate_vpn").innerHTML = ("VPN");
+            document.getElementById("slate_vpn").style.display = "block";
+            document.getElementById("slate_applications").innerHTML = ("Applications");
+            document.getElementById("slate_applications").style.display = "block";
+            document.getElementById("slate_more_settings").innerHTML = ("More Settings");
+            document.getElementById("slate_more_settings").style.display = "block";
+          }
+
+          if (window.location.href.indexOf("4g_smart_router") != -1) {
+            document.getElementById("4g_smart_router_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("4g_smart_router_first-time_setup").style.display = "block";
+            document.getElementById("4g_smart_router_internet").innerHTML = ("Internet");
+            document.getElementById("4g_smart_router_internet").style.display = "block";
+            document.getElementById("4g_smart_router_wireless").innerHTML = ("Wireless");
+            document.getElementById("4g_smart_router_wireless").style.display = "block";
+            document.getElementById("4g_smart_router_clients").innerHTML = ("Clients");
+            document.getElementById("4g_smart_router_clients").style.display = "block";
+            document.getElementById("4g_smart_router_upgrade").innerHTML = ("Upgrade");
+            document.getElementById("4g_smart_router_upgrade").style.display = "block";
+            document.getElementById("4g_smart_router_vpn").innerHTML = ("VPN");
+            document.getElementById("4g_smart_router_vpn").style.display = "block";
+            document.getElementById("4g_smart_router_applications").innerHTML = ("Applications");
+            document.getElementById("4g_smart_router_applications").style.display = "block";
+            document.getElementById("4g_smart_router_more_settings").innerHTML = ("More Settings");
+            document.getElementById("4g_smart_router_more_settings").style.display = "block";
+          }
+
+          if (window.location.href.indexOf("spitz") != -1) {
+            document.getElementById("spitz_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("spitz_first-time_setup").style.display = "block";
+            document.getElementById("spitz_internet").innerHTML = ("Internet");
+            document.getElementById("spitz_internet").style.display = "block";
+            document.getElementById("spitz_wireless").innerHTML = ("Wireless");
+            document.getElementById("spitz_wireless").style.display = "block";
+            document.getElementById("spitz_clients").innerHTML = ("Clients");
+            document.getElementById("spitz_clients").style.display = "block";
+            document.getElementById("spitz_upgrade").innerHTML = ("Upgrade");
+            document.getElementById("spitz_upgrade").style.display = "block";
+            document.getElementById("spitz_vpn").innerHTML = ("VPN");
+            document.getElementById("spitz_vpn").style.display = "block";
+            document.getElementById("spitz_applications").innerHTML = ("Applications");
+            document.getElementById("spitz_applications").style.display = "block";
+            document.getElementById("spitz_more_settings").innerHTML = ("More Settings");
+            document.getElementById("spitz_more_settings").style.display = "block";
+          }
+
+          if (window.location.href.indexOf("microuter/") != -1) {
+            document.getElementById("microuter_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("microuter_first-time_setup").style.display = "block";
+            document.getElementById("microuter_internet").innerHTML = ("Internet");
+            document.getElementById("microuter_internet").style.display = "block";
+            document.getElementById("microuter_wireless").innerHTML = ("Wireless");
+            document.getElementById("microuter_wireless").style.display = "block";
+            document.getElementById("microuter_clients").innerHTML = ("Clients");
+            document.getElementById("microuter_clients").style.display = "block";
+            document.getElementById("microuter_upgrade").innerHTML = ("Upgrade");
+            document.getElementById("microuter_upgrade").style.display = "block";
+            document.getElementById("microuter_vpn").innerHTML = ("VPN");
+            document.getElementById("microuter_vpn").style.display = "block";
+            document.getElementById("microuter_applications").innerHTML = ("Applications");
+            document.getElementById("microuter_applications").style.display = "block";
+            document.getElementById("microuter_more_settings").innerHTML = ("More Settings");
+            document.getElementById("microuter_more_settings").style.display = "block";
+          }
+
+          if (window.location.href.indexOf("vixmini") != -1) {
+            document.getElementById("vixmini_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("vixmini_first-time_setup").style.display = "block";
+            document.getElementById("vixmini_internet").innerHTML = ("Internet");
+            document.getElementById("vixmini_internet").style.display = "block";
+            document.getElementById("vixmini_wireless").innerHTML = ("Wireless");
+            document.getElementById("vixmini_wireless").style.display = "block";
+            document.getElementById("vixmini_clients").innerHTML = ("Clients");
+            document.getElementById("vixmini_clients").style.display = "block";
+            document.getElementById("vixmini_upgrade").innerHTML = ("Upgrade");
+            document.getElementById("vixmini_upgrade").style.display = "block";
+            document.getElementById("vixmini_applications").innerHTML = ("Applications");
+            document.getElementById("vixmini_applications").style.display = "block";
+            document.getElementById("vixmini_more_settings").innerHTML = ("More Settings");
+            document.getElementById("vixmini_more_settings").style.display = "block";
+          }
+
+          if (window.location.href.indexOf("convexa_b") != -1) {
+            document.getElementById("convexa_b_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("convexa_b_first-time_setup").style.display = "block";
+            document.getElementById("convexa_b_internet").innerHTML = ("Internet");
+            document.getElementById("convexa_b_internet").style.display = "block";
+            document.getElementById("convexa_b_wireless").innerHTML = ("Wireless");
+            document.getElementById("convexa_b_wireless").style.display = "block";
+            document.getElementById("convexa_b_mesh").innerHTML = ("Mesh");
+            document.getElementById("convexa_b_mesh").style.display = "block";
+            document.getElementById("convexa_b_clients").innerHTML = ("Clients");
+            document.getElementById("convexa_b_clients").style.display = "block";
+            document.getElementById("convexa_b_upgrade").innerHTML = ("Upgrade");
+            document.getElementById("convexa_b_upgrade").style.display = "block";
+			      document.getElementById("convexa_b_firewall").innerHTML = ("Firewall");
+            document.getElementById("convexa_b_firewall").style.display = "block";
+            document.getElementById("convexa_b_vpn").innerHTML = ("VPN");
+            document.getElementById("convexa_b_vpn").style.display = "block";
+            document.getElementById("convexa_b_applications").innerHTML = ("Applications");
+            document.getElementById("convexa_b_applications").style.display = "block";
+            document.getElementById("convexa_b_more_settings").innerHTML = ("More Settings");
+            document.getElementById("convexa_b_more_settings").style.display = "block";
+          }
+
+          if (window.location.href.indexOf("convexa_s") != -1) {
+            document.getElementById("convexa_s_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("convexa_s_first-time_setup").style.display = "block";
+            document.getElementById("convexa_s_internet").innerHTML = ("Internet");
+            document.getElementById("convexa_s_internet").style.display = "block";
+            document.getElementById("convexa_s_wireless").innerHTML = ("Wireless");
+            document.getElementById("convexa_s_wireless").style.display = "block";
+            document.getElementById("convexa_s_mesh").innerHTML = ("Mesh");
+            document.getElementById("convexa_s_mesh").style.display = "block";
+            document.getElementById("convexa_s_clients").innerHTML = ("Clients");
+            document.getElementById("convexa_s_clients").style.display = "block";
+            document.getElementById("convexa_s_upgrade").innerHTML = ("Upgrade");
+            document.getElementById("convexa_s_upgrade").style.display = "block";
+			      document.getElementById("convexa_s_firewall").innerHTML = ("Firewall");
+            document.getElementById("convexa_s_firewall").style.display = "block";
+            document.getElementById("convexa_s_vpn").innerHTML = ("VPN");
+            document.getElementById("convexa_s_vpn").style.display = "block";
+            document.getElementById("convexa_s_applications").innerHTML = ("Applications");
+            document.getElementById("convexa_s_applications").style.display = "block";
+            document.getElementById("convexa_s_more_settings").innerHTML = ("More Settings");
+            document.getElementById("convexa_s_more_settings").style.display = "block";
+          }
+
+          if (window.location.href.indexOf("microuter-n300") != -1) {
+            document.getElementById("microuter-n300_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("microuter-n300_first-time_setup").style.display = "block";
+            document.getElementById("microuter-n300_internet").innerHTML = ("Internet");
+            document.getElementById("microuter-n300_internet").style.display = "block";
+            document.getElementById("microuter-n300_wireless").innerHTML = ("Wireless");
+            document.getElementById("microuter-n300_wireless").style.display = "block";
+            document.getElementById("microuter-n300_clients").innerHTML = ("Clients");
+            document.getElementById("microuter-n300_clients").style.display = "block";
+            document.getElementById("microuter-n300_upgrade").innerHTML = ("Upgrade");
+            document.getElementById("microuter-n300_upgrade").style.display = "block";
+            document.getElementById("microuter-n300_vpn").innerHTML = ("VPN");
+            document.getElementById("microuter-n300_vpn").style.display = "block";
+            document.getElementById("microuter-n300_applications").innerHTML = ("Applications");
+            document.getElementById("microuter-n300_applications").style.display = "block";
+            document.getElementById("microuter-n300_more_settings").innerHTML = ("More Settings");
+            document.getElementById("microuter-n300_more_settings").style.display = "block";
+          }
+
+          if (window.location.href.indexOf("brume") != -1) {
+            document.getElementById("brume_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("brume_first-time_setup").style.display = "block";
+            document.getElementById("brume_internet").innerHTML = ("Internet");
+            document.getElementById("brume_internet").style.display = "block";
+            document.getElementById("brume_clients").innerHTML = ("Clients");
+            document.getElementById("brume_clients").style.display = "block";
+            document.getElementById("brume_upgrade").innerHTML = ("Upgrade");
+            document.getElementById("brume_upgrade").style.display = "block";
+            document.getElementById("brume_firewall").innerHTML = ("Firewall");
+            document.getElementById("brume_firewall").style.display = "block";
+            document.getElementById("brume_vpn").innerHTML = ("VPN");
+            document.getElementById("brume_vpn").style.display = "block";
+            document.getElementById("brume_applications").innerHTML = ("Applications");
+            document.getElementById("brume_applications").style.display = "block";
+            document.getElementById("brume_more_settings").innerHTML = ("More Settings");
+            document.getElementById("brume_more_settings").style.display = "block";
+          }
+
+          if (window.location.href.indexOf("mudi") != -1) {
+            document.getElementById("mudi_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("mudi_first-time_setup").style.display = "block";
+            document.getElementById("mudi_internet").innerHTML = ("Internet");
+            document.getElementById("mudi_internet").style.display = "block";
+            document.getElementById("mudi_wireless").innerHTML = ("Wireless");
+            document.getElementById("mudi_wireless").style.display = "block";
+            document.getElementById("mudi_clients").innerHTML = ("Clients");
+            document.getElementById("mudi_clients").style.display = "block";
+            document.getElementById("mudi_upgrade").innerHTML = ("Upgrade");
+            document.getElementById("mudi_upgrade").style.display = "block";
+            document.getElementById("mudi_firewall").innerHTML = ("Firewall");
+            document.getElementById("mudi_firewall").style.display = "block";
+            document.getElementById("mudi_vpn").innerHTML = ("VPN");
+            document.getElementById("mudi_vpn").style.display = "block";
+            document.getElementById("mudi_applications").innerHTML = ("Applications");
+            document.getElementById("mudi_applications").style.display = "block";
+            document.getElementById("mudi_more_settings").innerHTML = ("More Settings");
+            document.getElementById("mudi_more_settings").style.display = "block";  
+          }
+
+          if (window.location.href.indexOf("gl-x1200") != -1) {
+            document.getElementById("gl-x1200_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("gl-x1200_first-time_setup").style.display = "block";
+          }
+
+          if (window.location.href.indexOf("gl-s10") != -1) {
+            document.getElementById("gl-s10_first-time_setup").innerHTML = ("First-time Setup");
+            document.getElementById("gl-s10_first-time_setup").style.display = "block";
+            document.getElementById("gl-s10_api_manual").innerHTML = ("API Manual");
+            document.getElementById("gl-s10_api_manual").style.display = "block";
+            document.getElementById("gl-s10_firmware_compilation_guide").innerHTML = ("Firmware Compilation Guide");
+            document.getElementById("gl-s10_firmware_compilation_guide").style.display = "block";
+          }
+        
+        </script> 
+      </ul>
+
+      <ul id="setup-mobile" style="display: none;" class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Mini Router Series
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Mini Router Series
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mini_router/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mini_router/internet/" title="Internet" class="md-nav__link">
+      Internet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mini_router/wireless/" title="Wireless" class="md-nav__link">
+      Wireless
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mini_router/clients/" title="Clients" class="md-nav__link">
+      Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mini_router/upgrade/" title="Upgrade" class="md-nav__link">
+      Upgrade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mini_router/firewall/" title="Firewall" class="md-nav__link">
+      Firewall
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mini_router/vpn/" title="VPN" class="md-nav__link">
+      VPN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mini_router/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mini_router/more_settings/" title="More Settings" class="md-nav__link">
+      More Settings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Travel AC Router (GL-AR750)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Travel AC Router (GL-AR750)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/travel_ac_router/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/travel_ac_router/internet/" title="Internet" class="md-nav__link">
+      Internet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/travel_ac_router/wireless/" title="Wireless" class="md-nav__link">
+      Wireless
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/travel_ac_router/clients/" title="Clients" class="md-nav__link">
+      Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/travel_ac_router/upgrade/" title="Upgrade" class="md-nav__link">
+      Upgrade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/travel_ac_router/firewall/" title="Firewall" class="md-nav__link">
+      Firewall
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/travel_ac_router/vpn/" title="VPN" class="md-nav__link">
+      VPN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/travel_ac_router/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/travel_ac_router/more_settings/" title="More Settings" class="md-nav__link">
+      More Settings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Slate (GL-AR750S-Ext)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Slate (GL-AR750S-Ext)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/slate/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/slate/internet/" title="Internet" class="md-nav__link">
+      Internet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/slate/wireless/" title="Wireless" class="md-nav__link">
+      Wireless
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/slate/clients/" title="Clients" class="md-nav__link">
+      Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/slate/upgrade/" title="Upgrade" class="md-nav__link">
+      Upgrade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/slate/firewall/" title="Firewall" class="md-nav__link">
+      Firewall
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/slate/vpn/" title="VPN" class="md-nav__link">
+      VPN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/slate/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/slate/more_settings/" title="More Settings" class="md-nav__link">
+      More Settings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      4G Smart Router (GL-MiFi)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        4G Smart Router (GL-MiFi)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/4g_smart_router/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/4g_smart_router/internet/" title="Internet" class="md-nav__link">
+      Internet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/4g_smart_router/wireless/" title="Wireless" class="md-nav__link">
+      Wireless
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/4g_smart_router/clients/" title="Clients" class="md-nav__link">
+      Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/4g_smart_router/upgrade/" title="Upgrade" class="md-nav__link">
+      Upgrade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/4g_smart_router/vpn/" title="VPN" class="md-nav__link">
+      VPN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/4g_smart_router/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/4g_smart_router/more_settings/" title="More Settings" class="md-nav__link">
+      More Settings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Spitz (GL-X750)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        Spitz (GL-X750)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/spitz/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/spitz/internet/" title="Internet" class="md-nav__link">
+      Internet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/spitz/wireless/" title="Wireless" class="md-nav__link">
+      Wireless
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/spitz/clients/" title="Clients" class="md-nav__link">
+      Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/spitz/upgrade/" title="Upgrade" class="md-nav__link">
+      Upgrade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/spitz/vpn/" title="VPN" class="md-nav__link">
+      VPN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/spitz/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/spitz/more_settings/" title="More Settings" class="md-nav__link">
+      More Settings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6">
+    
+    <label class="md-nav__link" for="nav-3-6">
+      Microuter (GL-USB150)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-6">
+        Microuter (GL-USB150)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter/internet/" title="Internet" class="md-nav__link">
+      Internet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter/wireless/" title="Wireless" class="md-nav__link">
+      Wireless
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter/clients/" title="Clients" class="md-nav__link">
+      Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter/upgrade/" title="Upgrade" class="md-nav__link">
+      Upgrade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter/vpn/" title="VPN" class="md-nav__link">
+      VPN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter/more_settings/" title="More Settings" class="md-nav__link">
+      More Settings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
+    
+    <label class="md-nav__link" for="nav-3-7">
+      VIXMINI
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-7">
+        VIXMINI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/vixmini/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/vixmini/internet/" title="Internet" class="md-nav__link">
+      Internet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/vixmini/wireless/" title="Wireless" class="md-nav__link">
+      Wireless
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/vixmini/clients/" title="Clients" class="md-nav__link">
+      Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/vixmini/upgrade/" title="Upgrade" class="md-nav__link">
+      Upgrade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/vixmini/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/vixmini/more_settings/" title="More Settings" class="md-nav__link">
+      More Settings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-8" type="checkbox" id="nav-3-8">
+    
+    <label class="md-nav__link" for="nav-3-8">
+      Convexa-B (GL-B1300)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-8">
+        Convexa-B (GL-B1300)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_b/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_b/internet/" title="Internet" class="md-nav__link">
+      Internet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_b/wireless/" title="Wireless" class="md-nav__link">
+      Wireless
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_b/mesh/" title="Mesh" class="md-nav__link">
+      Mesh
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_b/clients/" title="Clients" class="md-nav__link">
+      Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_b/upgrade/" title="Upgrade" class="md-nav__link">
+      Upgrade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_b/firewall/" title="Firewall" class="md-nav__link">
+      Firewall
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_b/vpn/" title="VPN" class="md-nav__link">
+      VPN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_b/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_b/more_settings/" title="More Settings" class="md-nav__link">
+      More Settings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-9" type="checkbox" id="nav-3-9">
+    
+    <label class="md-nav__link" for="nav-3-9">
+      Convexa-S (GL-S1300)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-9">
+        Convexa-S (GL-S1300)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_s/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_s/internet/" title="Internet" class="md-nav__link">
+      Internet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_s/wireless/" title="Wireless" class="md-nav__link">
+      Wireless
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_s/mesh/" title="Mesh" class="md-nav__link">
+      Mesh
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_s/clients/" title="Clients" class="md-nav__link">
+      Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_s/upgrade/" title="Upgrade" class="md-nav__link">
+      Upgrade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_s/firewall/" title="Firewall" class="md-nav__link">
+      Firewall
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_s/vpn/" title="VPN" class="md-nav__link">
+      VPN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_s/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/convexa_s/more_settings/" title="More Settings" class="md-nav__link">
+      More Settings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-10" type="checkbox" id="nav-3-10">
+    
+    <label class="md-nav__link" for="nav-3-10">
+      microuter-N300
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-10">
+        microuter-N300
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter-n300/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter-n300/internet/" title="Internet" class="md-nav__link">
+      Internet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter-n300/wireless/" title="Wireless" class="md-nav__link">
+      Wireless
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter-n300/clients/" title="Clients" class="md-nav__link">
+      Clients
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter-n300/upgrade/" title="Upgrade" class="md-nav__link">
+      Upgrade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter-n300/vpn/" title="VPN" class="md-nav__link">
+      VPN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter-n300/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/microuter-n300/more_settings/" title="More Settings" class="md-nav__link">
+      More Settings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-11" type="checkbox" id="nav-3-11">
+    
+    <label class="md-nav__link" for="nav-3-11">
+      Brume (GL-MV1000)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-11">
+        Brume (GL-MV1000)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/brume/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/brume/internet/" title="Internet" class="md-nav__link">
+      Internet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/brume/clients/" title="Clinets" class="md-nav__link">
+      Clinets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/brume/upgrade/" title="Upgrade" class="md-nav__link">
+      Upgrade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/brume/firewall/" title="Firewall" class="md-nav__link">
+      Firewall
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/brume/vpn/" title="VPN" class="md-nav__link">
+      VPN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/brume/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/brume/more_settings/" title="More Settings" class="md-nav__link">
+      More Settings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-12" type="checkbox" id="nav-3-12">
+    
+    <label class="md-nav__link" for="nav-3-12">
+      Mudi (GL-E750)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-12">
+        Mudi (GL-E750)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mudi/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mudi/internet/" title="Internet" class="md-nav__link">
+      Internet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mudi/wireless/" title="Wireless" class="md-nav__link">
+      Wireless
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mudi/clients/" title="Clinets" class="md-nav__link">
+      Clinets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mudi/upgrade/" title="Upgrade" class="md-nav__link">
+      Upgrade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mudi/firewall/" title="Firewall" class="md-nav__link">
+      Firewall
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mudi/vpn/" title="VPN" class="md-nav__link">
+      VPN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mudi/applications/" title="Applications" class="md-nav__link">
+      Applications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/mudi/more_settings/" title="More Settings" class="md-nav__link">
+      More Settings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-13" type="checkbox" id="nav-3-13">
+    
+    <label class="md-nav__link" for="nav-3-13">
+      Amarok (GL-X1200)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-13">
+        Amarok (GL-X1200)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/gl-x1200/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+            
+            
+            
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-14" type="checkbox" id="nav-3-14">
+    
+    <label class="md-nav__link" for="nav-3-14">
+      GL-S10
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-14">
+        GL-S10
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/gl-s10/first-time_setup/" title="First-time Setup" class="md-nav__link">
+      First-time Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/gl-s10/api_manual/" title="API Manual" class="md-nav__link">
+      API Manual
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../setup/gl-s10/firmware_compilation_guide/" title="Firmware Complilation Guide" class="md-nav__link">
+      Firmware Complilation Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+          
+      </ul>
+    </nav>
+  </li>
+
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dev/serial/" title="UART Serial" class="md-nav__link">
+      UART Serial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dev/uboot/" title="Advanced Uboot" class="md-nav__link">
+      Advanced Uboot
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Application
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Application
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ssh/" title="SSH to the router" class="md-nav__link">
+      SSH to the router
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../openvpn/" title="OpenVPN" class="md-nav__link">
+      OpenVPN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ss/" title="Shadowsocks" class="md-nav__link">
+      Shadowsocks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../wireguard/" title="WireGuard" class="md-nav__link">
+      WireGuard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../internet_kill_switch/" title="Internet Kill Switch" class="md-nav__link">
+      Internet Kill Switch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vpn_policies/" title="VPN Policies" class="md-nav__link">
+      VPN Policies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file_sharing/" title="File Sharing" class="md-nav__link">
+      File Sharing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dlnaserver/" title="DLNA Server" class="md-nav__link">
+      DLNA Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ddns/" title="DDNS" class="md-nav__link">
+      DDNS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cloud/" title="Cloud" class="md-nav__link">
+      Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../led_customization/" title="LED Customization" class="md-nav__link">
+      LED Customization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../captive_portal/" title="Set a Captive Portal" class="md-nav__link">
+      Set a Captive Portal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        BLE MQTT Bridge
+      </label>
+    
+    <a href="./" title="BLE MQTT Bridge" class="md-nav__link md-nav__link--active">
+      BLE MQTT Bridge
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-required" title="Hardware Required" class="md-nav__link">
+    Hardware Required
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ble-tools" title="BLE Tools" class="md-nav__link">
+    BLE Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mqtt" title="MQTT" class="md-nav__link">
+    MQTT
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-data-to-goodcloud" title="Send Data to GoodCloud" class="md-nav__link">
+    Send Data to GoodCloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-data-to-aws-iot" title="Send Data to AWS IoT" class="md-nav__link">
+    Send Data to AWS IoT
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-setting-up-your-aws-iot-environment" title="1. Setting up your AWS IoT environment" class="md-nav__link">
+    1. Setting up your AWS IoT environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-attach-policy" title="2. Attach Policy" class="md-nav__link">
+    2. Attach Policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-config-glinet-devices-to-connect-to-aws-iot" title="3. Config GL.iNet devices to connect to AWS IoT" class="md-nav__link">
+    3. Config GL.iNet devices to connect to AWS IoT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mqtt-communication-testing" title="4. MQTT Communication Testing" class="md-nav__link">
+    4. MQTT Communication Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-and-demo" title="Application and Demo" class="md-nav__link">
+    Application and Demo
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-ble-thermal-sensor" title="Read BLE Thermal Sensor" class="md-nav__link">
+    Read BLE Thermal Sensor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../qdslrdashboard/" title="qDslrDashboard" class="md-nav__link">
+      qDslrDashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tether/" title="EasyTether" class="md-nav__link">
+      EasyTether
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tor/" title="Tor" class="md-nav__link">
+      Tor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../camera/" title="Camera" class="md-nav__link">
+      Camera
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Video
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Video
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../video/product_intro/" title="Product Intro" class="md-nav__link">
+      Product Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../video/tutor/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../video/review/" title="Customer Review" class="md-nav__link">
+      Customer Review
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Troubleshooting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Troubleshooting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/led/" title="LED Indicators" class="md-nav__link">
+      LED Indicators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/reset/" title="Repair or Reset" class="md-nav__link">
+      Repair or Reset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/debrick/" title="Debrick via Uboot" class="md-nav__link">
+      Debrick via Uboot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/chang_wan_to_lan/" title="Change WAN to LAN" class="md-nav__link">
+      Change WAN to LAN
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/captive_portal/" title="Captive Portal" class="md-nav__link">
+      Captive Portal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/repeat_failure/" title="Repeat Failure" class="md-nav__link">
+      Repeat Failure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/use_glinet_app/" title="Use GL.iNet app" class="md-nav__link">
+      Use GL.iNet app
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/access_web_panel/" title="Access Web Panel" class="md-nav__link">
+      Access Web Panel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/eap/" title="Extensible Authentication Protocol" class="md-nav__link">
+      Extensible Authentication Protocol
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/faq/" title="FAQs" class="md-nav__link">
+      FAQs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Release Notes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Release Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/" title="Firmware Releases" class="md-nav__link">
+      Firmware Releases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-AR150/" title="GL-AR150" class="md-nav__link">
+      GL-AR150
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-AR300M/" title="GL-AR300M" class="md-nav__link">
+      GL-AR300M
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-MT300A/" title="GL-MT300A" class="md-nav__link">
+      GL-MT300A
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-MT300N/" title="GL-MT300N" class="md-nav__link">
+      GL-MT300N
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-MT300N-V2/" title="GL-MT300N-V2" class="md-nav__link">
+      GL-MT300N-V2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-AR750/" title="GL-AR750" class="md-nav__link">
+      GL-AR750
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-AR750S-Ext/" title="GL-AR750S-Ext" class="md-nav__link">
+      GL-AR750S-Ext
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-MiFi/" title="GL-MiFi" class="md-nav__link">
+      GL-MiFi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-X750/" title="GL-X750" class="md-nav__link">
+      GL-X750
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-USB150/" title="GL-USB150" class="md-nav__link">
+      GL-USB150
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-B1300/" title="GL-B1300" class="md-nav__link">
+      GL-B1300
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-S1300/" title="GL-S1300" class="md-nav__link">
+      GL-S1300
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/VIXMINI/" title="VIXMINI" class="md-nav__link">
+      VIXMINI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-MV1000/" title="GL-MV1000" class="md-nav__link">
+      GL-MV1000
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-X1200/" title="GL-X1200" class="md-nav__link">
+      GL-X1200
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/GL-E750/" title="GL-E750" class="md-nav__link">
+      GL-E750
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release_notes/microuter-N300/" title="microuter-N300" class="md-nav__link">
+      microuter-N300
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-required" title="Hardware Required" class="md-nav__link">
+    Hardware Required
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ble-tools" title="BLE Tools" class="md-nav__link">
+    BLE Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mqtt" title="MQTT" class="md-nav__link">
+    MQTT
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-data-to-goodcloud" title="Send Data to GoodCloud" class="md-nav__link">
+    Send Data to GoodCloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-data-to-aws-iot" title="Send Data to AWS IoT" class="md-nav__link">
+    Send Data to AWS IoT
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-setting-up-your-aws-iot-environment" title="1. Setting up your AWS IoT environment" class="md-nav__link">
+    1. Setting up your AWS IoT environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-attach-policy" title="2. Attach Policy" class="md-nav__link">
+    2. Attach Policy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-config-glinet-devices-to-connect-to-aws-iot" title="3. Config GL.iNet devices to connect to AWS IoT" class="md-nav__link">
+    3. Config GL.iNet devices to connect to AWS IoT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mqtt-communication-testing" title="4. MQTT Communication Testing" class="md-nav__link">
+    4. MQTT Communication Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-and-demo" title="Application and Demo" class="md-nav__link">
+    Application and Demo
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-ble-thermal-sensor" title="Read BLE Thermal Sensor" class="md-nav__link">
+    Read BLE Thermal Sensor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="ble-mqtt-bridge">BLE MQTT Bridge</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Bluetooth Low Energy (BLE) is widely used for smart home, wearable and IoT sensors. This guide provide a simple but useful tool that send your BLE data to MQTT servers, which is the underling mechanism for popular IoT solution. </p>
+<p>In this guide we will introduce two GL.iNet BLE gateway, <code>GL-X750 Spitz</code>    and <code>GL-S1300 convexa S</code> which has built-in BLE modules and how to use them to forward your BLE data to the cloud based on MQTT protocol, including GL.iNet <code>GoodCloud</code> and <code>AWS IoT</code>. </p>
+<h2 id="hardware-required">Hardware Required</h2>
+<p>Both GL-X750 and GL-S1300 comes with a Silicon BLE 5.0 module with the following specs. It connects to the main board using <code>UART</code>. The same module support BLE and Zigbee. However you need to change the firmware on the module (not the gateway). There is no way to change the firmware from BLE to Zigbee or vice versa on the air. So you have to select the correct module when you purchase the correct product.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product Name</td>
+<td>Bluetooth &amp; Zigbee Module</td>
+</tr>
+<tr>
+<td>Model</td>
+<td>GL-EFR32S/GL-EFR32H</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>Silicon Labs EFR32MG1P232F256GM48-CR0</td>
+</tr>
+<tr>
+<td>Protocol</td>
+<td>Support Zigbee、BLE</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>RAM:32KB/ Flash:256KB</td>
+</tr>
+<tr>
+<td>Tx Power</td>
+<td>19 dBm</td>
+</tr>
+<tr>
+<td>Antenna</td>
+<td>On-board antenna (external antenna IPEX reserved)</td>
+</tr>
+<tr>
+<td>Internal Interface</td>
+<td>17*GPIO (could be configured to UART、SPI、JTAG、I2C, etc.)</td>
+</tr>
+<tr>
+<td>Module Interface Type</td>
+<td>Stamp interface/Pin interface</td>
+</tr>
+<tr>
+<td>Supply Voltage</td>
+<td>3.3 V</td>
+</tr>
+<tr>
+<td>Power Consumption</td>
+<td>support low power consumption, standby power＜50uW</td>
+</tr>
+<tr>
+<td>Module Dimenstion</td>
+<td>25mm*20mm</td>
+</tr>
+<tr>
+<td>Operation Temperature</td>
+<td>0℃~75℃</td>
+</tr>
+<tr>
+<td>Storage Temperature</td>
+<td>-40℃~85℃</td>
+</tr>
+<tr>
+<td>Operating Humidity</td>
+<td>10%~90%</td>
+</tr>
+</tbody>
+</table>
+<p>You must use the gateway with BLE devices.</p>
+<p>There are two kinds of BLE devices. One kind of BLE device use beacons to send data, e.g a BLE thermometer. Another kind of device need to pair first, e.g. BLE smart watch. </p>
+<p>For BLE beacon device, you can just scan the beacon and get the data. The data is generally encrypted. It is depends on you to decrypted the data. You can decrypt locally on the gateway or just send the encrypted data to your cloud to decrypt there. </p>
+<p>For BLE devices that needs to pair first, you need to know how they can pair with the gateway. Generally this is provided by the device maker. There are a lot of devices that accept standard connection so you can pair without problem.</p>
+<p>A list of compatible devices will be collected and posted here.</p>
+<p><strong><em>TBD: a list of compatible BLE device.</em></strong></p>
+<h2 id="ble-tools">BLE Tools</h2>
+<p>Both GL-X750 and GL-S1300 come with OpenWrt and our BLE tools. </p>
+<p>In your current firmware for S1300, there may be a BLE tool which comes with a UI. But we are further developing this and you need to use the new BLE tool.</p>
+<pre><code class="shell">root@GL-S1300:~# opkg remove gl-ble-daemon gl-ble-api
+root@GL-S1300:~# opkg install bletool
+Installing bletool (1-2) to root...
+Downloading http://download.gl-inet.com/releases/packages-3.x/ipq40xx/glinet/bletool_1-2_ipq806x.ipk.
+Configuring bletool.
+</code></pre>
+
+<p>Now you can use the bletool to test your BLE function.</p>
+<pre><code class="shell">root@GL-S1300:~# bletool on
+root@GL-S1300:~# bletool discovery_type 1 1
+OK
+root@GL-S1300:~# bletool discovery 1 1 0
+OK
+af000045d1e43df801ff1f0201061bff570100a0c931e781473f364824a724d7d3380402f83de4d1  4500
+af040045d1e43df801ff0f0a094d492042616e6420320302e0fe
+d0009238c444f07001ff0e02011a0aff4c001005031802dcbd
+d0049238c444f07001ff00
+
+</code></pre>
+
+<p>You can find a detailed documentation about <code>bletool</code> <strong><em>https://github.com/gl-inet/ble2mqtt</em></strong>. </p>
+<h2 id="mqtt">MQTT</h2>
+<p>MQTT is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol.  You can find official document in <a href="../mqtt.org">mqtt.org</a>.</p>
+<p>This guide will give you a step to step guide of how to send message to GL.iNet GoodCloud and AWS.</p>
+<h3 id="send-data-to-goodcloud">Send Data to GoodCloud</h3>
+<p>GoodCloud is our Cloud based on MQTT under development. Now you can use it for demo purpose related to BLE. You can contact us if you have any suggestions by sending an email to admin@goodcloud.xyz. </p>
+<p>All you need to do is to register an account in GoodCloud.xyz and bind your X750 or S1300 to your account.</p>
+<p><strong>Register your device on <a href="https://www.goodcloud.xyz">GoodCloud.xyz</a></strong></p>
+<p>Follow <a href="https://docs.gl-inet.com/en/3/app/cloud/#setup">this docs</a> to add devices on GoodCloud. </p>
+<p><strong>Where is the config file</strong></p>
+<p>The config file for cloud is in UCI. You will need to modify this directly if you want to connect to your own MQTT cloud.</p>
+<pre><code class="shell">root@GL-S1300:~# cat /etc/config/glconfig
+....
+config service 'cloud'
+        option enable '1'
+        option check_status '1'
+        option serverzone 'gslb-jp.goodcloud.xyz'
+        option username 'your name'
+        option email 'your@email.address'
+        option bindtime '1558928701947'
+
+</code></pre>
+
+<p><strong>Forward data to GoodCloud</strong></p>
+<p>To forward data to GoodCloud, you can use simple shell script. </p>
+<p>After your device is connected to your cloud account, you can <a href="https://docs.gl-inet.com/en/3/app/ssh/">SSH</a> to the router, try the following command.  </p>
+<pre><code class="shell">root@GL-S1300:~# ubus call mqtt pub '{&quot;api&quot;:&quot;/user/data&quot;, &quot;data&quot;:&quot;hello from S1300&quot;
+}'
+{
+        &quot;code&quot;: 0
+}
+root@GL-S1300:~#
+
+</code></pre>
+
+<p>Login the <a href="https://www.goodcloud.xyz">GoodCloud</a>，find the registered device in "device list", click the device name and you will find your message in timeline.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/find-device.png" /></p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/find-log.jpg" /></p>
+<h3 id="send-data-to-aws-iot">Send Data to AWS IoT</h3>
+<p>Amazon AWS IoT is a good choice for business applications. AWS seems to have good security and privacy protection. Here we will give an example of how to send your data to AWS IoT platform. It is a little complicated but still OK for IT specialist. </p>
+<h4 id="1-setting-up-your-aws-iot-environment">1. Setting up your AWS IoT environment</h4>
+<p>1) On the <strong>Welcome to the AWS IoT Console</strong> page, in the navigation pane, choose <strong>Manage-&gt;Things</strong> , then <strong>Register a thing</strong>. </p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/image001.png" /></p>
+<p>2) On the <strong>Creating AWS IoT things</strong> page, choose <strong>Create a single thing</strong>.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/image002.png" /></p>
+<p>3) On the <strong>Create a thing</strong> page, in the <strong>Name</strong> field, type a name for your thing, such as <strong>x750</strong>. Choose <strong>Next</strong>.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/image003.png" /></p>
+<p>4) On the <strong>Add a certificate for your thing</strong> page, choose <strong>Create certificate</strong>. This generates an X.509 certificate and key pair.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/image004.png" /></p>
+<p>5) On the <strong>Certificate created!</strong> page, download your public and private keys, certificate, and root certificate authority (CA):</p>
+<ul>
+<li>
+<p>Choose <strong>Download</strong> for your certificate.</p>
+</li>
+<li>
+<p>Choose <strong>Download</strong> for your private key.</p>
+</li>
+<li>
+<p>Choose <strong>Download</strong> for the Amazon root CA. This will display a new web page. Choose <strong>RSA 2048 bit key: Amazon Root CA 1</strong>. This opens another web page with the text of the root CA certificate. Copy this text and paste it into a file named <code>Amazon_Root_CA_1.pem</code>.</p>
+</li>
+</ul>
+<p>Most web browsers save downloaded files into a Downloads directory. You will copy these files to a different directory when you run the sample applications. Choose <strong>Activate</strong> to activate the X.509 certificate, and then choose <strong>Attach a policy</strong>.</p>
+<p><img alt="" src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/image005.png" /></p>
+<p>The <strong>RSA 2048 bit key: Amazon Root CA1</strong> download web page:</p>
+<p><img alt="  " src="https://static.gl-inet.com/docs/en/3/app/BLE_bridge/image007.png" /></p>
+<p>6) Active your thing</p>
+<p>Back to the previous site, click "<strong>Activate</strong>", then click "<strong>Done</strong>". </p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image008.png" /></p>
+<h4 id="2-attach-policy">2. Attach Policy</h4>
+<p>1) After you register your thing, you will need to create and attach a new <strong>policy</strong> to the <strong>certificate</strong>.<img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image009.png" /></p>
+<p>2) Enter a Name for the policy,such as x750_policy, then <strong>Advance mode</strong></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image010.png" /></p>
+<p>3) Delete the automatically created policy code, then paste the policy below. </p>
+<pre><code>{
+  &quot;Version&quot;: &quot;2012-10-17&quot;,
+  &quot;Statement&quot;: [
+    {
+      &quot;Action&quot;: [
+        &quot;iot:Publish&quot;,
+        &quot;iot:Subscribe&quot;,
+        &quot;iot:Connect&quot;,
+        &quot;iot:Receive&quot;
+      ],
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Resource&quot;: [
+        &quot;*&quot;
+      ]
+    }
+  ]
+}
+</code></pre>
+
+<p>4) <strong>Create</strong> Policy after you pasted policy code. </p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image012.png" /></p>
+<p>5) On the left side, Secure --&gt; Certificates, Select the certificate you just created, Actions
+--&gt; Attach policy</p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image013.png" /></p>
+<p>6) Chose the policy you created(x750_policy) and choose <strong>Attach</strong>.</p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image014.png" /></p>
+<h4 id="3-config-glinet-devices-to-connect-to-aws-iot">3. Config GL.iNet devices to connect to AWS IoT</h4>
+<p><strong>1) Upload your certificate to the router</strong> </p>
+<p>Rename the downloaded certificate files :</p>
+<p>AmazonRootCA1.pem --&gt; root_CA.crt</p>
+<p>xxxxxxxxxx.private.pem.key --&gt; client.key</p>
+<p>xxxxxxxxxx. certificate.pem.crt --&gt; client.crt</p>
+<p>Windows User use <a href="https://docs.gl-inet.com/en/3/app/ssh/">SSH and WinScp</a> to transfer these three certificate files to <code>/etc/aws/</code> on router,  please create new folder if you cannot find <code>/etc/aws/</code>.</p>
+<pre><code class="shell">mkdir /etc/aws/
+</code></pre>
+
+<p><strong>2) Update mqtt package on GL.iNet routers.</strong> </p>
+<p>You can check if your router comes with updated MQTT package. If it is not, please upgrade it if you want to use AWS.</p>
+<p>Download the updated <a href="https://github.com/gl-inet/ble2mqtt">mqtt package</a>, file name is '<strong>gl-mqtt_3.0.37-1_mips_24kc.ipk</strong>‘</p>
+<p>Use WinSCP/SSH to transfer the package to /tmp/ , then delete the old package. </p>
+<pre><code class="shell">opkg remove gl-mqtt --force-depends
+</code></pre>
+
+<p>Then install the package:</p>
+<pre><code class="shell">opkg install gl-mqtt_3.0.37-1_mips_24kc.ipk
+</code></pre>
+
+<p><strong>3) Setup config file for your router</strong></p>
+<p>Edit  <code>/etc/config/glconfig</code> </p>
+<p>Add the following code to your <strong>glconfig</strong> file.</p>
+<pre><code class="shell">config service 'cloud'                                                   
+        option enable '1'                                               
+        option sub_topic '/a1rLNyG2VK5/mqtt_demo/user/get'               
+        option pub_topic '/sys/a1rLNyG2VK5/mqtt_demo/thing/event/property/post' 
+        option service_pride '2'                                         
+        option address 'ssl://xxxxxxxxxxxxxx-ats.iot.us-east-1.amazonaws.com:8883'
+        option clientid 'iotconsole-xxxxxxxxxxxxxx'   
+        option log '1'
+</code></pre>
+
+<p>The sample of glconfig file: </p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image016.png" /></p>
+<p>If you already setup GoodCloud on router before, just add the code at the end of <strong>config service 'cloud'</strong></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image017.png" /></p>
+<pre><code class="shell">option log '1'
+</code></pre>
+
+<p>must be contained in the config file.</p>
+<p>Note**</p>
+<p>The topic ARN follows this format:</p>
+<pre><code class="shell">arn:aws:iot:*your-region*:*your-aws-account*:topic/*&lt;your/topic&gt;*
+</code></pre>
+
+<p>For example:</p>
+<pre><code class="shell">arn:aws:iot:us-east-1:123456789012:topic/my/topic
+</code></pre>
+
+<p><strong>Topics</strong></p>
+<p>The message broker uses topics to route messages from publishing clients to subscribing clients. The forward slash (/) is used to separate topic hierarchy.</p>
+<p><strong>Note</strong></p>
+<p>We do not recommend using personally identifiable information in your topics.</p>
+<p>The following table lists the wildcards that can be used in the topic filter when you subscribe.</p>
+<p><strong>Topic Wildcards</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Wildcard</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">#</td>
+<td align="left">Must be the last character in the topic to which you are subscribing. Works as a wildcard by matching the current tree and all subtrees. For example, a subscription to <code>Sensor/#</code> receives messages published to <code>Sensor/</code>, <code>Sensor/temp</code>, <code>Sensor/temp/room1</code>, but not the messages published to <code>Sensor</code>.</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td align="left">Matches exactly one item in the topic hierarchy. For example, a subscription to <code>Sensor/+/room1</code> receives messages published to <code>Sensor/temp/room1</code>,<code>Sensor/moisture/room1</code>, and so on.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>4) HTTP: API Endpoints add to router config file</strong> </p>
+<p>The message broker supports clients connecting with the HTTP protocol using a REST API. Clients can publish by sending a POST message to <code>*&lt;AWS IoT Endpoint&gt;*/topics/*&lt;url_encoded_topic_name&gt;*?qos=1"</code>.</p>
+<p>At the left side of AWS IoT, <strong>Manage -&gt; Things</strong></p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image019.png" /></p>
+<p>You can find your AWT IoT endpoints at <strong>Interact</strong>. </p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image020.png" /></p>
+<p><strong>5) Connect your devices to AWS IoT Cloud</strong></p>
+<p>Start connect to AWS Cloud</p>
+<pre><code class="shell">/etc/init.d/gl_mqtt start
+</code></pre>
+
+<p>Restart the mqtt services if its process is running.</p>
+<pre><code class="shell">/etc/init.d/gl_mqtt restart
+</code></pre>
+
+<p>Check mqtt process status</p>
+<pre><code class="shell">ps | grep gl_mqtt
+</code></pre>
+
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image021.png" /></p>
+<h4 id="4-mqtt-communication-testing">4. MQTT Communication Testing</h4>
+<p><strong>Test-&gt;Subscribe to a topic</strong></p>
+<p>The subscription and publish topics in glconfig file: </p>
+<pre><code class="shell">option sub_topic '/a1rLNyG2VK5/mqtt_demo/user/get'               
+option pub_topic '/sys/a1rLNyG2VK5/mqtt_demo/thing/event/property/post' 
+</code></pre>
+
+<p>So the Subscription and Publish topic in AWS IoT Cloud shall be exchanged:</p>
+<pre><code>Subscription Topic:  '/sys/a1rLNyG2VK5/mqtt_demo/thing/event/property/post' 
+Publish topic:  '/a1rLNyG2VK5/mqtt_demo/user/get'
+</code></pre>
+
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image022.png" /></p>
+<p>Try <strong>Subscribe to topic</strong>, a message published by your router will be received in few seconds.</p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image023.png" /></p>
+<p>Or <strong>Publish topic to your router a message</strong>: </p>
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image024.png" /></p>
+<p>A message published by AWS IoT Cloud will be received on your router in few seconds. </p>
+<pre><code class="shell">logread
+</code></pre>
+
+<p><img alt="" src="https://static.gl-inet.com./docs/en/3/app/BLE_bridge/image025.png" /></p>
+<h2 id="application-and-demo">Application and Demo</h2>
+<h3 id="read-ble-thermal-sensor">Read BLE Thermal Sensor</h3>
+<p>The following demo show how to read data from a thermal sensor, pack the data in JSON format and  send to the GoodCloud.</p>
+<pre><code class="shell">#!/usr/bin/sh
+. /usr/share/libubox/jshn.sh
+while true
+do
+sleep 5
+bletool on
+bletool discovery_type 1 1
+bletool discovery 1 1 0 | awk '/0d09536d6172745f426561636f6e02/{print $0; exit}' &gt;
+/tmp/blesniffer.log
+bletool end_procedure
+adv_data=`awk '{print $1}' /tmp/blesniffer.log`
+date=`date +&quot;%Y%m%d%H%M%S&quot;`
+json_init
+json_add_string &quot;api&quot; &quot;/user/data&quot;
+json_add_object &quot;data&quot;
+json_add_string &quot;date&quot; &quot;$date&quot;
+json_add_string &quot;advertising data&quot; &quot;$adv_data&quot;
+json_close_object
+json_close_object
+data=`json_dump`
+ubus call mqtt pub &quot;$data&quot;
+rm /tmp/blesniffer.log
+done
+</code></pre>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../captive_portal/" title="Set a Captive Portal" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Set a Captive Portal
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../qdslrdashboard/" title="qDslrDashboard" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                qDslrDashboard
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 GL Technologies & Microuter Technologies
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://www.gl-inet.com" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/gl-inet/" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://www.facebook.com/gl.inet.wifi/" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://twitter.com/GLiNetWiFi" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/gl-inet.com/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+      <a href="https://www.youtube.com/channel/UCBfNEzurltlIeFFCbUgHQyg?view_as=subscriber" class="md-footer-social__link fa fa-youtube"></a>
+    
+      <a href="https://www.pinterest.com/glinetWiFi/" class="md-footer-social__link fa fa-pinterest"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.0cf9b500.js"></script>
+      
+      <script>app.initialize({version:"0.17.4",url:{base:"../.."}})</script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-108265653-1","glinet.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>
