@@ -42,6 +42,10 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css">
+    
     
       
 
@@ -4384,9 +4388,19 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-                
-                
-                <h1 id="gl-ar150-series">GL-AR150 Series</h1>
+
+  <!-- Edit button -->
+  
+
+  <!--
+    Hack: check whether the content contains a h1 headline. If it
+    doesn't, the page title (or respectively site name) is used
+    as the main headline.
+  -->
+  
+
+  <!-- Markdown content -->
+  <h1 id="gl-ar150-series">GL-AR150 Series</h1>
 <p>AR150 Series includes AR150, AR150-Ext, AR150-PoE and AR150-Ext-PoE.</p>
 <h2 id="hardware-specification">Hardware Specification</h2>
 <table>
@@ -4464,10 +4478,24 @@
 </tbody>
 </table>
 <h2 id="pcb-pinout">PCB Pinout</h2>
-<p><img alt="gl-ar150 pcb pinout" src="https://static.gl-inet.com/docs/en/2.x/hardware/ar150/src/AR150-V4.4-PINOUT.jpg" /></p>
+<div class="gl-lightbox" itemscope itemtype="http://schema.org/ImageGallery">
+  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <a href="https://static.gl-inet.com/docs/en/2.x/hardware/ar150/src/AR150-V4.4-PINOUT.jpg" itemprop="contentUrl" data-size="960x720">
+      <img src="https://static.gl-inet.com/docs/en/2.x/hardware/ar150/src/AR150-V4.4-PINOUT.jpg" itemprop="thumbnail" alt="gl-ar150 pcb pinout" loading="lazy" />
+    </a>
+  </figure>
+</div>
+
 <h2 id="rtc-setting">RTC Setting</h2>
 <p>You can use a RTC (Real-time control) module in GL-AR150 mini router.</p>
-<p><img alt="gl-ar150 use RTC module" src="https://static.gl-inet.com/docs/en/2.x/hardware/ar150/src/rtc_1200x1200.jpg" /></p>
+<div class="gl-lightbox" itemscope itemtype="http://schema.org/ImageGallery">
+  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <a href="https://static.gl-inet.com/docs/en/2.x/hardware/ar150/src/rtc_1200x1200.jpg" itemprop="contentUrl" data-size="786x478">
+      <img src="https://static.gl-inet.com/docs/en/2.x/hardware/ar150/src/rtc_1200x1200.jpg" itemprop="thumbnail" alt="gl-ar150 use RTC module" loading="lazy" />
+    </a>
+  </figure>
+</div>
+
 <h3 id="install-kernel-modules">Install kernel modules</h3>
 <p>If you use our stock firmware, you can just install using <code>opkg</code></p>
 <pre><code>opkg update
@@ -4504,8 +4532,64 @@ echo sd2068 0x32 &gt; /sys/bus/i2c/devices/i2c-0/new_device
 <p>The following PoE injector is widely availabe in the market and it is very affordable. You can put you Ineternet cable in the <code>Data In</code> port then connect the <code>Data &amp; Power Out</code> port to AR150-PoE's <code>WAN</code> port.</p>
 <p><strong><em>For PoE Version Only</em></strong></p>
 <p><img alt="PoE switch and Ethernet cable" src="https://static.gl-inet.com/docs/en/2.x/hardware/ar150/src/white_1000x1000_PoE_2.jpg" /> </p>
-                
-              
+
+  <!-- Last update of source file -->
+  
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+        It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <!--  Controls are self-explanatory. Order can be changed. -->
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+            <!-- element will get class pswp__preloader--active when preloader is running -->
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div> 
+          </div>
+
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          </button>
+
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          </button>
+
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+    </div>
+</div>
+
               
                 
 
@@ -4654,6 +4738,12 @@ echo sd2068 0x32 &gt; /sys/bus/i2c/devices/i2c-0/new_device
     
     
       <script src="../../assets/javascripts/bundle.2b46852b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>

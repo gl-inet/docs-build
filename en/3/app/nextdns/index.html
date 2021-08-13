@@ -42,6 +42,10 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css">
+    
     
       
 
@@ -4316,9 +4320,19 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-                
-                
-                <h1 id="nextdns">NextDNS</h1>
+
+  <!-- Edit button -->
+  
+
+  <!--
+    Hack: check whether the content contains a h1 headline. If it
+    doesn't, the page title (or respectively site name) is used
+    as the main headline.
+  -->
+  
+
+  <!-- Markdown content -->
+  <h1 id="nextdns">NextDNS</h1>
 <p>If you are using GL.iNet routers, you will find that DNS over TLS from Cloudflare has been added in the Admin Pannel(GL WebUI, not Luci). 
 Some of our fans also want to use NextDNS on GL.iNet routers. As we are planning to add NextDNS in our firmware from version 3.200. This is the instruction on how to setup a NextDNS on GL.iNet routers under version 3.200.</p>
 <p><img alt="WebUINextDNS" src="https://static.gl-inet.com/docs/en/3/app/nextdns/ndwebui.jpg" /> </p>
@@ -4356,8 +4370,64 @@ After that, go to sign up to register a new private account on NextDNS.
 </ol>
 <p>Okay, now you can login your NextDNS account to make all settings and check real-time Analytics data.</p>
 <p><img alt="analytics" src="https://static.gl-inet.com/docs/en/3/app/nextdns/ndanalytics.jpg" /></p>
-                
-              
+
+  <!-- Last update of source file -->
+  
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+        It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <!--  Controls are self-explanatory. Order can be changed. -->
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+            <!-- element will get class pswp__preloader--active when preloader is running -->
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div> 
+          </div>
+
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          </button>
+
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          </button>
+
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+    </div>
+</div>
+
               
                 
 
@@ -4506,6 +4576,12 @@ After that, go to sign up to register a new private account on NextDNS.
     
     
       <script src="../../assets/javascripts/bundle.2b46852b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>

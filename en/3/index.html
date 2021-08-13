@@ -42,6 +42,10 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css">
+    
     
       
 
@@ -4257,9 +4261,19 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-                
-                
-                <h1 id="welcome">Welcome!</h1>
+
+  <!-- Edit button -->
+  
+
+  <!--
+    Hack: check whether the content contains a h1 headline. If it
+    doesn't, the page title (or respectively site name) is used
+    as the main headline.
+  -->
+  
+
+  <!-- Markdown content -->
+  <h1 id="welcome">Welcome!</h1>
 <p>GL.iNet is devoted to make hardware working easily with open-sourced software. This docs site is intended to advise newcomers to how open sourced software works on our hardware. As the product evolves, this docs site will be updated from time to time.</p>
 <style>
     .row1, .row2 {
@@ -4425,8 +4439,64 @@
 <p>GL-MT300A Mini Smart Router (discontinued): <a href="https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt300a" target="_blank">https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt300a</a></p>
 <p>GL-MT300N Mini Smart Router (discontinued): <a href="https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt300n_v2" target="_blank">https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt300n_v2</a></p>
 <p>GL.iNet 6416 Mini Smart Router (discontinued): <a href="https://openwrt.org/toh/hwdata/gl.inet/gl.inet_6416a" target="_blank">https://openwrt.org/toh/hwdata/gl.inet/gl.inet_6416a</a></p>
-                
-              
+
+  <!-- Last update of source file -->
+  
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+        It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <!--  Controls are self-explanatory. Order can be changed. -->
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+            <!-- element will get class pswp__preloader--active when preloader is running -->
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div> 
+          </div>
+
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          </button>
+
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          </button>
+
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+    </div>
+</div>
+
               
                 
 
@@ -4560,6 +4630,12 @@
     
     
       <script src="assets/javascripts/bundle.2b46852b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
+      
+        <script src="javascripts/extra.js"></script>
       
     
   </body>

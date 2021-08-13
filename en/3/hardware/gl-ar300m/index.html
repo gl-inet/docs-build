@@ -42,6 +42,10 @@
     
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css">
+    
     
       
 
@@ -4518,9 +4522,19 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-                
-                
-                <h1 id="gl-ar300m-series">GL-AR300M Series</h1>
+
+  <!-- Edit button -->
+  
+
+  <!--
+    Hack: check whether the content contains a h1 headline. If it
+    doesn't, the page title (or respectively site name) is used
+    as the main headline.
+  -->
+  
+
+  <!-- Markdown content -->
+  <h1 id="gl-ar300m-series">GL-AR300M Series</h1>
 <p>Best Mini Router Ever</p>
 <p>AR300M is the our best mini router. It is small and powerful.</p>
 <p>It has several sub-models:</p>
@@ -4667,7 +4681,14 @@
 </tbody>
 </table>
 <h2 id="pcb-pinout">PCB Pinout</h2>
-<p><img alt="gl-ar300m pcb pinout" src="https://static.gl-inet.com/docs/en/2.x/hardware/ar300m/src/GL-AR300M-PINOUT-1.jpg" /></p>
+<div class="gl-lightbox" itemscope itemtype="http://schema.org/ImageGallery">
+  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <a href="https://static.gl-inet.com/docs/en/2.x/hardware/ar300m/src/GL-AR300M-PINOUT-1.jpg" itemprop="contentUrl" data-size="2339x1654">
+      <img src="https://static.gl-inet.com/docs/en/2.x/hardware/ar300m/src/GL-AR300M-PINOUT-1.jpg" itemprop="thumbnail" alt="gl-ar300m pcb pinout" loading="lazy" />
+    </a>
+  </figure>
+</div>
+
 <p><strong>Note: I2C is not working in some early version of the router.</strong></p>
 <p>By using 128MB Nand flash, space is not a problem and the writing speed is improved greatly. You can compile a firmware with tons of features and writing data is almost instant.</p>
 <p>By adding PCIe interface, a 5G 802.11a/ac addon module can be connected and you can enjoy the wifi speed on a mini router.</p>
@@ -4749,8 +4770,64 @@ $ reboot
 <p>If you want to use uboot console, you need to open the case and solder the serial connectors.</p>
 <p>Then you need to set up a tftp server.</p>
 <p>in uboot console, the command to flash nor flash is <code>run lf</code> to flash nand firmware is <code>run nlf</code></p>
-                
-              
+
+  <!-- Last update of source file -->
+  
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+        It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <!--  Controls are self-explanatory. Order can be changed. -->
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+            <!-- element will get class pswp__preloader--active when preloader is running -->
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div> 
+          </div>
+
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          </button>
+
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          </button>
+
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+    </div>
+</div>
+
               
                 
 
@@ -4899,6 +4976,12 @@ $ reboot
     
     
       <script src="../../assets/javascripts/bundle.2b46852b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>
