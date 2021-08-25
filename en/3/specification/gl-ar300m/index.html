@@ -4831,7 +4831,7 @@ $ make
 <p><strong>Note</strong></p>
 <p>There is two file for NAND firmware. The <code>xxx-ubi.img</code> is used for first time writing to the NAND flash. If you are using uboot to upgrade the firmware, please use this one. The <code>xxx-sysupgrade.tar</code> is used for upgrading from openwrt. So if you use our stock firmware or already using an openwrt firmware, choose this one.</p>
 <h2 id="using-firmware">Using Firmware</h2>
-<p>The firmware has exactly the same UI as our other mini routers. To determine you are using NOR flash or NAND flash, please check the available space from the UI.</p>
+<p>The firmware has exactly the same UI as our other mini routers. To determine you are using NOR flash or NAND flash, please check the available space from the <code>APPLICATIONS -&gt; Plug-ins</code> page.</p>
 <h3 id="control-which-firmware-you-are-booting-into">Control which firmware you are booting into</h3>
 <p>There are two methods to control which firmware you can boot.</p>
 <h4 id="method-1-set-boot-count">Method 1: set boot count</h4>
@@ -4861,16 +4861,16 @@ $ reboot
 <h2 id="debrick">Debrick</h2>
 <p>If you brick your router and it cannot boot, you can try to save it using uboot.</p>
 <h3 id="using-uboot-web-ui">Using uboot web UI</h3>
-<p>Follow <a href="/troubleshooting/reset.md">this guide</a> for a general instruction to get access of uboot web UI.</p>
-<p>Here is a video guide for entering AR300M uboot failsafe. </p>
+<p>Follow <a href="https://docs.gl-inet.com/en/3/troubleshooting/debrick/">this guide</a> for a general instruction to get access of uboot web UI.</p>
+<p>Here is a video guide for entering AR300M uboot failsafe.</p>
 <iframe width="480" height="270" src="https://www.youtube.com/embed/-x0RllKkzIc" frameborder="0" allowfullscreen></iframe>
 
 <p>In some early version of AR300M, the uboot boot very slowly. So be patient when you press and hold the reset button. The LEDs will start to flash around 5 seconds.</p>
-<p>There is a bug in AR300M uboot and in some computers the connection will always reset when you upload firmware. Check <a href="https://forum.gl-inet.com/t/bricked-ar300m-how-to-restore/">this post</a> to find the discussion. You can either try chaning the MTU or just try another computer.</p>
+<p>There is a bug in AR300M uboot and in some computers the connection will always reset when you upload firmware. Check <a href="https://forum.gl-inet.com/t/bricked-ar300m-how-to-restore/1659" target="&quot;_blank">this post</a> to find the discussion. You can either try chaning the MTU or just try another computer.</p>
 <p><strong>Note</strong>: If you have an older version of uboot, the webUI will only be able to flash NAND flash. This is fixed in newer versions.</p>
 <p><strong>Note</strong>: When flash NAND firmware, only use the firmware with <code>.img</code> in the name, not the one with <code>.rar</code> in the name.</p>
-<p>The following figure is the web ui of the <code>new</code> uboot.</p>
-<p><img alt="AR300M uboot webui" src="https://static.gl-inet.com/docs/en/2.x/hardware/ar300m/src/uboot-ar300m.png" /></p>
+<p>The following figure is the web UI of the <code>new</code> uboot.</p>
+<p><img alt="AR300M uboot web ui" src="https://static.gl-inet.com/docs/en/3/specification/gl-ar300m/gl-ar300m_uboot_2021.jpg" /></p>
 <h3 id="using-uboot-console">Using uboot console</h3>
 <p>If you want to use uboot console, you need to open the case and solder the serial connectors.</p>
 <p>Then you need to set up a tftp server.</p>
