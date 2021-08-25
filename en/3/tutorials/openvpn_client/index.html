@@ -3413,8 +3413,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../repeater/" class="md-nav__link">
+        Repeater
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firmware_upgrade/" class="md-nav__link">
+        Firmware Upgrade
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ssh/" class="md-nav__link">
-        SSH to the router
+        SSH to the Router
       </a>
     </li>
   
@@ -3426,7 +3450,7 @@
   
     <li class="md-nav__item">
       <a href="../scp/" class="md-nav__link">
-        Copy files to router
+        Copy files to Router
       </a>
     </li>
   
@@ -3470,11 +3494,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#openvpn-client" class="md-nav__link">
-    OpenVPN Client
+  <a href="#setup-openvpn-client" class="md-nav__link">
+    Setup OpenVPN Client
   </a>
   
-    <nav class="md-nav" aria-label="OpenVPN Client">
+    <nav class="md-nav" aria-label="Setup OpenVPN Client">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3513,6 +3537,13 @@
         <li class="md-nav__item">
   <a href="#get-your-configuration-file" class="md-nav__link">
     Get your configuration file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    Video tutorial
   </a>
   
 </li>
@@ -3651,7 +3682,7 @@
   
     <li class="md-nav__item">
       <a href="../mobile_app/" class="md-nav__link">
-        Mobile app
+        Mobile App
       </a>
     </li>
   
@@ -4397,11 +4428,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#openvpn-client" class="md-nav__link">
-    OpenVPN Client
+  <a href="#setup-openvpn-client" class="md-nav__link">
+    Setup OpenVPN Client
   </a>
   
-    <nav class="md-nav" aria-label="OpenVPN Client">
+    <nav class="md-nav" aria-label="Setup OpenVPN Client">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4444,6 +4475,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    Video tutorial
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4470,14 +4508,16 @@
   <h1 id="openvpn">OpenVPN</h1>
 <p>OpenVPN is an open-source VPN protocol that makes use of virtual private network (VPN) techniques to establish safe site-to-site or point-to-point connections. </p>
 <p>GL.iNet routers have pre-installed OpenVPN Client and Server.</p>
-<h2 id="openvpn-client">OpenVPN Client</h2>
-<p>OpenVPN client requires OpenVPN configuration file (.ovpn) to create the OpenVPN connection. If you have your own VPN service provider but you don't know how to get the configuration file, please refer to <a href="./#get-your-configuration-file">Get your configuration file</a>.</p>
+<h2 id="setup-openvpn-client">Setup OpenVPN Client</h2>
+<p>There is a video tutorial as ExpressVPN as example, please check out <a href="#video-tutorial">here</a>.</p>
+<p>OpenVPN client requires OpenVPN configuration file (.ovpn) to create the OpenVPN connection. If you have your own VPN service provider but you don't know how to get the configuration file, please refer to <a href="#get-your-configuration-file">Get your configuration file</a>.</p>
 <p>Click <code>+ Add a New VPN Configuration</code> to upload the configuration file.</p>
 <p><img alt="client" src="https://static.gl-inet.com/docs/en/3/app/openvpn/src/client.jpg" /></p>
 <h3 id="upload-your-openvpn-configuration-file">Upload your OpenVPN configuration file</h3>
 <p>Simply drag and drop your file to the pop up windows. It can be a single .ovpn file or a zip/tar.gz file which contains multiple .ovpn files.</p>
 <p>Be careful that some .ovpn files use separated ca, cert, crl files. These files must be zipped together with the .ovpn file before upload.</p>
 <p><img alt="Upload" src="https://static.gl-inet.com/docs/en/3/app/openvpn/src/upload.jpg" /></p>
+<p>You may encouter some problems, like not enough space, invalid file, authorization failed, all other VPN services must be stopped first, please check out <a href="#video-tutorial">here</a>.</p>
 <h3 id="enter-description-username-and-password">Enter Description, Username and Password</h3>
 <p>Enter a description for your OpenVPN configuration file and then click <code>Submit</code> to finish the upload process. In some cases, it will ask you to enter your username and password.</p>
 <p><img alt="add" src="https://static.gl-inet.com/docs/en/3/app/openvpn/src/add.jpg" /></p>
@@ -4486,6 +4526,7 @@
 <p><img alt="connect" src="https://static.gl-inet.com/docs/en/3/app/openvpn/src/connect.jpg" /></p>
 <p>Once connected, you should find your IP address, data received/sent.</p>
 <p><img alt="connected" src="https://static.gl-inet.com/docs/en/3/app/openvpn/src/connected.jpg" /></p>
+<p>Note that you can't running VPN Client and Server at the same time, and also can't running OpenVPN Client and WireGuard Client at the same time.</p>
 <h3 id="manage-configuration-files">Manage configuration files</h3>
 <p>Click <code>Management</code> to check the list of configuration files. You can modify the <strong>Description</strong>, <strong>User name</strong> or <strong>Password</strong> of each configuration file. You can also add, delete a configuration file or even purge all your uploaded configuration files.</p>
 <p>If your configuration file is a zip/tar.gz file which includes multiple ovpn files, you can choose an individual .ovpn file that you would like to connect in <strong>Server</strong>.</p>
@@ -5146,6 +5187,13 @@
     </p>
 </details>
 
+<h2 id="video-tutorial">Video tutorial</h2>
+<p>These video tutorial as ExpressVPN as example to setup OpenVPN Client.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oSTA9-bBUIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>4 Common Problems and Solution When Configuring OpenVPN</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sAb6lyH4pGc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
   <!-- Last update of source file -->
   
 
@@ -5225,7 +5273,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../scp/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Copy files to router" rel="prev">
+        <a href="../scp/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Copy files to Router" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -5234,7 +5282,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Copy files to router
+              Copy files to Router
             </div>
           </div>
         </a>
