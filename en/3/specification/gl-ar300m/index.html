@@ -581,14 +581,14 @@
         
           <li class="md-nav__item">
   <a href="#building-the-generic-firmware-for-nor-flash" class="md-nav__link">
-    Building the generic firmware for nor flash
+    Building the generic firmware for NOR flash
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#build-the-nand-firmware-for-nand-flash" class="md-nav__link">
-    Build the nand firmware for nand flash
+    Build the NAND firmware for NAND flash
   </a>
   
 </li>
@@ -4518,14 +4518,14 @@
         
           <li class="md-nav__item">
   <a href="#building-the-generic-firmware-for-nor-flash" class="md-nav__link">
-    Building the generic firmware for nor flash
+    Building the generic firmware for NOR flash
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#build-the-nand-firmware-for-nand-flash" class="md-nav__link">
-    Build the nand firmware for nand flash
+    Build the NAND firmware for NAND flash
   </a>
   
 </li>
@@ -4633,8 +4633,8 @@
 <thead>
 <tr>
 <th>Sub-model</th>
-<th>Nor flash</th>
-<th>Nand flash</th>
+<th>NOR flash</th>
+<th>NAND flash</th>
 <th>Antenna</th>
 <th>5G wifi</th>
 <th>USB power control</th>
@@ -4711,7 +4711,7 @@
 </tr>
 <tr>
 <td align="right">Storage</td>
-<td align="left">16MB Nor, 128 MB Nand (Optional)</td>
+<td align="left">16MB NOR, 128 MB NAND (Optional)</td>
 </tr>
 <tr>
 <td align="right">Interfaces</td>
@@ -4781,17 +4781,17 @@
 </div>
 
 <p><strong>Note: I2C is not working in some early version of the router.</strong></p>
-<p>By using 128MB Nand flash, space is not a problem and the writing speed is improved greatly. You can compile a firmware with tons of features and writing data is almost instant.</p>
+<p>By using 128MB NAND flash, space is not a problem and the writing speed is improved greatly. You can compile a firmware with tons of features and writing data is almost instant.</p>
 <p>By adding PCIe interface, a 5G 802.11a/ac addon module can be connected and you can enjoy the wifi speed on a mini router.</p>
 <h2 id="performance">Performance</h2>
-<p>By adding a fast Nand flash, you can feel how the performance is improved compared to a Nor flash router.</p>
-<p>The performance comparision between AR300M (nand) with AR150 is below:</p>
+<p>By adding a fast NAND flash, you can feel how the performance is improved compared to a NOR flash router.</p>
+<p>The performance comparision between AR300M (NAND) with AR150 is below:</p>
 <p><img alt="performance comparison gl-ar300m vs gl-ar150" src="https://static.gl-inet.com/docs/en/2.x/hardware/ar300m/src/ar300m-performance.jpg" /></p>
-<p>It only takes 6 seconds to upload and process 250 ovpn files. When installing packages to the router, it takes no more than 20% for the time spent than using nor flash, including the time to download resource from the Internet. So everything just happends in seconds.</p>
+<p>It only takes 6 seconds to upload and process 250 ovpn files. When installing packages to the router, it takes no more than 20% for the time spent than using NOR flash, including the time to download resource from the Internet. So everything just happends in seconds.</p>
 <h2 id="building-firmware">Building Firmware</h2>
-<p>The router has two flash so we have two firmwares. One firmware is installed on the Nor flash and one is installed on the nand flash. The two firmware is independent from each other. The router will always try to boot from the nand flash. If it fails for 3 times it will boot from the Nor flash.</p>
+<p>The router has two flash so we have two firmwares. One firmware is installed on the NOR flash and one is installed on the NAND flash. The two firmware is independent from each other. The router will always try to boot from the NAND flash. If it fails for 3 times it will boot from the NOR flash.</p>
 <p>By using two firmwares, businesses can have dual boot options to ensure the system can backup, upgrade and boot without problems.</p>
-<h3 id="building-the-generic-firmware-for-nor-flash">Building the generic firmware for nor flash</h3>
+<h3 id="building-the-generic-firmware-for-nor-flash">Building the generic firmware for NOR flash</h3>
 <p>The simple instructions of building the firmware can be found here: https://github.com/gl-inet/lede-17.01
 You need to have a Linux machine. In this example we use Ubuntu.</p>
 <pre><code>$ sudo apt-get update
@@ -4805,30 +4805,30 @@ $ make menuconfig
 $ make
 
 </code></pre>
-<p>If you want to build the firmware for nor flash, choose <code>GL-AR300M</code> as the target.</p>
+<p>If you want to build the firmware for NOR flash, choose <code>GL-AR300M</code> as the target.</p>
 <p><img alt="AR300M generic" src="https://static.gl-inet.com/docs/en/2.x/hardware/ar300m/src/meunconfig-ar300m.jpg" /></p>
-<h3 id="build-the-nand-firmware-for-nand-flash">Build the nand firmware for nand flash</h3>
-<p>If you want to build the firmware for nand flash, first choose subtarget <code>Generic devices with NAND flash</code> then choose <code>GL-AR300M Nand</code> as the target.</p>
-<p><img alt="AR300M nand" src="https://static.gl-inet.com/docs/en/2.x/hardware/ar300m/src/meunconfig-ar300m-nand.jpg" /></p>
+<h3 id="build-the-nand-firmware-for-nand-flash">Build the NAND firmware for NAND flash</h3>
+<p>If you want to build the firmware for nand flash, first choose subtarget <code>Generic devices with NAND flash</code> then choose <code>GL-AR300M NAND</code> as the target.</p>
+<p><img alt="AR300M NAND" src="https://static.gl-inet.com/docs/en/2.x/hardware/ar300m/src/meunconfig-ar300m-nand.jpg" /></p>
 <p>The make process will takes around 1 hour for the first time because it needs to download a lot of data from t he Internet. After compiling finished, you will find the following firmware files in <code>bin/ar71xx/</code></p>
 <ul>
-<li><strong>openwrt-ar71xx-generic-gl-ar300m-squashfs-sysupgrade.bin</strong>, for nor flash</li>
-<li><strong>openwrt-ar71xx-nand-gl-ar300m-squashfs-sysupgrade.tar</strong>, for nand flash firmware upgrade inside of a working Openwrt firmware</li>
-<li><strong>openwrt-ar71xx-nand-gl-ar300m-ubi.img</strong>, for initial nand flash firmware build, this is used when upgrading using uboot.</li>
+<li><strong>openwrt-ar71xx-generic-gl-ar300m-squashfs-sysupgrade.bin</strong>, for NOR flash</li>
+<li><strong>openwrt-ar71xx-nand-gl-ar300m-squashfs-sysupgrade.tar</strong>, for NAND flash firmware upgrade inside of a working Openwrt firmware</li>
+<li><strong>openwrt-ar71xx-nand-gl-ar300m-ubi.img</strong>, for initial NAND flash firmware build, this is used when upgrading using uboot.</li>
 </ul>
 <p><strong>Note</strong></p>
-<p>There is two file for nand firmware. The <code>xxx-ubi.img</code> is used for first time writing to the nand flash. If you are using uboot to upgrade the firmware, please use this one. The <code>xxx-sysupgrade.tar</code> is used for upgrading from openwrt. So if you use our stock firmware or already using an openwrt firmware, choose this one.</p>
+<p>There is two file for NAND firmware. The <code>xxx-ubi.img</code> is used for first time writing to the NAND flash. If you are using uboot to upgrade the firmware, please use this one. The <code>xxx-sysupgrade.tar</code> is used for upgrading from openwrt. So if you use our stock firmware or already using an openwrt firmware, choose this one.</p>
 <h2 id="using-firmware">Using Firmware</h2>
-<p>The firmware has exactly the same UI as our other mini routers. To determine you are using nor flash or nand flash, please check the available space from the UI.</p>
+<p>The firmware has exactly the same UI as our other mini routers. To determine you are using NOR flash or NAND flash, please check the available space from the UI.</p>
 <h3 id="control-which-firmware-you-are-booting-into">Control which firmware you are booting into</h3>
 <p>There are two methods to control which firmware you can boot.</p>
 <h4 id="method-1-set-boot-count">Method 1: set boot count</h4>
-<p>The router will always try to boot into the nand firmware. But if it fails for 3 times it will try to boot into the nor firmware. If you want to boot into the nor firmware, you can tell the router that it failed to boot for 3 times already by setting the uboot env. To do so, you can use the following command in a SSH terminal.</p>
+<p>The router will always try to boot into the NAND firmware. But if it fails for 3 times it will try to boot into the NOR firmware. If you want to boot into the NOR firmware, you can tell the router that it failed to boot for 3 times already by setting the uboot env. To do so, you can use the following command in a SSH terminal.</p>
 <pre><code>$ fw_printenv
 $ fw_setenv bootcount 3
 $ reboot
 </code></pre>
-<p><strong>You need to do this each time</strong> if you want to boot into nor firmware, no matter you which firmware you are using. Otherwise after the firmware boot, it will reset <code>bootcount</code> variable and next boot will always try to boot the nand firmware.</p>
+<p><strong>You need to do this each time</strong> if you want to boot into NOR firmware, no matter you which firmware you are using. Otherwise after the firmware boot, it will reset <code>bootcount</code> variable and next boot will always try to boot the NAND firmware.</p>
 <h4 id="method-2-using-the-switch">Method 2: using the switch</h4>
 <p><strong>This is only valid in the new uboot (from Mar 2017).</strong></p>
 <p>First ssh to the router and set uboot env <code>boot_dev</code></p>
@@ -4836,9 +4836,11 @@ $ reboot
 $ fw_setenv boot_dev on
 $ reboot
 </code></pre>
-<p>Then when the router boot, the router will choose which firmware to boot using the hardware switch.
-1. Left side (near the reset button) --&gt; Nand flash
-2. Right side  --&gt; Nor flash</p>
+<p>Then when the router boot, the router will choose which firmware to boot using the hardware switch.</p>
+<ol>
+<li>Left side (near the reset button) --&gt; NAND flash</li>
+<li>Right side  --&gt; NOR flash</li>
+</ol>
 <p>To disable using the switch to choose firmware function, clear <code>boot_dev</code> variable.</p>
 <pre><code>$ fw_printenv
 $ fw_setenv boot_dev
@@ -4860,7 +4862,7 @@ $ reboot
 <h3 id="using-uboot-console">Using uboot console</h3>
 <p>If you want to use uboot console, you need to open the case and solder the serial connectors.</p>
 <p>Then you need to set up a tftp server.</p>
-<p>in uboot console, the command to flash nor flash is <code>run lf</code> to flash nand firmware is <code>run nlf</code></p>
+<p>in uboot console, the command to flash NOR flash is <code>run lf</code> to flash NAND firmware is <code>run nlf</code></p>
 
   <!-- Last update of source file -->
   
