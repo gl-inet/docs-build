@@ -1,553 +1,1477 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for GL.iNet Productions">
+      
+      
+      
+      
+      <link rel="icon" href="../../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+    
+    
+      
+        <title>Qi - Using Serial - GL.iNet Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1118c9be.min.css">
+      
         
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ba0d045b.min.css">
         
+      
+    
+    
+    
+      
         
-        <link rel="shortcut icon" href="../../../../../../favicon.png">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+
+  
+
+
+  
+
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-108265653-5","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
         
-
-	<title>Qi - Using Serial - GL.iNet Docs</title>
-
-        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../../css/highlight.css">
-        <link href="../../../css/extra.css" rel="stylesheet">
-
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-
-        
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-108265653-5', 'docs.glinet.com');
-            ga('send', 'pageview');
-        </script>
-        
-    </head>
-
-    <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            
-
-            <!-- Main title -->
-            <a class="navbar-brand" href="https://www.gl-inet.com" style="padding: 10px"><img src="../../../img/logo.png" style="height:30px"></a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../../..">Home</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../service/">Services</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../../../hardware/ar150/">GL-AR150 Series</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../hardware/ar300m/">GL-AR300M Series</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../hardware/mt300a/">GL-MT300A</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../hardware/mt300n/">GL-MT300N</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../hardware/mt300n-v2/">GL-MT300N-V2</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../hardware/ar750/">GL-AR750 Series</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../hardware/mifi/">GL-MiFi Series</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../hardware/usb150/">GL-USB150 (Microuter)</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../hardware/b1300/">GL-B1300</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../hardware/6416/">GL.iNet6416</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../hardware/ar300/">GL-AR300</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setup <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../../../setup/first-time_setup/">First-time Setup</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../setup/internet_setting/">Internet Settings</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../setup/mac_clone/">MAC Clone</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../setup/dns/">DNS Setting</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../setup/repeater_manager/">Repeater Manager</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../setup/lan_ip/">LAN IP</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../setup/wifi_setting/">Wi-Fi Settings (AP)</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../setup/firmware/">Firmware Upgrading</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../setup/modem_manager/">Momdem Manager</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../setup/rtc_setting/">RTC Setting</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../../../dev/serial/">UART Serial</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../dev/uboot/">Advanced Uboot</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../">Domino Kit</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Application <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../../../app/ssh/">SSH to the router</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../app/openvpn/">OpenVPN Client</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../app/tor/">Tor</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../app/tether/">EasyTether</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../app/ss/">Shadowsocks</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../app/wireguard/">WireGuard</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Video <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../../../video/product_intro/">Product Intro</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../video/tutor/">Tutorial</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../video/review/">Customer Review</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Troubleshooting <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../../../troubleshooting/led/">LED Indicator</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../troubleshooting/reset/">Repair or Reset</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../troubleshooting/debrick/">Debrick via Uboot</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../../troubleshooting/stop_supporting/">Stop Supporting</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Domino Kit <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../../">Getting Started</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../hardware/core/">Domore Core</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/">Domino Pi</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/pi/">Domino Pi Baseboard</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/single_eth/">Domino Pi - Single Eth board</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/dual_eth/">Domino Pi - Due Eth board</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/single_usb/">Domino Pi - Signle USB board</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/usb_combo/">Domino Pi - 3xUSB+MicroSD combo</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/i2s/">Domino Pi - I2S board</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/spi_jtag/">Domino Pi - SPI/JTAG</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/led/">Domino Pi - LED</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../mini/">Domino Qi Mini</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../base/">Domino Qi baseboard</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/using/">Pi - Using the firmware</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/compile/">Pi - Compile firmware</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/flashing/">Pi - Flashing and debricking</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/audio/">Pi - Playing Music</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/serial/">Pi - Working with Serial</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../../pi/spi/">Pi - Debricking using SPI/JTAG board</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../">Qi - Getting Started</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../arduino-yun/">Qi - Using Arduino or Linino Firmware</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../nodejs/">Qi - Using NodeJS and LininoIO</a>
-</li>
-
-                        
-                            
-<li class="active">
-    <a href="./">Qi - Using Serial</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                </ul>
-            
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                <li>
-                    <a href="https://docs.gl-inet.com/en/3/"><i class="fa fa-book"></i> Docs 3</a>
-                </li>
-                
-                
-            </ul>
-        </div>
+        <a href="#domino-qi-serial" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
-</div>
-
-        <div class="container">
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
             
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    
-        <li class="main active"><a href="#domino-qi-serial">Domino Qi Serial</a></li>
-        
-            <li><a href="#connection">Connection</a></li>
-        
-            <li><a href="#flash-avr">Flash AVR</a></li>
-        
-            <li><a href="#linux-ubuntu">Linux (Ubuntu)</a></li>
-        
-            <li><a href="#windows">Windows</a></li>
-        
-    
-    </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+  <!-- Add your announcement here, including arbitrary HTML -->
+  <div class="md-announce-text">You're not viewing the latest version. <a href="https://docs.gl-inet.com/latest/">Click here to go to latest</a></div>
 
-<h1 id="domino-qi-serial">Domino Qi Serial</h1>
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="GL.iNet Docs" class="md-header__button md-logo" aria-label="GL.iNet Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GL.iNet Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Qi - Using Serial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/gl-inet/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gl-inet/docs2.x
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../hardware/ar150/" class="md-tabs__link">
+        Hardware
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../setup/first-time_setup/" class="md-tabs__link">
+        Setup
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../dev/serial/" class="md-tabs__link">
+        Development
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../app/ssh/" class="md-tabs__link">
+        Application
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../video/product_intro/" class="md-tabs__link">
+        Video
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../troubleshooting/led/" class="md-tabs__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Domino Kit
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GL.iNet Docs" class="md-nav__button md-logo" aria-label="GL.iNet Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    GL.iNet Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/gl-inet/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gl-inet/docs2.x
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Home
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/" class="md-nav__link">
+        Services
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Hardware
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Hardware" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Hardware
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/ar150/" class="md-nav__link">
+        GL-AR150 Series
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/ar300m/" class="md-nav__link">
+        GL-AR300M Series
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/mt300a/" class="md-nav__link">
+        GL-MT300A
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/mt300n/" class="md-nav__link">
+        GL-MT300N
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/mt300n-v2/" class="md-nav__link">
+        GL-MT300N-V2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/ar750/" class="md-nav__link">
+        GL-AR750 Series
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/mifi/" class="md-nav__link">
+        GL-MiFi Series
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/usb150/" class="md-nav__link">
+        GL-USB150 (Microuter)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/b1300/" class="md-nav__link">
+        GL-B1300
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/6416/" class="md-nav__link">
+        GL.iNet6416
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/ar300/" class="md-nav__link">
+        GL-AR300
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Setup
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Setup" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/first-time_setup/" class="md-nav__link">
+        First-time Setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/internet_setting/" class="md-nav__link">
+        Internet Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/mac_clone/" class="md-nav__link">
+        MAC Clone
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/dns/" class="md-nav__link">
+        DNS Setting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/repeater_manager/" class="md-nav__link">
+        Repeater Manager
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/lan_ip/" class="md-nav__link">
+        LAN IP
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/wifi_setting/" class="md-nav__link">
+        Wi-Fi Settings (AP)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/firmware/" class="md-nav__link">
+        Firmware Upgrading
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/modem_manager/" class="md-nav__link">
+        Momdem Manager
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/rtc_setting/" class="md-nav__link">
+        RTC Setting
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dev/serial/" class="md-nav__link">
+        UART Serial
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dev/uboot/" class="md-nav__link">
+        Advanced Uboot
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Domino Kit
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Application
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Application" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Application
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app/ssh/" class="md-nav__link">
+        SSH to the router
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app/openvpn/" class="md-nav__link">
+        OpenVPN Client
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app/tor/" class="md-nav__link">
+        Tor
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app/tether/" class="md-nav__link">
+        EasyTether
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app/ss/" class="md-nav__link">
+        Shadowsocks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app/wireguard/" class="md-nav__link">
+        WireGuard
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Video
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Video" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Video
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../video/product_intro/" class="md-nav__link">
+        Product Intro
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../video/tutor/" class="md-nav__link">
+        Tutorial
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../video/review/" class="md-nav__link">
+        Customer Review
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Troubleshooting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Troubleshooting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshooting/led/" class="md-nav__link">
+        LED Indicator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshooting/reset/" class="md-nav__link">
+        Repair or Reset
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshooting/debrick/" class="md-nav__link">
+        Debrick via Uboot
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshooting/stop_supporting/" class="md-nav__link">
+        Stop Supporting
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        Domino Kit
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Domino Kit" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Domino Kit
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/core/" class="md-nav__link">
+        Domore Core
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/" class="md-nav__link">
+        Domino Pi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/pi/" class="md-nav__link">
+        Domino Pi Baseboard
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/single_eth/" class="md-nav__link">
+        Domino Pi - Single Eth board
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/dual_eth/" class="md-nav__link">
+        Domino Pi - Due Eth board
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/single_usb/" class="md-nav__link">
+        Domino Pi - Signle USB board
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/usb_combo/" class="md-nav__link">
+        Domino Pi - 3xUSB+MicroSD combo
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/i2s/" class="md-nav__link">
+        Domino Pi - I2S board
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/spi_jtag/" class="md-nav__link">
+        Domino Pi - SPI/JTAG
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/led/" class="md-nav__link">
+        Domino Pi - LED
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mini/" class="md-nav__link">
+        Domino Qi Mini
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base/" class="md-nav__link">
+        Domino Qi baseboard
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/using/" class="md-nav__link">
+        Pi - Using the firmware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/compile/" class="md-nav__link">
+        Pi - Compile firmware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/flashing/" class="md-nav__link">
+        Pi - Flashing and debricking
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/audio/" class="md-nav__link">
+        Pi - Playing Music
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/serial/" class="md-nav__link">
+        Pi - Working with Serial
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pi/spi/" class="md-nav__link">
+        Pi - Debricking using SPI/JTAG board
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Qi - Getting Started
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arduino-yun/" class="md-nav__link">
+        Qi - Using Arduino or Linino Firmware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodejs/" class="md-nav__link">
+        Qi - Using NodeJS and LininoIO
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Qi - Using Serial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Qi - Using Serial
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connection" class="md-nav__link">
+    Connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flash-avr" class="md-nav__link">
+    Flash AVR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-ubuntu" class="md-nav__link">
+    Linux (Ubuntu)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connection" class="md-nav__link">
+    Connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flash-avr" class="md-nav__link">
+    Flash AVR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-ubuntu" class="md-nav__link">
+    Linux (Ubuntu)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="domino-qi-serial">Domino Qi Serial</h1>
 <p>As the UART of OpenWrt is connected to AVR, you have to use the serial console via AVR.</p>
 <h2 id="connection">Connection</h2>
 <p>Connect Domino Qi Mini to your computer. Don't use the MicroUSB connector in the Qi baseboard (There are footprint, but we don't solder it by default).</p>
@@ -555,73 +1479,84 @@
 <p>When you got your Domino Qi for the first time, it may already have flashed the serial terminal to AVR. If not, do it now.</p>
 <pre><code>run-avrdude /etc/linino/YunSerialTerminal.hex
 </code></pre>
-
 <p>The instructions of how to use this is documented here: https://www.arduino.cc/en/Tutorial/YunSerialTerminal</p>
 <h2 id="linux-ubuntu">Linux (Ubuntu)</h2>
 <p>If you use Linux hosts, you may likely have the devices identified as <code>/dev/ttyACM0</code>, connect to it using kermit.  </p>
 <h2 id="windows">Windows</h2>
 <p>If you are using Windows system, you may have device identified as <code>Arduino Yun</code>, find its port number and connect it to using <code>putty</code>.</p>
-<div id="disqus_thread"></div>
-<script>
+                
+              
+              
+                
 
-/**
- *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
- *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
-/*
-var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = '//glinet.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
-            
+
+  <h2 id="__comments">Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>var disqus_config=function(){this.page.url="None",this.page.identifier="None"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//glinet.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+
+              
+            </article>
+          </div>
         </div>
-
-        <footer class="col-md-12">
-            <hr>
-            
-                <p><a href='https://www.gl-inet.com/'> GL Technologies</a> 2019</p>
-            
-        </footer>
-
-        <script src="../../../js/jquery-1.10.2.min.js"></script>
-        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../../../js/highlight.pack.js"></script>
-        <script>var base_url = '../../..';</script>
-        <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
-        <script src="../../../js/base.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>
-                            From here you can search these documents. Enter
-                            your search terms below.
-                        </p>
-                        <form role="form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                            </div>
-                        </form>
-                        <div id="mkdocs-search-results"></div>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../nodejs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Qi - Using NodeJS and LininoIO" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Qi - Using NodeJS and LininoIO
             </div>
-        </div>
-
-    </body>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 GL Technologies & Microuter Technologies
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.2b46852b.min.js"></script>
+      
+    
+  </body>
 </html>
