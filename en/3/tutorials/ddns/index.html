@@ -4483,47 +4483,47 @@
 <p>At the left side, UPGRADE -&gt; Local Upgrade, select the firmware file you have downloaded, you can turn off "Keep Settings" for a clean install and more stable, click "Install" button. It takes several minutes to install.</p>
 <h2 id="1-install-gl-cloud-ui-plug">1) Install gl-cloud-ui plug</h2>
 <p>(If your firmware version is equal or greater than v3.021, please jump to <a href="#2-enable-ddns">Step 2</a>)</p>
-<p><img alt="install-gl-cloud-ui" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/install-gl-cloud-ui.png" /></p>
+<p><img alt="install-gl-cloud-ui" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/install-gl-cloud-ui.png" /></p>
 <p>Access to router Admin Panel (default is <a href="http://192.168.8.1" target="_blank">http://192.168.8.1</a>), at the left sidebar, APPLICATIONS -&gt; Plug-ins,
 click "Update" button to updage Plug-ins, then input "gl-cloud-ui" and click "Install" button. After installation, press "F5" to refresh Admin Panel, a new item "Remote Access" will appear inside APPLICATIONS.</p>
 <h2 id="2-enable-ddns">2) Enable DDNS</h2>
-<p><img alt="enable-ddns" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/enable-ddns.png" /></p>
+<p><img alt="enable-ddns" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/enable-ddns.png" /></p>
 <p>At the left sidebar, APPLICATIONS -&gt; Remote Access, toggle "Enabled DDNS", agree Terms of Services &amp; Privacy Policy, click "Apply" button.
 Generally it take several minutes to take effect.</p>
 <p>Move mouse to hover the icon besides "Enabled DDNS", it will display the DDNS url of your device.</p>
-<p><img alt="ddns-url" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/ddns-url.png" /></p>
+<p><img alt="ddns-url" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/ddns-url.png" /></p>
 <p>The DDNS domain printed on the back label of router has changed. If your DDNS url is <code>xxxxxxx.gl-inet.com</code> on the back of router, new DDNS url will be <code>xxxxxxx.glddns.com</code>. </p>
 <h2 id="3-check-if-ddns-is-enabled">3) Check if DDNS is enabled</h2>
 <p>Use <code>nslookup</code> command to check if your DDNS is enabled. You need to change <code>xx5007c.glddns.com</code> to your DDNS url when use <code>nslookup</code> command.</p>
 <p><code>nslookup xx5007c.glddns.com 8.8.8.8</code></p>
-<p><img alt="nslookup" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/nslookup.png" /></p>
+<p><img alt="nslookup" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/nslookup.png" /></p>
 <p>The output above means the DDNS url has maped to a IP address.</p>
 <h2 id="4-http-remote-access">4) HTTP Remote Access</h2>
 <p>This function requires a public network IP.</p>
 <p>If your router is behind NAT, you may need to set up port forward in higher level router. It use port 80.</p>
-<p><img alt="HTTP-Remote-Access" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/HTTP-Remote-Access.png" /></p>
+<p><img alt="HTTP-Remote-Access" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/HTTP-Remote-Access.png" /></p>
 <p>Follow the steps above, to enable HTTP Remote Access. </p>
-<p><strong><em> HTTP is not encrypted, use at your own risk.</em></strong></p>
+<p><strong><em>HTTP is not encrypted, use at your own risk.</em></strong></p>
 <p>After you enable HTTP Remote Access, you can access Admin Panel anywhere by your DDNS url of http, e.g. <code>http://xxxxxxx.glddns.com</code>. If you use port forward, you should be access like <code>http://xxxxxxx.glddns.com:YourExternalPort</code>.</p>
 <h2 id="5-https-remote-access">5) HTTPS Remote Access</h2>
 <p>This function requires a public network IP.</p>
 <p>If your router is behind NAT, you may need to set up port forward in higher level router. It use port 443.</p>
-<p><img alt="HTTPS-Remote-Access" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/HTTPS-Remote-Access.png" /></p>
+<p><img alt="HTTPS-Remote-Access" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/HTTPS-Remote-Access.png" /></p>
 <p>This function use self-signed certificates, so the browers will indicate that "Your connection is not private". I will show you how to use it anyway on Chrome iOS. Other browers are the similar process.</p>
-<p><img alt="HTTPS-Remote-Access-on-iOS-Chrome" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/https-remote-access-ios-chrome-1.png" /></p>
+<p><img alt="HTTPS-Remote-Access-on-iOS-Chrome" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/https-remote-access-ios-chrome-1.png" /></p>
 <p>As show above, click "Advanced".</p>
-<p><img alt="HTTPS-Remote-Access-on-iOS-Chrome" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/https-remote-access-ios-chrome-2.png" /></p>
+<p><img alt="HTTPS-Remote-Access-on-iOS-Chrome" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/https-remote-access-ios-chrome-2.png" /></p>
 <p>As show above, click "Processed to xxxxxxx.glddns.com (unsafe)".</p>
 <p>After you enable HTTPS Remote Access, you can access Admin Panel anywhere by your DDNS url of https, e.g. <code>https://xxxxxxx.glddns.com</code>. If you use port forward, you should be access like <code>https://xxxxxxx.glddns.com:YourExternalPort</code>.</p>
 <h2 id="6-ssh-remote-access">6) SSH Remote Access</h2>
 <p>This function requires a public network IP.</p>
 <p>If your router is behind NAT, you may need to set up port forward in higher level router. It use port 22.</p>
-<p><img alt="SSH-Remote-Access" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/SSH-Remote-Access.png" /></p>
+<p><img alt="SSH-Remote-Access" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/SSH-Remote-Access.png" /></p>
 <p>Follow the steps above, to enable SSH Remote Access, then you can ssh to your router anywhere. </p>
 <h2 id="7-turn-off">7) Turn Off</h2>
 <p>If you don't want to use DDNS, just disable it.</p>
-<p><img alt="disable ddns" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/disable-ddns.png" /></p>
-<p><img alt="after disable ddns" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/after-disable-ddns.png" /></p>
+<p><img alt="disable ddns" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/disable-ddns.png" /></p>
+<p><img alt="after disable ddns" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/ddns/after-disable-ddns.png" /></p>
 <p>After disable DDNS, the interface is like above.</p>
 
   <!-- Last update of source file -->
