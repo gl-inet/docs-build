@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#openvpn" class="md-skip">
+        <a href="#setup-openvpn-client" class="md-skip">
           Skip to content
         </a>
       
@@ -3697,7 +3697,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup-openvpn-client" class="md-nav__link">
+  <a href="#setup-openvpn-client_1" class="md-nav__link">
     Setup OpenVPN Client
   </a>
   
@@ -4598,32 +4598,37 @@
   
 
   <!-- Markdown content -->
-  <h1 id="openvpn">OpenVPN</h1>
+  <h1 id="setup-openvpn-client">Setup OpenVPN Client</h1>
 <p>OpenVPN is an open-source VPN protocol that makes use of virtual private network (VPN) techniques to establish safe site-to-site or point-to-point connections. </p>
 <p>GL.iNet routers have pre-installed OpenVPN Client and Server.</p>
-<h2 id="setup-openvpn-client">Setup OpenVPN Client</h2>
+<p>We recommend WireGuard over OpenVPN because it is much faster. For setup a WireGuard Client, please check out <a href="../wireguard_client">here</a>.</p>
+<p>If you have already bought OpenVPN service from a provider, but you don't know how to get the configuration file, please refer to <a href="#get-your-configuration-file">Get your configuration file</a>.</p>
+<p>We can setup OpenVPN Client via web Admin Panel and <a href="../mobile_app">mobile app</a>. For the mobile app, it has already integrated NordVPN.</p>
+<h2 id="setup-openvpn-client_1">Setup OpenVPN Client</h2>
 <p>There is a video tutorial as ExpressVPN as example, please check out <a href="#video-tutorial">here</a>.</p>
-<p>OpenVPN client requires OpenVPN configuration file (.ovpn) to create the OpenVPN connection. If you have your own VPN service provider but you don't know how to get the configuration file, please refer to <a href="#get-your-configuration-file">Get your configuration file</a>.</p>
-<p>Click <code>+ Add a New VPN Configuration</code> to upload the configuration file.</p>
-<p><img alt="client" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn/src/client.jpg" /></p>
+<p>OpenVPN client requires OpenVPN configuration file (.ovpn) to create the OpenVPN connection.</p>
+<p>Access to web Admin Panel, on the left side -&gt; VPN -&gt; OpenVPN Client</p>
+<p><img alt="add a new openvpn configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn/add_a_new_openvpn_configuration.png" /></p>
 <h3 id="upload-your-openvpn-configuration-file">Upload your OpenVPN configuration file</h3>
 <p>Simply drag and drop your file to the pop up windows. It can be a single .ovpn file or a zip/tar.gz file which contains multiple .ovpn files.</p>
 <p>Be careful that some .ovpn files use separated ca, cert, crl files. These files must be zipped together with the .ovpn file before upload.</p>
-<p><img alt="Upload" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn/src/upload.jpg" /></p>
+<p><img alt="Upload openvpn config" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn/upload_openvpn_config.png" /></p>
 <p>You may encouter some problems, like not enough space, invalid file, authorization failed, all other VPN services must be stopped first, please check out <a href="#video-tutorial">here</a>.</p>
 <h3 id="enter-description-username-and-password">Enter Description, Username and Password</h3>
-<p>Enter a description for your OpenVPN configuration file and then click <code>Submit</code> to finish the upload process. In some cases, it will ask you to enter your username and password.</p>
-<p><img alt="add" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn/src/add.jpg" /></p>
+<p>Enter a description for your OpenVPN configuration file and then click <code>Submit</code> to finish the upload process. In some cases, it will ask you to enter the username and password. If you don't know the username and password, please contact the OpenVPN service provider.</p>
+<p><img alt="uploaded openvpn config" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn/uploaded_openvpn_config.png" /></p>
 <h3 id="connect-to-the-openvpn-server">Connect to the OpenVPN server</h3>
 <p>You can now click <code>Connect</code> to start the OpenVPN connection.</p>
-<p><img alt="connect" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn/src/connect.jpg" /></p>
+<p><img alt="has imported openvpn config" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn/imported_oepnvpn_config.png" /></p>
+<p>If your configureation file is an archive file, like .zip, you can switch server at the cog icon.</p>
+<p><img alt="switch server zip config" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn/switch_server_zip_config.png" /></p>
 <p>Once connected, you should find your IP address, data received/sent.</p>
-<p><img alt="connected" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn/src/connected.jpg" /></p>
-<p>Note that you can't running VPN Client and Server at the same time, and also can't running OpenVPN Client and WireGuard Client at the same time.</p>
+<p><img alt="connected openvpn" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn/connected_openvpn_config.png" /></p>
+<p><strong>Note that you can't running VPN Client and Server at the same time, and also can't running OpenVPN Client and WireGuard Client at the same time.</strong></p>
 <h3 id="manage-configuration-files">Manage configuration files</h3>
-<p>Click <code>Management</code> to check the list of configuration files. You can modify the <strong>Description</strong>, <strong>User name</strong> or <strong>Password</strong> of each configuration file. You can also add, delete a configuration file or even purge all your uploaded configuration files.</p>
+<p>Click <code>Management</code> to check the list of configuration files. You can modify the <strong>Description</strong>, <strong>User name</strong> and <strong>Password</strong> of each configuration file. You can also add, delete a configuration file or even purge all your uploaded configuration files.</p>
 <p>If your configuration file is a zip/tar.gz file which includes multiple ovpn files, you can choose an individual .ovpn file that you would like to connect in <strong>Server</strong>.</p>
-<p><img alt="management" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn/src/management.jpg" /></p>
+<p><img alt="edit openvpn config" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn/edit_openvpn_config.png" /></p>
 <h2 id="get-your-configuration-file">Get your configuration file</h2>
 <p>We have tested different VPN service providers. Therefore, if you don't know how to get the configuration file, you can follow the instruction below. However, you have to contact your service provider for the configuration file if they are not listed below. </p>
 <p>If you have any problem in the setup of OpenVPN, please contact <a href="mailto:support@gl-inet.com">support@gl-inet.com</a></p>
