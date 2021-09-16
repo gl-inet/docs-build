@@ -1489,6 +1489,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#manual-setup" class="md-nav__link">
+    Manual Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#at-command" class="md-nav__link">
+    AT Command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#compatible-modems" class="md-nav__link">
     Compatible Modems
   </a>
@@ -4707,26 +4721,57 @@
 <p><img alt="wifi connect" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/internet/repeater_connect.png" /></p>
 <hr />
 <h2 id="3-usb-3g4g-modem">3. USB 3G/4G Modem</h2>
-<p>You can connect to the Internet using a USB 3G/4G modem. Insert your SIM card into the USB modem then plug the USB modem into the USB port of the router. Once it has been detected, the 3G/4G modem section will be activated and you will be able to set up your USB modem.</p>
-<p>Be aware that some modems work in host-less mode, which will be configured through <a href="#4-tethering">Tethering</a> but not 3G/4G modem.</p>
-<p>In General, you can set up your 3G/4G modem by the three basic parameters below. Click <code>Apply</code> to connect.</p>
+<p>You can connect to the Internet using a USB 3G/4G modem.</p>
+<p>Some SIM cards may need to be activated the first time you use them, so please activate them in your phone before using them in your router.</p>
+<p>We recommend to turn off the router first, insert your SIM card into the USB modem then plug the USB modem into the USB port of the router, and then turn it on again.</p>
+<p>The first time, when the router is powered on, it may not connect automatically, but it has read the name of your carrier in the upper left corner, and you need to click <code>Auto Setup</code>.</p>
+<p><img alt="usb modem auto setup" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/internet/usb_modem/usb_modem_auto_setup.png" /></p>
+<p>After a while, it will be connected.</p>
+<p>Normally, the second time, when the router is powered on, after a while, it will automatically recognize the SIM card and establish a connection. It may not get the information of signal, modem name and IMEI.</p>
+<p><img alt="usb modem connected" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/internet/usb_modem/usb_modem_connected.png" /></p>
+<hr />
+<p>If you insert a usb modem at power on, it will not automatically connect. </p>
+<p>If it shows the carrier name in the upper left corner, you can click <code>Abort</code>. After a while, the button will turn to <code>Auto Setup</code>, then click <code>Auto Setup</code>.</p>
+<p>If it doesn't show the carrier name, you can click <code>Modem Reset</code>.</p>
+<ol>
+<li>
+<p>Please note that there is your carrier name in the upper left corner of it. Click <code>Abort</code>, wait a while, and if it doesn't work, click <code>Modem Reset</code>.</p>
+<p><img alt="usb modem insert sim card" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/internet/usb_modem/usb_modem_abort.png" /></p>
+</li>
+<li>
+<p>You may get into this screen, then you need to click <code>Auto Setup</code>, please note that at this time, there is your carrier name in the upper left corner of it.</p>
+<p><img alt="usb modem auto setup" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/internet/usb_modem/usb_modem_auto_setup.png" /></p>
+</li>
+<li>
+<p>Wait a moment and it will be connected.</p>
+<p><img alt="usb modem connected" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/internet/usb_modem/usb_modem_connected.png" /></p>
+</li>
+</ol>
+<hr />
+<h3 id="manual-setup">Manual Setup</h3>
+<p>Sometimes, <code>Auto Setup</code> may not work, you can try <code>Manual Setup</code>.</p>
+<p><img alt="4g modem manual setup" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/internet/4g_modem/4g_modem_manual_setup.png" /></p>
 <ul>
 <li><strong>Device</strong>: Choose <strong>/dev/cdc-wdm0</strong> if your modem supports QMI, otherwise you need to choose <strong>/dev/ttyUSB</strong>, which may include several <strong>ttyUSB</strong> from 0 to 3. You need to choose the correct one based on the modem spec. We suggest you to try <strong>ttyUSB0</strong> first.</li>
 <li><strong>Service Type</strong>: Indicate the service type of your SIM card.</li>
 <li><strong>APN</strong>: Confirm with your SIM card carrier.</li>
 </ul>
-<p><img alt="modem" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/internet/modem1.png" /></p>
-<p>Advanced Settings:</p>
+<p>Click <code>More</code> will show advanced Settings:</p>
+<p><img alt="4g modem manual setup more" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/internet/4g_modem/4g_modem_manual_setup_more.png" /></p>
 <ul>
 <li><strong>Dial Number</strong>: Generally, it is a default value and you don't need to set it manually. However, if you have this info, please input it.</li>
-<li><strong>Pincode, Username and Password:</strong> Generally, these are not necessary for an unlocked SIM card. However, if you have a locked SIM card, please consult your service provider.</li>
+<li><strong>Pincode, Username and Password</strong>: Generally, these are not necessary for an unlocked SIM card. However, if you have a locked SIM card, please consult your service provider.</li>
 </ul>
-<p><img alt="modem" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/internet/modem4.jpg" /></p>
-<p>It is connected when the IP address of your SIM card shows up.</p>
-<p><img alt="modem connect" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/internet/modem2.png" /></p>
-<p><img alt="modem connected" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/internet/modem3.png" /></p>
+<h3 id="at-command">AT Command</h3>
+<p>The built-in modem supports AT command for the management and configuration of the modem. In 3G/4G Modem section, Click <code>AT Command</code>.</p>
+<p><img alt="at command" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/internet/4g_modem/4g_modem_at_command.png" /></p>
+<ul>
+<li><strong>Shortcut:</strong> There are several pre-configured AT commands that you can use directly. If you want to run your own AT command, choose <strong>Manual command</strong>.</li>
+<li><strong>AT Command:</strong> The place where you can input AT command. For the list of AT command, please refer to the AT command manual of the built-in modem.</li>
+<li><strong>Port:</strong> The default port for AT command is <strong>/dev/ttyUSB2</strong>.</li>
+</ul>
 <h3 id="compatible-modems">Compatible Modems</h3>
-<p>Here is a list of supported modems that we had tested before. </p>
+<p>Here is a list of supported modems that we had tested before.</p>
 <table>
 <thead>
 <tr>
@@ -4836,18 +4881,12 @@
 <td></td>
 <td>Host-less</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 <p><em>QMI: This modem supports QMI mode. Please choose </em><em>/dev/cdc-wdm0</em><em> in the </em><em>Device</em>* list.</p>
 <p>*Host-less: This modem supports tethering mode, please set up by using Tethering but not 3G/4G modem.</p>
 <p>You can also refer to <a href="http://ofmodemsandmen.com/modems.html" target="&quot;_blank">http://ofmodemsandmen.com/modems.html</a> for a well supported modem list.</p>
+<p>You can also search on the <a href="https://forum.gl-inet.com" target="_blank">forum</a> or create a post for asking.</p>
 <hr />
 <h2 id="4-tethering">4. Tethering</h2>
 <p>Using a USB cable to share network from your smartphone to the router is called Tethering. Host-less modem works in Tethering during the setup of the modem as well.</p>
