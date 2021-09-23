@@ -1588,6 +1588,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../gl-mifi/firewall/" class="md-nav__link">
+        Firewall
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../gl-mifi/vpn/" class="md-nav__link">
         VPN
       </a>
@@ -1902,6 +1914,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../gl-x750/firewall/" class="md-nav__link">
+        Firewall
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../gl-x750/vpn/" class="md-nav__link">
         VPN
       </a>
@@ -2150,6 +2174,18 @@
     <li class="md-nav__item">
       <a href="../../gl-usb150/upgrade/" class="md-nav__link">
         Upgrade
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-usb150/firewall/" class="md-nav__link">
+        Firewall
       </a>
     </li>
   
@@ -3405,6 +3441,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../microuter-n300/firewall/" class="md-nav__link">
+        Firewall
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../microuter-n300/vpn/" class="md-nav__link">
         VPN
       </a>
@@ -4616,21 +4664,34 @@
   <!-- Markdown content -->
   <h1 id="firewall">FIREWALL</h1>
 <p>In <code>FIREWALL</code>, you can set up firewall rules like <strong>port forwarding</strong>, <strong>open port</strong> and <strong>DMZ</strong>.</p>
-<p><img alt="Firewall" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-ar750/firewall/firewall.jpg" /></p>
+<p><img alt="firewall page" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/firewall/port_forwards.png" /></p>
 <h2 id="port-forwards">Port Forwards</h2>
-<p>Port Forwarding allows remote computers to connect to a specific computer or service behind the firewall in the local LAN (such as web servers, FTP servers, etc).</p>
+<p>Port Forwarding allows remote computers to connect to a specific computer or service behind the firewall in the LAN (such as web servers, FTP servers, etc).</p>
 <p>To set up port forwarding, click <code>Port Forwards</code>and input the required parameters or click <code>Add a New One</code>.</p>
-<p><img alt="Port Forwards" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-ar750/firewall/port_forwards.jpg" /></p>
-<p><strong>Name:</strong> The name of the rule which can be specified by the user.</p>
+<p><img alt="Port Forwards" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/firewall/port_forwards.png" /></p>
+<p><strong>Name:</strong> The name of the rule.</p>
+<p><strong>Protocol:</strong> The protocol used, you can choose TCP, UDP, or both TCP and UDP.</p>
 <p><strong>Internal IP:</strong> The IP address assigned by the router to the device which needs to be accessed remotely.</p>
+<p><strong>External Zone:</strong> The options for external zone are <code>wan</code>, <code>guestZone</code>, <code>wireguard</code>.</p>
+<ul>
+<li>
+<p><code>wan</code> is for you want a service can be access in the WAN zone. E.g., a web server is running on a LAN device in your home, it can only access when you at home, but you want it to be accessable outside your home, then you can set the external zone as <code>wan</code>.
+You can access it via <code>wan_ip</code>:<code>external_port</code>. Note: Access outside your home need public IP.</p>
+</li>
+<li>
+<p><code>guestZone</code> is for you want a service can be access by a device connect to the guest Wi-Fi. E.g., a web server is running on a LAN device in your home, it can only access when your device in the LAN. However, the guest LAN is isolated from the default LAN, but you want the web serve can be accessable in guest LAN, then you can set the external zone as <code>guestZone</code>. You can access it via <code>wan_ip</code>:<code>external_port</code>. </p>
+</li>
+<li>
+<p><code>wireguard</code>, when the router is running WireGuard server, there will has the <code>wireguard</code> option. E.g., a web server is running on a LAN device in your home. When you connect in through your router's WireGuard Server configuration, by default you will not be able to access the web server on the intranet. To make it accessable, set the external zone as <code>wireguard</code>. You can access it via <code>wan_ip</code>:<code>external_port</code>.</p>
+</li>
+</ul>
 <p><strong>External Ports:</strong> The numbers of external ports. You can enter a specific port number or a range of service ports (E.g <strong>100-300</strong>).</p>
 <p><strong>Internal Ports:</strong> The internal port number of the device. You can enter a specific port number. Leave it blank if it is same as the external port.</p>
-<p><strong>Protocol:</strong> The protocol used, you can choose TCP, UDP, or both TCP and UDP.</p>
 <p><strong>Status:</strong> Activate of Deactivate the rule.</p>
 <h2 id="open-ports-on-router">Open Ports on Router</h2>
 <p>The router's services, such as web, FTP and so on, require their respective ports to be opened on the router in order to be publicly reachable.</p>
 <p>To open a port, click <code>Open Ports on Router</code> and input the required parameters or click <code>Add a New One</code>.</p>
-<p><img alt="Port Forwards" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-ar750/firewall/open_port.jpg" /></p>
+<p><img alt="Port Forwards" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/firewall/open_port.png" /></p>
 <p><strong>Name:</strong> The name of the rule which can be specified by the user.</p>
 <p><strong>Port:</strong> The port number that you want to open.</p>
 <p><strong>Protocol:</strong> The protocol used, you can choose TCP, UDP, or both TCP and UDP.</p>
@@ -4638,7 +4699,7 @@
 <h2 id="dmz">DMZ</h2>
 <p>DMZ allows you to expose one computer to the Internet, so that all the inbounds packets will be redirected to the computer you set.</p>
 <p>Click <code>DMZ</code> and enable <code>Open DMZ</code>. Input the internal IP address (E.g. 192.168.8.100) of your device which is going to receive all the inbound packets.</p>
-<p><img alt="Port Forwards" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-ar750/firewall/DMZ.jpg" /></p>
+<p><img alt="Port Forwards" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/share/firewall/dmz.png" /></p>
 
   <!-- Last update of source file -->
   
