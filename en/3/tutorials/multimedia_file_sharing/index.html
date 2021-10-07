@@ -13,14 +13,14 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/en/3/tutorials/dlnaserver/">
+        <link rel="canonical" href="https://docs.gl-inet.com/en/3/tutorials/multimedia_file_sharing/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
     
     
       
-        <title>DLNA Server - GL.iNet Docs</title>
+        <title>Multimedia File Sharing - GL.iNet Docs</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dlna-server" class="md-skip">
+        <a href="#multimedia-file-sharing" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DLNA Server
+              Multimedia File Sharing
             
           </span>
         </div>
@@ -3830,12 +3830,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          DLNA Server
+          Multimedia File Sharing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        DLNA Server
+        Multimedia File Sharing
       </a>
       
         
@@ -3853,15 +3853,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-plug-ins" class="md-nav__link">
-    Install Plug-ins
+  <a href="#supported-models" class="md-nav__link">
+    Supported models
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-the-dlna-server-in-glinet-routers" class="md-nav__link">
-    Use the DLNA server in GL.iNet Routers
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-multimedia-file-sharing" class="md-nav__link">
+    Enable Multimedia File Sharing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-the-dlna-server-on-various-ossoftware" class="md-nav__link">
+    Setup the DLNA Server on various OS/software
   </a>
   
 </li>
@@ -4665,44 +4679,215 @@
   
 
   <!-- Markdown content -->
-  <h1 id="dlna-server">DLNA SERVER</h1>
-<p>Some of GL.iNet routers support DLNA Server, but this is not a default function. You need to install a little plug-ins to make it workable. </p>
-<p>Support models: GL-AR750S-EXT, GL-AR750, GL-MT300N-V2, GL-AR300M series, GL-AR150 series, GL-MiFi and GL-X750</p>
-<h2 id="install-plug-ins">Install Plug-ins</h2>
-<p>Go to <strong>APPLICATIONS</strong>, then <strong>Plug-ins</strong>.
-Install two apps:</p>
+  <h1 id="multimedia-file-sharing">Multimedia File Sharing</h1>
+<p>The DLNA defines standards that enable devices to share photos, music, videos with each other. Some of GL.iNet routers support Multimedia File Sharing via DLNA Server in LAN.</p>
+<hr />
+<h2 id="supported-models">Supported models</h2>
+<p>Usually models with USB ports or TF slots are supported DLNA Server.</p>
+<p><em>Note: The power consumption of USB hard drive is quite high. You should use it with an external power supply. Otherwise, it may cause malfunction.</em></p>
+<p><strong>Supported external storage models</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Router Model</th>
+<th align="center">USB Stick</th>
+<th align="center">USB Hard Drive</th>
+<th align="center">MicroSD Card</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GL-MT300N-V2 (Mango)</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">GL-AR150 Series</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">GL-AR300M Series</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">GL-USB150</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">GL-MiFi</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-AR750 (Creta)</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-AR750S-EXT (Slate)</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-B1300 (Convexa-B)</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">GL-S1300 (Convexa-S)</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">GL-X750 (Spitz)</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-X1200 (Amarok)</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-E750 (Mudi)</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-MV1000 (Brume)</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-MV1000W (Brume-W)</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-MT1300 (Beryl)</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-XE300 (Puli)</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-AX1800 (Flint)</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">GL-AP1300 (Cirrus)</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">GL-B2200 (Velica)</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">GL-X300B (Collie)</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">GL-SF1200</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">microuter-N300</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">VIXMINI</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="setup">Setup</h2>
 <ol>
-<li>luci-app-minidlna</li>
-<li>miniDLNA</li>
+<li>Copy some multimedia file(photo, music, video) to your TF card or USB drive.</li>
+<li>If using TF card, make suer you already has a TF card inserted into the card slot before you power up your router. <em>Hot-plug</em> is not supported on GL.iNET routers.</li>
+<li>If using USB drive, please insert an USB drive into the USB port.</li>
 </ol>
-<p><img alt="" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/dlnaserver/dlna1.png" /></p>
-<p><img alt="" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/dlnaserver/dlna2.png" /></p>
-<h2 id="use-the-dlna-server-in-glinet-routers">Use the DLNA server in GL.iNet Routers</h2>
-<p>After Installation of two applications, you can now use your GL.iNet router as as DLNA server. </p>
+<h2 id="enable-multimedia-file-sharing">Enable Multimedia File Sharing</h2>
+<p>On the left side of web Admin Panel -&gt; APPLICATIONS -&gt; File Sharing -&gt; Multimedia File Sharing</p>
+<p>The Multimedia File sharing packages may not installed. Click <code>Install</code> to continue.</p>
+<p><img alt="multimedia file sharing no installed" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/multimedia_file_sharing/multimedia_file_sharing_no_installed.png" /></p>
+<p>After installed.</p>
+<p><img alt="multimedia file sharing installed" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/multimedia_file_sharing/multimedia_file_sharing_installed.png" /></p>
+<p>Enable <code>Share via DLNA</code> then click <code>Apply</code>.</p>
+<p><img alt="multimedia file sharing enabled" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/multimedia_file_sharing/multimedia_file_sharing_enabled.png" /></p>
+<h2 id="setup-the-dlna-server-on-various-ossoftware">Setup the DLNA Server on various OS/software</h2>
 <ol>
-<li>Make suer you already has a TF card inserted into the card slot before you power up your router. <em>Hot-plug</em> is not supported on GL.iNET routers. </li>
-<li>Or you can insert an USB drive into the USB port. </li>
-<li>Connnet your PC, Laptop, tablet, smart TV or Smartphone to GL.iNET router's WiFi(SSID). Here is the sample: GL-AR750-xxx </li>
-<li>Then you can find the <strong>OpenWrt DLNA Server</strong> in your devices.</li>
+<li>Connnet your computer, tablet, smart TV or Smartphone to the router's Wi-Fi or ethernet cable.</li>
+<li>
+<p>Then you can find the <strong>OpenWrt DLNA Server</strong> in your devices.</p>
+<ul>
+<li>
+<p>On Windows 10:</p>
+<p>In Windows Media Player:</p>
+<p><img alt="dlna windows media player" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/multimedia_file_sharing/dlna_windows_media_player.png" /></p>
+<p>In Windows File Explorer -&gt; Network</p>
+<p><img alt="dlna windows network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/multimedia_file_sharing/dlna_windows_network.png" /></p>
+</li>
+<li>
+<p>On iOS &amp; Android: Install VLC or other app that support DLNA</p>
+<p>VLC Setup:</p>
+<p>Step 1: Click the <strong>Traffic Cones</strong> logo on the left top, select Local Network.</p>
+<p>Step 2: You can find the OpenWrt DLNA Server easily in Local Network.</p>
+<table>
+<thead>
+<tr>
+<th>Step 1</th>
+<th>Step 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="vlc local network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/multimedia_file_sharing/vlc_local_network.png" width="400" /></td>
+<td><img alt="dlna server on local network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/multimedia_file_sharing/vlc_local_network_dlna_server.png" width="400" /></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
 </ol>
-<p>Take Windows as example: </p>
-<p>In Windows Media Player: 
-<img alt="" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/dlnaserver/dlnaserver1.png" /></p>
-<p>In Windows File Explorer -&gt; Network
-<img alt="" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/dlnaserver/dlnaserver2.png" /></p>
-<p>iOS: Install VLC or UPNP Extreme in App Store:</p>
-<p>You can easily find the OpenWrt DLNA Sever in UPNP:
-UPNP Extreme and VLC Installation | UPNP Setup
-- | - 
-<img alt="alt" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/dlnaserver/ios1.PNG" /> | <img alt="alt" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/dlnaserver/ios2.PNG" /></p>
-<p>VLC Setup: </p>
-<p>Step 1： Click the <strong>Traffic Cones</strong> Logo on the left top, select Local Network</p>
-<p>Step 2: You can find the OpenWrt DLNA Server easily in Local Network.
-Step 1 | Step 2
-- | - 
-<img alt="alt" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/dlnaserver/ios3.PNG" /> | <img alt="alt" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/dlnaserver/ios4.PNG" /></p>
-<p>Also other devices can easily find the OpenWrt DLNA Server easily.</p>
-<p>Enjoy your media DLNA Server by GL.iNET routers.</p>
+<p>It is also easy for other devices find the OpenWrt DLNA Server.</p>
 
   <!-- Last update of source file -->
   
