@@ -752,6 +752,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../specification/vixmini/" class="md-nav__link">
+        VIXMINI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../specification/domino-core/" class="md-nav__link">
         Domino Core
       </a>
@@ -4939,7 +4951,7 @@ At end is a byte <code>0xFF</code>.</p>
 </tr>
 </tbody>
 </table>
-<p><em>For example, write uint8array <code>fe 01 74 65 73 74 77 69 66 69 40 31 32 33 34 35 36 37 38 ff</code> to the first GATT service means set the wifi to one whose ssid is "testwifi", password is "12345678" .</em></p>
+<p><em>For example, write uint8array <code>fe 01 74 65 73 74 77 69 66 69 40 31 32 33 34 35 36 37 38 ff</code> to the first GATT service means set the Wi-Fi to one whose ssid is "testwifi", password is "12345678" .</em></p>
 <h3 id="4-get-response-and-messages">4. Get response and messages</h3>
 <p>Every command will return a response indicating whether it sucess or not. It is sent by BLE notification in the second service (Service UUID <code>000000EE-0000-1000-8000-00805F9B34FB</code>, Character UUID is <code>0000EE01-0000-1000-8000-00805F9B34FB</code>). The response format is similar with command format.</p>
 <p>Response Format</p>
@@ -4987,7 +4999,7 @@ At end is a byte <code>0xFF</code>.</p>
 </tr>
 </tbody>
 </table>
-<p><em>"state" is the connection state for network or MQTT, 1 means connected, 0 means disconnect. "mode" is the connection mode, 0 means connected by WiFi, 1 means by Ethernet.For example, get a notification <code>fe 05 31 40 30 40 31 39 32 2e 31 36 38 2e 31 2e 31 31 31 40 74 65 73 74 77 69 66 69 ff</code> means get the current network state: network is connected, using wifi, ip address is 192.168.1.111, ssid is "testwifi"</em></p>
+<p><em>"state" is the connection state for network or MQTT, 1 means connected, 0 means disconnect. "mode" is the connection mode, 0 means connected by WiFi, 1 means by Ethernet.For example, get a notification <code>fe 05 31 40 30 40 31 39 32 2e 31 36 38 2e 31 2e 31 31 31 40 74 65 73 74 77 69 66 69 ff</code> means get the current network state: network is connected, using Wi-Fi, ip address is 192.168.1.111, ssid is "testwifi"</em></p>
 <p>MQTT message format</p>
 <p><em>Sometimes your BLE devices have to recieve messages from the cloud(MQTT broker). Here the gateway get the msg from the cloud and then send out by BLE notification</em></p>
 <table>
