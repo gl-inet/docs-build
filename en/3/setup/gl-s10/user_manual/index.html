@@ -5283,7 +5283,7 @@
 <p>Supports MQTT and integrating to multiple server platforms </p>
 </li>
 <li>
-<p>Include application for configuration with customized connection to Wi-Fi and MQTT servers </p>
+<p>Includes application for configuration with customized connection to Wi-Fi and MQTT servers </p>
 </li>
 <li>
 <p>Supports 802.3at/af standard POE input power </p>
@@ -5468,7 +5468,6 @@
 <h3 id="ble-beacon">BLE beacon</h3>
 <p>BLE Beacon is an optional accessory. User can purchase gateway kit with beacon for a quick Demo. The beacon can also be used for indoor positioning, asset management and other scenarios. The rotating base makes the device easy to disassemble; and the base has 3M adhesive which makes it easy to fix in place. </p>
 <p>After turning on the BLE switch at the bottom of the beacon, the beacon will broadcast BLE signals at an interval of 300ms. Select the filter function of GL-S10 and identify the devices by the MAC address printed at the bottom of the beacon. </p>
-<p>Take out the product from its package and attach the external antenna as shown below. </p>
 <p><center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic2.png"></center>
 <center>Figure 2</center></p>
 <h3 id="app-installation">APP installation</h3>
@@ -5600,12 +5599,14 @@ We can understand the data by comparing the received data with the message reply
 <center>Figure 37</center></p>
 <h2 id="ble-data-uploading">BLE Data Uploading</h2>
 <p>After successfully establishing connection, GL-S10 automatically enters Scanning mode and scans for BLE signal during startup. If the MQTT server is connected, the BLE scan data will be packaged and uploaded to "GL-IoT/dataTopic/{dev_MAC}" topic in JSON format. ({dev_MAC} is the local MAC address, in this example, the MAC address of the GL-S10 device used is: 8CAAB5B25D9C). </p>
-<p>As shown above, the JSON fields have the following definitions
-- MAC : Broadcast source address 
-- rssi : Broadcast source signal strength 
-- n : Broadcast source device name (this field will not appear if the broadcast source does not have a name) 
-- ad : Broadcast data advData 
-- ts : receive timestamp</p>
+<p>As shown above, the JSON fields have the following definitions</p>
+<ul>
+<li>MAC : Broadcast source address </li>
+<li>rssi : Broadcast source signal strength </li>
+<li>n : Broadcast source device name (this field will not appear if the broadcast source does not have a name) </li>
+<li>ad : Broadcast data advData </li>
+<li>ts : receive timestamp</li>
+</ul>
 <p>If you purchased a gateway kit with a BLE Beacon and adds filtering rules for the beacon MAC address according to section 3.9, the JSON information viewed here is the BLE information broadcast by the beacon. The beacons are placed at different distances from the GL-S10 gateway (distance up to the decimeter level), and the value of rssi (broadcast source signal strength) may fluctuate based on distance. 
 <center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic38.png", width = 800></center>
 <center>Figure 38</center>
