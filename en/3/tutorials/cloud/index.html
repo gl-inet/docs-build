@@ -3937,6 +3937,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
     Introduction
   </a>
@@ -4229,6 +4236,19 @@
   <a href="#add-a-template" class="md-nav__link">
     Add a Template
   </a>
+  
+    <nav class="md-nav" aria-label="Add a Template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-path" class="md-nav__link">
+    Upgrade Path
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -5041,6 +5061,19 @@
 
   <!-- Markdown content -->
   <h1 id="glinet-goodcloud">GL.iNet GoodCloud</h1>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#manage-your-devices">Manage your devices</a></li>
+<li><a href="#site-to-site">Site to Site</a></li>
+<li><a href="#batch-setting">Batch Setting</a></li>
+<li><a href="#template-management">Template Management</a></li>
+<li><a href="#task-list">Task List</a></li>
+<li><a href="#ble-mqtt-bridge">BLE MQTT Bridge</a></li>
+<li><a href="#goodcloud-and-vpn">GoodCloud and VPN</a></li>
+<li><a href="#turn-off-cloud">Turn off cloud</a></li>
+</ul>
 <h2 id="introduction">Introduction</h2>
 <p>GL.iNet GoodCloud cloud management service provide an easy and simple way to remotely access and manage routers. There is a video introduction below.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JkV2PAy-_Og" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -5126,7 +5159,7 @@
 <p><img alt="add device" class="glboxshadow" src="https://static.gl-inet.com/goodcloud/docs/add-device.png" /></p>
 <p>If the router and PC(which opened goodcloud.xyz page) are at the same public IP，it will be automatically discovered, and can be found when click <code>Device</code> list(step 4). </p>
 <p>DDNS or Device ID can be found on the back of your router, it is 7 characters.</p>
-<pre><code>PS: Input "DDNS" / "Device ID" here just to verify that the router is really 
+<pre><code>Note: Input "DDNS" / "Device ID" here just to verify that the router is really 
 original/valid. DDNS feature and the Cloud feature are separate things.
 
 For most models, it is "DDNS" on the back, but for some models, 
@@ -5139,7 +5172,7 @@ group.
 <p><img alt="auto discover" class="glboxshadow" src="https://static.gl-inet.com/goodcloud/docs/auto-discover.png" /></p>
 <h4 id="manually-add">Manually add</h4>
 <p>If it can't discover automatically, try <code>Manually add</code>. All information that need to input can be found on the back of the router.</p>
-<pre><code>PS: Input "MAC", "SN" and "DDNS" / "Device ID" here just to verify that the 
+<pre><code>Note: Input "MAC", "SN" and "DDNS" / "Device ID" here just to verify that the 
 router is really original and valid. DDNS feature and the Cloud feature are 
 separate things.
 </code></pre>
@@ -5262,7 +5295,7 @@ separate things.
 <p><img alt="Tunnel IP Address Range" class="glboxshadow" src="https://static.gl-inet.com/goodcloud/docs/tunnel-ip-address-range-s2s.png" /></p>
 <h2 id="batch-setting">Batch Setting</h2>
 <p>You can use this feature to configure multiple parameters for a single device, or you can configure multiple parameters for multiple devices.</p>
-<pre><code>PS: This feature is only available to business users.
+<pre><code>Note: This feature is only available to business users.
 </code></pre>
 <h3 id="batch-setting-of-single-device">Batch Setting of Single Device</h3>
 <p>To configure single device, as show below.</p>
@@ -5285,16 +5318,23 @@ separate things.
 <p><img alt="Task" class="glboxshadow" src="https://static.gl-inet.com/goodcloud/docs/task.png" /></p>
 <h2 id="template-management">Template Management</h2>
 <p>Save frequently used configurations as templates and quickly apply them when you modify configurations in batches.</p>
-<pre><code>PS: This feature is only available to business users.
+<pre><code>Note: This feature is only available to business users.
 </code></pre>
 <h3 id="add-a-template">Add a Template</h3>
-<p>Check the configuration that needs to be modified and input value.</p>
+<p>Check the configuration that needs to be modified and input value. Most of the options are the same as those on web Admin Panel.</p>
 <p><img alt="Add Template" class="glboxshadow" src="https://static.gl-inet.com/goodcloud/docs/add_template.png" /></p>
+<h4 id="upgrade-path">Upgrade Path</h4>
+<p><strong>Upgrade Path</strong> is for upgrading custom firmware. Put the firmware and a text file on a web server, then put the url path on the <strong>Upgrade Path</strong>. For example, <a href="https://fw.gl-inet.com/firmware/ar750/v1/">https://fw.gl-inet.com/firmware/ar750/v1/</a> is a Upgrade Path, it has a <strong>list-sha256.txt</strong> file <a href="https://fw.gl-inet.com/firmware/ar750/v1/list-sha256.txt">https://fw.gl-inet.com/firmware/ar750/v1/list-sha256.txt</a> and a corresponding firmware file <a href="https://fw.gl-inet.com/firmware/ar750/v1/openwrt-ar750-3.203-0701.bin">https://fw.gl-inet.com/firmware/ar750/v1/openwrt-ar750-3.203-0701.bin</a>.</p>
+<pre><code>Note: GL-AX1800, GL-S1300, GL-B1300, GL-AP1300 only support http path for now.
+</code></pre>
+<p><img alt="Template info" class="glboxshadow" src="https://static.gl-inet.com/goodcloud/docs/template_upgrade_path.png" /></p>
+<p>The content of the text file is like <a href="https://fw.gl-inet.com/firmware/ar750/v1/list-sha256.txt">this</a>, its name should be <strong>list-sha256.txt</strong>. It has 4 columns, the first column is firmware version, the second column is the name of firmware file, the thrid column is the sha256 of firmware file, the forth column is the size of firmware file.</p>
+<p><img alt="gl-ar750 sha256" class="glboxshadow" src="https://static.gl-inet.com/goodcloud/docs/ar750-sha256.png" /></p>
 <p>Give the template a name and description.</p>
 <p><img alt="Template info" class="glboxshadow" src="https://static.gl-inet.com/goodcloud/docs/template_info.png" /></p>
 <h2 id="task-list">Task List</h2>
 <p>At task list page, it shows the execution result of the configuration template.</p>
-<pre><code>PS: This feature is only available to business users.
+<pre><code>Note: This feature is only available to business users.
 </code></pre>
 <p><img alt="Task list" class="glboxshadow" src="https://static.gl-inet.com/goodcloud/docs/task_list.png" /></p>
 <p>You can view the execution result of each device and configuration.</p>
