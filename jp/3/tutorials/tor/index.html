@@ -3035,88 +3035,14 @@
 <p>Support <code>GL-AR150</code>,<code>GL.iNet6416</code>, <code>GL-AR300</code>. This firmware create two ssid: OpenWrt and Tor. If you conenct to OpenWrt you will have normal Internet. If you connect to Tor, you will be connect to Tor network. This firmware has a built-in UI based on Domino Pi which you can manage two SSIDs.</p>
 <h3 id="version-10-with-luci">Version 1.0 with LuCI:</h3>
 <p>Support <code>GL-MT300A</code> and <code>GL-MT300N</code>. This is the firmware created for MT300A and MT300N with LuCI. This firmware create two ssid: OpenWrt and Tor. If you conenct to OpenWrt you will have normal Internet. If you connect to Tor, you will be connect to Tor network. Connection from LAN port will always have Tor. LuCI is installed but there is no Domino Pi UI.</p>
-<p>!!! Note</p>
-<p>If you have questions about versions, please ask here or in the forum.</p>
+<p>Note: If you have questions about versions, please ask here or in the forum.</p>
 <h2 id="download-and-flashing-the-firmware-to-the-device">Download and Flashing the firmware to the device</h2>
-<p>All the firmwares is available at <a href="https://dl.gl-inet.com/firmware/">https://dl.gl-inet.com/firmware/</a>
-Find your device name and then "tor" folder. Download the newest firmware.</p>
-<p>You need to refer to <a href="https://docs.gl-inet.com/en/3/setup/mini_router/first_time_setup/">Setup</a> for instructions to flash the firmware to the router. </p>
-<table>
-<thead>
-<tr>
-<th>Model</th>
-<th>Tor firmware path</th>
-<th>Newest Version</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GL.iNet6416</td>
-<td><a href="https://dl.gl-inet.com/firmware/6416/tor/">https://dl.gl-inet.com/firmware/6416/tor/</a></td>
-<td>1.3</td>
-<td></td>
-</tr>
-<tr>
-<td>AR150</td>
-<td><a href="https://dl.gl-inet.com/firmware/ar150/tor/">https://dl.gl-inet.com/firmware/ar150/tor/</a></td>
-<td>2.264</td>
-<td></td>
-</tr>
-<tr>
-<td>AR300M</td>
-<td><a href="https://dl.gl-inet.com/firmware/ar300m/nand/tor">https://dl.gl-inet.com/firmware/ar300m/nand/tor/</a></td>
-<td>2.264</td>
-<td>.rar is for web upgrade .img is for uboot upgrade</td>
-</tr>
-<tr>
-<td>AR300M-NOR</td>
-<td><a href="https://dl.gl-inet.com/firmware/ar300m/tor/">https://dl.gl-inet.com/firmware/ar300m/tor/</a></td>
-<td>2.264</td>
-<td></td>
-</tr>
-<tr>
-<td>MT300N</td>
-<td><a href="https://dl.gl-inet.com/firmware/mt300n/tor/">https://dl.gl-inet.com/firmware/mt300n/tor/</a></td>
-<td>2.264</td>
-<td></td>
-</tr>
-<tr>
-<td>MT300A</td>
-<td><a href="https://dl.gl-inet.com/firmware/mt300a/tor/">https://dl.gl-inet.com/firmware/mt300a/tor/</a></td>
-<td>2.264</td>
-<td></td>
-</tr>
-<tr>
-<td>GL-MiFi</td>
-<td><a href="https://dl.gl-inet.com/firmware/ar150/tor/">https://dl.gl-inet.com/firmware/ar150/tor/</a></td>
-<td>1.3</td>
-<td>MiFi don't have a Tor firmware itself. Use AR150 1.3 instead</td>
-</tr>
-<tr>
-<td>GL-AR300</td>
-<td><a href="https://dl.gl-inet.com/firmware/ar300/tor/">https://dl.gl-inet.com/firmware/ar300/tor/</a></td>
-<td>1.3</td>
-<td></td>
-</tr>
-<tr>
-<td>GL-MT750</td>
-<td>Not supported yet</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>AR750</td>
-<td>Not supported yet</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>All the firmwares is available at <a href="https://dl.gl-inet.com/">here</a>. Select your device model and select the type to <code>tor</code>. Download the latest firmware.</p>
+<p>You need to refer to <a href="../../setup/mini_router/first_time_setup/">Setup</a> for instructions to flash the firmware to the router. </p>
 <h2 id="using-the-firmware-ui">Using the firmware UI</h2>
 <p>After you flash the firmware to your device, when it reboots you need to set up the device at <code>http://192.168.8.1</code>. </p>
 <p><code>If</code> you need to connect via Wi-Fi, the default Wi-Fi password is <code>goodlife</code>.</p>
-<p>!!! NOTE </p>
+<p>NOTE:</p>
 <p><strong>You need to move the hardware switch to the right side if you want to access the UI</strong>. Otherwise you are connecting to the Tor network and will not be able to access the UI. This is for security reasons.</p>
 <h3 id="first-time-setup">First time setup</h3>
 <p>The first time you acess the setting UI, you will be asked to setup a new password immediatelly. Just choose a password and your TimeZone and submit. The device will <code>NOT</code> reboot in firmware 1.4.</p>
@@ -3156,7 +3082,7 @@ Find your device name and then "tor" folder. Download the newest firmware.</p>
 <p>If you connect a 3G or 4G USB modem, you can set the internet to the modem. You need to choose <code>3G</code> as protocol, choose modem device, usually <code>/dev/ttyUSBx</code>, choose <code>umts</code> or <code>evdo</code>, then input your <code>apn</code> etc. </p>
 <p><img alt="3G 4G LTE" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tor/3g.jpg" /></p>
 <p>Repeater settings. It will search for available ssid automatically. You need to choose ssid and type your password. </p>
-<p>!!! NOTE </p>
+<p>NOTE:</p>
 <p><strong>This firmware don't have repeater manager as our stock firmware.</strong> If you move to another location, your Wi-Fi maybe not work and you need to re-setup. Refer to the button action section in this page.</p>
 <p><img alt="Repeater" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tor/repeater.jpg" /></p>
 <h3 id="luci">LuCI</h3>
