@@ -3437,8 +3437,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cable-configuration" class="md-nav__link">
-    Cable configuration
+  <a href="#protocal-configuration" class="md-nav__link">
+    Protocal configuration
   </a>
   
 </li>
@@ -5373,8 +5373,8 @@
   </div>
 </div>
 
-<h3 id="cable-configuration">Cable configuration</h3>
-<p>To setup uplink connection using a network cable on the WAN port, click "Manage Device" &gt; "Cable" &gt; "Cable Configuration". You can configure "DHCP" and "Static IP" mode, then click "Done" to save the settings as shown below.</p>
+<h3 id="protocal-configuration">Protocal configuration</h3>
+<p>To setup uplink connection using a Protocal on the WAN port, click "Manage Device" &gt; "Protocal" &gt; "Protocal". You can configure "DHCP" and "Static IP" mode, then click "Done" to save the settings as shown below.</p>
 <div class="flex-container s10-user-manual">
   <div>
     <figure>
@@ -5556,35 +5556,87 @@
 <h3 id="network-configuration">Network Configuration</h3>
 <p>GL-S10 supports wired transmission and Wi-Fi for connecting to the router or gateway. The setting procedure can be found in section 3.6 Cable configuration and 3.7 Wi-Fi configuration. </p>
 <h3 id="mqtt-x-client-configuration">MQTT X client configuration</h3>
+<p>Before doing the MQTT X client configuration, we need to configure the configuration of the MQTT server on S10 first. Find MQTT Server session in the S10 Tool APP.</p>
+<p>Here we are using the test MQTT server: iot-s10-test.gl-inet.cn. And the Port is: 1884, so we need to set the Host in the following figure: iot-s10-test.gl-inet.cn.Port: 1884.</p>
+<div class="flex-container s10-user-manual">
+  <div>
+    <figure>
+      <img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic32.png", width = 300>
+      <figcaption>Figure 32</figcaption>
+    </figure>
+  </div>
+  <div>
+    <figure>
+      <img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic33.png", width = 300>
+      <figcaption>Figure 33</figcaption>
+    </figure>
+  </div>
+</div>
+
 <p>On the windows version of the MQTT X client, start the MQTT X software and add a new connection. To configure the beta cloud platform, enter the URL address iot-s10-test.gl-inet.cn and port 1884. Click the upper right corner of the page to connect. A successful connection is shown below in Figure 33. 
-<center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic32.png", width = 800></center>
-<center>Figure 32</center>
-<br>
-<center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic33.png", width = 800></center>
-<center>Figure 33</center></p>
-<h3 id="mqtt-message-editing-and-communicating-with-s10">MQTT Message Editing and Communicating with S10</h3>
-<p>The default command topic for this firmware is GL-IoT/comTopic/{dev_MAC}, and the command reply topic is GL-IoT/rspTopic/{dev_MAC}. </p>
-<p>The BLE MAC address of the GL-S10 device we use in this example is: 8CAAB5B25D9C (The BLE MAC address is printed on the bottom of the device or in the app). </p>
-<p>In our testing, MQTT X sends data via GL-IoT/comTopic/8CAAB5B25D9C and receives data from GL-S10 by subscribing to GL-IoT/rspTopic/8CAAB5B25D9C. </p>
-<p>Below is a demo of how to obtain data from GL-S10 (GET_DEV_MESSAGE):</p>
-<p><strong>Step 1:</strong>
-Subscribe to the GL-IoT/rspTopic/8CAAB5B25D9C topic using MQTTx. <br />
 <center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic34.png", width = 800></center>
-<center>Figure 34</center></p>
-<p><strong>Step 2:</strong>
-Set the sending and scanning method to Hex. 
+<center>Figure 34</center>
+<br>
 <center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic35.png", width = 800></center>
 <center>Figure 35</center></p>
-<p><strong>Step 3:</strong>
-Publish the message "21" (see 6.2.33 GET_DEV_MESSAGE) via GL-IoT/comTopic/8CAAB5B25D9C in hex format.
+<h3 id="mqtt-message-editing-and-communicating-with-s10">MQTT Message Editing and Communicating with S10</h3>
+<p>The default command topic for this firmware is GL-IoT/comTopic/{dev_MAC}, and the command reply topic is GL-IoT/rspTopic/{dev_MAC}. </p>
+<p>The BLE MAC address of the GL-S10 device we use in this example is: E8DB841E2B1E (The BLE MAC address is printed on the bottom of the device or in the app). </p>
+<p>In our testing, MQTT X sends data via GL-IoT/comTopic/E8DB841E2B1E and receives data from GL-S10 by subscribing to GL-IoT/rspTopic/E8DB841E2B1E. </p>
+<p>Below is a demo of how to set data (SET_DEV_MESSAGE) and obtain data from GL-S10 (GET_DEV_MESSAGE):</p>
+<p><strong>Step 1:</strong>
+Subscribe to the GL-IoT/rspTopic/E8DB841E2B1E topic using MQTT X. <br />
 <center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic36.png", width = 800></center>
 <center>Figure 36</center></p>
-<p><strong>Step 4:</strong>
-We can understand the data by comparing the received data with the message reply table (6.2.33 GET_DEV_MESSAGE). In this example, the data in the red box shows the current software version of 2.0.6. 
-<center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic37.png", width = 800></center>
+<p><strong>Step 2:</strong>
+SET_WIFI_CONFIG
+API Function: Configure SSID and PWD of WIFI or SSID, user name, user password of WIFI WPA2, and try to connect to the corresponding route. </p>
+<p>{</p>
+<p>"jsonrpc": "2.0",</p>
+<p>"method": "SET_WIFI_CONFIG",</p>
+<p>"params": {</p>
+<p>"type":0,</p>
+<p>"ssid": "Test",</p>
+<p>"pwd": "123456"</p>
+<p>},</p>
+<p>"id": 1</p>
+<p>}</p>
+<p>Here we use "Test" for the SSID  and "123456" for the user passward.</p>
+<ul>
+<li>When type is equal to 0, SSID, PASSWORD can be set.</li>
+<li>When type is equal to 1, SSID, USERNAME, USERPASSWORD can be set.</li>
+<li>SSID: route name, length 0 - 32 characters.</li>
+<li>PWD: route password, length 0 - 64 characters.</li>
+<li>USERNAME: User name, length 0 - 32 characters.</li>
+<li>USERPWD: User password, length 0 - 64 characters.</li>
+</ul>
+<p><center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic37.png", width = 800></center>
 <center>Figure 37</center></p>
+<p>Set data successfully:</p>
+<p><center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic38.png", width = 800></center>
+<center>Figure 38</center></p>
+<p><strong>Step 3:</strong>
+GET_WIFI_CONFIG
+API Function: Get the SSID and PWD of WIFI or SSID, user name, user password of WIFI WPA2
+{</p>
+<p>"jsonrpc" :   "2.0" ,</p>
+<p>"method" :   "GET_WIFI_CONFIG" ,</p>
+<p>"params" :   {</p>
+<p>"type" : 0</p>
+<p>},</p>
+<p>"id" :   2</p>
+<p>}</p>
+<ul>
+<li>When type is equal to 0, get SSID, PASSWORD.</li>
+<li>When type is equal to 1, get SSID, USERNAME, USERPASSWORD </li>
+</ul>
+<p><center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic39.png", width = 800></center>
+<center>Figure 39</center></p>
+<p>Get data successfully:
+<center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic40.png", width = 800></center>
+<center>Figure 40</center></p>
 <h2 id="ble-data-uploading">BLE Data Uploading</h2>
-<p>After successfully establishing connection, GL-S10 automatically enters Scanning mode and scans for BLE signal during startup. If the MQTT server is connected, the BLE scan data will be packaged and uploaded to "GL-IoT/dataTopic/{dev_MAC}" topic in JSON format. ({dev_MAC} is the local BLE MAC address, in this example, the BLE MAC address of the GL-S10 device used is: 8CAAB5B25D9C). </p>
+<p>After successfully establishing connection, GL-S10 automatically enters Scanning mode and scans for BLE signal during startup. If the MQTT server is connected, the BLE scan data will be packaged and uploaded to "GL-IoT/dataTopic/{dev_MAC}" topic in JSON format. ({dev_MAC} is the local BLE MAC address, in this example, the BLE MAC address of the GL-S10 device used is: E8DB841E2B1E). </p>
 <p>As shown above, the JSON fields have the following definitions</p>
 <ul>
 <li>MAC : Broadcast source address </li>
@@ -5594,10 +5646,10 @@ We can understand the data by comparing the received data with the message reply
 <li>ts : receive timestamp</li>
 </ul>
 <p>If you purchased a gateway kit with a BLE Beacon and adds filtering rules for the beacon BLE MAC address according to section 3.9, the JSON information viewed here is the BLE information broadcast by the beacon. The beacons are placed at different distances from the GL-S10 gateway (distance up to the decimeter level), and the value of rssi (broadcast source signal strength) may fluctuate based on distance. 
-<center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic38.png", width = 800></center>
-<center>Figure 38</center>
-<center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic39.png", width = 400></center>
-<center>Figure 39</center></p>
+<center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic41.png", width = 800></center>
+<center>Figure 41</center>
+<center><img src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic42.png", width = 400></center>
+<center>Figure 42</center></p>
 <h2 id="gl-s10-config-api">GL-S10 Config API</h2>
 <p>This chapter define the commands to configure the GL-S10 device using the MQTT method.
 Command summary sheet</p>
