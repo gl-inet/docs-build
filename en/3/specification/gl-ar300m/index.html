@@ -4651,7 +4651,7 @@
   
 
   <!-- Markdown content -->
-  <h1 id="gl-ar300m-series-shadow">GL-AR300M Series (Shadow)</h1>
+  <h1 id="gl-ar300m-series-shadow">GL-AR300M Series (Shadow)<a class="headerlink" href="#gl-ar300m-series-shadow" title="Permanent link">&para;</a></h1>
 <p>Best Mini Router Ever</p>
 <p>AR300M is the our best mini router. It is small and powerful.</p>
 <p>It has several sub-models:</p>
@@ -4718,7 +4718,7 @@
 </tbody>
 </table>
 <p>*AR300MD 5G Wi-Fi is suggested only to work at monitoring mode because of power consumption. </p>
-<h2 id="hardware-specification">Hardware Specification</h2>
+<h2 id="hardware-specification">Hardware Specification<a class="headerlink" href="#hardware-specification" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -4797,7 +4797,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="pcb-pinout">PCB Pinout</h2>
+<h2 id="pcb-pinout">PCB Pinout<a class="headerlink" href="#pcb-pinout" title="Permanent link">&para;</a></h2>
 <div class="gl-lightbox" itemscope itemtype="http://schema.org/ImageGallery">
   <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
     <a href="https://static.gl-inet.com/docs/en/2.x/hardware/ar300m/src/GL-AR300M-PINOUT-1.jpg" itemprop="contentUrl" data-size="2339x1654">
@@ -4809,15 +4809,15 @@
 <p><strong>Note: I2C is not working in some early version of the router.</strong></p>
 <p>By using 128MB NAND flash, space is not a problem and the writing speed is improved greatly. You can compile a firmware with tons of features and writing data is almost instant.</p>
 <p>By adding PCIe interface, a 5G 802.11a/ac addon module can be connected and you can enjoy the Wi-Fi speed on a mini router.</p>
-<h2 id="performance">Performance</h2>
+<h2 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h2>
 <p>By adding a fast NAND flash, you can feel how the performance is improved compared to a NOR flash router.</p>
 <p>The performance comparision between AR300M (NAND) with AR150 is below:</p>
 <p><img alt="performance comparison gl-ar300m vs gl-ar150" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/hardware/ar300m/src/ar300m-performance.jpg" /></p>
 <p>It only takes 6 seconds to upload and process 250 ovpn files. When installing packages to the router, it takes no more than 20% for the time spent than using NOR flash, including the time to download resource from the Internet. So everything just happends in seconds.</p>
-<h2 id="building-firmware">Building Firmware</h2>
+<h2 id="building-firmware">Building Firmware<a class="headerlink" href="#building-firmware" title="Permanent link">&para;</a></h2>
 <p>The router has two flash so we have two firmwares. One firmware is installed on the NOR flash and one is installed on the NAND flash. The two firmware is independent from each other. The router will always try to boot from the NAND flash. If it fails for 3 times it will boot from the NOR flash.</p>
 <p>By using two firmwares, businesses can have dual boot options to ensure the system can backup, upgrade and boot without problems.</p>
-<h3 id="building-the-generic-firmware-for-nor-flash">Building the generic firmware for NOR flash</h3>
+<h3 id="building-the-generic-firmware-for-nor-flash">Building the generic firmware for NOR flash<a class="headerlink" href="#building-the-generic-firmware-for-nor-flash" title="Permanent link">&para;</a></h3>
 <p>The simple instructions of building the firmware can be found here: https://github.com/gl-inet/lede-17.01
 You need to have a Linux machine. In this example we use Ubuntu.</p>
 <pre><code>$ sudo apt-get update
@@ -4833,7 +4833,7 @@ $ make
 </code></pre>
 <p>If you want to build the firmware for NOR flash, choose <code>GL-AR300M</code> as the target.</p>
 <p><img alt="AR300M generic" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/hardware/ar300m/src/meunconfig-ar300m.jpg" /></p>
-<h3 id="build-the-nand-firmware-for-nand-flash">Build the NAND firmware for NAND flash</h3>
+<h3 id="build-the-nand-firmware-for-nand-flash">Build the NAND firmware for NAND flash<a class="headerlink" href="#build-the-nand-firmware-for-nand-flash" title="Permanent link">&para;</a></h3>
 <p>If you want to build the firmware for nand flash, first choose subtarget <code>Generic devices with NAND flash</code> then choose <code>GL-AR300M NAND</code> as the target.</p>
 <p><img alt="AR300M NAND" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/hardware/ar300m/src/meunconfig-ar300m-nand.jpg" /></p>
 <p>The make process will takes around 1 hour for the first time because it needs to download a lot of data from t he Internet. After compiling finished, you will find the following firmware files in <code>bin/ar71xx/</code></p>
@@ -4844,18 +4844,18 @@ $ make
 </ul>
 <p><strong>Note</strong></p>
 <p>There is two file for NAND firmware. The <code>xxx-ubi.img</code> is used for first time writing to the NAND flash. If you are using uboot to upgrade the firmware, please use this one. The <code>xxx-sysupgrade.tar</code> is used for upgrading from openwrt. So if you use our stock firmware or already using an openwrt firmware, choose this one.</p>
-<h2 id="using-firmware">Using Firmware</h2>
+<h2 id="using-firmware">Using Firmware<a class="headerlink" href="#using-firmware" title="Permanent link">&para;</a></h2>
 <p>The firmware has exactly the same UI as our other mini routers. To determine you are using NOR flash or NAND flash, please check the available space from the <code>APPLICATIONS -&gt; Plug-ins</code> page.</p>
-<h3 id="control-which-firmware-you-are-booting-into">Control which firmware you are booting into</h3>
+<h3 id="control-which-firmware-you-are-booting-into">Control which firmware you are booting into<a class="headerlink" href="#control-which-firmware-you-are-booting-into" title="Permanent link">&para;</a></h3>
 <p>There are two methods to control which firmware you can boot.</p>
-<h4 id="method-1-set-boot-count">Method 1: set boot count</h4>
+<h4 id="method-1-set-boot-count">Method 1: set boot count<a class="headerlink" href="#method-1-set-boot-count" title="Permanent link">&para;</a></h4>
 <p>The router will always try to boot into the NAND firmware. But if it fails for 3 times it will try to boot into the NOR firmware. If you want to boot into the NOR firmware, you can tell the router that it failed to boot for 3 times already by setting the uboot env. To do so, you can use the following command in a SSH terminal.</p>
 <pre><code>$ fw_printenv
 $ fw_setenv bootcount 3
 $ reboot
 </code></pre>
 <p><strong>You need to do this each time</strong> if you want to boot into NOR firmware, no matter you which firmware you are using. Otherwise after the firmware boot, it will reset <code>bootcount</code> variable and next boot will always try to boot the NAND firmware.</p>
-<h4 id="method-2-using-the-switch">Method 2: using the switch</h4>
+<h4 id="method-2-using-the-switch">Method 2: using the switch<a class="headerlink" href="#method-2-using-the-switch" title="Permanent link">&para;</a></h4>
 <p><strong>This is only valid in the new uboot (from Mar 2017).</strong></p>
 <p>First ssh to the router and set uboot env <code>boot_dev</code></p>
 <pre><code>$ fw_printenv
@@ -4872,9 +4872,9 @@ $ reboot
 $ fw_setenv boot_dev
 $ reboot
 </code></pre>
-<h2 id="debrick">Debrick</h2>
+<h2 id="debrick">Debrick<a class="headerlink" href="#debrick" title="Permanent link">&para;</a></h2>
 <p>If you brick your router and it cannot boot, you can try to save it using uboot.</p>
-<h3 id="using-uboot-web-ui">Using uboot web UI</h3>
+<h3 id="using-uboot-web-ui">Using uboot web UI<a class="headerlink" href="#using-uboot-web-ui" title="Permanent link">&para;</a></h3>
 <p>Follow <a href="../../troubleshooting/debrick/">this guide</a> for a general instruction to get access of uboot web UI.</p>
 <p>Here is a video guide for entering AR300M uboot failsafe.</p>
 <iframe width="480" height="270" src="https://www.youtube.com/embed/-x0RllKkzIc" frameborder="0" allowfullscreen></iframe>
@@ -4885,7 +4885,7 @@ $ reboot
 <p><strong>Note</strong>: When flash NAND firmware, only use the firmware with <code>.img</code> in the name, not the one with <code>.rar</code> in the name.</p>
 <p>The following figure is the web UI of the <code>new</code> uboot.</p>
 <p><img alt="AR300M uboot web ui" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/specification/gl-ar300m/gl-ar300m_uboot_2021.jpg" /></p>
-<h3 id="using-uboot-console">Using uboot console</h3>
+<h3 id="using-uboot-console">Using uboot console<a class="headerlink" href="#using-uboot-console" title="Permanent link">&para;</a></h3>
 <p>If you want to use uboot console, you need to open the case and solder the serial connectors.</p>
 <p>Then you need to set up a tftp server.</p>
 <p>in uboot console, the command to flash NOR flash is <code>run lf</code> to flash NAND firmware is <code>run nlf</code></p>

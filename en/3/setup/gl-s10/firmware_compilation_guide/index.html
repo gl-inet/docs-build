@@ -4566,14 +4566,14 @@
   
 
   <!-- Markdown content -->
-  <h1 id="gl-s10-firmware-compilation-guide">GL-S10 Firmware Compilation Guide</h1>
+  <h1 id="gl-s10-firmware-compilation-guide">GL-S10 Firmware Compilation Guide<a class="headerlink" href="#gl-s10-firmware-compilation-guide" title="Permanent link">&para;</a></h1>
 <p>This doc is intended to help users set the software building environment and build your own applications for GL-S10. <br />
 As an example, we build a simple demo. It 
 aims to recieve iBeacons from around and then send it to specified MQTT broker through WiFi. Note that WiFi and MQTT setting is written in the source code.</p>
-<h2 id="set-develop-environment">Set Develop Environment</h2>
+<h2 id="set-develop-environment">Set Develop Environment<a class="headerlink" href="#set-develop-environment" title="Permanent link">&para;</a></h2>
 <p>GL-S10 application is base on Espressif esp-idf(v3.3). You can get the detailed steps of building the compile environment by following the link. <a href="https://docs.espressif.com/projects/esp-idf/en/v3.3/get-started/index.html#introduction">https://docs.espressif.com/projects/esp-idf/en/v3.3/get-started/index.html#introduction</a> <em>(Attention: Please check the version of IDF before you download it.)</em>
 After configuring the develop environment, decompress and get into the source code folder <code>ble_ibeacon/</code>. Most code is in the file <code>ibeacon_demo.c</code>.</p>
-<h2 id="modify-source-code">Modify source code</h2>
+<h2 id="modify-source-code">Modify source code<a class="headerlink" href="#modify-source-code" title="Permanent link">&para;</a></h2>
 <p><strong>1. Modify WiFi setting</strong></p>
 <p>Find contents as below in the <code>ibeacon_demo.c</code> and modify the WiFi setting to what you want.</p>
 <pre><code class="language-c">wifi_config_t wifi_config = {
@@ -4598,7 +4598,7 @@ tcp-ssl ---&gt; mqtts://
 web socket ---&gt; ws://
 web socket secure ---&gt; wss://
 </code></pre>
-<h2 id="compile-and-flash">Compile and Flash</h2>
+<h2 id="compile-and-flash">Compile and Flash<a class="headerlink" href="#compile-and-flash" title="Permanent link">&para;</a></h2>
 <p><strong>1. Configuration</strong></p>
 <p>Before compile the application, get into your project folder <em>(here is <code>ble_ibeacon/</code>)</em>, using command <code>make menuconfig</code> to configure some basic setting like serial port.<br />
 In the configuration inteface, you just need to change three point as follow.<br />
@@ -4623,7 +4623,7 @@ Yellow marked is the UART port in S10. From left to right is GND/RX/TX. Red mark
 <p><img alt="flash" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/flash.jpg" /></p>
 <p>means flash starts sucessfully, then you can release the flash button and wait for the flash finished.
 When flash has been finished, restart the GL-S10.</p>
-<h2 id="result">Result</h2>
+<h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
 <p>If you have connect the S10 UART to the PC, using command <code>make monitor</code>, it will print all the system log like that. <em>(here shows the iBeacon data it recieved)</em></p>
 <p><img alt="system log result" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/system_log_result.png" /></p>
 <p>In the MQTT broker, You can get the messages published by S10 like that.</p>

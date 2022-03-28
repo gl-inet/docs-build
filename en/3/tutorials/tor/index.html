@@ -4666,7 +4666,7 @@
   
 
   <!-- Markdown content -->
-  <h1 id="using-tor-in-openwrt-and-glinet-routers">Using Tor in OpenWrt and GL.iNet Routers</h1>
+  <h1 id="using-tor-in-openwrt-and-glinet-routers">Using Tor in OpenWrt and GL.iNet Routers<a class="headerlink" href="#using-tor-in-openwrt-and-glinet-routers" title="Permanent link">&para;</a></h1>
 <p>Supported models:</p>
 <p>GL-AX1800, GL-B2200, GL-MT1300, GL-E750, GL-AR750S, GL-B1300, GL-S1300, GL-MV1000, GL-MV1000W</p>
 <p>This feature is builded in from V3.100.</p>
@@ -4681,9 +4681,9 @@
 <li>Flash it to the router, DO NOT reserve settings.</li>
 </ol>
 <p>If you brick your router after flashing the wrong firmware or wrong way, please use uboot failsafe to debrick the router. </p>
-<h2 id="versions-and-supported-devices">Versions and supported devices</h2>
+<h2 id="versions-and-supported-devices">Versions and supported devices<a class="headerlink" href="#versions-and-supported-devices" title="Permanent link">&para;</a></h2>
 <p>We have several version of Tor firmware and here is the summary. </p>
-<h3 id="version-2264">Version 2.264:</h3>
+<h3 id="version-2264">Version 2.264:<a class="headerlink" href="#version-2264" title="Permanent link">&para;</a></h3>
 <p>We have upgrade Tor firmware for the following models to v2.264 on 2017-11-24.</p>
 <p><code>AR150, AR300M, AR300M NAND, MT300N, MT300A, MT300N-V2</code></p>
 <p>Now Tor firmware is generally by imagebuilder and you will be able to install from standard GLi software repositories using opkg. The source code is on <a href="https://github.com/gl-inet/openwrt-files">github</a> now.</p>
@@ -4694,30 +4694,30 @@
 <li><a href="https://github.com/gl-inet/imagebuilder-cc-ramips">imagebuilder for MT300N, MT300A</a> based on OpenWrt CC 1505</li>
 <li><a href="https://github.com/gl-inet/imagebuilder-lede-ramips">imagebuilder for MT300N-V2</a> based on LEDE 17.01.4</li>
 </ul>
-<h3 id="version-14">Version 1.4:</h3>
+<h3 id="version-14">Version 1.4:<a class="headerlink" href="#version-14" title="Permanent link">&para;</a></h3>
 <p>Only support <code>GL-AR150</code>, <code>GL-AR300M</code>, <code>GL-MT300N</code>, <code>GL-MT300A</code>, which has a <code>switch button</code> controlling whether you traffice should go through Tor or not.</p>
 <p><strong>Most of these instructions are for version 1.4.</strong></p>
-<h3 id="version-13">Version 1.3:</h3>
+<h3 id="version-13">Version 1.3:<a class="headerlink" href="#version-13" title="Permanent link">&para;</a></h3>
 <p>Support <code>GL-AR150</code>,<code>GL.iNet6416</code>, <code>GL-AR300</code>. This firmware create two ssid: OpenWrt and Tor. If you conenct to OpenWrt you will have normal Internet. If you connect to Tor, you will be connect to Tor network. This firmware has a built-in UI based on Domino Pi which you can manage two SSIDs.</p>
-<h3 id="version-10-with-luci">Version 1.0 with LuCI:</h3>
+<h3 id="version-10-with-luci">Version 1.0 with LuCI:<a class="headerlink" href="#version-10-with-luci" title="Permanent link">&para;</a></h3>
 <p>Support <code>GL-MT300A</code> and <code>GL-MT300N</code>. This is the firmware created for MT300A and MT300N with LuCI. This firmware create two ssid: OpenWrt and Tor. If you conenct to OpenWrt you will have normal Internet. If you connect to Tor, you will be connect to Tor network. Connection from LAN port will always have Tor. LuCI is installed but there is no Domino Pi UI.</p>
 <p>Note: If you have questions about versions, please ask here or in the forum.</p>
-<h2 id="download-and-flashing-the-firmware-to-the-device">Download and Flashing the firmware to the device</h2>
+<h2 id="download-and-flashing-the-firmware-to-the-device">Download and Flashing the firmware to the device<a class="headerlink" href="#download-and-flashing-the-firmware-to-the-device" title="Permanent link">&para;</a></h2>
 <p>All the firmwares is available at <a href="https://dl.gl-inet.com/">here</a>. Select your device model and select the type to <code>tor</code>. Download the latest firmware.</p>
 <p>You need to refer to <a href="../../setup/mini_router/first_time_setup/">Setup</a> for instructions to flash the firmware to the router. </p>
-<h2 id="using-the-firmware-ui">Using the firmware UI</h2>
+<h2 id="using-the-firmware-ui">Using the firmware UI<a class="headerlink" href="#using-the-firmware-ui" title="Permanent link">&para;</a></h2>
 <p>After you flash the firmware to your device, when it reboots you need to set up the device at <code>http://192.168.8.1</code>. </p>
 <p><code>If</code> you need to connect via Wi-Fi, the default Wi-Fi password is <code>goodlife</code>.</p>
 <p>NOTE:</p>
 <p><strong>You need to move the hardware switch to the right side if you want to access the UI</strong>. Otherwise you are connecting to the Tor network and will not be able to access the UI. This is for security reasons.</p>
-<h3 id="first-time-setup">First time setup</h3>
+<h3 id="first-time-setup">First time setup<a class="headerlink" href="#first-time-setup" title="Permanent link">&para;</a></h3>
 <p>The first time you acess the setting UI, you will be asked to setup a new password immediatelly. Just choose a password and your TimeZone and submit. The device will <code>NOT</code> reboot in firmware 1.4.</p>
 <p>NOTE: <strong>This doesn't change your WiFi password. Change it later.</strong></p>
 <p><img alt="First time" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tor/first_time.jpg" /></p>
-<h3 id="login">Login</h3>
+<h3 id="login">Login<a class="headerlink" href="#login" title="Permanent link">&para;</a></h3>
 <p>You will be asked to login using your <code>NEW</code> password now.</p>
 <p><img alt="Login" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tor/login.jpg" /></p>
-<h3 id="homepage">Homepage</h3>
+<h3 id="homepage">Homepage<a class="headerlink" href="#homepage" title="Permanent link">&para;</a></h3>
 <p>The UI is based on Domino Pi. It is quite simple. In your homepage you will be displayed with:</p>
 <ol>
 <li>Your network status</li>
@@ -4725,7 +4725,7 @@
 <li>Usage of your flash</li>
 </ol>
 <p><img alt="Homepage" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tor/homepage.jpg" /></p>
-<h3 id="system-and-firmware-upgrade">System and firmware upgrade</h3>
+<h3 id="system-and-firmware-upgrade">System and firmware upgrade<a class="headerlink" href="#system-and-firmware-upgrade" title="Permanent link">&para;</a></h3>
 <p>You can click the <code>SYSTEM</code> button from the left sidebar to view the system information, including:</p>
 <ol>
 <li>Your router's name</li>
@@ -4736,7 +4736,7 @@
 <p><img alt="System" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tor/system.jpg" /></p>
 <p>If the firmware on our website is newer, you can click <code>Download</code> and follow the instructions to upgrade the firmware.</p>
 <p><img alt="Upgrade" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tor/upgrade.jpg" /></p>
-<h3 id="network-settings">Network Settings</h3>
+<h3 id="network-settings">Network Settings<a class="headerlink" href="#network-settings" title="Permanent link">&para;</a></h3>
 <p>Click the <code>NETWORK</code> button on the left sidebar to view and change the network settings, including:</p>
 <ol>
 <li>Internet protocol: <code>dhcp</code>, <code>static</code>, <code>pppoe</code>, <code>3g</code>, <code>tethering</code> or <code>repeater</code>. Tethering only works in Android phones.</li>
@@ -4751,19 +4751,19 @@
 <p>NOTE:</p>
 <p><strong>This firmware don't have repeater manager as our stock firmware.</strong> If you move to another location, your Wi-Fi maybe not work and you need to re-setup. Refer to the button action section in this page.</p>
 <p><img alt="Repeater" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tor/repeater.jpg" /></p>
-<h3 id="luci">LuCI</h3>
+<h3 id="luci">LuCI<a class="headerlink" href="#luci" title="Permanent link">&para;</a></h3>
 <p>Click the <code>LUCI</code> button on the left sidebar you can have the LUCI UI. You can go back to Domino UI by clicking the <code>Domino Web Panel</code> link on the bottom right corner.</p>
 <p><img alt="LUCI" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tor/luci.jpg" /></p>
-<h2 id="reset-button-and-hardware-switch-usage">Reset button and hardware switch usage</h2>
+<h2 id="reset-button-and-hardware-switch-usage">Reset button and hardware switch usage<a class="headerlink" href="#reset-button-and-hardware-switch-usage" title="Permanent link">&para;</a></h2>
 <p>Reset button and switch is assigned special functions.</p>
 <p><img alt="Reset" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tor/button_leds.jpg" /></p>
-<h3 id="reset">Reset</h3>
+<h3 id="reset">Reset<a class="headerlink" href="#reset" title="Permanent link">&para;</a></h3>
 <ol>
 <li>When you press down the reset button, the middle LED will start to flash once per second. Release your finger if the LED just flashed once (1 seconds), the Tor will try to change a new Exit node.</li>
 <li>If you keep the button pressed for 3 seconds, it will flash quicker, twice per second. Now release your finger your network will reset, including disable repeater, set lanip back to 192.168.8.1 and enable dhcp. <strong>Use this function if your repeater cannot connect which causes your Wi-Fi down</strong></li>
 <li>When you keep holding the reset button for 8 seconds, the middle LED will start to flash even quicker, 4 times per seconds. Release your finger now, your firmware will revert to factory status and reboot.</li>
 </ol>
-<h3 id="switch">Switch</h3>
+<h3 id="switch">Switch<a class="headerlink" href="#switch" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Left side: You will be connected to <code>Tor network</code>. <strong>You cannot access the admin UI.</strong></li>
 <li>Rigth side: <code>Normal Internet</code>. You will be able to access the admin UI.</li>

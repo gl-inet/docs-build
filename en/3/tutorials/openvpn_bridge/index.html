@@ -4577,29 +4577,29 @@
   
 
   <!-- Markdown content -->
-  <h1 id="openvpn">OpenVPN</h1>
+  <h1 id="openvpn">OpenVPN<a class="headerlink" href="#openvpn" title="Permanent link">&para;</a></h1>
 <p>OpenVPN is an open-source VPN protocol that makes use of virtual private network (VPN) techniques to establish safe site-to-site or point-to-point connections. </p>
 <p>GL.iNet routers have pre-installed OpenVPN Client and Server.</p>
-<h2 id="openvpn-bridge">OpenVPN Bridge</h2>
+<h2 id="openvpn-bridge">OpenVPN Bridge<a class="headerlink" href="#openvpn-bridge" title="Permanent link">&para;</a></h2>
 <p>OpenVPN Bridge is supported from firmware version 3.105.</p>
 <p>It uses tap mode to establish the connection, the VPN server will assign ip to OpenVPN Client and the devices that connected to the Client. So the Server and the devices will be in the same vpn subnet, you can access them all from OpenVPN Server.</p>
 <p><strong>This application need two GL.iNet routers to complete the connection.</strong></p>
-<h3 id="1-start-the-openvpn-server">1) Start the OpenVPN Server</h3>
+<h3 id="1-start-the-openvpn-server">1) Start the OpenVPN Server<a class="headerlink" href="#1-start-the-openvpn-server" title="Permanent link">&para;</a></h3>
 <p>Go to the OpenVPN Server page, generate a configuration file then change the Type to Bridge, there will be an ip range pool settings for the clients, normally you don't need to change the default settings.</p>
 <p>Click 'Apply' and Start the Server, when export the config you can find the 'dev tun' is changed to 'dev tap'.</p>
 <p><img alt="openvpn server" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_bridge/setting_page.png" /></p>
-<h3 id="2-upload-tap-configuration">2) Upload tap configuration</h3>
+<h3 id="2-upload-tap-configuration">2) Upload tap configuration<a class="headerlink" href="#2-upload-tap-configuration" title="Permanent link">&para;</a></h3>
 <p>Open another router's web page and upload the configuration file. Click 'Connect' then wait a few minutes.</p>
 <p>The router will be assigned an ip by OpenVPN Server and become inaccessible, if the server's vpn gateway is 10.8.0.1, the router will get 10.8.0.2 and the computer connected to the router will get ip address like 10.8.0.60. </p>
 <p>The connected PC will get a new ip address after the connection is established successfully:</p>
 <p><img alt="do you want to allow your pc to be discoverable by other pcs and devices on this network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_bridge/get_newip.png" /></p>
 <p><strong>Please pull out the lan cable and insert it again if the ip address of the connected device didn't change automatically</strong></p>
 <p>After the connection is established, you can access your devices from OpenVPN Server.</p>
-<h3 id="example">Example:</h3>
+<h3 id="example">Example:<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <p><img alt="network topology" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_bridge/topology.png" /></p>
 <p>I can ping my phone(10.8.0.63) remotely from the local computer(192.168.8.208):</p>
 <p><img alt="ping" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_bridge/example.png" /></p>
-<h3 id="3-stop-the-vpn-connection">3) Stop the VPN connection</h3>
+<h3 id="3-stop-the-vpn-connection">3) Stop the VPN connection<a class="headerlink" href="#3-stop-the-vpn-connection" title="Permanent link">&para;</a></h3>
 <p>If you want to stop the vpn connection or the connection failed to establish, please hold the reset button for 4s to revert the network, then the OpenVPN client router will be accessible, you can now enter the default web page and stop the vpn connection.</p>
 
   <!-- Last update of source file -->

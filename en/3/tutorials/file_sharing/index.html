@@ -4632,10 +4632,10 @@
   
 
   <!-- Markdown content -->
-  <h1 id="file-sharing-on-glinet-routers">File Sharing on GL.iNet Routers</h1>
+  <h1 id="file-sharing-on-glinet-routers">File Sharing on GL.iNet Routers<a class="headerlink" href="#file-sharing-on-glinet-routers" title="Permanent link">&para;</a></h1>
 <p>You can use GL.iNet routers with external storage device such as USB stick, MicroSD card, etc, and some models have big internal storage, thus the contents can be shared among all your connected clients. You can easily read or modify its contents. </p>
 <hr />
-<h2 id="supported-models">Supported models</h2>
+<h2 id="supported-models">Supported models<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h2>
 <p>Usually models with USB ports or TF slots or have big internal storage are supported for file sharing.</p>
 <p><em>Note: The power consumption of USB hard drive is quite high. You should use it with an external power supply. Otherwise, it may cause malfunction.</em></p>
 <p><strong>Supported external storage models</strong></p>
@@ -4814,7 +4814,7 @@
 </tbody>
 </table>
 <hr />
-<h2 id="router-settings">Router settings</h2>
+<h2 id="router-settings">Router settings<a class="headerlink" href="#router-settings" title="Permanent link">&para;</a></h2>
 <p>On the left side of web Admin Panel -&gt; APPLICATIONS -&gt; File Sharing -&gt; File Sharing</p>
 <p>The file sharing packages may not installed. Click <code>Install</code> to continue.</p>
 <p><img alt="file sharing not installed" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/file_sharing_not_installed.png" /></p>
@@ -4824,12 +4824,12 @@
 <p><strong>Writable</strong>: The contents of the external storage device can be edited. For writable, it recommend using NTFS or EXT4 file systems.</p>
 <p><img alt="file sharing installed" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/file_sharing_installed.png" /></p>
 <hr />
-<h2 id="access-the-storage-device">Access the storage device</h2>
+<h2 id="access-the-storage-device">Access the storage device<a class="headerlink" href="#access-the-storage-device" title="Permanent link">&para;</a></h2>
 <p>You can access the contents of the external storage device from your computer or smart phone. Please check the following guidance for the using of file sharing among different operating systems.</p>
-<h3 id="general-notes">General Notes</h3>
+<h3 id="general-notes">General Notes<a class="headerlink" href="#general-notes" title="Permanent link">&para;</a></h3>
 <p>You may be able to access the share via <code>\\192.168.8.1\</code> or <code>smb://192.168.8.1/</code> or with <code>GL-modelXXX</code> instead of <code>192.168.8.1</code> (eg <code>\\GL-AR750S\</code>)  in your system's file explorer. Since sharing is enabled to the LAN by default (this includes both wired AND wireless clients) and maps a "bad user" to Guest, then even if they don't supply a username and password or an invalid one, ANYONE connected to your router can access the files in the share in Read-Only mode. If you enable Writable mode this applies to both Guests AND the default <code>root</code> user. If you enable write access, anybody can create or delete files and folders, if you disable write access, not even the <code>root</code> user can delete them via SMB (they can through the CLI though). We can hope that in a future revision there is a simple user management and that a named user (or <code>root</code>) can read and/or write while Guests are limited by the <code>Writable</code> or a <code>Public Write</code> flag on a share (and having multiple shares would be great as well).</p>
-<h3 id="windows">Windows</h3>
-<h4 id="method-1-samba-20-smb20-support">Method 1: Samba 2.0 (SMB2.0) Support:</h4>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
+<h4 id="method-1-samba-20-smb20-support">Method 1: Samba 2.0 (SMB2.0) Support:<a class="headerlink" href="#method-1-samba-20-smb20-support" title="Permanent link">&para;</a></h4>
 <p>We suggest Samba 2.0 support for Windows 10 users.</p>
 <p>Due to the security vulunerabilitiy of the Samba1.0 protocol, Samba1.0 is not enabled by default in Window 10. You may modify the router Samba configuration.</p>
 <p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/smb1.0.png" /></p>
@@ -4842,7 +4842,7 @@
 <p>4). Open 'This PC' and type <code>\\your router IP Address</code>, such as <code>\\192.168.8.1</code>.</p>
 <p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/Filesharing.png" /></p>
 <p>5). You can view files in your USB flash drive through GL.iNet router now.</p>
-<h4 id="method-2-samba-10-smb10-support">Method 2: Samba 1.0 (SMB1.0) Support:</h4>
+<h4 id="method-2-samba-10-smb10-support">Method 2: Samba 1.0 (SMB1.0) Support:<a class="headerlink" href="#method-2-samba-10-smb10-support" title="Permanent link">&para;</a></h4>
 <p><strong>1)</strong> Your network must be Home/Private. Otherwise you may not be able to see your router in <strong>Network</strong>. </p>
 <p>3.0 firmware supports SMB2, and if you need SMB3, use <a href="../../tutorials/scp/">WinSCP to router</a>, edit <code>/etc/samba/smb.conf.template</code>. </p>
 <p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/winscpsmb.jpg" /></p>
@@ -4863,7 +4863,7 @@
 <p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/Win10SMB1.jpg" /></p>
 <p><strong>2)</strong> Open a Windows explorer, you can find <strong>Network</strong> in the folder directory. Double click your router to access its contents.</p>
 <p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/network.jpg" /></p>
-<h3 id="mac-os">Mac OS</h3>
+<h3 id="mac-os">Mac OS<a class="headerlink" href="#mac-os" title="Permanent link">&para;</a></h3>
 <p><strong>Method 1</strong></p>
 <p><strong>1)</strong> Open Finder, Menu -&gt; Go -&gt; Connect to Server... </p>
 <p><img alt="finder_connect_to_server" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/finder_connect_to_server.png" /></p>
@@ -4878,7 +4878,7 @@
 <p><strong>Method 2</strong></p>
 <p><strong>1)</strong> Go to System Preferences -&gt; Sharing -&gt; File sharing. Click <code>Options</code> and then enable SMB.</p>
 <p><strong>2)</strong> Open Finder. You should be able to find your router under Shared.</p>
-<h3 id="ios">iOS</h3>
+<h3 id="ios">iOS<a class="headerlink" href="#ios" title="Permanent link">&para;</a></h3>
 <p>You have to use file manage app to access the contents of your external storage device.</p>
 <p>You may use <strong>FE File Explorer</strong>:</p>
 <p><strong>1)</strong> Click <code>+</code> to create a <code>Windows</code> connection.</p>
@@ -4888,9 +4888,9 @@
 <p><img alt="IOS1" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/ios13.jpg" /></p>
 <p><strong>3)</strong> Click your newly created connection to access the contents.</p>
 <p><img alt="IOS1" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/ios14.jpg" /></p>
-<h3 id="linux">Linux</h3>
+<h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
 <p>If you are using Linux you are probably comfortable with connecting to servers, and how to do this can vary greatly from distribution to distribution and largely depends on your window manager/display environment. Most systems come with Gnome and it is the default on the very popular Ubuntu distribution, so we'll give an example using the Files tool (also called Nautilus). If you open the app you should have a "Connect to server" option, there you can enter either the <code>\\servername\share</code> or <code>smb://servername/share</code> format.</p>
-<h3 id="chromeos-or-chromiumos-neverware-cloudready-and-others">ChromeOS or ChromiumOS (Neverware CloudReady and others)</h3>
+<h3 id="chromeos-or-chromiumos-neverware-cloudready-and-others">ChromeOS or ChromiumOS (Neverware CloudReady and others)<a class="headerlink" href="#chromeos-or-chromiumos-neverware-cloudready-and-others" title="Permanent link">&para;</a></h3>
 <p>There is a built in Samba/SMB client in the Files app, and they have deprecated the previous separate plugin/service that was a GoogleLabs experiment.</p>
 <p>In the Files app if you go to the 3 dot menu at the top right and "Add new service" you then select "SMB File Share" from the list and it will give you the dialog to fill out with the server name and some other details, but only the server name/IP and share name are required (unless you modify the smb.conf on your router to better control access to certain paths, you can use SSH or Luci + webmin to manage this).</p>
 <p>The default share name appears to be <code>GL-Samba</code> so a connection string might be <code>\\192.168.8.1\GL-Samba</code> if your USB or microSD is properly recognized.</p>
@@ -4899,7 +4899,7 @@
 # Answer 'y' to the prompt and hit Enter
 smbclient -N -L 192.168.8.1
 </code></pre>
-<h3 id="android">Android</h3>
+<h3 id="android">Android<a class="headerlink" href="#android" title="Permanent link">&para;</a></h3>
 <p>Most Android devices have file manager tool which maybe can be used to access the files on Network Devices using SMB. Or you can search file explorer app which support SMB on Google Play.</p>
 <p>Here I'm going to use <strong>Solid Explorer File Manager</strong> as an example:</p>
 <p><strong>1)</strong> Open the app.</p>

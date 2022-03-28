@@ -4638,11 +4638,11 @@
   
 
   <!-- Markdown content -->
-  <h1 id="ble-mqtt-bridge">BLE MQTT Bridge</h1>
-<h2 id="introduction">Introduction</h2>
+  <h1 id="ble-mqtt-bridge">BLE MQTT Bridge<a class="headerlink" href="#ble-mqtt-bridge" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Bluetooth Low Energy (BLE) is widely used for smart home, wearable and IoT sensors. This guide provide a simple but useful tool that send your BLE data to MQTT servers, which is the underling mechanism for popular IoT solution. </p>
 <p>In this guide we will introduce two GL.iNet BLE gateway, <code>GL-X750 Spitz</code>    and <code>GL-S1300 Convexa-S</code> which has optional built-in BLE modules and how to use them to forward your BLE data to the cloud based on MQTT protocol. This take GL.iNet <a href="https://www.goodcloud.xyz" target="_blank">GoodCloud</a> and <a href="https://aws.amazon.com/iot/" target="_blank">AWS IoT</a> as example.</p>
-<h2 id="hardware-required">Hardware Required</h2>
+<h2 id="hardware-required">Hardware Required<a class="headerlink" href="#hardware-required" title="Permanent link">&para;</a></h2>
 <p>Both GL-X750 and GL-S1300 comes with a Silicon BLE 5.0 module with the following specs. It connects to the main board using <code>UART</code>. The same module support BLE and Zigbee. However you need to change the firmware on the module (not the gateway). There is no way to change the firmware from BLE to Zigbee or vice versa on the air. So you have to select the correct module when you purchase the correct product.</p>
 <table>
 <thead>
@@ -4720,7 +4720,7 @@
 <p>For BLE devices that needs to pair first, you need to know how they can pair with the gateway. Generally this is provided by the device maker. There are a lot of devices that accept standard connection so you can pair without problem.</p>
 <p>A list of compatible devices will be collected and posted here.</p>
 <p><strong><em>TBD: a list of compatible BLE device.</em></strong></p>
-<h2 id="ble-tools">BLE Tools</h2>
+<h2 id="ble-tools">BLE Tools<a class="headerlink" href="#ble-tools" title="Permanent link">&para;</a></h2>
 <p>Both GL-X750 and GL-S1300 come with OpenWrt and our BLE tools. </p>
 <p>In your current firmware for S1300, there may be a BLE tool which comes with a UI. But we are further developing this and you need to use the new BLE tool.</p>
 <pre><code class="language-shell">root@GL-S1300:~# opkg remove gl-ble-daemon gl-ble-api
@@ -4742,10 +4742,10 @@ d0049238c444f07001ff00
 
 </code></pre>
 <p>You can find a detailed documentation about <code>bletool</code> <strong><em>https://github.com/gl-inet/ble2mqtt</em></strong>. </p>
-<h2 id="mqtt">MQTT</h2>
+<h2 id="mqtt">MQTT<a class="headerlink" href="#mqtt" title="Permanent link">&para;</a></h2>
 <p>MQTT is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol.  You can find official document in <a href="https://mqtt.org">mqtt.org</a>.</p>
 <p>This guide will give you a step to step guide of how to send message to GL.iNet GoodCloud and AWS.</p>
-<h3 id="send-data-to-goodcloud">Send Data to GoodCloud</h3>
+<h3 id="send-data-to-goodcloud">Send Data to GoodCloud<a class="headerlink" href="#send-data-to-goodcloud" title="Permanent link">&para;</a></h3>
 <p>GoodCloud is our Cloud based on MQTT under development. Now you can use it for demo purpose related to BLE. You can contact us if you have any suggestions by sending an email to admin@goodcloud.xyz. </p>
 <p>All you need to do is to register an account in GoodCloud.xyz and bind your X750 or S1300 to your account.</p>
 <p><strong>Register your device on <a href="https://www.goodcloud.xyz">GoodCloud.xyz</a></strong></p>
@@ -4777,9 +4777,9 @@ root@GL-S1300:~#
 <p>Login the <a href="https://www.goodcloud.xyz">GoodCloud</a>，find the registered device in "device list", click the device name and you will find your message in timeline.</p>
 <p><img alt="goodcloud device list" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/dev/ble_bridge/find-device.png" /></p>
 <p><img alt="goodcloud timeline" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/dev/ble_bridge/find-log.jpg" /></p>
-<h3 id="send-data-to-aws-iot">Send Data to AWS IoT</h3>
+<h3 id="send-data-to-aws-iot">Send Data to AWS IoT<a class="headerlink" href="#send-data-to-aws-iot" title="Permanent link">&para;</a></h3>
 <p>Amazon AWS IoT is a good choice for business applications. AWS seems to have good security and privacy protection. Here we will give an example of how to send your data to AWS IoT platform. It is a little complicated but still OK for IT specialist. </p>
-<h4 id="1-setting-up-your-aws-iot-environment">1. Setting up your AWS IoT environment</h4>
+<h4 id="1-setting-up-your-aws-iot-environment">1. Setting up your AWS IoT environment<a class="headerlink" href="#1-setting-up-your-aws-iot-environment" title="Permanent link">&para;</a></h4>
 <p>1) On the <strong>Welcome to the AWS IoT Console</strong> page, in the navigation pane, choose <strong>Manage-&gt;Things</strong> , then <strong>Register a thing</strong>. </p>
 <p><img alt="aws IoT register a things" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/dev/ble_bridge/image001.png" /></p>
 <p>2) On the <strong>Creating AWS IoT things</strong> page, choose <strong>Create a single thing</strong>.</p>
@@ -4807,7 +4807,7 @@ root@GL-S1300:~#
 <p>6) Active your thing</p>
 <p>Back to the previous site, click "<strong>Activate</strong>", then click "<strong>Done</strong>". </p>
 <p><img alt="activate your thing" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/dev/ble_bridge/image008.png" /></p>
-<h4 id="2-attach-policy">2. Attach Policy</h4>
+<h4 id="2-attach-policy">2. Attach Policy<a class="headerlink" href="#2-attach-policy" title="Permanent link">&para;</a></h4>
 <p>1) After you register your thing, you will need to create and attach a new <strong>policy</strong> to the <strong>certificate</strong>.</p>
 <p><img alt="aws IoT create policy" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/dev/ble_bridge/image009.png" /></p>
 <p>2) Enter a Name for the policy,such as x750_policy, then <strong>Advance mode</strong></p>
@@ -4838,7 +4838,7 @@ root@GL-S1300:~#
 <p><img alt="aws IoT attach policy" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/dev/ble_bridge/image013.png" /></p>
 <p>6) Choose the policy you created(x750_policy) and choose <strong>Attach</strong>.</p>
 <p><img alt="aws IoT attach policy" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/dev/ble_bridge/image014.png" /></p>
-<h4 id="3-config-glinet-devices-to-connect-to-aws-iot">3. Config GL.iNet devices to connect to AWS IoT</h4>
+<h4 id="3-config-glinet-devices-to-connect-to-aws-iot">3. Config GL.iNet devices to connect to AWS IoT<a class="headerlink" href="#3-config-glinet-devices-to-connect-to-aws-iot" title="Permanent link">&para;</a></h4>
 <p><strong>1) Upload your certificate to the router</strong> </p>
 <p>Rename the downloaded certificate files :</p>
 <p>AmazonRootCA1.pem --&gt; root_CA.crt</p>
@@ -4923,7 +4923,7 @@ root@GL-S1300:~#
 <pre><code class="language-shell">ps | grep gl_mqtt
 </code></pre>
 <p><img alt="check gl_mqtt process" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/dev/ble_bridge/image021.png" /></p>
-<h4 id="4-mqtt-communication-testing">4. MQTT Communication Testing</h4>
+<h4 id="4-mqtt-communication-testing">4. MQTT Communication Testing<a class="headerlink" href="#4-mqtt-communication-testing" title="Permanent link">&para;</a></h4>
 <p><strong>Test-&gt;Subscribe to a topic</strong></p>
 <p>The subscription and publish topics in glconfig file: </p>
 <pre><code class="language-shell">option sub_topic '/a1rLNyG2VK5/mqtt_demo/user/get'               
@@ -4942,8 +4942,8 @@ Publish topic:  '/a1rLNyG2VK5/mqtt_demo/user/get'
 <pre><code class="language-shell">logread
 </code></pre>
 <p><img alt="router receive message" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/dev/ble_bridge/image025.png" /></p>
-<h2 id="application-and-demo">Application and Demo</h2>
-<h3 id="read-ble-thermal-sensor">Read BLE Thermal Sensor</h3>
+<h2 id="application-and-demo">Application and Demo<a class="headerlink" href="#application-and-demo" title="Permanent link">&para;</a></h2>
+<h3 id="read-ble-thermal-sensor">Read BLE Thermal Sensor<a class="headerlink" href="#read-ble-thermal-sensor" title="Permanent link">&para;</a></h3>
 <p>The following demo show how to read data from a thermal sensor, pack the data in JSON format and  send to the GoodCloud.</p>
 <pre><code class="language-shell">#!/usr/bin/sh
 . /usr/share/libubox/jshn.sh

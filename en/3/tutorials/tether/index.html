@@ -4665,9 +4665,9 @@
   
 
   <!-- Markdown content -->
-  <h1 id="easytether">EasyTether</h1>
+  <h1 id="easytether">EasyTether<a class="headerlink" href="#easytether" title="Permanent link">&para;</a></h1>
 <p>This article is about how to tether your phone to your router by using EasyTether.</p>
-<h2 id="intro">Intro</h2>
+<h2 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h2>
 <p>There is several reasons you need to share your smartphone's data  to your router:</p>
 <ol>
 <li>Carriers give you a plan with plenty of data but actually you don't need that much.</li>
@@ -4677,8 +4677,8 @@
 <p>It is very easy to share your data to GL.iNet mini router using router's control interfaces, but in some phone and carrier network, they limit sharing data directly, so you can try EasyTether.</p>
 <p>We will use Android OS and GL.iNet mini router to demonstrate the procedure.</p>
 <hr />
-<h2 id="stuff-you-need">Stuff you need</h2>
-<h3 id="equipment">Equipment</h3>
+<h2 id="stuff-you-need">Stuff you need<a class="headerlink" href="#stuff-you-need" title="Permanent link">&para;</a></h2>
+<h3 id="equipment">Equipment<a class="headerlink" href="#equipment" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Samsung Galaxy S6 with Android OS</p>
@@ -4690,7 +4690,7 @@
 <p>4G SIM card</p>
 </li>
 </ol>
-<h3 id="software">Software</h3>
+<h3 id="software">Software<a class="headerlink" href="#software" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>WinSCP (<a href="https://winscp.net/eng/download.php">https://winscp.net/eng/download.php</a>)</p>
@@ -4712,11 +4712,11 @@
 </li>
 </ol>
 <hr />
-<h2 id="procedure">Procedure</h2>
-<h3 id="preparing-your-router">Preparing your router</h3>
-<h4 id="1-set-up-the-router"><em>1) Set up the router</em></h4>
+<h2 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">&para;</a></h2>
+<h3 id="preparing-your-router">Preparing your router<a class="headerlink" href="#preparing-your-router" title="Permanent link">&para;</a></h3>
+<h4 id="1-set-up-the-router"><em>1) Set up the router</em><a class="headerlink" href="#1-set-up-the-router" title="Permanent link">&para;</a></h4>
 <p>Enter 192.168.8.1 in your browser and get into the router web interface. Set the password which will be used for OpenWRT later. Next, update your router to the latest firmware.</p>
-<h4 id="2-transfer-ipk-driver-package-to-the-router"><em>2) Transfer IPK driver package to the router</em></h4>
+<h4 id="2-transfer-ipk-driver-package-to-the-router"><em>2) Transfer IPK driver package to the router</em><a class="headerlink" href="#2-transfer-ipk-driver-package-to-the-router" title="Permanent link">&para;</a></h4>
 <p><strong><em>i.</em></strong> Find out the chip of your model (for example Atheros 9531, MediaTek MT7620N, etc) from the website. It is because you have to choose the IPK driver package in the EasyTether driver file base on the chip of your router. (For GL router, you can find the information on our website: www.gl-inet.com, and we will also indicate the position of the IPK driver file for our mini router in section iv.):</p>
 <p><img alt="Chip model" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tether/Q5.png" /></p>
 <p><strong><em>ii.</em></strong> Extract the EasyTether driver file. Open WinSCP, choose SCP as the file protocol and enter the information as the figure shown below:</p>
@@ -4732,7 +4732,7 @@
 <em>MT300N &amp; MT300A: \15.05.1\ramips\mt7620\ easytether-usb-openssl_0.8.7-1_ramips_24kec.ipk</em>
 <em>AR150 &amp; AR300M: \15.05.1\ar71xx\generic\easytether-usb-openssl_0.8.7-1_ar71xx.ipk</em></p>
 <p><img alt="Upload1" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tether/Q11.png" /></p>
-<h4 id="3-use-ssh-to-install-easytether-driver"><em>3) Use SSH to install EasyTether driver</em></h4>
+<h4 id="3-use-ssh-to-install-easytether-driver"><em>3) Use SSH to install EasyTether driver</em><a class="headerlink" href="#3-use-ssh-to-install-easytether-driver" title="Permanent link">&para;</a></h4>
 <p><strong><em>i.</em></strong> Open PuTTY, enter the IP of your router and other information as the figure shown below, then click <code>Open</code>:</p>
 <p><img alt="Putty" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tether/4.png" /></p>
 <p><strong><em>ii.</em></strong> Login by using your username and password of the router (username: root; password: same as the one you need for entering the web interface):</p>
@@ -4758,13 +4758,13 @@ EOF
 <p><em>Note:  To paste it into Putty, just right click the black screen and then hit enter.</em></p>
 <p><strong><em>vii.</em></strong> Type in the following command to reboot your router or unplug the power cable of your router. Afterward, plug in the power cable to turn on the router.</p>
 <p><code>reboot -f</code></p>
-<h3 id="preparing-your-smart-phone">Preparing your smart phone</h3>
-<h4 id="1-enable-the-developer-options"><em>1) Enable the Developer Options</em></h4>
+<h3 id="preparing-your-smart-phone">Preparing your smart phone<a class="headerlink" href="#preparing-your-smart-phone" title="Permanent link">&para;</a></h3>
+<h4 id="1-enable-the-developer-options"><em>1) Enable the Developer Options</em><a class="headerlink" href="#1-enable-the-developer-options" title="Permanent link">&para;</a></h4>
 <p><strong><em>i.</em></strong> Go to Setting -&gt; About Device -&gt; Software info. Hitting the build number several times and it will announce that you have turn on the Developer Options.</p>
 <p><img alt="Build number" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tether/XXXXXXX.jpg" /></p>
 <p><strong><em>ii.</em></strong> Go to Setting -&gt; Developer Options, turn on the Developer Options and also the USB debugging.</p>
 <p><img alt="Developer Options" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tether/XXXX.jpg" /></p>
-<h4 id="2-start-tethering"><em>2) Start tethering</em></h4>
+<h4 id="2-start-tethering"><em>2) Start tethering</em><a class="headerlink" href="#2-start-tethering" title="Permanent link">&para;</a></h4>
 <p><strong><em>i.</em></strong> Open EasyTether App, tick the USB button, it will show “waiting for connection from the host”. </p>
 <p><img alt="EasyTether App" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tether/Screenshot_20170614-165645.jpg" /></p>
 <p><strong><em>ii.</em></strong> Connect your phone to the router via USB cable. Hit OK to allow the USB debugging.</p>
@@ -4772,7 +4772,7 @@ EOF
 <p><strong><em>iii.</em></strong> Your connection has been established.</p>
 <p><img alt="Connection finished" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/app/src/tether/Screenshot_20170614-165709.jpg" /></p>
 <p>You can now connect your device to the router and access the Internet. However, if you are using the lite version of EasyTether app, you will not able to access the website with https like: https://www.youtube.com since this type of secure communication is being blocked by the lite version.</p>
-<h2 id="advanced-configuration">Advanced Configuration</h2>
+<h2 id="advanced-configuration">Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">&para;</a></h2>
 <p>If you are using your WAN ethernet port to connect to the internet, it may be tedious to ssh into your router when you want to switch between EasyTether and ethernet. This section will show you how to set your router up so you can use either one without needing to ssh into the router and reconfigure the interfaces.</p>
 <p><strong><em>i.</em></strong> Create the EasyTether interface</p>
 <p>SSH into your router with Putty and run the the following command:</p>
@@ -4802,7 +4802,7 @@ Press <code>Esc</code>, then type <code>:wq</code>.  </p>
         option mtu_fix '1'
         option network 'wan wan6 wwan easytether'
 </code></pre>
-<h2 id="enabling-auto-connect">Enabling auto-connect</h2>
+<h2 id="enabling-auto-connect">Enabling auto-connect<a class="headerlink" href="#enabling-auto-connect" title="Permanent link">&para;</a></h2>
 <p>This will enable the router to automatically estabilish an easytether connection.</p>
 <p><strong><em>i.</em></strong> SSH into your router with Putty and run the the following commands:</p>
 <pre><code>cat &lt;&lt; EOF &gt;&gt; /etc/config/easytether
@@ -4822,7 +4822,7 @@ EOF
 @reboot sh /etc/config/easytether
 EOF
 </code></pre>
-<h2 id="interface-priority">Interface priority</h2>
+<h2 id="interface-priority">Interface priority<a class="headerlink" href="#interface-priority" title="Permanent link">&para;</a></h2>
 <p>It can be useful to use EasyTether as a fallback connection in the event your main source of internet goes down. This section shows you how to set interface priorities.</p>
 <p><strong><em>i.</em></strong> SSH into your router with Putty and run the the following commands:</p>
 <pre><code>vi /etc/config/network
