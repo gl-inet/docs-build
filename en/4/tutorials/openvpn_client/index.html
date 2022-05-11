@@ -474,39 +474,19 @@
     Setup OpenVPN client
   </a>
   
-    <nav class="md-nav" aria-label="Setup OpenVPN client">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-a-group" class="md-nav__link">
-    Create a group
-  </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#upload-your-openvpn-configuration-file" class="md-nav__link">
-    Upload your OpenVPN configuration file
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#setup-openvpn-server-by-glinet-router" class="md-nav__link">
     Setup OpenVPN server by GL.iNet router
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#get-configuration-files-from-vpn-service-providers" class="md-nav__link">
     Get configuration files from VPN service providers
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -514,6 +494,18 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openvpn_server/" class="md-nav__link">
+        OpenVPN Server
+      </a>
     </li>
   
 
@@ -556,7 +548,7 @@
 <p>If you have already bought OpenVPN service from a provider, but you don't know how to get the configuration file, please refer to <a href="#get-configuration-files-from-vpn-service-providers">get configuration file from VPN service providers</a>.</p>
 <p>You can setup OpenVPN Client via web Admin Panel and <a href="../mobile_app">mobile app</a>. For the mobile app, it has already integrated NordVPN.</p>
 <h2 id="setup-nordvpn">Setup NordVPN<a class="headerlink" href="#setup-nordvpn" title="Permanent link">&para;</a></h2>
-<p>It has integrated NordVPN OpenVPN service.</p>
+<p>From firmware 4.0, it has integrated NordVPN OpenVPN service.</p>
 <ol>
 <li>
 <p>Input your credential, then click <strong>Save Credentials &amp; Get Servers</strong></p>
@@ -587,10 +579,31 @@
 </li>
 </ol>
 <h2 id="setup-openvpn-client">Setup OpenVPN client<a class="headerlink" href="#setup-openvpn-client" title="Permanent link">&para;</a></h2>
-<h3 id="create-a-group">Create a group<a class="headerlink" href="#create-a-group" title="Permanent link">&para;</a></h3>
-<h3 id="upload-your-openvpn-configuration-file">Upload your OpenVPN configuration file<a class="headerlink" href="#upload-your-openvpn-configuration-file" title="Permanent link">&para;</a></h3>
-<h3 id="setup-openvpn-server-by-glinet-router">Setup OpenVPN server by GL.iNet router<a class="headerlink" href="#setup-openvpn-server-by-glinet-router" title="Permanent link">&para;</a></h3>
-<h3 id="get-configuration-files-from-vpn-service-providers">Get configuration files from VPN service providers<a class="headerlink" href="#get-configuration-files-from-vpn-service-providers" title="Permanent link">&para;</a></h3>
+<p>As of frimware 4.0, it brings grouping to manage OpenVPN profiles. Please make sure all the profiles in the same group with the same credentials. For example, if you are ExpressVPN user, you can add a group named expressvpn, then upload all the ExpressVPN OpenVPN profiles you wanted to this group. For another OpenVPN service provider, please create another group.</p>
+<p>Next steps, we will use ExpressVPN as an example.</p>
+<ol>
+<li>
+<p>Add a new group</p>
+<p><img alt="add a new group" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/add_a_new_group.png" /></p>
+<p><img alt="set the new group name" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/set_new_group_name.png" /></p>
+</li>
+<li>
+<p>Give the group a descriptive name, for example expressvpn.</p>
+<p><img alt="set the new group name" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/set_new_group_name_2.png" /></p>
+</li>
+<li>
+<p>Upload your OpenVPN configuration file, then input the credential, click <strong>Apply</strong>.</p>
+<p><img alt="upload profile" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/upload_profile.png" /></p>
+<p><img alt="after upload profile" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/after_upload_profile.png" /></p>
+</li>
+<li>
+<p>Go to VPN Dashboard to enable the connection.</p>
+<p><img alt="vpn dashboard page" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/vpndashboard_to_connect_expressvpn.png" /></p>
+</li>
+</ol>
+<h2 id="setup-openvpn-server-by-glinet-router">Setup OpenVPN server by GL.iNet router<a class="headerlink" href="#setup-openvpn-server-by-glinet-router" title="Permanent link">&para;</a></h2>
+<p>You can get a GL.iNet router to set as OpenVPN server, and get another GL.iNet router to set as OpenVPN client. For setup OpenVPN server, please check out <a href="../openvpn_server">here</a>.</p>
+<h2 id="get-configuration-files-from-vpn-service-providers">Get configuration files from VPN service providers<a class="headerlink" href="#get-configuration-files-from-vpn-service-providers" title="Permanent link">&para;</a></h2>
                 
               
               
@@ -631,13 +644,13 @@
       
       
         
-        <a href="../wireguard_client/" class="md-footer__link md-footer__link--next" aria-label="Next: WireGuard Client" rel="next">
+        <a href="../openvpn_server/" class="md-footer__link md-footer__link--next" aria-label="Next: OpenVPN Server" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              WireGuard Client
+              OpenVPN Server
             </div>
           </div>
           <div class="md-footer__button md-icon">
