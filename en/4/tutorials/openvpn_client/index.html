@@ -604,6 +604,157 @@
 <h2 id="setup-openvpn-server-by-glinet-router">Setup OpenVPN server by GL.iNet router<a class="headerlink" href="#setup-openvpn-server-by-glinet-router" title="Permanent link">&para;</a></h2>
 <p>You can get a GL.iNet router to set as OpenVPN server, and get another GL.iNet router to set as OpenVPN client. For setup OpenVPN server, please check out <a href="../openvpn_server">here</a>.</p>
 <h2 id="get-configuration-files-from-vpn-service-providers">Get configuration files from VPN service providers<a class="headerlink" href="#get-configuration-files-from-vpn-service-providers" title="Permanent link">&para;</a></h2>
+<p>We have tested different VPN service providers. Therefore, if you don't know how to get the configuration file, you can follow the instruction below. However, you have to contact your service provider for the configuration file if they are not listed below. </p>
+<p>If you have any problem in the setup of OpenVPN, please contact <a href="mailto:support@gl-inet.com">support@gl-inet.com</a></p>
+<p>Recommended:</p>
+<details><summary>NordVPN</summary><p><a href="https://go.nordvpn.net/aff_c?offer_id=15&amp;aff_id=12016&amp;url_id=902" target="_blank">Official Website</a></p>
+<p>Download OpenVPN client configuration files. We recommend going into <a href="https://nordvpn.com/servers/tools/" target="_blank">NordVPN recommended server utility here</a>. It will recommend a server base on your network, click <code>Show available protocols</code> to download the UDP or TCP config.</p>
+<p><img alt="nordvpn server utility" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/nordvpn/nordvpn_server_utility.png" /></p>
+<p>Of course you can download all servers configs <a href="https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip">here</a>.</p>
+<p>Tips: if the zip file is too big to upload, you can delete some .ovpn in .zip file or upload single .ovpn file.</p>
+<p><a href="https://support.nordvpn.com/Connectivity/Router/1047409122/GL-iNet-setup-with-NordVPN.htm" target="_blank">Refer link</a></p>
+<p>You can also use <a href="../mobile_app">mobile app</a> to setup NordVPN.</p>
+</details>
+<details><summary>PIA (Private Internet Access)</summary><p><a href="https://privateinternetaccess.com/offer/GLiNET_71dx4t8bl" target="_blank">Official Website</a></p>
+<p><a href="https://www.privateinternetaccess.com/openvpn/openvpn.zip">Download</a> directly.</p>
+</details>
+<details><summary>Surfshark</summary><p><a href="https://get.surfshark.net/aff_c?offer_id=6&amp;aff_id=1400" target="_blank">Official Website</a></p>
+<p>Login and <a href="https://api.surfshark.com/v1/server/configurations">Download</a> directly, or read this <a href="https://support.surfshark.com/hc/en-us/articles/360011856259-How-to-set-up-Surfshark-on-GL-iNet-router-3-x-firmware-">guide</a>.</p>
+</details>
+<details><summary>PureVPN</summary><p><a href="https://billing.purevpn.com/aff.php?aff=35535" target="_blank">Official Website</a></p>
+<p><a href="https://d32d3g1fvkpl8y.cloudfront.net/heartbleed/router/Recommended-CA2.zip">Download</a> directly.</p>
+<p><a href="https://support.purevpn.com/openvpn-files">Refer link</a></p>
+</details>
+<details><summary>TorGuard</summary><p><a href="https://torguard.net/aff.php?aff=3040" target="_blank">Official Website</a></p>
+<ol>
+<li>
+<p>If you are using <a href="https://torguard.net/aff.php?aff=3040" target="_blank">TorGuard</a>, you need to login the control panel and find <strong>Config Generator</strong> from the <strong>Tools</strong> menu. Choose the <strong>VPN Server</strong> and some other options. Then click <strong>Generate Config</strong> a config file will be downloaded automatically.</p>
+<p><img alt="Generate ovpn" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/torguard/torguard_menu.jpg" /></p>
+</li>
+<li>
+<p>The username and password for OpenVPN connection is different from your control panel login. You can find the VPN username and VPN password below.</p>
+<p><img alt="torguard vpn username vpn password" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/torguard/torguard_vpnusername_vpnpassword.png" /></p>
+</li>
+</ol>
+</details>
+<details><summary>PrivateVPN</summary><p><a href="https://affiliate.privatevpn.com/scripts/click.php?a_aid=5e3a511658bc3" target="_blank">Official Website</a></p>
+<p><a href="https://privatevpn.com/client/PrivateVPN-TUN.zip">Download</a> directly.</p>
+</details>
+<details><summary>Proton VPN</summary><p><a href="https://go.getproton.me/aff_c?offer_id=26&amp;aff_id=1612" target="_blank">Official Website</a></p>
+<p><strong>Proton VPN has WireGuard service, we recommend to use WireGuard, checkout <a href="../wireguard_client/#wireguard-providers">here</a></strong>.</p>
+<ol>
+<li>
+<p>Login your <a href="https://go.getproton.me/aff_c?offer_id=26&amp;aff_id=1612" target="_blank">Proton VPN</a> account.</p>
+</li>
+<li>
+<p>Click <strong>Download</strong> in the left-hand side.</p>
+</li>
+<li>
+<p>Choose Router platform, protocol etc, find your target country to download configuration file.</p>
+<p><img alt="protonvpn openvpn configuration file" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/protonvpn/proton_openvpn_configuration_file.jpg" /></p>
+</li>
+<li>
+<p>The credential for connect OpenVPN is not the one that login Proton website's dashboard. You can find the crdential at <strong>Account -&gt; OpenVPN/IKEv2 username</strong></p>
+<p><img alt="protonvpn openvpn credential" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/protonvpn/protonvpn_openvpn_credential.jpg" /></p>
+</li>
+</ol>
+</details>
+<details><summary>ExpressVPN</summary><p><a href="https://www.xvbelink.com/?a_fid=glinet" target="_blank">Official Website</a></p>
+<p>Information quoted from <a href="https://www.expressvpn.com/support/vpn-setup/manual-config-for-linux-with-openvpn/#download" rel="sponsored" target="_blank">Expressvpn official instruction</a></p>
+<ol>
+<li>
+<p>Go to <a href="https://www.xvbelink.com/?a_fid=glinet" rel="sponsored" target="_blank">ExpressVPN</a> website, and log in with your ExpressVPN credentials.</p>
+<p><img alt="expressvpn account click sign in" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/expressvpn/expressvpn-account-click-sign-in.jpg" target="_blank" /></p>
+<p><strong>Enter the verification code</strong> that is sent to your email.</p>
+</li>
+<li>
+<p>On the right, with <strong>OpenVPN</strong> already selected for you, you will see your <strong>username</strong>, <strong>password</strong>, and a list of <strong>OpenVPN configuration files</strong>.</p>
+<p><img alt="" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/expressvpn/expressvpn-account-manual-configuation-openvpn.jpg" /></p>
+<p>Click the location(s) you want in order to download the .ovpn file(s).</p>
+<p><strong>Keep this browser window open</strong>. You will need this information for the setup later.</p>
+</li>
+</ol>
+</details>
+<p>Others:</p>
+<details><summary>AirVPN</summary><p><a href="https://airvpn.org/?referred_by=402389" target="_blank">Official Website</a></p>
+<ol>
+<li>
+<p>Login your AirVPN acoount</p>
+<p><img alt="airvpn client detail" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/airvpn/airvpn1.png" /></p>
+</li>
+<li>
+<p>Choose Config Generator on the left and then choose Linux as your operating system. Next, choose your preferred server.</p>
+<p><img alt="openvpn config generator" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/airvpn/airvpn2.png" /></p>
+</li>
+<li>
+<p>You will be able to see the download page of the configuration file.</p>
+<p><img alt="download config" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/airvpn/airvpn3.png" /></p>
+</li>
+</ol>
+</details>
+<details><summary>Astrill</summary><p><a href="https://www.astrill.com/a/dik2masnw6ig" target="_blank">Official Website</a></p>
+<p>Information quoted from <a href="https://wiki.astrill.com/Astrill_Setup_Manual:How_to_configure_OpenVPN_with_OpenVPN_application_on_Windows" target="_blank">Astrill official instruction</a></p>
+<ol>
+<li>
+<p>Generate and Download Astrill Openvpn configuration ZIP</p>
+<p><img alt="astrill vpn tools" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/astrillvpn/astrill1.png" /></p>
+<p><img alt="create new certificate" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/astrillvpn/astrill2.png" /></p>
+</li>
+<li>
+<p>Type a Description like OPENVPN_GUI.</p>
+</li>
+<li>
+<p>Click on ADD to my certificates button.</p>
+<p><img alt="create new certificate" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/astrillvpn/astrill3.png" /></p>
+</li>
+<li>
+<p>Once OpenVPN certificate is added, click on Download button.</p>
+<p><img alt="download certificate" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/astrillvpn/astrill4.png" /></p>
+</li>
+</ol>
+</details>
+<details><summary>bolehvpn</summary><p><a href="https://www.bolehvpn.net/" target="_blank">Official Website</a></p>
+<p>Login in <a href="https://users.bolehvpn.net/" target="_blank">Dashboard</a>, download your configuration files and select the <a href="https://users.bolehvpn.net/download/inline/6" target="_blank">Linux_iOS inline</a> format. Extract the zip files after completing the download.</p>
+<p><a href="https://www.bolehvpn.net/clients-installations/#1487691248224-0c435dba-d612" target="_blank">Refer link</a></p>
+</details>
+<details><summary>CactusVPN</summary><p><a href="https://billing.cactusvpn.com/aff.php?aff=2310" target="_blank">Official Website</a></p>
+<p><a href="https://www.cactusvpn.com/downloads/" target="_blank">Download</a> directly.</p>
+<p><img alt="download cactusvpn openvpn profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/cactusvpn/cactusvpn1.jpg" /></p>
+</details>
+<details><summary>Cryptostorm</summary><p><a href="https://cryptostorm.is/" target="_blank">Official Website</a></p>
+<p><a href="https://cryptostorm.is/configs/ecc/" target="_blank">Download</a> directly.</p>
+</details>
+<details><summary>CyberGhost</summary><p><a href="https://support.cyberghostvpn.com/hc/en-us" target="_blank">Official Website</a></p>
+<p>Information quoted from <a href="https://support.cyberghostvpn.com/hc/en-us/articles/213811885-Router-How-to-configure-OpenVPN-for-flashed-DD-WRT-routers?fbclid=IwAR0_IicBlnNzVqlKh0mAHFyM6uvsGgBQooYfMyJ0bHgb13Eidn8KhXnd6Y0" target="_blank">CyberGhost official instruction</a></p>
+<ol>
+<li>
+<p>Login your CyberGhost VPN online account.</p>
+<p><img alt="login" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/cyberghost/cyberghost1.png" /></p>
+</li>
+<li>
+<p>Click on <strong>My Devices</strong>  &gt; click <strong>Other</strong> &gt; choose <strong>Configure new device</strong>.</p>
+<p><img alt="config new device" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/cyberghost/cyberghost2.png" /></p>
+</li>
+<li>
+<p>At the new screen, in the <strong>Server configuration</strong> tab, the desired parameters can be configured. For the purpose of setting OpenVPN for your DD-WRT Router, choose 'OpenVPN' from the Protocol drop down menu. Your desired country and server group, as described below, need to be defined too:</p>
+<p><img alt="" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/cyberghost/cyberghost3.png" /></p>
+<ul>
+<li>
+<p>Protocol: For Router configurations, please choose OpenVPN</p>
+</li>
+<li>
+<p>Country: Since native protocol connections may only be used with exactly one server you now have to choose the country you want to surf from; the server to be used in this country will be chosen by CyberGhost automatically.</p>
+</li>
+<li>
+<p>Server group: Choose the server group and the OpenVPN protocol (UDP or TCP) you want to use:</p>
+<p>UDP allows higher speed than the TCP version, but can result in broken downloads in some cases. This is the default setting.</p>
+<p>TCP allows more stable connections than the UDP version, but is a bit slower. Choose this version, if you have recurrent connection issues such as sudden disconnections.</p>
+</li>
+</ul>
+<p>After setting up your preferred settings, save them with <strong>Save and download configuration</strong>.</p>
+</li>
+</ol>
+</details>
                 
               
               
