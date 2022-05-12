@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#wireguard-client" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -467,10 +472,56 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          WireGuard Client
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         WireGuard Client
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup-azirevpn" class="md-nav__link">
+    Setup AzireVPN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-mullvad" class="md-nav__link">
+    Setup Mullvad
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-wireguard-client" class="md-nav__link">
+    Setup WireGuard client
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -495,9 +546,66 @@
               
                 
                 
-                  <h1>WireGuard Client</h1>
-                
-                
+                <h1 id="wireguard-client">WireGuard Client<a class="headerlink" href="#wireguard-client" title="Permanent link">&para;</a></h1>
+<p>WireGuard® is an extremely simple yet fast and modern VPN that utilizes <strong>state-of-the-art cryptography</strong>. It aims to be <a href="https://www.wireguard.com/performance/">faster</a>, <a href="https://www.wireguard.com/quickstart/">simpler</a>, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. </p>
+<p>GL.iNet routers have pre-installed WireGuard Client and Server.</p>
+<p>If you have already bought WireGuard service from a provider, but you don't know how to get the configuration files, please refer to <a href="#get-configuration-files-from-wireguard-service-providers">get configuration files from WireGuard service providers</a>.</p>
+<p>You can setup WireGuard Client via web Admin Panel and <a href="../mobile_app">mobile app</a>. For the mobile app, it has already integrated some WireGuard Service Providers, they are AzireVPN, Mullvad VPN, TorGuard VPN, OVPN, WeVPN, StrongVPN, PIA VPN, SpiderVPN.</p>
+<p>For setup via web Admin Panel, please follow the guide below.</p>
+<h2 id="setup-azirevpn">Setup AzireVPN<a class="headerlink" href="#setup-azirevpn" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.azirevpn.com/aff/9x7wisg4" target="_blank">AzireVPN</a> is privacy-minded VPN service providing secure, modern and robust tunnels such as WireGuard.</p>
+<p>Firmware 4.x has integrated AzireVPN WireGaurd service.</p>
+<p><img alt="azirevpn" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_client/azirevpn.png" /></p>
+<ol>
+<li>
+<p>Input <strong>Username</strong> and <strong>Password</strong>, then click <strong>Save Credentials &amp; Get Servers</strong>. It will generate configuration files for each servers.</p>
+<p><img alt="azirevpn profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_client/azirevpn_generated_profiles.png" /></p>
+</li>
+<li>
+<p>Go to VPN Dashboard to enable the connection.</p>
+<p><img alt="vpn dashboard azirevpn" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_client/vpn_dashboard_azirevpn.png" /></p>
+<p>Once connected, you should see your user IP address and the number of Bytes send/received.</p>
+<p><img alt="vpn dashboard azirevpn connected" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_client/vpn_dashboard_azirevpn_connected.png" /></p>
+</li>
+<li>
+<p>Update servers</p>
+<p>AzireVPN may maintain or shutdown some servers, it will make the connection failed, you can <strong>Update Servers</strong> to get the latest available servers.</p>
+<p><img alt="azirevpn update servers" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_client/azirevpn_update_servers.png" /></p>
+</li>
+<li>
+<p>Edit credential</p>
+<p>Click the cog icon to edit the credential.</p>
+<p><img alt="azirevpn edit credential" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_client/azirevpn_edit_credential.png" /></p>
+</li>
+</ol>
+<h2 id="setup-mullvad">Setup Mullvad<a class="headerlink" href="#setup-mullvad" title="Permanent link">&para;</a></h2>
+<p><a href="https://mullvad.net/" target="_blank">Mullvad</a> is a VPN service that helps keep your online activity, identity, and location private.</p>
+<p>Firmware 4.x has integrated Mullvad WireGaurd service.</p>
+<p><img alt="mullvad vpn" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_client/mullvad.png" /></p>
+<ol>
+<li>
+<p>Input <strong>Account</strong>, then click <strong>Save Credentials &amp; Get Servers</strong>.</p>
+<p>Mullvad account number is a 16-digit decimal in the "1000 0000 0000 0000" to "9999 9999 9999 9999" range.</p>
+<p>It will pop up a dialog to select a location.</p>
+<p>Then it will generate the configuration files of the selected location server.</p>
+<p>The <strong>Public Key</strong> is the WireGuard public key to send to Mullvad server, you can have up to five keys at the same time, you can manage WireGuard keys on <a href="https://mullvad.net/en/account/#/ports" target="_blank">Mullvad's page</a>.</p>
+<p><img alt="mullvad vpn" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_client/mullvad_generated_profiles.png" /></p>
+</li>
+<li>
+<p>Go to VPN Dashboard to enable the connection.</p>
+<p><img alt="mullvad vpn" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_client/vpn_dashboard_mullvadvpn.png" /></p>
+</li>
+<li>
+<p>Update servers</p>
+<p>Mullvad may maintain or shutdown some servers, it will make the connection failed, you can <strong>Update Servers</strong> to get the latest available servers.</p>
+<p><img alt="mullvad vpn" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_client/mullvad_update_servers.png" /></p>
+</li>
+<li>
+<p>Edit credential</p>
+<p><img alt="mullvad vpn" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_client/mullvad_edit_credential.png" /></p>
+</li>
+</ol>
+<h2 id="setup-wireguard-client">Setup WireGuard client<a class="headerlink" href="#setup-wireguard-client" title="Permanent link">&para;</a></h2>
                 
               
               
