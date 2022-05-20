@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#setup-wireguard-server-on-glinet-router" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1374,10 +1379,56 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          WireGuard Server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         WireGuard Server
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#make-sure-internet-service-provider-assigns-you-a-public-ip-address" class="md-nav__link">
+    Make sure Internet Service Provider assigns you a public IP address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-topology" class="md-nav__link">
+    Network Topology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-wireguard-server" class="md-nav__link">
+    Setup WireGuard Server
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1936,9 +1987,48 @@
               
                 
                 
-                  <h1>WireGuard Server</h1>
-                
-                
+                <h1 id="setup-wireguard-server-on-glinet-router">Setup WireGuard Server on GL.iNet router<a class="headerlink" href="#setup-wireguard-server-on-glinet-router" title="Permanent link">&para;</a></h1>
+<p>WireGuard® is an extremely simple yet fast and modern VPN that utilizes <strong>state-of-the-art cryptography</strong>. It aims to be <a href="https://www.wireguard.com/performance/" target="_blank">faster</a>, <a href="https://www.wireguard.com/quickstart/" target="_blank">simpler</a>, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. </p>
+<p>GL.iNet routers have pre-installed WireGuard Server and Client.</p>
+<hr />
+<h2 id="make-sure-internet-service-provider-assigns-you-a-public-ip-address">Make sure Internet Service Provider assigns you a public IP address<a class="headerlink" href="#make-sure-internet-service-provider-assigns-you-a-public-ip-address" title="Permanent link">&para;</a></h2>
+<p>Please check if you Internet Service Provider assigns you a public IP address <a href="../how_to_check_if_isp_assigns_you_a_public_ip_address">here</a>.</p>
+<p><strong>If no, you can't connect to the WireGaurd Server.</strong></p>
+<p>An alternative method is to use a reverse proxy solution, we suggest <a href="https://www.astrorelay.com/" target="_blank">AstroRelay</a>.</p>
+<h2 id="network-topology">Network Topology<a class="headerlink" href="#network-topology" title="Permanent link">&para;</a></h2>
+<ul>
+<li>If GL.iNet router is the main router in your network, this is simple, please move to the next step.</li>
+<li>If you already have a main router, then the GL.iNet router is under the main router, you may need to setup a port forwarding on the main router.</li>
+<li>If you already have a main router, the GL.iNet router is several levels below it and you need to set up port forward on each level.</li>
+</ul>
+<h2 id="setup-wireguard-server">Setup WireGuard Server<a class="headerlink" href="#setup-wireguard-server" title="Permanent link">&para;</a></h2>
+<p>Access to web Admin Panel, on the left side -&gt; VPN -&gt; WireGuard Server.</p>
+<ol>
+<li>
+<p>Click <strong>Generate Configuration</strong>.</p>
+<p><img alt="wireguard server generate configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_server/wireguard_server_generate_configuration.png" /></p>
+</li>
+<li>
+<p>Apply the configuration</p>
+<p>The default configuration works for most cases. Also modify it according to your network situation, click the <strong>Apply</strong> button after modification.</p>
+<p><img alt="wireguard server apply configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_server/wireguard_server_apply_configuration.png" /></p>
+</li>
+<li>
+<p>Add a profile</p>
+<p>Switch to <strong>Profiles</strong> tab, generate a profile for your device by click the <strong>Add</strong> button.</p>
+<p><img alt="wireguard server profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_server/wireguard_server_profiles.png" /></p>
+<p>Enter a descriptive name.</p>
+<p><img alt="wireguard server profile setting" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_server/wireguard_server_profile_setting.png" /></p>
+<p><strong>Set More</strong> is for advanced settings.</p>
+<p><img alt="wireguard server profile advanced setting" src="https://static.gl-inet.com/docs/en/4/tutorials/wireguard_server/wireguard_server_profile_setting_more.png" /></p>
+<p>Click <strong>Apply</strong> to continue. It will generate a profile. If you want to generate the profile with DDNS instead of IP, please enable DDNS first.</p>
+<p>Switch tab and click <strong>Download</strong> the QRCode or profile.</p>
+</li>
+<li>
+<p>Start WireGuard server</p>
+<p>Click <strong>Start</strong> to start WireGuard server.</p>
+</li>
+</ol>
                 
               
               
