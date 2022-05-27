@@ -75,7 +75,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
   
     
     <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -86,6 +86,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#firewall" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -123,7 +128,7 @@
         
           
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
@@ -1239,10 +1244,56 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Firewall
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Firewall
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#port-forwards" class="md-nav__link">
+    Port Forwards
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-ports-on-router" class="md-nav__link">
+    Open Ports on Router
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dmz" class="md-nav__link">
+    DMZ
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1912,9 +1963,36 @@
               
                 
                 
-                  <h1>Firewall</h1>
-                
-                
+                <h1 id="firewall">FIREWALL<a class="headerlink" href="#firewall" title="Permanent link">&para;</a></h1>
+<p>On the left side of web Admin Panel -&gt; FIREWALL</p>
+<p>In FIREWALL page, you can set up firewall rules like <strong>Port Forwarding</strong>, <strong>Open Ports on Router</strong> and <strong>DMZ</strong>.</p>
+<h2 id="port-forwards">Port Forwards<a class="headerlink" href="#port-forwards" title="Permanent link">&para;</a></h2>
+<p>Port Forwarding lets remote computers to connect to a local computer or server behind the firewall in the LAN network (such as web servers, FTP servers, etc).</p>
+<p>To set up port forwarding, on the <strong>Port Forwards</strong> tab click <strong>Add</strong>.</p>
+<p><img alt="firewall page" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/firewall/firewall.png" /></p>
+<p>It will pop up <strong>Add New Port Forward Rule</strong> dialog.</p>
+<p><img alt="add new port forward rule" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/firewall/add_new_port_forward_rule.png" /></p>
+<p><strong>Name:</strong> The name of the rule.</p>
+<p><strong>Protocol:</strong> The protocol used, you can choose TCP, UDP, or both TCP and UDP.</p>
+<p><strong>External Zone:</strong> The options for external zone are <code>WAN</code>, <code>wgclient</code>, <code>wgserver</code>, <code>ovpnclient</code>, <code>ovpnserver</code>.</p>
+<p><strong>External Port:</strong> The numbers of external ports. You can enter a specific port number or a range of service ports (E.g <strong>100-300</strong>).</p>
+<p><strong>Internal Zone:</strong> The options for external zone are <code>WAN</code>, <code>wgclient</code>, <code>wgserver</code>, <code>ovpnclient</code>, <code>ovpnserver</code>.</p>
+<p><strong>Internal IP:</strong> The IP address assigned by the router to the device which needs to be accessed remotely.</p>
+<p><strong>Internal Port:</strong> The internal port number of the device. You can enter a specific port number. Leave it blank if it is same as the external port.</p>
+<p><strong>Enable:</strong> Enable of disable of the rule.</p>
+<h2 id="open-ports-on-router">Open Ports on Router<a class="headerlink" href="#open-ports-on-router" title="Permanent link">&para;</a></h2>
+<p>The router's services, such as web and FTP, requires their respective ports to be opened on the router in order to be publicly reachable.</p>
+<p>To open a port, click <strong>Add</strong>.</p>
+<p><img alt="open Ports on router" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/firewall/open_ports_on_router.png" /></p>
+<p><img alt="open Ports on router" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/firewall/add_new_open_port.png" /></p>
+<p><strong>Name:</strong> The name of the rule which can be specified by the user.</p>
+<p><strong>Protocol:</strong> The protocol used, you can choose TCP, UDP, or both TCP and UDP.</p>
+<p><strong>Port:</strong> The port number that you want to open.</p>
+<p><strong>Enable:</strong> Enable of disable of the rule.</p>
+<h2 id="dmz">DMZ<a class="headerlink" href="#dmz" title="Permanent link">&para;</a></h2>
+<p>DMZ lets you to expose one computer to the Internet, so all inbound packets will be redirected to this computer.</p>
+<p>Toggle on <strong>Enable DMZ</strong>. Select the internal IP address of your device which is going to receive all the inbound packets.</p>
+<p><img alt="Port Forwards" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/firewall/dmz.png" /></p>
                 
               
               
