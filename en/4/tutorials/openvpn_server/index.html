@@ -1334,9 +1334,53 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          OpenVPN Server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         OpenVPN Server
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#make-sure-internet-service-provider-assigns-you-a-public-ip-address" class="md-nav__link">
+    Make sure Internet Service Provider assigns you a public IP address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-topology" class="md-nav__link">
+    Network Topology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-wireguard-server" class="md-nav__link">
+    Setup WireGuard Server
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1920,6 +1964,47 @@
                 
                 
                 <h1 id="setup-openvpn-server-on-glinet-router">Setup OpenVPN Server on GL.iNet router<a class="headerlink" href="#setup-openvpn-server-on-glinet-router" title="Permanent link">&para;</a></h1>
+<p>OpenVPN is an open-source VPN protocol that makes use of virtual private network (VPN) techniques to establish safe site-to-site or point-to-point connections. </p>
+<p>GL.iNet routers have pre-installed OpenVPN Client and Server.</p>
+<p>We recommend WireGuard over OpenVPN because it is much faster. For setup a WireGuard Server, please check out <a href="../wireguard_server">here</a>.</p>
+<hr />
+<h2 id="make-sure-internet-service-provider-assigns-you-a-public-ip-address">Make sure Internet Service Provider assigns you a public IP address<a class="headerlink" href="#make-sure-internet-service-provider-assigns-you-a-public-ip-address" title="Permanent link">&para;</a></h2>
+<p>Please check if you Internet Service Provider assigns you a public IP address <a href="../how_to_check_if_isp_assigns_you_a_public_ip_address">here</a>.</p>
+<p><strong>If no, you can't connect to the OpenVPN Server.</strong></p>
+<p>An alternative method is to use a reverse proxy solution, we suggest <a href="https://www.astrorelay.com/" target="_blank">AstroRelay</a>.</p>
+<h2 id="network-topology">Network Topology<a class="headerlink" href="#network-topology" title="Permanent link">&para;</a></h2>
+<ul>
+<li>If GL.iNet router is the main router in your network, this is simple, please move to the next step.</li>
+<li>If you already have a main router, then the GL.iNet router is under the main router, you may need to setup a port forwarding on the main router.</li>
+<li>If you already have a main router, the GL.iNet router is several levels below it and you need to set up port forwarding on each level.</li>
+</ul>
+<h2 id="setup-wireguard-server">Setup WireGuard Server<a class="headerlink" href="#setup-wireguard-server" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Click <strong>Generate Configuration</strong></p>
+<p><img alt="openvpn server generate configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_generate_config.png" /></p>
+</li>
+<li>
+<p>Apply the configuration</p>
+<p><img alt="openvpn server configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_configuration.png" /></p>
+<p><strong>Protocol:</strong> UDP or TCP. To find out what the difference is, check out <a href="../openvpn_tcp_udp/">this tutorial</a>.</p>
+<p><strong>Authentication Mode:</strong> The router will automatically generate a server and client certificate-key, and write into the configuration file when generating the client configuration file.
+There are three options Only Certificate, Only Username/Password, Username/Password and Certificate. </p>
+<p>For <strong>Username/Password</strong> and <strong>Username/Password and Certificate</strong> option, it need add user(s).</p>
+<p><img alt="openvpn server users" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_users.png" /></p>
+<p><img alt="openvpn server add a user" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_add_a_user.png" /></p>
+<p>Then, a OpenVPN client connect to this server, it need to input the usernamd and password.</p>
+</li>
+<li>
+<p>Export Client Configuration</p>
+<p><img alt="openvpn server configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_export_client_configuration.png" /></p>
+</li>
+<li>
+<p>Start OpenVPN server</p>
+<p>Click the Start button in the upper right corner to start OpenVPN server. Go to VPN Dashboard page to check its status.</p>
+<p><img alt="openvpn server started" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_started.png" /></p>
+</li>
+</ol>
                 
               
               
