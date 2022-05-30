@@ -1372,8 +1372,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-wireguard-server" class="md-nav__link">
-    Setup WireGuard Server
+  <a href="#setup-openvpn-server" class="md-nav__link">
+    Setup OpenVPN Server
   </a>
   
 </li>
@@ -1974,11 +1974,11 @@
 <p>An alternative method is to use a reverse proxy solution, we suggest <a href="https://www.astrorelay.com/" target="_blank">AstroRelay</a>.</p>
 <h2 id="network-topology">Network Topology<a class="headerlink" href="#network-topology" title="Permanent link">&para;</a></h2>
 <ul>
-<li>If GL.iNet router is the main router in your network, this is simple, please move to the next step.</li>
+<li>If GL.iNet router is the main router in your network, this is simple, please move to the <a href="#setup-openvpn-server">next step</a>.</li>
 <li>If you already have a main router, then the GL.iNet router is under the main router, you may need to setup a port forwarding on the main router.</li>
 <li>If you already have a main router, the GL.iNet router is several levels below it and you need to set up port forwarding on each level.</li>
 </ul>
-<h2 id="setup-wireguard-server">Setup WireGuard Server<a class="headerlink" href="#setup-wireguard-server" title="Permanent link">&para;</a></h2>
+<h2 id="setup-openvpn-server">Setup OpenVPN Server<a class="headerlink" href="#setup-openvpn-server" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Click <strong>Generate Configuration</strong></p>
@@ -1987,22 +1987,30 @@
 <li>
 <p>Apply the configuration</p>
 <p><img alt="openvpn server configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_configuration.png" /></p>
+<p>If you do not need to modify the configuration, please click directly the <strong>Export Client Configuration</strong> at the bottom of page. If you have modified the configuration, please click the <strong>Apply</strong> button to continue.</p>
+<ul>
+<li>
 <p><strong>Protocol:</strong> UDP or TCP. To find out what the difference is, check out <a href="../openvpn_tcp_udp/">this tutorial</a>.</p>
-<p><strong>Authentication Mode:</strong> The router will automatically generate a server and client certificate-key, and write into the configuration file when generating the client configuration file.
-There are three options Only Certificate, Only Username/Password, Username/Password and Certificate. </p>
-<p>For <strong>Username/Password</strong> and <strong>Username/Password and Certificate</strong> option, it need add user(s).</p>
+</li>
+<li>
+<p><strong>Authentication Mode:</strong> There are three options <strong>Only Certificate</strong>, <strong>Only Username/Password</strong>, <strong>Username/Password and Certificate</strong>. </p>
+<p>For <strong>Username/Password</strong> and <strong>Username/Password and Certificate</strong> options, they need add user(s). Then, if a OpenVPN client connect to this server, it need to input the username and password.</p>
 <p><img alt="openvpn server users" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_users.png" /></p>
+<p>Created a user.</p>
 <p><img alt="openvpn server add a user" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_add_a_user.png" /></p>
-<p>Then, a OpenVPN client connect to this server, it need to input the usernamd and password.</p>
+<p>For <strong>Only Certificate</strong> and <strong>Username/Password and Certificate</strong>, the router will automatically generate a server and client certificate-key, and write into the configuration file when generating the client configuration file.</p>
+</li>
+</ul>
 </li>
 <li>
 <p>Export Client Configuration</p>
+<p>If your network's public IP changes from time to time, you can enable <a href="../ddns/">DDNS</a> by using DDNS domain in the configuration. Click <strong>Download</strong> to export the configuration for further setup.</p>
 <p><img alt="openvpn server configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_export_client_configuration.png" /></p>
 </li>
 <li>
 <p>Start OpenVPN server</p>
-<p>Click the Start button in the upper right corner to start OpenVPN server. Go to VPN Dashboard page to check its status.</p>
-<p><img alt="openvpn server started" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_started.png" /></p>
+<p>Click the <strong>Start</strong> button in the upper right corner on OpenVPN Server page to start the server. Then go to <a href="../vpn_dashboard#vpn-server">VPN Dashboard page</a> to check its status and other settings.</p>
+<p><img alt="start openvpn server" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/start_openvpn_server.png" /></p>
 </li>
 </ol>
                 
