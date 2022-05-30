@@ -1378,6 +1378,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#to-check-if-openvpn-server-is-working-properly" class="md-nav__link">
+    To check if OpenVPN Server is working properly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-configuration" class="md-nav__link">
+    Advanced Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openvpn-client-app" class="md-nav__link">
+    OpenVPN Client App
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1981,11 +2002,11 @@
 <h2 id="setup-openvpn-server">Setup OpenVPN Server<a class="headerlink" href="#setup-openvpn-server" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Click <strong>Generate Configuration</strong></p>
+<p>Click <strong>Generate Configuration</strong> (Only the first time).</p>
 <p><img alt="openvpn server generate configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_generate_config.png" /></p>
 </li>
 <li>
-<p>Apply the configuration</p>
+<p>Apply the configuration.</p>
 <p><img alt="openvpn server configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_configuration.png" /></p>
 <p>If you do not need to modify the configuration, please click directly the <strong>Export Client Configuration</strong> at the bottom of page. If you have modified the configuration, please click the <strong>Apply</strong> button to continue.</p>
 <ul>
@@ -1999,11 +2020,13 @@
 <p>Created a user.</p>
 <p><img alt="openvpn server add a user" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_add_a_user.png" /></p>
 <p>For <strong>Only Certificate</strong> and <strong>Username/Password and Certificate</strong>, the router will automatically generate a server and client certificate-key, and write into the configuration file when generating the client configuration file.</p>
+<p>Please check <a href="#advanced-configuration">here</a> for <strong>Advanced Configuration</strong>.</p>
 </li>
 </ul>
 </li>
 <li>
 <p>Export Client Configuration</p>
+<p>Clicking the <strong>Export Client Configuration</strong> button at the bottom or applying the modified configuration will pop up this dialog.</p>
 <p>If your network's public IP changes from time to time, you can enable <a href="../ddns/">DDNS</a> by using DDNS domain in the configuration. Click <strong>Download</strong> to export the configuration for further setup.</p>
 <p><img alt="openvpn server configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_export_client_configuration.png" /></p>
 </li>
@@ -2013,6 +2036,23 @@
 <p><img alt="start openvpn server" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/start_openvpn_server.png" /></p>
 </li>
 </ol>
+<h2 id="to-check-if-openvpn-server-is-working-properly">To check if OpenVPN Server is working properly<a class="headerlink" href="#to-check-if-openvpn-server-is-working-properly" title="Permanent link">&para;</a></h2>
+<p>To check if OpenVPN Server is working properly, we can use another device connected to another network and use the OpenVPN configuration we exported earlier, to connect and see whether it connects properly and whether the IP address is the IP of OpenVPN Server.</p>
+<p>The simpliest way is to use a cell phone with <a href="https://openvpn.net/vpn-client/" target="_blank">OpenVPN official client app</a> installed, turn off its Wi-Fi connection, and only connect to Internet via 3G/4G/5G. Then open the OpenVPN app, import the OpenVPN configuration we previously exported. Enable the connection, check if the phone has Internet access and whether its IP address is the IP of your OpenVPN Server.</p>
+<p>There are several common reasons cause failed:</p>
+<ul>
+<li>The Internet Service Provider doesn't assign you a public IP address, please check <a href="#make-sure-internet-service-provider-assigns-you-a-public-ip-address">here</a>.</li>
+<li>You may need setup port forwarding, please check <a href="#network-topology">here</a>.</li>
+<li>The port you are using for OpenVPN Server is blocked by the Internet Service Provider, change to another port, or contact the Internet Service Provider.</li>
+<li>Some countries/regions may block the VPN connection.</li>
+</ul>
+<h2 id="advanced-configuration">Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">&para;</a></h2>
+<p><img alt="openvpn server advancd configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_advanced_configuration.png" /></p>
+<h2 id="openvpn-client-app">OpenVPN Client App<a class="headerlink" href="#openvpn-client-app" title="Permanent link">&para;</a></h2>
+<p>We can use another GL.iNet router as OpenVPN Client, or use their official app on other devices with various OS.</p>
+<ul>
+<li>Please refer to OpenVPN Official Website: <a href="https://openvpn.net/vpn-client/" target="_blank">https://openvpn.net/vpn-client/</a></li>
+</ul>
                 
               
               
