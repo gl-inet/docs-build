@@ -13,14 +13,14 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/en/4/tutorials/nas/">
+        <link rel="canonical" href="https://docs.gl-inet.com/en/4/tutorials/network_storage/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
     
     
       
-        <title>Nas - GL.iNet Docs</title>
+        <title>Network Storage - GL.iNet Docs</title>
       
     
     
@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#network-storage" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -112,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nas
+              Network Storage
             
           </span>
         </div>
@@ -1473,10 +1478,56 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Network Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Nas
+        Network Storage
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#samba-client" class="md-nav__link">
+    Samba Client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webdav-client" class="md-nav__link">
+    WebDav Client
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1924,9 +1975,57 @@
               
                 
                 
-                  <h1>Nas</h1>
-                
-                
+                <h1 id="network-storage">Network Storage<a class="headerlink" href="#network-storage" title="Permanent link">&para;</a></h1>
+<p>Some GL.iNet models support TF card, some models have USB port and support USB flash drive and portable external hard drive, you can set up Samba, WebDav, DLNA on this page for the disk.</p>
+<p>The supported disk formats are NTFS, exFAT, FAT32, Ext3, Ext4.</p>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>For TF card, you need to power off the router first, insert the TF card and then power on the router.</p>
+<p>For USB Drive, you can directly plug it into the USB port. For portable external hard drive, if you have a separate power supply, please connect it to the power supply.</p>
+<p>Go to web Admin Panel -&gt; APPLICATIONS -&gt; Network Storage</p>
+<p><img alt="network storage" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/network_storage_init.png" /></p>
+<p>When a disk is found.</p>
+<p><img alt="network storage, disk found" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/disk_found.png" /></p>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Samba</label><div class="tabbed-content">
+<p>Toggle to enalbe Samba, click <strong>Apply</strong>.</p>
+<p><img alt="network storage, enable samba" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/enable_samba.png" /></p>
+<p>Go to <strong>Shared Folder</strong> tab. Click <strong>Add</strong> button to add a shared folder.</p>
+<p><img alt="network storage, shared folder" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/shared_folders.png" /></p>
+<p>Choose a folder to share, then click <strong>Next</strong>.</p>
+<p><img alt="network storage, shared folder" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/add_shared_folder.png" /></p>
+<p>If you leave the <strong>Anonymous Access</strong> off, you need to create a user by clicking the <strong>+ Add User</strong> button, and then check the user in the option <strong>Writable User</strong> or <strong>Read-Only User</strong>. Finally, click the <strong>Apply</strong> button.</p>
+<p><img alt="network storage, shared folder" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/shared_folder_settings.png" /></p>
+<p>That is it. Then try to access the Samba on various OS, check out <a href="#samba-client">here</a>.</p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">WebDav</label><div class="tabbed-content">
+<p>Toggle to enalbe WebDav, click <strong>Apply</strong>.</p>
+<p><img alt="network storage, enable webdav" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/enable_webdav.png" /></p>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">DLNA</label><div class="tabbed-content">
+<p>Toggle to enalbe DLNA, modify <strong>Share Path</strong> if needed, click <strong>Apply</strong>. That is it.</p>
+<p><img alt="network storage, enable dlna" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/enable_dlna.png" /></p>
+<p>Connect your smart TV to the router, it will find the DLNA Server.</p>
+</div>
+</div>
+<h2 id="samba-client">Samba Client<a class="headerlink" href="#samba-client" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Windows</label><div class="tabbed-content"></div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Mac OS</label><div class="tabbed-content"></div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Android</label><div class="tabbed-content"></div>
+<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">iOS</label><div class="tabbed-content"></div>
+</div>
+<h2 id="webdav-client">WebDav Client<a class="headerlink" href="#webdav-client" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Windows</label><div class="tabbed-content">
+<p><a href="https://cyberduck.io/download/" target="_blank">Cyberduck</a>, <a href="https://filezillapro.com/" target="_blank">FileZilla Pro</a>, <a href="https://www.raidrive.com/" target="_blank">RaiDrive</a>, <a href="https://winscp.net/eng/index.php" target="_blank">WinSCP</a></p>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Mac OS</label><div class="tabbed-content">
+<p><a href="https://cyberduck.io/download/" target="_blank">Cyberduck</a>, <a href="https://filezillapro.com/" target="_blank">FileZilla Pro</a>, <a href="https://apps.apple.com/hk/app/fe-file-explorer/id1444382558?l=en&amp;mt=12" target="_blank">FE File Explorer</a>, <a href="https://support.apple.com/en-gb/guide/mac-help/mchlp1546/mac" target="_blank">Connect to or disconnect from a WebDAV server on Mac</a></p>
+</div>
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">Android</label><div class="tabbed-content">
+<p><a href="https://play.google.com/store/apps/details?id=com.cxinventor.file.explorer&amp;hl=en&amp;gl=US" target="_blank">Cx File Explorer</a></p>
+</div>
+<input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><label for="__tabbed_3_4">iOS</label><div class="tabbed-content">
+<p><a href="https://apps.apple.com/us/app/documents-file-reader-browser/id364901807" target="_blank">Documents</a></p>
+</div>
+</div>
                 
               
               
