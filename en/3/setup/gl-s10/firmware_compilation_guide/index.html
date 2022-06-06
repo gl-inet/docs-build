@@ -4278,18 +4278,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/qdslrdashboard/" class="md-nav__link">
-        qDslrDashboard
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../tutorials/tether/" class="md-nav__link">
         EasyTether
       </a>
@@ -4609,14 +4597,13 @@ Firstly, click <code>Serial flasher config</code>.</p>
 <p>Set <code>Default serial port</code> to the port name show in your PC, typically is <code>/dev/ttyUSB0</code>.
 Set <code>Serial flasher config ---&gt;Flash SPI speed</code> to <code>80MHz</code>.
 Set <code>Serial flasher config ---&gt;Flash size</code> to <code>4MB</code>.</p>
-<p><strong>2. Build</strong>
-In your project folder, using command <code>make all</code>. It will compile and build the firmware. When finished sucessfully, it will show information like this.</p>
+<p><strong>2. Build</strong></p>
+<p>In your project folder, using command <code>make all</code>. It will compile and build the firmware. When finished sucessfully, it will show information like this.</p>
 <p><img alt="compile and build firmware" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/compile_and_build_firmware.jpg" /></p>
-<p><strong>3. Flash</strong>
-GL-S10 using UART to flash the firmware, and also using this UART to output the system log.
-Connect the UART in S10 to the PC by a USB-UART converter. The PC will find a new usb device like <code>/dev/ttyUSB0</code>. It is the name you should write in the <code>Default serial port</code>. <br />
-Yellow marked is the UART port in S10. From left to right is GND/RX/TX. Red marked is flash button.</p>
-<p><img alt="gl-s10 pcb" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/gl-s10-PCB.jpg" /></p>
+<p><strong>3. Flash</strong></p>
+<p>GL-S10 using UART to flash the firmware, and also using this UART to output the system log.
+Connect the UART in S10 to the PC by a USB-UART converter. The PC will find a new usb device like <code>/dev/ttyUSB0</code>. It is the name you should write in the <code>Default serial port</code>.   </p>
+<p><img alt="gl-s10 pcb" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/specification/gl-s10/gl-s10-pinout.jpg" /></p>
 <p>After connect S10 UART to the PC, using command <code>make flash</code> or <code>make flash monitor</code> to flash the firmware. When shows like that, it means the PC is waiting S10 to get into "download mode".</p>
 <p><img alt="wait flash" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/wait_flash.jpg" /></p>
 <p>How to get into "download mode", do in this way. Unplug the S10 power, press the flash button(do not release) and then plug in the power. When it shows like that,</p>

@@ -4269,18 +4269,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../qdslrdashboard/" class="md-nav__link">
-        qDslrDashboard
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../tether/" class="md-nav__link">
         EasyTether
       </a>
@@ -4571,14 +4559,14 @@
 <p><strong>External Zone:</strong> The options for external zone are <code>wan</code>, <code>guestZone</code>, <code>wireguard</code>.</p>
 <ul>
 <li>
-<p><code>wan</code> is for you want a service can be access in the WAN zone. E.g., a web server is running on a LAN device in your home, it can only access when you at home, but you want it to be accessable outside your home, then you can set the external zone as <code>wan</code>.
+<p><code>wan</code> is selected when you want to allow a service in the WAN zone. E.g., a web server is running on a LAN device in your home, it can only access when you at home, but you want it to be accessable outside your home, then you can set the external zone as <code>wan</code>.
 You can access it via <code>wan_ip</code>:<code>external_port</code>. Note: Access outside your home need public IP.</p>
 </li>
 <li>
-<p><code>guestZone</code> is for you want a service can be access by a device connect to the guest Wi-Fi. E.g., a web server is running on a LAN device in your home, it can only access when your device in the LAN. However, the guest LAN is isolated from the default LAN, but you want the web serve can be accessable in guest LAN, then you can set the external zone as <code>guestZone</code>. You can access it via <code>wan_ip</code>:<code>external_port</code>. </p>
+<p><code>guestZone</code> is for allowing your service to be accessed by devices connected to the guest Wi-Fi. E.g., when a web server is running on a LAN device in your home, it can only be accessed by your devices in the LAN, but not the guest LAN (which is isolated from the default LAN) by default. If you want the web server to be accessable in the guest LAN, you should set the external zone to <code>guestZone</code>. You can access the enabled service via <code>wan_ip</code>:<code>external_port</code>. </p>
 </li>
 <li>
-<p><code>wireguard</code>, when the router is running WireGuard server, there will has the <code>wireguard</code> option. E.g., a web server is running on a LAN device in your home. When you connect in through your router's WireGuard Server configuration, by default you will not be able to access the web server on the intranet. To make it accessable, set the external zone as <code>wireguard</code>. You can access it via <code>wan_ip</code>:<code>external_port</code>.</p>
+<p><code>wireguard</code>, when the router is running WireGuard server, there will have the <code>wireguard</code> option. E.g., a web server is running on a LAN device in your home. When you connect to your router's WireGuard Server, by default your access to the web server on the intranet is not granted. To make it accessable, set the external zone as <code>wireguard</code>. Then it can be accessed via <code>wan_ip</code>:<code>external_port</code>.</p>
 </li>
 </ul>
 <p><strong>External Ports:</strong> The numbers of external ports. You can enter a specific port number or a range of service ports (E.g <strong>100-300</strong>).</p>
