@@ -1505,8 +1505,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    Setup
+  <a href="#contents" class="md-nav__link">
+    Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insert-storage-device" class="md-nav__link">
+    Insert storage device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-samba" class="md-nav__link">
+    Setup Samba
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-webdav" class="md-nav__link">
+    Setup WebDAV
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-dlna" class="md-nav__link">
+    Setup DLNA
   </a>
   
 </li>
@@ -1976,16 +2011,27 @@
                 
                 
                 <h1 id="network-storage">Network Storage<a class="headerlink" href="#network-storage" title="Permanent link">&para;</a></h1>
+<h2 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#insert-storage-device">Insert storage device</a></li>
+<li><a href="#setup-samba">Setup Samba</a></li>
+<li><a href="#setup-webdav">Setup WebDAV</a></li>
+<li><a href="#setup-dlna">Setup DLNA</a></li>
+<li><a href="#samba-client">Samba Client</a></li>
+<li><a href="#webdav-client">WebDAV Client</a></li>
+</ul>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Some GL.iNet models support TF card, some models have USB port and support USB flash drive and portable external hard drive, you can set up Samba, WebDAV, DLNA on this page for the disk.</p>
 <p>The supported disk formats are NTFS, exFAT, FAT32, Ext3, Ext4.</p>
-<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<h2 id="insert-storage-device">Insert storage device<a class="headerlink" href="#insert-storage-device" title="Permanent link">&para;</a></h2>
 <p>For TF card, you need to power off the router first, insert the TF card and then power on the router.</p>
 <p>For USB Drive, you can directly plug it into the USB port. For portable external hard drive, if you have a separate power supply, please connect it to the power supply.</p>
 <p>Go to web Admin Panel -&gt; APPLICATIONS -&gt; Network Storage</p>
 <p><img alt="network storage" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/network_storage_init.png" /></p>
 <p>When a disk is found.</p>
 <p><img alt="network storage, disk found" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/disk_found.png" /></p>
-<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Samba</label><div class="tabbed-content">
+<h2 id="setup-samba">Setup Samba<a class="headerlink" href="#setup-samba" title="Permanent link">&para;</a></h2>
 <p>Toggle to enalbe Samba, click <strong>Apply</strong>.</p>
 <p><img alt="network storage, enable samba" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/samba/samba_to_enable.png" /></p>
 <p>Go to <strong>Shared Folder</strong> tab. Click <strong>+ Add</strong> button to add a shared folder.</p>
@@ -2002,8 +2048,7 @@
 <p><strong>Note:</strong> If you enabled <strong>Allow Access Samba from WAN</strong> and access from WAN, you need to replace the Router IP (default 192.168.8.1) in the figure below with WAN IP which can be found in the INTERNET page.</p>
 <p><img alt="network storage, folder access link" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/samba/samba_folder_access_link.png" /></p>
 <p>Then try to access the Samba on various OS, check out <a href="#samba-client">here</a>.</p>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">WebDAV</label><div class="tabbed-content">
+<h2 id="setup-webdav">Setup WebDAV<a class="headerlink" href="#setup-webdav" title="Permanent link">&para;</a></h2>
 <p>Toggle to enalbe WebDAV.</p>
 <p>For the protocol, <strong>HTTP</strong> is not encrypted, using on your risk; <strong>HTTPS</strong> is encrypted, it uses self signed certificate.</p>
 <p>Then click <strong>Apply</strong>.</p>
@@ -2023,15 +2068,12 @@
 <p><strong>Note:</strong> If you enabled <strong>Allow Access Samba from WAN</strong> and access from WAN, you need to replace the Router IP (default 192.168.8.1) in the figure below with WAN IP which can be found in the INTERNET page.</p>
 <p><img alt="network storage, folder access link" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/webdav/webdav_folder_access_link.png" /></p>
 <p>Then try to access the WebDAV on various OS, check out <a href="#webdav-client">here</a>.</p>
-</div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">DLNA</label><div class="tabbed-content">
+<h2 id="setup-dlna">Setup DLNA<a class="headerlink" href="#setup-dlna" title="Permanent link">&para;</a></h2>
 <p>Toggle to enalbe DLNA, modify <strong>Share Path</strong> if needed, click <strong>Apply</strong>. That is it.</p>
 <p><img alt="network storage, enable dlna" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/enable_dlna.png" /></p>
 <p>Connect your smart TV to the router, it will find the DLNA Server.</p>
-</div>
-</div>
 <h2 id="samba-client">Samba Client<a class="headerlink" href="#samba-client" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Windows</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Windows</label><div class="tabbed-content">
 <p>Here is an example of Windows 11, Windows 10 is similar.</p>
 <p>Open up File Explorer and then right-click on <strong>This PC</strong> (in the left pane). From the resulting context menu, select <strong>Show more options</strong> -&gt; <strong>Add a network location</strong></p>
 <p><img alt="windows 11 add network location" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/windows11_add_network_location.png" /></p>
@@ -2046,7 +2088,7 @@
 <p>If it need username and password, it will ask to enter the credential. Then click <strong>OK</strong>.</p>
 <p><img alt="windows 11 add network location" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/windows11_add_network_location_6.png" /></p>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Mac OS</label><div class="tabbed-content">
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Mac OS</label><div class="tabbed-content">
 <p>You can access Samba by the Finder.</p>
 <p>Open up the Finder and click Go -&gt; Connect to Server on the menu. Copy &amp; paste the Samba access link.</p>
 <p><img alt="network storage, mac os finder connect to server" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/finder_connect_to_server.png" /></p>
@@ -2056,7 +2098,7 @@
 <p>Click <strong>Continue</strong>, it will show the Samba on the sidebar of Finder.</p>
 <p><img alt="network storage, mac os finder samba connected" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/finder_samba_connected.png" /></p>
 </div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Android</label><div class="tabbed-content">
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Android</label><div class="tabbed-content">
 <p>There are many Android apps that support Samba, here is an example of <a href="https://play.google.com/store/apps/details?id=com.cxinventor.file.explorer&amp;hl=en&amp;gl=US" target="_blank">Cx File Explorer</a>.</p>
 <p>At the home page, click <strong>NETWORK</strong>.</p>
 <p><img alt="cx file explorer home page" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/cx_file_explorer_home.png" width="400" /></p>
@@ -2067,7 +2109,7 @@
 <p>Input the <strong>Host</strong>, <strong>Username</strong>, <strong>Password</strong>. If is <strong>Anonymous Access</strong>, please check the <strong>Anonymous</strong>.</p>
 <p><img alt="cx file explorer home page" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/cx_file_explorer_smb.png" width="350" /></p>
 </div>
-<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">iOS</label><div class="tabbed-content">
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">iOS</label><div class="tabbed-content">
 <p>There are many iOS apps that support Samba, here is an example of <a href="https://apps.apple.com/us/app/documents-file-reader-browser/id364901807" target="_blank">Documents</a>. </p>
 <p><strong>Note:</strong> Documents doesn't support anonymous access.</p>
 <p>Click the plus button in the lower right corner.</p>
@@ -2082,7 +2124,7 @@
 </div>
 </div>
 <h2 id="webdav-client">WebDAV Client<a class="headerlink" href="#webdav-client" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Windows</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Windows</label><div class="tabbed-content">
 <p>There is a lot of software that supports WebDAV, for example <a href="https://www.raidrive.com/" target="_blank">RaiDrive</a>, <a href="https://cyberduck.io/download/" target="_blank">Cyberduck</a>, <a href="https://winscp.net/eng/index.php" target="_blank">WinSCP</a>.</p>
 <p>Here is an example of RaiDrive.</p>
 <p>Click <strong>Add</strong>.</p>
@@ -2093,7 +2135,7 @@
 <p>Finally, click <strong>Connect</strong>, it will add a X drive in the File Explorer.</p>
 <p><img alt="RaiDrive WebDAV" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/raidrive_new_drive_webdav.png" /></p>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">macOS</label><div class="tabbed-content">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">macOS</label><div class="tabbed-content">
 <p>There is a lot of app that supports WebDAV, for example <a href="https://apps.apple.com/hk/app/fe-file-explorer/id1444382558?l=en&amp;mt=12" target="_blank">FE File Explorer</a>, <a href="https://cyberduck.io/download/" target="_blank">Cyberduck</a>.</p>
 <p>Here is an example of FE File Explorer.</p>
 <p>Click Add button.</p>
@@ -2104,7 +2146,7 @@
 <p><img alt="FE File Explorer WebDAV" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/fe_file_explorer_webdav_connection_setting.png" /></p>
 <p>It may has a warning says <em>The following secure server (null) uses an untrusted certificate. Trust this server?</em>, that is because it use self signed certificate, please trust it.</p>
 </div>
-<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">Android</label><div class="tabbed-content">
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Android</label><div class="tabbed-content">
 <p>There are many iOS apps that support WebDAV, here is an example of <a href="https://play.google.com/store/apps/details?id=com.cxinventor.file.explorer&amp;hl=en&amp;gl=US" target="_blank">Cx File Explorer</a>.</p>
 <p>At the home page, click <strong>NETWORK</strong>.</p>
 <p><img alt="cx file explorer home page" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/cx_file_explorer_home.png" width="400" /></p>
@@ -2115,7 +2157,7 @@
 <p>Input the <strong>Host</strong>, <strong>Username</strong>, <strong>Password</strong>. If is <strong>Anonymous Access</strong>, please check the <strong>Anonymous</strong>.</p>
 <p><img alt="cx file explorer home page" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/cx_file_explorer_smb.png" width="350" /></p>
 </div>
-<input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><label for="__tabbed_3_4">iOS</label><div class="tabbed-content">
+<input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">iOS</label><div class="tabbed-content">
 <p>There are many iOS apps that support WebDAV, here is an example of <a href="https://apps.apple.com/us/app/documents-file-reader-browser/id364901807" target="_blank">Documents</a>.</p>
 <p><strong>Note:</strong> Documents doesn't support anonymous access.</p>
 <p>Click the plus button in the lower right corner.</p>
