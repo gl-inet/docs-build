@@ -13,14 +13,14 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/en/4/tutorials/firewall/">
+        <link rel="canonical" href="https://docs.gl-inet.com/en/4/tutorials/uboot/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
     
     
       
-        <title>Firewall - GL.iNet Docs</title>
+        <title>Debrick via Uboot - GL.iNet Docs</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#firewall" class="md-skip">
+        <a href="#using-uboot-to-debrick-your-router" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Firewall
+              Debrick via Uboot
             
           </span>
         </div>
@@ -1213,14 +1213,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
       
       <label class="md-nav__link" for="__nav_3_7">
         Firewall
@@ -1236,65 +1234,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Firewall
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../firewall/" class="md-nav__link">
         Firewall
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#port-forwards" class="md-nav__link">
-    Port Forwards
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-ports-on-router" class="md-nav__link">
-    Open Ports on Router
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dmz" class="md-nav__link">
-    DMZ
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1752,12 +1696,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_12" type="checkbox" id="__nav_3_12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_12" type="checkbox" id="__nav_3_12" checked>
       
       <label class="md-nav__link" for="__nav_3_12">
         Troubleshooting
@@ -1773,11 +1719,21 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../uboot/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Debrick via Uboot
       </a>
+      
     </li>
   
 
@@ -2026,36 +1982,98 @@
               
                 
                 
-                <h1 id="firewall">FIREWALL<a class="headerlink" href="#firewall" title="Permanent link">&para;</a></h1>
-<p>On the left side of web Admin Panel -&gt; FIREWALL</p>
-<p>In FIREWALL page, you can set up firewall rules like <strong>Port Forwarding</strong>, <strong>Open Ports on Router</strong> and <strong>DMZ</strong>.</p>
-<h2 id="port-forwards">Port Forwards<a class="headerlink" href="#port-forwards" title="Permanent link">&para;</a></h2>
-<p>Port Forwarding lets remote computers to connect to a local computer or server behind the firewall in the LAN network (such as web servers, FTP servers, etc).</p>
-<p>To set up port forwarding, on the <strong>Port Forwards</strong> tab click <strong>Add</strong>.</p>
-<p><img alt="firewall page" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/firewall/firewall.png" /></p>
-<p>It will pop up <strong>Add New Port Forward Rule</strong> dialog.</p>
-<p><img alt="add new port forward rule" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/firewall/add_new_port_forward_rule.png" /></p>
-<p><strong>Name:</strong> The name of the rule.</p>
-<p><strong>Protocol:</strong> The protocol used, you can choose TCP, UDP, or both TCP and UDP.</p>
-<p><strong>External Zone:</strong> The options for external zone are <code>WAN</code>, <code>wgclient</code>, <code>wgserver</code>, <code>ovpnclient</code>, <code>ovpnserver</code>.</p>
-<p><strong>External Port:</strong> The numbers of external ports. You can enter a specific port number or a range of service ports (E.g <strong>100-300</strong>).</p>
-<p><strong>Internal Zone:</strong> The options for external zone are <code>WAN</code>, <code>wgclient</code>, <code>wgserver</code>, <code>ovpnclient</code>, <code>ovpnserver</code>.</p>
-<p><strong>Internal IP:</strong> The IP address assigned by the router to the device which needs to be accessed remotely.</p>
-<p><strong>Internal Port:</strong> The internal port number of the device. You can enter a specific port number. Leave it blank if it is same as the external port.</p>
-<p><strong>Enable:</strong> Enable of disable of the rule.</p>
-<h2 id="open-ports-on-router">Open Ports on Router<a class="headerlink" href="#open-ports-on-router" title="Permanent link">&para;</a></h2>
-<p>The router's services, such as web and FTP, requires their respective ports to be opened on the router in order to be publicly reachable.</p>
-<p>To open a port, click <strong>Add</strong>.</p>
-<p><img alt="open Ports on router" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/firewall/open_ports_on_router.png" /></p>
-<p><img alt="open Ports on router" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/firewall/add_new_open_port.png" /></p>
-<p><strong>Name:</strong> The name of the rule which can be specified by the user.</p>
-<p><strong>Protocol:</strong> The protocol used, you can choose TCP, UDP, or both TCP and UDP.</p>
-<p><strong>Port:</strong> The port number that you want to open.</p>
-<p><strong>Enable:</strong> Enable of disable of the rule.</p>
-<h2 id="dmz">DMZ<a class="headerlink" href="#dmz" title="Permanent link">&para;</a></h2>
-<p>DMZ lets you to expose one computer to the Internet, so all inbound packets will be redirected to this computer.</p>
-<p>Toggle on <strong>Enable DMZ</strong>. Select the internal IP address of your device which is going to receive all the inbound packets.</p>
-<p><img alt="Port Forwards" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/firewall/dmz.png" /></p>
+                <h1 id="using-uboot-to-debrick-your-router">Using Uboot to Debrick Your Router<a class="headerlink" href="#using-uboot-to-debrick-your-router" title="Permanent link">&para;</a></h1>
+<p>You may have bricked your router if you were doing some DIY projects or flashed a wrong firmware. You may not be able to access your router but you can re-install the firmware by using Uboot failsafe.</p>
+<hr />
+<p>Please follow the procedures below to access the Uboot Web UI and re-install the firmware.</p>
+<p>You can also refer to video tutorial below.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EAaaw8nyrnE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<ol type="1">
+  <li>
+    <p>
+      First you have to download <b>firmware</b> to your computer. You can download the firmware <a href="https://dl.gl-inet.com/" target="_blank">here</a>. Some models, such as GL-AR750S-EXT, it is available in two formats of firmware, please use the firmware with the .img extension.
+    </p> 
+  </li>
+  <li>
+    <p>
+      Connect your computer to the <b>Ethernet port (either LAN or WAN)</b> of the router. You <b>MUST</b> leave the other port <b>unconnected</b>.
+    </p>
+  </li>
+  <li>
+    <p>
+    Press and hold the Reset button firmly first, and then power on your device. (If your device does not have a power button, plugging it in will power it on automatically.)
+    </p>
+    <p>If you can not find the reset button, please refer to our page,<a href="../../troubleshooting/reset" target="_blank"> How to Repair and Reset</a>.</p>
+    <p>
+      Release your finger when you see the LED has flashed:
+    </p>
+    <p>
+      The Power LED will light up. Then, other LEDs will start flashing.
+    </p>
+    <ul>
+      <li><b>6 times</b> for GL-MiFi, and then the LTE light will faintly flash twice.</li>
+      <li><b>5 times</b> for GL-AR150, GL-AR300M, GL-USB150, GL-AR750, GL-AR750S-EXT (Slate), GL-X750 (Spitz), GL-MT300N-V2, GL-E750 (Mudi), microuter-N300.
+      </li>
+      <li><b>4 times</b> for GL-S1300, GL-B1300. 
+        <div>The left most LED may stay on the whole time while the rightmost LED flashes 4 times, then the middle LED turns on and stays on. </div>
+        <div>(For some old GL-B1300, the left most LED stays on the whole time, and both the middle LED and the rightmost LED flash 5 times at the same time then they stay on.)</div>
+      </li>
+      <li><b>3 times</b> for GL-MT300N, GL-MT300A.</li>
+        <li>For <strong>GL-SF1200</strong>, the 5G LED flashes 5 times then stays on.</li>
+        <li>For <strong>GL-AX1800(Flint)</strong>, the blue light flashes 5 times then turns white and stay on.</li>
+        <li>For <strong>GL-XE300(Puli)</strong>, the LAN light falshes 5 times then WIFI light stay on.</li>
+        <li>For <strong>GL-X300B(Collie)</strong>, the WAN light flashes 5 times then WIFI light stay on.</li>
+        <li>For <strong>GL-SFT1200(Opal)</strong>, the blue light flashes 5 times then turns white and stay on.</li>
+        <li>For <strong>GL-AP1300(Cirrus)</strong>, the power light falshes 5 times then stay on.</li>
+        <li>For <strong>GL-MT1300(Beryl)</strong>, the LED is blue at first, flash twice slowly, then light 5 times a bit quick and turn to white and stay on.</li>
+        <li>For <strong>GL-B2200(Velica)</strong>, the two LEDs are blue at first, then turn white to flash 5 times, then turn blue and stay on.</li>
+        <li><b>No repeat LED flashes signal </b> for GL-MV1000. (Power and WAN LEDs will stay on the whole time.)</li>
+    </ul>
+  </li>
+  <li>
+    <p>Set your computer’s IP address to <b>192.168.1.2</b>. Please check the step-by-step guide for different operating systems below:</p>
+    <details>
+      <summary>Windows 7 / Windows 10</summary>
+      <ol type="1">
+        <li>Go to Control Panel -> Network and Internet -> Network and Sharing Center -> Change adapter settings.</li>
+        <li>Right click Local Area Connection -> Properties.</li>
+        <li>Click Internet Protocol Version 4 (TCP/IPv4) -> Properties.</li>
+        <li>Set the IP adress to 192.168.1.2 manually.</li>
+          <img src="https://static.gl-inet.com/docs/en/2.x/troubleshooting/src/debrick/set_ip.jpg">
+      </ol>
+    </details>
+    <details>
+      <summary>macOS</summary>
+      <ol type="1">
+        <li>Go to System Preferences -> Network.</li>
+        <li>Chooose Ethernet -> Advanced -> TCP/IP.</li>
+        <li>In Configure IPv4, choose Manually.</li>
+        <li>Set the IPv4 Address to 192.168.1.2 manually.</li>
+      </ol>
+    </details>
+    </li>
+  <li>
+    <p>
+    Use Firefox or Chrome to visit <b>http://192.168.1.1</b>.<img src="https://static.gl-inet.com/docs/en/2.x/troubleshooting/src/debrick/ui.jpg">
+    </p>
+  </li>
+  <li>
+    <p>
+    Click <b>Choose File</b> to find the firmware file. Then click <b>Update firmware</b>. 
+    </p>
+  </li>
+  <li>
+    <p>
+    Wait for around 3 minutes. Don’t power off your device when updating. The router is ready when both power and  Wi-Fi LED are on or you can find its SSID on your device.
+    </p>
+  </li>
+  <li>
+    <p>
+    Revert the IP setting you did in step 4 and connect your device to the LAN or Wi-Fi of the router. You will be able to access the router via 192.168.8.1 again.
+    </p>
+  </li>
+</ol>
                 
               
               
@@ -2080,7 +2098,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../where_to_download_firmware/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Download Firmware" rel="prev">
+        <a href="../how_to_use_vpn_and_dns_encryption_to_protect_your_privacy_with_glinet_router/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Protect Privacy" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2089,20 +2107,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Download Firmware
+              Protect Privacy
             </div>
           </div>
         </a>
       
       
         
-        <a href="../port_forwarding/" class="md-footer__link md-footer__link--next" aria-label="Next: Port forwarding" rel="next">
+        <a href="../change_wan_to_lan/" class="md-footer__link md-footer__link--next" aria-label="Next: Change WAN to LAN" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Port forwarding
+              Change WAN to LAN
             </div>
           </div>
           <div class="md-footer__button md-icon">
