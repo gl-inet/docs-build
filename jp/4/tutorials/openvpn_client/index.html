@@ -1,0 +1,2384 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for GL.iNet Productions">
+      
+      
+      
+        <meta name="author" content="GL.iNet">
+      
+      
+        <link rel="canonical" href="https://docs.gl-inet.com/jp/4/tutorials/openvpn_client/">
+      
+      <link rel="icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+    
+    
+      
+        <title>OpenVPN Client - GL.iNet Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+
+  
+
+
+  
+
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-108265653-5","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-setup-openvpn-client-on-glinet-router" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="GL.iNet Docs" class="md-header__button md-logo" aria-label="GL.iNet Docs" data-md-component="logo">
+      
+  <img src="../../images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GL.iNet Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OpenVPN Client
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/gl-inet/docs4.x" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gl-inet/docs4.x
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../user-guide/" class="md-tabs__link">
+        User Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Tutorials
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../video-library/" class="md-tabs__link">
+        Video Library
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../community/" class="md-tabs__link">
+        Community
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="GL.iNet Docs" class="md-nav__button md-logo" aria-label="GL.iNet Docs" data-md-component="logo">
+      
+  <img src="../../images/logo.svg" alt="logo">
+
+    </a>
+    GL.iNet Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/gl-inet/docs4.x" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gl-inet/docs4.x
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        User Guide
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="User Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        GL-AXT1800 (Slate AX)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="GL-AXT1800 (Slate AX)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          GL-AXT1800 (Slate AX)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-axt1800/hardware_info/" class="md-nav__link">
+        Hardware Info
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-axt1800/first_time_setup/" class="md-nav__link">
+        First Time Setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-axt1800/internet/" class="md-nav__link">
+        Internet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-axt1800/wireless/" class="md-nav__link">
+        Wireless
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-axt1800/clients/" class="md-nav__link">
+        Clients
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-axt1800/upgrade/" class="md-nav__link">
+        Upgrade
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-axt1800/firewall/" class="md-nav__link">
+        Firewall
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-axt1800/vpn/" class="md-nav__link">
+        VPN
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-axt1800/applications/" class="md-nav__link">
+        Applications
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-axt1800/more_settings/" class="md-nav__link">
+        More Settings
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        GL-AX1800 (Flint)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="GL-AX1800 (Flint)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          GL-AX1800 (Flint)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-ax1800/hardware_info/" class="md-nav__link">
+        Hardware Info
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-ax1800/first_time_setup/" class="md-nav__link">
+        First Time Setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-ax1800/internet/" class="md-nav__link">
+        Internet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-ax1800/wireless/" class="md-nav__link">
+        Wireless
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-ax1800/clients/" class="md-nav__link">
+        Clients
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-ax1800/upgrade/" class="md-nav__link">
+        Upgrade
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-ax1800/firewall/" class="md-nav__link">
+        Firewall
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-ax1800/vpn/" class="md-nav__link">
+        VPN
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-ax1800/applications/" class="md-nav__link">
+        Applications
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/gl-ax1800/more_settings/" class="md-nav__link">
+        More Settings
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Tutorials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        General
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="General" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          General
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first_time_setup/" class="md-nav__link">
+        First time setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_upgrade_to_the_latest_firmware/" class="md-nav__link">
+        Upgrade to latest firmware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../check_firmware_version/" class="md-nav__link">
+        Check Firmware Version
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web_admin_panel/" class="md-nav__link">
+        What is web Admin Panel
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        Internet Connection
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Internet Connection" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Internet Connection
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internet_ethernet/" class="md-nav__link">
+        Ethernet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internet_repeater/" class="md-nav__link">
+        Repeater
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internet_tethering/" class="md-nav__link">
+        Tethering
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internet_cellular/" class="md-nav__link">
+        Cellular
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connect_to_a_hotspot_with_captive_portal/" class="md-nav__link">
+        Connect to a Hotspot with Captive Portal
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dhcp/" class="md-nav__link">
+        DHCP
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pppoe/" class="md-nav__link">
+        PPPoE
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../produce_a_wired_connection/" class="md-nav__link">
+        Produce a wired connection
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        Wireless
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Wireless" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Wireless
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wireless/" class="md-nav__link">
+        Wireless
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      <label class="md-nav__link" for="__nav_3_5">
+        Clients
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Clients" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Clients
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clients/" class="md-nav__link">
+        Clients
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        Upgrade
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Upgrade" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Upgrade
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firmware_upgrade/" class="md-nav__link">
+        Frimware Upgrade
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../where_to_download_firmware/" class="md-nav__link">
+        Download Firmware
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      <label class="md-nav__link" for="__nav_3_7">
+        Firewall
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Firewall" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Firewall
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firewall/" class="md-nav__link">
+        Firewall
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" type="checkbox" id="__nav_3_8" checked>
+      
+      <label class="md-nav__link" for="__nav_3_8">
+        VPN
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="VPN" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          VPN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vpn_dashboard/" class="md-nav__link">
+        VPN Dashboard
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          OpenVPN Client
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        OpenVPN Client
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup-nordvpn" class="md-nav__link">
+    Setup NordVPN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-openvpn-client" class="md-nav__link">
+    Setup OpenVPN client
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-openvpn-server-on-glinet-router" class="md-nav__link">
+    Setup OpenVPN server on GL.iNet router
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-configuration-files-from-openvpn-service-providers" class="md-nav__link">
+    Get configuration files from OpenVPN service providers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openvpn_server/" class="md-nav__link">
+        OpenVPN Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wireguard_client/" class="md-nav__link">
+        WireGuard Client
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wireguard_server/" class="md-nav__link">
+        WireGuard Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openvpn_tcp_udp/" class="md-nav__link">
+        TCP or UDP
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../block_no_vpn_traffic/" class="md-nav__link">
+        Block No-VPN Traffic
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_9" type="checkbox" id="__nav_3_9" >
+      
+      <label class="md-nav__link" for="__nav_3_9">
+        Applications
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Applications" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/" class="md-nav__link">
+        Plug-ins
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ddns/" class="md-nav__link">
+        Dynamic DNS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud/" class="md-nav__link">
+        GoodCloud
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adguardhome/" class="md-nav__link">
+        AdGuardHOme
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network_storage/" class="md-nav__link">
+        Network Storage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../log/" class="md-nav__link">
+        Log
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_10" type="checkbox" id="__nav_3_10" >
+      
+      <label class="md-nav__link" for="__nav_3_10">
+        More settings
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="More settings" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_10">
+          <span class="md-nav__icon md-icon"></span>
+          More settings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin_password/" class="md-nav__link">
+        Change Admin Password
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lan/" class="md-nav__link">
+        LAN
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../time_zone/" class="md-nav__link">
+        Time Zone
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mac_clone/" class="md-nav__link">
+        MAC Clone
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network_mode/" class="md-nav__link">
+        Network Mode
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ipv6/" class="md-nav__link">
+        IPv6
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toggle_button_settings/" class="md-nav__link">
+        Toggle Button Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reset_firmware/" class="md-nav__link">
+        Reset Firmware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced_settings/" class="md-nav__link">
+        Advanced Settings
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" >
+      
+      <label class="md-nav__link" for="__nav_3_11">
+        Troubleshooting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Troubleshooting" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_11">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uboot/" class="md-nav__link">
+        Debrick via Uboot
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_12" type="checkbox" id="__nav_3_12" >
+      
+      <label class="md-nav__link" for="__nav_3_12">
+        Other
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Other" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_12">
+          <span class="md-nav__icon md-icon"></span>
+          Other
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change_wan_to_lan/" class="md-nav__link">
+        Change WAN to LAN
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile_app/" class="md-nav__link">
+        Mobile App
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote_access_web_admin_panel/" class="md-nav__link">
+        Remote access web admin panel
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote_ssh_to_router/" class="md-nav__link">
+        Remote SSH to router
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_check_if_isp_assigns_you_a_public_ip_address/" class="md-nav__link">
+        Check IP Address
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../where_to_find_the_device_id_mac_sn/" class="md-nav__link">
+        Device id, MAC, SN
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Video Library
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Video Library" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Video Library
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../video-library/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Community
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Community" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Community
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="how-to-setup-openvpn-client-on-glinet-router">How to Setup OpenVPN Client on GL.iNet router<a class="headerlink" href="#how-to-setup-openvpn-client-on-glinet-router" title="Permanent link">&para;</a></h1>
+<p>OpenVPN is an open-source VPN protocol that makes use of virtual private network (VPN) techniques to establish safe site-to-site or point-to-point connections. </p>
+<p>GL.iNet routers have pre-installed OpenVPN Client and Server.</p>
+<p>We recommend WireGuard over OpenVPN because it is much faster. For setup a WireGuard Client, please check out <a href="../wireguard_client">here</a>.</p>
+<p>If you have already bought OpenVPN service from a provider, but you don't know how to get the configuration file, please refer to <a href="#get-configuration-files-from-openvpn-service-providers">get configuration files from OpenVPN service providers</a>.</p>
+<p>You can setup OpenVPN Client via web Admin Panel and <a href="../mobile_app">mobile app</a>. For the mobile app, it has already integrated NordVPN.</p>
+<h2 id="setup-nordvpn">Setup NordVPN<a class="headerlink" href="#setup-nordvpn" title="Permanent link">&para;</a></h2>
+<p><a href="https://go.nordvpn.net/aff_c?offer_id=15&amp;aff_id=12016&amp;url_id=902" target="_blank">NordVPN</a> is the top online VPN service for speed and security.</p>
+<p>From firmware 4.0.0, it has integrated NordVPN OpenVPN service.</p>
+<p>Access to web Admin Panel, on the left side -&gt; VPN -&gt; OpenVPN Client</p>
+<ol>
+<li>
+<p>Input your NordVPN account's service credentials, then click <strong>Save Credentials &amp; Get Servers</strong></p>
+<details class="note"><summary>Note</summary><p>You can find your NordVPN service credentials in the Nord Account dashboard.</p>
+<p><img alt="nordvpn service credential" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/nordvpn_service_credentials.png" /></p>
+</details>
+<p><img alt="input nordvpn service credential" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/input_nordvpn_credential.png" /></p>
+</li>
+<li>
+<p>Select protocol, max server count of each location, locations, then click <strong>Apply</strong>.</p>
+<p><img alt="select nordvpn servers" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/select_nordvpn_servers.png" /></p>
+<p>It will download configuration files.</p>
+<p><img alt="downloaded configuration files" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/downloaded_configs.png" /></p>
+</li>
+<li>
+<p>Go to VPN Dashboard to enable the connection.</p>
+<p><img alt="vpn dashboard page" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/vpn_dashboard_to_connect.png" /></p>
+<p>Toggle the switch to enable the connection.</p>
+<p><img alt="openvpn connected" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/openvpn_connected.png" /></p>
+</li>
+<li>
+<p>Update servers</p>
+<p>NordVPN may maintain or shutdown some servers, it will make the connection failed, you can <strong>Update Servers</strong> to get the latest available servers.</p>
+<p><img alt="update servers" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/update_servers.png" /></p>
+</li>
+<li>
+<p>Edit credential</p>
+<p>Click the cog icon to edit the credential.</p>
+<p><img alt="edit credential" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/edit_credential.png" /></p>
+</li>
+</ol>
+<h2 id="setup-openvpn-client">Setup OpenVPN client<a class="headerlink" href="#setup-openvpn-client" title="Permanent link">&para;</a></h2>
+<p>As of frimware 4.0, it brings grouping to manage OpenVPN profiles. Please make sure all the profiles in the same group with the same credentials. For example, if you are ExpressVPN user, you can add a group named expressvpn, then upload all the ExpressVPN OpenVPN profiles you wanted to this group. For another OpenVPN service provider, please create another group.</p>
+<p>Next steps, we will use ExpressVPN as an example.</p>
+<ol>
+<li>
+<p>Add a new group</p>
+<p><img alt="add a new group" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/add_a_new_group.png" /></p>
+</li>
+<li>
+<p>Give the group a descriptive name, e.g. expressvpn.</p>
+<p><img alt="set the new group name" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/set_new_group_name.png" /></p>
+</li>
+<li>
+<p>Upload your OpenVPN configuration file, then input the credential, click <strong>Apply</strong>.</p>
+<p><img alt="upload profile" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/upload_profile.png" /></p>
+<p><img alt="after upload profile" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/after_upload_profile.png" /></p>
+</li>
+<li>
+<p>Go to VPN Dashboard to enable the connection.</p>
+<p><img alt="vpn dashboard page" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_client/vpn_dashboard_to_connect_expressvpn.png" /></p>
+</li>
+</ol>
+<h2 id="setup-openvpn-server-on-glinet-router">Setup OpenVPN server on GL.iNet router<a class="headerlink" href="#setup-openvpn-server-on-glinet-router" title="Permanent link">&para;</a></h2>
+<p>You can get a GL.iNet router to set as OpenVPN server, and get another GL.iNet router to set as OpenVPN client. For setup OpenVPN server, please check out <a href="../openvpn_server">here</a>.</p>
+<h2 id="get-configuration-files-from-openvpn-service-providers">Get configuration files from OpenVPN service providers<a class="headerlink" href="#get-configuration-files-from-openvpn-service-providers" title="Permanent link">&para;</a></h2>
+<p>We have tested different OpenVPN service providers. Therefore, if you don't know how to get the configuration file, you can follow the instruction below. However, you have to contact your service provider for the configuration file if they are not listed below. </p>
+<p>If you have any problem in the setup of OpenVPN, please contact <a href="mailto:support@gl-inet.com">support@gl-inet.com</a></p>
+<p>Recommended:</p>
+<div id="nordvpn"></div>
+
+<details><summary>NordVPN</summary><p><a href="https://go.nordvpn.net/aff_c?offer_id=15&amp;aff_id=12016&amp;url_id=902" target="_blank">Official Website</a></p>
+<p>Download OpenVPN client configuration files. We recommend going into <a href="https://nordvpn.com/servers/tools/" target="_blank">NordVPN recommended server utility here</a>. It will recommend a server base on your network, click <code>Show available protocols</code> to download the UDP or TCP config.</p>
+<p><img alt="nordvpn server utility" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/nordvpn/nordvpn_server_utility.png" /></p>
+<p>Of course you can download all servers configs <a href="https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip">here</a>.</p>
+<p>Tips: if the zip file is too big to upload, you can delete some .ovpn in .zip file or upload single .ovpn file.</p>
+<p><a href="https://support.nordvpn.com/Connectivity/Router/1047409122/GL-iNet-setup-with-NordVPN.htm" target="_blank">Refer link</a></p>
+<p>You can also use <a href="../mobile_app">mobile app</a> to setup NordVPN.</p>
+</details>
+<div id="pia"></div>
+
+<details><summary>PIA (Private Internet Access)</summary><p><a href="https://privateinternetaccess.com/offer/GLiNET_71dx4t8bl" target="_blank">Official Website</a></p>
+<p><a href="https://www.privateinternetaccess.com/openvpn/openvpn.zip">Download</a> directly.</p>
+</details>
+<div id="surfshark"></div>
+
+<details><summary>Surfshark</summary><p><a href="https://get.surfshark.net/aff_c?offer_id=6&amp;aff_id=1400" target="_blank">Official Website</a></p>
+<p>Login and <a href="https://api.surfshark.com/v1/server/configurations">Download</a> directly, or read this <a href="https://support.surfshark.com/hc/en-us/articles/360011856259-How-to-set-up-Surfshark-on-GL-iNet-router-3-x-firmware-">guide</a>.</p>
+</details>
+<div id="purevpn"></div>
+
+<details><summary>PureVPN</summary><p><a href="https://billing.purevpn.com/aff.php?aff=35535" target="_blank">Official Website</a></p>
+<p><a href="https://d32d3g1fvkpl8y.cloudfront.net/heartbleed/router/Recommended-CA2.zip">Download</a> directly.</p>
+<p><a href="https://support.purevpn.com/openvpn-files">Refer link</a></p>
+</details>
+<div id="torguard"></div>
+
+<details><summary>TorGuard</summary><p><a href="https://torguard.net/aff.php?aff=3040" target="_blank">Official Website</a></p>
+<ol>
+<li>
+<p>If you are using <a href="https://torguard.net/aff.php?aff=3040" target="_blank">TorGuard</a>, you need to login the control panel and find <strong>Config Generator</strong> from the <strong>Tools</strong> menu. Choose the <strong>VPN Server</strong> and some other options. Then click <strong>Generate Config</strong> a config file will be downloaded automatically.</p>
+<p><img alt="Generate ovpn" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/torguard/torguard_menu.jpg" /></p>
+</li>
+<li>
+<p>The username and password for OpenVPN connection is different from your control panel login. You can find the VPN username and VPN password below.</p>
+<p><img alt="torguard vpn username vpn password" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/torguard/torguard_vpnusername_vpnpassword.png" /></p>
+</li>
+</ol>
+</details>
+<div id="privatevpn"></div>
+
+<details><summary>PrivateVPN</summary><p><a href="https://affiliate.privatevpn.com/scripts/click.php?a_aid=5e3a511658bc3" target="_blank">Official Website</a></p>
+<p><a href="https://privatevpn.com/client/PrivateVPN-TUN.zip">Download</a> directly.</p>
+</details>
+<div id="protonvpn"></div>
+
+<details><summary>Proton VPN</summary><p><a href="https://go.getproton.me/aff_c?offer_id=26&amp;aff_id=1612" target="_blank">Official Website</a></p>
+<p><strong>Proton VPN has WireGuard service, we recommend to use WireGuard, checkout <a href="../wireguard_client/#wireguard-providers">here</a></strong>.</p>
+<ol>
+<li>
+<p>Login your <a href="https://go.getproton.me/aff_c?offer_id=26&amp;aff_id=1612" target="_blank">Proton VPN</a> account.</p>
+</li>
+<li>
+<p>Click <strong>Download</strong> in the left-hand side.</p>
+</li>
+<li>
+<p>Choose Router platform, protocol etc, find your target country to download configuration file.</p>
+<p><img alt="protonvpn openvpn configuration file" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/protonvpn/proton_openvpn_configuration_file.jpg" /></p>
+</li>
+<li>
+<p>The credential for connect OpenVPN is not the one that login Proton website's dashboard. You can find the crdential at <strong>Account -&gt; OpenVPN/IKEv2 username</strong></p>
+<p><img alt="protonvpn openvpn credential" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/protonvpn/protonvpn_openvpn_credential.jpg" /></p>
+</li>
+</ol>
+</details>
+<div id="expressvpn"></div>
+
+<details><summary>ExpressVPN</summary><p><a href="https://www.xvbelink.com/?a_fid=glinet" target="_blank">Official Website</a></p>
+<p>Information quoted from <a href="https://www.expressvpn.com/support/vpn-setup/manual-config-for-linux-with-openvpn/#download" rel="sponsored" target="_blank">Expressvpn official instruction</a></p>
+<ol>
+<li>
+<p>Go to <a href="https://www.xvbelink.com/?a_fid=glinet" rel="sponsored" target="_blank">ExpressVPN</a> website, and log in with your ExpressVPN credentials.</p>
+<p><img alt="expressvpn account click sign in" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/expressvpn/expressvpn-account-click-sign-in.jpg" target="_blank" /></p>
+<p><strong>Enter the verification code</strong> that is sent to your email.</p>
+</li>
+<li>
+<p>On the right, with <strong>OpenVPN</strong> already selected for you, you will see your <strong>username</strong>, <strong>password</strong>, and a list of <strong>OpenVPN configuration files</strong>.</p>
+<p><img alt="" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/expressvpn/expressvpn-account-manual-configuation-openvpn.jpg" /></p>
+<p>Click the location(s) you want in order to download the .ovpn file(s).</p>
+<p><strong>Keep this browser window open</strong>. You will need this information for the setup later.</p>
+</li>
+</ol>
+</details>
+<p>Others:</p>
+<div id="airvpn"></div>
+
+<details><summary>AirVPN</summary><p><a href="https://airvpn.org/?referred_by=402389" target="_blank">Official Website</a></p>
+<ol>
+<li>
+<p>Login your AirVPN acoount</p>
+<p><img alt="airvpn client detail" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/airvpn/airvpn1.png" /></p>
+</li>
+<li>
+<p>Choose Config Generator on the left and then choose Linux as your operating system. Next, choose your preferred server.</p>
+<p><img alt="openvpn config generator" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/airvpn/airvpn2.png" /></p>
+</li>
+<li>
+<p>You will be able to see the download page of the configuration file.</p>
+<p><img alt="download config" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/airvpn/airvpn3.png" /></p>
+</li>
+</ol>
+</details>
+<div id="astrill"></div>
+
+<details><summary>Astrill</summary><p><a href="https://www.astrill.com/a/dik2masnw6ig" target="_blank">Official Website</a></p>
+<p>Information quoted from <a href="https://wiki.astrill.com/Astrill_Setup_Manual:How_to_configure_OpenVPN_with_OpenVPN_application_on_Windows" target="_blank">Astrill official instruction</a></p>
+<ol>
+<li>
+<p>Generate and Download Astrill Openvpn configuration ZIP</p>
+<p><img alt="astrill vpn tools" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/astrillvpn/astrill1.png" /></p>
+<p><img alt="create new certificate" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/astrillvpn/astrill2.png" /></p>
+</li>
+<li>
+<p>Type a Description like OPENVPN_GUI.</p>
+</li>
+<li>
+<p>Click on ADD to my certificates button.</p>
+<p><img alt="create new certificate" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/astrillvpn/astrill3.png" /></p>
+</li>
+<li>
+<p>Once OpenVPN certificate is added, click on Download button.</p>
+<p><img alt="download certificate" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/astrillvpn/astrill4.png" /></p>
+</li>
+</ol>
+</details>
+<div id="bolevpn"></div>
+
+<details><summary>bolehvpn</summary><p><a href="https://www.bolehvpn.net/" target="_blank">Official Website</a></p>
+<p>Login in <a href="https://users.bolehvpn.net/" target="_blank">Dashboard</a>, download your configuration files and select the <a href="https://users.bolehvpn.net/download/inline/6" target="_blank">Linux_iOS inline</a> format. Extract the zip files after completing the download.</p>
+<p><a href="https://www.bolehvpn.net/clients-installations/#1487691248224-0c435dba-d612" target="_blank">Refer link</a></p>
+</details>
+<div id="cactusvpn"></div>
+
+<details><summary>CactusVPN</summary><p><a href="https://billing.cactusvpn.com/aff.php?aff=2310" target="_blank">Official Website</a></p>
+<p><a href="https://www.cactusvpn.com/downloads/" target="_blank">Download</a> directly.</p>
+<p><img alt="download cactusvpn openvpn profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/cactusvpn/cactusvpn1.jpg" /></p>
+</details>
+<div id="cryptostorm"></div>
+
+<details><summary>Cryptostorm</summary><p><a href="https://cryptostorm.is/" target="_blank">Official Website</a></p>
+<p><a href="https://cryptostorm.is/configs/ecc/" target="_blank">Download</a> directly.</p>
+</details>
+<div id="cyberghost"></div>
+
+<details><summary>CyberGhost</summary><p><a href="https://support.cyberghostvpn.com/hc/en-us" target="_blank">Official Website</a></p>
+<p>Information quoted from <a href="https://support.cyberghostvpn.com/hc/en-us/articles/213811885-Router-How-to-configure-OpenVPN-for-flashed-DD-WRT-routers?fbclid=IwAR0_IicBlnNzVqlKh0mAHFyM6uvsGgBQooYfMyJ0bHgb13Eidn8KhXnd6Y0" target="_blank">CyberGhost official instruction</a></p>
+<ol>
+<li>
+<p>Login your CyberGhost VPN online account.</p>
+<p><img alt="login" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/cyberghost/cyberghost1.png" /></p>
+</li>
+<li>
+<p>Click on <strong>My Devices</strong>  &gt; click <strong>Other</strong> &gt; choose <strong>Configure new device</strong>.</p>
+<p><img alt="config new device" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/cyberghost/cyberghost2.png" /></p>
+</li>
+<li>
+<p>At the new screen, in the <strong>Server configuration</strong> tab, the desired parameters can be configured. For the purpose of setting OpenVPN for your DD-WRT Router, choose 'OpenVPN' from the Protocol drop down menu. Your desired country and server group, as described below, need to be defined too:</p>
+<p><img alt="" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/cyberghost/cyberghost3.png" /></p>
+<ul>
+<li>
+<p>Protocol: For Router configurations, please choose OpenVPN</p>
+</li>
+<li>
+<p>Country: Since native protocol connections may only be used with exactly one server you now have to choose the country you want to surf from; the server to be used in this country will be chosen by CyberGhost automatically.</p>
+</li>
+<li>
+<p>Server group: Choose the server group and the OpenVPN protocol (UDP or TCP) you want to use:</p>
+<p>UDP allows higher speed than the TCP version, but can result in broken downloads in some cases. This is the default setting.</p>
+<p>TCP allows more stable connections than the UDP version, but is a bit slower. Choose this version, if you have recurrent connection issues such as sudden disconnections.</p>
+</li>
+</ul>
+<p>After setting up your preferred settings, save them with <strong>Save and download configuration</strong>.</p>
+</li>
+</ol>
+</details>
+<div id="fastestvpn"></div>
+
+<details><summary>FastestVPN</summary><p><a href="https://go.fastestvpn.com/affiliate/pap?a_aid=5ffd2a3e9d687" target="_blank">Official Website</a></p>
+<p>Download FastestVPN Config Files zip folder for OpenVPN TCP and UDP from <a href="https://support.fastestvpn.com/download/openvpn-tcp-udp-config-files/">here</a></p>
+<p><a href="https://support.fastestvpn.com/tutorials/routers/gl-inet/openvpn" target="_blank">Refer link</a></p>
+</details>
+<div id="finchvpn"></div>
+
+<details><summary>FinchVPN</summary><p><a href="https://www.finchvpn.com/" target="_blank">Official Website</a></p>
+<ol>
+<li>
+<p>Login your FinchVPN account.</p>
+<p><img alt="finchvpn login" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/finchvpn/finchvpn1.jpg" /></p>
+</li>
+<li>
+<p>Go to the Download page and click Download under FinchVPN OpenVPN Config.</p>
+<p><img alt="finchvpn download page" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/finchvpn/finchvpn2.jpg" /></p>
+</li>
+<li>
+<p>Choose Linux</p>
+<p><img alt="finchvpn" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/finchvpn/finchvpn3.jpg" /></p>
+</li>
+<li>
+<p>Choose the protocol based on your preference. Generally, you can choose the first one <strong>Port 8484 over UDP</strong></p>
+<p><img alt="finchvpn" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/finchvpn/finchvpn4.jpg" /></p>
+</li>
+<li>
+<p>Remember to tick the box to include your username and password before download the file.</p>
+<p><img alt="finchvpn" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/finchvpn/finchvpn5.jpg" /></p>
+</li>
+</ol>
+</details>
+<div id="hideipvpn"></div>
+
+<details><summary>HideIPVPN</summary><p><a href="https://www.hideipvpn.com/" target="_blank">Official Website</a></p>
+<ol>
+<li>
+<p>Login your HideIPVPN account.</p>
+</li>
+<li>
+<p>Go to Package on the left side, click the your package, make sure it is active.</p>
+<p><img alt="hideipvpn client area" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/hideipvpn/package.jpg" /></p>
+</li>
+<li>
+<p>On the VPN tab, there is VPN Login Details of username and password, this is for login when OpenVPN connection</p>
+<p><img alt="hideipvpn client area" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/hideipvpn/vpn_username_password.jpg" /></p>
+</li>
+<li>
+<p>Scroll down to download OpenVPN config files.</p>
+<p><img alt="hideipvpn client area" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/hideipvpn/openvpn_config_files.jpg" /></p>
+</li>
+</ol>
+</details>
+<div id="hidemevpn"></div>
+
+<details><summary>Hide.me VPN</summary><p><a href="https://hide.me/?friend=glinet" target="_blank">Official Website</a></p>
+<ol>
+<li>
+<p>Login your Hide.me account, find the Server Locations on the left side.</p>
+</li>
+<li>
+<p>Download the OpenVPN Configuration for Windows.</p>
+<p><img alt="hide.me vpn dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/hideme/hideme_dashboard.jpg" /></p>
+</li>
+</ol>
+</details>
+<div id="hidemyass"></div>
+
+<details><summary>HideMyAss</summary><p><a href="https://click.hmavpn.com/aff_c?offer_id=1&amp;aff_id=861" target="_blank">Official Website</a></p>
+<p><a href="https://vpn.hidemyass.com/vpn-config/vpn-configs.zip">Download</a></p>
+</details>
+<div id="ipvanish"></div>
+
+<details><summary>IPVANISH</summary><p><a href="https://www.ipvanish.com/" target="_blank">Official Website</a></p>
+<p>You can download all of the config files for all of the servers from <a href="https://www.ipvanish.com/software/configs/configs.zip">here</a>, then should upload this <strong>config.zip</strong> on the OpenVPN Client of web Admin Panel. Before uploading, please remove the servers in the .zip file that you will not use to reduce the file size.</p>
+<p>You can also download individual server configuration files <a href="https://www.ipvanish.com/software/configs/">here</a>, but you will need to download <strong>ca.ipvanish.com.crt</strong> as well. Before uploading to the router, you need to compress the <strong>ca.ipvanish.com.crt</strong> and .ovpn configuration files into a .zip archive and upload them.</p>
+<p><img alt="ipvanish" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/ipvanish/ipvanish_download_openvpn_configs.png" /></p>
+<p><a href="https://support.ipvanish.com/hc/en-us/articles/360001329813-Android-OpenVPN-Setup">Refer link</a></p>
+</details>
+<div id="ivacy"></div>
+
+<details><summary>IVACY</summary><p><a href="https://billing.ivacy.com/page/22852" target="_blank">Official Website</a></p>
+<p><a href="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/ivacy/IVACY_OpenVPN_Configs_UDP.zip">Download OpenVPN UDP Configs</a></p>
+<p><a href="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/ivacy/IVACY_OpenVPN_Configs_TCP.zip">Download OpenVPN TCP Configs</a></p>
+<p><a href="https://support.ivacy.com/setup_guide/how-to-setup-ivacy-on-gl-inet-router/">Refer link</a></p>
+</details>
+<div id="ivpn"></div>
+
+<details><summary>IVPN</summary><p><a href="https://www.ivpn.net/" target="_blank">Official Website</a></p>
+<ol>
+<li>
+<p>Download the <a href="https://www.ivpn.net/releases/config/ivpn-openvpn-config.zip">OpenVPN config files</a>.</p>
+</li>
+<li>
+<p>Find the Account ID on <a href="https://www.ivpn.net/clientarea/login" target="_blank">IVPN Client Area</a>.</p>
+</li>
+<li>
+<p>When drag the config file to Add a New OpenVPN Configuration, you will be asked to enter User Name and Password. The User Name is your Account ID that begins with letters <strong>ivpn</strong>. The password can be anything, like <strong>ivpn</strong></p>
+<p><img alt="ivpn set up on gl.inet router" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/ivpn/ivpn_set_up_openvpn_client.png" /></p>
+</li>
+</ol>
+<p><a href="https://www.ivpn.net/setup/gnu-linux-terminal.html">Refer link</a></p>
+</details>
+<div id="ovpn"></div>
+
+<details><summary>OVPN</summary><p><a href="https://www.ovpn.com/en?ref=glinet" target="_blank">Official Website</a></p>
+<p>Just login, then you can easy get the OpenVPN configurations file by click the menu below.</p>
+<p><img alt="get ovpn configuration files" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/ovpn/get_ovpn_configuration_files.jpg" /></p>
+<p>Choose the server and download.</p>
+<p><img alt="download ovpn openvpn configuration files" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/ovpn/download_configuration_files.jpg" /></p>
+<p>The username and password are the same you login OVPN.</p>
+</details>
+<div id="safervpn"></div>
+
+<details><summary>SaferVPN</summary><p><a href="https://safervpn.com/?a_aid=563" target="_blank">Official Website</a></p>
+<p><a href="https://support.safervpn.com/hc/en-us/articles/360035425314-What-are-SaferVPN-s-OpenVPN-configuration-ovpn-files-for-manual-setup">Download</a> directly.</p>
+<p><img alt="safervpn openvpn config" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/safervpn/safervpn1.png" /></p>
+</details>
+<div id="starvpn"></div>
+
+<details><summary>StarVPN</summary><p><a href="https://www.starvpn.com/dashboard/aff.php?aff=91" target="_blank">Official Website</a></p>
+<p>StarVPN has WireGuard service, we recommend to use WireGuard, checkout <a href="../wireguard_client/#starvpn">here</a>.</p>
+<ol>
+<li>
+<p><strong>Register an account with StarVPN</strong></p>
+<p>Head on over to their <a href="https://www.starvpn.com/#pricing" target="_blank">pricing plan</a> options and choose a VPN plan that suits your needs. You can register on checkout or directly <a href="https://www.starvpn.com/dashboard/register.php" target="_blank">here</a></p>
+</li>
+<li>
+<p>VPN Login Information</p>
+<p>Log into the StarVPN member area <a href="https://www.starvpn.com/dashboard" target="_blank">dashboard</a>. You can find your VPN username and password for each slot in the Manage Slots Section or dashboard area.</p>
+<p><img alt="starvpn credential" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/starvpn/vpn-username_edited-2.jpg" /></p>
+<p>For multiple slots, the VPN configuration settings and credentials can be located in the “Manage Slots” section.</p>
+<p><img alt="starvpn credential" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/starvpn/vpn-username_slots_edited-1024x355.jpeg" /></p>
+</li>
+<li>
+<p>Download OpenVPN Configuration File</p>
+<p>The next step, you must download the VPN server configuration files necessary so that the OpenVPN Software knows where to connect to.   Download the configuration file in the members area dashboard.</p>
+<p><img alt="download starvpn config" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/starvpn/download-ovpn_edited.jpg" /></p>
+<p>Some GL.iNet routers do not support IPv6 or DNS Leak Protection, as a result you may experience an IP or connection error. Edit the ovpn configuration file and disable IPv6 by performing these simple tasks.</p>
+<p><img alt="troubleshooting" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/starvpn/troubleshooting.jpg" /></p>
+</li>
+</ol>
+</details>
+<div id="strongvpn"></div>
+
+<details><summary>StrongVPN</summary><p><a href="https://strongvpn.com/?tr_aid=5ac44bd241ca7" target="_blank">Official Website</a></p>
+<ol>
+<li>
+<p>Login with your <a href="https://strongvpn.com/?tr_aid=5ac44bd241ca7" target="_blank">StrongVPN</a> account and then you will be able to see VPN Accounts Summary. Click Account Setup Instructions”.</p>
+<p><img alt="strongvpn setup 1" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/strongvpn/strong_vpn_setup_01.jpg" /></p>
+</li>
+<li>
+<p>Find the Manual setup section, follow the steps to get configuration.</p>
+<p><img alt="strongvpn get config" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/strongvpn/strong_vpn_setup_02.jpg" /></p>
+</li>
+</ol>
+</details>
+<div id="vpnac"></div>
+
+<details><summary>VPN.AC</summary><p><a href="https://vpn.ac/aff.php?aff=1424" target="_blank">Official Website</a></p>
+<p><a href="https://vpn.ac/ovpn/">Download</a>.</p>
+<p><img class="glboxshadow" alt="vpn.ac donwoad configuration" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/vpn.ac/vpn.ac1.png" /></p>
+</details>
+<div id="vpngate"></div>
+
+<details><summary>VPNGate</summary><p><a href="https://www.vpngate.net/en/" target="_blank">Official Website</a></p>
+<p>The OpenVPN configuration files are listed on the <a href="https://www.vpngate.net/en/">VPN Gate website</a> according to the server location.</p>
+<ol>
+<li>
+<p>Click OpenVPN Config file under the column <strong>OpenVPN</strong>.</p>
+<p><img alt="VPNGate server list" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/vpngate/vpngate1.png" /></p>
+</li>
+<li>
+<p>You will see the download page.</p>
+<p><img alt="VPNGate download page" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/vpngate/vpngate2.png" /></p>
+</li>
+</ol>
+</details>
+<div id="vpnunlimited"></div>
+
+<details><summary>VPN Unlimited(KeepSolid)</summary><p><a href="https://keepsolid.g2afse.com/click?pid=270&amp;offer_id=7" target="_blank">Official Website</a></p>
+<p>Information quoted from <a href="https://www.vpnunlimitedapp.com/en/info/manuals/how-to-manually-create-vpn-conf" target="_blank">VPN unlimited official instruction</a></p>
+<p>Start out by logging in to your User Office, press Manage for the VPN Unlimited service, and follow a few simple steps:</p>
+<ol>
+<li>
+<p>Select a device</p>
+<p>Pick a device from the list or create a new one. If you are out of free slots, delete an old device or buy extra slots.</p>
+<p><img alt="vpn unlimited openvpn config" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/vpnunlimited/keepsolid1.png" /></p>
+</li>
+<li>
+<p>Choose the desired server location</p>
+<p>VPN Unlimited offers a large variety of servers, namely 400+ in 70+ locations. In this case, let it be Germany.</p>
+</li>
+<li>
+<p>Select the VPN protocol</p>
+<p>selece OpenVPN protocol.</p>
+<p><img alt="vpn unlimited select protocol" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/vpnunlimited/keepsolid2.png" /></p>
+</li>
+<li>
+<p>Create a configuration</p>
+<p>Press Generate and you will get all the data required to set up a VPN connection.</p>
+<p><img alt="vpn unlimited generate configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/vpnunlimited/keepsolid3.png" /></p>
+</li>
+</ol>
+</details>
+<div id="vyprvpn"></div>
+
+<details><summary>VyprVPN</summary><p>VyprVPN offers the OpenVPN files here: <a href="https://support.vyprvpn.com/hc/en-us/articles/360038096131-Where-can-I-find-the-OpenVPN-files-" target="_blank">Where can I find the OpenVPN files? – VyprVPN Support</a></p>
+<p>The provided zip file contains two folders with the .ovpn files. One called OpenVPN160 one OpenVPN256. Just delete the OpenVPN160 folder from the zip file then upload it to GL.iNet router as usual.</p>
+</details>
+<div id="wevpn"></div>
+
+<details><summary>Wevpn</summary><p><a href="https://www.wevpn.com/aff/glinet" target="_blank">Official Website</a></p>
+<ol>
+<li>
+<p>Access the Members Area to make a custom config using the Config Generator.</p>
+<p><img alt="wevpn manual configuration generator" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/wevpn/wevpn_manual_configuration_generator.jpg" /></p>
+</li>
+<li>
+<p>Choose the Protocal to UDP or TCP, the OpenVPN version, and the location. Then to download the configuration.</p>
+</li>
+</ol>
+</details>
+<div id="zoogvpn"></div>
+
+<details><summary>ZoogVPN</summary><p><a href="https://zoogvpn.com/pricing?ref=xrsyzx" target="_blank">Official Website</a></p>
+<p>Sign in its <a href="https://zoogvpn.com/pricing?ref=xrsyzx" target="_blank">official website</a>, then access the <a href="https://app.zoogvpn.com/setup/configuration-files" target="_blank">OpenVPN configuration files page</a>, you will find all the servers here. Download the configuration file in the TCP column or UDP column.</p>
+<p><img alt="zoogvpn openvpn configuration files" src="https://static.gl-inet.com/docs/en/3/tutorials/openvpn_client/zoogvpn/zoogvpn_openvpn_config_files.png" /></p>
+<p>Then follow the <a href="#setup-openvpn-client">guide to setup OpenVPN Client on GL.iNet router</a>, the username and password are the same as the ones used to log into ZoogVPN website.</p>
+</details>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../vpn_dashboard/" class="md-footer__link md-footer__link--prev" aria-label="Previous: VPN Dashboard" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              VPN Dashboard
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../openvpn_server/" class="md-footer__link md-footer__link--next" aria-label="Next: OpenVPN Server" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              OpenVPN Server
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2022 GL Technologies & Microuter Technologies
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://www.gl-inet.com" target="_blank" rel="noopener" title="www.gl-inet.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/gl-inet/" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.facebook.com/gl.inet.wifi/" target="_blank" rel="noopener" title="www.facebook.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/GLiNetWiFi" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.linkedin.com/company/gl-inet.com/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.youtube.com/channel/UCBfNEzurltlIeFFCbUgHQyg" target="_blank" rel="noopener" title="www.youtube.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.pinterest.com/glinetWiFi/" target="_blank" rel="noopener" title="www.pinterest.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.2b46852b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
