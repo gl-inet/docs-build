@@ -148,6 +148,40 @@
     
     
     
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     
       <div class="md-header__source">
         
@@ -897,9 +931,53 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Connect to a Hotspot with Captive Portal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Connect to a Hotspot with Captive Portal
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#solution-1disable-the-dns-rebinding-attack-protection" class="md-nav__link">
+    Solution 1：Disable the DNS Rebinding Attack Protection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-2mac-clone" class="md-nav__link">
+    Solution 2：MAC Clone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-3ask-the-help-from-the-hotel-staff" class="md-nav__link">
+    Solution 3：Ask the help from the hotel staff
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1561,6 +1639,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../what_is_luci/" class="md-nav__link">
+        What is LuCI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../remote_access_web_admin_panel/" class="md-nav__link">
         Remote access web admin panel
       </a>
@@ -1715,7 +1805,8 @@
                 
                 <h1 id="connect-to-a-hotspot-with-captive-portal">Connect to a Hotspot with Captive Portal<a class="headerlink" href="#connect-to-a-hotspot-with-captive-portal" title="Permanent link">&para;</a></h1>
 <p>Some public hotspots especially those in hotel, cafe or airport, require you to input your authentication information or agree the terms and conditions through a web page (Captive Portal) before you can connect to it or access the Internet.</p>
-<p>However, you may find that you are not able to enter the captive portal so that you cannot connect to the hotspot or access the Internet. In this case, please follow the following procedures to disable the <strong>DNS Rebinding Attack Protection</strong>.</p>
+<p>However, you may find that you are not able to enter the captive portal so that you cannot connect to the hotspot or access the Internet. In this case, please the following solutions one by one.</p>
+<h2 id="solution-1disable-the-dns-rebinding-attack-protection">Solution 1：Disable the <em>DNS Rebinding Attack Protection</em><a class="headerlink" href="#solution-1disable-the-dns-rebinding-attack-protection" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Visit the web Admin Panel (192.168.8.1), use <a href="../internet_repeater/">repeater</a> to connect to the public hotspot which requires authentication through captive portal.</p>
@@ -1737,6 +1828,23 @@
 <p><img alt="connected" src="https://static.gl-inet.com/docs/en/4/tutorials/connect_to_a_hotspot_with_captive_portal/connected.png" /></p>
 </li>
 </ol>
+<h2 id="solution-2mac-clone">Solution 2：MAC Clone<a class="headerlink" href="#solution-2mac-clone" title="Permanent link">&para;</a></h2>
+<p>Sometimes, disable the <em>DNS Rebinding Attack Protection</em> is not enough to solve this issue. Then you need to try the <strong>MAC Clone</strong> based on the solution 1.</p>
+<ol>
+<li>
+<p>Got your smartphone registered on the network.</p>
+</li>
+<li>
+<p>On the left side of web Admin Panel -&gt; MORE SETTINGS -&gt; MAC Clone.</p>
+</li>
+<li>
+<p>Clone the MAC address of your smartphone to the router.
+<img alt="MACCLONE" src="https://d2jbioc4ahy17s.cloudfront.net/docs/en/4/tutorials/mac_clone/macclone4.0.jpg" /></p>
+</li>
+<li>It may need to reboot the rooter to take effect.</li>
+</ol>
+<h2 id="solution-3ask-the-help-from-the-hotel-staff">Solution 3：Ask the help from the hotel staff<a class="headerlink" href="#solution-3ask-the-help-from-the-hotel-staff" title="Permanent link">&para;</a></h2>
+<p>Some hotel's network has a very strict verification policy. Neither solution 1 nor 2 is unable to make it work, then you can consult with the hotel staff if they can add the router's MAC address(the Factory default one) to their "Whitelist" directly.</p>
                 
               
               
