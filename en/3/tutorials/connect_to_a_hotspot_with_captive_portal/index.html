@@ -3938,9 +3938,53 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Connect to Captive Portal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Connect to Captive Portal
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#solution-1change-dns-settings" class="md-nav__link">
+    Solution 1：Change DNS settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-2mac-clone" class="md-nav__link">
+    Solution 2：MAC Clone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-3ask-the-help-from-the-hotel-staff" class="md-nav__link">
+    Solution 3：Ask the help from the hotel staff
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4777,25 +4821,56 @@
 
   <!-- Markdown content -->
   <h1 id="connect-to-a-hotspot-with-captive-portal">Connect to a Hotspot with Captive Portal<a class="headerlink" href="#connect-to-a-hotspot-with-captive-portal" title="Permanent link">&para;</a></h1>
-<p>Some public hotspots especially those in hotel, cafe or airport, require you to input your authentication information or agree the terms and conditions through a web page <strong>(Captive Portal) </strong>before you can connect to it or access the Internet.</p>
-<p>However, you may find that you are not able to enter the captive portal so that you cannot connect to the hotspot or access the Internet. In this case, please follow the following procedures to disable the <strong>DNS Rebinding Attack Protection</strong>.</p>
+<p>Some public hotspots especially those in hotel, cafe or airport, require you to input your authentication information or agree the terms and conditions through a web page (Captive Portal) before you can connect to it or access the Internet.</p>
+<p>However, you may find that you are not able to enter the captive portal so that you cannot connect to the hotspot or access the Internet. In this case, please follow the solutions below one by one.</p>
 <hr />
+<h2 id="solution-1change-dns-settings">Solution 1：Change DNS settings<a class="headerlink" href="#solution-1change-dns-settings" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Use repeater to connect to the public hotspot which requires authentication through captive portal.</p>
-<p><img alt="" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/troubleshooting/src/captive_portal/1.jpg" />
-<img alt="" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/troubleshooting/src/captive_portal/6.jpg" /></p>
+<p>Visit the web Admin Panel (default is 192.168.8.1), use Repeater to connect to the public hotspot which requires authentication through captive portal.</p>
+<p>Click <strong>Scan</strong> in the repeater sector.</p>
+<p><img alt="repeater" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/connect_to_a_hotspot_with_captive_portal/repeater.png" /></p>
+<p>Select the public network which you want to connect, click <strong>Join</strong> button.</p>
+<p><img alt="repeater" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/connect_to_a_hotspot_with_captive_portal/repeater_selected.png" /></p>
 </li>
 <li>
 <p>Go to web Admin Panel -&gt; MORE SETTINGS -&gt; Custom DNS Server. Then, disable <strong>DNS Rebinding Attack Protection</strong>.</p>
 <p><img alt="custom dns server" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/connect_to_a_hotspot_with_captive_portal/custom_dns_server.png" /></p>
 </li>
 <li>
+<p>Go to web Admin Panel -&gt; VPN -&gt; OpenVPN Client &amp; WireGuard Client. Make sure the connection of OpenVPN and WireGuard client is disable.</p>
+</li>
+<li>
+<p>Go to web Admin Panel -&gt; APPLICATIONS -&gt; AdGuard Home (if appropriate). Make sure the AdGuard Home is stopped.</p>
+<p><img alt="adguard home is disable" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/connect_to_a_hotspot_with_captive_portal/adguardhome_is_disable.png" /></p>
+</li>
+<li>
 <p>Use your web browser to visit a webpage, it will be redirected to the captive portal of the hotspot automatically.</p>
 <p>If you are using smartphone but your web browser doesn't redirect to the captive portal. Please turn off the Wi-Fi of your smartphone and then turn it on and reconnect to the Wi-Fi of your router again. The captive portal should be popped up directly after you entered the Wi-Fi password.</p>
-<p><img alt="captive portal" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/troubleshooting/src/captive_portal/7.jpg" /></p>
+<p><img alt="captive portal" class="glboxshadow" src="https://static.gl-inet.com/docs/en/2.x/troubleshooting/src/captive_portal/7.jpg" width="500" /></p>
 </li>
 </ol>
+<hr />
+<h2 id="solution-2mac-clone">Solution 2：MAC Clone<a class="headerlink" href="#solution-2mac-clone" title="Permanent link">&para;</a></h2>
+<p>Sometimes, <a href="#solution-1change-dns-settings">Solution 1</a> is not enough to solve this issue. Then you need to try the <strong>MAC Clone</strong> based on the solution 1.</p>
+<ol>
+<li>
+<p>Got your smartphone registered on the network.</p>
+</li>
+<li>
+<p>On the left side of web Admin Panel -&gt; MORE SETTINGS -&gt; MAC Clone.</p>
+</li>
+<li>
+<p>Clone the MAC address of your smartphone or computer to the router.</p>
+<p><img alt="mac clone" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/connect_to_a_hotspot_with_captive_portal/mac_clone.png" width="400" /></p>
+</li>
+<li>
+<p>It may need to reboot the router to take effect.</p>
+</li>
+</ol>
+<hr />
+<h2 id="solution-3ask-the-help-from-the-hotel-staff">Solution 3：Ask the help from the hotel staff<a class="headerlink" href="#solution-3ask-the-help-from-the-hotel-staff" title="Permanent link">&para;</a></h2>
+<p>Some hotel's network has a very strict verification policy. Neither solution 1 nor 2 is unable to make it work, then you can consult with the hotel staff if they can add the router's MAC address(the Factory default one) to their "Whitelist" directly.</p>
 
   <!-- Last update of source file -->
   
