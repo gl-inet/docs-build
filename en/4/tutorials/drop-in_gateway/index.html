@@ -13,14 +13,14 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/en/4/tutorials/drop-in_gateway_mode/">
+        <link rel="canonical" href="https://docs.gl-inet.com/en/4/tutorials/drop-in_gateway/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
     
     
       
-        <title>Drop-in gateway mode - GL.iNet Docs</title>
+        <title>Drop-in gateway - GL.iNet Docs</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#drop-in-gateway-mode" class="md-skip">
+        <a href="#drop-in-gateway" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Drop-in gateway mode
+              Drop-in gateway
             
           </span>
         </div>
@@ -1073,9 +1073,60 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Drop-in gateway
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Drop-in gateway mode
+        Drop-in gateway
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage-scenarios" class="md-nav__link">
+    Usage Scenarios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-typology" class="md-nav__link">
+    Network Typology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cautions" class="md-nav__link">
+    Cautions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1889,8 +1940,62 @@
               
                 
                 
-                <h1 id="drop-in-gateway-mode">Drop-in Gateway Mode<a class="headerlink" href="#drop-in-gateway-mode" title="Permanent link">&para;</a></h1>
-<p>Coming soon.</p>
+                <h1 id="drop-in-gateway">Drop-in Gateway<a class="headerlink" href="#drop-in-gateway" title="Permanent link">&para;</a></h1>
+<p>Drop-in Gateway mode is available since firmware version 4.1.</p>
+<p>On the left side of web Admin Panel -&gt; NETWORK -&gt; Network Mode</p>
+<h2 id="usage-scenarios">Usage Scenarios<a class="headerlink" href="#usage-scenarios" title="Permanent link">&para;</a></h2>
+<p>Users who do not want to replace their main router, you can use this mode to extend the functionality of your main router.</p>
+<ul>
+<li>Use ADGuard Home to filter ads</li>
+<li>Use encrypted DNS</li>
+<li>Use VPN client</li>
+<li>It is recommended to use a router with more powerful and big storage (e.g. GL-MT2500) and install other traffic forwarding and control tools on your own.</li>
+</ul>
+<h2 id="network-typology">Network Typology<a class="headerlink" href="#network-typology" title="Permanent link">&para;</a></h2>
+<p><img alt="drop-in gateway mode typology" class="glboxshadow" height="60%" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/drop-in_gateway_mode_typology.png" width="60%" /></p>
+<p>The diagram above has two color lines, gray lines, and green lines with 3 arrows on the green lines, and a number next to each arrow.</p>
+<ol>
+<li>
+<p>The gray lines show the devices are connected to the main router, the LAN port of the main router connect to the WAN port of the GL.iNet router which has Drop-in Gateway function via an ethernet cable.</p>
+</li>
+<li>
+<p>The green lines indicate that when Drop-in Gateway mode is enabled, all or part of the devices' data will be processed by the GL.iNet device before being sent out through the main router.</p>
+</li>
+</ol>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>The LAN port of the main router connect to the WAN port of the GL.iNet router which has Drop-in Gateway function via an ethernet cable.</p>
+</li>
+<li>
+<p>On the left side of web Admin Panel -&gt; Network -&gt; Drop-in Gateway</p>
+<p><img alt="drop-in gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/drop-in_gateway_options.png" width="70%" /></p>
+<ul>
+<li><strong>Force the use of Drop-In Gateway Mode DNS</strong>, if this option is enable, it will force to use the Drop-In Gateway router's DNS. Please enable it if you want to use AdGuard Home, DNS settings(encrypted DNS, Manual DNS, DNS Proxy etc).</li>
+<li><strong>Device Cover Mode</strong><ul>
+<li><strong>Overall Cover</strong>, all devices connected to the main router will be controled by drop-in gateway mode.</li>
+<li><strong>Partial Cover</strong>, you can choose which devices connected to the main router will be controled by drop-in gateway mode.</li>
+</ul>
+</li>
+</ul>
+<p>Click <strong>Apply</strong> to enable it.</p>
+</li>
+<li>
+<p>When it is enabld, it will show a device list of MAC, IP and active status.</p>
+<p><img alt="drop-in gateway enabled" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/drop-in_gateway_mode_enabled.png" width="76%" /></p>
+</li>
+<li>
+<p>Then you can continue to set up with the other functions.</p>
+</li>
+</ol>
+<h2 id="cautions">Cautions<a class="headerlink" href="#cautions" title="Permanent link">&para;</a></h2>
+<ol>
+<li>It will increase the latency when using this mode.</li>
+<li>When this mode is enabled, the data transferred between the selected devices in the LAN will also pass through the drop-in gateway, so the bandwidth between the main router and the drop-in gateway will affect the bandwidth of the whole LAN.</li>
+<li>The implementation mechanism of drop-in gateway is through APR spoofing, so it will be affected by various security settings of firewalls and client devices in the LAN, and it is likely that clients with APR firewall enabled will not be covered.</li>
+</ol>
+<hr />
+<p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
                 
               
               
