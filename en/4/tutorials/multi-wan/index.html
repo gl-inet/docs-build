@@ -1634,9 +1634,73 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Multi-WAN
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Multi-WAN
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#interface-status-tracking-method" class="md-nav__link">
+    Interface Status Tracking Method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-wan-methods" class="md-nav__link">
+    Multi-WAN methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-WAN methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failover" class="md-nav__link">
+    Failover
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-balance" class="md-nav__link">
+    Load Balance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-scenarios" class="md-nav__link">
+    Usage Scenarios
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2157,7 +2221,30 @@
                 
                 
                 <h1 id="multi-wan">Multi-WAN<a class="headerlink" href="#multi-wan" title="Permanent link">&para;</a></h1>
-<p>Coming soon.</p>
+<p>On the left side of web Admin Panel -&gt; NETWORK -&gt; Multi-WAN</p>
+<p>GL.iNet router can be connected to the Internet in multiple ways, such as <a href="../internet_ethernet">Ethernet</a>, <a href="../internet_repeater">Repeater</a>, <a href="../internet_tethering">Tethering</a>, <a href="../internet_cellular">Cellular</a>. You can configure the router with multiple Internet access methods, so that when one type of Internet access is not available, it can automatically switch to another type of Internet access in a short time. Or use multiple Internet access methods at the same time, assigning the network connection to different connection methods in a certain ratio.</p>
+<h2 id="interface-status-tracking-method">Interface Status Tracking Method<a class="headerlink" href="#interface-status-tracking-method" title="Permanent link">&para;</a></h2>
+<p>GL.iNet routers have up to 4 interfaces, but this varies depending on the model. They are <strong>Ethernet</strong>, <strong>Repeater</strong>, <strong>Tethering</strong> and <strong>Cellular</strong>. Here is the GL-AXT1800 as an example.</p>
+<p>The router will use the ping or httping command to track the status of the connection to the destination IP to determine if the interface is available. If the interface is available, it will show as a green dot at the begining, otherwise it is gray.</p>
+<p><img alt="multi-wan interface status tracking method" class="glboxshadow" height="80%" src="https://static.gl-inet.com/docs/en/4/tutorials/multi-wan/interface_status_tracking_method.png" width="80%" /></p>
+<p>The setting of Interface Status Tracking Method</p>
+<p><img alt="multi-wan interface status tracking method setting" class="glboxshadow" height="60%" src="https://static.gl-inet.com/docs/en/4/tutorials/multi-wan/interface_status_tracking_method_setting.png" width="60%" /></p>
+<p>You can disable the interface status tracking, the router will use the physical status of the interface (such as whether the network cable is plugged in or not).</p>
+<h2 id="multi-wan-methods">Multi-WAN methods<a class="headerlink" href="#multi-wan-methods" title="Permanent link">&para;</a></h2>
+<p>There are two methods, <strong>Failover</strong> and <strong>Load Balance</strong>.</p>
+<h3 id="failover">Failover<a class="headerlink" href="#failover" title="Permanent link">&para;</a></h3>
+<p><img alt="multi-wan failover" class="glboxshadow" height="60%" src="https://static.gl-inet.com/docs/en/4/tutorials/multi-wan/multi-wan_mode_failover.png" width="60%" /></p>
+<p>You can set the priority of each interface, when the interface being used fails, the router will automatically switch to another available highest priority interface.</p>
+<p>For example, if the router has been set up with two types of Internet access, <strong>Ethernet</strong> and <strong>Repeater</strong>, and the priority of of Ethernet is 1, the priority of Repeater is 2, the priority of Ethernet is higher than Repeater, so the router will use the Ethernet to access Internet. If you unpluged the ethernet cable, the Ethernet interface will become unavailable, then the router will automatically switch to Repeater interface to access Internet. After a while, if the Ethernet interface becomes available again, the router will continue to use Repeater if the <strong>Forced Refresh Streams</strong> is off, and vice versa, the router will switch back to the higher priority Ethernet.</p>
+<h3 id="load-balance">Load Balance<a class="headerlink" href="#load-balance" title="Permanent link">&para;</a></h3>
+<p>Use multiple interfaces at the same time to increase the total bandwidth of the router.</p>
+<p>The system will assign interfaces to new connections based on the load ratio. </p>
+<p>Note: Alive connections or traffic are not ensured to match the load ratio. It is closer to this ratio if it has been used for a longer time.</p>
+<p><img alt="multi-wan load balance" class="glboxshadow" height="60%" src="https://static.gl-inet.com/docs/en/4/tutorials/multi-wan/multi-wan_mode_load_balance.png" width="60%" /></p>
+<h2 id="usage-scenarios">Usage Scenarios<a class="headerlink" href="#usage-scenarios" title="Permanent link">&para;</a></h2>
+<p>The store's cashier system uses a wired connection to the Internet, while Repeater to Wi-Fi in neighboring stores (or inserting a SIM card to enable cellular network) as a backup Internet access method to prevent mobile payments from being made when the network cable is unavailable.</p>
+<hr />
+<p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
                 
               
               
