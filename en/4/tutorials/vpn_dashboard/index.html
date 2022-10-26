@@ -1463,8 +1463,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#global-options" class="md-nav__link">
-    Global Options
+  <a href="#global-options-of-vpn-client" class="md-nav__link">
+    Global Options of VPN Client
   </a>
   
 </li>
@@ -2285,21 +2285,22 @@
                 
                 <h1 id="vpn-dashboard">VPN Dashboard<a class="headerlink" href="#vpn-dashboard" title="Permanent link">&para;</a></h1>
 <p>Access to web Admin Panel, on the left side -&gt; VPN -&gt; VPN Dashboard</p>
-<p>VPN Dashboard page is for the status and setting of VPN.</p>
+<p>VPN Dashboard page is for the status and setting of VPN. There are two sectors, <a href="#vpn-client">VPN Client</a> and <a href="vpn-server">VPN Server</a>.</p>
 <p><img alt="glinet vpn dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/vpn_dashboard_1.png" /></p>
 <h2 id="vpn-client">VPN Client<a class="headerlink" href="#vpn-client" title="Permanent link">&para;</a></h2>
-<p>In the beginning, there is no configuration available for OpenVPN and WireGuard, you need to click <strong>Set Up Now</strong> to go to the corresponding page to configure.</p>
-<p><img alt="glinet vpn dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/vpn_dashboard_2.png" /></p>
+<p>In the beginning, there is no configuration available for OpenVPN and WireGuard, please click <strong>Set Up Now</strong>, it will go to the <a href="../openvpn_client">OpenVPN Client</a> and <a href="../wireguard_client">WireGuard Client</a> pages respectively.</p>
+<p><img alt="glinet vpn dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/vpn_client_set_up_now.png" /></p>
 <h3 id="proxy-mode">Proxy mode<a class="headerlink" href="#proxy-mode" title="Permanent link">&para;</a></h3>
 <p><img alt="vpn proxy" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/vpn_proxy.png" /></p>
+<p>As the above figure, the current proxy mode is Global Proxy, click Global Proxy to switch to other proxy modes. There are 3 types, <strong>Global Proxy</strong>, <strong>Policy Mode</strong> and <strong>Route Mode</strong>.</p>
 <ol>
 <li>
-<p>Global proxy</p>
+<p>Global Proxy</p>
 <p>All traffic will go through VPN. Only one VPN client instance can be activated.</p>
 </li>
 <li>
-<p>Policy mode</p>
-<ul>
+<p>Policy Mode</p>
+<ol>
 <li>
 <p>Based on the target domain or IP.</p>
 <p>In this mode, only the traffic of certain websites defined by IP address or domain name will go through VPN. Only one VPN client instance can be activated.</p>
@@ -2312,11 +2313,11 @@
 <p>Based on the VLAN.</p>
 <p>In this mode, only the traffic of certain VLAN can go through the VPN. Only one VPN client instance can be activated.</p>
 </li>
-</ul>
+</ol>
 </li>
 <li>
-<p>Route mode</p>
-<ul>
+<p>Route Mode</p>
+<ol>
 <li>
 <p>Auto detect</p>
 <p>The routing rules defined in each VPN client configuration file or issued by the VPN server will be used.</p>
@@ -2325,24 +2326,49 @@
 <p>Customize routing rules</p>
 <p>You can manually configure routing rules for each VPN client instance.</p>
 </li>
-</ul>
+</ol>
 </li>
 </ol>
-<h3 id="global-options">Global Options<a class="headerlink" href="#global-options" title="Permanent link">&para;</a></h3>
+<h3 id="global-options-of-vpn-client">Global Options of VPN Client<a class="headerlink" href="#global-options-of-vpn-client" title="Permanent link">&para;</a></h3>
 <p>Click <strong>Global Options</strong> will popup a global options dialog.</p>
 <p><img alt="global options" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/global_options.png" /></p>
 <ol>
 <li>
 <p>Block Non-VPN Traffic</p>
 <p>If this option is enabled, all traffic from client devices trying to be sent out of the VPN tunnel will be blocked, which will effectively prevent VPN leaks due to client DNS settings, dropped VPN connections, client apps requesting by IP, etc.</p>
+<p>This feature is also know as <a href="https://cybernews.com/what-is-vpn/vpn-kill-switch/" target="_blank">VPN Kill Switch</a>. It is designed to prevent your data from leaking to the web. Most VPN providers offer a Kill Switch feature that automatically disconnects your computer, phone, or tablet from the internet if your VPN connection drops. The Block Non-VPN Traffic feature on GL.iNet rotuers can handle more ways to compromise, including the following six scenarios:</p>
+<ol>
+<li>
+<p>DNS Leak</p>
+</li>
+<li>
+<p>IPv6 Leak</p>
+</li>
+<li>
+<p>WebRTC Leak</p>
+</li>
+<li>
+<p>Dropped VPN Connection</p>
+</li>
+<li>
+<p>Programs Started Before VPN</p>
+</li>
+<li>
+<p>Application Specific Leaks</p>
+</li>
+</ol>
 </li>
 <li>
 <p>Allow Access WAN</p>
 <p>If this option is enabled, while VPN is connected, client devices will still be able to access WAN, e.g. accessing your printer, NAS etc in upper subnet.</p>
+<p><img alt="vpn dashboard allow acdess wan diagram" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/allow_access_wan_diagram.png" width="80%" /></p>
+<p>As shown above, if this feature is turned on, your device will have access to devices in the upstream subnet, such as printer and NAS.</p>
+<p>The main scenario is to give clients access to devices in the upstream subnet, but there is no way for the router to distinguish between the upstream subnet and the Internet, so if the traffic in the client device is accessed directly through IP, there may be a risk of leakage, so this option and Block Non-VPN Traffic are mutually exclusive.</p>
 </li>
 <li>
 <p>Services From GL.iNet Doesn't Use VPN</p>
 <p>If this option is enabled, services on routers that usually require the use of a real IP will not use VPN. Including GoodCloud, DDNS, rtty.</p>
+<p>The main purpose of this is to use VPN Client and <a href="../cloud">GoodCloud</a> / <a href="../ddns">DDNS</a> at the same time. It is recommended to turn on this option if you want to use GoodCloud, otherwise the stability of GoodCloud will be affected by the VPN status. If you want to use DDNS, you must turn on this option, otherwise DDNS will point to the IP address of VPN Server.</p>
 </li>
 </ol>
 <h2 id="vpn-server">VPN Server<a class="headerlink" href="#vpn-server" title="Permanent link">&para;</a></h2>
