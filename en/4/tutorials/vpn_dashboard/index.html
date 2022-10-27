@@ -1456,6 +1456,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#vpn-clinet-options" class="md-nav__link">
+    VPN Clinet Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#proxy-mode" class="md-nav__link">
     Proxy mode
   </a>
@@ -1506,6 +1513,13 @@
           <li class="md-nav__item">
   <a href="#wireguard-server-route-rule" class="md-nav__link">
     WireGuard Server Route Rule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-options-of-vpn-server" class="md-nav__link">
+    Global Options of VPN Server
   </a>
   
 </li>
@@ -2290,6 +2304,28 @@
 <h2 id="vpn-client">VPN Client<a class="headerlink" href="#vpn-client" title="Permanent link">&para;</a></h2>
 <p>In the beginning, there is no configuration available for OpenVPN and WireGuard, please click <strong>Set Up Now</strong>, it will go to the <a href="../openvpn_client">OpenVPN Client</a> and <a href="../wireguard_client">WireGuard Client</a> pages respectively.</p>
 <p><img alt="glinet vpn dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/vpn_client_set_up_now.png" /></p>
+<p>Once the configuration is complete, you can select the configuration file in the Configuration file column.</p>
+<p><img alt="glinet vpn dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/vpn_client_configuration_file.png" /></p>
+<h3 id="vpn-clinet-options">VPN Clinet Options<a class="headerlink" href="#vpn-clinet-options" title="Permanent link">&para;</a></h3>
+<p>Click the cog icon of OpenVPN or WireGuard.</p>
+<p><img alt="glinet vpn dashboard, vpn client options" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/vpn_client_options.png" width="90%" /></p>
+<p>OpenVPN client options.</p>
+<p><img alt="glinet vpn dashboard, openvpn client options" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/openvpn_client_options.png" width="55%" /></p>
+<p>WireGuard client options.</p>
+<p><img alt="glinet vpn dashboard, wireguard client options" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/wireguard_client_options.png" width="55%" /></p>
+<ul>
+<li>
+<p>Allow Remote Access LAN, if this option is enabled, the devices connected under the router is allowed to access the LAN on the VPN Server side, which also requires the appropriate settings on the VPN Server side.</p>
+<p>For example, in the image below, if this option is enabled, if means <em>Your Device</em> is allowed to access the <em>NAS</em>, but still needs the <em>VPN Server</em> to allow you to access the NAS within its subnet.</p>
+<p><img alt="allow remote access LAN" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/allow_remote_access_lan_diagram.png" width="55%" /></p>
+</li>
+<li>
+<p>IP Masquerading. If this option is enabled, When clients devices on LAN send their IP packets, the router replaces the source IP address with its own address and then forwards it to the VPN tunnel.</p>
+</li>
+<li>
+<p>MTU. Stands for maximum transmission unit. The MTU you set for the instance will overwrite the MTU item in the configuration file.</p>
+</li>
+</ul>
 <h3 id="proxy-mode">Proxy mode<a class="headerlink" href="#proxy-mode" title="Permanent link">&para;</a></h3>
 <p><img alt="vpn proxy" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/vpn_proxy.png" /></p>
 <p>As the above figure, the current proxy mode is Global Proxy, click Global Proxy to switch to other proxy modes. There are 3 types, <strong>Global Proxy</strong>, <strong>Policy Mode</strong> and <strong>Route Mode</strong>.</p>
@@ -2362,7 +2398,7 @@
 <li>
 <p>Allow Access WAN</p>
 <p>If this option is enabled, while VPN is connected, client devices will still be able to access WAN, e.g. accessing your printer, NAS etc in upper subnet.</p>
-<p><img alt="vpn dashboard allow acdess wan diagram" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/allow_access_wan_diagram.png" width="80%" /></p>
+<p><img alt="vpn dashboard allow acdess wan diagram" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/allow_access_wan_diagram.jpg" width="70%" /></p>
 <p>As shown above, if this feature is turned on, your device will have access to devices in the upstream subnet, such as printer and NAS.</p>
 <p>The main scenario is to give clients access to devices in the upstream subnet, but there is no way for the router to distinguish between the upstream subnet and the Internet, so if the traffic in the client device is accessed directly through IP, there may be a risk of leakage, so this option and Block Non-VPN Traffic are mutually exclusive.</p>
 </li>
@@ -2409,6 +2445,12 @@
 <p>Click the network icon of WireGuard server.</p>
 <p>In customize routes mode, the VPN client will ignore the configuration file and the routing configuration issued by the server. Whether to use the encrypted tunnel provided by the VPN when accessing any network segment is determined by the routing rules you manually set.</p>
 <p><img alt="wireguard server route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/wireguard_server_route_rule.png" /></p>
+<h3 id="global-options-of-vpn-server">Global Options of VPN Server<a class="headerlink" href="#global-options-of-vpn-server" title="Permanent link">&para;</a></h3>
+<p><img alt="Global Options of VPN Server" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/global_options_of_vpn_server_1.png" width="80%" /></p>
+<p><img alt="Global Options of VPN Server" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/vpn_dashboard/global_options_of_vpn_server_2.png" width="60%" /></p>
+<ul>
+<li><strong>VPN Cascading</strong>, If this option is enabled, when you have both VPN server and VPN Client running on this router, clients connected to the VPN server will further be routed to the VPN client tunnel. <a href="../vpn_cascading">Learn more about VPN Cascading</a>.</li>
+</ul>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
                 
