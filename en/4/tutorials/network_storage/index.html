@@ -1837,6 +1837,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#nfs-client" class="md-nav__link">
+    NFS Client
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2723,7 +2730,7 @@
 <p>Toggle to enable NFS, modify <strong>Share Path</strong>, click <strong>Apply</strong>.</p>
 <p><img alt="network storage, enable nfs" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/enable_nfs.png" /></p>
 <p>Then you will find <strong>Shared Link</strong>.</p>
-<p><strong>Note:</strong> NFS does not support Utf8 very well, the file name will be messed up, please try to use English as the file name.</p>
+<p><strong>Note:</strong> NFS does not support Utf8 very well, the file name may be messed up, please try to use English as the file name.</p>
 <hr />
 <h2 id="samba-client">Samba Client<a class="headerlink" href="#samba-client" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Windows</label><div class="tabbed-content">
@@ -2870,6 +2877,24 @@
 <p><img alt="filezilla" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/ftp_client/filezilla_02.png" /></p>
 <p>Then it will show the files on the right side of window.</p>
 <p><img alt="filezilla" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/ftp_client/filezilla_03.png" /></p>
+</div>
+</div>
+<h2 id="nfs-client">NFS Client<a class="headerlink" href="#nfs-client" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Windows</label><div class="tabbed-content">
+<p>Here is an example of Windows 11, Windows 10 is similar.</p>
+<p>The first step is to install the NFS client. Click the Windows button to open Start, type <strong>turn windows features on or off</strong>, and click to open the Turn Windows features on or off dialogue box.</p>
+<p><img alt="turn windows features on or off" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/nfs_client/windows/turn_windows_feature_on_or_off.png" /></p>
+<p>Scroll down and select the option Services for NFS, then click OK.</p>
+<p><img alt="turn on nfs client" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/nfs_client/windows/turn_on_nfs_client.png" /></p>
+<p>Open <strong>Command Prompt</strong>, mount it with fellowing command.</p>
+<p><code>mount IP:SHARE-PATH K:</code></p>
+<p>Replace <strong>IP</strong> and <strong>SHARE-PATH</strong> with the name show on Shared Link. Replace <strong>K:</strong> with the desired drive letter.</p>
+<p><img alt="cmd mount nfs" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/nfs_client/windows/cmd_mount_nfs.png" /></p>
+<p>Check <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mount">here</a> to learn more about <code>mount</code> command and its parameters.</p>
+<p>If it mounts successfully, you can find it in Network locations of Windows Explorer.</p>
+<p><img alt="nfs mount" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/nfs_client/windows/nfs_has_mounted.png" /></p>
+<p>If you want to unmount it, right click and select <strong>Disconnect</strong>.</p>
+<p><img alt="nfs unmount" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/nfs_client/windows/nfs_disconnect.png" /></p>
 </div>
 </div>
 <hr />
