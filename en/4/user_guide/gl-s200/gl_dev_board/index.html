@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#gl-dev-board" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1122,10 +1127,123 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          GL Dev Board
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         GL Dev Board
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#devices" class="md-nav__link">
+    Devices
+  </a>
+  
+    <nav class="md-nav" aria-label="Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-tdb-to-the-network" class="md-nav__link">
+    Add TDB to the network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-tdb" class="md-nav__link">
+    Control TDB
+  </a>
+  
+    <nav class="md-nav" aria-label="Control TDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#device-detail" class="md-nav__link">
+    Device Detail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-records" class="md-nav__link">
+    View Records
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-device" class="md-nav__link">
+    Edit Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-examples" class="md-nav__link">
+    Code Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-device" class="md-nav__link">
+    Reset Device
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automations" class="md-nav__link">
+    Automations
+  </a>
+  
+    <nav class="md-nav" aria-label="Automations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-an-automation" class="md-nav__link">
+    Add an automation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2698,9 +2816,98 @@
               
                 
                 
-                  <h1>GL Dev Board</h1>
-                
-                <p>The documentation is coming soon.</p>
+                <h1 id="gl-dev-board">GL DEV BOARD<a class="headerlink" href="#gl-dev-board" title="Permanent link">&para;</a></h1>
+<p>In order to give users a more intuitive experience of the thread network functions, we have developed a set of Thread development boards. The <strong>GL DEV BOARD</strong> is a page dedicated to controlling the Thread development board for GL development and displaying relevant data.</p>
+<h2 id="devices">Devices<a class="headerlink" href="#devices" title="Permanent link">&para;</a></h2>
+<p><img alt="devices" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/Devices.png" /></p>
+<p>The TDB(GL Thread DEV Board) can join the network by using thread Commissioning, but you need to know the EUI64 of the TDB and the device pre-shared key PSKd. To simplify the configuration process, we have pre-built fixed keys in the firmware, which can be added quickly as follows.</p>
+<h3 id="add-tdb-to-the-network">Add TDB to the network<a class="headerlink" href="#add-tdb-to-the-network" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Click on <strong>Add Devices</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Allow New Devices To Join</strong> and Click on <strong>Apply</strong>.</p>
+<p><img alt="open device commissioning" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/add-dev.png" /></p>
+</li>
+<li>
+<p>Power up the TDB, press and hold SW2 for three seconds or more to restore the factory settings, then press SW2 briefly. You can see the green light flashing.</p>
+</li>
+<li>
+<p>When the green light of the development board is always on, it means that it successfully joins the network.</p>
+</li>
+<li>
+<p>The first time a device is successfully added, the web page will automatically pop up New Devices to prompt for configuration Type/Name information</p>
+<p><img alt="new devices" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/New-Devices.png" /></p>
+<ul>
+<li><strong>Type</strong>: If theTDB comes with an A0 board, please select "<strong>A0+A1</strong>".</li>
+<li><strong>Name</strong>: User defined names.</li>
+</ul>
+</li>
+<li>
+<p>You can see that the development board was successfully added to the <strong>Online</strong> card.</p>
+<p><img alt="device is online" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/dev-online.png" /></p>
+</li>
+</ol>
+<h3 id="control-tdb">Control TDB<a class="headerlink" href="#control-tdb" title="Permanent link">&para;</a></h3>
+<p><img alt="control TDB" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/Control-TDB.png" /></p>
+<h4 id="device-detail">Device Detail<a class="headerlink" href="#device-detail" title="Permanent link">&para;</a></h4>
+<p>You can view the current data of the TDB on the <strong>Device Detail</strong> page.</p>
+<p><img alt="device detail" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/Device-Detail.png" /></p>
+<h4 id="view-records">View Records<a class="headerlink" href="#view-records" title="Permanent link">&para;</a></h4>
+<p>You can view a graph of the TDB's historical data on the <strong>View Records</strong> page.</p>
+<p><img alt="view records" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/View-Records.png" /></p>
+<h4 id="edit-device">Edit Device<a class="headerlink" href="#edit-device" title="Permanent link">&para;</a></h4>
+<p>You can edit the settings of the TDB on the <strong>Edit Device</strong> page.</p>
+<p><img alt="edit device" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/Edit-Device.png" /></p>
+<h4 id="code-examples">Code Examples<a class="headerlink" href="#code-examples" title="Permanent link">&para;</a></h4>
+<p>We have prepared some sample code to control the TDB. You can run them in the S200 backend, or write your own applications by referring to these examples.</p>
+<p><img alt="code examples" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/Code-Examples.png" /></p>
+<h4 id="reset-device">Reset Device<a class="headerlink" href="#reset-device" title="Permanent link">&para;</a></h4>
+<p>If you want to remove the TDB from the network, use the reset device function. </p>
+<p><img alt="reset device" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/Reset-Device.png" /></p>
+<p><strong>Note</strong>: This will restore the TDB to its factory settings.</p>
+<h2 id="automations">Automations<a class="headerlink" href="#automations" title="Permanent link">&para;</a></h2>
+<p>To enable users to better test the thread network in real-life situations, we offer some simple, restricted device linkage functions.</p>
+<p><img alt="Automations" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/Automations.png" /></p>
+<h3 id="add-an-automation">Add an automation<a class="headerlink" href="#add-an-automation" title="Permanent link">&para;</a></h3>
+<p>As an example, create an automation example: press a button on either board and the RGB lights on/off on both boards.</p>
+<ol>
+<li>
+<p>Create a name</p>
+<p><img alt="give a name for automation" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/name.png" /></p>
+</li>
+<li>
+<p>Select type of trigger conditions</p>
+<p><img alt="create automations" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/type-of-trigger-conditions.png" /></p>
+</li>
+<li>
+<p>Select the device(s) to be used as an trigger.</p>
+<p><img alt="create automations" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/trigger.png" /></p>
+</li>
+<li>
+<p>Select trigger conditions</p>
+<p><img alt="create automations" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/trigger%20conditions.png" /></p>
+</li>
+<li>
+<p>Select the type of operation</p>
+<p><img alt="create automations" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/type-of-operation.png" /></p>
+</li>
+<li>
+<p>Select the device(s) to be used as an actuator</p>
+<p><img alt="create automations" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/actuator.png" /></p>
+</li>
+<li>
+<p>Select actuator's actions</p>
+<p><img alt="create automations" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/actuator%27s-actions.png" /></p>
+</li>
+<li>
+<p>You can see the automation cards that have been created.</p>
+<p><img alt="create automations" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev-board-web-guide/auto-created.png" /></p>
+</li>
+</ol>
+<hr />
+<p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
                 
               
               
