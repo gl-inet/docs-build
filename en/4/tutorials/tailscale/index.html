@@ -2159,9 +2159,87 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tailscale
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Tailscale
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-models" class="md-nav__link">
+    Supported models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binding" class="md-nav__link">
+    Binding
+  </a>
+  
+    <nav class="md-nav" aria-label="Binding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allow-remote-access-wan" class="md-nav__link">
+    Allow Remote Access WAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allow-remote-access-lan" class="md-nav__link">
+    Allow Remote Access LAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-exit-nodes" class="md-nav__link">
+    Custom Exit Nodes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2782,7 +2860,84 @@
                 
                 <h1 id="tailscale">Tailscale<a class="headerlink" href="#tailscale" title="Permanent link">&para;</a></h1>
 <p>Tailscale feature available since V4.2</p>
-<p>The documentation is coming soon.</p>
+<p>Tailscale is a VPN service that makes the devices and applications you own accessible anywhere in the world, securely and effortlessly. For more information about Tailscale, please access <a href="https://tailscale.com/">their website</a>.</p>
+<p>The Tailscale feature in GL.iNet router allow the router to join the Tailscale and you can remote access it.</p>
+<p><strong>Note</strong>: This feature is currently in beta, and may have some bugs.</p>
+<h2 id="supported-models">Supported models<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Router Model</th>
+<th align="center">Support Tailscale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GL-MT3000 (Beryl AX)</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-AXT1800 (Slate AX)</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-A1300 (Slate Plus)</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-MT2500/GL-MT2500A (Brume 2)</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-MT1300 (Beryl)</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="left">GL-AX1800 (Flint)</td>
+<td align="center">√</td>
+</tr>
+</tbody>
+</table>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<h2 id="binding">Binding<a class="headerlink" href="#binding" title="Permanent link">&para;</a></h2>
+<p>Please register a Tailscale account first. For testing purposes, first bind one or two devices to your Tailscale account. After binding, you will be able to see your devices and their status in the Tailscale Admin console.</p>
+<p><img alt="tailscale admin console" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_admin_console_1.png" /></p>
+<p>On the left side -&gt; APPLICATIONS -&gt; Tailscale</p>
+<p>The following is an example of the GL-MT2500.</p>
+<p><img alt="glinet tailscale disabled" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_disabled.png" /></p>
+<p>Toggle to enable Tailscale, then click <strong>Apply</strong>.</p>
+<p><img alt="glinet enable tailscale" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/enable_tailscale.png" /></p>
+<p>It will show a <strong>Device Bind Link</strong>. Click the Device Bind Link.</p>
+<p><img alt="glinet bind link" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_bind_link_1.png" /></p>
+<p>It will pop up and show a tailscale link, click it.</p>
+<p><img alt="glinet bind link" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_bind_link_2.png" /></p>
+<p>The link will open in your browser and ask you to log in to your Tailscale account.</p>
+<p>Once logged in, you will be asked to confirm the device you want to connect to. Click <strong>Connect</strong>.</p>
+<p><img alt="tailscale confirm connect device" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_connect_device.png" /></p>
+<p>When the connection is successful, you will automatically be redirected to the admin console. You can see here that the IP of the GL-MT2500 is 100.69.203.111, and you can use this IP to access the router.</p>
+<p><img alt="tailscale admin console" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_admin_console_2.png" /></p>
+<h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
+<p>Now that the GL-MT2500 is connected to the Tailscale virtual network, you can test it in the following way.</p>
+<ul>
+<li>
+<p>Use ping command</p>
+<p><img alt="ping" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/ping.png" /></p>
+</li>
+<li>
+<p>SSH to the router</p>
+<p><img alt="ssh" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/ssh.png" /></p>
+</li>
+<li>
+<p>Access web Admin Panel</p>
+<p><img alt="web admin panel" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/web_admin_panel.png" /></p>
+</li>
+</ul>
+<h2 id="allow-remote-access-wan">Allow Remote Access WAN<a class="headerlink" href="#allow-remote-access-wan" title="Permanent link">&para;</a></h2>
+<p>Coming soon.</p>
+<h2 id="allow-remote-access-lan">Allow Remote Access LAN<a class="headerlink" href="#allow-remote-access-lan" title="Permanent link">&para;</a></h2>
+<p>Coming soon.</p>
+<h2 id="custom-exit-nodes">Custom Exit Nodes<a class="headerlink" href="#custom-exit-nodes" title="Permanent link">&para;</a></h2>
+<p>Coming soon.</p>
                 
               
               
