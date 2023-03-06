@@ -1230,8 +1230,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#add-an-automation" class="md-nav__link">
-    Add an automation
+  <a href="#add-an-automation-with-device-action" class="md-nav__link">
+    Add an automation with device action
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-an-automation-with-webhook" class="md-nav__link">
+    Add an automation with webhook
   </a>
   
 </li>
@@ -2945,7 +2952,7 @@
 <h2 id="automations">Automations<a class="headerlink" href="#automations" title="Permanent link">&para;</a></h2>
 <p>To enable users to better test the thread network in real-life situations, we offer some simple, restricted device linkage functions.</p>
 <p><img alt="Automations" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev_board_web_guide/automations.png" /></p>
-<h3 id="add-an-automation">Add an automation<a class="headerlink" href="#add-an-automation" title="Permanent link">&para;</a></h3>
+<h3 id="add-an-automation-with-device-action">Add an automation with device action<a class="headerlink" href="#add-an-automation-with-device-action" title="Permanent link">&para;</a></h3>
 <p>As an example, create an automation example: press a button on either board and the RGB lights on/off on both boards.</p>
 <ol>
 <li>
@@ -2979,6 +2986,37 @@
 <li>
 <p>You can see the automation cards that have been created.</p>
 <p><img alt="create automations" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/dev_board_web_guide/auto-created.png" /></p>
+</li>
+</ol>
+<h3 id="add-an-automation-with-webhook">Add an automation with webhook<a class="headerlink" href="#add-an-automation-with-webhook" title="Permanent link">&para;</a></h3>
+<p>A webhook in web development is a method of augmenting or altering the behavior of a web page or web application with custom callbacks.</p>
+<p>As an example, I need TDB for home security alarms. When someone enters, send a message to Discord via webhook.</p>
+<ol>
+<li>
+<p>Create a webhook url from Discord</p>
+<p>Please refer to the <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks">official Discord documentation</a>. Please copy the url of the webhook, the next steps need to use.</p>
+</li>
+<li>
+<p>Fellow the steps below to create an automation.</p>
+<p><img alt="create automation, name" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/tutorials_webhook/auto_name.png" /></p>
+<p>Give it a name for the automation.</p>
+<p><img alt="create automation, trigger type" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/tutorials_webhook/auto_trigger_type.png" /></p>
+<p>Select <strong>Sensor trigger</strong>.</p>
+<p><img alt="create automation, trigger device" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/tutorials_webhook/auto_trigger_dev.png" /></p>
+<p>Select devices.</p>
+<p><img alt="create automation, trigger condition" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/tutorials_webhook/auto_trigger_opera.png" /></p>
+<p>Select trigger condition.</p>
+<p><img alt="create automation, trigger operation type" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/tutorials_webhook/auto_actor_type.png" /></p>
+<p>Select <strong>Webhook</strong>.</p>
+<p><img alt="create automation, webhook url" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/tutorials_webhook/auto_actor_url.png" /></p>
+<p>Paste the url you got when you created the webhook.</p>
+<p><img alt="create automation, webhook url" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/tutorials_webhook/auto_actor_msg.png" /></p>
+<p>Enter the message you wish to send to Discord. <a href="https://discord.com/developers/docs/resources/webhook">Discord specifies that the message sent provide a value for at least one of <strong>content</strong>, <strong>embeds</strong>, <strong>components</strong>, or <strong>file</strong></a>.</p>
+<p><strong>Note</strong>: Different Internet applications have their own definitions for the content and format of messages, please refer to the relevant documentation.</p>
+<p>Finally, an Automation that triggers the webhook is successfully created.</p>
+<p><img alt="create automation, done" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/tutorials_webhook/auto_end.png" /></p>
+<p>When the TDB's pyroelectric infrared sensor is triggered, the GL-S200 sends the specified message to the webhook that is set up.</p>
+<p><img alt="Discord get message" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/tutorials_webhook/final_effect.png" /></p>
 </li>
 </ol>
 <hr />
