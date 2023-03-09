@@ -20,7 +20,7 @@
     
     
       
-        <title>Tailscale - GL.iNet Docs</title>
+        <title>Tailscale - GL.iNet Docs 4</title>
       
     
     
@@ -95,7 +95,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="GL.iNet Docs" class="md-header__button md-logo" aria-label="GL.iNet Docs" data-md-component="logo">
+    <a href="../.." title="GL.iNet Docs 4" class="md-header__button md-logo" aria-label="GL.iNet Docs 4" data-md-component="logo">
       
   <img src="../../images/logo_white.svg" alt="logo">
 
@@ -107,7 +107,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            GL.iNet Docs
+            GL.iNet Docs 4
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -282,12 +282,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="GL.iNet Docs" class="md-nav__button md-logo" aria-label="GL.iNet Docs" data-md-component="logo">
+    <a href="../.." title="GL.iNet Docs 4" class="md-nav__button md-logo" aria-label="GL.iNet Docs 4" data-md-component="logo">
       
   <img src="../../images/logo_white.svg" alt="logo">
 
     </a>
-    GL.iNet Docs
+    GL.iNet Docs 4
   </label>
   
     <div class="md-nav__source">
@@ -2949,7 +2949,7 @@
 </li>
 <li>
 <p>Enable the subnet routes.</p>
-<p><img alt="enable subnet route" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_enable_subnet_routes.png" /></p>
+<p><img alt="tailcale, enable subnet route" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_enable_subnet_routes.png" /></p>
 </li>
 <li>
 <p>Now you can access GL-AXT1800 by its IP(<code>192.168.29.1</code>) on other machines. You can actually access the device at 192.168.29.0/24.</p>
@@ -2957,9 +2957,29 @@
 </li>
 </ol>
 <h2 id="allow-remote-access-lan">Allow Remote Access LAN<a class="headerlink" href="#allow-remote-access-lan" title="Permanent link">&para;</a></h2>
-<p>Coming soon.</p>
+<p>If this option is enabled, the resources inside the device LAN will be allowed to be accessed via the Tailscale virtual network.</p>
+<p>For example, as show below, if this function is enabled, you can SSH the <code>Ubuntu</code> by its IP(<code>192.168.8.100</code>) on <code>leo-phone</code>, because the PC is connected to the LAN port of GL-MT2500, which is the lower layer device of GL-MT2500.</p>
+<p>The operation steps are as follows.</p>
+<ol>
+<li>
+<p>Enable Allow Remote Access LAN.</p>
+</li>
+<li>
+<p>Go to admin console of Tailscale, it will display an alert that GL-MT2500 has subnets. Click on the GL-MT2500 menu and select <strong>Edit route settings</strong>.</p>
+<p><img alt="tailscale subnet alert" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_subnet_alert.png" /></p>
+</li>
+<li>
+<p>Enable the subnet routes.</p>
+<p><img alt="tailscale, enable subnet route" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_enable_subnet_routes_lan.png" /></p>
+</li>
+<li>
+<p>Now you can ping or SSH the  by its IP(<code>192.168.8.100</code>) on other machines. You can actually access the device at 192.168.8.0/24.</p>
+<p><img alt="tailscale, access ubuntu" class="glboxshadow gl-50-desktop" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_access_ubuntu.jpg" /></p>
+</li>
+</ol>
 <h2 id="custom-exit-nodes">Custom Exit Nodes<a class="headerlink" href="#custom-exit-nodes" title="Permanent link">&para;</a></h2>
-<p>Coming soon.</p>
+<p>The exit node feature lets you route all non-Tailscale internet traffic through a specific device on your network. The device routing your traffic is called an “exit node.”</p>
+<p><a href="https://tailscale.com/kb/1103/exit-nodes/">Refer link: Exit Nodes (route all traffic)</a></p>
                 
               
               
