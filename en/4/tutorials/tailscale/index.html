@@ -2915,10 +2915,10 @@
 <p>The link will open in your browser and ask you to log in to your Tailscale account.</p>
 <p>Once logged in, you will be asked to confirm the device you want to connect to. Click <strong>Connect</strong>.</p>
 <p><img alt="tailscale confirm connect device" class="glboxshadow gl-70-desktop" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_connect_device.png" /></p>
-<p>When the connection is successful, you will automatically be redirected to the admin console. You can see here that the IP of the GL-MT2500 is <code>100.69.203.111</code>, and you can use this IP to access the router.</p>
+<p>When the connection is successful, you will automatically be redirected to the admin console. You can see here that the IP of the GL-MT2500 is <code>100.88.54.21</code>, and you can use this IP to access the router.</p>
 <p><img alt="tailscale admin console" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_admin_console_2.png" /></p>
 <h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
-<p>Now that the GL-MT2500 is connected to the Tailscale virtual network, Its IP in the Tailscale virtual network is <code>100.69.203.111</code>, you can test it on other machines as fellows.</p>
+<p>Now that the GL-MT2500 is connected to the Tailscale virtual network, you can test it on other devices as fellows three ways.</p>
 <ul>
 <li>
 <p>Use ping command</p>
@@ -2935,7 +2935,7 @@
 </ul>
 <h2 id="allow-remote-access-wan">Allow Remote Access WAN<a class="headerlink" href="#allow-remote-access-wan" title="Permanent link">&para;</a></h2>
 <p>If this option is enabled, the resources on the WAN side of the device will be allowed to be accessed via the Tailscale virtual network.</p>
-<p>For example, as shown below, if this function is enabled, you can access GL-AXT1800 by its IP(<code>192.168.29.1</code>) on <code>leo-phone</code>, because GL-AX1800 is connected to the WAN port of GL-MT2500, which is the upper layer device of GL-MT2500.</p>
+<p>For example, as shown below, if this function is enabled, you can access <code>GL-AXT1800</code> by its IP(<code>192.168.29.1</code>) from <code>leo-phone</code>, because <code>GL-AX1800</code> is connected to the WAN port of <code>GL-MT2500</code>, which is the upper layer device of <code>GL-MT2500</code>.</p>
 <p><img alt="tailscale, remote access wan topology" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_access_wan_topology.png" /></p>
 <p>The operation steps are as follows.</p>
 <ol>
@@ -2945,35 +2945,37 @@
 </li>
 <li>
 <p>Go to admin console of Tailscale, it will display an alert that GL-MT2500 has subnets. Click on the GL-MT2500 menu and select <strong>Edit route settings</strong>.</p>
-<p><img alt="tailscale subnet alert" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_subnet_alert.png" /></p>
+<p><img alt="tailscale subnet alert" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_subnet_alert_wan.png" /></p>
 </li>
 <li>
 <p>Enable the subnet routes.</p>
 <p><img alt="tailcale, enable subnet route" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_enable_subnet_routes.png" /></p>
 </li>
 <li>
-<p>Now you can access GL-AXT1800 by its IP(<code>192.168.29.1</code>) on other machines. You can actually access the device at 192.168.29.0/24.</p>
+<p>Now you can access GL-AXT1800 by its IP(<code>192.168.29.1</code>) on other machines. You can actually access the devices at <code>192.168.29.0/24</code>.</p>
 <p><img alt="tailscale, access axt1800" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_access_axt1800.jpg" /></p>
 </li>
 </ol>
 <h2 id="allow-remote-access-lan">Allow Remote Access LAN<a class="headerlink" href="#allow-remote-access-lan" title="Permanent link">&para;</a></h2>
 <p>If this option is enabled, the resources inside the device LAN will be allowed to be accessed via the Tailscale virtual network.</p>
-<p>For example, as show below, if this function is enabled, you can SSH the <code>Ubuntu</code> by its IP(<code>192.168.8.100</code>) on <code>leo-phone</code>, because the PC is connected to the LAN port of GL-MT2500, which is the lower layer device of GL-MT2500.</p>
+<p>For example, as show below, if this function is enabled, you can SSH to <code>Ubuntu</code> by its IP(<code>192.168.8.110</code>) from <code>leo-phone</code>, because <code>Ubuntu</code> is connected to the LAN port of <code>GL-MT2500</code>, which is the lower layer device of <code>GL-MT2500</code>.</p>
+<p><img alt="tailscale, remote access lan topology" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_access_lan_topology.png" /></p>
 <p>The operation steps are as follows.</p>
 <ol>
 <li>
 <p>Enable Allow Remote Access LAN.</p>
+<p><img alt="enable remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/enable_allow_remote_access_lan.png" /></p>
 </li>
 <li>
 <p>Go to admin console of Tailscale, it will display an alert that GL-MT2500 has subnets. Click on the GL-MT2500 menu and select <strong>Edit route settings</strong>.</p>
-<p><img alt="tailscale subnet alert" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_subnet_alert.png" /></p>
+<p><img alt="tailscale subnet alert" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_subnet_alert_lan.png" /></p>
 </li>
 <li>
 <p>Enable the subnet routes.</p>
 <p><img alt="tailscale, enable subnet route" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_enable_subnet_routes_lan.png" /></p>
 </li>
 <li>
-<p>Now you can ping or SSH the  by its IP(<code>192.168.8.100</code>) on other machines. You can actually access the device at 192.168.8.0/24.</p>
+<p>Now you can ping or SSH the  by its IP(<code>192.168.8.110</code>) on other devices. You can actually access the devices at <code>192.168.8.0/24</code>.</p>
 <p><img alt="tailscale, access ubuntu" class="glboxshadow gl-50-desktop" src="https://static.gl-inet.com/docs/en/4/tutorials/tailscale/tailscale_access_ubuntu.jpg" /></p>
 </li>
 </ol>
