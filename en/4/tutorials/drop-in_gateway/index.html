@@ -2324,6 +2324,26 @@
     Setup
   </a>
   
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-devices-managed-by-the-drop-in-gateway" class="md-nav__link">
+    All devices managed by the Drop-in Gateway
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-devices-managed-by-the-drop-in-gateway" class="md-nav__link">
+    Some devices managed by the Drop-in Gateway
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2854,43 +2874,148 @@
 </li>
 </ol>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
-<p>The GL.iNet router referred to below is the GL.iNet router on which you want to enable the Drop-in Gateway function.</p>
-<ul>
-<li>
-<p>All clients use the Drop-in Gateway feature.</p>
+<p>There are two usage scenarios, where all devices can be managed by Drop-in Gateway or only some devices can be managed.</p>
+<p>The GL.iNet router referred to below is the GL.iNet router on which you want to enable the Drop-in Gateway function. The router ip address of our main router here is 192.168.1.1.</p>
+<h3 id="all-devices-managed-by-the-drop-in-gateway">All devices managed by the Drop-in Gateway<a class="headerlink" href="#all-devices-managed-by-the-drop-in-gateway" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>The LAN port of the main router connect to the WAN port of the GL.iNet router via an ethernet cable.</p>
 </li>
 <li>
-<p>Enable Drop-in Gateway feature, it will generate the settings automatically.</p>
+<p>Access web Admin Panel of GL.iNet router, enable Drop-in Gateway feature, it will generate the settings automatically.</p>
+<p><img alt="drop-in gateway generated settings" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/drop-in_gateway_enabled.png" /></p>
+<p>The <strong>IP Address</strong> is same of the IP address in <a href="../internet_ethernet">Ethernet sector of Internet page</a>. The <strong>Gateway</strong> and <strong>DNS Server 1</strong> are the IP address of the main router. If these items are not set correctly, you can change them manually yourself.</p>
+<p>Write down the IP address here, you will use it in the following steps.</p>
 </li>
 <li>
-<p>Log in to the main router's admin panel to disable the DHCP feature or set the DHCP gateway to GL.iNet router's IP.</p>
+<p>Log in to the main router's admin page.</p>
+<details><summary>GL.iNet</summary><p>If the brand of main router is GL.iNet and its version is v4.2 and above.</p>
+<p>Access web Admin Panel -&gt; NETWORK -&gt; LAN -&gt; Advanced</p>
+<p><img alt="glinet lan advanced" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/glinet/lan_advanced.png" /></p>
+<p>Fill in the DHCP Gateway as the IP Address in step 2, then click <strong>Apply</strong>.</p>
+<p><img alt="glinet lan, dhcp gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/glinet/lan_dhcp_gateway.png" /></p>
+</details>
+<details><summary>TP-Link</summary><p>If the brand of main router is TP-Link. Here is an example of TP-LINK Archer C3150.</p>
+<p>Access TP-Link's admin page. At the tab of <strong>Advanced</strong> -&gt; <strong>Network</strong> -&gt; <strong>DHCP Server</strong>, disable the <strong>DHCP</strong>.</p>
+<p><img alt="tplink admin, disable dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/tplink/tplink_disable_dhcp_1.png" /></p>
+<p>Then click <strong>Save</strong>.</p>
+<p><img alt="tplink admin, disable dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/tplink/tplink_disable_dhcp_2.png" /></p>
+</details>
+<details><summary>Linksys</summary><p>If the brand of main router is Linksys. Here is an example of Linksys WHW01.</p>
+<p>Access Linksys's admin page.</p>
+<p><img alt="linksys admin, connectivity" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/linksys/linksys_connectivity.png" /></p>
+<p>At the tab of <strong>Local Network</strong>, disable the <strong>DHCP Server</strong>, then click <strong>OK</strong>.</p>
+<p><img alt="linksys admin, local network, disable dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/linksys/linksys_disable_dhcp.png" /></p>
+<p>It will show a warning, click <strong>OK</strong>.</p>
+<p><img alt="linksys admin, apply changes" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/linksys/linksys_apply_changes.png" /></p>
+</details>
+<details><summary>Others</summary><p>Please search for the corresponding brand on how to disable DHCP, or consult customer service.</p>
+</details>
 </li>
 <li>
-<p>Go back to the GL.iNet router and set up features like ADGuard Home, encypted DNS and VPN Client.</p>
+<p>Go back to the GL.iNet router and set up features like <a href="../adguardhome">ADGuard Home</a>, <a href="../dns">encypted DNS</a>, <a href="../wireguard_client">WireGaurd Client</a> and <a href="../openvpn_client">OpenVPN Client</a>.</p>
 </li>
 </ol>
-</li>
-<li>
-<p>Some clients use the Drop-in Gateway feature.</p>
+<h3 id="some-devices-managed-by-the-drop-in-gateway">Some devices managed by the Drop-in Gateway<a class="headerlink" href="#some-devices-managed-by-the-drop-in-gateway" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>The LAN port of the main router connect to the WAN port of the GL.iNet router via an ethernet cable.</p>
 </li>
 <li>
-<p>Enable Drop-in Gateway feature, it will generate the settings automatically.</p>
+<p>Access web Admin Panel of GL.iNet router, enable Drop-in Gateway feature, it will generate the settings automatically.</p>
+<p><img alt="drop-in gateway generated settings" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/drop-in_gateway_enabled.png" /></p>
+<p>The <strong>IP Address</strong> is same of the IP address in <a href="../internet_ethernet">Ethernet sector of Internet page</a>. The <strong>Gateway</strong> and <strong>DNS Server 1</strong> are the IP address of the main router. If these items are not set correctly, you can change them manually yourself.</p>
+<p>Write down the IP address here, you will use it in the following steps.</p>
 </li>
 <li>
-<p>Set the gateway on the device that you want to use the Drop-in Gateway feature to the IP of the GL.iNet router.</p>
+<p>Set the gateway and DNS on the device that you want to use the Drop-in Gateway feature to the IP address in Drop-in Gateway page.</p>
+<details><summary>Windows</summary><p>Here is an example of Windows 11, Windows 10 is similar. Make sure your PC is connected to the main router, it is assumed here that your computer is connected to the main router via a network cable, and the setup is similar if you connect via WiFi.</p>
+<ol>
+<li>
+<p>Open Settings.</p>
 </li>
 <li>
-<p>Go back to the GL.iNet router and set up features like ADGuard Home, encypted DNS and VPN Client.</p>
+<p>Click on <strong>Network &amp; Internet</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>Ethernet</strong> tab.</p>
+<p><img alt="windows 11 ethernet" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/windows/windwos11_ethernet.png" /></p>
+</li>
+<li>
+<p>You will find the IP address of this PC. Under the "IP assignment" section, click the <strong>Edit</strong> button.</p>
+<p><img alt="windows 11 ethernet edit" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/windows/windwos11_ethernet_ip_assignment_edit.png" /></p>
+</li>
+<li>
+<p>Select the <strong>Manual</strong> option. Turn on the <strong>IPv4 toggle</strong> switch.</p>
+</li>
+<li>
+<p>Set the <strong>IP address</strong> as the IP address you see in step d, <strong>Subnet mask</strong> set as <code>255.255.255.0</code>, both <strong>Gateway</strong> and <strong>Preferred DNS</strong> set as the IP address in Drop-in Gateway page.</p>
+<p><img alt="windows 11 ethernet edit" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/windows/windwos11_ethernet_edit_ip_settings.png" /></p>
+</li>
+<li>
+<p>Click the <strong>Save</strong> button.</p>
 </li>
 </ol>
+</details>
+<details><summary>Android</summary><p>Here is an example of Samsung S21. Make sure your smartphone is connected to the main router.</p>
+<ol>
+<li>
+<p>Open Settings, click on Connections.</p>
+<p><img alt="settings connections" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/android/settings_connections.jpg" /></p>
 </li>
-</ul>
+<li>
+<p>Click on Wi-Fi.</p>
+<p><img alt="connection wifi" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/android/connections_wifi.jpg" /></p>
+</li>
+<li>
+<p>Click the cog icon of current SSID.</p>
+<p><img alt="wifi setting" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/android/wifi_cog.jpg" /></p>
+</li>
+<li>
+<p>Click <strong>View more</strong>.</p>
+<p><img alt="wifi settings, view more" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/android/wifi_view_more.jpg" /></p>
+</li>
+<li>
+<p>Click <strong>IP settings</strong>, choose <strong>Static</strong>.</p>
+<p><img alt="ip settings" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/android/wifi_ip_settings.jpg" /></p>
+<p><img alt="IP settings, static" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/android/ip_settings_static.jpg" /></p>
+</li>
+<li>
+<p>Set the <strong>Gateway</strong> and <strong>DNS 1</strong> as the IP address in Drop-in Gateway page, then click <strong>Save</strong>.</p>
+<p><img alt="set gateway and dns ip" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/android/set_gateway.jpg" /></p>
+</li>
+</ol>
+</details>
+<details><summary>iOS</summary><p>Here is an example of iOS 16.3 of iPhone 8. Make sure your smartphone is connected to the main router.</p>
+<ol>
+<li>
+<p>Open Settings, click Wi-Fi.</p>
+<p><img alt="settings wifi" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/iphone/setting_wifi.jpg" /></p>
+</li>
+<li>
+<p>Click the SSID.</p>
+<p><img alt="settings wifi" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/iphone/wifi_list.jpg" /></p>
+</li>
+<li>
+<p>Scroll down, you will find the <strong>Configure IP</strong> is <strong>Automatic</strong>, please write dwon <strong>IP Address</strong> and <strong>Subnet Mask</strong>, you will need it at next step.</p>
+<p><img alt="wifi ipv4" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/iphone/ipv4.jpg" /></p>
+</li>
+<li>
+<p>Change <strong>Configure IP</strong> to <strong>Manual</strong>, set the <strong>IP Address</strong> and <strong>Subnet Mask</strong> same as you see in previous step, and set the <strong>Router</strong> as the IP address in Drop-in Gateway page, then click <strong>Save</strong>.</p>
+<p><img alt="wifi ipv4 manual" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/iphone/set_ipv4.jpg" /></p>
+</li>
+<li>
+<p>Click <strong>Configure DNS</strong>, change it to <strong>Manual</strong>. Click <strong>Add Server</strong>, set the server IP address as the IP address in Drop-in Gateway page, then click <strong>Save</strong>.</p>
+<p><img alt="wifi dns" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/iphone/dns.jpg" /></p>
+<p><img alt="wifi set dns" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/en/4/tutorials/drop-in_gateway/iphone/set_dns.jpg" /></p>
+</li>
+</ol>
+</details>
+</li>
+<li>
+<p>Go back to the GL.iNet router and set up features like <a href="../adguardhome">ADGuard Home</a>, <a href="../dns">encypted DNS</a>, <a href="../wireguard_client">WireGaurd Client</a> and <a href="../openvpn_client">OpenVPN Client</a>.</p>
+</li>
+</ol>
 <h2 id="cautions">Cautions<a class="headerlink" href="#cautions" title="Permanent link">&para;</a></h2>
 <ol>
 <li>It will increase the latency when using this mode.</li>
