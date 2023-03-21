@@ -2846,8 +2846,8 @@
 <p><img alt="parental control, router time" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/parental_control/parental_control_time.png" /></p>
 <p>Let's take two typical cases as examples here, and you can make adjustments to suit your situation.</p>
 <h3 id="case-1">Case 1<a class="headerlink" href="#case-1" title="Permanent link">&para;</a></h3>
-<p>In the first case, the device is not connected to the Internet by default.</p>
-<p>We will create two rulesets, <strong>learning</strong> and <strong>play</strong>, then set the learning time from Monday to Friday from 8 AM to 11 AM, 6 PM to 8 PM of weekend is the play time.</p>
+<p>In the first use case, we will set up the device to be unable to access the internet by default.</p>
+<p>We will create two rulesets, <strong>learning</strong> and <strong>play</strong>, then set the learning time from Monday to Friday from 8am to 11am, 6pm to 8pm of weekend is the play time.</p>
 <p><img alt="parental control, enable" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/parental_control/parental_control_enable.png" /></p>
 <p>The first time, it will have a setup wizard.</p>
 <p>Give the profile a name.</p>
@@ -2858,13 +2858,15 @@
 <p><img alt="create a profile guide" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/parental_control/guide/guide_create_profile_3.png" /></p>
 <p>Specify the ruleset name, color, and a list of sites to block.</p>
 <p><img alt="create a ruleset guide" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/parental_control/guide/guide_create_ruleset_4.png" /></p>
+<p>The domain names entered in the blocklist include their subdomains. For example, if "example.com" is entered, it also includes any subdomain, such as "subdomain.example.com".</p>
+<p>In addition to entering domain names, there are also specific syntax options available. Please refer to <a href="https://github.com/gl-inet/gl-feeds/tree/common/gl-sdk4-parental-control#app-feature-library-syntax">this page</a> for more information.</p>
 <p>Similarly, create another ruleset.</p>
 <p><img alt="create a ruleset guide" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/parental_control/guide/guide_create_ruleset_5.png" /></p>
 <p>At this point, there will be a total of 4 rulesets. Choose <strong>Block Internet Access</strong>.</p>
 <p><img alt="create a profile guide" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/parental_control/guide/guide_create_profile_6.png" /></p>
 <p>Then go to Set Schedule. Click <strong>Go to Set</strong>.</p>
 <p><img alt="set schedule" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/parental_control/guide/guide_schedule_7.png" /></p>
-<p>It is assumed that 8 AM to 11 AM Monday through Friday is the study time, and the ruleset here is <strong>Learning</strong>. Click <strong>Apply</strong>.</p>
+<p>It is assumed that 8am to 11am Monday through Friday is the study time, and the ruleset here is <strong>Learning</strong>. Click <strong>Apply</strong>.</p>
 <p><img alt="set schedule" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/parental_control/guide/guide_schedule_8.png" /></p>
 <p>You will be taken to the edit page of the newly created profile.</p>
 <p><img alt="modify profile" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/parental_control/modify_profile.png" /></p>
@@ -2881,7 +2883,35 @@
 <p>The image below shows the final configuration. You can modify existing profiles and rulesets, or add profiles and rulesets, as you see fit.</p>
 <p><img alt="parental control, finally" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/parental_control/parental_control_finally.png" /></p>
 <h3 id="case-2">Case 2<a class="headerlink" href="#case-2" title="Permanent link">&para;</a></h3>
+<p>In the second use case, we will set up the device to have restricted internet access by default. Then set the weekend evenings from 6pm to 8pm to play games and short videos. Bedtime, 9pm to 7am the next morning, will disable access to the Internet. See the video tutorial below.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5-EOWZ3WkeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p>There may be several reasons why the settings are not effective after being configured:</p>
+<ol>
+<li>
+<p>DNS cache.</p>
+<p>Browsers and operating systems have caches, so it takes some time for the changes to take effect. You can try clearing the cache to get it to take effect immediately. </p>
+<ul>
+<li>
+<p><a href="https://support.google.com/accounts/answer/32050">Clear the cache in the desktop Chrome browser</a></p>
+</li>
+<li>
+<p><a href="https://www.microsoft.com/en-us/edge/learning-center/how-to-manage-and-clear-your-cache-and-cookies?form=MA13I2">Clear the cache in the desktop Edge browser</a></p>
+</li>
+<li>
+<p><a href="https://www.bing.com/search?q=how+to+flush+the+dns+cache+in+windows&amp;qs=n&amp;form=QBRE&amp;sp=-1&amp;lq=0&amp;pq=how+to+flush+the+dns+cache+in+windows&amp;sc=10-37&amp;sk=&amp;cvid=B2220ABF33A24232BA98D091A998425F&amp;ghsh=0&amp;ghacc=0&amp;ghpl=">Flush the DNS cache in Windows</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Perhaps the schedule for the profile you set has not yet arrived.</p>
+</li>
+<li>
+<p>The domain name you set may be incorrect.</p>
+<p>While a website's domain name is public, the domain name used when an app calls an API is not. To resolve this, you will need to use a tool(e.g. Wireshark) to capture packets or search for it.</p>
+</li>
+</ol>
                 
               
               
