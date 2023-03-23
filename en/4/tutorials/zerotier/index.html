@@ -2934,7 +2934,28 @@
 </li>
 </ol>
 <h2 id="allow-remote-access-lan">Allow Remote Access LAN<a class="headerlink" href="#allow-remote-access-lan" title="Permanent link">&para;</a></h2>
-<p>Coming soon.</p>
+<p>If this option is enabled, the resources inside the device LAN will be allowed to be accessed via the ZeroTier virtual network.</p>
+<p>For example, as show below, if this function is enabled, you can SSH to <code>Ubuntu</code> by its IP(<code>192.168.8.110</code>) from <code>leo-phone</code>, because <code>Ubuntu</code> is connected to the LAN port of <code>GL-MT2500</code>, which is the lower layer device of <code>GL-MT2500</code>.</p>
+<p><img alt="ZeroTier, remote access lan topology" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/zerotier/zerotier_access_lan_topology.png" /></p>
+<p>The operation steps are as follows.</p>
+<ol>
+<li>
+<p>Enable Allow Remote Access LAN.</p>
+<p><img alt="enable allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/zerotier/enable_allow_remote_access_lan_1.png" /></p>
+<p>It will prompt you to set up routing rules.</p>
+<p><img alt="enable allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/zerotier/enable_allow_remote_access_lan_2.png" /></p>
+</li>
+<li>
+<p>Go to the <a href="https://my.zerotier.com">my.zerotier.com</a> or click on <strong>ZeroTier Central</strong> in the image above, find the <strong>Advanced</strong> sector of settings panel. Fill in the route (Destination and Via) requested in the previous step. Click <strong>Submit</strong>.</p>
+<p><img alt="add route" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/zerotier/add_routes_3.png" /></p>
+<p>After adding.</p>
+<p><img alt="add route" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/zerotier/add_routes_4.png" /></p>
+</li>
+<li>
+<p>Now you can ping or SSH the  by its IP(<code>192.168.8.110</code>) on other devices. You can actually access the devices at <code>192.168.8.0/24</code>.</p>
+<p><img alt="zerotier, access ubuntu" class="glboxshadow gl-50-desktop" src="https://static.gl-inet.com/docs/en/4/tutorials/zerotier/zerotier_access_ubuntu.jpg" /></p>
+</li>
+</ol>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
                 
