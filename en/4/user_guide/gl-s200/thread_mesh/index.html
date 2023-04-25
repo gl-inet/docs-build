@@ -1467,6 +1467,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#export-thread-network-settings" class="md-nav__link">
+    Export thread network settings
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4146,10 +4153,10 @@
 </ul>
 <p>Network Name/ PAN ID/ Extended PAN ID/ Network Key is generated based on the MAC address of the device.</p>
 <h3 id="create-a-new-network">Create a new network<a class="headerlink" href="#create-a-new-network" title="Permanent link">&para;</a></h3>
-<p>You can use the default configuration to create a new network. Click on the <strong>Enable</strong> button and the status of the S200 will change from <strong>Detached</strong> to <strong>Leader</strong>, which means that the new network has been created successfully.</p>
+<p>You can create a new network directly by using the default configuration and clicking <strong>Enable</strong>. You can then see that the status of the S200 has changed from <strong>Detached</strong> to <strong>Leader</strong>, which means that a new network has been created.</p>
 <p><strong>Note</strong>: If you have the same network settings as an existing Thread network in your current environment, then the S200 will automatically join that network.</p>
 <p><img alt="create-new-network" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/thread_web_guide/create-new-network.png" /></p>
-<p>If you want to adjust some parameters in particular, you can configure them by clicking on the <strong>Manual Setup</strong>.</p>
+<p>If you want to set some parameters manually, you can configure them by clicking on the <strong>Manual Setup</strong>.</p>
 <p><img alt="Manual-Setup" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/thread_web_guide/manual-setup.png" /></p>
 <h3 id="join-an-existing-network">Join an existing network<a class="headerlink" href="#join-an-existing-network" title="Permanent link">&para;</a></h3>
 <p>We support the following 4 ways to add the S200 to an existing network.</p>
@@ -4204,6 +4211,9 @@ You can import and export by clicking on Import Setting/Export Setting in the to
 <p><img alt="using the commissioner" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/thread_web_guide/using-the-commissioner.png" /></p>
 </li>
 </ol>
+<h3 id="export-thread-network-settings">Export thread network settings<a class="headerlink" href="#export-thread-network-settings" title="Permanent link">&para;</a></h3>
+<p>You can copy the thread network dataset TLV data or download it in the file.</p>
+<p><img alt="export_thread_network_settings" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/thread_web_guide/export_thread_network_settings.png" /></p>
 <h2 id="thread-commissioning">Thread Commissioning<a class="headerlink" href="#thread-commissioning" title="Permanent link">&para;</a></h2>
 <p>You can add new devices to the network on this page, and GL-S200 supports bulk imports.</p>
 <p><img alt="thread commissioning" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/thread_web_guide/commissioning.png" /></p>
@@ -4227,23 +4237,11 @@ You can import and export by clicking on Import Setting/Export Setting in the to
 </ul>
 <h3 id="add-a-single-device">Add a single device<a class="headerlink" href="#add-a-single-device" title="Permanent link">&para;</a></h3>
 <p><img alt="add a single device" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/thread_web_guide/add-a-single-device.png" /></p>
-<ol>
-<li>
-<p>Click the Add button to add individual devices. Please configure the relevant parameters according to your personal situation.</p>
 <ul>
 <li><strong>Joiner EUI-64</strong>: Joiner's EUI-64 or type <strong>*</strong> to match all Joiners.</li>
 <li><strong>Joiner Credential</strong>: The device credentials to be added must be a string containing all uppercase letters and numbers and must not contain the letters I, O, Q and Z, between 6 and 32 characters in length.</li>
 <li><strong>Joiner Timeout</strong>: Joiner access timeout, during which a Joiner can access the network using valid credentials.</li>
 </ul>
-</li>
-<li>
-<p>Once configured, click the Start button.Complete equipment connection within the specified timeframe.</p>
-<ul>
-<li><strong>Note</strong>：Only one border router can be Commissioning on the same Thread network at the same time. Please finish Commissioning on the other border routers before adding the Joiner.</li>
-</ul>
-<p>No Joiner is detected, so Commissioner will stop 90 seconds after it is start.</p>
-</li>
-</ol>
 <h3 id="add-devices-in-batches">Add devices in batches<a class="headerlink" href="#add-devices-in-batches" title="Permanent link">&para;</a></h3>
 <p>If the device vendor has set different Joiner credentials for each Thread device, you will need this feature when deploying. Clicking <strong>Download template</strong> to download the template or export the saved Joiner list, fill in or add the Joiner EUI64 and Joiner Credential, then click <strong>Select</strong> to import.</p>
 <p><img alt="add devices in batches" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/thread_web_guide/add-devices-in-batches.png" /></p>
@@ -4266,7 +4264,10 @@ You can import and export by clicking on Import Setting/Export Setting in the to
 <p><img alt="registered servers" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/thread_web_guide/srp-services.png" /></p>
 <h3 id="backbone-routers">Backbone Routers<a class="headerlink" href="#backbone-routers" title="Permanent link">&para;</a></h3>
 <p>The Backbone Router (BBR) function is primarily used to receive multicast inbound/outbound requests. Refer to <a href="https://openthread.google.cn/codelabs/openthread-border-router-ipv6-multicast#0">Thread Border Router - Thread 1.2 Multicast</a> for experimentation.</p>
-<p><img alt="backbone routers" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/thread_web_guide/backbone-routers.png" /></p>
+<p><img alt="backbone routers" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/thread_web_guide/bbr_settings.png" /></p>
+<ul>
+<li>Backbone Interface: Select the interface that bbr use.</li>
+</ul>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
                 
