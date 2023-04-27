@@ -3882,14 +3882,14 @@
         
           <li class="md-nav__item">
   <a href="#step-3-control-the-light" class="md-nav__link">
-    *Step 3: Control the Light*
+    Step 3: Control the Light
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#step-4-use-the-matter-switch-to-control-the-light" class="md-nav__link">
-    *Step 4 Use the Matter Switch to Control the Light*
+    Step 4: Use the Matter Switch to Control the Light
   </a>
   
 </li>
@@ -3901,7 +3901,7 @@
       
         <li class="md-nav__item">
   <a href="#connect-to-home-assistant" class="md-nav__link">
-    *Connect to Home Assistant*
+    Connect to Home Assistant
   </a>
   
 </li>
@@ -4565,7 +4565,7 @@ PING DEE6259B059B0BB6.local(fd15:5b2d:647f:1:25b3:9abe:d387:e9aa (fd15:5b2d:647f
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 69.331/69.331/69.331/0.000 ms
 </code></pre>
-<h3 id="step-3-control-the-light"><strong><em>*Step 3: Control the Light</em></strong>*<a class="headerlink" href="#step-3-control-the-light" title="Permanent link">&para;</a></h3>
+<h3 id="step-3-control-the-light">Step 3: Control the Light<a class="headerlink" href="#step-3-control-the-light" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Toggle the Light</li>
 </ol>
@@ -4573,23 +4573,31 @@ rtt min/avg/max/mdev = 69.331/69.331/69.331/0.000 ms
 <p>Example：</p>
 <pre><code>sudo ./out/chip-tool/chip-tool onoff toggle 1001 1
 </code></pre>
-<p>2.Turn On the Light</p>
+<ol>
+<li>Turn On the Light</li>
+</ol>
 <p>Command Format : <code>chip-tool onoff on ${NODE_ID} 1</code></p>
 <p>Example：</p>
 <pre><code>sudo ./out/chip-tool/chip-tool onoff on 1001 1
 </code></pre>
-<p>3.Turn Off the Light</p>
+<ol>
+<li>Turn Off the Light</li>
+</ol>
 <p>Command Format : <code>chip-tool onoff off ${NODE_ID} 1</code></p>
 <p>Example：</p>
 <pre><code>sudo ./out/chip-tool/chip-tool onoff off 1001 1
 </code></pre>
-<p>4.Read the State of the Light</p>
+<ol>
+<li>Read the State of the Light</li>
+</ol>
 <p>Command Format : <code>chip-tool onoff read on-off ${NODE_ID} 1</code></p>
 <p>Example：</p>
 <pre><code>sudo ./out/chip-tool/chip-tool onoff read on-off 1001 1
 </code></pre>
-<h3 id="step-4-use-the-matter-switch-to-control-the-light"><strong><em>*Step 4 Use the Matter Switch to Control the Light</em></strong>*<a class="headerlink" href="#step-4-use-the-matter-switch-to-control-the-light" title="Permanent link">&para;</a></h3>
-<p>1.Set the ACL of the Light to Allow the Switch to Control It</p>
+<h3 id="step-4-use-the-matter-switch-to-control-the-light">Step 4: Use the Matter Switch to Control the Light<a class="headerlink" href="#step-4-use-the-matter-switch-to-control-the-light" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Set the ACL of the Light to Allow the Switch to Control It</li>
+</ol>
 <p>For ACL parameter explanation, please refer to <strong>Matter Core Specification - 9.10.5.3. ACL Attribute</strong></p>
 <p>Command Format :</p>
 <pre><code>sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{&quot;fabricIndex&quot;:1, &quot;privilege&quot;:5, &quot;authMode&quot;:2, &quot;subjects&quot;:[112233, ${switch_node_id}], &quot;targets&quot;:null}]' ${lighting_node_id} 0
@@ -4597,7 +4605,9 @@ rtt min/avg/max/mdev = 69.331/69.331/69.331/0.000 ms
 <p>Example：</p>
 <pre><code>sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{&quot;fabricIndex&quot;:1, &quot;privilege&quot;:5, &quot;authMode&quot;:2, &quot;subjects&quot;:[112233, 1002], &quot;targets&quot;:null}]' 1001 0
 </code></pre>
-<p>2.Bind the Switch to the Light</p>
+<ol>
+<li>Bind the Switch to the Light</li>
+</ol>
 <p>Command Format :</p>
 <pre><code>sudo ./out/chip-tool/chip-tool binding write binding '[{&quot;fabricIndex&quot;:1, &quot;node&quot;:${lighting_node_id}, &quot;endpoint&quot;:1, &quot;cluster&quot;:6}]' ${switch_node_id} 1
 </code></pre>
@@ -4605,8 +4615,8 @@ rtt min/avg/max/mdev = 69.331/69.331/69.331/0.000 ms
 <pre><code>sudo ./out/chip-tool/chip-tool binding write binding '[{&quot;fabricIndex&quot;:1, &quot;node&quot;:1001, &quot;endpoint&quot;:1, &quot;cluster&quot;:6}]' 1002 1
 </code></pre>
 <p>After completing the above steps, you can use Matter Switch BTN1 to control the on/off state of Matter Light.</p>
-<h2 id="connect-to-home-assistant"><strong><em>*Connect to Home Assistant</em></strong>*<a class="headerlink" href="#connect-to-home-assistant" title="Permanent link">&para;</a></h2>
-<p><strong>Test environment</strong></p>
+<h2 id="connect-to-home-assistant">Connect to Home Assistant<a class="headerlink" href="#connect-to-home-assistant" title="Permanent link">&para;</a></h2>
+<p>Test environment</p>
 <ul>
 <li>Raspberrypi 4B</li>
 <li>Debian GNU/Linux 11 (bullseye)</li>
