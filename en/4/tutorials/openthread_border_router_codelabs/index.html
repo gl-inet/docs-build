@@ -4200,14 +4200,8 @@
 </ul>
 <p><img alt="direct connection" class="glboxshadow" src="https://static.gl-inet.com/docs-iot/en/tutorials/openthread_border_router_codelabs/direct_connection.png" /></p>
 <h3 id="step-1-create-a-thread-network">Step 1: Create a Thread network.<a class="headerlink" href="#step-1-create-a-thread-network" title="Permanent link">&para;</a></h3>
-<pre><code>root@GL-S200:~# uci set glipv6.lan.mode='relay'
-root@GL-S200:~# uci commit glipv6
-root@GL-S200:~# /etc/init.d/gl_ipv6 restart
-root@GL-S200:~# uci set otbr.otbr.enable=1
+<pre><code>root@GL-S200:~# uci set otbr.otbr.enable=1
 root@GL-S200:~# uci commit otbr
-
-echo &quot;net.ipv6.conf.wpan0.accept_ra=1&quot; &gt;&gt;/etc/sysctl.conf
-sysctl -p /etc/sysctl.conf
 
 root@GL-S200:~# ot-ctl dataset init new
 Done
