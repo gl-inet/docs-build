@@ -2990,15 +2990,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#manual-setup" class="md-nav__link">
     Manual Setup
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#compatible-modems" class="md-nav__link">
     Compatible Modems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dual-sim" class="md-nav__link">
+    Dual-SIM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sms" class="md-nav__link">
+    SMS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sms-forwarding" class="md-nav__link">
+    SMS Forwarding
   </a>
   
 </li>
@@ -3061,6 +3095,18 @@
     <li class="md-nav__item">
       <a href="../produce_a_wired_connection/" class="md-nav__link">
         Produce a Wired Connection
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sms/" class="md-nav__link">
+        SMS
       </a>
     </li>
   
@@ -4067,7 +4113,9 @@
                 
                 
                 <h1 id="connect-to-the-internet-via-cellular">Connect to the Internet via cellular<a class="headerlink" href="#connect-to-the-internet-via-cellular" title="Permanent link">&para;</a></h1>
-<p>The router can be used to access the Internet through cellular. There are two cases, some models have a built-in 3G/4G model; some models have a usb port and can be plugged into a usb 3G/4G modem. The operation steps are similar, here is GL-AXT1800 as an example.</p>
+<p>The router can be used to access the Internet through cellular. There are two cases, some models have a built-in 3G/4G model; some models have a usb port and can be plugged into a usb 3G/4G modem. The operation steps are similar, here is GL-AXT1800(Slate AX) as an example.</p>
+<p>Some models have built-in modems and support dual SIM cards, and the interface may be slightly different. Please refer to <a href="#dual-sim">Dual-SIM</a>.</p>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <p>On the left side of web Admin Panel -&gt; INTERNET, Cellular sector.</p>
 <p><strong>Note:</strong> Some SIM cards may need to be activated the first time you use them, so please activate them in your phone before using them in your router.</p>
 <ol>
@@ -4211,6 +4259,36 @@
 <p><em>QMI: This modem supports QMI mode. Please choose </em><em>/dev/cdc-wdm0</em><em> in the </em><em>Device</em>* list.</p>
 <p>*Host-less: This modem supports tethering mode, please set up by using Tethering but not 3G/4G modem.</p>
 <p>You can also search on the <a href="https://forum.gl-inet.com" target="_blank">forum</a> or create a post for asking.</p>
+<h2 id="dual-sim">Dual-SIM<a class="headerlink" href="#dual-sim" title="Permanent link">&para;</a></h2>
+<p>Some models have built-in modems and support dual SIM cards, and the interface may be slightly different. Take the GL-X3000 (Spitz AX) as an example.</p>
+<p>When no SIM card is detected.</p>
+<p><img alt="dual-sim, no sim" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/internet_cellular/dual_sim/no_sim.png" /></p>
+<p>When a SIM card is inserted.</p>
+<p><img alt="dual-sim, 5g sim" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/internet_cellular/dual_sim/5g_sim.png" /></p>
+<p>Click current sim card.</p>
+<p><img alt="dual-sim, current sim card" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/internet_cellular/dual_sim/current_sim_card.png" /></p>
+<p>It will open the SIM card slot settings dialog box.</p>
+<p><img alt="dual-sim, sim card slot settings" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/internet_cellular/dual_sim/sim_card_slot_settings.png" /></p>
+<p>If two SIM cards are inserted, you can enable auto switch.</p>
+<p><img alt="dual-sim, auto switch" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/internet_cellular/dual_sim/auto_switch.png" /></p>
+<ul>
+<li>
+<p>Auto Switch</p>
+<p>The Internet status is detected in the same way as the settings in the Multi-WAN page.</p>
+</li>
+<li>
+<p>Failover Interval</p>
+<p>If Internet connection is still not available after failover, the device will switch back to the preferred SIM slot and will only retry failover after this interval.</p>
+</li>
+<li>
+<p>Checking Preferred Slot Status Scheduled</p>
+<p>If this option is enabled, the device will try to switch back to the preferred SIM slot at the specified time. So that you can switch back to using the preferred SIM slot when its internet connection is available.</p>
+</li>
+</ul>
+<h2 id="sms">SMS<a class="headerlink" href="#sms" title="Permanent link">&para;</a></h2>
+<p>Please refer to the <a href="../sms">SMS tutorial</a>.</p>
+<h2 id="sms-forwarding">SMS Forwarding<a class="headerlink" href="#sms-forwarding" title="Permanent link">&para;</a></h2>
+<p>Please refer to the <a href="../sms_forwarding">SMS Forwarding tutorial</a>.</p>
 <h2 id="warning">Warning<a class="headerlink" href="#warning" title="Permanent link">&para;</a></h2>
 <p>When Internet access is not available, the corresponding warning is displayed. To determine whether you can access the Internet or not, please go to <a href="../multi-wan">Multi-WAN</a> page.</p>
 <ul>
@@ -4220,10 +4298,12 @@
 </li>
 </ul>
 <hr />
-<p>Related Articles
-- <a href="../internet">Internet page</a>
-- <a href="../multi-wan/">How to set the priority of each Internet access method?</a>
-- <a href="../multi-wan/">How to set the load balance when multiple Internet access methods are used at the same time?</a></p>
+<p>Related Articles</p>
+<ul>
+<li><a href="../internet">Internet page</a></li>
+<li><a href="../multi-wan/">How to set the priority of each Internet access method?</a></li>
+<li><a href="../multi-wan/">How to set the load balance when multiple Internet access methods are used at the same time?</a></li>
+</ul>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
                 
