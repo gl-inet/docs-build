@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#gl-s10-firmware-compilation-guide" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -575,10 +580,63 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Firmware Compilation Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Firmware Compilation Guide
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#set-develop-environment" class="md-nav__link">
+    Set Develop Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-source-code" class="md-nav__link">
+    Modify source code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compile-and-flash" class="md-nav__link">
+    Compile and Flash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -616,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_dev_board/first_time_setup/" class="md-nav__link">
+      <a href="../../thread_dev_board/first_time_setup.md" class="md-nav__link">
         First Time Setup
       </a>
     </li>
@@ -721,15 +779,66 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
       
       <label class="md-nav__link" for="__nav_3_2">
+        BLE Proxy
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="BLE Proxy" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          BLE Proxy
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/bluetooth/" class="md-nav__link">
+        Bluetooth
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
         Thread Board Router
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Thread Board Router" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_2">
+        <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           Thread Board Router
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/thread_mesh/" class="md-nav__link">
+        Thread Mesh
+      </a>
+    </li>
+  
+
           
             
   
@@ -757,14 +866,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
       
-      <label class="md-nav__link" for="__nav_3_3">
+      <label class="md-nav__link" for="__nav_3_4">
         MQTT & VPN
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="MQTT & VPN" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_3">
+        <label class="md-nav__title" for="__nav_3_4">
           <span class="md-nav__icon md-icon"></span>
           MQTT & VPN
         </label>
@@ -807,11 +916,67 @@
               
                 
                 
-                  <h1>Firmware Compilation Guide</h1>
-                
-                <!DOCTYPE html>
-<p><html><head><title>https://docs.gl-inet.com/router/en/3/setup/gl-s10/firmware_compilation_guide/</title><meta name="robots" content="noindex"></head></html></p>
-<p><link rel="canonical" href="https://docs.gl-inet.com/router/en/3/setup/gl-s10/firmware_compilation_guide/"/><meta charset="utf-8" /><meta http-equiv="refresh" content="0; url=https://docs.gl-inet.com/router/en/3/setup/gl-s10/firmware_compilation_guide/" /></p>
+                <h1 id="gl-s10-firmware-compilation-guide">GL-S10 Firmware Compilation Guide<a class="headerlink" href="#gl-s10-firmware-compilation-guide" title="Permanent link">&para;</a></h1>
+<p>This doc is intended to help users set the software building environment and build your own applications for GL-S10. <br />
+As an example, we build a simple demo. It 
+aims to recieve iBeacons from around and then send it to specified MQTT broker through WiFi. Note that WiFi and MQTT setting is written in the source code.</p>
+<h2 id="set-develop-environment">Set Develop Environment<a class="headerlink" href="#set-develop-environment" title="Permanent link">&para;</a></h2>
+<p>GL-S10 application is base on Espressif esp-idf(v3.3). You can get the detailed steps of building the compile environment by following the link. <a href="https://docs.espressif.com/projects/esp-idf/en/v3.3/get-started/index.html#introduction">https://docs.espressif.com/projects/esp-idf/en/v3.3/get-started/index.html#introduction</a> <em>(Attention: Please check the version of IDF before you download it.)</em>
+After configuring the develop environment, decompress and get into the source code folder <code>ble_ibeacon/</code>. Most code is in the file <code>ibeacon_demo.c</code>.</p>
+<h2 id="modify-source-code">Modify source code<a class="headerlink" href="#modify-source-code" title="Permanent link">&para;</a></h2>
+<p><strong>1. Modify WiFi setting</strong></p>
+<p>Find contents as below in the <code>ibeacon_demo.c</code> and modify the WiFi setting to what you want.</p>
+<pre><code class="language-c">wifi_config_t wifi_config = {
+    .sta = {
+        .ssid = &quot;WIFI SSID&quot;, //
+        .password = &quot;WIFI password&quot;,
+    },
+};
+</code></pre>
+<p><strong>2. Modify MQTT setting</strong></p>
+<p>Similar with WiFi setting. Find and modify the struct <code>esp_mqtt_client_config_t</code> in the <code>ibeacon_demo.c</code>.</p>
+<pre><code class="language-c">esp_mqtt_client_config_t mqtt_cfg = {
+    .uri = &quot;mqtt://192.168.100.174:61613&quot;,//IP:port
+    .usernaem = &quot;MQTT username&quot;,
+    .password = &quot;MQTT password&quot;,
+    .event_handle = mqtt_event_handler,
+};
+</code></pre>
+<p><em>(If you want to connect to MQTT broker except tcp, change the url prefix.)</em></p>
+<pre><code class="language-c">tcp ---&gt; mqtt://
+tcp-ssl ---&gt; mqtts://
+web socket ---&gt; ws://
+web socket secure ---&gt; wss://
+</code></pre>
+<h2 id="compile-and-flash">Compile and Flash<a class="headerlink" href="#compile-and-flash" title="Permanent link">&para;</a></h2>
+<p><strong>1. Configuration</strong></p>
+<p>Before compile the application, get into your project folder <em>(here is <code>ble_ibeacon/</code>)</em>, using command <code>make menuconfig</code> to configure some basic setting like serial port.<br />
+In the configuration inteface, you just need to change three point as follow.<br />
+Firstly, click <code>Serial flasher config</code>.</p>
+<p><img alt="espressif iot development framework configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/espressif_iot_development_framework_configuration.jpg" /></p>
+<p>Then modify the three point marked by red line.</p>
+<p><img alt="espressif iot development framework configuration serial flasher config" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/espressif_iot_development_framework_configuration_serial_flasher_config.jpg" /></p>
+<p>Set <code>Default serial port</code> to the port name show in your PC, typically is <code>/dev/ttyUSB0</code>.
+Set <code>Serial flasher config ---&gt;Flash SPI speed</code> to <code>80MHz</code>.
+Set <code>Serial flasher config ---&gt;Flash size</code> to <code>4MB</code>.</p>
+<p><strong>2. Build</strong></p>
+<p>In your project folder, using command <code>make all</code>. It will compile and build the firmware. When finished sucessfully, it will show information like this.</p>
+<p><img alt="compile and build firmware" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/compile_and_build_firmware.jpg" /></p>
+<p><strong>3. Flash</strong></p>
+<p>GL-S10 using UART to flash the firmware, and also using this UART to output the system log.
+Connect the UART in S10 to the PC by a USB-UART converter. The PC will find a new usb device like <code>/dev/ttyUSB0</code>. It is the name you should write in the <code>Default serial port</code>.   </p>
+<p><img alt="gl-s10 pcb" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/specification/gl-s10/gl-s10-pinout.jpg" /></p>
+<p>After connect S10 UART to the PC, using command <code>make flash</code> or <code>make flash monitor</code> to flash the firmware. When shows like that, it means the PC is waiting S10 to get into "download mode".</p>
+<p><img alt="wait flash" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/wait_flash.jpg" /></p>
+<p>How to get into "download mode", do in this way. Unplug the S10 power, press the flash button(do not release) and then plug in the power. When it shows like that,</p>
+<p><img alt="flash" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/flash.jpg" /></p>
+<p>means flash starts sucessfully, then you can release the flash button and wait for the flash finished.
+When flash has been finished, restart the GL-S10.</p>
+<h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
+<p>If you have connect the S10 UART to the PC, using command <code>make monitor</code>, it will print all the system log like that. <em>(here shows the iBeacon data it recieved)</em></p>
+<p><img alt="system log result" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/system_log_result.png" /></p>
+<p>In the MQTT broker, You can get the messages published by S10 like that.</p>
+<p><img alt="messages published result" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/messages_published_result.png" /></p>
                 
               
               
@@ -852,7 +1017,7 @@
       
       
         
-        <a href="../../thread_dev_board/first_time_setup/" class="md-footer__link md-footer__link--next" aria-label="Next: First Time Setup" rel="next">
+        <a href="../../gl-m2/first_time_setup/" class="md-footer__link md-footer__link--next" aria-label="Next: First Time Setup" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
