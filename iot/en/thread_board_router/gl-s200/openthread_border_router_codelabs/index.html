@@ -1,0 +1,1573 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for GL.iNet IoT Productions">
+      
+      
+      
+        <meta name="author" content="GL.iNet">
+      
+      
+        <link rel="canonical" href="https://docs.gl-inet.com/iot/en/thread_board_router/gl-s200/openthread_border_router_codelabs/">
+      
+      <link rel="icon" href="../../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+    
+    
+      
+        <title>OpenThread Border Router Codelabs - GL.iNet IoT Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+
+  
+
+
+  
+
+  
+
+
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-CB08JFHVHT"),document.addEventListener("DOMContentLoaded",function(){"undefined"!=typeof location$&&location$.subscribe(function(t){gtag("config","G-CB08JFHVHT",{page_path:t.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB08JFHVHT"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#glinet-openthread-border-router-codelabs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="GL.iNet IoT Docs" class="md-header__button md-logo" aria-label="GL.iNet IoT Docs" data-md-component="logo">
+      
+  <img src="../../../images/logo_white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GL.iNet IoT Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OpenThread Border Router Codelabs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/gl-inet/docs-iot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gl-inet/docs-iot
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../ble_proxy/gl-s10/" class="md-tabs__link">
+        BLE Proxy
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Thread Board Router
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../iot_dev_board/" class="md-tabs__link">
+        IoT Dev Board
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../mqtt_vpn/" class="md-tabs__link">
+        MQTT & VPN
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GL.iNet IoT Docs" class="md-nav__button md-logo" aria-label="GL.iNet IoT Docs" data-md-component="logo">
+      
+  <img src="../../../images/logo_white.svg" alt="logo">
+
+    </a>
+    GL.iNet IoT Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/gl-inet/docs-iot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gl-inet/docs-iot
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        BLE Proxy
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="BLE Proxy" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          BLE Proxy
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        GL-S10
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="GL-S10" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          GL-S10
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s10/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s10/hardware/" class="md-nav__link">
+        Hardware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s10/user_manual/" class="md-nav__link">
+        User Manual
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s10/firmware_compilation_guide/" class="md-nav__link">
+        Firmware Compilation Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s10/software/" class="md-nav__link">
+        Software
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s10/tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s10/examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        GL-S20
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="GL-S20" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          GL-S20
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s20/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s20/hardware/" class="md-nav__link">
+        Hardware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s20/software/" class="md-nav__link">
+        Software
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s20/tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s20/examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Thread Board Router
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Thread Board Router" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Thread Board Router
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        GL-S200
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="GL-S200" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          GL-S200
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        Hardware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluetooth/" class="md-nav__link">
+        Bluetooth
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thread_mesh/" class="md-nav__link">
+        Thread Mesh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          OpenThread Border Router Codelabs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        OpenThread Border Router Codelabs
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#application-scenario" class="md-nav__link">
+    Application Scenario
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Scenario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-connection" class="md-nav__link">
+    Direct Connection.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indirect-connection" class="md-nav__link">
+    Indirect Connection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bi-directional-ipv6-connectivity-and-dns-based-service-discovery" class="md-nav__link">
+    Bi-directional IPv6 connectivity and DNS-based service discovery.
+  </a>
+  
+    <nav class="md-nav" aria-label="Bi-directional IPv6 connectivity and DNS-based service discovery.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-thread-network" class="md-nav__link">
+    Step 1: Create a Thread network.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-configure-the-srp-client-terminal-device" class="md-nav__link">
+    Step 2: Configure the SRP client terminal device.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-publish-srp-service-on-the-terminal-device" class="md-nav__link">
+    Step 3: Publish SRP service on the terminal device.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-discover-services-on-otbr" class="md-nav__link">
+    Step 4: Discover services on OTBR.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-discover-services-on-pc" class="md-nav__link">
+    Step 5: Discover services on PC.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-ping-the-terminal-devices-local-domain-name-on-pc" class="md-nav__link">
+    Step 6: Ping the terminal device's local domain name on PC.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#providing-internet-access-via-nat64" class="md-nav__link">
+    Providing Internet access via NAT64.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matter-over-thread" class="md-nav__link">
+    Matter Over Thread
+  </a>
+  
+    <nav class="md-nav" aria-label="Matter Over Thread">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-thread-network_1" class="md-nav__link">
+    Step 1: Create a Thread network.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-commissioning" class="md-nav__link">
+    Step 2: Commissioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-control-the-light" class="md-nav__link">
+    Step 3: Control the Light
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-use-the-matter-switch-to-control-the-light" class="md-nav__link">
+    Step 4: Use the Matter Switch to Control the Light
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-to-home-assistant" class="md-nav__link">
+    Connect to Home Assistant
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        Software
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        IoT Dev Board
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="IoT Dev Board" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          IoT Dev Board
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../iot_dev_board/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        MQTT & VPN
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="MQTT & VPN" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          MQTT & VPN
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mqtt_vpn/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="glinet-openthread-border-router-codelabs">GL.iNet OpenThread Border Router Codelabs<a class="headerlink" href="#glinet-openthread-border-router-codelabs" title="Permanent link">&para;</a></h1>
+<h2 id="application-scenario"><strong>Application Scenario</strong><a class="headerlink" href="#application-scenario" title="Permanent link">&para;</a></h2>
+<p>GL.iNet OTBR is factory-configured with Scenario 1 by default. Users need to configure the upstream interface for the backbone router according to their own application scenarios on the web Admin Panel -&gt; THREAD MESH -&gt; Advanced -&gt; Backbone Routers.</p>
+<h3 id="direct-connection">Direct Connection.<a class="headerlink" href="#direct-connection" title="Permanent link">&para;</a></h3>
+<p>Scenario 1:  PC/mobile phone connects OTBR directly.</p>
+<p><img alt="direct connection" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/direct_connection.png" /></p>
+<h3 id="indirect-connection">Indirect Connection<a class="headerlink" href="#indirect-connection" title="Permanent link">&para;</a></h3>
+<p>Scenario 2: PC/mobile phone and OTBR connect to the same upstream WiFi AP.</p>
+<p><img alt="indirect connection" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/indirect_connection.png" /></p>
+<h2 id="bi-directional-ipv6-connectivity-and-dns-based-service-discovery"><strong>Bi-directional IPv6 connectivity and DNS-based service discovery.</strong><a class="headerlink" href="#bi-directional-ipv6-connectivity-and-dns-based-service-discovery" title="Permanent link">&para;</a></h2>
+<p>This experiment uses the following topology diagram</p>
+<ul>
+<li>Ubuntu 20.04.4</li>
+<li>NRF52840 USB dongle（<a href="https://github.com/openthread/ot-nrf528xx/commit/c00d1812d3494c6a2f4f074685341e6e30195e9d">ot-nrf52840 - 2023-02-15-d88076e</a>）</li>
+<li>ot-br-posix - 2022-11-08-d910392</li>
+</ul>
+<p><img alt="direct connection" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/direct_connection.png" /></p>
+<h3 id="step-1-create-a-thread-network">Step 1: Create a Thread network.<a class="headerlink" href="#step-1-create-a-thread-network" title="Permanent link">&para;</a></h3>
+<pre><code>root@GL-S200:~# uci set otbr.otbr.enable=1
+root@GL-S200:~# uci commit otbr
+
+root@GL-S200:~# ot-ctl dataset init new
+Done
+root@GL-S200:~# ot-ctl dataset commit active
+Done
+root@GL-S200:~# ot-ctl dataset active
+Active Timestamp: 1
+Channel: 18
+Channel Mask: 0x07fff800
+Ext PAN ID: a1fce8946f2f9b1d
+Mesh Local Prefix: fd50:5ff6:fd1b:325b::/64
+Network Key: e67446d4e450ad76cd3ad5472530d410
+Network Name: OpenThread-ee97
+PAN ID: 0xee97
+PSKc: 42743e8b67c06353cd038520a0ab8b7f
+Security Policy: 672 onrc
+Done
+root@GL-S200:~# ot-ctl ifconfig up
+Done
+root@GL-S200:~# ot-ctl thread start
+Done
+root@GL-S200:~# ot-ctl state
+leader
+Done
+root@GL-S200:~# ot-ctl dataset active -x
+0e080000000000010000000300001235060004001fffe00208a1fce8946f2f9b1d0708fd505ff6fd1b325b0510e67446d4e450ad76cd3ad5472530d410030f4f70656e5468726561642d656539370102ee97041042743e8b67c06353cd038520a0ab8b7f0c0402a0f7f8
+Done
+root@GL-S200:~# ot-ctl netdata show
+Prefixes:
+fd15:5b2d:647f:1::/64 paos low c400
+Routes:
+fd15:5b2d:647f:2:0:0::/96 sn low c400
+fda1:fce8:946f:9b1d::/64 s med c400
+Services:
+44970 5d fd505ff6fd1b325b84ab8a51482f2df7d11f s c400
+44970 01 31000500000e10 s c400
+Done
+root@GL-S200:~# ot-ctl ipaddr
+fd50:5ff6:fd1b:325b:0:ff:fe00:fc11
+fd50:5ff6:fd1b:325b:0:ff:fe00:fc38
+fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4
+fd50:5ff6:fd1b:325b:0:ff:fe00:fc10
+fd50:5ff6:fd1b:325b:0:ff:fe00:fc00
+fd50:5ff6:fd1b:325b:0:ff:fe00:c400
+fd50:5ff6:fd1b:325b:84ab:8a51:482f:2df7
+fe80:0:0:0:3488:80b2:ca62:867d
+Done
+</code></pre>
+<p>Check the connectivity of OTBR on your phone/PC.</p>
+<pre><code>$ ping -6 -c1 fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4
+PING fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4(fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4) 56 data bytes
+64 bytes from fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4: icmp_seq=1 ttl=64 time=0.996 ms
+
+--- fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.996/0.996/0.996/0.000 ms
+</code></pre>
+<h3 id="step-2-configure-the-srp-client-terminal-device">Step 2: Configure the SRP client terminal device.<a class="headerlink" href="#step-2-configure-the-srp-client-terminal-device" title="Permanent link">&para;</a></h3>
+<p>To be executed on NRF52840.</p>
+<pre><code>&gt; dataset set active 0e080000000000010000000300001235060004001fffe00208a1fce8946f2f9b1d0708fd505ff6fd1b325b0510e67446d4e450ad76cd3ad5472530d410030f4f70656e5468726561642d656539370102ee97041042743e8b67c06353cd038520a0ab8b7f0c0402a0f7f8
+Done
+&gt; ifconfig up
+Done
+&gt; thread start
+Done
+&gt; state
+child
+Done
+&gt; netdata show
+Prefixes:
+fd15:5b2d:647f:1::/64 paos low fffe
+Routes:
+fd15:5b2d:647f:2:0:0::/96 sn low fffe
+fda1:fce8:946f:9b1d::/64 s med fffe
+Services:
+44970 5d fd505ff6fd1b325b84ab8a51482f2df7d11f s fc10
+44970 01 31000500000e10 s fc11
+Done
+&gt; ipaddr
+fd15:5b2d:647f:1:75cd:be97:fd26:f3b9
+fd50:5ff6:fd1b:325b:0:ff:fe00:c401
+fd50:5ff6:fd1b:325b:27af:b1fc:9225:4134
+fe80:0:0:0:3873:7703:285d:38eb
+Done
+</code></pre>
+<p>Check the Thread Device connectivity on the mobile phone/PC.</p>
+<pre><code>$ ping -6 -c1 fd15:5b2d:647f:1:75cd:be97:fd26:f3b9
+PING fd15:5b2d:647f:1:75cd:be97:fd26:f3b9(fd15:5b2d:647f:1:75cd:be97:fd26:f3b9) 56 data bytes
+64 bytes from fd15:5b2d:647f:1:75cd:be97:fd26:f3b9: icmp_seq=1 ttl=63 time=41.1 ms
+
+--- fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 41.148/41.148/41.148/0.000 ms
+</code></pre>
+<h3 id="step-3-publish-srp-service-on-the-terminal-device">Step 3: Publish SRP service on the terminal device.<a class="headerlink" href="#step-3-publish-srp-service-on-the-terminal-device" title="Permanent link">&para;</a></h3>
+<pre><code>&gt; srp client autostart enable
+Done
+&gt; srp client host name ot-host
+Done
+&gt; srp client host address fd15:5b2d:647f:1:75cd:be97:fd26:f3b9
+Done
+&gt; srp client service add ot-service _ipps._tcp 12345
+Done
+&gt; srp client service
+instance:&quot;ot-service&quot;, name:&quot;_ipps._tcp&quot;, state:Registered, port:12345, priority:0, weight:0
+Done
+</code></pre>
+<h3 id="step-4-discover-services-on-otbr">Step 4: Discover services on OTBR.<a class="headerlink" href="#step-4-discover-services-on-otbr" title="Permanent link">&para;</a></h3>
+<pre><code>root@GL-S200:~# ot-ctl srp server service
+ot-service._ipps._tcp.default.service.arpa.
+    deleted: false
+    subtypes: (null)
+    port: 12345
+    priority: 0
+    weight: 0
+    ttl: 7200
+    lease: 7200
+    key-lease: 1209600
+    TXT: []
+    host: ot-host.default.service.arpa.
+    addresses: [fd15:5b2d:647f:1:75cd:be97:fd26:f3b9]
+Done
+root@GL-S200:~# dns-sd -B _ipps._tcp
+Browsing for _ipps._tcp
+DATE: ---Wed 15 Mar 2023---
+ 8:41:10.598  ...STARTING...
+Timestamp     A/R    Flags  if Domain               Service Type         Instance Name
+ 8:41:10.600  Add        3   6 local.               _ipps._tcp.          ot-service
+ 8:41:10.602  Add        2   7 local.               _ipps._tcp.          ot-service
+^C
+root@GL-S200:~# dns-sd -L ot-service _ipps._tcp.
+Lookup ot-service._ipps._tcp..local
+DATE: ---Wed 15 Mar 2023---
+ 8:41:16.522  ...STARTING...
+ 8:41:16.666  ot-service._ipps._tcp.local. can be reached at ot-host.local.:12345 (interface 6) Flags: 1
+ 8:41:16.668  ot-service._ipps._tcp.local. can be reached at ot-host.local.:12345 (interface 7)
+^C
+root@GL-S200:~# dns-sd -G -v6 ot-host.local.
+DATE: ---Wed 15 Mar 2023---
+ 8:41:21.478  ...STARTING...
+Timestamp     A/R    Flags if Hostname                               Address                                      TTL
+ 8:41:21.653  Add        3  6 ot-host.local.                         FD15:5B2D:647F:0001:75CD:BE97:FD26:F3B9%&lt;0&gt;  120
+ 8:41:21.656  Add        2  7 ot-host.local.                         FD15:5B2D:647F:0001:75CD:BE97:FD26:F3B9%&lt;0&gt;  120
+^C
+root@GL-S200:~# ping -6 -c1 fd15:5b2d:647f:1:75cd:be97:fd26:f3b9
+PING fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 (fd15:5b2d:647f:1:75cd:be97:fd26:f3b9): 56 data bytes
+64 bytes from fd15:5b2d:647f:1:75cd:be97:fd26:f3b9: seq=0 ttl=64 time=33.375 ms
+
+--- fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max = 33.375/33.375/33.375 ms
+</code></pre>
+<h3 id="step-5-discover-services-on-pc">Step 5: Discover services on PC.<a class="headerlink" href="#step-5-discover-services-on-pc" title="Permanent link">&para;</a></h3>
+<p>Use <strong><code>dns-sd</code></strong>on macOS system.</p>
+<pre><code>$ dns-sd -B _ipps._tcp
+Browsing for _ipps._tcp
+DATE: ---Wed 15 Mar 2023---
+16:42:03.955  ...STARTING...
+Timestamp     A/R    Flags  if Domain               Service Type         Instance Name
+16:42:03.958  Add        2   2 local.               _ipps._tcp.          ot-service
+
+$ dns-sd -L ot-service _ipps._tcp.
+Lookup ot-service._ipps._tcp..local
+DATE: ---Wed 15 Mar 2023---
+16:42:13.192  ...STARTING...
+16:42:13.193  ot-service._ipps._tcp.local. can be reached at ot-host.local.:12345 (interface 2)
+
+$ dns-sd -G -v6 ot-host.local.
+DATE: ---Wed 15 Mar 2023---
+16:42:18.168  ...STARTING...
+Timestamp     A/R    Flags if Hostname                               Address                                      TTL
+16:42:18.169  Add 40000002  2 ot-host.local.                         FD15:5B2D:647F:0001:75CD:BE97:FD26:F3B9%&lt;0&gt;  120
+</code></pre>
+<p>Use <strong><code>avahi-browser</code></strong> on Linux system.</p>
+<pre><code>$ avahi-browse -rt _ipps._tcp
++  ens33 IPv6 ot-service                                    Secure Internet Printer local
++  ens33 IPv4 ot-service                                    Secure Internet Printer local
+=  ens33 IPv6 ot-service                                    Secure Internet Printer local
+   hostname = [ot-host.local]
+   address = [fd15:5b2d:647f:1:75cd:be97:fd26:f3b9]
+   port = [12345]
+   txt = []
+=  ens33 IPv4 ot-service                                    Secure Internet Printer local
+   hostname = [ot-host.local]
+   address = [fd15:5b2d:647f:1:75cd:be97:fd26:f3b9]
+   port = [12345]
+   txt = []
+</code></pre>
+<h3 id="step-6-ping-the-terminal-devices-local-domain-name-on-pc">Step 6: Ping the terminal device's local domain name on PC.<a class="headerlink" href="#step-6-ping-the-terminal-devices-local-domain-name-on-pc" title="Permanent link">&para;</a></h3>
+<pre><code>$ ping -6 -c1 ot-host.local
+PING ot-host.local(fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 (fd15:5b2d:647f:1:75cd:be97:fd26:f3b9)) 56 data bytes
+64 bytes from fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 (fd15:5b2d:647f:1:75cd:be97:fd26:f3b9): icmp_seq=1 ttl=63 time=30.4 ms
+
+--- ot-host.local ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 30.360/30.360/30.360/0.000 ms
+</code></pre>
+<p>If the ping command returns <code>Name or service not known</code> , modify <code>/etc/nsswitch.conf</code> as follows and try again. The domain name should be resolvable on both OTBR and PC.</p>
+<pre><code>hosts:          files mdns4_minimal mdns6_minimal dns
+</code></pre>
+<h2 id="providing-internet-access-via-nat64">Providing Internet access via NAT64.<a class="headerlink" href="#providing-internet-access-via-nat64" title="Permanent link">&para;</a></h2>
+<p>Nat64 is enabled by default. After creating a Thread network and joining Thread devices to the network according to the instructions for the experiment on bi-directional IPv6 connectivity and DNS-based service discovery,</p>
+<ul>
+<li>Accessing Local Area Network.</li>
+</ul>
+<pre><code>&gt; ping 192.168.8.233
+Pinging synthesized IPv6 address: fdf8:7dfb:4d50:2:0:0:c0a8:8e9
+16 bytes from fdf8:7dfb:4d50:2:0:0:c0a8:8e9: icmp_seq=3 hlim=63 time=15ms
+1 packets transmitted, 1 packets received. Packet loss = 0.0%. Round-trip min/avg/max = 15/15.0/15 ms.
+Done
+</code></pre>
+<ul>
+<li>Accessing the Internet.</li>
+</ul>
+<pre><code>&gt; ping 8.8.8.8
+Pinging synthesized IPv6 address: fdf8:7dfb:4d50:2:0:0:808:808
+16 bytes from fdf8:7dfb:4d50:2:0:0:808:808: icmp_seq=4 hlim=47 time=75ms
+1 packets transmitted, 1 packets received. Packet loss = 0.0%. Round-trip min/avg/max = 75/75.0/75 ms.
+Done
+&gt; dns resolve4 google.com 8.8.8.8
+Synthesized IPv6 DNS server address: fdf8:7dfb:4d50:2:0:0:808:808
+DNS response for google.com. - fdf8:7dfb:4d50:2:0:0:8efb:dc4e TTL:127
+Done
+&gt; ping fdf8:7dfb:4d50:2:0:0:8efb:dc4e
+16 bytes from fdf8:7dfb:4d50:2:0:0:8efb:dc4e: icmp_seq=5 hlim=106 time=96ms
+1 packets transmitted, 1 packets received. Packet loss = 0.0%. Round-trip min/avg/max = 96/96.0/96 ms.
+Done
+</code></pre>
+<h2 id="matter-over-thread">Matter Over Thread<a class="headerlink" href="#matter-over-thread" title="Permanent link">&para;</a></h2>
+<p>The topology of this experiment is shown in the following diagram, where the Matter Controller runs on a PC, and the Matter Light and Matter Light Switch both use the Silicon Labs EFR32MG24 Breakout Board REV 1.1 as the Matter device.</p>
+<p><img alt="matter over thread" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/matter_over_thread.png" /></p>
+<h3 id="step-1-create-a-thread-network_1">Step 1: Create a Thread network.<a class="headerlink" href="#step-1-create-a-thread-network_1" title="Permanent link">&para;</a></h3>
+<pre><code>root@GL-S200:~# ot-ctl dataset init new
+Done
+root@GL-S200:~# ot-ctl dataset commit active
+Done
+root@GL-S200:~# ot-ctl dataset active
+Active Timestamp: 1
+Channel: 18
+Channel Mask: 0x07fff800
+Ext PAN ID: a1fce8946f2f9b1d
+Mesh Local Prefix: fd50:5ff6:fd1b:325b::/64
+Network Key: e67446d4e450ad76cd3ad5472530d410
+Network Name: OpenThread-ee97
+PAN ID: 0xee97
+PSKc: 42743e8b67c06353cd038520a0ab8b7f
+Security Policy: 672 onrc
+Done
+root@GL-S200:~# ot-ctl ifconfig up
+Done
+root@GL-S200:~# ot-ctl thread start
+Done
+root@GL-S200:~# ot-ctl state
+leader
+Done
+root@GL-S200:~# ot-ctl dataset active -x
+0e080000000000010000000300001235060004001fffe00208a1fce8946f2f9b1d0708fd505ff6fd1b325b0510e67446d4e450ad76cd3ad5472530d410030f4f70656e5468726561642d656539370102ee97041042743e8b67c06353cd038520a0ab8b7f0c0402a0f7f8
+Done
+root@GL-S200:~# ot-ctl netdata show
+Prefixes:
+fd15:5b2d:647f:1::/64 paos low c400
+Routes:
+fd15:5b2d:647f:2:0:0::/96 sn low c400
+fda1:fce8:946f:9b1d::/64 s med c400
+Services:
+44970 5d fd505ff6fd1b325b84ab8a51482f2df7d11f s c400
+44970 01 31000500000e10 s c400
+Done
+root@GL-S200:~# ot-ctl ipaddr
+fd50:5ff6:fd1b:325b:0:ff:fe00:fc11
+fd50:5ff6:fd1b:325b:0:ff:fe00:fc38
+fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4
+fd50:5ff6:fd1b:325b:0:ff:fe00:fc10
+fd50:5ff6:fd1b:325b:0:ff:fe00:fc00
+fd50:5ff6:fd1b:325b:0:ff:fe00:c400
+fd50:5ff6:fd1b:325b:84ab:8a51:482f:2df7
+fe80:0:0:0:3488:80b2:ca62:867d
+Done
+</code></pre>
+<h3 id="step-2-commissioning">Step 2: Commissioning<a class="headerlink" href="#step-2-commissioning" title="Permanent link">&para;</a></h3>
+<p>Command format:</p>
+<pre><code>chip-tool pairing ble-thread ${NODE_ID} hex:${DATASET} ${PIN_CODE} ${DISCRIMINATOR}
+</code></pre>
+<ul>
+<li><code>${NODE_ID}</code>：Assign an ID to the commissioned device. It can be any non-zero value that has not been used after RCP initialization, and it is used by the chip-tool to operate on this Matter device.</li>
+<li><code>${DATASET}</code>： Obtained by running the command <code>ot-ctl dataset active -x</code></li>
+<li><code>${PIN_CODE}</code>：If the pairing code has not been configured in the flash memory, use the default pairing code.</li>
+<li><code>${DISCRIMINATOR}</code>：If pairing code is not configured in flash yet, use the default pairing code.</li>
+</ul>
+<p>When you long-press the BT0 button on the Matter Light for more than 6 seconds, it enters commissioning mode.</p>
+<pre><code>sudo ./out/chip-tool/chip-tool pairing ble-thread 1001 hex:0e080000000000010000000300001235060004001fffe00208a1fce8946f2f9b1d0708fd505ff6fd1b325b0510e67446d4e450ad76cd3ad5472530d410030f4f70656e5468726561642d656539370102ee97041042743e8b67c06353cd038520a0ab8b7f0c0402a0f7f8 20202021 3840
+</code></pre>
+<p>Press and hold the BT0 button of the Matter Light Switch for more than 6 seconds to enter commissioning mode.</p>
+<pre><code>sudo ./out/chip-tool/chip-tool pairing ble-thread 1002 hex:0e080000000000010000000300001235060004001fffe00208a1fce8946f2f9b1d0708fd505ff6fd1b325b0510e67446d4e450ad76cd3ad5472530d410030f4f70656e5468726561642d656539370102ee97041042743e8b67c06353cd038520a0ab8b7f0c0402a0f7f8 20202021 3840
+</code></pre>
+<p>If there is no error, the output of the command should look like the following:</p>
+<pre><code>[1678871136.912386][3259774:3259774] CHIP:DL: Inet Layer shutdown
+[1678871136.912404][3259774:3259774] CHIP:DL: BLE shutdown
+[1678871136.913326][3259774:3259774] CHIP:DL: System Layer shutdown
+</code></pre>
+<p>Discovery Matter device from PC,</p>
+<pre><code>$ avahi-browse -rt _matter._tcp
++ enp0s31f6 IPv6 65D508548AF4E6CD-00000000000003EA             _matter._tcp         local
++ enp0s31f6 IPv6 65D508548AF4E6CD-00000000000003E9             _matter._tcp         local
++ enp0s31f6 IPv4 65D508548AF4E6CD-00000000000003EA             _matter._tcp         local
++ enp0s31f6 IPv4 65D508548AF4E6CD-00000000000003E9             _matter._tcp         local
+= enp0s31f6 IPv6 65D508548AF4E6CD-00000000000003EA             _matter._tcp         local
+   hostname = [DEE6259B059B0BB6.local]
+   address = [fd15:5b2d:647f:1:25b3:9abe:d387:e9aa]
+   port = [5540]
+   txt = [&quot;T=0&quot; &quot;SAI=2000&quot; &quot;SII=5000&quot;]
+= enp0s31f6 IPv6 65D508548AF4E6CD-00000000000003E9             _matter._tcp         local
+   hostname = [3EF840EF1D01024D.local]
+   address = [fd15:5b2d:647f:1:b5be:90a6:6fde:a8dc]
+   port = [5540]
+   txt = [&quot;T=0&quot; &quot;SAI=2000&quot; &quot;SII=5000&quot;]
+= enp0s31f6 IPv4 65D508548AF4E6CD-00000000000003EA             _matter._tcp         local
+   hostname = [DEE6259B059B0BB6.local]
+   address = [fd15:5b2d:647f:1:25b3:9abe:d387:e9aa]
+   port = [5540]
+   txt = [&quot;T=0&quot; &quot;SAI=2000&quot; &quot;SII=5000&quot;]
+= enp0s31f6 IPv4 65D508548AF4E6CD-00000000000003E9             _matter._tcp         local
+   hostname = [3EF840EF1D01024D.local]
+   address = [fd15:5b2d:647f:1:b5be:90a6:6fde:a8dc]
+   port = [5540]
+   txt = [&quot;T=0&quot; &quot;SAI=2000&quot; &quot;SII=5000&quot;]
+
+$ avahi-browse -rt _matterc._udp
++ enp0s31f6 IPv6 18D347F0BB27870E                              _matterc._udp        local
++ enp0s31f6 IPv4 18D347F0BB27870E                              _matterc._udp        local
+= enp0s31f6 IPv6 18D347F0BB27870E                              _matterc._udp        local
+   hostname = [DEE6259B059B0BB6.local]
+   address = [fd15:5b2d:647f:1:25b3:9abe:d387:e9aa]
+   port = [5540]
+   txt = [&quot;PI=&quot; &quot;PH=36&quot; &quot;CM=0&quot; &quot;D=3840&quot; &quot;T=0&quot; &quot;SAI=2000&quot; &quot;SII=5000&quot; &quot;VP=65521+32772&quot;]
+= enp0s31f6 IPv4 18D347F0BB27870E                              _matterc._udp        local
+   hostname = [DEE6259B059B0BB6.local]
+   address = [fd15:5b2d:647f:1:25b3:9abe:d387:e9aa]
+   port = [5540]
+   txt = [&quot;PI=&quot; &quot;PH=36&quot; &quot;CM=0&quot; &quot;D=3840&quot; &quot;T=0&quot; &quot;SAI=2000&quot; &quot;SII=5000&quot; &quot;VP=65521+32772&quot;]
+
+$ ping -6 -c1 3EF840EF1D01024D.local
+PING 3EF840EF1D01024D.local(fd15:5b2d:647f:1:b5be:90a6:6fde:a8dc (fd15:5b2d:647f:1:b5be:90a6:6fde:a8dc)) 56 data bytes
+64 bytes from fd15:5b2d:647f:1:b5be:90a6:6fde:a8dc (fd15:5b2d:647f:1:b5be:90a6:6fde:a8dc): icmp_seq=1 ttl=63 time=82.9 ms
+
+--- 3EF840EF1D01024D.local ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 82.865/82.865/82.865/0.000 ms
+
+$ ping -6 -c1 DEE6259B059B0BB6.local
+PING DEE6259B059B0BB6.local(fd15:5b2d:647f:1:25b3:9abe:d387:e9aa (fd15:5b2d:647f:1:25b3:9abe:d387:e9aa)) 56 data bytes
+64 bytes from fd15:5b2d:647f:1:25b3:9abe:d387:e9aa (fd15:5b2d:647f:1:25b3:9abe:d387:e9aa): icmp_seq=1 ttl=63 time=69.3 ms
+
+--- DEE6259B059B0BB6.local ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 69.331/69.331/69.331/0.000 ms
+</code></pre>
+<h3 id="step-3-control-the-light">Step 3: Control the Light<a class="headerlink" href="#step-3-control-the-light" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Toggle the Light</li>
+</ol>
+<p>Command Format : <code>chip-tool onoff toggle ${NODE_ID} 1</code></p>
+<p>Example：</p>
+<pre><code>sudo ./out/chip-tool/chip-tool onoff toggle 1001 1
+</code></pre>
+<ol>
+<li>Turn On the Light</li>
+</ol>
+<p>Command Format : <code>chip-tool onoff on ${NODE_ID} 1</code></p>
+<p>Example：</p>
+<pre><code>sudo ./out/chip-tool/chip-tool onoff on 1001 1
+</code></pre>
+<ol>
+<li>Turn Off the Light</li>
+</ol>
+<p>Command Format : <code>chip-tool onoff off ${NODE_ID} 1</code></p>
+<p>Example：</p>
+<pre><code>sudo ./out/chip-tool/chip-tool onoff off 1001 1
+</code></pre>
+<ol>
+<li>Read the State of the Light</li>
+</ol>
+<p>Command Format : <code>chip-tool onoff read on-off ${NODE_ID} 1</code></p>
+<p>Example：</p>
+<pre><code>sudo ./out/chip-tool/chip-tool onoff read on-off 1001 1
+</code></pre>
+<h3 id="step-4-use-the-matter-switch-to-control-the-light">Step 4: Use the Matter Switch to Control the Light<a class="headerlink" href="#step-4-use-the-matter-switch-to-control-the-light" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Set the ACL of the Light to Allow the Switch to Control It</li>
+</ol>
+<p>For ACL parameter explanation, please refer to <strong>Matter Core Specification - 9.10.5.3. ACL Attribute</strong></p>
+<p>Command Format :</p>
+<pre><code>sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{&quot;fabricIndex&quot;:1, &quot;privilege&quot;:5, &quot;authMode&quot;:2, &quot;subjects&quot;:[112233, ${switch_node_id}], &quot;targets&quot;:null}]' ${lighting_node_id} 0
+</code></pre>
+<p>Example：</p>
+<pre><code>sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{&quot;fabricIndex&quot;:1, &quot;privilege&quot;:5, &quot;authMode&quot;:2, &quot;subjects&quot;:[112233, 1002], &quot;targets&quot;:null}]' 1001 0
+</code></pre>
+<ol>
+<li>Bind the Switch to the Light</li>
+</ol>
+<p>Command Format :</p>
+<pre><code>sudo ./out/chip-tool/chip-tool binding write binding '[{&quot;fabricIndex&quot;:1, &quot;node&quot;:${lighting_node_id}, &quot;endpoint&quot;:1, &quot;cluster&quot;:6}]' ${switch_node_id} 1
+</code></pre>
+<p>Example：</p>
+<pre><code>sudo ./out/chip-tool/chip-tool binding write binding '[{&quot;fabricIndex&quot;:1, &quot;node&quot;:1001, &quot;endpoint&quot;:1, &quot;cluster&quot;:6}]' 1002 1
+</code></pre>
+<p>After completing the above steps, you can use Matter Switch BTN1 to control the on/off state of Matter Light.</p>
+<h2 id="connect-to-home-assistant">Connect to Home Assistant<a class="headerlink" href="#connect-to-home-assistant" title="Permanent link">&para;</a></h2>
+<p>Test environment</p>
+<ul>
+<li>Raspberrypi 4B</li>
+<li>Debian GNU/Linux 11 (bullseye)</li>
+</ul>
+<p>In progress …</p>
+<hr />
+<p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../thread_mesh/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Thread Mesh" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Thread Mesh
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../software/" class="md-footer__link md-footer__link--next" aria-label="Next: Software" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Software
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2023 GL Technologies & Microuter Technologies
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://www.gl-inet.com" target="_blank" rel="noopener" title="www.gl-inet.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/gl-inet/" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.facebook.com/gl.inet.wifi/" target="_blank" rel="noopener" title="www.facebook.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/GLiNetWiFi" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.linkedin.com/company/gl-inet.com/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.youtube.com/channel/UCBfNEzurltlIeFFCbUgHQyg" target="_blank" rel="noopener" title="www.youtube.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.pinterest.com/glinetWiFi/" target="_blank" rel="noopener" title="www.pinterest.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.2b46852b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
