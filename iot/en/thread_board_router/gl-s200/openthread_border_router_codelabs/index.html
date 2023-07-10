@@ -1405,10 +1405,16 @@ rtt min/avg/max/mdev = 69.331/69.331/69.331/0.000 ms
 <h2 id="connect-to-home-assistant">Connect to Home Assistant<a class="headerlink" href="#connect-to-home-assistant" title="Permanent link">&para;</a></h2>
 <p>Test environment</p>
 <ul>
-<li>Raspberrypi 4B</li>
-<li>Debian GNU/Linux 11 (bullseye)</li>
+<li>Raspberrypi 4B，Debian GNU/Linux 11 (bullseye)</li>
+<li>GL-S200</li>
 </ul>
-<p>In progress …</p>
+<p>Refer to the documentation <a href="https://www.home-assistant.io/installation/raspberrypi">https://www.home-assistant.io/installation/raspberrypi</a> to install Home Assistant on Raspberrypi.</p>
+<p>The GL-S200 needs to upgrade <a href="https://dl.gl-inet.com/?model=s200&amp;type=snapshot">snapshot firmware</a>.</p>
+<p><em><strong>WARNING</strong>: Due to Thread certification reasons, we will not release this feature in stable firmware in the short term.</em></p>
+<p>Open the Home Assistant admin panel, Settings -&gt; Devices&amp;Services -&gt; Thread -&gt; CONFIGURE -&gt; ADD AN OPENTHREAD BORDER ROUTER, input the URL <code>http://&lt;ip&gt;:8081</code> and submit. As shown in the following figure,  <code>192.168.90.182</code> is the IP assigned by the superior router. If your Home Assistant is connected directly to GL OTBR via WiFi/Ethernet, you can use <code>192.168.8.1</code>.</p>
+<p><img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router.png" width=512><img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router-2.png" width=512></p>
+<p>Now, The GL OTBR is successfully added to the Preferred network.</p>
+<p><img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router-3.png" width=512><img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router-4.png" width=512></p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
                 
