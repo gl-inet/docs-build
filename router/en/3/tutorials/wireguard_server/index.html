@@ -4214,9 +4214,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#visit-clients-lan-subnet" class="md-nav__link">
-    Visit Client’s LAN Subnet
+  <a href="#visit-wireguard-clients-lan-subnet" class="md-nav__link">
+    Visit WireGuard Client’s LAN Subnet
   </a>
+  
+    <nav class="md-nav" aria-label="Visit WireGuard Client’s LAN Subnet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topology-using-gl-ax1800-as-server-and-gl-sft1200-as-client" class="md-nav__link">
+    Topology Using GL-AX1800 as server and GL-SFT1200 as client
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4985,17 +4998,41 @@
 <ul>
 <li>Please refer to WireGuard Official Website: <a href="https://www.wireguard.com/install" target="_blank">https://www.wireguard.com/install</a></li>
 </ul>
-<h2 id="visit-clients-lan-subnet">Visit Client’s LAN Subnet<a class="headerlink" href="#visit-clients-lan-subnet" title="Permanent link">&para;</a></h2>
-<p>Visit Client’s LAN Subnet from WireGuard Server LAN Subnet</p>
-<p>1) Change WireGuard clients LAN IP to avoid IP confliction with Server</p>
-<p>2) Modify Wireguard_Server Configuration</p>
-<p>WinSCP or SSH into your the WireGuard Server (router) find and modify the file</p>
-<pre><code class="language-shell">/etc/config/wireguard_server
+<h2 id="visit-wireguard-clients-lan-subnet">Visit WireGuard Client’s LAN Subnet<a class="headerlink" href="#visit-wireguard-clients-lan-subnet" title="Permanent link">&para;</a></h2>
+<h3 id="topology-using-gl-ax1800-as-server-and-gl-sft1200-as-client">Topology Using GL-AX1800 as server and GL-SFT1200 as client<a class="headerlink" href="#topology-using-gl-ax1800-as-server-and-gl-sft1200-as-client" title="Permanent link">&para;</a></h3>
+<p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/wireguard_server/3xtopology.jpg" /></p>
+<ol>
+<li>
+<p>Change WireGuard client LAN IP to <strong>192.168.10.1</strong> avoid IP confliction with Server.</p>
+</li>
+<li>
+<p><a href="../ssh">SSH</a> into your the WireGuard Server (GL-AX1800) find and modify the file.</p>
+<p><code>cat /etc/config/wireguard_server</code></p>
+<p><img alt="wireguardconfig" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/wireguard_server/wireguardconfig.jpg" /></p>
+<p>Add the subnet route <strong>192.168.10.0/24</strong> into the configuration file</p>
+<p><code>vi /etc/config/wireguard_server</code></p>
+<p><img alt="viconfig" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/wireguard_server/viconfig.jpg" /></p>
+</li>
+<li>
+<p>Restart the server and double confirm the subnet is added in the allowed ips line.</p>
+<p><code>/etc/init.d/wireguard_server restart</code></p>
+<p><code>wg</code></p>
+<p><img alt="serverrestart" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/wireguard_server/serverrestart.png" /></p>
+</li>
+<li>
+<p>Add a static route into the server route table.</p>
+<p><code>ip route add 192.168.10.0/24 dev wg0</code></p>
+<p><code>route -n</code></p>
+<p><img alt="addroute" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/wireguard_server/addroute.jpg" /></p>
+</li>
+<li>
+<p>Add a boot lock to avoid the route reset during the reboot.</p>
+</li>
+</ol>
+<pre><code class="language-shell">sed -i &quot;/rm \/var\/run\/glwgserver.lock -rf/a\ip route add 192.168.10.0\/24 dev wg0&quot; /etc/init.d/wireguard_server
 </code></pre>
-<p>Add a line to the end of the config file of clients you want to visit.</p>
-<pre><code class="language-shell">list subnet '192.168.xxx.0/24'
-</code></pre>
-<p><strong>Save and Exit</strong></p>
+<hr />
+<p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
 
   <!-- Last update of source file -->
   
