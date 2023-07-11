@@ -718,15 +718,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#direct-connection" class="md-nav__link">
-    Direct Connection.
+  <a href="#scenario-1-direct-connection" class="md-nav__link">
+    Scenario 1, Direct Connection
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#indirect-connection" class="md-nav__link">
-    Indirect Connection
+  <a href="#scenario-2-indirect-connection" class="md-nav__link">
+    Scenario 2, Indirect Connection
   </a>
   
 </li>
@@ -738,50 +738,50 @@
       
         <li class="md-nav__item">
   <a href="#bi-directional-ipv6-connectivity-and-dns-based-service-discovery" class="md-nav__link">
-    Bi-directional IPv6 connectivity and DNS-based service discovery.
+    Bi-directional IPv6 connectivity and DNS-based service discovery
   </a>
   
-    <nav class="md-nav" aria-label="Bi-directional IPv6 connectivity and DNS-based service discovery.">
+    <nav class="md-nav" aria-label="Bi-directional IPv6 connectivity and DNS-based service discovery">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#step-1-create-a-thread-network" class="md-nav__link">
-    Step 1: Create a Thread network.
+    Step 1: Create a Thread network
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#step-2-configure-the-srp-client-terminal-device" class="md-nav__link">
-    Step 2: Configure the SRP client terminal device.
+    Step 2: Configure the SRP client terminal device
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#step-3-publish-srp-service-on-the-terminal-device" class="md-nav__link">
-    Step 3: Publish SRP service on the terminal device.
+    Step 3: Publish SRP service on the terminal device
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#step-4-discover-services-on-otbr" class="md-nav__link">
-    Step 4: Discover services on OTBR.
+    Step 4: Discover services on OTBR
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#step-5-discover-services-on-pc" class="md-nav__link">
-    Step 5: Discover services on PC.
+    Step 5: Discover services on PC
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#step-6-ping-the-terminal-devices-local-domain-name-on-pc" class="md-nav__link">
-    Step 6: Ping the terminal device's local domain name on PC.
+    Step 6: Ping the terminal device's local domain name on PC
   </a>
   
 </li>
@@ -793,7 +793,7 @@
       
         <li class="md-nav__item">
   <a href="#providing-internet-access-via-nat64" class="md-nav__link">
-    Providing Internet access via NAT64.
+    Providing Internet access via NAT64
   </a>
   
 </li>
@@ -976,23 +976,28 @@
                 
                 
                 <h1 id="glinet-openthread-border-router-codelabs">GL.iNet OpenThread Border Router Codelabs<a class="headerlink" href="#glinet-openthread-border-router-codelabs" title="Permanent link">&para;</a></h1>
-<h2 id="application-scenario"><strong>Application Scenario</strong><a class="headerlink" href="#application-scenario" title="Permanent link">&para;</a></h2>
+<h2 id="application-scenario">Application Scenario<a class="headerlink" href="#application-scenario" title="Permanent link">&para;</a></h2>
+<p>There are two applocation scenarioes, Direct Connection and Indirect Connection.</p>
+<ul>
+<li>Scenario 1, Direct Connection, PC/mobile phone connects OTBR directly.</li>
+<li>Scenario 2, Indirect Connection, PC/mobile phone and OTBR connect to the same upstream WiFi AP.</li>
+</ul>
 <p>GL.iNet OTBR is factory-configured with Scenario 1 by default. Users need to configure the upstream interface for the backbone router according to their own application scenarios on the web Admin Panel -&gt; THREAD MESH -&gt; Advanced -&gt; Backbone Routers.</p>
-<h3 id="direct-connection">Direct Connection.<a class="headerlink" href="#direct-connection" title="Permanent link">&para;</a></h3>
-<p>Scenario 1:  PC/mobile phone connects OTBR directly.</p>
+<h3 id="scenario-1-direct-connection">Scenario 1, Direct Connection<a class="headerlink" href="#scenario-1-direct-connection" title="Permanent link">&para;</a></h3>
+<p>PC/mobile phone connects OTBR directly.</p>
 <p><img alt="direct connection" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/direct_connection.png" /></p>
-<h3 id="indirect-connection">Indirect Connection<a class="headerlink" href="#indirect-connection" title="Permanent link">&para;</a></h3>
-<p>Scenario 2: PC/mobile phone and OTBR connect to the same upstream WiFi AP.</p>
+<h3 id="scenario-2-indirect-connection">Scenario 2, Indirect Connection<a class="headerlink" href="#scenario-2-indirect-connection" title="Permanent link">&para;</a></h3>
+<p>PC/mobile phone and OTBR connect to the same upstream WiFi AP.</p>
 <p><img alt="indirect connection" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/indirect_connection.png" /></p>
-<h2 id="bi-directional-ipv6-connectivity-and-dns-based-service-discovery"><strong>Bi-directional IPv6 connectivity and DNS-based service discovery.</strong><a class="headerlink" href="#bi-directional-ipv6-connectivity-and-dns-based-service-discovery" title="Permanent link">&para;</a></h2>
+<h2 id="bi-directional-ipv6-connectivity-and-dns-based-service-discovery">Bi-directional IPv6 connectivity and DNS-based service discovery<a class="headerlink" href="#bi-directional-ipv6-connectivity-and-dns-based-service-discovery" title="Permanent link">&para;</a></h2>
 <p>This experiment uses the following topology diagram</p>
 <ul>
 <li>Ubuntu 20.04.4</li>
-<li>NRF52840 USB dongle（<a href="https://github.com/openthread/ot-nrf528xx/commit/c00d1812d3494c6a2f4f074685341e6e30195e9d">ot-nrf52840 - 2023-02-15-d88076e</a>）</li>
+<li>NRF52840 USB dongle（<a href="https://github.com/openthread/ot-nrf528xx/commit/c00d1812d3494c6a2f4f074685341e6e30195e9d" target="_blank">ot-nrf52840 - 2023-02-15-d88076e</a>）</li>
 <li>ot-br-posix - 2022-11-08-d910392</li>
 </ul>
 <p><img alt="direct connection" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/direct_connection.png" /></p>
-<h3 id="step-1-create-a-thread-network">Step 1: Create a Thread network.<a class="headerlink" href="#step-1-create-a-thread-network" title="Permanent link">&para;</a></h3>
+<h3 id="step-1-create-a-thread-network">Step 1: Create a Thread network<a class="headerlink" href="#step-1-create-a-thread-network" title="Permanent link">&para;</a></h3>
 <pre><code>root@GL-S200:~# uci set otbr.otbr.enable=1
 root@GL-S200:~# uci commit otbr
 
@@ -1052,7 +1057,7 @@ PING fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4(fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4) 
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 0.996/0.996/0.996/0.000 ms
 </code></pre>
-<h3 id="step-2-configure-the-srp-client-terminal-device">Step 2: Configure the SRP client terminal device.<a class="headerlink" href="#step-2-configure-the-srp-client-terminal-device" title="Permanent link">&para;</a></h3>
+<h3 id="step-2-configure-the-srp-client-terminal-device">Step 2: Configure the SRP client terminal device<a class="headerlink" href="#step-2-configure-the-srp-client-terminal-device" title="Permanent link">&para;</a></h3>
 <p>To be executed on NRF52840.</p>
 <pre><code>&gt; dataset set active 0e080000000000010000000300001235060004001fffe00208a1fce8946f2f9b1d0708fd505ff6fd1b325b0510e67446d4e450ad76cd3ad5472530d410030f4f70656e5468726561642d656539370102ee97041042743e8b67c06353cd038520a0ab8b7f0c0402a0f7f8
 Done
@@ -1089,7 +1094,7 @@ PING fd15:5b2d:647f:1:75cd:be97:fd26:f3b9(fd15:5b2d:647f:1:75cd:be97:fd26:f3b9) 
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 41.148/41.148/41.148/0.000 ms
 </code></pre>
-<h3 id="step-3-publish-srp-service-on-the-terminal-device">Step 3: Publish SRP service on the terminal device.<a class="headerlink" href="#step-3-publish-srp-service-on-the-terminal-device" title="Permanent link">&para;</a></h3>
+<h3 id="step-3-publish-srp-service-on-the-terminal-device">Step 3: Publish SRP service on the terminal device<a class="headerlink" href="#step-3-publish-srp-service-on-the-terminal-device" title="Permanent link">&para;</a></h3>
 <pre><code>&gt; srp client autostart enable
 Done
 &gt; srp client host name ot-host
@@ -1102,7 +1107,7 @@ Done
 instance:&quot;ot-service&quot;, name:&quot;_ipps._tcp&quot;, state:Registered, port:12345, priority:0, weight:0
 Done
 </code></pre>
-<h3 id="step-4-discover-services-on-otbr">Step 4: Discover services on OTBR.<a class="headerlink" href="#step-4-discover-services-on-otbr" title="Permanent link">&para;</a></h3>
+<h3 id="step-4-discover-services-on-otbr">Step 4: Discover services on OTBR<a class="headerlink" href="#step-4-discover-services-on-otbr" title="Permanent link">&para;</a></h3>
 <pre><code>root@GL-S200:~# ot-ctl srp server service
 ot-service._ipps._tcp.default.service.arpa.
     deleted: false
@@ -1147,7 +1152,7 @@ PING fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 (fd15:5b2d:647f:1:75cd:be97:fd26:f3b9)
 1 packets transmitted, 1 packets received, 0% packet loss
 round-trip min/avg/max = 33.375/33.375/33.375 ms
 </code></pre>
-<h3 id="step-5-discover-services-on-pc">Step 5: Discover services on PC.<a class="headerlink" href="#step-5-discover-services-on-pc" title="Permanent link">&para;</a></h3>
+<h3 id="step-5-discover-services-on-pc">Step 5: Discover services on PC<a class="headerlink" href="#step-5-discover-services-on-pc" title="Permanent link">&para;</a></h3>
 <p>Use <strong><code>dns-sd</code></strong>on macOS system.</p>
 <pre><code>$ dns-sd -B _ipps._tcp
 Browsing for _ipps._tcp
@@ -1183,7 +1188,7 @@ Timestamp     A/R    Flags if Hostname                               Address    
    port = [12345]
    txt = []
 </code></pre>
-<h3 id="step-6-ping-the-terminal-devices-local-domain-name-on-pc">Step 6: Ping the terminal device's local domain name on PC.<a class="headerlink" href="#step-6-ping-the-terminal-devices-local-domain-name-on-pc" title="Permanent link">&para;</a></h3>
+<h3 id="step-6-ping-the-terminal-devices-local-domain-name-on-pc">Step 6: Ping the terminal device's local domain name on PC<a class="headerlink" href="#step-6-ping-the-terminal-devices-local-domain-name-on-pc" title="Permanent link">&para;</a></h3>
 <pre><code>$ ping -6 -c1 ot-host.local
 PING ot-host.local(fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 (fd15:5b2d:647f:1:75cd:be97:fd26:f3b9)) 56 data bytes
 64 bytes from fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 (fd15:5b2d:647f:1:75cd:be97:fd26:f3b9): icmp_seq=1 ttl=63 time=30.4 ms
@@ -1195,7 +1200,7 @@ rtt min/avg/max/mdev = 30.360/30.360/30.360/0.000 ms
 <p>If the ping command returns <code>Name or service not known</code> , modify <code>/etc/nsswitch.conf</code> as follows and try again. The domain name should be resolvable on both OTBR and PC.</p>
 <pre><code>hosts:          files mdns4_minimal mdns6_minimal dns
 </code></pre>
-<h2 id="providing-internet-access-via-nat64">Providing Internet access via NAT64.<a class="headerlink" href="#providing-internet-access-via-nat64" title="Permanent link">&para;</a></h2>
+<h2 id="providing-internet-access-via-nat64">Providing Internet access via NAT64<a class="headerlink" href="#providing-internet-access-via-nat64" title="Permanent link">&para;</a></h2>
 <p>Nat64 is enabled by default. After creating a Thread network and joining Thread devices to the network according to the instructions for the experiment on bi-directional IPv6 connectivity and DNS-based service discovery,</p>
 <ul>
 <li>Accessing Local Area Network.</li>
@@ -1354,66 +1359,62 @@ rtt min/avg/max/mdev = 69.331/69.331/69.331/0.000 ms
 </code></pre>
 <h3 id="step-3-control-the-light">Step 3: Control the Light<a class="headerlink" href="#step-3-control-the-light" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Toggle the Light</li>
-</ol>
+<li>
+<p>Toggle the Light</p>
 <p>Command Format : <code>chip-tool onoff toggle ${NODE_ID} 1</code></p>
 <p>Example：</p>
-<pre><code>sudo ./out/chip-tool/chip-tool onoff toggle 1001 1
-</code></pre>
-<ol>
-<li>Turn On the Light</li>
-</ol>
+<p><code>sudo ./out/chip-tool/chip-tool onoff toggle 1001 1</code></p>
+</li>
+<li>
+<p>Turn On the Light</p>
 <p>Command Format : <code>chip-tool onoff on ${NODE_ID} 1</code></p>
 <p>Example：</p>
-<pre><code>sudo ./out/chip-tool/chip-tool onoff on 1001 1
-</code></pre>
-<ol>
-<li>Turn Off the Light</li>
-</ol>
+<p><code>sudo ./out/chip-tool/chip-tool onoff on 1001 1</code></p>
+</li>
+<li>
+<p>Turn Off the Light</p>
 <p>Command Format : <code>chip-tool onoff off ${NODE_ID} 1</code></p>
 <p>Example：</p>
-<pre><code>sudo ./out/chip-tool/chip-tool onoff off 1001 1
-</code></pre>
-<ol>
-<li>Read the State of the Light</li>
-</ol>
+<p><code>sudo ./out/chip-tool/chip-tool onoff off 1001 1</code></p>
+</li>
+<li>
+<p>Read the State of the Light</p>
 <p>Command Format : <code>chip-tool onoff read on-off ${NODE_ID} 1</code></p>
 <p>Example：</p>
-<pre><code>sudo ./out/chip-tool/chip-tool onoff read on-off 1001 1
-</code></pre>
+<p><code>sudo ./out/chip-tool/chip-tool onoff read on-off 1001 1</code></p>
+</li>
+</ol>
 <h3 id="step-4-use-the-matter-switch-to-control-the-light">Step 4: Use the Matter Switch to Control the Light<a class="headerlink" href="#step-4-use-the-matter-switch-to-control-the-light" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Set the ACL of the Light to Allow the Switch to Control It</li>
-</ol>
+<li>
+<p>Set the ACL of the Light to Allow the Switch to Control It</p>
 <p>For ACL parameter explanation, please refer to <strong>Matter Core Specification - 9.10.5.3. ACL Attribute</strong></p>
 <p>Command Format :</p>
-<pre><code>sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{&quot;fabricIndex&quot;:1, &quot;privilege&quot;:5, &quot;authMode&quot;:2, &quot;subjects&quot;:[112233, ${switch_node_id}], &quot;targets&quot;:null}]' ${lighting_node_id} 0
-</code></pre>
+<p><code>sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{"fabricIndex":1, "privilege":5, "authMode":2, "subjects":[112233, ${switch_node_id}], "targets":null}]' ${lighting_node_id} 0</code></p>
 <p>Example：</p>
-<pre><code>sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{&quot;fabricIndex&quot;:1, &quot;privilege&quot;:5, &quot;authMode&quot;:2, &quot;subjects&quot;:[112233, 1002], &quot;targets&quot;:null}]' 1001 0
-</code></pre>
-<ol>
-<li>Bind the Switch to the Light</li>
-</ol>
+<p><code>sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{"fabricIndex":1, "privilege":5, "authMode":2, "subjects":[112233, 1002], "targets":null}]' 1001 0</code></p>
+</li>
+<li>
+<p>Bind the Switch to the Light</p>
 <p>Command Format :</p>
-<pre><code>sudo ./out/chip-tool/chip-tool binding write binding '[{&quot;fabricIndex&quot;:1, &quot;node&quot;:${lighting_node_id}, &quot;endpoint&quot;:1, &quot;cluster&quot;:6}]' ${switch_node_id} 1
-</code></pre>
+<p><code>sudo ./out/chip-tool/chip-tool binding write binding '[{"fabricIndex":1, "node":${lighting_node_id}, "endpoint":1, "cluster":6}]' ${switch_node_id} 1</code></p>
 <p>Example：</p>
-<pre><code>sudo ./out/chip-tool/chip-tool binding write binding '[{&quot;fabricIndex&quot;:1, &quot;node&quot;:1001, &quot;endpoint&quot;:1, &quot;cluster&quot;:6}]' 1002 1
-</code></pre>
+<p><code>sudo ./out/chip-tool/chip-tool binding write binding '[{"fabricIndex":1, "node":1001, "endpoint":1, "cluster":6}]' 1002 1</code></p>
 <p>After completing the above steps, you can use Matter Switch BTN1 to control the on/off state of Matter Light.</p>
+</li>
+</ol>
 <h2 id="connect-to-home-assistant">Connect to Home Assistant<a class="headerlink" href="#connect-to-home-assistant" title="Permanent link">&para;</a></h2>
 <p>Test environment</p>
 <ul>
-<li>Raspberrypi 4B，Debian GNU/Linux 11 (bullseye)</li>
+<li>Raspberrypi 4B, Debian GNU/Linux 11 (bullseye)</li>
 <li>GL-S200</li>
 </ul>
-<p>Refer to the documentation <a href="https://www.home-assistant.io/installation/raspberrypi">https://www.home-assistant.io/installation/raspberrypi</a> to install Home Assistant on Raspberrypi.</p>
-<p>The GL-S200 needs to upgrade <a href="https://dl.gl-inet.com/?model=s200&amp;type=snapshot">snapshot firmware</a>.</p>
-<p><em><strong>WARNING</strong>: Due to Thread certification reasons, we will not release this feature in stable firmware in the short term.</em></p>
+<p>Refer to the documentation <a href="https://www.home-assistant.io/installation/raspberrypi" target="_blank">https://www.home-assistant.io/installation/raspberrypi</a> to install Home Assistant on Raspberrypi.</p>
+<p>The GL-S200 needs to upgrade <a href="https://dl.gl-inet.com/?model=s200&amp;type=snapshot" target="_blank">snapshot firmware</a>.</p>
+<p><em><strong>Noted</strong>: Due to Thread certification reasons, we will not release this feature in stable firmware in the short term.</em></p>
 <p>Open the Home Assistant admin panel, Settings -&gt; Devices&amp;Services -&gt; Thread -&gt; CONFIGURE -&gt; ADD AN OPENTHREAD BORDER ROUTER, input the URL <code>http://&lt;ip&gt;:8081</code> and submit. As shown in the following figure,  <code>192.168.90.182</code> is the IP assigned by the superior router. If your Home Assistant is connected directly to GL OTBR via WiFi/Ethernet, you can use <code>192.168.8.1</code>.</p>
 <p><img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router.png" width=512><img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router-2.png" width=512></p>
-<p>Now, The GL OTBR is successfully added to the Preferred network.</p>
+<p>Now, The GL.iNet OTBR is successfully added to the Preferred network.</p>
 <p><img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router-3.png" width=512><img src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/homeassistant-add-an-openthread-border-router-4.png" width=512></p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
