@@ -7868,7 +7868,7 @@
   <!-- Markdown content -->
   <h1 id="how-to-visit-wireguard-client-lan-side-from-server">How to visit WireGuard client LAN side from Server<a class="headerlink" href="#how-to-visit-wireguard-client-lan-side-from-server" title="Permanent link">&para;</a></h1>
 <h2 id="topology-using-gl-ax1800-as-server-and-gl-sft1200-as-client">Topology Using GL-AX1800 as server and GL-SFT1200 as client<a class="headerlink" href="#topology-using-gl-ax1800-as-server-and-gl-sft1200-as-client" title="Permanent link">&para;</a></h2>
-<p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/wiregaurd_server_access_client_lan_side/3xtopology.jpg" /></p>
+<p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/wiregaurd_server_access_client_lan_side/3xtopology.jpg" /></p>
 <ol>
 <li>
 <p>Change WireGuard client LAN IP to <strong>192.168.10.1</strong> avoid IP confliction with Server.</p>
@@ -7877,11 +7877,11 @@
 <p><a href="../ssh/">SSH</a> into your the WireGuard Server (GL-AX1800) find and modify the file.</p>
 <pre><code>cat /etc/config/wireguard_server
 </code></pre>
-<p><img alt="wireguardconfig" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/wiregaurd_server_access_client_lan_side/wireguardconfig.jpg" /></p>
+<p><img alt="wireguardconfig" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/wiregaurd_server_access_client_lan_side/wireguardconfig.jpg" /></p>
 <p>Add the subnet route <strong>192.168.10.0/24</strong> into the configuration file</p>
 <pre><code>vi /etc/config/wireguard_server
 </code></pre>
-<p><img alt="viconfig" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/wiregaurd_server_access_client_lan_side/viconfig.jpg" /></p>
+<p><img alt="viconfig" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/wiregaurd_server_access_client_lan_side/viconfig.jpg" /></p>
 </li>
 <li>
 <p>Restart the server and double confirm the subnet is added in the allowed ips line.</p>
@@ -7890,7 +7890,7 @@
 <p><span></span></p>
 <pre><code>wg
 </code></pre>
-<p><img alt="serverrestart" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/wiregaurd_server_access_client_lan_side/serverrestart.png" /></p>
+<p><img alt="serverrestart" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/wiregaurd_server_access_client_lan_side/serverrestart.png" /></p>
 </li>
 <li>
 <p>Add a static route into the server route table.</p>
@@ -7899,7 +7899,7 @@
 <p><span></span></p>
 <pre><code>route -n
 </code></pre>
-<p><img alt="addroute" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/wiregaurd_server_access_client_lan_side/addroute.jpg" /></p>
+<p><img alt="addroute" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/wiregaurd_server_access_client_lan_side/addroute.jpg" /></p>
 </li>
 <li>
 <p>Add a boot lock to avoid the route reset during the reboot.</p>

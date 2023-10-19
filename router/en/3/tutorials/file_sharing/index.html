@@ -8146,12 +8146,12 @@
 <h2 id="router-settings">Router settings<a class="headerlink" href="#router-settings" title="Permanent link">&para;</a></h2>
 <p>On the left side of web Admin Panel -&gt; APPLICATIONS -&gt; File Sharing -&gt; File Sharing</p>
 <p>The file sharing packages may not installed. Click <code>Install</code> to continue.</p>
-<p><img alt="file sharing not installed" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/file_sharing_not_installed.png" /></p>
+<p><img alt="file sharing not installed" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/file_sharing_not_installed.png" /></p>
 <p>After installed, it will share via LAN by default. </p>
 <p><strong>Share via LAN</strong>: Share the contents of the external storage device with all connected clients.</p>
 <p><strong>Share via WAN</strong>: The contents of the external storage device can be accessed from the WAN.</p>
 <p><strong>Writable</strong>: The contents of the external storage device can be edited. For writable, it recommend using NTFS or EXT4 file systems.</p>
-<p><img alt="file sharing installed" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/file_sharing_installed.png" /></p>
+<p><img alt="file sharing installed" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/file_sharing_installed.png" /></p>
 <hr />
 <h2 id="access-the-storage-device">Access the storage device<a class="headerlink" href="#access-the-storage-device" title="Permanent link">&para;</a></h2>
 <p>You can access the contents of the external storage device from your computer or smart phone. Please check the following guidance for the using of file sharing among different operating systems.</p>
@@ -8161,24 +8161,24 @@
 <h4 id="method-1-samba-20-smb20-support">Method 1: Samba 2.0 (SMB2.0) Support:<a class="headerlink" href="#method-1-samba-20-smb20-support" title="Permanent link">&para;</a></h4>
 <p>We suggest Samba 2.0 support for Windows 10 users.</p>
 <p>Due to the security vulunerabilitiy of the Samba1.0 protocol, Samba1.0 is not enabled by default in Window 10. You may modify the router Samba configuration.</p>
-<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/smb1.0.png" /></p>
+<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/smb1.0.png" /></p>
 <p>1). <a href="../ssh/">SSH</a> into your router, you can gain control of both the router and the network that the rotuer is controlling.</p>
 <p>2). Modify the Samba configuration file, type the following command:</p>
 <p><code>sed -i 's/security = share/security = user/' /etc/samba/smb.conf.template</code></p>
 <p>3). Restart the Samba service, type the following command:</p>
 <p><code>/etc/init.d/samba restart</code></p>
-<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/ssh2.png" /></p>
+<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/ssh2.png" /></p>
 <p>4). Open 'This PC' and type <code>\\your router IP Address</code>, such as <code>\\192.168.8.1</code>.</p>
-<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/Filesharing.png" /></p>
+<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/Filesharing.png" /></p>
 <p>5). You can view files in your USB flash drive through GL.iNet router now.</p>
 <h4 id="method-2-samba-10-smb10-support">Method 2: Samba 1.0 (SMB1.0) Support:<a class="headerlink" href="#method-2-samba-10-smb10-support" title="Permanent link">&para;</a></h4>
 <p><strong>1)</strong> Your network must be Home/Private. Otherwise you may not be able to see your router in <strong>Network</strong>. </p>
 <p>3.0 firmware supports SMB2, and if you need SMB3, use <a href="../scp/">WinSCP to router</a>, edit <code>/etc/samba/smb.conf.template</code>. </p>
-<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/winscpsmb.jpg" /></p>
+<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/winscpsmb.jpg" /></p>
 <p>Change the "max protocol = SMB2" to </p>
 <p>"min protocol = SMB1"</p>
 <p>"max protocol = SMB3", then <strong>save</strong> and <strong>exit</strong> WinSCP. </p>
-<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/changesmbtemp.jpg" /></p>
+<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/changesmbtemp.jpg" /></p>
 <p>If you are using Windows 10, you also need to enable SMB 1.0. </p>
 <ul>
 <li>Windows 7</li>
@@ -8189,21 +8189,21 @@
 </ul>
 <p>Change your network to private by this <a href="https://www.digitalcitizen.life/how-set-your-networks-location-private-or-public-windows-10">tutorial</a>.</p>
 <p>Go to Control Panel -&gt; Programs and Features -&gt; Turn Windows features on or off -&gt; Find SMB 1.0/CIFS file sharing support, check all SMB1 related items, click apply and restart your computer.</p>
-<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/Win10SMB1.jpg" /></p>
+<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/Win10SMB1.jpg" /></p>
 <p><strong>2)</strong> Open a Windows explorer, you can find <strong>Network</strong> in the folder directory. Double click your router to access its contents.</p>
-<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/network.jpg" /></p>
+<p><img alt="Network" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/network.jpg" /></p>
 <h3 id="mac-os">Mac OS<a class="headerlink" href="#mac-os" title="Permanent link">&para;</a></h3>
 <p><strong>Method 1</strong></p>
 <p><strong>1)</strong> Open Finder, Menu -&gt; Go -&gt; Connect to Server... </p>
-<p><img alt="finder_connect_to_server" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/finder_connect_to_server.png" /></p>
+<p><img alt="finder_connect_to_server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/finder_connect_to_server.png" /></p>
 <p><strong>2)</strong> Input <code>smb://192.168.8.1</code>, you need to change this if your router IP address is not 192.168.8.1</p>
-<p><img alt="connect_to_server" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/connect_to_server.png" /></p>
+<p><img alt="connect_to_server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/connect_to_server.png" /></p>
 <p><strong>3)</strong> Click Connect.</p>
-<p><img alt="confirm_connect_to_server" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/confirm_connect_to_server.png" /></p>
+<p><img alt="confirm_connect_to_server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/confirm_connect_to_server.png" /></p>
 <p><strong>4)</strong> Input username and password, they are the same when you login web Admin Panel.</p>
-<p><img alt="input_server_username_password" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/input_server_username_password.png" /></p>
+<p><img alt="input_server_username_password" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/input_server_username_password.png" /></p>
 <p><strong>5)</strong> Then Finder will display files of USB disk.</p>
-<p><img alt="finder_connect_to_router_usb_disk" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/finder_connect_to_router_usb_disk.png" /></p>
+<p><img alt="finder_connect_to_router_usb_disk" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/finder_connect_to_router_usb_disk.png" /></p>
 <p><strong>Method 2</strong></p>
 <p><strong>1)</strong> Go to System Preferences -&gt; Sharing -&gt; File sharing. Click <code>Options</code> and then enable SMB.</p>
 <p><strong>2)</strong> Open Finder. You should be able to find your router under Shared.</p>
@@ -8211,14 +8211,14 @@
 <p>You have to use a file manage app to access the contents of your external storage device. Please try <a href="https://apps.apple.com/us/app/documents-file-reader-browser/id364901807" target="_blank">Documents</a>, <a href="https://apps.apple.com/gr/app/owlfiles-file-explorer/id510282524" target="_blank">Owlfiles</a>.</p>
 <p>The next section describes how to connect to Samba using the <strong>Documents</strong> app.</p>
 <p>Click the plus button in the lower right corner.</p>
-<p><img alt="documents samba" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/webdav_client/documents_1.png" width="560" /></p>
+<p><img alt="documents samba" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/documents_1.png" width="560" /></p>
 <p>Click <strong>Add Connection</strong>.</p>
-<p><img alt="documents samba" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/webdav_client/documents_2.png" width="560" /></p>
+<p><img alt="documents samba" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/documents_2.png" width="560" /></p>
 <p>Click <strong>Windows SMB</strong>.</p>
-<p><img alt="documents samba" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/network_storage/webdav_client/documents_3.png" width="560" /></p>
+<p><img alt="documents samba" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/documents_3.png" width="560" /></p>
 <p>The <strong>Title</strong> is for a name of this connection. <strong>URL</strong> is the access link, default is <code>smb://192.168.8.1</code>. leave <strong>Login</strong> and <strong>Password</strong> empty.</p>
 <p>Click <strong>Done</strong> button to complete this setup.</p>
-<p><img alt="documents samba" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/documents_windows_smb.png" width="560" /></p>
+<p><img alt="documents samba" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/documents_windows_smb.png" width="560" /></p>
 <h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
 <p>If you are using Linux you are probably comfortable with connecting to servers, and how to do this can vary greatly from distribution to distribution and largely depends on your window manager/display environment. Most systems come with Gnome and it is the default on the very popular Ubuntu distribution, so we'll give an example using the Files tool (also called Nautilus). If you open the app you should have a "Connect to server" option, there you can enter either the <code>\\servername\share</code> or <code>smb://servername/share</code> format.</p>
 <h3 id="chromeos-or-chromiumos-neverware-cloudready-and-others">ChromeOS or ChromiumOS (Neverware CloudReady and others)<a class="headerlink" href="#chromeos-or-chromiumos-neverware-cloudready-and-others" title="Permanent link">&para;</a></h3>
@@ -8234,21 +8234,21 @@ smbclient -N -L 192.168.8.1
 <p>Most Android devices have file manager tool which maybe can be used to access the files on Network Devices using SMB. Or you can search file explorer app which support SMB on Google Play.</p>
 <p>Here I'm going to use <strong>Solid Explorer File Manager</strong> as an example:</p>
 <p><strong>1)</strong> Open the app.</p>
-<p><img alt="android1" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/android01.jpg" /></p>
+<p><img alt="android1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/android01.jpg" /></p>
 <p><strong>2)</strong> Click the <code>Plus sign button</code> on the right bottom of page, then choose <code>New cloud connection</code>.</p>
-<p><img alt="android2" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/android02.jpg" /></p>
+<p><img alt="android2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/android02.jpg" /></p>
 <p><strong>3)</strong> Choose <code>LAN / SMB</code>.</p>
-<p><img alt="android3" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/android03.jpg" /></p>
+<p><img alt="android3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/android03.jpg" /></p>
 <p><strong>4)</strong> Choose the Server, the IP address of your device.</p>
-<p><img alt="android4" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/android04.jpg" /></p>
+<p><img alt="android4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/android04.jpg" /></p>
 <p><strong>5)</strong> Choose <code>Guest</code>.</p>
-<p><img alt="android5" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/android05.jpg" /></p>
+<p><img alt="android5" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/android05.jpg" /></p>
 <p><strong>6)</strong> Choose <code>Yes</code>.</p>
-<p><img alt="android6" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/android06.jpg" /></p>
+<p><img alt="android6" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/android06.jpg" /></p>
 <p><strong>7)</strong> Choose <code>SMB 1</code>.</p>
-<p><img alt="android7" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/android07.jpg" /></p>
+<p><img alt="android7" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/android07.jpg" /></p>
 <p><strong>8)</strong> Click <code>NEXT</code>.</p>
-<p><img alt="android8" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/tutorials/file_sharing/android08.jpg" /></p>
+<p><img alt="android8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/file_sharing/android08.jpg" /></p>
 
   <!-- Last update of source file -->
   
