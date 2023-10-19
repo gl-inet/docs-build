@@ -4039,18 +4039,18 @@
   <h1 id="dynamic-dns">Dynamic DNS<a class="headerlink" href="#dynamic-dns" title="Permanent link">&para;</a></h1>
 <p>Dynamic Domain Name Service (Dynamic DNS or DDNS) is a service used to map a domain name to the dynamic IP address of a network device.</p>
 <p>On the left side of web Admin Panel -&gt; APPLICATIONS -&gt; Dynamic DNS</p>
-<p><img alt="ddns" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/ddns/ddns.png" /></p>
+<p><img alt="ddns" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/ddns/ddns.png" /></p>
 <h2 id="enable-ddns">Enable DDNS<a class="headerlink" href="#enable-ddns" title="Permanent link">&para;</a></h2>
 <p>Toggle on <strong>Enabled DDNS</strong>, option in Terms of Services &amp; Privacy Policy, then click <strong>Apply</strong> button. Generally it take several minutes to take effect.</p>
 <p>DDNS update frequency is once every 10 minutes.</p>
-<p><img alt="enable ddns" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/ddns/enable_ddns.png" /></p>
+<p><img alt="enable ddns" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/ddns/enable_ddns.png" /></p>
 <p><strong>Note</strong>: If you using DDNS and VPN Client at the same time, please make sure to enable <strong>Services From GL.iNet Doesn't Use VPN</strong> in <a href="../vpn_dashboard/#global-options-of-vpn-client">Global Option of VPN Client</a>.</p>
 <h2 id="check-if-ddns-is-in-effect">Check if DDNS is in effect<a class="headerlink" href="#check-if-ddns-is-in-effect" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Using the DDNS Test tool</label><div class="tabbed-content">
 <p>Click the <strong>DDNS Test</strong></p>
-<p><img alt="ddns test" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/ddns/click_ddns_test.png" /></p>
+<p><img alt="ddns test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/ddns/click_ddns_test.png" /></p>
 <p>If it says <strong>Your DDNS is resolved as x.x.x.x</strong> as show below, it means the DDNS is worked. In other words, this <strong>Host Name</strong> has maped to the final exit IP of the router for Internet access.</p>
-<p><img alt="ddns works" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/ddns/ddns_test_resolved.png" /></p>
+<p><img alt="ddns works" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/ddns/ddns_test_resolved.png" /></p>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Or check it manually</label><div class="tabbed-content">
 <p>Check the two IP address below to see if they are the same, if yes, the DDNS is in effect, otherwise not.</p>
@@ -4058,7 +4058,7 @@
 <li>
 <p>Use <code>nslookup</code> command as show below to obtain the mapping between domain name and IP address. You need to change <code>zw72cd7.glddns.com</code> to your Host Name. <code>8.8.8.8</code> is Google DNS, you can change to other DNS.</p>
 <p><code>nslookup zw72cd7.glddns.com 8.8.8.8</code></p>
-<p><img alt="nslookup" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/ddns/nslookup.png" /></p>
+<p><img alt="nslookup" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/ddns/nslookup.png" /></p>
 <p>The output above means the Host Name has maped to an IP address.</p>
 </li>
 <li>
@@ -4070,26 +4070,26 @@
 <h2 id="http-remote-access">HTTP Remote Access<a class="headerlink" href="#http-remote-access" title="Permanent link">&para;</a></h2>
 <p>This function requires a public IP address. To check if your Internet Provider Service assign your a public IP address, please check <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">here</a>.</p>
 <p>If your router is behind NAT, you may need to set up port forwarding in higher level router. It use port <strong>80</strong>.</p>
-<p><img alt="HTTP-Remote-Access" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/ddns/http_remote_access.png" /></p>
+<p><img alt="HTTP-Remote-Access" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/ddns/http_remote_access.png" /></p>
 <p>Follow the steps above, to enable HTTP Remote Access. </p>
 <p><strong><em>HTTP is not encrypted, use at your own risk.</em></strong></p>
 <p>After you enable HTTP Remote Access, you can access Admin Panel anywhere by your DDNS Host Name of <strong>http</strong>, e.g. <code>http://xxxxxxx.glddns.com</code>. If you use port forwarding, you should be access like <code>http://xxxxxxx.glddns.com:YourExternalPort</code>.</p>
 <h2 id="https-remote-access">HTTPS Remote Access<a class="headerlink" href="#https-remote-access" title="Permanent link">&para;</a></h2>
 <p>This function requires a public IP address. To check if your Internet Provider Service assign your a public IP address, please check <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">here</a>.</p>
 <p>If your router is behind NAT, you may need to set up port forwarding in higher level router. It use port <strong>443</strong>.</p>
-<p><img alt="HTTPS-Remote-Access" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/ddns/https_remote_access.png" /></p>
+<p><img alt="HTTPS-Remote-Access" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/ddns/https_remote_access.png" /></p>
 <p>After you enable HTTPS Remote Access, you can access Admin Panel anywhere by your DDNS Host Name of <strong>https</strong>, e.g. <code>https://xxxxxxx.glddns.com</code>. If you use port forwarding, you should be access like <code>https://xxxxxxx.glddns.com:YourExternalPort</code>.</p>
 <p>This function use self-signed certificates, so the browers will indicate that <strong>Your connection is not private</strong>. I will show you how to use it anyway on Chrome Android, other browers are the similar process. I will turn off the WiFi on my phone and only use 4G to access the Internet.</p>
 <p>Open chrome and type the URL in the address bar, I'll use <code>https://zw72cd7.glddns.com:8001</code> as an example. Click <strong>Advanced</strong> at the bottom to continue.</p>
-<p><img alt="HTTPS-Remote-Access-on-Android-Chrome" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/ddns/https_remote_access_android_chrome_1.png" width="400" /></p>
+<p><img alt="HTTPS-Remote-Access-on-Android-Chrome" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/ddns/https_remote_access_android_chrome_1.png" width="400" /></p>
 <p>Click <strong>Processed to xxxxxxx.glddns.com (unsafe)</strong> to continue.</p>
-<p><img alt="HTTPS-Remote-Access-on-Android-Chrome" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/ddns/https_remote_access_android_chrome_2.png" width="400" /></p>
+<p><img alt="HTTPS-Remote-Access-on-Android-Chrome" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/ddns/https_remote_access_android_chrome_2.png" width="400" /></p>
 <p>Then, it will access the web Admin Panel.</p>
-<p><img alt="HTTPS-Remote-Access-on-Android-Chrome" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/ddns/https_remote_access_android_chrome_3.png" width="400" /></p>
+<p><img alt="HTTPS-Remote-Access-on-Android-Chrome" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/ddns/https_remote_access_android_chrome_3.png" width="400" /></p>
 <h2 id="ssh-remote-access">SSH Remote Access<a class="headerlink" href="#ssh-remote-access" title="Permanent link">&para;</a></h2>
 <p>This function requires a public IP address. To check if your Internet Provider Service assign your a public IP address, please check <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">here</a>.</p>
 <p>If your router is behind NAT, you may need to set up port forwarding in higher level router. It use port <strong>22</strong>.</p>
-<p><img alt="SSH-Remote-Access" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/ddns/ssh_remote_access.png" /></p>
+<p><img alt="SSH-Remote-Access" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/ddns/ssh_remote_access.png" /></p>
 <p>Follow the steps above, to enable SSH Remote Access, then you can ssh to your router anywhere. </p>
 <p>Your SSH command should like below.</p>
 <p><code>ssh root@xxxxxxx.glddns.com</code></p>

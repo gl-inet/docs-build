@@ -4108,11 +4108,11 @@
 <ol>
 <li>
 <p>Click <strong>Generate Configuration</strong> (Only the first time).</p>
-<p><img alt="openvpn server generate configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_generate_config.png" /></p>
+<p><img alt="openvpn server generate configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/openvpn_server_generate_config.png" /></p>
 </li>
 <li>
 <p>Apply the configuration.</p>
-<p><img alt="openvpn server configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_configuration.png" /></p>
+<p><img alt="openvpn server configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/openvpn_server_configuration.png" /></p>
 <p>If you do not need to modify the configuration, please click directly the <strong>Export Client Configuration</strong> at the bottom of page. If you have modified the configuration, please click the <strong>Apply</strong> button to continue.</p>
 <ul>
 <li>
@@ -4121,9 +4121,9 @@
 <li>
 <p><strong>Authentication Mode:</strong> There are three options <strong>Only Certificate</strong>, <strong>Only Username/Password</strong>, <strong>Username/Password and Certificate</strong>. </p>
 <p>For <strong>Username/Password</strong> and <strong>Username/Password and Certificate</strong> options, they need add user(s). Then, if a OpenVPN client connect to this server, it need to input the username and password.</p>
-<p><img alt="openvpn server users" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_users.png" /></p>
+<p><img alt="openvpn server users" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/openvpn_server_users.png" /></p>
 <p>Created a user.</p>
-<p><img alt="openvpn server add a user" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_add_a_user.png" /></p>
+<p><img alt="openvpn server add a user" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/openvpn_server_add_a_user.png" /></p>
 <p>For <strong>Only Certificate</strong> and <strong>Username/Password and Certificate</strong>, the router will automatically generate a server and client certificate-key, and write into the configuration file when generating the client configuration file.</p>
 <p>Please check <a href="#advanced-configuration">here</a> for <strong>Advanced Configuration</strong>.</p>
 </li>
@@ -4133,21 +4133,21 @@
 <p>Export Client Configuration</p>
 <p>Clicking the <strong>Export Client Configuration</strong> button at the bottom or applying the modified configuration will pop up this dialog.</p>
 <p>If your network's public IP changes from time to time, you can enable <a href="../ddns/">DDNS</a> by using DDNS domain in the configuration. Click <strong>Download</strong> to export the configuration for further setup.</p>
-<p><img alt="openvpn server configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_export_client_configuration.png" /></p>
+<p><img alt="openvpn server configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/openvpn_server_export_client_configuration.png" /></p>
 </li>
 <li>
 <p>Start OpenVPN server</p>
 <p>Click the <strong>Start</strong> button in the upper right corner on OpenVPN Server page to start the server. Then go to <a href="../vpn_dashboard/#vpn-server">VPN Dashboard page</a> to check its status and other settings.</p>
-<p><img alt="start openvpn server" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/start_openvpn_server.png" /></p>
+<p><img alt="start openvpn server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/start_openvpn_server.png" /></p>
 </li>
 </ol>
 <h2 id="to-check-if-openvpn-server-is-working-properly">To check if OpenVPN Server is working properly<a class="headerlink" href="#to-check-if-openvpn-server-is-working-properly" title="Permanent link">&para;</a></h2>
 <p>Many people mis-understandstool once they saw the server is up and think it is connected. The server can be up even you forward a wrong port or wrong address.</p>
-<p><img alt="openserverup" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openserverup.jpg" /></p>
+<p><img alt="openserverup" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/openserverup.jpg" /></p>
 <p>To check if OpenVPN Server is working properly, we can use another device connected to another network and use the OpenVPN configuration we exported earlier, to connect and see whether it connects properly and whether the IP address is the IP of OpenVPN Server.</p>
 <p>The simpliest way is to use a cell phone with <a href="https://openvpn.net/vpn-client/" target="_blank">OpenVPN official client app</a> installed, turn off its Wi-Fi connection, and only connect to Internet via 3G/4G/5G. Then open the OpenVPN app, import the OpenVPN configuration we previously exported. Enable the connection, check if the phone has Internet access and whether its IP address is the IP of your OpenVPN Server.</p>
 <p>When importing the configuration file to the OpenVPN app, it may has a reminder as below, please click <strong>CONTINUE</strong> as the certificate is already included in the configuration file.</p>
-<p><img alt="openvpn app select certificate" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/select_certificate.png" /></p>
+<p><img alt="openvpn app select certificate" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/select_certificate.png" /></p>
 <p>There are several common reasons cause failed:</p>
 <ul>
 <li>The Internet Service Provider doesn't assign you a public IP address, please check <a href="#make-sure-internet-service-provider-assigns-you-a-public-ip-address">here</a>.</li>
@@ -4157,12 +4157,12 @@
 </ul>
 <h2 id="advanced-configuration">Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">&para;</a></h2>
 <p>You can modify your own configuration at this tab.</p>
-<p><img alt="openvpn server advancd configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/openvpn_server_advanced_configuration.png" /></p>
+<p><img alt="openvpn server advancd configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/openvpn_server_advanced_configuration.png" /></p>
 <h2 id="client-to-client-access">Client to client access<a class="headerlink" href="#client-to-client-access" title="Permanent link">&para;</a></h2>
 <h3 id="network-topology_1">Network Topology<a class="headerlink" href="#network-topology_1" title="Permanent link">&para;</a></h3>
-<p><img alt="ptptopology" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/ptptopology.jpg" /></p>
+<p><img alt="ptptopology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/ptptopology.jpg" /></p>
 <p>Enable the client to client toggle and export a new configuration to clinets, your clients can be access to each others now.</p>
-<p><img alt="peertopeer" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials/openvpn_server/peertopeer.jpg" /></p>
+<p><img alt="peertopeer" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/peertopeer.jpg" /></p>
 <h2 id="openvpn-client-app">OpenVPN Client App<a class="headerlink" href="#openvpn-client-app" title="Permanent link">&para;</a></h2>
 <p>We can use another GL.iNet router as OpenVPN Client, or use their official app on other devices with various OS.</p>
 <ul>
