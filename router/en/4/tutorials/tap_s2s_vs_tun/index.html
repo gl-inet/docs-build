@@ -26,7 +26,7 @@
     
     
       
-        <title>Tap S2S or TUN - GL.iNet Router Docs 4</title>
+        <title>TAP-S2S or TUN - GL.iNet Router Docs 4</title>
       
     
     
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tap S2S or TUN
+              TAP-S2S or TUN
             
           </span>
         </div>
@@ -2069,7 +2069,7 @@
           
   
   <span class="md-ellipsis">
-    Tap S2S or TUN
+    TAP-S2S or TUN
   </span>
   
 
@@ -2080,7 +2080,7 @@
         
   
   <span class="md-ellipsis">
-    Tap S2S or TUN
+    TAP-S2S or TUN
   </span>
   
 
@@ -2103,21 +2103,21 @@
       
         <li class="md-nav__item">
   <a href="#usage-scenarios" class="md-nav__link">
-    Usage Scenarios：
+    Usage Scenarios
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#network-topology" class="md-nav__link">
-    Network Topology：
+    Network Topology
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#tutorials" class="md-nav__link">
-    tutorials：
+    Tutorials
   </a>
   
 </li>
@@ -4075,21 +4075,21 @@
       
         <li class="md-nav__item">
   <a href="#usage-scenarios" class="md-nav__link">
-    Usage Scenarios：
+    Usage Scenarios
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#network-topology" class="md-nav__link">
-    Network Topology：
+    Network Topology
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#tutorials" class="md-nav__link">
-    tutorials：
+    Tutorials
   </a>
   
 </li>
@@ -4118,32 +4118,32 @@
   
 
   <!-- Markdown content -->
-  <h1 id="openvpn-tap-s2s-vs-tun">OpenVPN, Tap S2S vs Tun<a class="headerlink" href="#openvpn-tap-s2s-vs-tun" title="Permanent link">&para;</a></h1>
-<h2 id="usage-scenarios">Usage Scenarios：<a class="headerlink" href="#usage-scenarios" title="Permanent link">&para;</a></h2>
-<p>After enabling TAP S2S mode, the OpenVPN client device can remotely access the OpenVPN server device, and the OpenVPN server device can also remotely access the OpenVPN client device. However, the downside is that the VPN rules set by the OpenVPN client themselves will not take effect after enabling TAP S2S mode.</p>
-<h2 id="network-topology">Network Topology：<a class="headerlink" href="#network-topology" title="Permanent link">&para;</a></h2>
-<p><img alt="tap_s2s_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials_new/tap_s2s_vs_tun/tap_s2s_topology.png" /></p>
-<p><img alt="tun_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials_new/tap_s2s_vs_tun/tun_topology.png" /></p>
-<p>TAP S2S and TUN modes have the same physical connection method, but their logical connection methods are different. Here are the differences:</p>
+  <h1 id="openvpn-tap-s2s-vs-tun">OpenVPN, TAP-S2S vs Tun<a class="headerlink" href="#openvpn-tap-s2s-vs-tun" title="Permanent link">&para;</a></h1>
+<h2 id="usage-scenarios">Usage Scenarios<a class="headerlink" href="#usage-scenarios" title="Permanent link">&para;</a></h2>
+<p>After enabling TAP-S2S mode, the OpenVPN client device can remotely access the OpenVPN server device, and the OpenVPN server device can also remotely access the OpenVPN client device. However, the downside is that the VPN rules set by the OpenVPN client themselves will not take effect after enabling TAP-S2S mode.</p>
+<h2 id="network-topology">Network Topology<a class="headerlink" href="#network-topology" title="Permanent link">&para;</a></h2>
+<p><img alt="tap_s2s_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tap_s2s_topology.png" /></p>
+<p><img alt="tun_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tun_topology.png" /></p>
+<p>TAP-S2S and TUN modes have the same physical connection method, but their logical connection methods are different. Here are the differences:</p>
 <ol>
-<li>When devices on the X3000 LAN side access the management backend of the MT6000, TAP S2S mode does not use a virtual IP, but TUN mode does.</li>
-<li>When devices on the X3000 LAN side access the management backend of the X3000, TAP S2S mode uses a virtual IP, but TUN mode does not.</li>
-<li>When the X3000 LAN-side device knows the IP address of a device on the MT6000 LAN side, TAP S2S mode allows direct remote access, but TUN mode cannot access directly without enabling additional settings.</li>
-<li>In TAP S2S mode, the X3000 needs to go through the MT6000 to access the internet, while in TUN mode, the X3000 can directly access the internet. Therefore, in TAP S2S mode, the VPN rules set by the X3000 do not take effect and the VPN rules set by the MT6000 must be followed.</li>
+<li>When devices on the GL-X3000 LAN side access the management backend of the GL-MT6000, TAP-S2S mode does not use a virtual IP, but TUN mode does.</li>
+<li>When devices on the GL-X3000 LAN side access the management backend of the GL-X3000, TAP-S2S mode uses a virtual IP, but TUN mode does not.</li>
+<li>When the GL-X3000 LAN-side device knows the IP address of a device on the GL-MT6000 LAN side, TAP-S2S mode allows direct remote access, but TUN mode cannot access directly without enabling additional settings.</li>
+<li>In TAP-S2S mode, the GL-X3000 needs to go through the GL-MT6000 to access the internet, while in TUN mode, the Gl-X3000 can directly access the internet. Therefore, in TAP-S2S mode, the VPN rules set by the GL-X3000 do not take effect and the VPN rules set by the GL-MT6000 must be followed.</li>
 </ol>
-<h2 id="tutorials">tutorials：<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>
-<p>Firstly, use a router (assumed to be MT6000) with a public IP to open the OpenVPN Server, set the device mode to <strong>Tap S2S</strong>, click Apply, and then click <strong>Export Client Configuration</strong>.</p>
-<p><img alt="tutorials_select_mode" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_select_mode.png" /></p>
-<p><img alt="tutorials_export" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_export.png" /></p>
-<p>In addition, use a router (assuming it is X3000) with a public IP to open the OpenVPN client, import the configuration file downloaded in the above steps, click <strong>Apply</strong>, and then enable the function;</p>
-<p><img alt="tutorials_select_file" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_select_file.png" /></p>
-<p><img alt="tutorials_start" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_start.png" /></p>
-<p>At this time, the IP address of the X3000 router will change. You can log in to the MT6000 management dashboard, open <strong>Clients</strong>, and find the new IP address of the X3000.</p>
-<p><img alt="tutorials_new_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_new_IP_address.png" /></p>
-<p>If the MT6000 loses network connection or turns off the OpenVPN server, or the X3000 turns off the OpenVPN client , the  IP address of the X3000 will be restored.</p>
+<h2 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>
+<p>Firstly, use a router (assumed to be GL-MT6000) with a public IP to open the OpenVPN Server, set the device mode to <strong>TAP-S2S</strong>, click Apply, and then click <strong>Export Client Configuration</strong>.</p>
+<p><img alt="tutorials_select_mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_select_mode.png" /></p>
+<p><img alt="tutorials_export" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_export.png" /></p>
+<p>In addition, use a router (assuming it is GL-X3000) with a public IP to open the OpenVPN client, import the configuration file downloaded in the above steps, click <strong>Apply</strong>, and then enable the function.</p>
+<p><img alt="tutorials_select_file" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_select_file.png" /></p>
+<p><img alt="tutorials_start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_start.png" /></p>
+<p>At this time, the IP address of the GL-X3000 router will change. You can log in to the GL-MT6000 management dashboard, open <strong>Clients</strong>, and find the new IP address of the GL-X3000.</p>
+<p><img alt="tutorials_new_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_new_IP_address.png" /></p>
+<p>If the GL-MT6000 loses network connection or turns off the OpenVPN server, or the GL-X3000 turns off the OpenVPN client , the  IP address of the GL-X3000 will be restored.</p>
 <p>Points to Note:</p>
 <ul>
-<li>Both devices must be upgraded to version 4.5, otherwise they will not be able to connect;</li>
+<li>Both devices must be upgraded to version v4.5, otherwise they will not be able to connect;</li>
 <li>TAP-S2S only works with Global Proxy Mode, it will adjust automatically with OpenVPN on.</li>
 <li>After enabling this feature, the following functions cannot be used: VPN server, Adguard Home, Parental Control, ZeroTier, Tailscale, Tor, Firewall, Multi-WAN, LAN, DNS, Network Mode, IPv6, MAC Address, Drop-in Gateway, IGMP Snooping, etc.</li>
 </ul>
