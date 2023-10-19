@@ -1994,6 +1994,8 @@
       
         
       
+        
+      
     
     
     
@@ -2035,6 +2037,26 @@
   
   <span class="md-ellipsis">
     VPN Cascading
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/tap_s2s_vs_tun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tap S2S or TUN
   </span>
   
 
@@ -2278,6 +2300,8 @@
       
         
       
+        
+      
     
     
     
@@ -2307,6 +2331,26 @@
             Other
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/manually_configure_static_ip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to manually configure static IP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -3182,6 +3226,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -3359,6 +3407,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../guest_network.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guest Network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../dns/" class="md-nav__link">
         
   
@@ -3513,6 +3581,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nat_settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAT Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3643,26 +3731,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin_password/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Admin Password
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../time_zone/" class="md-nav__link">
         
   
@@ -3708,6 +3776,26 @@
   
   <span class="md-ellipsis">
     Log
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security
   </span>
   
 
@@ -4053,12 +4141,27 @@
 <p>GL.iNet router can be connected to the Internet in multiple ways, such as <a href="../internet_ethernet/">Ethernet</a>, <a href="../internet_repeater/">Repeater</a>, <a href="../internet_tethering/">Tethering</a>, <a href="../internet_cellular/">Cellular</a>. You can configure the router with multiple Internet access methods, so that when one type of Internet access is not available, it can automatically switch to another type of Internet access in a short time. Or use multiple Internet access methods at the same time, assigning the network connection to different connection methods in a certain ratio.</p>
 <p>Some models support <a href="../dual-ethernet_wan/">Dual-Ethernet WAN</a>, which will add an additional Ethernet interface on the user interface.</p>
 <h2 id="interface-status-tracking-method">Interface Status Tracking Method<a class="headerlink" href="#interface-status-tracking-method" title="Permanent link">&para;</a></h2>
-<p>GL.iNet routers have up to 4 interfaces, but this varies depending on the model. They are <strong>Ethernet</strong>, <strong>Repeater</strong>, <strong>Tethering</strong> and <strong>Cellular</strong>. Here is the GL-AXT1800 as an example.</p>
+<p>GL.iNet routers have up to 5 interfaces, but this varies depending on the model. They are <strong>Ethernet 1</strong>, <strong>Ethernet 2</strong>,<strong>Repeater</strong>, <strong>Tethering</strong> and <strong>Cellular</strong>. Here is the GL-MT6000 as an example.</p>
 <p>The router will use the ping or httping command to track the status of the connection to the destination IP to determine if the interface is available. If the interface is available, it will show as a green dot at the begining, otherwise it is gray.</p>
 <p><img alt="multi-wan interface status tracking method" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multi-wan/interface_status_tracking_method.png" /></p>
-<p>The setting of Interface Status Tracking Method</p>
-<p><img alt="multi-wan interface status tracking method setting" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multi-wan/interface_status_tracking_method_setting.png" /></p>
-<p>You can disable the interface status tracking, the router will use the physical status of the interface (such as whether the network cable is plugged in or not).</p>
+<p><strong>The setting of Interface Status Tracking Method</strong></p>
+<p><img alt="multi-wan interface status tracking method setting" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/en/4/tutorials/multi-wan/interface_status_tracking_method_setting.png" /></p>
+<ul>
+<li>
+<p><strong>Enable Interface Status Track</strong>: You can disable the interface status tracking, the router will use the physical status of the interface (such as whether the network cable is plugged in or not).</p>
+</li>
+<li>
+<p><strong>Low Data Mode</strong>: Enable the switch to track only when there is an interface network error, and recommend users to use Low Data Mode when you are on a limited data plan.However, one drawback is that reconnecting after a network disconnection may be slightly slower compared to the regular mode, and only the cellular interface will be turned on by default.</p>
+</li>
+</ul>
+<p><strong>Sensitivity Options</strong></p>
+<p><img alt="Sensitivity Options" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/en/4/interface_guide/multi-wan/sensitivity_options.png" /></p>
+<p>This sensitivity determines the time interval for Internet status detection. </p>
+<ul>
+<li>If the network is stable and in scenarios such as watching videos or live streams, playing games, users are recommended to use high sensitivity for quick switching in case of network disconnection. </li>
+<li>If the network is unstable and downloading cached files, users are recommended to use low sensitivity to prevent constant network switching and discovering unsuccessful connections.</li>
+</ul>
+<p><strong>Tips</strong>:Switching to high sensitivity may lead to network disconnection, please adjust it with caution.</p>
 <h2 id="multi-wan-methods">Multi-WAN methods<a class="headerlink" href="#multi-wan-methods" title="Permanent link">&para;</a></h2>
 <p>There are two methods, <strong>Failover</strong> and <strong>Load Balance</strong>. <strong>Failover</strong> and <strong>Load Balance</strong> are mutually exclusive functions, and you can only use one of them.</p>
 <h3 id="failover">Failover<a class="headerlink" href="#failover" title="Permanent link">&para;</a></h3>
