@@ -8074,13 +8074,13 @@
 <p><strong><em>v.</em></strong> Type in the following command and hit enter:</p>
 <p><code>easytether-usb</code></p>
 <p><strong><em>vi.</em></strong> Copy the following command to Putty:</p>
-<pre><code>cat &lt;&lt; EOF &gt;&gt; /etc/config/network
+<div class="highlight"><pre><span></span><code>cat &lt;&lt; EOF &gt;&gt; /etc/config/network
 
-config interface 'wan'
-option ifname 'tap-easytether'
-option proto 'dhcp'
+config interface &#39;wan&#39;
+option ifname &#39;tap-easytether&#39;
+option proto &#39;dhcp&#39;
 EOF
-</code></pre>
+</code></pre></div>
 <p><em>Note:  To paste it into Putty, just right click the black screen and then hit enter.</em></p>
 <p><strong><em>vii.</em></strong> Type in the following command to reboot your router or unplug the power cable of your router. Afterward, plug in the power cable to turn on the router.</p>
 <p><code>reboot -f</code></p>
@@ -8102,36 +8102,36 @@ EOF
 <p>If you are using your WAN ethernet port to connect to the internet, it may be tedious to ssh into your router when you want to switch between EasyTether and ethernet. This section will show you how to set your router up so you can use either one without needing to ssh into the router and reconfigure the interfaces.</p>
 <p><strong><em>i.</em></strong> Create the EasyTether interface</p>
 <p>SSH into your router with Putty and run the the following command:</p>
-<pre><code>cat &lt;&lt; EOF &gt;&gt; /etc/config/network
+<div class="highlight"><pre><span></span><code>cat &lt;&lt; EOF &gt;&gt; /etc/config/network
 
-config interface 'easytether'
-        option proto 'dhcp'
-        option metric '30'
-        option ifname 'tap-easytether'
+config interface &#39;easytether&#39;
+        option proto &#39;dhcp&#39;
+        option metric &#39;30&#39;
+        option ifname &#39;tap-easytether&#39;
 EOF
-</code></pre>
+</code></pre></div>
 <p><strong><em>ii.</em></strong> Add the EasyTether interface to the firewall.</p>
 <p>SSH into your router with Putty and run the the following command:</p>
-<pre><code>vi /etc/config/firewall
-</code></pre>
+<div class="highlight"><pre><span></span><code>vi /etc/config/firewall
+</code></pre></div>
 <p>Press <code>i</code> to change edit mode to insert.<br />
 You wil see several entries starting with <code>config zone</code>. Find the one with <code>option name 'wan'</code>.<br />
 Add <code>easytether</code> to the end of <code>option network</code>. (See example below)<br />
 Press <code>Esc</code>, then type <code>:wq</code>.  </p>
-<p>Example:</p>
-<pre><code>config zone
-        option name 'wan'
-        option input 'REJECT'
-        option output 'ACCEPT'
-        option forward 'REJECT'
-        option masq '1'
-        option mtu_fix '1'
-        option network 'wan wan6 wwan easytether'
-</code></pre>
+<p>Example:
+<div class="highlight"><pre><span></span><code>config zone
+        option name &#39;wan&#39;
+        option input &#39;REJECT&#39;
+        option output &#39;ACCEPT&#39;
+        option forward &#39;REJECT&#39;
+        option masq &#39;1&#39;
+        option mtu_fix &#39;1&#39;
+        option network &#39;wan wan6 wwan easytether&#39;
+</code></pre></div></p>
 <h2 id="enabling-auto-connect">Enabling auto-connect<a class="headerlink" href="#enabling-auto-connect" title="Permanent link">&para;</a></h2>
 <p>This will enable the router to automatically estabilish an easytether connection.</p>
 <p><strong><em>i.</em></strong> SSH into your router with Putty and run the the following commands:</p>
-<pre><code>cat &lt;&lt; EOF &gt;&gt; /etc/config/easytether
+<div class="highlight"><pre><span></span><code>cat &lt;&lt; EOF &gt;&gt; /etc/config/easytether
 
 while true
 do
@@ -8142,17 +8142,17 @@ do
 sleep 1
 done
 EOF
-</code></pre>
-<pre><code>cat &lt;&lt; EOF &gt;&gt; /etc/crontabs/root
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>cat &lt;&lt; EOF &gt;&gt; /etc/crontabs/root
 
 @reboot sh /etc/config/easytether
 EOF
-</code></pre>
+</code></pre></div>
 <h2 id="interface-priority">Interface priority<a class="headerlink" href="#interface-priority" title="Permanent link">&para;</a></h2>
 <p>It can be useful to use EasyTether as a fallback connection in the event your main source of internet goes down. This section shows you how to set interface priorities.</p>
 <p><strong><em>i.</em></strong> SSH into your router with Putty and run the the following commands:</p>
-<pre><code>vi /etc/config/network
-</code></pre>
+<div class="highlight"><pre><span></span><code>vi /etc/config/network
+</code></pre></div>
 <p>Edit the <code>option metric</code> value to your desired results for each interface. The lower the number, the higher the priority.  </p>
 <p>The recommended settings are as follows:<br />
 <code>option metric 10</code> <code>wan</code> (Ethernet)<br />

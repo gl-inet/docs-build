@@ -8003,31 +8003,31 @@
 
 <h3 id="install-kernel-modules">Install kernel modules<a class="headerlink" href="#install-kernel-modules" title="Permanent link">&para;</a></h3>
 <p>If you use our stock firmware, you can just install using <code>opkg</code></p>
-<pre><code>opkg update
+<div class="highlight"><pre><span></span><code>opkg update
 opkg install kmod-i2c-gpio-custom
 opkg install kmod-rtc-sd2068
-</code></pre>
+</code></pre></div>
 <p>If you want to compile your own firmware, choose these packages:</p>
-<pre><code>Kernel modules  ---&gt;  I2C support  ---&gt;  kmod-i2c-gpio-custom
+<div class="highlight"><pre><span></span><code>Kernel modules  ---&gt;  I2C support  ---&gt;  kmod-i2c-gpio-custom
 Kernel modules  ---&gt;  Other modules  ---&gt;  kmod-rtc-sd2068
-</code></pre>
+</code></pre></div>
 <h3 id="software">Software<a class="headerlink" href="#software" title="Permanent link">&para;</a></h3>
 <p>The GPIO used for RTC is below:</p>
 <p><code>SDA</code> &lt;--&gt; <code>GPIO1</code>
 <code>SCL</code> &lt;--&gt; <code>GPIO17</code></p>
 <p>Now you need in insert kernel modules and connect to the module</p>
-<pre><code>insmod i2c-gpio-custom.ko bus0=0,1,17
+<div class="highlight"><pre><span></span><code>insmod i2c-gpio-custom.ko bus0=0,1,17
 echo sd2068 0x32 &gt; /sys/bus/i2c/devices/i2c-0/new_device
-</code></pre>
+</code></pre></div>
 <p>To read the time from RTC module</p>
-<pre><code>hwclock -r
-</code></pre>
+<div class="highlight"><pre><span></span><code>hwclock -r
+</code></pre></div>
 <p>To sync the RTC module's time to mini router</p>
-<pre><code>hwclock -s
-</code></pre>
+<div class="highlight"><pre><span></span><code>hwclock -s
+</code></pre></div>
 <p>To write mini router's time to RTC module</p>
-<pre><code>hwclock -w
-</code></pre>
+<div class="highlight"><pre><span></span><code>hwclock -w
+</code></pre></div>
 <h2 id="poe-connection">PoE Connection<a class="headerlink" href="#poe-connection" title="Permanent link">&para;</a></h2>
 <p>We have a specific PoE module for GL-AR150 mini routers. You can find it in the PoE version of AR150 router.</p>
 <p>You can only apply one power supply method at one time, either via PoE (Power over Ethernet) or micro USB Power. The compatible passive or active PoE injector should be 48V 802.3af/at.</p>

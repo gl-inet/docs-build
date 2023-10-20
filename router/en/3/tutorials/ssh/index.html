@@ -7993,14 +7993,14 @@
 <p><code>ssh-keygen -f "~/.ssh/known_hosts" -R "192.168.8.1"</code></p>
 <p><img alt="ssh update known_hosts" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/2/app/src/ssh/Removed-Host-keygen.png" /></p>
 <p>You may also encounter the following error when connecting:</p>
-<pre><code>Unable to negotiate with 10.0.0.1 port 22: no matching host key type found. Their offer: ssh-rsa
-</code></pre>
-<p>This error is due to a change in the Openssh package from version 8.8. To fix it, open the ~/.ssh/config file with a text editor (you can use for example Nano or Vim) and add the following lines:</p>
-<pre><code>host 192.168.8.1
+<p><div class="highlight"><pre><span></span><code>Unable to negotiate with 10.0.0.1 port 22: no matching host key type found. Their offer: ssh-rsa
+</code></pre></div>
+This error is due to a change in the Openssh package from version 8.8. To fix it, open the ~/.ssh/config file with a text editor (you can use for example Nano or Vim) and add the following lines:</p>
+<p><div class="highlight"><pre><span></span><code>host 192.168.8.1
     HostkeyAlgorithms +ssh-rsa
     PubkeyAcceptedAlgorithms +ssh-rsa
-</code></pre>
-<p>Make sure to change the host IP if it is not the default one.</p>
+</code></pre></div>
+Make sure to change the host IP if it is not the default one.</p>
 <h3 id="2-log-in-router">2. Log In Router<a class="headerlink" href="#2-log-in-router" title="Permanent link">&para;</a></h3>
 <p>Retry the SSH login command: </p>
 <p><code>ssh root@192.168.8.1</code> </p>

@@ -7978,8 +7978,8 @@
 <h2 id="about-uboot">About uboot<a class="headerlink" href="#about-uboot" title="Permanent link">&para;</a></h2>
 <p>Uboot (universial bootloader) is the bootloader we used on our boards and routers to start OpenWrt Linux. The bootloader heavily depends on the hardware so almost every device requires a different bootloader.</p>
 <p>To use the bootloader, you have to <a href="../serial/">connect a UART serial connector</a> to your device.</p>
-<p>Taking our Atheros 9331 boards for example, when powered up, uboot will output the following text:</p>
-<pre><code>*********************************************
+<p>Taking our Atheros 9331 boards for example, when powered up, uboot will output the following text:
+<div class="highlight"><pre><span></span><code>*********************************************
 *   U-Boot 1.1.4  (Sep  9 2014, 09:20:16)   *
 *********************************************
 
@@ -7992,12 +7992,12 @@ CLOCKS: 400/400/200/33 MHz (CPU/RAM/AHB/SPI)
 LED on during eth initialization...
 
 Hit any key to stop autobooting:  0
-</code></pre>
-<p>Quickly press any key to stop booting.</p>
+</code></pre></div>
+Quickly press any key to stop booting.</p>
 <h2 id="uboot-console">Uboot console<a class="headerlink" href="#uboot-console" title="Permanent link">&para;</a></h2>
 <p>Uboot is very useful to save your router. Here is some useful command in uboot.</p>
 <p><code>printenv</code> prints out the environment variables</p>
-<pre><code>uboot&gt; printenv
+<p><div class="highlight"><pre><span></span><code>uboot&gt; printenv
 bootargs=console=ttyS0,115200 root=31:02 rootfstype=squashfs init=/sbin/init mtdparts=ar7240-nor0:128k(u-boot),1024k(kernel),2816k(rootfs),64k(config),64k(ART)
 bootcmd=bootm 0x9F020000
 bootdelay=1
@@ -8022,9 +8022,9 @@ ethact=eth0
 Environment size: 937 bytes
 
 uboot&gt;
-</code></pre>
-<p><code>md</code> displays data in flash or memory. The following command displays the data in flash from beginning, which is the binary of uboot itself.</p>
-<pre><code>uboot&gt; md 0x9f000000
+</code></pre></div>
+<code>md</code> displays data in flash or memory. The following command displays the data in flash from beginning, which is the binary of uboot itself.
+<div class="highlight"><pre><span></span><code>uboot&gt; md 0x9f000000
 9F000000: 100000FF 00000000 100000FD 00000000    ................
 9F000010: 1000018E 00000000 1000018C 00000000    ................
 9F000020: 1000018A 00000000 10000188 00000000    ................
@@ -8041,21 +8041,21 @@ uboot&gt;
 9F0000D0: 1000015E 00000000 1000015C 00000000    ...^.......\....
 9F0000E0: 1000015A 00000000 10000158 00000000    ...Z.......X....
 9F0000F0: 10000156 00000000 10000154 00000000    ...V.......T....
-</code></pre>
+</code></pre></div></p>
 <h2 id="setting-up-tftp-server">Setting up tftp server<a class="headerlink" href="#setting-up-tftp-server" title="Permanent link">&para;</a></h2>
 <h3 id="ubuntu-linux">Ubuntu Linux<a class="headerlink" href="#ubuntu-linux" title="Permanent link">&para;</a></h3>
-<p>In Ubuntu, you can install tftp using apt</p>
-<pre><code>sudo apt-get install tftpd-hpa
-</code></pre>
-<p>The configuration file is <code>/etc/default/tftpd-hpa</code>. Modify its content and change the TFTP_DIRECTORY to your folder which will contains your files.</p>
-<pre><code class="language-vim">TFTP_USERNAME=&quot;TFTP&quot;
-TFTP_DIRECTORY=&quot;/tftpboot&quot;
-TFTP_ADDRESS=&quot;[::]:69&quot;
-TFTP_OPTIONS=&quot;--secure&quot;
-</code></pre>
-<p>Sometime the service cannot be started because network is not available when it starts. Start the service manually.</p>
-<pre><code>sudo service tftpd-hpa restart
-</code></pre>
+<p>In Ubuntu, you can install tftp using apt
+<div class="highlight"><pre><span></span><code>sudo apt-get install tftpd-hpa
+</code></pre></div>
+The configuration file is <code>/etc/default/tftpd-hpa</code>. Modify its content and change the TFTP_DIRECTORY to your folder which will contains your files.
+<div class="highlight"><pre><span></span><code>TFTP_USERNAME<span class="p">=</span><span class="s2">&quot;TFTP&quot;</span>
+TFTP_DIRECTORY<span class="p">=</span><span class="s2">&quot;/tftpboot&quot;</span>
+TFTP_ADDRESS<span class="p">=</span><span class="s2">&quot;[::]:69&quot;</span>
+TFTP_OPTIONS<span class="p">=</span><span class="s2">&quot;--secure&quot;</span>
+</code></pre></div></p>
+<p>Sometime the service cannot be started because network is not available when it starts. Start the service manually.
+<div class="highlight"><pre><span></span><code>sudo service tftpd-hpa restart
+</code></pre></div></p>
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <p>Download service edition of tftpd from http://tftpd32.jounin.net/tftpd32_download.html, then install it.</p>
 <p><img alt="tftp install" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/2/dev/src/tftpd-install.png" /> </p>
@@ -8066,31 +8066,30 @@ TFTP_OPTIONS=&quot;--secure&quot;
 <h2 id="compiling-uboot">Compiling uboot<a class="headerlink" href="#compiling-uboot" title="Permanent link">&para;</a></h2>
 <p>Each device has a different uboot because it is hardware related.</p>
 <h3 id="gl-ar150-glinet6416-gl-ar300-gl-ar300m">GL-AR150, GL.iNet6416, GL-AR300, GL-AR300M<a class="headerlink" href="#gl-ar150-glinet6416-gl-ar300-gl-ar300m" title="Permanent link">&para;</a></h3>
-<p>For these models you can use <a href="https://github.com/pepe2k/u-boot_mod">Pepe2k's</a> uboot, you can download the source from github.</p>
-<pre><code>$ git clone https://github.com/pepe2k/u-boot_mod.git
+<p>For these models you can use <a href="https://github.com/pepe2k/u-boot_mod">Pepe2k's</a> uboot, you can download the source from github.
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/pepe2k/u-boot_mod.git
 $ cd u-boot_mod
-</code></pre>
-<p>To compile the source, you need to have a cross complier toolchain. I am using openwrt toolchain. Make modification to the <code>Makefile</code>.</p>
-<pre><code class="language-cmake">export BUILD_TOPDIR=$(PWD)
-export STAGING_DIR=$(BUILD_TOPDIR)/tmp
+</code></pre></div>
+To compile the source, you need to have a cross complier toolchain. I am using openwrt toolchain. Make modification to the <code>Makefile</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="err">export</span><span class="w"> </span><span class="err">BUILD_TOPDIR=$(PWD)</span>
+<span class="err">export</span><span class="w"> </span><span class="err">STAGING_DIR=$(BUILD_TOPDIR)/tmp</span>
 
-# **Replace the following line with your real path**
-export TOOLPATH=$(BUILD_TOPDIR)/../openwrt/staging_dir/toolchain-mips_34kc_gcc-4.8-linaro_uClibc-0.9.33.2/
+<span class="c"># **Replace the following line with your real path**</span>
+<span class="err">export</span><span class="w"> </span><span class="err">TOOLPATH=$(BUILD_TOPDIR)/../openwrt/staging_dir/toolchain-mips_34kc_gcc-4.8-linaro_uClibc-0.9.33.2/</span>
 
-export PATH:=$(TOOLPATH)/bin:${PATH}
+<span class="err">export</span><span class="w"> </span><span class="err">PATH:=$(TOOLPATH)/bin:${PATH}</span>
 
-export MAKECMD=make --silent --no-print-directory ARCH=mips CROSS_COMPILE=mips-openwrt-linux-uclibc-
+<span class="err">export</span><span class="w"> </span><span class="err">MAKECMD=make</span><span class="w"> </span><span class="err">--silent</span><span class="w"> </span><span class="err">--no-print-directory</span><span class="w"> </span><span class="err">ARCH=mips</span><span class="w"> </span><span class="err">CROSS_COMPILE=mips-openwrt-linux-uclibc-</span>
 
-# boot delay (time to autostart boot command)
-export CONFIG_BOOTDELAY=1
-</code></pre>
+<span class="c"># boot delay (time to autostart boot command)</span>
+<span class="err">export</span><span class="w"> </span><span class="err">CONFIG_BOOTDELAY=1</span>
+</code></pre></div>
 <p>Now start to compile the source. For example, for GL.iNet 6416, you can use:</p>
-<pre><code>make gl-inet
-
-</code></pre>
-<p>For GL-AR150, you can do this:</p>
-<pre><code>make 8devices_carambola2
-</code></pre>
+<p><div class="highlight"><pre><span></span><code>make gl-inet
+</code></pre></div>
+For GL-AR150, you can do this:
+<div class="highlight"><pre><span></span><code>make 8devices_carambola2
+</code></pre></div></p>
 <p>For GL-AR300 and GL-AR300M, we modified the code a lot so please consult us for details.</p>
 <p>It should be very quick and finish in minutes. Then you will find <code>uboot_for_gl-inet.bin</code> in <code>bin/</code>.</p>
 <h3 id="gl-ar150-uboot-modify-as-iot-devices">GL-AR150 uboot modify as IoT devices<a class="headerlink" href="#gl-ar150-uboot-modify-as-iot-devices" title="Permanent link">&para;</a></h3>
@@ -8103,45 +8102,45 @@ export CONFIG_BOOTDELAY=1
 <p>You can use <code>printenv</code> to display the environment variables in uboot. here are some quick guide of how to use uboot.</p>
 <p>First you need to set up tftp server as above and put your files in tftp root folder.</p>
 <h3 id="basic-uboot-command">basic uboot command<a class="headerlink" href="#basic-uboot-command" title="Permanent link">&para;</a></h3>
-<p><strong>Download file to router</strong> (AR150, Domino, 6416 as example)</p>
-<pre><code>tftp 0x81000000 file.bin
-</code></pre>
-<p><strong>Erase some part of flash</strong></p>
-<pre><code>erase 0x9f050000 +0x10000
-</code></pre>
-<p><strong>Write file to flash</strong></p>
-<pre><code>cp.b 0x81000000 0x9f050000 0x10000
-</code></pre>
+<p><strong>Download file to router</strong> (AR150, Domino, 6416 as example)
+<div class="highlight"><pre><span></span><code>tftp 0x81000000 file.bin
+</code></pre></div>
+<strong>Erase some part of flash</strong>
+<div class="highlight"><pre><span></span><code>erase 0x9f050000 +0x10000
+</code></pre></div>
+<strong>Write file to flash</strong>
+<div class="highlight"><pre><span></span><code>cp.b 0x81000000 0x9f050000 0x10000
+</code></pre></div></p>
 <h3 id="predefined-script">predefined script<a class="headerlink" href="#predefined-script" title="Permanent link">&para;</a></h3>
 <p>Actually it is not easy to use basic uboot command to do everyting. It is quite risky. Fortunately we have some pre-defined scripts that simplifeis the work.</p>
 <p>Plase do check using <code>printenv</code> to find out the correct filename that the script trying to download. 
 For example, if you want to update uboot for AR150, the uboot file should be named as <code>uboot_for_gl-ar150.bin</code> and put in your tftp root folder.</p>
-<p><strong>Replace uboot</strong></p>
-<pre><code>run lu
-</code></pre>
-<p><strong>Update firmware</strong></p>
-<pre><code>run lf
-</code></pre>
-<p><strong>Update mac address etc</strong></p>
-<pre><code>run lc
-</code></pre>
+<p><strong>Replace uboot</strong>
+<div class="highlight"><pre><span></span><code>run lu
+</code></pre></div>
+<strong>Update firmware</strong>
+<div class="highlight"><pre><span></span><code>run lf
+</code></pre></div>
+<strong>Update mac address etc</strong>
+<div class="highlight"><pre><span></span><code>run lc
+</code></pre></div></p>
 <p><strong>Erase uboot env variables</strong>
 Be sure to use the right command for the right model
-For AR150, Domino AR300, AR300M</p>
-<pre><code>erase 0x9f040000 +0x10000
+For AR150, Domino AR300, AR300M
+<div class="highlight"><pre><span></span><code>erase 0x9f040000 +0x10000
 reset
-</code></pre>
-<p>For 6416</p>
-<pre><code>erase 0x9f010000 +0x10000
+</code></pre></div>
+For 6416
+<div class="highlight"><pre><span></span><code>erase 0x9f010000 +0x10000
 reset
-</code></pre>
+</code></pre></div></p>
 <h3 id="uboot-web-ui">Uboot Web UI<a class="headerlink" href="#uboot-web-ui" title="Permanent link">&para;</a></h3>
 <p>Uboot has a webUI so that you can save your device without entering uboot console.</p>
 <p><img alt="Uboot Web UI" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/2/dev/src/uboot_failsafe.png" /></p>
 <p>Check <a href="../../tutorials/debrick/">this section</a>  for how to enter uboot web UI using the reset button.</p>
-<p>If you are in uboot console, you can start the WebUI the following command. This only works for AR series, not MT series.</p>
-<pre><code>httpd
-</code></pre>
+<p>If you are in uboot console, you can start the WebUI the following command. This only works for AR series, not MT series.
+<div class="highlight"><pre><span></span><code>httpd
+</code></pre></div></p>
 <h3 id="ar300m-specific">AR300M Specific<a class="headerlink" href="#ar300m-specific" title="Permanent link">&para;</a></h3>
 <p>AR300M uses dual flash so in uboot there are a lot of things to deal with dual flash. Please refer to <a href="../../specification/gl-ar300m/">AR300M</a> for more details.</p>
 

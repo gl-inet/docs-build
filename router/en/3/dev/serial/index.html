@@ -7890,15 +7890,15 @@
 <p>Serial pins are the most used pins for DIY users. You can connect to a <a href="http://www.ebay.com/itm/PL-2303-USB-to-UART-TTL-adapter-/321407483336">USB UART</a> adapter as in the picture.</p>
 <p><img alt="UART" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/2/dev/src/uart_serial.jpg" /></p>
 <h2 id="linux-ubuntumac">Linux (ubuntu)/MAC<a class="headerlink" href="#linux-ubuntumac" title="Permanent link">&para;</a></h2>
-<p>In Linux or OSX, when you plug the USB UART adapter to your computer, the driver should already be installed. Check if you have device registered.</p>
-<pre><code>$ls /dev/ttyUSB*
+<p>In Linux or OSX, when you plug the USB UART adapter to your computer, the driver should already be installed. Check if you have device registered.
+<div class="highlight"><pre><span></span><code>$ls /dev/ttyUSB*
 /dev/ttyUSB0
-</code></pre>
-<p>you need to have kermit to connect to serial.</p>
-<pre><code>$sudo apt-get install gkermit
-</code></pre>
-<p>Then you need to make the configuration file for kermit: ~/.kermrc. The content should be:</p>
-<pre><code>set line /dev/ttyUSB0
+</code></pre></div>
+you need to have kermit to connect to serial.
+<div class="highlight"><pre><span></span><code>$sudo apt-get install gkermit
+</code></pre></div></p>
+<p>Then you need to make the configuration file for kermit: ~/.kermrc. The content should be:
+<div class="highlight"><pre><span></span><code>set line /dev/ttyUSB0
 set speed 115200
 set carrier-watch off
 set handshake none
@@ -7909,16 +7909,15 @@ set file name lit
 set rec pack 1000
 set send pack 1000
 set window 5
-</code></pre>
-<p>Now connect to the device using root:</p>
-<pre><code>$sudo kermit -c
+</code></pre></div></p>
+<p>Now connect to the device using root:
+<div class="highlight"><pre><span></span><code>$sudo kermit -c
 Connecting to /dev/ttyUSB0, speed 115200
  Escape character: Ctrl-\ (ASCII 28, FS): enabled
 Type the escape character followed by C to get back,
 or followed by ? to see other options.
 ----------------------------------------------------
-
-</code></pre>
+</code></pre></div></p>
 <p>When you have finished, press <code>Ctrl-\</code> then <code>c</code> to quit kermit.</p>
 <h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
 <p>When connecting the USB UART adapter to your computer, you may need to install drivers for them. The drivers can be download here: somewhere.</p>

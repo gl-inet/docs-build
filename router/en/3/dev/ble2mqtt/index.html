@@ -8042,24 +8042,23 @@
 <h2 id="ble-tools">BLE Tools<a class="headerlink" href="#ble-tools" title="Permanent link">&para;</a></h2>
 <p>Both GL-X750 and GL-S1300 come with OpenWrt and our BLE tools. </p>
 <p>In your current firmware for S1300, there may be a BLE tool which comes with a UI. But we are further developing this and you need to use the new BLE tool.</p>
-<pre><code class="language-shell">root@GL-S1300:~# opkg remove gl-ble-daemon gl-ble-api
-root@GL-S1300:~# opkg install bletool
-Installing bletool (1-2) to root...
-Downloading http://download.gl-inet.com/releases/packages-3.x/ipq40xx/glinet/bletool_1-2_ipq806x.ipk.
-Configuring bletool.
-</code></pre>
+<div class="highlight"><pre><span></span><code>root@GL-S1300:~#<span class="w"> </span>opkg<span class="w"> </span>remove<span class="w"> </span>gl-ble-daemon<span class="w"> </span>gl-ble-api
+root@GL-S1300:~#<span class="w"> </span>opkg<span class="w"> </span>install<span class="w"> </span>bletool
+Installing<span class="w"> </span>bletool<span class="w"> </span><span class="o">(</span><span class="m">1</span>-2<span class="o">)</span><span class="w"> </span>to<span class="w"> </span>root...
+Downloading<span class="w"> </span>http://download.gl-inet.com/releases/packages-3.x/ipq40xx/glinet/bletool_1-2_ipq806x.ipk.
+Configuring<span class="w"> </span>bletool.
+</code></pre></div>
 <p>Now you can use the bletool to test your BLE function.</p>
-<pre><code class="language-shell">root@GL-S1300:~# bletool on
-root@GL-S1300:~# bletool discovery_type 1 1
+<div class="highlight"><pre><span></span><code>root@GL-S1300:~#<span class="w"> </span>bletool<span class="w"> </span>on
+root@GL-S1300:~#<span class="w"> </span>bletool<span class="w"> </span>discovery_type<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span>
 OK
-root@GL-S1300:~# bletool discovery 1 1 0
+root@GL-S1300:~#<span class="w"> </span>bletool<span class="w"> </span>discovery<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span>
 OK
-af000045d1e43df801ff1f0201061bff570100a0c931e781473f364824a724d7d3380402f83de4d1  4500
+af000045d1e43df801ff1f0201061bff570100a0c931e781473f364824a724d7d3380402f83de4d1<span class="w">  </span><span class="m">4500</span>
 af040045d1e43df801ff0f0a094d492042616e6420320302e0fe
 d0009238c444f07001ff0e02011a0aff4c001005031802dcbd
 d0049238c444f07001ff00
-
-</code></pre>
+</code></pre></div>
 <p>You can find a detailed documentation about <code>bletool</code> <strong><em>https://github.com/gl-inet/ble2mqtt</em></strong>. </p>
 <h2 id="mqtt">MQTT<a class="headerlink" href="#mqtt" title="Permanent link">&para;</a></h2>
 <p>MQTT is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol.  You can find official document in <a href="https://mqtt.org">mqtt.org</a>.</p>
@@ -8071,28 +8070,26 @@ d0049238c444f07001ff00
 <p>Follow <a href="../../tutorials/cloud/#setup">this docs</a> to add devices on GoodCloud. </p>
 <p><strong>Where is the config file</strong></p>
 <p>The config file for cloud is in UCI. You will need to modify this directly if you want to connect to your own MQTT cloud.</p>
-<pre><code class="language-shell">root@GL-S1300:~# cat /etc/config/glconfig
+<div class="highlight"><pre><span></span><code>root@GL-S1300:~#<span class="w"> </span>cat<span class="w"> </span>/etc/config/glconfig
 ....
-config service 'cloud'
-        option enable '1'
-        option check_status '1'
-        option serverzone 'gslb-jp.goodcloud.xyz'
-        option username 'your name'
-        option email 'your@email.address'
-        option bindtime '1558928701947'
-
-</code></pre>
+config<span class="w"> </span>service<span class="w"> </span><span class="s1">&#39;cloud&#39;</span>
+<span class="w">        </span>option<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="s1">&#39;1&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>check_status<span class="w"> </span><span class="s1">&#39;1&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>serverzone<span class="w"> </span><span class="s1">&#39;gslb-jp.goodcloud.xyz&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>username<span class="w"> </span><span class="s1">&#39;your name&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>email<span class="w"> </span><span class="s1">&#39;your@email.address&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>bindtime<span class="w"> </span><span class="s1">&#39;1558928701947&#39;</span>
+</code></pre></div>
 <p><strong>Forward data to GoodCloud</strong></p>
 <p>To forward data to GoodCloud, you can use simple shell script. </p>
 <p>After your device is connected to your cloud account, you can <a href="../../tutorials/ssh/">SSH</a> to the router, try the following command.  </p>
-<pre><code class="language-shell">root@GL-S1300:~# ubus call mqtt pub '{&quot;api&quot;:&quot;/user/data&quot;, &quot;data&quot;:&quot;hello from S1300&quot;
-}'
-{
-        &quot;code&quot;: 0
-}
+<div class="highlight"><pre><span></span><code>root@GL-S1300:~#<span class="w"> </span>ubus<span class="w"> </span>call<span class="w"> </span>mqtt<span class="w"> </span>pub<span class="w"> </span><span class="s1">&#39;{&quot;api&quot;:&quot;/user/data&quot;, &quot;data&quot;:&quot;hello from S1300&quot;</span>
+<span class="s1">}&#39;</span>
+<span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;code&quot;</span>:<span class="w"> </span><span class="m">0</span>
+<span class="o">}</span>
 root@GL-S1300:~#
-
-</code></pre>
+</code></pre></div>
 <p>Login the <a href="https://www.goodcloud.xyz">GoodCloud</a>，find the registered device in "device list", click the device name and you will find your message in timeline.</p>
 <p><img alt="goodcloud device list" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/dev/ble_bridge/find-device.png" /></p>
 <p><img alt="goodcloud timeline" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/dev/ble_bridge/find-log.jpg" /></p>
@@ -8132,7 +8129,7 @@ root@GL-S1300:~#
 <p>2) Enter a Name for the policy,such as x750_policy, then <strong>Advance mode</strong></p>
 <p><img alt="aws IoT create a policy" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/dev/ble_bridge/image010.png" /></p>
 <p>3) Delete the automatically created policy code, then paste the policy below. </p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
   &quot;Version&quot;: &quot;2012-10-17&quot;,
   &quot;Statement&quot;: [
     {
@@ -8149,7 +8146,7 @@ root@GL-S1300:~#
     }
   ]
 }
-</code></pre>
+</code></pre></div>
 <p>4) <strong>Create</strong> Policy after you pasted policy code. </p>
 <p><img alt="aws IoT create policy" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/dev/ble_bridge/image012.png" /></p>
 <p>5) On the left side, Secure --&gt; Certificates, Select the certificate you just created, Actions
@@ -8164,43 +8161,43 @@ root@GL-S1300:~#
 <p>xxxxxxxxxx.private.pem.key --&gt; client.key</p>
 <p>xxxxxxxxxx. certificate.pem.crt --&gt; client.crt</p>
 <p>Windows User use <a href="../../tutorials/scp/">WinScp</a> to transfer these three certificate files to <code>/etc/aws/</code> on router,  please create new folder if you cannot find <code>/etc/aws/</code>.</p>
-<pre><code class="language-shell">mkdir /etc/aws/
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>/etc/aws/
+</code></pre></div>
 <p><strong>2) Update mqtt package on GL.iNet routers.</strong> </p>
 <p>You can check if your router comes with updated MQTT package. If it is not, please upgrade it if you want to use AWS.</p>
 <p>Download the updated <a href="https://github.com/gl-inet/ble2mqtt">mqtt package</a>, file name is '<strong>gl-mqtt_3.0.37-1_mips_24kc.ipk</strong>‘</p>
 <p>Use WinSCP/SSH to transfer the package to /tmp/ , then delete the old package. </p>
-<pre><code class="language-shell">opkg remove gl-mqtt --force-depends
-</code></pre>
+<div class="highlight"><pre><span></span><code>opkg<span class="w"> </span>remove<span class="w"> </span>gl-mqtt<span class="w"> </span>--force-depends
+</code></pre></div>
 <p>Then install the package:</p>
-<pre><code class="language-shell">opkg install gl-mqtt_3.0.37-1_mips_24kc.ipk
-</code></pre>
+<div class="highlight"><pre><span></span><code>opkg<span class="w"> </span>install<span class="w"> </span>gl-mqtt_3.0.37-1_mips_24kc.ipk
+</code></pre></div>
 <p><strong>3) Setup config file for your router</strong></p>
 <p>Edit  <code>/etc/config/glconfig</code> </p>
 <p>Add the following code to your <strong>glconfig</strong> file.</p>
-<pre><code class="language-shell">config service 'cloud'                                                   
-        option enable '1'                                               
-        option sub_topic '/a1rLNyG2VK5/mqtt_demo/user/get'               
-        option pub_topic '/sys/a1rLNyG2VK5/mqtt_demo/thing/event/property/post' 
-        option service_pride '2'                                         
-        option address 'ssl://xxxxxxxxxxxxxx-ats.iot.us-east-1.amazonaws.com:8883'
-        option clientid 'iotconsole-xxxxxxxxxxxxxx'   
-        option log '1'
-</code></pre>
+<div class="highlight"><pre><span></span><code>config<span class="w"> </span>service<span class="w"> </span><span class="s1">&#39;cloud&#39;</span><span class="w">                                                   </span>
+<span class="w">        </span>option<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w">                                               </span>
+<span class="w">        </span>option<span class="w"> </span>sub_topic<span class="w"> </span><span class="s1">&#39;/a1rLNyG2VK5/mqtt_demo/user/get&#39;</span><span class="w">               </span>
+<span class="w">        </span>option<span class="w"> </span>pub_topic<span class="w"> </span><span class="s1">&#39;/sys/a1rLNyG2VK5/mqtt_demo/thing/event/property/post&#39;</span><span class="w"> </span>
+<span class="w">        </span>option<span class="w"> </span>service_pride<span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="w">                                         </span>
+<span class="w">        </span>option<span class="w"> </span>address<span class="w"> </span><span class="s1">&#39;ssl://xxxxxxxxxxxxxx-ats.iot.us-east-1.amazonaws.com:8883&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>clientid<span class="w"> </span><span class="s1">&#39;iotconsole-xxxxxxxxxxxxxx&#39;</span><span class="w">   </span>
+<span class="w">        </span>option<span class="w"> </span>log<span class="w"> </span><span class="s1">&#39;1&#39;</span>
+</code></pre></div>
 <p>The sample of glconfig file: </p>
 <p><img alt="example of glconfig file" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/dev/ble_bridge/image016.png" /></p>
 <p>If you already setup GoodCloud on router before, just add the code at the end of <strong>config service 'cloud'</strong></p>
 <p><img alt="edit glconfig file" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/dev/ble_bridge/image017.png" /></p>
-<pre><code class="language-shell">option log '1'
-</code></pre>
+<div class="highlight"><pre><span></span><code>option<span class="w"> </span>log<span class="w"> </span><span class="s1">&#39;1&#39;</span>
+</code></pre></div>
 <p>must be contained in the config file.</p>
 <p>Note**</p>
 <p>The topic ARN follows this format:</p>
-<pre><code class="language-shell">arn:aws:iot:*your-region*:*your-aws-account*:topic/*&lt;your/topic&gt;*
-</code></pre>
+<div class="highlight"><pre><span></span><code>arn:aws:iot:*your-region*:*your-aws-account*:topic/*&lt;your/topic&gt;*
+</code></pre></div>
 <p>For example:</p>
-<pre><code class="language-shell">arn:aws:iot:us-east-1:123456789012:topic/my/topic
-</code></pre>
+<div class="highlight"><pre><span></span><code>arn:aws:iot:us-east-1:123456789012:topic/my/topic
+</code></pre></div>
 <p><strong>Topics</strong></p>
 <p>The message broker uses topics to route messages from publishing clients to subscribing clients. The forward slash (/) is used to separate topic hierarchy.</p>
 <p><strong>Note</strong></p>
@@ -8233,61 +8230,61 @@ root@GL-S1300:~#
 <p><img alt="aws IoT thing interact" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/dev/ble_bridge/image020.png" /></p>
 <p><strong>5) Connect your devices to AWS IoT Cloud</strong></p>
 <p>Start connect to AWS Cloud</p>
-<pre><code class="language-shell">/etc/init.d/gl_mqtt start
-</code></pre>
+<div class="highlight"><pre><span></span><code>/etc/init.d/gl_mqtt<span class="w"> </span>start
+</code></pre></div>
 <p>Restart the mqtt services if its process is running.</p>
-<pre><code class="language-shell">/etc/init.d/gl_mqtt restart
-</code></pre>
+<div class="highlight"><pre><span></span><code>/etc/init.d/gl_mqtt<span class="w"> </span>restart
+</code></pre></div>
 <p>Check mqtt process status</p>
-<pre><code class="language-shell">ps | grep gl_mqtt
-</code></pre>
+<div class="highlight"><pre><span></span><code>ps<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>gl_mqtt
+</code></pre></div>
 <p><img alt="check gl_mqtt process" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/dev/ble_bridge/image021.png" /></p>
 <h4 id="4-mqtt-communication-testing">4. MQTT Communication Testing<a class="headerlink" href="#4-mqtt-communication-testing" title="Permanent link">&para;</a></h4>
 <p><strong>Test-&gt;Subscribe to a topic</strong></p>
 <p>The subscription and publish topics in glconfig file: </p>
-<pre><code class="language-shell">option sub_topic '/a1rLNyG2VK5/mqtt_demo/user/get'               
-option pub_topic '/sys/a1rLNyG2VK5/mqtt_demo/thing/event/property/post' 
-</code></pre>
+<div class="highlight"><pre><span></span><code>option<span class="w"> </span>sub_topic<span class="w"> </span><span class="s1">&#39;/a1rLNyG2VK5/mqtt_demo/user/get&#39;</span><span class="w">               </span>
+option<span class="w"> </span>pub_topic<span class="w"> </span><span class="s1">&#39;/sys/a1rLNyG2VK5/mqtt_demo/thing/event/property/post&#39;</span><span class="w"> </span>
+</code></pre></div>
 <p>So the Subscription and Publish topic in AWS IoT Cloud shall be exchanged:</p>
-<pre><code>Subscription Topic:  '/sys/a1rLNyG2VK5/mqtt_demo/thing/event/property/post' 
-Publish topic:  '/a1rLNyG2VK5/mqtt_demo/user/get'
-</code></pre>
+<div class="highlight"><pre><span></span><code>Subscription Topic:  &#39;/sys/a1rLNyG2VK5/mqtt_demo/thing/event/property/post&#39; 
+Publish topic:  &#39;/a1rLNyG2VK5/mqtt_demo/user/get&#39;
+</code></pre></div>
 <p><img alt="aws IoT subscribe to topic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/dev/ble_bridge/image022.png" /></p>
 <p>Try <strong>Subscribe to topic</strong>, a message published by your router will be received in few seconds.</p>
 <p><img alt="receive message from router" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/dev/ble_bridge/image023.png" /></p>
 <p>Or <strong>Publish topic to your router a message</strong>:</p>
 <p><img alt="publish topic to your router a message" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/dev/ble_bridge/image024.png" /></p>
 <p>A message published by AWS IoT Cloud will be received on your router in few seconds. </p>
-<pre><code class="language-shell">logread
-</code></pre>
+<div class="highlight"><pre><span></span><code>logread
+</code></pre></div>
 <p><img alt="router receive message" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/dev/ble_bridge/image025.png" /></p>
 <h2 id="application-and-demo">Application and Demo<a class="headerlink" href="#application-and-demo" title="Permanent link">&para;</a></h2>
 <h3 id="read-ble-thermal-sensor">Read BLE Thermal Sensor<a class="headerlink" href="#read-ble-thermal-sensor" title="Permanent link">&para;</a></h3>
 <p>The following demo show how to read data from a thermal sensor, pack the data in JSON format and  send to the GoodCloud.</p>
-<pre><code class="language-shell">#!/usr/bin/sh
-. /usr/share/libubox/jshn.sh
-while true
-do
-sleep 5
-bletool on
-bletool discovery_type 1 1
-bletool discovery 1 1 0 | awk '/0d09536d6172745f426561636f6e02/{print $0; exit}' &gt;
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/sh</span>
+.<span class="w"> </span>/usr/share/libubox/jshn.sh
+<span class="k">while</span><span class="w"> </span><span class="nb">true</span>
+<span class="k">do</span>
+sleep<span class="w"> </span><span class="m">5</span>
+bletool<span class="w"> </span>on
+bletool<span class="w"> </span>discovery_type<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span>
+bletool<span class="w"> </span>discovery<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;/0d09536d6172745f426561636f6e02/{print $0; exit}&#39;</span><span class="w"> </span>&gt;
 /tmp/blesniffer.log
-bletool end_procedure
-adv_data=`awk '{print $1}' /tmp/blesniffer.log`
-date=`date +&quot;%Y%m%d%H%M%S&quot;`
+bletool<span class="w"> </span>end_procedure
+<span class="nv">adv_data</span><span class="o">=</span><span class="sb">`</span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="w"> </span>/tmp/blesniffer.log<span class="sb">`</span>
+<span class="nv">date</span><span class="o">=</span><span class="sb">`</span>date<span class="w"> </span>+<span class="s2">&quot;%Y%m%d%H%M%S&quot;</span><span class="sb">`</span>
 json_init
-json_add_string &quot;api&quot; &quot;/user/data&quot;
-json_add_object &quot;data&quot;
-json_add_string &quot;date&quot; &quot;$date&quot;
-json_add_string &quot;advertising data&quot; &quot;$adv_data&quot;
+json_add_string<span class="w"> </span><span class="s2">&quot;api&quot;</span><span class="w"> </span><span class="s2">&quot;/user/data&quot;</span>
+json_add_object<span class="w"> </span><span class="s2">&quot;data&quot;</span>
+json_add_string<span class="w"> </span><span class="s2">&quot;date&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$date</span><span class="s2">&quot;</span>
+json_add_string<span class="w"> </span><span class="s2">&quot;advertising data&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$adv_data</span><span class="s2">&quot;</span>
 json_close_object
 json_close_object
-data=`json_dump`
-ubus call mqtt pub &quot;$data&quot;
-rm /tmp/blesniffer.log
-done
-</code></pre>
+<span class="nv">data</span><span class="o">=</span><span class="sb">`</span>json_dump<span class="sb">`</span>
+ubus<span class="w"> </span>call<span class="w"> </span>mqtt<span class="w"> </span>pub<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$data</span><span class="s2">&quot;</span>
+rm<span class="w"> </span>/tmp/blesniffer.log
+<span class="k">done</span>
+</code></pre></div>
 
   <!-- Last update of source file -->
   
