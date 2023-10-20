@@ -1222,57 +1222,57 @@ After configuring the develop environment, decompress and get into the source co
 <h2 id="modify-source-code">Modify source code<a class="headerlink" href="#modify-source-code" title="Permanent link">&para;</a></h2>
 <p><strong>1. Modify WiFi setting</strong></p>
 <p>Find contents as below in the <code>ibeacon_demo.c</code> and modify the WiFi setting to what you want.</p>
-<pre><code class="language-c">wifi_config_t wifi_config = {
-    .sta = {
-        .ssid = &quot;WIFI SSID&quot;, //
-        .password = &quot;WIFI password&quot;,
-    },
-};
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">wifi_config_t</span><span class="w"> </span><span class="n">wifi_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="n">sta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.</span><span class="n">ssid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;WIFI SSID&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//</span>
+<span class="w">        </span><span class="p">.</span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;WIFI password&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div>
 <p><strong>2. Modify MQTT setting</strong></p>
 <p>Similar with WiFi setting. Find and modify the struct <code>esp_mqtt_client_config_t</code> in the <code>ibeacon_demo.c</code>.</p>
-<pre><code class="language-c">esp_mqtt_client_config_t mqtt_cfg = {
-    .uri = &quot;mqtt://192.168.100.174:61613&quot;,//IP:port
-    .usernaem = &quot;MQTT username&quot;,
-    .password = &quot;MQTT password&quot;,
-    .event_handle = mqtt_event_handler,
-};
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">esp_mqtt_client_config_t</span><span class="w"> </span><span class="n">mqtt_cfg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="n">uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mqtt://192.168.100.174:61613&quot;</span><span class="p">,</span><span class="c1">//IP:port</span>
+<span class="w">    </span><span class="p">.</span><span class="n">usernaem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MQTT username&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MQTT password&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">event_handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mqtt_event_handler</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div>
 <p><em>(If you want to connect to MQTT broker except tcp, change the url prefix.)</em></p>
-<pre><code class="language-c">tcp ---&gt; mqtt://
-tcp-ssl ---&gt; mqtts://
-web socket ---&gt; ws://
-web socket secure ---&gt; wss://
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">tcp</span><span class="w"> </span><span class="o">---&gt;</span><span class="w"> </span><span class="n">mqtt</span><span class="o">:</span><span class="c1">//</span>
+<span class="n">tcp</span><span class="o">-</span><span class="n">ssl</span><span class="w"> </span><span class="o">---&gt;</span><span class="w"> </span><span class="n">mqtts</span><span class="o">:</span><span class="c1">//</span>
+<span class="n">web</span><span class="w"> </span><span class="n">socket</span><span class="w"> </span><span class="o">---&gt;</span><span class="w"> </span><span class="n">ws</span><span class="o">:</span><span class="c1">//</span>
+<span class="n">web</span><span class="w"> </span><span class="n">socket</span><span class="w"> </span><span class="n">secure</span><span class="w"> </span><span class="o">---&gt;</span><span class="w"> </span><span class="n">wss</span><span class="o">:</span><span class="c1">//</span>
+</code></pre></div>
 <h2 id="compile-and-flash">Compile and Flash<a class="headerlink" href="#compile-and-flash" title="Permanent link">&para;</a></h2>
 <p><strong>1. Configuration</strong></p>
 <p>Before compile the application, get into your project folder <em>(here is <code>ble_ibeacon/</code>)</em>, using command <code>make menuconfig</code> to configure some basic setting like serial port.<br />
 In the configuration inteface, you just need to change three point as follow.<br />
 Firstly, click <code>Serial flasher config</code>.</p>
-<p><img alt="espressif iot development framework configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/espressif_iot_development_framework_configuration.jpg" /></p>
+<p><img alt="espressif iot development framework configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/espressif_iot_development_framework_configuration.jpg" /></p>
 <p>Then modify the three point marked by red line.</p>
-<p><img alt="espressif iot development framework configuration serial flasher config" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/espressif_iot_development_framework_configuration_serial_flasher_config.jpg" /></p>
+<p><img alt="espressif iot development framework configuration serial flasher config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/espressif_iot_development_framework_configuration_serial_flasher_config.jpg" /></p>
 <p>Set <code>Default serial port</code> to the port name show in your PC, typically is <code>/dev/ttyUSB0</code>.
 Set <code>Serial flasher config ---&gt;Flash SPI speed</code> to <code>80MHz</code>.
 Set <code>Serial flasher config ---&gt;Flash size</code> to <code>4MB</code>.</p>
 <p><strong>2. Build</strong></p>
 <p>In your project folder, using command <code>make all</code>. It will compile and build the firmware. When finished sucessfully, it will show information like this.</p>
-<p><img alt="compile and build firmware" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/compile_and_build_firmware.jpg" /></p>
+<p><img alt="compile and build firmware" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/compile_and_build_firmware.jpg" /></p>
 <p><strong>3. Flash</strong></p>
 <p>GL-S10 using UART to flash the firmware, and also using this UART to output the system log.
 Connect the UART in S10 to the PC by a USB-UART converter. The PC will find a new usb device like <code>/dev/ttyUSB0</code>. It is the name you should write in the <code>Default serial port</code>.   </p>
-<p><img alt="gl-s10 pcb" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/specification/gl-s10/gl-s10-pinout.jpg" /></p>
+<p><img alt="gl-s10 pcb" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/specification/gl-s10/gl-s10-pinout.jpg" /></p>
 <p>After connect S10 UART to the PC, using command <code>make flash</code> or <code>make flash monitor</code> to flash the firmware. When shows like that, it means the PC is waiting S10 to get into "download mode".</p>
-<p><img alt="wait flash" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/wait_flash.jpg" /></p>
+<p><img alt="wait flash" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/wait_flash.jpg" /></p>
 <p>How to get into "download mode", do in this way. Unplug the S10 power, press the flash button(do not release) and then plug in the power. When it shows like that,</p>
-<p><img alt="flash" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/flash.jpg" /></p>
+<p><img alt="flash" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/flash.jpg" /></p>
 <p>means flash starts sucessfully, then you can release the flash button and wait for the flash finished.
 When flash has been finished, restart the GL-S10.</p>
 <h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
 <p>If you have connect the S10 UART to the PC, using command <code>make monitor</code>, it will print all the system log like that. <em>(here shows the iBeacon data it recieved)</em></p>
-<p><img alt="system log result" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/system_log_result.png" /></p>
+<p><img alt="system log result" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/system_log_result.png" /></p>
 <p>In the MQTT broker, You can get the messages published by S10 like that.</p>
-<p><img alt="messages published result" class="glboxshadow" src="https://static.gl-inet.com/docs/en/3/setup/gl-s10/messages_published_result.png" /></p>
+<p><img alt="messages published result" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/messages_published_result.png" /></p>
 
 
   

@@ -1344,7 +1344,7 @@
 </ul>
 <p><img alt="direct connection" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/direct_connection.png" /></p>
 <h3 id="step-1-create-a-thread-network">Step 1: Create a Thread network<a class="headerlink" href="#step-1-create-a-thread-network" title="Permanent link">&para;</a></h3>
-<pre><code>root@GL-S200:~# uci set otbr.otbr.enable=1
+<div class="highlight"><pre><span></span><code>root@GL-S200:~# uci set otbr.otbr.enable=1
 root@GL-S200:~# uci commit otbr
 
 root@GL-S200:~# ot-ctl dataset init new
@@ -1393,19 +1393,19 @@ fd50:5ff6:fd1b:325b:0:ff:fe00:c400
 fd50:5ff6:fd1b:325b:84ab:8a51:482f:2df7
 fe80:0:0:0:3488:80b2:ca62:867d
 Done
-</code></pre>
+</code></pre></div>
 <p>Check the connectivity of OTBR on your phone/PC.</p>
-<pre><code>$ ping -6 -c1 fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4
+<div class="highlight"><pre><span></span><code>$ ping -6 -c1 fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4
 PING fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4(fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4) 56 data bytes
 64 bytes from fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4: icmp_seq=1 ttl=64 time=0.996 ms
 
 --- fd15:5b2d:647f:1:4e73:fe27:fcad:9eb4 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 0.996/0.996/0.996/0.000 ms
-</code></pre>
+</code></pre></div>
 <h3 id="step-2-configure-the-srp-client-terminal-device">Step 2: Configure the SRP client terminal device<a class="headerlink" href="#step-2-configure-the-srp-client-terminal-device" title="Permanent link">&para;</a></h3>
 <p>To be executed on NRF52840.</p>
-<pre><code>&gt; dataset set active 0e080000000000010000000300001235060004001fffe00208a1fce8946f2f9b1d0708fd505ff6fd1b325b0510e67446d4e450ad76cd3ad5472530d410030f4f70656e5468726561642d656539370102ee97041042743e8b67c06353cd038520a0ab8b7f0c0402a0f7f8
+<div class="highlight"><pre><span></span><code>&gt; dataset set active 0e080000000000010000000300001235060004001fffe00208a1fce8946f2f9b1d0708fd505ff6fd1b325b0510e67446d4e450ad76cd3ad5472530d410030f4f70656e5468726561642d656539370102ee97041042743e8b67c06353cd038520a0ab8b7f0c0402a0f7f8
 Done
 &gt; ifconfig up
 Done
@@ -1430,18 +1430,18 @@ fd50:5ff6:fd1b:325b:0:ff:fe00:c401
 fd50:5ff6:fd1b:325b:27af:b1fc:9225:4134
 fe80:0:0:0:3873:7703:285d:38eb
 Done
-</code></pre>
+</code></pre></div>
 <p>Check the Thread Device connectivity on the mobile phone/PC.</p>
-<pre><code>$ ping -6 -c1 fd15:5b2d:647f:1:75cd:be97:fd26:f3b9
+<div class="highlight"><pre><span></span><code>$ ping -6 -c1 fd15:5b2d:647f:1:75cd:be97:fd26:f3b9
 PING fd15:5b2d:647f:1:75cd:be97:fd26:f3b9(fd15:5b2d:647f:1:75cd:be97:fd26:f3b9) 56 data bytes
 64 bytes from fd15:5b2d:647f:1:75cd:be97:fd26:f3b9: icmp_seq=1 ttl=63 time=41.1 ms
 
 --- fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 41.148/41.148/41.148/0.000 ms
-</code></pre>
+</code></pre></div>
 <h3 id="step-3-publish-srp-service-on-the-terminal-device">Step 3: Publish SRP service on the terminal device<a class="headerlink" href="#step-3-publish-srp-service-on-the-terminal-device" title="Permanent link">&para;</a></h3>
-<pre><code>&gt; srp client autostart enable
+<div class="highlight"><pre><span></span><code>&gt; srp client autostart enable
 Done
 &gt; srp client host name ot-host
 Done
@@ -1452,9 +1452,9 @@ Done
 &gt; srp client service
 instance:&quot;ot-service&quot;, name:&quot;_ipps._tcp&quot;, state:Registered, port:12345, priority:0, weight:0
 Done
-</code></pre>
+</code></pre></div>
 <h3 id="step-4-discover-services-on-otbr">Step 4: Discover services on OTBR<a class="headerlink" href="#step-4-discover-services-on-otbr" title="Permanent link">&para;</a></h3>
-<pre><code>root@GL-S200:~# ot-ctl srp server service
+<div class="highlight"><pre><span></span><code>root@GL-S200:~# ot-ctl srp server service
 ot-service._ipps._tcp.default.service.arpa.
     deleted: false
     subtypes: (null)
@@ -1497,10 +1497,10 @@ PING fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 (fd15:5b2d:647f:1:75cd:be97:fd26:f3b9)
 --- fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 ping statistics ---
 1 packets transmitted, 1 packets received, 0% packet loss
 round-trip min/avg/max = 33.375/33.375/33.375 ms
-</code></pre>
+</code></pre></div>
 <h3 id="step-5-discover-services-on-pc">Step 5: Discover services on PC<a class="headerlink" href="#step-5-discover-services-on-pc" title="Permanent link">&para;</a></h3>
 <p>Use <strong><code>dns-sd</code></strong>on macOS system.</p>
-<pre><code>$ dns-sd -B _ipps._tcp
+<div class="highlight"><pre><span></span><code>$ dns-sd -B _ipps._tcp
 Browsing for _ipps._tcp
 DATE: ---Wed 15 Mar 2023---
 16:42:03.955  ...STARTING...
@@ -1518,9 +1518,9 @@ DATE: ---Wed 15 Mar 2023---
 16:42:18.168  ...STARTING...
 Timestamp     A/R    Flags if Hostname                               Address                                      TTL
 16:42:18.169  Add 40000002  2 ot-host.local.                         FD15:5B2D:647F:0001:75CD:BE97:FD26:F3B9%&lt;0&gt;  120
-</code></pre>
+</code></pre></div>
 <p>Use <strong><code>avahi-browser</code></strong> on Linux system.</p>
-<pre><code>$ avahi-browse -rt _ipps._tcp
+<div class="highlight"><pre><span></span><code>$ avahi-browse -rt _ipps._tcp
 +  ens33 IPv6 ot-service                                    Secure Internet Printer local
 +  ens33 IPv4 ot-service                                    Secure Internet Printer local
 =  ens33 IPv6 ot-service                                    Secure Internet Printer local
@@ -1533,34 +1533,34 @@ Timestamp     A/R    Flags if Hostname                               Address    
    address = [fd15:5b2d:647f:1:75cd:be97:fd26:f3b9]
    port = [12345]
    txt = []
-</code></pre>
+</code></pre></div>
 <h3 id="step-6-ping-the-terminal-devices-local-domain-name-on-pc">Step 6: Ping the terminal device's local domain name on PC<a class="headerlink" href="#step-6-ping-the-terminal-devices-local-domain-name-on-pc" title="Permanent link">&para;</a></h3>
-<pre><code>$ ping -6 -c1 ot-host.local
+<div class="highlight"><pre><span></span><code>$ ping -6 -c1 ot-host.local
 PING ot-host.local(fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 (fd15:5b2d:647f:1:75cd:be97:fd26:f3b9)) 56 data bytes
 64 bytes from fd15:5b2d:647f:1:75cd:be97:fd26:f3b9 (fd15:5b2d:647f:1:75cd:be97:fd26:f3b9): icmp_seq=1 ttl=63 time=30.4 ms
 
 --- ot-host.local ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 30.360/30.360/30.360/0.000 ms
-</code></pre>
+</code></pre></div>
 <p>If the ping command returns <code>Name or service not known</code> , modify <code>/etc/nsswitch.conf</code> as follows and try again. The domain name should be resolvable on both OTBR and PC.</p>
-<pre><code>hosts:          files mdns4_minimal mdns6_minimal dns
-</code></pre>
+<div class="highlight"><pre><span></span><code>hosts:          files mdns4_minimal mdns6_minimal dns
+</code></pre></div>
 <h2 id="providing-internet-access-via-nat64">Providing Internet access via NAT64<a class="headerlink" href="#providing-internet-access-via-nat64" title="Permanent link">&para;</a></h2>
 <p>Nat64 is enabled by default. After creating a Thread network and joining Thread devices to the network according to the instructions for the experiment on bi-directional IPv6 connectivity and DNS-based service discovery,</p>
 <ul>
 <li>Accessing Local Area Network.</li>
 </ul>
-<pre><code>&gt; ping 192.168.8.233
+<div class="highlight"><pre><span></span><code>&gt; ping 192.168.8.233
 Pinging synthesized IPv6 address: fdf8:7dfb:4d50:2:0:0:c0a8:8e9
 16 bytes from fdf8:7dfb:4d50:2:0:0:c0a8:8e9: icmp_seq=3 hlim=63 time=15ms
 1 packets transmitted, 1 packets received. Packet loss = 0.0%. Round-trip min/avg/max = 15/15.0/15 ms.
 Done
-</code></pre>
+</code></pre></div>
 <ul>
 <li>Accessing the Internet.</li>
 </ul>
-<pre><code>&gt; ping 8.8.8.8
+<div class="highlight"><pre><span></span><code>&gt; ping 8.8.8.8
 Pinging synthesized IPv6 address: fdf8:7dfb:4d50:2:0:0:808:808
 16 bytes from fdf8:7dfb:4d50:2:0:0:808:808: icmp_seq=4 hlim=47 time=75ms
 1 packets transmitted, 1 packets received. Packet loss = 0.0%. Round-trip min/avg/max = 75/75.0/75 ms.
@@ -1573,12 +1573,12 @@ Done
 16 bytes from fdf8:7dfb:4d50:2:0:0:8efb:dc4e: icmp_seq=5 hlim=106 time=96ms
 1 packets transmitted, 1 packets received. Packet loss = 0.0%. Round-trip min/avg/max = 96/96.0/96 ms.
 Done
-</code></pre>
+</code></pre></div>
 <h2 id="matter-over-thread">Matter Over Thread<a class="headerlink" href="#matter-over-thread" title="Permanent link">&para;</a></h2>
 <p>The topology of this experiment is shown in the following diagram, where the Matter Controller runs on a PC, and the Matter Light and Matter Light Switch both use the Silicon Labs EFR32MG24 Breakout Board REV 1.1 as the Matter device.</p>
 <p><img alt="matter over thread" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/tutorials/openthread_border_router_codelabs/matter_over_thread.png" /></p>
 <h3 id="step-1-create-a-thread-network_1">Step 1: Create a Thread network.<a class="headerlink" href="#step-1-create-a-thread-network_1" title="Permanent link">&para;</a></h3>
-<pre><code>root@GL-S200:~# ot-ctl dataset init new
+<div class="highlight"><pre><span></span><code>root@GL-S200:~# ot-ctl dataset init new
 Done
 root@GL-S200:~# ot-ctl dataset commit active
 Done
@@ -1624,11 +1624,11 @@ fd50:5ff6:fd1b:325b:0:ff:fe00:c400
 fd50:5ff6:fd1b:325b:84ab:8a51:482f:2df7
 fe80:0:0:0:3488:80b2:ca62:867d
 Done
-</code></pre>
+</code></pre></div>
 <h3 id="step-2-commissioning">Step 2: Commissioning<a class="headerlink" href="#step-2-commissioning" title="Permanent link">&para;</a></h3>
 <p>Command format:</p>
-<pre><code>chip-tool pairing ble-thread ${NODE_ID} hex:${DATASET} ${PIN_CODE} ${DISCRIMINATOR}
-</code></pre>
+<div class="highlight"><pre><span></span><code>chip-tool pairing ble-thread ${NODE_ID} hex:${DATASET} ${PIN_CODE} ${DISCRIMINATOR}
+</code></pre></div>
 <ul>
 <li><code>${NODE_ID}</code>：Assign an ID to the commissioned device. It can be any non-zero value that has not been used after RCP initialization, and it is used by the chip-tool to operate on this Matter device.</li>
 <li><code>${DATASET}</code>： Obtained by running the command <code>ot-ctl dataset active -x</code></li>
@@ -1636,18 +1636,18 @@ Done
 <li><code>${DISCRIMINATOR}</code>：If pairing code is not configured in flash yet, use the default pairing code.</li>
 </ul>
 <p>When you long-press the BT0 button on the Matter Light for more than 6 seconds, it enters commissioning mode.</p>
-<pre><code>sudo ./out/chip-tool/chip-tool pairing ble-thread 1001 hex:0e080000000000010000000300001235060004001fffe00208a1fce8946f2f9b1d0708fd505ff6fd1b325b0510e67446d4e450ad76cd3ad5472530d410030f4f70656e5468726561642d656539370102ee97041042743e8b67c06353cd038520a0ab8b7f0c0402a0f7f8 20202021 3840
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo ./out/chip-tool/chip-tool pairing ble-thread 1001 hex:0e080000000000010000000300001235060004001fffe00208a1fce8946f2f9b1d0708fd505ff6fd1b325b0510e67446d4e450ad76cd3ad5472530d410030f4f70656e5468726561642d656539370102ee97041042743e8b67c06353cd038520a0ab8b7f0c0402a0f7f8 20202021 3840
+</code></pre></div>
 <p>Press and hold the BT0 button of the Matter Light Switch for more than 6 seconds to enter commissioning mode.</p>
-<pre><code>sudo ./out/chip-tool/chip-tool pairing ble-thread 1002 hex:0e080000000000010000000300001235060004001fffe00208a1fce8946f2f9b1d0708fd505ff6fd1b325b0510e67446d4e450ad76cd3ad5472530d410030f4f70656e5468726561642d656539370102ee97041042743e8b67c06353cd038520a0ab8b7f0c0402a0f7f8 20202021 3840
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo ./out/chip-tool/chip-tool pairing ble-thread 1002 hex:0e080000000000010000000300001235060004001fffe00208a1fce8946f2f9b1d0708fd505ff6fd1b325b0510e67446d4e450ad76cd3ad5472530d410030f4f70656e5468726561642d656539370102ee97041042743e8b67c06353cd038520a0ab8b7f0c0402a0f7f8 20202021 3840
+</code></pre></div>
 <p>If there is no error, the output of the command should look like the following:</p>
-<pre><code>[1678871136.912386][3259774:3259774] CHIP:DL: Inet Layer shutdown
+<div class="highlight"><pre><span></span><code>[1678871136.912386][3259774:3259774] CHIP:DL: Inet Layer shutdown
 [1678871136.912404][3259774:3259774] CHIP:DL: BLE shutdown
 [1678871136.913326][3259774:3259774] CHIP:DL: System Layer shutdown
-</code></pre>
+</code></pre></div>
 <p>Discovery Matter device from PC,</p>
-<pre><code>$ avahi-browse -rt _matter._tcp
+<div class="highlight"><pre><span></span><code>$ avahi-browse -rt _matter._tcp
 + enp0s31f6 IPv6 65D508548AF4E6CD-00000000000003EA             _matter._tcp         local
 + enp0s31f6 IPv6 65D508548AF4E6CD-00000000000003E9             _matter._tcp         local
 + enp0s31f6 IPv4 65D508548AF4E6CD-00000000000003EA             _matter._tcp         local
@@ -1702,32 +1702,36 @@ PING DEE6259B059B0BB6.local(fd15:5b2d:647f:1:25b3:9abe:d387:e9aa (fd15:5b2d:647f
 --- DEE6259B059B0BB6.local ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 69.331/69.331/69.331/0.000 ms
-</code></pre>
+</code></pre></div>
 <h3 id="step-3-control-the-light">Step 3: Control the Light<a class="headerlink" href="#step-3-control-the-light" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Toggle the Light</p>
 <p>Command Format : <code>chip-tool onoff toggle ${NODE_ID} 1</code></p>
 <p>Example：</p>
-<p><code>sudo ./out/chip-tool/chip-tool onoff toggle 1001 1</code></p>
+<div class="highlight"><pre><span></span><code>sudo ./out/chip-tool/chip-tool onoff toggle 1001 1
+</code></pre></div>
 </li>
 <li>
 <p>Turn On the Light</p>
 <p>Command Format : <code>chip-tool onoff on ${NODE_ID} 1</code></p>
 <p>Example：</p>
-<p><code>sudo ./out/chip-tool/chip-tool onoff on 1001 1</code></p>
+<div class="highlight"><pre><span></span><code>sudo ./out/chip-tool/chip-tool onoff on 1001 1
+</code></pre></div>
 </li>
 <li>
 <p>Turn Off the Light</p>
 <p>Command Format : <code>chip-tool onoff off ${NODE_ID} 1</code></p>
 <p>Example：</p>
-<p><code>sudo ./out/chip-tool/chip-tool onoff off 1001 1</code></p>
+<div class="highlight"><pre><span></span><code>sudo ./out/chip-tool/chip-tool onoff off 1001 1
+</code></pre></div>
 </li>
 <li>
 <p>Read the State of the Light</p>
 <p>Command Format : <code>chip-tool onoff read on-off ${NODE_ID} 1</code></p>
 <p>Example：</p>
-<p><code>sudo ./out/chip-tool/chip-tool onoff read on-off 1001 1</code></p>
+<div class="highlight"><pre><span></span><code>sudo ./out/chip-tool/chip-tool onoff read on-off 1001 1
+</code></pre></div>
 </li>
 </ol>
 <h3 id="step-4-use-the-matter-switch-to-control-the-light">Step 4: Use the Matter Switch to Control the Light<a class="headerlink" href="#step-4-use-the-matter-switch-to-control-the-light" title="Permanent link">&para;</a></h3>
@@ -1736,16 +1740,20 @@ rtt min/avg/max/mdev = 69.331/69.331/69.331/0.000 ms
 <p>Set the ACL of the Light to Allow the Switch to Control It</p>
 <p>For ACL parameter explanation, please refer to <strong>Matter Core Specification - 9.10.5.3. ACL Attribute</strong></p>
 <p>Command Format :</p>
-<p><code>sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{"fabricIndex":1, "privilege":5, "authMode":2, "subjects":[112233, ${switch_node_id}], "targets":null}]' ${lighting_node_id} 0</code></p>
+<div class="highlight"><pre><span></span><code>sudo ./out/chip-tool/chip-tool accesscontrol write acl &#39;[{&quot;fabricIndex&quot;:1, &quot;privilege&quot;:5, &quot;authMode&quot;:2, &quot;subjects&quot;:[112233, ${switch_node_id}], &quot;targets&quot;:null}]&#39; ${lighting_node_id} 0
+</code></pre></div>
 <p>Example：</p>
-<p><code>sudo ./out/chip-tool/chip-tool accesscontrol write acl '[{"fabricIndex":1, "privilege":5, "authMode":2, "subjects":[112233, 1002], "targets":null}]' 1001 0</code></p>
+<div class="highlight"><pre><span></span><code>sudo ./out/chip-tool/chip-tool accesscontrol write acl &#39;[{&quot;fabricIndex&quot;:1, &quot;privilege&quot;:5, &quot;authMode&quot;:2, &quot;subjects&quot;:[112233, 1002], &quot;targets&quot;:null}]&#39; 1001 0
+</code></pre></div>
 </li>
 <li>
 <p>Bind the Switch to the Light</p>
 <p>Command Format :</p>
-<p><code>sudo ./out/chip-tool/chip-tool binding write binding '[{"fabricIndex":1, "node":${lighting_node_id}, "endpoint":1, "cluster":6}]' ${switch_node_id} 1</code></p>
+<div class="highlight"><pre><span></span><code>sudo ./out/chip-tool/chip-tool binding write binding &#39;[{&quot;fabricIndex&quot;:1, &quot;node&quot;:${lighting_node_id}, &quot;endpoint&quot;:1, &quot;cluster&quot;:6}]&#39; ${switch_node_id} 1
+</code></pre></div>
 <p>Example：</p>
-<p><code>sudo ./out/chip-tool/chip-tool binding write binding '[{"fabricIndex":1, "node":1001, "endpoint":1, "cluster":6}]' 1002 1</code></p>
+<div class="highlight"><pre><span></span><code>sudo ./out/chip-tool/chip-tool binding write binding &#39;[{&quot;fabricIndex&quot;:1, &quot;node&quot;:1001, &quot;endpoint&quot;:1, &quot;cluster&quot;:6}]&#39; 1002 1
+</code></pre></div>
 <p>After completing the above steps, you can use Matter Switch BTN1 to control the on/off state of Matter Light.</p>
 </li>
 </ol>
