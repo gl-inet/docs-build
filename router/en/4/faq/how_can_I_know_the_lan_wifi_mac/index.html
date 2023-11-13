@@ -1798,16 +1798,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#finding-the-wan-mac-address" class="md-nav__link">
-    Finding the WAN Mac address
+  <a href="#finding-the-wan-mac-address-from-the-label" class="md-nav__link">
+    Finding the WAN Mac address from the label
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#calculate-the-lan-24g-and-5g-mac-addresses" class="md-nav__link">
-    Calculate the LAN, 2.4G and 5G Mac addresses
+  <a href="#check-them-up-in-ssh-cell" class="md-nav__link">
+    Check them up in SSH cell
   </a>
+  
+    <nav class="md-nav" aria-label="Check them up in SSH cell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-the-ethernet-ports" class="md-nav__link">
+    Find the ethernet ports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-the-wireless-ports" class="md-nav__link">
+    Find the wireless ports
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4074,16 +4094,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#finding-the-wan-mac-address" class="md-nav__link">
-    Finding the WAN Mac address
+  <a href="#finding-the-wan-mac-address-from-the-label" class="md-nav__link">
+    Finding the WAN Mac address from the label
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#calculate-the-lan-24g-and-5g-mac-addresses" class="md-nav__link">
-    Calculate the LAN, 2.4G and 5G Mac addresses
+  <a href="#check-them-up-in-ssh-cell" class="md-nav__link">
+    Check them up in SSH cell
   </a>
+  
+    <nav class="md-nav" aria-label="Check them up in SSH cell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-the-ethernet-ports" class="md-nav__link">
+    Find the ethernet ports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-the-wireless-ports" class="md-nav__link">
+    Find the wireless ports
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4119,15 +4159,26 @@
 
   <!-- Markdown content -->
   <h1 id="how-can-i-know-my-devices-wan-lan-24g-5g-mac-addresses">How can I know my device's WAN, LAN, 2.4G, 5G Mac addresses<a class="headerlink" href="#how-can-i-know-my-devices-wan-lan-24g-5g-mac-addresses" title="Permanent link">&para;</a></h1>
-<p>The Mac addresses of our devices are unique for each connecting port, they are arranging in sequence of hexadecimal order.</p>
-<p>The sequence is 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.</p>
-<h2 id="finding-the-wan-mac-address">Finding the WAN Mac address<a class="headerlink" href="#finding-the-wan-mac-address" title="Permanent link">&para;</a></h2>
+<p>The Mac addresses of our devices are unique for each connecting port, they can be found in WAN 1, WAN 2, LAN ports, 2.4G WiFi and 5G WiFi.</p>
+<p>You can look up them by the following methods.</p>
+<p><strong>Method 1</strong></p>
+<h2 id="finding-the-wan-mac-address-from-the-label">Finding the WAN Mac address from the label<a class="headerlink" href="#finding-the-wan-mac-address-from-the-label" title="Permanent link">&para;</a></h2>
 <p><img alt="wan_lan_wifi" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/where_to_find_the_device_id_mac_sn/wan_lan_wifi.png" /></p>
 <p>You can find the WAN address on the back label of our device. For example the WAN Mac is: E4:95:6E:40:DB:A9 here.</p>
-<h2 id="calculate-the-lan-24g-and-5g-mac-addresses">Calculate the LAN, 2.4G and 5G Mac addresses<a class="headerlink" href="#calculate-the-lan-24g-and-5g-mac-addresses" title="Permanent link">&para;</a></h2>
-<p>The LAN Mac address is the WAN +1, therefore the result is E4:95:6E:40:DB:AA  (9 + 1 =A)</p>
-<p>The 2.4G Mac address is the WAN +2 therefore the result is E4:95:6E:40:DB:AB (9 + 2 =B)</p>
-<p>The 5G Mac address is the WAN +3 therefore the result is E4:95:6E:40:DB:AC (9 + 3 =C)</p>
+<p><strong>Method 2</strong></p>
+<h2 id="check-them-up-in-ssh-cell">Check them up in SSH cell<a class="headerlink" href="#check-them-up-in-ssh-cell" title="Permanent link">&para;</a></h2>
+<p>Please check <a href="../remote_ssh_to_router/">here</a> for how to use SSH cell.</p>
+<p>Please type <strong>ifconfig</strong> in the SSH cell.</p>
+<h3 id="find-the-ethernet-ports">Find the ethernet ports<a class="headerlink" href="#find-the-ethernet-ports" title="Permanent link">&para;</a></h3>
+<p><img alt="ifconfigwan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/where_to_find_the_device_id_mac_sn/ifcongwan.jpg" /></p>
+<p><strong>eth0</strong> is the WAN, which Mac Address is <strong>94:83:C4:19:19:08</strong>. </p>
+<p>If there is one more WAN port, there will be one more WAN Mac Address. For example, our GL-MT6000.</p>
+<p><strong>eth1</strong>, <strong>eth2</strong>, etc, are the LANs, which Mac Address is <strong>94:83:C4:19:19:09</strong>. </p>
+<p>There would be only one Mac Address even there are more than one LAN ports. For example, our GL-AXT1800, GL-AX1800, GL-MT6000.</p>
+<h3 id="find-the-wireless-ports">Find the wireless ports<a class="headerlink" href="#find-the-wireless-ports" title="Permanent link">&para;</a></h3>
+<p><img alt="ifconfigwifi" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/where_to_find_the_device_id_mac_sn/ifcongwifi.jpg" /></p>
+<p><strong>wlan0-1</strong> is the 2.4G WiFi, which Mac Address is <strong>96:83:C4:19:19:0B</strong>.</p>
+<p><strong>wlan1</strong> is the 5G WiFi, which Mac Address is <strong>94:83:C4:19:19:0A</strong>.</p>
 <h2 id="usage-scenario">Usage Scenario<a class="headerlink" href="#usage-scenario" title="Permanent link">&para;</a></h2>
 <p>When you connect to some hotels, camping sites, campus, the network manager may ask your device's Mac address to register into his whitelist before.
 You need to tell him the exact Mac address or addressed of your device in order for network access. You can use the above logic to tell him exactly all your Mac addresses of your device immediately.</p>
