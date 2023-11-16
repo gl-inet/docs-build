@@ -12,13 +12,13 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/router/en/4/tutorials/how_to_connect_to_the_dedicated_ip_by_nordvpn_on_glinet_routers/">
+        <link rel="canonical" href="https://docs.gl-inet.com/router/en/4/tutorials/build_your_own_wireguard_home_server_with_two_glinet_routers/">
       
       
-        <link rel="prev" href="../how_to_set_up_wireguard_server_via_astrorelay/">
+        <link rel="prev" href="../build_your_own_openvpn_home_server_with_two_glrouter/">
       
       
-        <link rel="next" href="../tap_s2s_vs_tun/">
+        <link rel="next" href="../how_to_set_up_openvpn_server_via_astrorelay/">
       
       
       <link rel="icon" href="../../images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>How to connect to the dedicated IP by NordVPN on GL.iNet routers? - GL.iNet Router Docs 4</title>
+        <title>Build your own WireGuard Home Server with two GL-iNET Routers - GL.iNet Router Docs 4</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-connect-to-the-dedicated-ip-by-nordvpn-on-glinet-routers" class="md-skip">
+        <a href="#build-your-own-wireguard-home-server-with-two-glinet-routers" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How to connect to the dedicated IP by NordVPN on GL.iNet routers?
+              Build your own WireGuard Home Server with two GL-iNET Routers
             
           </span>
         </div>
@@ -2102,9 +2102,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../build_your_own_wireguard_home_server_with_two_glinet_routers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Build your own WireGuard Home Server with two GL-iNET Routers
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2113,6 +2133,129 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-you-need-to-build-own-your-wireguard-home-server" class="md-nav__link">
+    Why you need to build own your WireGuard home server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topology" class="md-nav__link">
+    Topology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-if-you-have-a-public-ip-address" class="md-nav__link">
+    Check if you have a Public IP address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-1-your-gl-mt6000-connects-to-an-upper-router" class="md-nav__link">
+    Scenario 1: Your GL-MT6000 connects to an upper router
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario 1: Your GL-MT6000 connects to an upper router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-the-port-forwarding-on-your-main-router" class="md-nav__link">
+    Set up the Port Forwarding on your main router
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-2-your-mt3000-connects-to-the-isp-modem-directly" class="md-nav__link">
+    Scenario 2: Your MT3000 connects to the ISP modem directly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-wireguard-server-on-gl-mt6000" class="md-nav__link">
+    Set up the WireGuard server on GL-MT6000
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up the WireGuard server on GL-MT6000">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-ddns-optional" class="md-nav__link">
+    Enable DDNS (Optional)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-a-configuration" class="md-nav__link">
+    Generate a Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-a-text-format-configuration-for-client-installation" class="md-nav__link">
+    Output a text format configuration for Client Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-wireguard-client-on-gl-mt3000" class="md-nav__link">
+    Set up the WireGuard Client on GL-MT3000
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-gl-mt3000-to-your-gl-mt6000-server" class="md-nav__link">
+    Connect GL-MT3000 to your GL-MT6000 Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-goodcloud-to-manage-the-routers-remotely-in-case-of-any-problems-when-you-are-traveling" class="md-nav__link">
+    Use GoodCloud to manage the routers remotely in case of any problems when you are traveling
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2162,18 +2305,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../how_to_connect_to_the_dedicated_ip_by_nordvpn_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2182,7 +2316,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -4084,6 +4217,117 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-you-need-to-build-own-your-wireguard-home-server" class="md-nav__link">
+    Why you need to build own your WireGuard home server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topology" class="md-nav__link">
+    Topology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-if-you-have-a-public-ip-address" class="md-nav__link">
+    Check if you have a Public IP address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-1-your-gl-mt6000-connects-to-an-upper-router" class="md-nav__link">
+    Scenario 1: Your GL-MT6000 connects to an upper router
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenario 1: Your GL-MT6000 connects to an upper router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-the-port-forwarding-on-your-main-router" class="md-nav__link">
+    Set up the Port Forwarding on your main router
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-2-your-mt3000-connects-to-the-isp-modem-directly" class="md-nav__link">
+    Scenario 2: Your MT3000 connects to the ISP modem directly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-wireguard-server-on-gl-mt6000" class="md-nav__link">
+    Set up the WireGuard server on GL-MT6000
+  </a>
+  
+    <nav class="md-nav" aria-label="Set up the WireGuard server on GL-MT6000">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-ddns-optional" class="md-nav__link">
+    Enable DDNS (Optional)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-a-configuration" class="md-nav__link">
+    Generate a Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-a-text-format-configuration-for-client-installation" class="md-nav__link">
+    Output a text format configuration for Client Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-up-the-wireguard-client-on-gl-mt3000" class="md-nav__link">
+    Set up the WireGuard Client on GL-MT3000
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-gl-mt3000-to-your-gl-mt6000-server" class="md-nav__link">
+    Connect GL-MT3000 to your GL-MT6000 Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-goodcloud-to-manage-the-routers-remotely-in-case-of-any-problems-when-you-are-traveling" class="md-nav__link">
+    Use GoodCloud to manage the routers remotely in case of any problems when you are traveling
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4106,37 +4350,87 @@
   
 
   <!-- Markdown content -->
-  <h1 id="how-to-connect-to-the-dedicated-ip-by-nordvpn-on-glinet-routers">How to connect to the dedicated IP by NordVPN on GL.iNet routers?<a class="headerlink" href="#how-to-connect-to-the-dedicated-ip-by-nordvpn-on-glinet-routers" title="Permanent link">&para;</a></h1>
-<p>This article introduces the produces to setup the dedicated IP by NordVPN. Here we take GL-AXT1800 as the example, other models are just similar. </p>
+  <h1 id="build-your-own-wireguard-home-server-with-two-glinet-routers">Build Your Own WireGuard Home Server with two GL.iNet Routers<a class="headerlink" href="#build-your-own-wireguard-home-server-with-two-glinet-routers" title="Permanent link">&para;</a></h1>
+<p>This article will introduce how to set up your home router as the WireGuard VPN server and your travel router as the WireGuard VPN client to connect together remotely, so that you can use your home IP address with the travel router anywhere.</p>
+<p>Here we use our GL-MT6000 as the example to run WireGuard VPN server at the home site, and you can also choose other models such as MT2500 if you don’t require the wireless capacity. As for the travel router, we use our GL-MT3000 as the example, and you can choose others as well.</p>
+<h2 id="why-you-need-to-build-own-your-wireguard-home-server">Why you need to build own your WireGuard home server<a class="headerlink" href="#why-you-need-to-build-own-your-wireguard-home-server" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p>Login your Nord Account and check the dedicated IP info. As the following picture, the assigned IP is <strong>193.32.211.142</strong> and the server info is <strong>United Kingdom #1625</strong>.</p>
-<p><img alt="nordvpn dedicated ip info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/dedicated_ip_info.png" /></p>
-</li>
-<li>
-<p>Go to this link: <a href="https://nordvpn.com/ovpn/">https://nordvpn.com/ovpn/</a> and find the config file of <strong>United Kingdom #1625</strong>. Here it is <strong>uk1625.nordvpn.com</strong>, download the UDP or TCP config file as you want.</p>
-<p><img alt="download nordvpn dedicated ip info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/download_dedicated_ip_config.png" /></p>
-</li>
-<li>
-<p>Back to the Nord Account page, go to Manual setup and click on <strong>Set up NordVPN Manually</strong> to get the service credentials.</p>
-<p><img alt="nordvpn manual setup" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/nordvpn_manual_setup.png" /></p>
-<p><img alt="nordvpn manual setup service credential" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/nordvpn_manual_setup_service_credential.png" /></p>
-</li>
-<li>
-<p>Login the web Admin Panel of your router, go to VPN &gt; OpenVPN Client and create a new group to upload the config file you downloaded in step 2. Then type in the service credentials you got in step 3.</p>
-<p><img alt="set up nordvpn on glinet router" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/set_up_nordvpn_on_glinet_router.png" /></p>
-</li>
-<li>
-<p>Go to VPN Dashboard, select the config file and click on <strong>Apply</strong> to connect to it.</p>
-<p><img alt="connect nordvpn on glinet router" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/connect_nordvpn_on_glinet_router.png" /></p>
-</li>
-<li>
-<p>When it connected, you can go to this website to check your public IP: <a href="https://whatismyipaddress.com/">https://whatismyipaddress.com/</a> and confirm if it matches with the dedicated IP by NordVPN.</p>
-<p><img alt="check ip after connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/check_ip_after_connected.png" /></p>
-</li>
+<li>Use your home IP address as the Internet address, acting as that you are just at home.</li>
+<li>No need to pay the monthly fee when comparing with the 3rd parties VPN service.</li>
+<li>Route all the Internet traffic to your home network via encrypted VPN tunnel and secure your privacy.</li>
+<li>Easy access to your internal resources and local streaming.</li>
 </ol>
+<h2 id="topology">Topology<a class="headerlink" href="#topology" title="Permanent link">&para;</a></h2>
+<p><img alt="topologywg" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/topologywg.jpg" /></p>
+<h2 id="check-if-you-have-a-public-ip-address">Check if you have a Public IP address<a class="headerlink" href="#check-if-you-have-a-public-ip-address" title="Permanent link">&para;</a></h2>
+<p>First, you shall make sure the GL-MT6000 has a Public IP address on its WAN side, so that it can be globally accessed. Otherwise your travel router cannot build up a VPN connection with it while you are traveling.</p>
+<p>To check if you have the Public IP address, please open a web browser and type in <a href="https:ip.gs">ip.gs</a> in the address bar.</p>
+<p><img alt="myip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/myip.jpg" /></p>
+<p>It will show your public IP address, if it matches with your WAN IP from your ISP, you are granted a Public IP Address.</p>
+<p>If you don’t have a Public IP address, here are some methods for your reference.</p>
+<ol>
+<li>if you have a main router, you shall login to it and check if it gets the Public IP from your ISP.</li>
+<li>if you can ask your ISP to give you a Public IP address, she may charge an extra fee for it.</li>
+<li>if both the above two ways don’t work. For example, if you are in a CGNAT, you can take the reverse proxy method such as <a href="../how_to_set_up_wireguard_server_via_astrorelay/">Astrorelay</a>.</li>
+</ol>
+<h2 id="scenario-1-your-gl-mt6000-connects-to-an-upper-router">Scenario 1: Your GL-MT6000 connects to an upper router<a class="headerlink" href="#scenario-1-your-gl-mt6000-connects-to-an-upper-router" title="Permanent link">&para;</a></h2>
+<p>Connect to your home router’s WiFi or LAN, then login the web admin panel. Check the IP address it obtains from your ISP. Here you can see it is your Public IP <strong>42.200.00.00</strong>.</p>
+<p><strong>Example: A TP-Link Router</strong></p>
+<p><img alt="tp_home" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/tp_home.jpg" /></p>
+<h3 id="set-up-the-port-forwarding-on-your-main-router">Set up the Port Forwarding on your main router<a class="headerlink" href="#set-up-the-port-forwarding-on-your-main-router" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Login to the web control page of your main router </li>
+<li>Find out where is the function of port forwarding, different brands may call it by different names</li>
+<li>Find the IP address assigned to GL-MT6000</li>
+</ol>
+<p><strong>Example: A TP-Link Router</strong></p>
+<ol>
+<li>Go to “Advanced” and click “virtual Server”, then “Add”.</li>
+<li>Internal IP (Device IP): It is the IP address assigned to GL-MT6000, you can find it in the client list of TP-Link</li>
+<li>External/Internal port:  Please fill both are "51820"</li>
+<li>Protocol:  You can choose "All or UDP or TCP/UDP"</li>
+</ol>
+<p><img alt="tp_port1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/tp_port1.jpg" /></p>
+<h2 id="scenario-2-your-mt3000-connects-to-the-isp-modem-directly">Scenario 2: Your MT3000 connects to the ISP modem directly<a class="headerlink" href="#scenario-2-your-mt3000-connects-to-the-isp-modem-directly" title="Permanent link">&para;</a></h2>
+<p><img alt="mt6000-home" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/mt6000_home.jpg" /></p>
+<p>You can see your Public IP shows on the IP Address and you have <strong>No Need</strong> to do port forwarding.</p>
+<h2 id="set-up-the-wireguard-server-on-gl-mt6000">Set up the WireGuard server on GL-MT6000<a class="headerlink" href="#set-up-the-wireguard-server-on-gl-mt6000" title="Permanent link">&para;</a></h2>
+<h3 id="enable-ddns-optional">Enable DDNS (Optional)<a class="headerlink" href="#enable-ddns-optional" title="Permanent link">&para;</a></h3>
+<p>Enable the DDNS function if you do not have a Public Static IP but only have a Public Dynamic IP.</p>
+<p>Go to the admin panel &gt;Applications&gt;Dynamic DNS and slide to enable</p>
+<p><img alt="serverddns" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/serverddns.jpg" /></p>
+<p>Check the box below and click <strong>Apply</strong>.</p>
+<p><img alt="ddnsapply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/ddnsapply.jpg" /></p>
+<p>Then Go to WireGuard VPN server, make sure the Listen Port is 51820 and click “Apply.”</p>
+<p><img alt="wgserver" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgsever.jpg" /></p>
+<h2 id="generate-a-configuration">Generate a Configuration<a class="headerlink" href="#generate-a-configuration" title="Permanent link">&para;</a></h2>
+<p>Click <strong>Profiles</strong> and <strong>Add</strong> a Client then it will automatically generate a client configuration. Click the <strong>square icon</strong> (point 2) and slide to use DDNS Domain. (point 3, Optional if you have dynamic IP only).</p>
+<p><img alt="wgservergen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgconfiggen.jpg" /></p>
+<p>Use the WireGuard <a href="https://www.wireguard.com/install/">mobile app</a> scan the QR to test the server.For details please click <a href="../../interface_guide/wireguard_server/#to-check-if-wireguard-server-is-working-properly">here</a>.</p>
+<h2 id="output-a-text-format-configuration-for-client-installation">Output a text format configuration for Client Installation<a class="headerlink" href="#output-a-text-format-configuration-for-client-installation" title="Permanent link">&para;</a></h2>
+<p>Change the configuration to text format by click <strong>Configuration File</strong>. Copy the text for the client or download and save it then drag it to the client later.</p>
+<p><img alt="configload" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/configload.jpg" /></p>
+<h2 id="set-up-the-wireguard-client-on-gl-mt3000">Set up the WireGuard Client on GL-MT3000<a class="headerlink" href="#set-up-the-wireguard-client-on-gl-mt3000" title="Permanent link">&para;</a></h2>
+<p>Login to the admin panel of GL-MT3000 and go to the WireGuard Client and click <strong>Add Manually</strong>.</p>
+<p><img alt="addwgclient1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/addwgclient1.jpg" /></p>
+<p>Create a name for the connection and drag the configuration downloaded before or click <strong>Manually Add Configuration</strong>.</p>
+<p><img alt="addwgclient2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/addwgclient2.jpg" /></p>
+<p>Paste the Configuration Text onto it and then you can connect to the server now.</p>
+<p><img alt="addwgclient3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/addwgclient3.jpg" /></p>
+<h2 id="connect-gl-mt3000-to-your-gl-mt6000-server">Connect GL-MT3000 to your GL-MT6000 Server<a class="headerlink" href="#connect-gl-mt3000-to-your-gl-mt6000-server" title="Permanent link">&para;</a></h2>
+<p>Click the name you just created, and it will show you the configuration you just loaded then click <strong>Start</strong>.</p>
+<p><img alt="wgstart" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgstart.jpg" /></p>
+<p>You will see your client is connecting to the server now with your Home Public IP.</p>
+<p><img alt="clientup" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgclientup.jpg" /></p>
+<p>Go back to the VPN DashBoard of GL-MT6000, you will also see the client is connected.</p>
+<p><img alt="servercon" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgservercon.jpg" /></p>
+<h2 id="use-goodcloud-to-manage-the-routers-remotely-in-case-of-any-problems-when-you-are-traveling">Use GoodCloud to manage the routers remotely in case of any problems when you are traveling<a class="headerlink" href="#use-goodcloud-to-manage-the-routers-remotely-in-case-of-any-problems-when-you-are-traveling" title="Permanent link">&para;</a></h2>
+<p>Sometimes your server may be down due to a power outage or other reasons, in order to maintain the accessibility of your server, please bind it our GoodCloud also. </p>
 <hr />
-<p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
+<p>Related Articles</p>
+<ul>
+<li><a href="../../interface_guide/cloud/">The GoodCloud</a></li>
+</ul>
 
   <!-- Last update of source file -->
   
