@@ -821,7 +821,7 @@
         
           <li class="md-nav__item">
   <a href="#set_wifi_config" class="md-nav__link">
-    SET_WiFi_CONFIG
+    SET_WIFI_CONFIG
   </a>
   
 </li>
@@ -855,29 +855,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#wifi_cpnnect_or_disconnect" class="md-nav__link">
-    WiFi_CPNNECT_OR_DISCONNECT
+  <a href="#set_mqtt_params" class="md-nav__link">
+    SET_MQTT_PARAMS
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#set_mqtt_url" class="md-nav__link">
-    SET_MQTT_URL
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_mqtt_url" class="md-nav__link">
-    GET_MQTT_URL
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mqtt_connect_or_disconnect" class="md-nav__link">
-    MQTT_CONNECT_OR_DISCONNECT
+  <a href="#get_mqtt_params" class="md-nav__link">
+    GET_MQTT_PARAMS
   </a>
   
 </li>
@@ -1081,6 +1067,34 @@
           <li class="md-nav__item">
   <a href="#get_wifi_ap_list" class="md-nav__link">
     GET_WiFi_AP_LIST
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_mqtt_client_id" class="md-nav__link">
+    SET_MQTT_CLIENT_ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_mqtt_client_id" class="md-nav__link">
+    GET_MQTT_CLIENT_ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set_ble_scan_params" class="md-nav__link">
+    SET_BLE_SCAN_PARAMS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_ble_scan_params" class="md-nav__link">
+    GET_BLE_SCAN_PARAMS
   </a>
   
 </li>
@@ -1570,8 +1584,8 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">V2.0.0</td>
-<td style="text-align: center;">2021-10-25</td>
+<td style="text-align: center;">V2.0.3</td>
+<td style="text-align: center;">2021-12-17</td>
 <td style="text-align: center;">-</td>
 </tr>
 </tbody>
@@ -2132,7 +2146,7 @@ GET_WIFI_CONFIG</p>
 <p><center><img src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/S10_Use_Manual_Pic/Pic42.png", width = 800></center>
 <center>Figure 42</center></p>
 <h2 id="gl-s10-config-api">GL-S10 Config API<a class="headerlink" href="#gl-s10-config-api" title="Permanent link">&para;</a></h2>
-<p>This chapter define the commands to configure the GL-S10 device using the MQTT method.
+<p>This chapter define the commands to configure the GL-S10 device using the MQTT method. Based on JSON_RPC 2.0 standard development, please follow the format. 
 Command summary sheet</p>
 <h3 id="command-summary-sheet">Command summary sheet<a class="headerlink" href="#command-summary-sheet" title="Permanent link">&para;</a></h3>
 <table>
@@ -2147,13 +2161,13 @@ Command summary sheet</p>
 <tbody>
 <tr>
 <td>0x01</td>
-<td>SET_WiFi_CONFIG</td>
+<td>SET_WIFI_CONFIG</td>
 <td>Y</td>
 <td>Set up Wi-Fi configuration</td>
 </tr>
 <tr>
 <td>0x02</td>
-<td>GET_WiFi_CONFIG</td>
+<td>GET_WIFI_CONFIG</td>
 <td>N</td>
 <td>Get Wi-Fi configuration</td>
 </tr>
@@ -2176,28 +2190,16 @@ Command summary sheet</p>
 <td>Get the current network status</td>
 </tr>
 <tr>
-<td>0x06</td>
-<td>WiFi_CONNECT_OR_DISCONNECT</td>
-<td>Y</td>
-<td>Wi-Fi connected or disconnected</td>
-</tr>
-<tr>
 <td>0x07</td>
-<td>SET_MQTT_URL</td>
+<td>SET_MQTT_PARAMS</td>
 <td>Y</td>
 <td>Set MQTT URL</td>
 </tr>
 <tr>
 <td>0x08</td>
-<td>GET_MQTT_URL</td>
+<td>GET_MQTT_PARAMS</td>
 <td>N</td>
 <td>Get MQTT URL</td>
-</tr>
-<tr>
-<td>0x09</td>
-<td>MQTT_CONNECT_OR_DISCONNECT</td>
-<td>Y</td>
-<td>MQTT connected or disconnected</td>
 </tr>
 <tr>
 <td>0x0A</td>
@@ -2257,7 +2259,7 @@ Command summary sheet</p>
 <td>0x13</td>
 <td>GET_AUTO_REBOO</td>
 <td>N</td>
-<td>Get auto reboot timeL</td>
+<td>Get auto reboot time</td>
 </tr>
 <tr>
 <td>0x14</td>
@@ -2373,1589 +2375,1550 @@ Command summary sheet</p>
 <td>N</td>
 <td>Get a list of surrounding Wi-Fi AP information</td>
 </tr>
+<tr>
+<td>0x27</td>
+<td>SET_MQTT_CLIENT_ID</td>
+<td>Y</td>
+<td>Set mqtt client id</td>
+</tr>
+<tr>
+<td>0x28</td>
+<td>GET_MQTT_CLIENT_ID</td>
+<td>N</td>
+<td>Get mqtt client id</td>
+</tr>
+<tr>
+<td>0x29</td>
+<td>SET_BLE_SCAN_PARAMS</td>
+<td>Y</td>
+<td>Set ble scan param</td>
+</tr>
+<tr>
+<td>0x2A</td>
+<td>GET_BLE_SCAN_PARAMS</td>
+<td>N</td>
+<td>Get ble scan param</td>
+</tr>
 </tbody>
 </table>
 <h3 id="command-detail">Command detail<a class="headerlink" href="#command-detail" title="Permanent link">&para;</a></h3>
-<h4 id="set_wifi_config">SET_WiFi_CONFIG<a class="headerlink" href="#set_wifi_config" title="Permanent link">&para;</a></h4>
+<h4 id="set_wifi_config">SET_WIFI_CONFIG<a class="headerlink" href="#set_wifi_config" title="Permanent link">&para;</a></h4>
 <p>API function: 
 Configure the WiFi’s SSID and password, or WiFi WPA2’s SSID, username and password, then connect to the router. </p>
 <p>Data segment at reception: </p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_WIFI_CONFIG&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="err">......</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
 <table style="width:100%">
   <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
+    <th>ID</th>
+    <th colspan="2">params</th>
   </tr>
   <tr>
     <td rowspan="3">0x01</td>
   </tr>
   <tr>
-    <td>0x00\n</td>
-    <td>SSID\nPWD\n</td>
+    <td>"params":{"type":0,"ssid":"x","pwd":"x"}</td>
   </tr>
   <tr>
-    <td>0x01\n</td>
-    <td>SSID\nUSERNAME\nUSERPASSWORD\n</td>
+    <td>"params":{"type":1,"ssid":"x","username":"x","userpwd":"x"}</td>
   </tr>
 </table>
 
-<p><strong>Note:</strong> 
-Each paragraph of data is separated by the '\n' character, as shown above, please follow the format. </p>
+<p><strong>Note:</strong> </p>
 <ul>
-<li>
-<p>When data[0] is equal to 0x00, SSID and PASSWORD are configurable. </p>
-</li>
-<li>
-<p>When data[0] is equal to 0x01, SSID, USERNAME, USERPASSWORD are configurable. </p>
-</li>
-<li>
-<p>SSID: router’s name, maximum length of 1-32 characters. </p>
-</li>
-<li>
-<p>PWD: router’s password, maximum length of 8-64 characters. </p>
-</li>
-<li>
-<p>USERNAME: username, maximum length of 1-32 characters. </p>
-</li>
-<li>
-<p>USERPASSWORD: user password, maximum length 1-64 characters.</p>
-</li>
+<li>When "type" filed is equal to 0x00, "ssid" and "pwd" fileds are configurable. </li>
+<li>When "type" filed is equal to 0x01, "ssid", "username", "userpwd" fileds are configurable. </li>
+<li>ssid: router’s name, maximum length of 1-32 characters. </li>
+<li>pwd: router’s password, maximum length of 8-64 characters. </li>
+<li>username: username, maximum length of 1-32 characters. </li>
+<li>userpwd: user password, maximum length 1-64 characters.</li>
 </ul>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th>Data</th>
-  </tr>
-  <tr>
-    <td rowspan="2">0x01</td>
-    <td>Result\n</td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
 
-<p><strong>Note:</strong> 
-Each paragraph of data is separated by the '\n' character, as shown above, please follow the format. </p>
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong> </p>
 <ul>
-<li>Result：0x00 represents execution success; 0x01 represents execution failure.</li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_wifi_config">GET_WiFi_CONFIG<a class="headerlink" href="#get_wifi_config" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get Wi-Fi SSID and PWD, or Wi-Fi WPA2 SSID, user name, user password </p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="3">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x02</td>
-  </tr>
-  <tr>
-    <td>0x00\n</td>
-  </tr>   
-  <tr>
-    <td>0x01\n</td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_WIFI_CONFIG&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>When data[0] is equal to 0x00, get SSID, PASSWORD. </li>
-<li>When data[0] is equal to 0x01, get SSID, USERNAME, USERPASSWORD.</li>
+<li>When "type" filed is equal to 0x00, get SSID, PASSWORD. </li>
+<li>When "type" filed is equal to 0x01, get SSID, USERNAME, USERPASSWORD.</li>
 </ul>
 <p>Data segment at response: </p>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="err">......</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">}</span>
+
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">}</span>
+</code></pre></div>
 <table style="width:100%">
   <tr>
-    <th>CmdID</th>
-    <th colspan="3">Data</th>
+    <th>ID</th>
+    <th colspan="2">result</th>
   </tr>
   <tr>
     <td rowspan="3">0x02</td>
-    <td rowspan="3">Result\n</td>
-  </tr>
-
-  <tr>
-    <td>0x00\n</td>
-    <td>SSID\nPWD\n</td>
   </tr>
   <tr>
-    <td>0x01\n</td>
-    <td>SSID\nUSERNAME\nUSERPASSWORD\n</td>
+    <td>"result":{"type":0,"ssid":"x","pwd":"x"}</td>
+  </tr>
   <tr>
+    <td>"result":{"type":1,"ssid":"x","username":"x","userpwd":"x"}</td>
+  </tr>
 </table>
 
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result: 0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>When data[1] is equal to 0x00, get SSID, PASSWORD. </p>
-</li>
-<li>
-<p>When data[1] is equal to 0x01, get SSID, USERNAME, USERPASSWORD. </p>
-</li>
-<li>
-<p>SSID: router’s name, maximum length of 1-32 characters. </p>
-</li>
-<li>
-<p>PWD: router’s password, maximum length of 8-64 characters. </p>
-</li>
-<li>
-<p>USERNAME: username, length 1-32 characters. </p>
-</li>
-<li>
-<p>USERPASSWORD: user password, length 1-64 characters.</p>
-</li>
+<li>When "type" filed is equal to 0x00, get SSID, PASSWORD. </li>
+<li>When "type" filed is equal to 0x01, get SSID, USERNAME, USERPASSWORD. </li>
+<li>ssid: router’s name, maximum length of 1-32 characters. </li>
+<li>pwd: router’s password, maximum length of 8-64 characters. </li>
+<li>username: username, length 1-32 characters. </li>
+<li>userpwd: user password, length 1-64 characters.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="set_network_config">SET_NETWORK_CONFIG<a class="headerlink" href="#set_network_config" title="Permanent link">&para;</a></h4>
 <p>API function: </p>
 <p>Set static IP or dynamic IP. </p>
 <p>Data segment at reception:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_NETWORK_CONFIG&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;isdhcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="err">......</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
+<span class="p">}</span>
+</code></pre></div>
 <table style="width:100%">
   <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
+    <th>ID</th>
+    <th colspan="2">params</th>
   </tr>
   <tr>
     <td rowspan="3">0x03</td>
   </tr>
   <tr>
-     <td>0x00\n</td>
+    <td>"params":{"isdhcp":1}</td>
   </tr>
   <tr>
-    <td>0x01\n</td>
+    <td>"params":{"isdhcp":0,"ip":"x","netmask":"x","gw":"x"}</td>
   </tr>
 </table>
 
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>When data[0] is equal to 0x00, the device is set to DHCP auto-get IP mode.  </p>
-</li>
-<li>
-<p>When data[0] is equal to 0x01, the device is set to static IP mode, and IP, Netmask, Gw can be set. </p>
-</li>
-<li>
-<p>IP: fixed length, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. </p>
-</li>
-<li>
-<p>Netmask: fixed length, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. </p>
-</li>
-<li>
-<p>Gw: fixed length, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. </p>
-</li>
+<li>When "isdhcp" filed is equal to 0x00, the device is set to DHCP auto-get IP mode.  </li>
+<li>When "isdhcp" filed is equal to 0x01, the device is set to static IP mode, and IP, Netmask, Gw can be set. </li>
+<li>ip: fixed length, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. </li>
+<li>netmask: fixed length, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. </li>
+<li>gw: fixed length, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. </li>
 </ul>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th>Data</th>
-  </tr>
-  <tr>
-    <td rowspan="2">0x03</td>
-    <td>Result\n</td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong> </p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure. </li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_network_config">GET_NETWORK_CONFIG<a class="headerlink" href="#get_network_config" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get the network configuration of static IP or dynamic IP. </p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x04</td>
-  </tr>
-  <tr>
-    <td>0x00\n</td>
-  </tr>
-  <tr>
-    <td>0x01\n</td>
-  </tr>
-</table>
-
-<ul>
-<li>When mode is equal to 0x00, it indicates that the device is in DHCP auto-allocation state without any data. When mode equals to 0x01, it indicates that the device is in static IP allocation state, and available to receive IP, Netmask and Gw. </li>
-</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_NETWORK_CONFIG&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="3">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x04</td>
-    <td rowspan="3">Result\n</td>
-  </tr>
-  <tr>
-    <td>0x00\n</td>
-    <td> / </td>
-  </tr>
-  <tr>
-    <td>0x01\n</td>
-    <td>IP\nNetmask\nGw\n</td>
-  <tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;isdhcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;netmask&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;gw&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result: 0x00 represent execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>When data[1] is equal to 0x00, it indicates that the device is in DHCP auto-assignment state, and the data behind is empty. </p>
-</li>
-<li>
-<p>When data[1] is equal to 0x01, it indicates that the device is in static IP allocation state, and available to receive IP, Netmask, and Gw. </p>
-</li>
-<li>
-<p>IP: fixed length, xxx is a number from 0-255, format XXX.XXX.XXX. </p>
-</li>
-<li>
-<p>Netmask: fixed length, xxx is a number from 0-255, format XXX.XXX.XXX.XXX. </p>
-</li>
-<li>
-<p>Gw: fixed length, xxx is a number from 0-255, format XXX.XXX.XXX.XXX. </p>
-</li>
+<li>When "isdhcp" filed is equal to 0x00, it indicates that the device is in DHCP auto-assignment state, and the data behind is empty. </li>
+<li>When "isdhcp" filed is equal to 0x01, it indicates that the device is in static IP allocation state, and available to receive IP, Netmask, and Gw. </li>
+<li>ip: fixed length, xxx is a number from 0-255, format XXX.XXX.XXX. </li>
+<li>netmask: fixed length, xxx is a number from 0-255, format XXX.XXX.XXX.XXX. </li>
+<li>gw: fixed length, xxx is a number from 0-255, format XXX.XXX.XXX.XXX. </li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_network_state">GET_NETWORK_STATE<a class="headerlink" href="#get_network_state" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get the current network state: State, Mode, isDhcp , IP, SSID. </p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x05</td>
-    <td> / </td>
-  </tr>
-</table>
-
-<ul>
-<li>Data is equal to null. </li>
-</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_NETWORK_STATE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x05</td>
-    <td>Result\n</td>
-    <td>State\nMode\nisDhcp\nIP\nSSID\n</td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;isdhcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ssid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result: 0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>State: indicates the status of the connection (MQTT server connection), character '0' means connected, character '1' means disconnected, occupies one byte. </p>
-</li>
-<li>
-<p>Mode: indicates the connection mode, character '0' indicates connection via Wi-Fi, character '1' indicates connection via Ethernet cable, occupies one byte. </p>
-</li>
-<li>
-<p>isDhcp: character '0' means it is automatically assigned, character '1' means it is not automatically assigned, occupies one byte. </p>
-</li>
-<li>
-<p>IP: local IP address, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. </p>
-</li>
-<li>
-<p>SSID: SSID of the connected router, length 1-32 characters. </p>
-</li>
+<li>state: indicates the status of the connection (MQTT server connection), 0 means connected, 1 means disconnected, occupies one byte. </li>
+<li>mode: indicates the connection mode, character '0' indicates connection via Wi-Fi, character '1' indicates connection via Ethernet cable, occupies one byte. </li>
+<li>isdhcp: character '0' means it is automatically assigned, character '1' means it is not automatically assigned, occupies one byte. </li>
+<li>ip: local IP address, xxx is a number between 0-255, format XXX.XXX.XXX.XXX. </li>
+<li>ssid: SSID of the connected router, length 1-32 characters. </li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
-<h4 id="wifi_cpnnect_or_disconnect">WiFi_CPNNECT_OR_DISCONNECT<a class="headerlink" href="#wifi_cpnnect_or_disconnect" title="Permanent link">&para;</a></h4>
+<h4 id="set_mqtt_params">SET_MQTT_PARAMS<a class="headerlink" href="#set_mqtt_params" title="Permanent link">&para;</a></h4>
 <p>API function: </p>
-<p>Trigger Wi-Fi connection or disconnects. </p>
+<p>Set MQTT Safety、Host、Port、Username、Password.</p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x06</td>
-  </tr>
-  <tr>
-    <td>0x00\n</td>
-  </tr>
-  <tr>
-    <td>0x01\n</td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_MQTT_PARAMS&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;safety&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
 <li>
-<p>When data[0] is equal to 0x00, it triggers the device to connect to Wi-Fi.  </p>
+<p>safety: Indicates whether mqtt is connected through TSL/SSL, 0 means no, 1 means yes.</p>
 </li>
 <li>
-<p>When data[0] is equal to 0x01, it triggers the device to disconnect Wi-Fi. </p>
+<p>host : Host name, length 7-128 characters</p>
+</li>
+<li>
+<p>port ：Host port, range 0-65535</p>
+</li>
+<li>
+<p>username : Username, length 0-32 characters</p>
+</li>
+<li>
+<p>password : User password, length 0-64 characters</p>
 </li>
 </ul>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x06</td>
-    <td>Result\n</td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong> </p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure. </li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
-<h4 id="set_mqtt_url">SET_MQTT_URL<a class="headerlink" href="#set_mqtt_url" title="Permanent link">&para;</a></h4>
-<p>API function: </p>
-<p>Set MQTT_URL. </p>
-<p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x07</td>
-    <td>MQTT_URL\n</td>
-  </tr>
-</table>
-
-<p>MQTT_URL field: </p>
-<ul>
-<li>Data field format: mqtt(s)://username:password@host:port </li>
-<li>mqtt : TCP connection</li>
-<li>mqtts : TSL/SSL connection</li>
-<li>username : Username, length 0-32 characters</li>
-<li>password : User password, length 0-64 characters</li>
-<li>host : Host name, length 7-128 characters</li>
-<li>port ：Host port, range 0-65535, length 1-5 characters</li>
-</ul>
-<p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x07</td>
-    <td>Result\n</td>
-  </tr>
-</table>
-
-<ul>
-<li>Result: 0x00 Execution success; 0x01 Execution failure. </li>
-</ul>
-<h4 id="get_mqtt_url">GET_MQTT_URL<a class="headerlink" href="#get_mqtt_url" title="Permanent link">&para;</a></h4>
+<h4 id="get_mqtt_params">GET_MQTT_PARAMS<a class="headerlink" href="#get_mqtt_params" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
-<p>Get MQTT_URL. </p>
+<p>Get MQTT Safety、Host、Port、Username、Password.</p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x08</td>
-    <td> / </td>
-  </tr>
-</table>
-
-<ul>
-<li>Data is equal to null. </li>
-</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_MQTT_PARAMS&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x08</td>
-    <td>Result\n </td>
-    <td>MQTT_URL\n</td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;safety&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure. </li>
-</ul>
-<p>MQTT_URL field: </p>
-<ul>
-<li>Data field format: mqtt(s)://username:password@host:port </li>
-<li>mqtt : TCP connection</li>
-<li>mqtts : TSL/SSL connection</li>
+<li>safety: Indicates whether mqtt is connected through TSL/SSL, 0 means no, 1 means yes.</li>
+<li>host : Host name, length 7-128 characters</li>
+<li>port ：Host port, range 0-65535</li>
 <li>username : Username, length 0-32 characters</li>
 <li>password : User password, length 0-64 characters</li>
-<li>host : Host name, length 7-128 characters</li>
-<li>port ：Host port, range 0-65535, length 1-5 characters</li>
-</ul>
-<h4 id="mqtt_connect_or_disconnect">MQTT_CONNECT_OR_DISCONNECT<a class="headerlink" href="#mqtt_connect_or_disconnect" title="Permanent link">&para;</a></h4>
-<p>API function: </p>
-<p>Activate trigger to connect to the MQTT server. </p>
-<p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x09</td>
-  </tr>
-  <tr>
-    <td>0x00\n</td>
-  </tr>
-  <tr>
-    <td>0x01\n</td>
-  </tr>
-</table>
-
-<ul>
-<li>
-<p>When data[0] shows 0x00, it triggers the device to connect to the MQTT server. </p>
-</li>
-<li>
-<p>When data[0] shows 0x01, it triggers the device to disconnect with the MQTT server. </p>
-</li>
-</ul>
-<p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x09</td>
-    <td>Result\n </td>
-  </tr>
-</table>
-
-<ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure. </li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="set_mqtt_topic">SET_MQTT_TOPIC<a class="headerlink" href="#set_mqtt_topic" title="Permanent link">&para;</a></h4>
 <p>API function: </p>
 <p>Configure comTopic, dataTopic and rspTopic topics. </p>
 <p>Data segment on reception. </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0A</td>
-    <td>comTopic\ndataTopic\nrspTopic\n </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_MQTT_TOPIC&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;comtopic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;datatopic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;rsptopic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>comTopic: command for subscribing a topic, does not support Chinese, length 1-128 characters. </p>
-</li>
-<li>
-<p>dataTopic: publishing a topic, does not support Chinese, maximum length of 1-128 characters. </p>
-</li>
-<li>
-<p>rspTopic: Unsuback a topic, does not support Chinese, maximum length of 1-128 characters. </p>
-</li>
+<li>comtopic: command for subscribing a topic, does not support Chinese, length 1-128 characters. </li>
+<li>datatopic: publishing a topic, does not support Chinese, maximum length of 1-128 characters. </li>
+<li>rsptopic: Unsuback a topic, does not support Chinese, maximum length of 1-128 characters. </li>
 </ul>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0A</td>
-    <td>Result\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure.</li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_mqtt_topic">GET_MQTT_TOPIC<a class="headerlink" href="#get_mqtt_topic" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get comTopic, dataTopic and rspTopic topics. </p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0B</td>
-    <td> / </td>
-  </tr>
-</table>
-
-<ul>
-<li>data equals to null. </li>
-</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_MQTT_TOPIC&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0B</td>
-    <td>Result\n </td>
-    <td>comTopic\ndataTopic\nrspTopic\n</td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;comtopic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;datatopic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;rsptopic&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result：0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>comTopic: command for subscribing a topic, does not support Chinese, length 1-128 characters </p>
-</li>
-<li>
-<p>dataTopic: publishing a topic, does not support Chinese, maximum length of 1-128 characters </p>
-</li>
-<li>
-<p>rspTopic: Unsuback a topic, does not support Chinese, maximum length of 1-128 characters</p>
-</li>
+<li>comtopic: command for subscribing a topic, does not support Chinese, length 1-128 characters </li>
+<li>datatopic: publishing a topic, does not support Chinese, maximum length of 1-128 characters </li>
+<li>rsptopic: Unsuback a topic, does not support Chinese, maximum length of 1-128 characters</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="set_mqtt_ti">SET_MQTT_TI<a class="headerlink" href="#set_mqtt_ti" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Set the MQTT data upload time interval. </p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0C</td>
-    <td> IntervalTime\n  </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_MQTT_TI&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;intervaltime&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>IntervalTime: MQTT data reporting time interval, 100ms - 4294967294ms, length 3-10. </li>
+<li>intervaltime: MQTT data reporting time interval, 1s - 2147483647s.</li>
 </ul>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0C</td>
-    <td>Result\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure. </li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_mqtt_ti">GET_MQTT_TI<a class="headerlink" href="#get_mqtt_ti" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get the MQTT data upload interval. </p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0D</td>
-    <td> / </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_MQTT_TI&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Data segment at response: 
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;intervaltime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Note:</strong></p>
 <ul>
-<li>data is equal to null. </li>
-</ul>
-<p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0D</td>
-    <td>Result\n</td>
-    <td>IntervalTime\n </td>
-  </tr>
-</table>
-
-<ul>
-<li>
-<p>Result: 0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>IntervalTime: MQTT data reporting time interval, 100ms - 4294967294ms, length 3-10. </p>
-</li>
+<li>intervaltime: MQTT data reporting time interval, 1s –2147483647s.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="set_sntp_tz">SET_SNTP_TZ<a class="headerlink" href="#set_sntp_tz" title="Permanent link">&para;</a></h4>
 <p>API function: </p>
 <p>Set the device time zone. </p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0E</td>
-    <td>Timezone\n</td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_SNTP_TZ&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;timezone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Timezone: Time zone format, UTC+X or UTC-X (X range 0-12), default Timezone = UTC+8. </li>
+<li>timezone: Time zone format, UTC+X or UTC-X (X range 0-12), default Timezone = UTC+8. </li>
 </ul>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0E</td>
-    <td>Result\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure. </li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_sntp_tz">GET_SNTP_TZ<a class="headerlink" href="#get_sntp_tz" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get the device time zone. </p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0F</td>
-    <td> / </td>
-  </tr>
-</table>
-
-<ul>
-<li>Data is equal to null.</li>
-</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_SNTP_TZ&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x0F</td>
-    <td>Result\n</td>
-    <td>Timezone\n</td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;timezone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result: 0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>Timezone: Time zone format, UTC+X or UTC-X (X range 0-12), default Timezone = UTC-8.</p>
-</li>
+<li>timezone: Time zone format, UTC+X or UTC-X (X range 0-12), default Timezone = UTC-8.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="set_sntp_server">SET_SNTP_SERVER<a class="headerlink" href="#set_sntp_server" title="Permanent link">&para;</a></h4>
 <p>API function: </p>
 <p>Set the SNTP server address. </p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x10</td>
-    <td> ServerURL\n  </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_SNTP_SERVER&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;serverurl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>ServerURL: SNTP server URL setting, maximum length of 1-128 characters. </li>
+<li>serverurl: SNTP server URL setting, maximum length of 1-128 characters. </li>
 </ul>
 <p>Data segment at response:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x10</td>
-    <td> Result\n  </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure. </li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_sntp_server">GET_SNTP_SERVER<a class="headerlink" href="#get_sntp_server" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get the SNTP server address. </p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x11</td>
-    <td> /  </td>
-  </tr>
-</table>
-
-<ul>
-<li>Data is equal to null </li>
-</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_SNTP_SERVER&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x11</td>
-    <td>Result\n</td>
-    <td>ServerURL\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;serverurl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result: 0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>ServerURL: SNTP server URL setting, maximum length of 1-128 characters.</p>
-</li>
+<li>serverurl: SNTP server URL setting, maximum length of 1-128 characters.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="set_auto_reboot">SET_AUTO_REBOOT<a class="headerlink" href="#set_auto_reboot" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Set the auto restart time and switch status. </p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x12</td>
-    <td> RstState\nRstTime\n </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_AUTO_REBOOT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;rststate&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;rsttime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>RstState: indicates whether to turn on the daily restart, character '0' means turn on, character '1' means turn off, occupies one byte. </p>
-</li>
-<li>
-<p>RstTime: daily restart time, format XX:XX 24 hours, range 00:00 - 23:59, occupies five bytes. </p>
-</li>
+<li>rststate: indicates whether to turn on the daily restart, 0 means turn on, 1 means turn off, occupies one byte. </li>
+<li>rsttime: daily restart time, format XX:XX 24 hours, range 00:00 - 23:59, occupies five bytes. </li>
 </ul>
 <p>Data segment at response:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x12</td>
-    <td>Result\n</td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure.</li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_auto_reboot">GET_AUTO_REBOOT<a class="headerlink" href="#get_auto_reboot" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get the auto restart time and switch status. </p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x13</td>
-    <td> / </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_AUTO_REBOOT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
 <li>Data is equal to null. </li>
 </ul>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x13</td>
-    <td> Result\n </td>
-    <td> RstState\nRstTime\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;rststate&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;rsttime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result：0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>RstState: indicates whether to turn on the daily restart, character '0' means turn on, character '1' means not turn on, takes up one byte. </p>
-</li>
-<li>
-<p>RstTime: daily restart time, format XX:XX 24 hours, range 00:00 - 23:59, occupies five bytes.</p>
-</li>
+<li>rststate: indicates whether to turn on the daily restart, 0 means turn on, 1 means not turn on, takes up one byte. </li>
+<li>rsttime: daily restart time, format XX:XX 24 hours, range 00:00 - 23:59, occupies five bytes.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="set_mac_filter">SET_MAC_FILTER<a class="headerlink" href="#set_mac_filter" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Add or remove MAC filter table entries. </p>
 <p>Data segment on reception.</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x14</td>
-    <td> MODE\nMAC\n </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_MAC_FILTER&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;mac&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>MODE : 0x00 is Add mode, which adds the MAC field to the MAC table of the device; 0x01 is Delete mode, which removes the MAC field from the MAC table. </p>
-</li>
-<li>
-<p>MAC: Format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F].</p>
-</li>
+<li>mode: 0x00 is Add mode, which adds the MAC field to the MAC table of the device; 0x01 is Delete mode, which removes the MAC field from the MAC table. </li>
+<li>mac: Format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F].</li>
 </ul>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x14</td>
-    <td> Result\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result：0x00 represents execution success; 0x01 represents execution failure. </li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_mac_filter">GET_MAC_FILTER<a class="headerlink" href="#get_mac_filter" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get MAC filter table entries. </p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x15</td>
-    <td> / </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_MAC_FILTER&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
 <li>Data is equal to null. </li>
 </ul>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x15</td>
-    <td> Result\n </td>
-    <td> AddMAC0\nAddMAC1\n…\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="err">......</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result：0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>AddMAC: AddMAC0, AddMAC1 are single MAC, it will send all the data in the MAC filter table in a batch according to the format shown above, single format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F].</p>
-</li>
+<li>result:  It is a array, it will get all the mac in the MAC filter table, single format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F].</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="set_cln_filter">SET_CLN_FILTER<a class="headerlink" href="#set_cln_filter" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Adds or removes a BLE device name filter table entry. </p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x16</td>
-    <td> MODE\nAddCLN\n </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_CLN_FILTER&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;cln&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>MODE : 0x00 is Add mode, which adds the AddCLN field to the device's BLE device name table; 0x01 is Delete mode, which removes the AddCLN field from the BLE device name table. </p>
-</li>
-<li>
-<p>AddCLN: Single device name, length 1-32 characters. </p>
-</li>
+<li>mode: 0x00 is Add mode, which adds the AddCLN field to the device's BLE device name table; 0x01 is Delete mode, which removes the AddCLN field from the BLE device name table. </li>
+<li>cln: Single device name, length 1-32 characters. </li>
 </ul>
 <p>Data segment at response:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x16</td>
-    <td> Result\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result：0x00 represents execution success; 0x01 represents execution failure. </li>
+<li>result: 0x00 represent execution success; </li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_cln_filter">GET_CLN_FILTER<a class="headerlink" href="#get_cln_filter" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get the BLE device name filter table entry. </p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x17</td>
-    <td> / </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_CLN_FILTER&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
 <li>Data is equal to null</li>
 </ul>
 <p>Data segment at response:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x17</td>
-    <td> Result\n </td>
-    <td> AddCLN0\n AddCLN1\n…\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="err">......</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result：0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>AddCLN: AddCLN0, AddCLN1 are single CLN, which will send all the data in the CLN filter table together. </p>
-</li>
-<li>
-<p>CLN: BLE Complete Local Name.</p>
-</li>
+<li>result:  It is a array, it will get all the Complete Local Name in the CLN filter table.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="set_msd_filter">SET_MSD_FILTER<a class="headerlink" href="#set_msd_filter" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Add or remove BLE vendor custom data filter table entries. </p>
 <p>Data segment on reception.</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x18</td>
-    <td> MODE\nAddMSD\n  </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_MSD_FILTER&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;msd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>MODE : 0x00 is Add mode which adds the AddMSD field to the device's BLE vendor custom data table; 0x01 is Delete mode which removes the AddMSD field from the BLE vendor custom data table. </p>
-</li>
-<li>
-<p>AddMSD: single BLE vendor-defined data, length 2-64 characters, and length must be a multiple of 2, character range [0-9a-fA-F].</p>
-</li>
+<li>mode: 0x00 is Add mode which adds the AddMSD field to the device's BLE vendor custom data table; 0x01 is Delete mode which removes the AddMSD field from the BLE vendor custom data table. </li>
+<li>msd: single BLE vendor-defined data, length 2-64 characters, and length must be a multiple of 2, character range [0-9a-fA-F].</li>
 </ul>
 <p>Data segment at response:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x18</td>
-    <td> Result\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result：0x00 represents execution success; 0x01 represents execution failure.</li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_msd_filter">GET_MSD_FILTER<a class="headerlink" href="#get_msd_filter" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get BLE vendor custom data filter table entries. </p>
 <p>Data segment on reception.</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x19</td>
-    <td> / </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_MSD_FILTER&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
 <li>Data is equal to null</li>
 </ul>
 <p>Data segment at response:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x19</td>
-    <td> Result\n </td>
-    <td> AddMSD0\n AddMSD1\n…\n  </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;addmsd0&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;addmsd1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="err">......</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result: 0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>AddMSD: AddMSD0, AddMSD1 are single MSD, which will send all the data in the MSD filter table together. </p>
-</li>
-<li>
-<p>MSD: Manufacturer Specific Data.</p>
-</li>
+<li>result: It is a object, and addmsd0, addmsd1 is single MSD, all data in the MSD filtering table will be packaged and sent together.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="update_mqtt_cert">UPDATE_MQTT_CERT<a class="headerlink" href="#update_mqtt_cert" title="Permanent link">&para;</a></h4>
 <p>API functionality: </p>
 <p>Update MQTT encryption certificate. </p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1A</td>
-    <td> MODE\nMqttCertURL\n  </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UPDATE_MQTT_CERT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;mqttcerturl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
 <li>
-<p>MODE: 0x00 updates certificate immediately, 0x01 only saves certificate URL, and does not update certificate immediately. Occupies 1 character. </p>
+<p>mode: 0x00 updates certificate immediately, 0x01 only saves certificate URL, and does not update certificate immediately. </p>
 </li>
 <li>
-<p>MQTT encrypted certificate URL address, length 1-500 characters. </p>
+<p>mqttcerturl: MQTT encrypted certificate URL address, length 1-512characters. </p>
 </li>
 </ul>
 <p><strong>Note:</strong> If the Data segment is null, the MqttCertURL will be restored to the default configuration, and the certificate will be updated. </p>
 <p>Data segment at response:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1A</td>
-    <td> Result\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure.</li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="update_wpa2_cert">UPDATE_WPA2_CERT<a class="headerlink" href="#update_wpa2_cert" title="Permanent link">&para;</a></h4>
 <p>API function: </p>
 <p>Update Wi-Fi WPA2 encryption certificate. </p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1B</td>
-    <td> MODE\nWpa2CertURL\n  </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UPDATE_WPA2_CERT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;wpa2certurl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
 <li>
-<p>MODE: 0x00 updates certificate immediately, 0x01 only saves certificate URL, and does not update certificate immediately. Occupies 1 character. </p>
+<p>mode: 0x00 updates certificate immediately, 0x01 only saves certificate URL, and does not update certificate immediately. Occupies 1 character. </p>
 </li>
 <li>
-<p>Wpa2CertURL: WPA2 encryption certificate URL address, length 1-500 characters. </p>
+<p>wpa2certurl: WPA2 encryption certificate URL address, length 1-512characters. </p>
 </li>
 </ul>
 <p><strong>Note:</strong> If the Data segment is null, the Wpa2CertURL will be restored to the default configuration, and the certificate will be updated. </p>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1B</td>
-    <td> Result\n  </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure.</li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="update_https_cert">UPDATE_HTTPS_CERT<a class="headerlink" href="#update_https_cert" title="Permanent link">&para;</a></h4>
 <p>API functions: </p>
 <p>Update HTTPS encryption certificate. </p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1C</td>
-    <td> MODE\nHttpsCertURL\n </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UPDATE_HTTPS_CERT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;httpscerturl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
 <li>
-<p>MODE: 0x00 updates certificate immediately, 0x01 only saves certificate URL, and does not update certificate immediately. Occupies 1 character. </p>
+<p>mode: 0x00 updates certificate immediately, 0x01 only saves certificate URL, and does not update certificate immediately. Occupies 1 character. </p>
 </li>
 <li>
-<p>HttpsCertURL: HTTPS encrypted certificate URL address, length 1-500 characters. </p>
+<p>httpscerturl: HTTPS encrypted certificate URL address, length 1-512 characters. </p>
 </li>
 </ul>
 <p><strong>Note:</strong> If the Data segment is null, the HttpsCertURL will be restored to the default configuration, and the certificate will be updated.</p>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1C</td>
-    <td> Result\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure. </li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="set_ota_url">SET_OTA_URL<a class="headerlink" href="#set_ota_url" title="Permanent link">&para;</a></h4>
 <p>API function: </p>
 <p>Set the OTA URL. </p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1D</td>
-    <td> updateNow\nOtaURL\n  </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_OTA_URL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;updatenow&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;otaurl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>updateNow: whether to upgrade OTA immediately, occupies 1 byte, character '0' will save the URL and upgrade immediately, character '1' will only save the url without upgrading. </p>
-</li>
-<li>
-<p>OtaURL: the server link for OTA upgrade, length 1-512 characters. </p>
-</li>
+<li>updatenow: whether to upgrade OTA immediately, occupies 1 byte, 0 will save the URL and upgrade immediately, 1 will only save the url without upgrading. </li>
+<li>otaurl: the server link for OTA upgrade, length 1-512 characters. </li>
+<li>If the Data segment is null, OtaURL will be restored to the default configuration, but will not trigger OTA. </li>
 </ul>
-<p><strong>Note:</strong> If the Data segment is null, OtaURL will be restored to the default configuration, but will not trigger OTA. </p>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1D</td>
-    <td> Result\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure.</li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_ota_url">GET_OTA_URL<a class="headerlink" href="#get_ota_url" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get the OTA URL. </p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1E</td>
-    <td> / </td>
-  </tr>
-</table>
-
-<ul>
-<li>Data is equal to null. </li>
-</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_OTA_URL&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1E</td>
-    <td> Result\n </td>
-    <td> OtaURL\n  </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;otaurl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result: 0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>OtaURL: the server link of OTA upgrade, length 1-512 characters.</p>
-</li>
+<li>otaurl: the server link of OTA upgrade, length 1-512 characters.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="ota_status">OTA_STATUS<a class="headerlink" href="#ota_status" title="Permanent link">&para;</a></h4>
 <p>API function: </p>
 <p>Reply result after OTA completion, initiated by the device after OTA completion. </p>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x1F</td>
-    <td> Result\n </td>
-    <td> / </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result：0x00 represents execution success; 0x01 represents execution failure.</li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
 </ul>
 <h4 id="get_dev_status">GET_DEV_STATUS<a class="headerlink" href="#get_dev_status" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get device Wi-Fi RSSI, networking status, server connection status. </p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x20</td>
-    <td> / </td>
-  </tr>
-</table>
-
-<ul>
-<li>Data is equal to null</li>
-</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_DEV_STATUS&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x20</td>
-    <td> Result\n </td>
-    <td> WiFi_RSSI\nIS_CONNECT_NETWORK\nIS_CONNECT_SERVER\nWiFi_MODE\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;wifirssi&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;isconnectnetwork&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;isconnectserver&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;wifimode&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result：0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>WiFi_RSSI: RSSI of the connected router, range -96 ~ 0, occupies 1 byte, signed character. </p>
-</li>
-<li>
-<p>IS_CONNECT_NETWORK: network connection status 0x00 means not connected; 0x01 means connected. </p>
-</li>
-<li>
-<p>IS_CONNECT_SERVER: MQTT server connection status 0x00 means not connected; 0x01 means connected. </p>
-</li>
-<li>
-<p>WiFi_MODE: Wi-Fi connection mode [0x00 -&gt; no password] [0x01 -&gt; wpa2 personal encryption] [0x02 -&gt; wpa2 enterprise encryption]</p>
-</li>
+<li>wifirssi: RSSI of the connected router, range -96 ~ 0.</li>
+<li>isconnectnetwork: network connection status 0x00 means not connected; 0x01 means connected. </li>
+<li>isconnectserver: MQTT server connection status 0x00 means not connected; 0x01 means connected. </li>
+<li>wifimode: Wi-Fi connection mode [0x00 -&gt; no password] [0x01 -&gt; wpa2 personal encryption] [0x02 -&gt; wpa2 enterprise encryption]</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_dev_message">GET_DEV_MESSAGE<a class="headerlink" href="#get_dev_message" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get device Wi-Fi MAC, BLE MAC, SN, Device ID, firmware version number. </p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x21</td>
-    <td> / </td>
-  </tr>
-</table>
-
-<ul>
-<li>Data is equal to null</li>
-</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_DEV_MESSAGE &quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x21</td>
-    <td> Result\n </td>
-    <td> BLE_MAC\nWiFi_MAC\nSN\nDevice_ID\nFirmwareVersion\n  </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;wifimac&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;blemac&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;sn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;deviceid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;firmwareversion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;firmwaretype&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result: 0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>WiFi_MAC: Format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F]. </p>
-</li>
-<li>
-<p>BLE_MAC: Format XX:XX:XX:XX:XX:XX:XX , XX range [0-9a-fA-F]. </p>
-</li>
-<li>
-<p>SN: Device SN code, length 16 characters. </p>
-</li>
-<li>
-<p>Device_ID: device ID code, length 7 characters. </p>
-</li>
-<li>
-<p>FirmwareVersion: firmware version number, length 0-32 characters.</p>
-</li>
+<li>wifimac: Format XX:XX:XX:XX:XX:XX, XX range [0-9a-fA-F]. </li>
+<li>blemac: Format XX:XX:XX:XX:XX:XX:XX , XX range [0-9a-fA-F]. </li>
+<li>sn: Device SN code, length 16 characters. </li>
+<li>deviceid: device ID code, length 7 characters. </li>
+<li>firmwareversion: firmware version number, length 0-32 characters.</li>
+<li>firmwaretype:  0 mean standard firmware，1 mean aws firmware.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="restart_dev">RESTART_DEV<a class="headerlink" href="#restart_dev" title="Permanent link">&para;</a></h4>
 <p>API function: </p>
 <p>Reboot the device. </p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x22</td>
-    <td> / </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RESTART_DEV&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
 <li>Data is equal to null</li>
 </ul>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x22</td>
-    <td> Result\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure.</li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="reset_dev">RESET_DEV<a class="headerlink" href="#reset_dev" title="Permanent link">&para;</a></h4>
 <p>API function: </p>
 <p>Reset the device.</p>
 <p>Data segment at reception: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x23</td>
-    <td> / </td>
-  </tr>
-</table>
-
-<ul>
-<li>Data is equal to null</li>
-</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RESET_DEV&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x23</td>
-    <td> Result\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure.</li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="set_ble_rssi_filter">SET_BLE_RSSI_FILTER<a class="headerlink" href="#set_ble_rssi_filter" title="Permanent link">&para;</a></h4>
 <p>API function: </p>
 <p>Set the BLE_RSSI filter threshold. </p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x24</td>
-    <td> BLERssiFilter\n  </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_BLE_RSSI_FILTER&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;blerssifilter&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>BLERssiFilter: char type Range -100 ~ 0. Default value: -100 </li>
+<li>blerssifilter:  Range -100 ~ 0. Default value: -100 </li>
 </ul>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x24</td>
-    <td> Result\n </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>Result: 0x00 represents execution success; 0x01 represents execution failure.</li>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_ble_rssi_filter">GET_BLE_RSSI_FILTER<a class="headerlink" href="#get_ble_rssi_filter" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get the BLE_RSSI filter threshold. </p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x25</td>
-    <td> / </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_BLE_RSSI_FILTER&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x25</td>
-    <td rowspan="3"> Result\n </td>
-  </tr>
-  <tr>
-    <td> BLERssiFilter\n  </td>
-  </tr>
-</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;blerssifilter&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span>
+<span class="p">}</span>
 
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
-<li>
-<p>Result: 0x00 represents execution success; 0x01 represents execution failure. </p>
-</li>
-<li>
-<p>BLERssiFilter: char type Range -100 ~ 0.</p>
-</li>
+<li>blerssifilter: Range -100 ~ 0.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
 </ul>
 <h4 id="get_wifi_ap_list">GET_WiFi_AP_LIST<a class="headerlink" href="#get_wifi_ap_list" title="Permanent link">&para;</a></h4>
 <p>API Function: </p>
 <p>Get the list of surrounding Wi-Fi AP information. </p>
 <p>Data segment at reception:</p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x26</td>
-    <td> / </td>
-  </tr>
-</table>
-
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_WiFi_AP_LIST &quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Data segment at response: </p>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="2">Data</th>
-  </tr>
-  <tr>
-    <td rowspan="3">0x26</td>
-    <td> Result\n  </td>
-    <td> { 
-"WiFi_AP_LIST": 
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;WIFI_AP_LIST&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span><span class="nt">&quot;SSID&quot;</span><span class="p">:</span><span class="s2">&quot;XXXX&quot;</span><span class="p">,</span><span class="nt">&quot;RSSI&quot;</span><span class="p">:</span><span class="err">XXX</span><span class="p">,</span><span class="nt">&quot;authMode&quot;</span><span class="p">:</span><span class="err">X</span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span><span class="nt">&quot;SSID&quot;</span><span class="p">:</span><span class="s2">&quot;XXXX&quot;</span><span class="p">,</span><span class="nt">&quot;RSSI&quot;</span><span class="p">:</span><span class="err">XXX</span><span class="p">,</span><span class="nt">&quot;authMode&quot;</span><span class="p">:</span><span class="err">X</span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span><span class="nt">&quot;SSID&quot;</span><span class="p">:</span><span class="s2">&quot;XXXX&quot;</span><span class="p">,</span><span class="nt">&quot;RSSI&quot;</span><span class="p">:</span><span class="err">XXX</span><span class="p">,</span><span class="nt">&quot;authMode&quot;</span><span class="p">:</span><span class="err">X</span><span class="p">},</span>
+<span class="w">            </span><span class="err">......</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span>
+<span class="p">}</span>
 
-[ 
-
-{"SSID": "XXXX","RSSI":XXX,"authMode": X}, 
-
-{"SSID": "XXXX","RSSI":XXX, "authMode":X}, 
-
-{"SSID": "XXXX","RSSI": XXX, "authMode": X}, 
-
-…… 
-
-] 
-
-}   </td>
-  </tr>
-</table>
-
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
 <ul>
 <li>
-<p>Result: 0x00 represents execution success; 0x01 represents execution failure. </p>
+<p>error: It is an object that will contain error codes and messages.</p>
 </li>
 <li>
 <p>SSID: router name, in string form, valid length 0-32 </p>
@@ -3964,67 +3927,213 @@ Each paragraph of data is separated by the '\n' character, as shown above, pleas
 <p>RSSI: Routing signal strength, numeric type, valid range -96 ~ 0. </p>
 </li>
 <li>
-<p>AUTH_MODE: Routing encryption method, numeric type, valid range 0 ~ 7. See the following table for the meaning.</p>
+<p>authMode: Routing encryption method, numeric type, valid range 0 ~ 7. See the following table for the meaning.</p>
 </li>
 </ul>
-<table style="width:100%">
-  <tr>
-    <th>CmdID</th>
-    <th colspan="1">Data</th>
-  </tr>
-
-  <tr>
-    <td rowspan="1">0</td>
-    <td> authenticate mode : open </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1">1</td>
-    <td> authenticate mode : WEP </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1">2</td>
-    <td> authenticate mode : WPA_PSK </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1">3</td>
-    <td> authenticate mode : WPA2_PSK </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1">4</td>
-    <td> authenticate mode : WPA_WPA2_PSK </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1">5</td>
-    <td> authenticate mode : WPA2_ENTERPRISE </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1">5</td>
-    <td> authenticate mode : WPA2_ENTERPRISE </td>
-  </tr>
-
-
-  <tr>
-    <td rowspan="1">6</td>
-    <td> authenticate mode : WPA3_PS </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1">7</td>
-    <td> authenticate mode : WPA2_WPA3_PSK  </td>
-  </tr>
-
-  <tr>
-    <td rowspan="1"> - </td>
-    <td> default   </td>
-  </tr>
-
+<table>
+<thead>
+<tr>
+<th>num</th>
+<th>authMode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>authenticate mode : open</td>
+</tr>
+<tr>
+<td>1</td>
+<td>authenticate mode : WEP</td>
+</tr>
+<tr>
+<td>2</td>
+<td>authenticate mode : WPA_PSK</td>
+</tr>
+<tr>
+<td>3</td>
+<td>authenticate mode : WPA2_PSK</td>
+</tr>
+<tr>
+<td>4</td>
+<td>authenticate mode : WPA_WPA2_PSK</td>
+</tr>
+<tr>
+<td>5</td>
+<td>authenticate mode : WPA2_ENTERPRISE</td>
+</tr>
+<tr>
+<td>6</td>
+<td>authenticate mode : WPA3_PS</td>
+</tr>
+<tr>
+<td>7</td>
+<td>authenticate mode : WPA2_WPA3_PSK</td>
+</tr>
+<tr>
+<td>-</td>
+<td>default</td>
+</tr>
+</tbody>
 </table>
+<h4 id="set_mqtt_client_id">SET_MQTT_CLIENT_ID<a class="headerlink" href="#set_mqtt_client_id" title="Permanent link">&para;</a></h4>
+<p>API Function: </p>
+<p>Get the BLE_RSSI filter threshold. </p>
+<p>Data segment at reception:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_MQTT_CLIENT_ID&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;mqttclientid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
+<ul>
+<li>mqttclientid: device mqtt client id, effective length is 1-128 bytes.</li>
+</ul>
+<p>Data segment at response: </p>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span>
+<span class="p">}</span>
+
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
+<ul>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
+</ul>
+<h4 id="get_mqtt_client_id">GET_MQTT_CLIENT_ID<a class="headerlink" href="#get_mqtt_client_id" title="Permanent link">&para;</a></h4>
+<p>API Function: </p>
+<p>Get the BLE_RSSI filter threshold. </p>
+<p>Data segment at reception:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_MQTT_CLIENT_ID&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Data segment at response: </p>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;mqttclientid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span>
+<span class="p">}</span>
+
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
+<ul>
+<li>mqttclientid: device mqtt client id, effective length is 1-128 bytes.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
+</ul>
+<h4 id="set_ble_scan_params">SET_BLE_SCAN_PARAMS<a class="headerlink" href="#set_ble_scan_params" title="Permanent link">&para;</a></h4>
+<p>API Function: </p>
+<p>Get the BLE_RSSI filter threshold. </p>
+<p>Data segment at reception:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SET_BLE_SCAN_PARAMS&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;scantype&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;scaninterval&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;scanwindow&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
+<ul>
+<li>scantype: 0 mean passive scan type, 1 mean active scan type.</li>
+<li>scaninterval: The scanning interval is defined as the time from when the controller starts the last LE scan until subsequent LE scans begin. Range: 4-16384, default value: 80 (50ms), time=N * 0.625 m, time range: 2.5 ms~10240ms.</li>
+<li>scanwindow: Scan window, duration of LE scan. LE_ Scan_ Window should be less than or equal to LE_ Scan_ Interval. Range: 4-16384, default value: 48 (30ms), time=N * 0.625 ms, time range: 2.5 ms~10240ms.</li>
+</ul>
+<p>Data segment at response: </p>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span>
+<span class="p">}</span>
+
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
+<ul>
+<li>result: 0x00 represent execution success; 0x01 represent execution fail.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
+</ul>
+<h4 id="get_ble_scan_params">GET_BLE_SCAN_PARAMS<a class="headerlink" href="#get_ble_scan_params" title="Permanent link">&para;</a></h4>
+<p>API Function: </p>
+<p>Get the BLE_RSSI filter threshold. </p>
+<p>Data segment at reception:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GET_BLE_SCAN_PARAMS&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Data segment at response: </p>
+<div class="highlight"><pre><span></span><code><span class="c1">// success reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;scantype&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;scaninterval&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;scanwindow&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span>
+<span class="p">}</span>
+
+<span class="c1">// fail reply</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Note:</strong></p>
+<ul>
+<li>scantype: 0 mean passive scan type, 1 mean active scan type.</li>
+<li>scaninterval: The scanning interval is defined as the time from when the controller starts the last LE scan until subsequent LE scans begin. Range: 4-16384, default value: 80 (50ms), time=N * 0.625 m, time range: 2.5 ms~10240ms.</li>
+<li>scanwindow: Scan window, duration of LE scan. LE_ Scan_ Window should be less than or equal to LE_ Scan_ Interval. Range: 4-16384, default value: 48 (30ms), time=N * 0.625 ms, time range: 2.5 ms~10240ms.</li>
+<li>error: It is an object that will contain error codes and messages.</li>
+</ul>
 
 
   
