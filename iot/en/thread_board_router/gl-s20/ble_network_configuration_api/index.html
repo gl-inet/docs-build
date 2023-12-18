@@ -1,0 +1,3018 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for GL.iNet IoT Productions">
+      
+      
+        <meta name="author" content="GL.iNet">
+      
+      
+        <link rel="canonical" href="https://docs.gl-inet.com/iot/en/thread_board_router/gl-s20/ble_network_configuration_api/">
+      
+      
+        <link rel="prev" href="../http_restful_api/">
+      
+      
+        <link rel="next" href="../../gl-s200/">
+      
+      
+      <link rel="icon" href="../../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>BLE Network Configuration API - GL.iNet IoT Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-CB08JFHVHT"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-CB08JFHVHT",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-CB08JFHVHT",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gl-s20-ble-network-configuration-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="GL.iNet IoT Docs" class="md-header__button md-logo" aria-label="GL.iNet IoT Docs" data-md-component="logo">
+      
+  <img src="../../../images/logo_white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GL.iNet IoT Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BLE Network Configuration API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gl-inet/docs-iot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gl-inet/docs-iot
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ble_proxy/gl-s10/" class="md-tabs__link">
+          
+  
+    
+  
+  BLE Proxy
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Thread Board Router
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../iot_dev_board/" class="md-tabs__link">
+          
+  
+    
+  
+  IoT Dev Board
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GL.iNet IoT Docs" class="md-nav__button md-logo" aria-label="GL.iNet IoT Docs" data-md-component="logo">
+      
+  <img src="../../../images/logo_white.svg" alt="logo">
+
+    </a>
+    GL.iNet IoT Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gl-inet/docs-iot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gl-inet/docs-iot
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BLE Proxy
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            BLE Proxy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ble_proxy/gl-s10/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GL-S10
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            GL-S10
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s10/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s10/user_manual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s10/firmware_compilation_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware Compilation Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Thread Board Router
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Thread Board Router
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GL-S20
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            GL-S20
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4" id="__nav_3_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http_restful_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Http RESTful API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    BLE Network Configuration API
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    BLE Network Configuration API
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#package-format" class="md-nav__link">
+    Package format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crc-16-verify" class="md-nav__link">
+    CRC-16 verify
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aes-128-encryption" class="md-nav__link">
+    AES-128 encryption
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ble-api" class="md-nav__link">
+    BLE API
+  </a>
+  
+    <nav class="md-nav" aria-label="BLE API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cmdid-list" class="md-nav__link">
+    CmdID list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init" class="md-nav__link">
+    INIT
+  </a>
+  
+    <nav class="md-nav" aria-label="INIT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gl_check_initialized" class="md-nav__link">
+    gl_check_initialized
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gl_set_init_admin_password" class="md-nav__link">
+    gl_set_init_admin_password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ethernet" class="md-nav__link">
+    Ethernet
+  </a>
+  
+    <nav class="md-nav" aria-label="Ethernet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gl_eth_get_status" class="md-nav__link">
+    gl_eth_get_status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gl_eth_get_config" class="md-nav__link">
+    gl_eth_get_config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gl_eth_set_config" class="md-nav__link">
+    gl_eth_set_config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wifi" class="md-nav__link">
+    Wifi
+  </a>
+  
+    <nav class="md-nav" aria-label="Wifi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gl_wifi_get_status" class="md-nav__link">
+    gl_wifi_get_status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gl_wifi_stop" class="md-nav__link">
+    gl_wifi_stop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gl_wifi_start" class="md-nav__link">
+    gl_wifi_start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gl_wifi_get_save_wifi" class="md-nav__link">
+    gl_wifi_get_save_wifi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gl_wifi_delete_save_wifi" class="md-nav__link">
+    gl_wifi_delete_save_wifi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gl_wifi_scan" class="md-nav__link">
+    gl_wifi_scan
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wan_failover" class="md-nav__link">
+    Wan_failover
+  </a>
+  
+    <nav class="md-nav" aria-label="Wan_failover">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gl_wan_failover_get_config" class="md-nav__link">
+    gl_wan_failover_get_config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gl_wan_failover_set_config" class="md-nav__link">
+    gl_wan_failover_set_config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    System
+  </a>
+  
+    <nav class="md-nav" aria-label="System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gl_set_admin_pwd" class="md-nav__link">
+    gl_set_admin_pwd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gl_sys_reset" class="md-nav__link">
+    gl_sys_reset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gl_sys_restart" class="md-nav__link">
+    gl_sys_restart
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gl-s200/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GL-S200
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            GL-S200
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-s200/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-s200/bluetooth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bluetooth
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-s200/thread_mesh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thread Mesh
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-s200/openthread_border_router_codelabs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenThread Border Router Codelabs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-s200/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../iot_dev_board/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    IoT Dev Board
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            IoT Dev Board
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="gl-s20-ble-network-configuration-api">GL-S20 BLE network configuration API<a class="headerlink" href="#gl-s20-ble-network-configuration-api" title="Permanent link">&para;</a></h1>
+<p>The GL-S20 includes two GATT services.</p>
+<p>The first one is to receive <strong>instructions and messages</strong>, and the UUID of the service is <code>000000FF-0000-1000-8000-00805F9B34FB</code>, and it contains a characteristic, the UUID of the characteristic is <code>0000FF01-0000-1000-8000-00805F9B34FB</code>. This characteristic permission is only writable.</p>
+<p>The second one is for sending notifications like <strong>reply the instruction operation</strong>, and the UUID of the service is <code>000000EE-0000-1000-8000-00805F9B34FB</code>. It only has one characteristic, and the UUID of the characteristic is <code>0000EE01-0000-1000-8000-00805F9B34FB</code>. The permission for this characteristic is readable and notifiable.</p>
+<h2 id="package-format">Package format<a class="headerlink" href="#package-format" title="Permanent link">&para;</a></h2>
+<p>Whether the device receives instructions from the client or responds to the execution results, it needs to follow the following format.</p>
+<p>It consists of seven parts: header, version number, package length, scrolling count, CRC checksum, command ID, and data segment.</p>
+<table>
+    <tr>
+        <th>Header</th>
+        <th>Version</th>
+        <th>Length</th>  
+        <th>Count</th>  
+        <th>CRC-16</th>  
+        <th>CmdID</th>  
+        <th>Data</th>  
+    </tr>
+    <tr>
+        <td>1 byte</td>
+        <td>1 byte</td>
+        <td>2 byte</td>
+        <td>1 byte</td>
+        <td>2 byte</td>
+        <td>1 byte</td>
+        <td>N byte</td>
+    </tr>
+    <tr>
+        <td colspan="5">not encrypted</td>
+        <td colspan="2">encrypted by AES-128</td>
+    </tr>
+</table>
+
+<ul>
+<li>Header</li>
+</ul>
+<p>The header defaults to 0xFE.</p>
+<ul>
+<li>Version</li>
+</ul>
+<p>Version number defaults to 0x01.</p>
+<ul>
+<li>Length</li>
+</ul>
+<p>The length of the entire package.</p>
+<ul>
+<li>Count</li>
+</ul>
+<p>The valid range is 0-255, with a rolling count. The count is reset to zero on the initial connection, and the count value of the subsequent packet is larger than the previous one. (Package index to prevent package stuffing)</p>
+<ul>
+<li>CRC-16</li>
+</ul>
+<p>After completing the packaging of header, version number, package length, scrolling count, command ID, data segments, CRC calculation can be performed.</p>
+<ul>
+<li>CmdID</li>
+</ul>
+<p>Identify which command the package is.</p>
+<ul>
+<li>Data</li>
+</ul>
+<p>Data segment.</p>
+<p><strong>Note:</strong> The field of CmdID and Data should be encrypted by AES-128.</p>
+<h2 id="crc-16-verify">CRC-16 verify<a class="headerlink" href="#crc-16-verify" title="Permanent link">&para;</a></h2>
+<p>The detailed configuration is as follows:</p>
+<table>
+    <tr>
+        <td colspan="9"><strong>CRC-16 cpnfiguration parameter</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>"XMODEM", also known as "ZMODEM", "CRC-16/ACORN"</td>
+    </tr>
+    <tr>
+        <td>Width</td>
+        <td>16 bit</td>
+    </tr>
+    <tr>
+        <td>Poly</td>
+        <td>1021 (That is actually x^16 + x^12 + x^5 + 1)</td>
+    </tr>
+    <tr>
+        <td>Initialization</td>
+        <td>0000</td>
+    </tr>
+    <tr>
+        <td>Reflect Input byte</td>
+        <td>False</td>
+    </tr>
+    <tr>
+        <td>Reflect Output CRC</td>
+        <td>False</td>
+    </tr>
+    <tr>
+        <td>Xor constant to output CRC</td>
+        <td>0000</td>
+    </tr>
+</table>
+
+<h2 id="aes-128-encryption">AES-128 encryption<a class="headerlink" href="#aes-128-encryption" title="Permanent link">&para;</a></h2>
+<p>AES128 symmetric encryption uses the <strong>CBC method</strong>, which first divides the plaintext into several small segments, and then performs XOR operations on each segment with the initial block or the previous ciphertext segment before encrypting it with the key.</p>
+<ul>
+<li>Key</li>
+</ul>
+<p>"goodlife--00XXXX"</p>
+<p>BLE MAC in uppercase of devices without the ':' symbol calculate by CRC-16, and then the result transform to in uppercase HEX string is  [XXXX].</p>
+<ul>
+<li>IV</li>
+</ul>
+<p>"000000000000"</p>
+<ul>
+<li>Filling method</li>
+</ul>
+<p>PKCS7 Padding</p>
+<h2 id="ble-api">BLE API<a class="headerlink" href="#ble-api" title="Permanent link">&para;</a></h2>
+<p>The data of the BLE API needs to be filled in the <strong>CmdID and Data</strong> segments of the package format. The BLE API input parameter and output parameter  adopts <strong>JSON</strong> format.</p>
+<ul>
+<li>For command</li>
+</ul>
+<table>
+    <tr>
+          <th>CmdID</th>
+          <th>Data</th>
+    </tr>
+      <tr>
+        <td rowspan="2">0x00</td>
+          <td>Input parameter</td>
+    </tr>
+      <tr>
+        <td><strong>Note: Please add '\n' in the end if input parameter exist.</td>
+    </tr>
+  </table>
+
+<ul>
+<li>For respond</li>
+</ul>
+<table>
+    <tr>
+          <th>CmdID</th>
+          <th>Data</th>
+    </tr>
+      <tr>
+        <td rowspan="2">0x00</td>
+          <td>Output parameter</td>
+    </tr>
+      <tr>
+        <td><strong>Note: It will add '\n' before output parameter</td>
+    </tr>
+  </table>
+
+<h3 id="cmdid-list">CmdID list<a class="headerlink" href="#cmdid-list" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>CmdID</th>
+<th>Cmd Name</th>
+<th>Require input parameter</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x01</td>
+<td><a href="#gl_check_initialized">gl_check_initialized</a></td>
+<td>N</td>
+<td>Get the device initialization status</td>
+</tr>
+<tr>
+<td>0x02</td>
+<td><a href="#gl_set_init_admin_password">gl_set_init_admin_password</a></td>
+<td>Y</td>
+<td>Initialize web login password</td>
+</tr>
+<tr>
+<td>0x03</td>
+<td><a href="#gl_eth_get_status">gl_eth_get_status</a></td>
+<td>N</td>
+<td>Get the current status of Ethernet</td>
+</tr>
+<tr>
+<td>0x04</td>
+<td><a href="#gl_eth_get_config">gl_eth_get_config</a></td>
+<td>N</td>
+<td>Get Ethernet configuration</td>
+</tr>
+<tr>
+<td>0x05</td>
+<td><a href="#gl_eth_set_config">gl_eth_set_config</a></td>
+<td>Y</td>
+<td>Set Ethernet configuration</td>
+</tr>
+<tr>
+<td>0x06</td>
+<td><a href="#gl_wifi_get_status">gl_wifi_get_status</a></td>
+<td>N</td>
+<td>Get the current status of WiFi</td>
+</tr>
+<tr>
+<td>0x07</td>
+<td><a href="#gl_wifi_stop">gl_wifi_stop</a></td>
+<td>N</td>
+<td>Close the WiFi</td>
+</tr>
+<tr>
+<td>0x08</td>
+<td><a href="#gl_wifi_start">gl_wifi_start</a></td>
+<td>Y</td>
+<td>Start connect to specified WiFi</td>
+</tr>
+<tr>
+<td>0x09</td>
+<td><a href="#gl_wifi_get_save_wifi">gl_wifi_get_save_wifi</a></td>
+<td>N</td>
+<td>Obtain a list of configured WiFi, with a maximum of 3 saved</td>
+</tr>
+<tr>
+<td>0x0a</td>
+<td><a href="#gl_wifi_delete_save_wifi">gl_wifi_delete_save_wifi</a></td>
+<td>Y</td>
+<td>Delete WiFi configuration in saved wifi list</td>
+</tr>
+<tr>
+<td>0x0b</td>
+<td><a href="#gl_wifi_scan">gl_wifi_scan</a></td>
+<td>N</td>
+<td>Scan the current WiFi environment, obtain a list of WiFi information</td>
+</tr>
+<tr>
+<td>0x0c</td>
+<td><a href="#gl_wan_failover_get_config">gl_wan_failover_get_config</a></td>
+<td>N</td>
+<td>Obtain the current WAN failover configuration</td>
+</tr>
+<tr>
+<td>0x0d</td>
+<td><a href="#gl_wan_failover_set_config">gl_wan_failover_set_config</a></td>
+<td>Y</td>
+<td>Set the current WAN failover configuration</td>
+</tr>
+<tr>
+<td>0x0e</td>
+<td><a href="#gl_set_admin_pwd">gl_set_admin_pwd</a></td>
+<td>Y</td>
+<td>Change web login password</td>
+</tr>
+<tr>
+<td>0x0f</td>
+<td><a href="#gl_sys_reset">gl_sys_reset</a></td>
+<td>N</td>
+<td>Reset the device to factory</td>
+</tr>
+<tr>
+<td>0x10</td>
+<td><a href="#gl_sys_restart">gl_sys_restart</a></td>
+<td>N</td>
+<td>Restart the device</td>
+</tr>
+</tbody>
+</table>
+<h3 id="init">INIT<a class="headerlink" href="#init" title="Permanent link">&para;</a></h3>
+<h4 id="gl_check_initialized"><span id="gl_check_initialized">gl_check_initialized</span><a class="headerlink" href="#gl_check_initialized" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x01</p>
+</li>
+<li>
+<p>Function description: Get the device initialization status</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<p>None</p>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>firmware_category</td>
+<td>mandatory</td>
+<td>string</td>
+<td>Firmware type: "2c"</td>
+</tr>
+<tr>
+<td>firmware_version</td>
+<td>mandatory</td>
+<td>string</td>
+<td>Firmware version</td>
+</tr>
+<tr>
+<td>hostname</td>
+<td>mandatory</td>
+<td>string</td>
+<td>Device Host Name</td>
+</tr>
+<tr>
+<td>build_time</td>
+<td>mandatory</td>
+<td>string</td>
+<td>Firmware build time</td>
+</tr>
+<tr>
+<td>initialized</td>
+<td>mandatory</td>
+<td>boolean</td>
+<td>Whether initialized</td>
+</tr>
+<tr>
+<td>mac</td>
+<td>mandatory</td>
+<td>string</td>
+<td>device basic mac</td>
+</tr>
+<tr>
+<td>model</td>
+<td>mandatory</td>
+<td>string</td>
+<td>device model</td>
+</tr>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code：</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gl_set_init_admin_password"><span id="gl_set_init_admin_password">gl_set_init_admin_password</span><a class="headerlink" href="#gl_set_init_admin_password" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x02</p>
+</li>
+<li>
+<p>Function description: Initialize web login password</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>password</td>
+<td>mandatory</td>
+<td>string</td>
+<td>password for web login, range [10,32]</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ethernet">Ethernet<a class="headerlink" href="#ethernet" title="Permanent link">&para;</a></h3>
+<h4 id="gl_eth_get_status"><span id="gl_eth_get_status">gl_eth_get_status</span><a class="headerlink" href="#gl_eth_get_status" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x03</p>
+</li>
+<li>
+<p>Function description: Get the current status of Ethernet</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<p>None</p>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Connection status<br />0: Not connected <br />1: Successfully connected <br />2: Connecting <br />3: Physical device not connected</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td>mandatory</td>
+<td>string</td>
+<td>Networking methods<br />“dhcp” or “static”</td>
+</tr>
+<tr>
+<td>ipv4</td>
+<td>optional</td>
+<td>object</td>
+<td>IPv4 related status, only available after connection</td>
+</tr>
+<tr>
+<td>ipv4.ip</td>
+<td>mandatory</td>
+<td>string</td>
+<td>ipv4 address</td>
+</tr>
+<tr>
+<td>ipv4.gateway</td>
+<td>mandatory</td>
+<td>string</td>
+<td>ipv4 gateway</td>
+</tr>
+<tr>
+<td>ipv6</td>
+<td>optional</td>
+<td>object</td>
+<td>IPv6 related status, only available after connection</td>
+</tr>
+<tr>
+<td>ipv6.ip</td>
+<td>mandatory</td>
+<td>string</td>
+<td>ipv6 address</td>
+</tr>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code：</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gl_eth_get_config"><span id="gl_eth_get_config">gl_eth_get_config</span><a class="headerlink" href="#gl_eth_get_config" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x04</p>
+</li>
+<li>
+<p>Function description: Obtain Ethernet configuration</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<p>None</p>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>protocol</td>
+<td>mandatory</td>
+<td>string</td>
+<td>Networking methods<br />“dhcp” or “static”</td>
+</tr>
+<tr>
+<td>ipv4</td>
+<td>optional</td>
+<td>object</td>
+<td>ipv4 setting, effective when static</td>
+</tr>
+<tr>
+<td>ipv4.ip</td>
+<td>mandatory</td>
+<td>string</td>
+<td>Static IPv4 address</td>
+</tr>
+<tr>
+<td>ipv4.netmask</td>
+<td>mandatory</td>
+<td>string</td>
+<td>Static ipv4 network mask</td>
+</tr>
+<tr>
+<td>ipv4.gateway</td>
+<td>mandatory</td>
+<td>string</td>
+<td>Static ipv4 gateway</td>
+</tr>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code：</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gl_eth_set_config"><span id="gl_eth_set_config">gl_eth_set_config</span><a class="headerlink" href="#gl_eth_set_config" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x05</p>
+</li>
+<li>
+<p>Function description: Set Ethernet configuration</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>protocol</td>
+<td>mandatory</td>
+<td>string</td>
+<td>Networking methods<br />“dhcp” or “static”</td>
+</tr>
+<tr>
+<td>ipv4</td>
+<td>optional</td>
+<td>object</td>
+<td>ipv4 setting, effective when static</td>
+</tr>
+<tr>
+<td>ipv4.ip</td>
+<td>optional</td>
+<td>string</td>
+<td>Static IPv4 address</td>
+</tr>
+<tr>
+<td>ipv4.netmask</td>
+<td>optional</td>
+<td>string</td>
+<td>Static ipv4 network mask</td>
+</tr>
+<tr>
+<td>ipv4.gateway</td>
+<td>optional</td>
+<td>string</td>
+<td>Static ipv4 gateway</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="wifi">Wifi<a class="headerlink" href="#wifi" title="Permanent link">&para;</a></h3>
+<h4 id="gl_wifi_get_status"><span id="gl_wifi_get_status">gl_wifi_get_status</span><a class="headerlink" href="#gl_wifi_get_status" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x06</p>
+</li>
+<li>
+<p>Function description: Get the current status of WiFi</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<p>None</p>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Connection status<br />0: Idle; <br />1: Connecting; <br />2: Connected, <br />3: Connection failed</td>
+</tr>
+<tr>
+<td>fail_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Connection failure information</td>
+</tr>
+<tr>
+<td>ssid</td>
+<td>optional</td>
+<td>string</td>
+<td>Connected or currently connected WiFi ssid</td>
+</tr>
+<tr>
+<td>bssid</td>
+<td>optional</td>
+<td>string</td>
+<td>Connected wifi bssid</td>
+</tr>
+<tr>
+<td>ipv4</td>
+<td>optional</td>
+<td>object</td>
+<td>IPv4 related status, only available after connection</td>
+</tr>
+<tr>
+<td>ipv4.ip</td>
+<td>mandatory</td>
+<td>string</td>
+<td>ipv4 address</td>
+</tr>
+<tr>
+<td>ipv4.gateway</td>
+<td>mandatory</td>
+<td>string</td>
+<td>ipv4 gateway</td>
+</tr>
+<tr>
+<td>ipv6</td>
+<td>optional</td>
+<td>object</td>
+<td>IPv6 related status, only available after connection</td>
+</tr>
+<tr>
+<td>ipv6.ip</td>
+<td>mandatory</td>
+<td>string</td>
+<td>ipv6 address</td>
+</tr>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gl_wifi_stop"><span id="gl_wifi_stop">gl_wifi_stop</span><a class="headerlink" href="#gl_wifi_stop" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x07</p>
+</li>
+<li>
+<p>Function description: Close the WiFi</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<p>None</p>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gl_wifi_start"><span id="gl_wifi_start">gl_wifi_start</span><a class="headerlink" href="#gl_wifi_start" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x08</p>
+</li>
+<li>
+<p>Function description: Start connect to specified WiFi</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enable_wifi_save</td>
+<td>mandatory</td>
+<td>boolean</td>
+<td>Whether save this configuration when connecting to WiFi</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td>mandatory</td>
+<td>string</td>
+<td>Networking methods<br />“dhcp” or “static”</td>
+</tr>
+<tr>
+<td>ipv4</td>
+<td>optional</td>
+<td>object</td>
+<td>ipv4 setting, effective when static</td>
+</tr>
+<tr>
+<td>ipv4.ip</td>
+<td>optional</td>
+<td>string</td>
+<td>Static IPv4 address</td>
+</tr>
+<tr>
+<td>ipv4.netmask</td>
+<td>optional</td>
+<td>string</td>
+<td>Static ipv4 network mask</td>
+</tr>
+<tr>
+<td>ipv4.gateway</td>
+<td>optional</td>
+<td>string</td>
+<td>Static ipv4 gateway</td>
+</tr>
+<tr>
+<td>ssid</td>
+<td>mandatory</td>
+<td>string</td>
+<td>wifi ssid</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>mandatory</td>
+<td>string</td>
+<td>wifi password</td>
+</tr>
+<tr>
+<td>lock_bssid</td>
+<td>mandatory</td>
+<td>boolean</td>
+<td>Whether specify an AP to connect to the specified bssid</td>
+</tr>
+<tr>
+<td>bssid</td>
+<td>optional</td>
+<td>string</td>
+<td>wifi bssid</td>
+</tr>
+<tr>
+<td>auth_mode</td>
+<td>mandatory</td>
+<td>number</td>
+<td>wifi authentication mode<br />0: open <br />1: WEP <br />2: WPA_PSK <br />3: WPA2_PSK  <br />4: WPA_WPA2_PSK <br />5: WPA2_ENTERPRISE (Not support)<br />6: WPA3_PSK <br />7: WPA2_WPA3_PSK <br />8: WAPI_PSK <br />9: OWE <br /></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gl_wifi_get_save_wifi"><span id="gl_wifi_get_save_wifi">gl_wifi_get_save_wifi</span><a class="headerlink" href="#gl_wifi_get_save_wifi" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x09</p>
+</li>
+<li>
+<p>Function description: Obtain a list of configured WiFi, with a maximum of 3 saved</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<p>None</p>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>list</td>
+<td>mandatory</td>
+<td>array</td>
+<td>wifi list</td>
+</tr>
+<tr>
+<td>list[x].ssid</td>
+<td>optional</td>
+<td>string</td>
+<td>wifi ssid</td>
+</tr>
+<tr>
+<td>list[x].bssid</td>
+<td>optional</td>
+<td>string</td>
+<td>wifi bssid</td>
+</tr>
+<tr>
+<td>list[x].lock_bssid</td>
+<td>optional</td>
+<td>boolean</td>
+<td>whether lock the bssid</td>
+</tr>
+<tr>
+<td>list[x].auth_mode</td>
+<td>optional</td>
+<td>number</td>
+<td>wifi authentication mode</td>
+</tr>
+<tr>
+<td>list[x].pwd</td>
+<td>optional</td>
+<td>string</td>
+<td>wifi password</td>
+</tr>
+<tr>
+<td>list[x].protocol</td>
+<td>optional</td>
+<td>string</td>
+<td>Networking methods<br />“dhcp” or “static”</td>
+</tr>
+<tr>
+<td>list[x].ipv4</td>
+<td>optional</td>
+<td>object</td>
+<td>Static IPv4 configuration</td>
+</tr>
+<tr>
+<td>list[x].ipv4.ip</td>
+<td>optional</td>
+<td>string</td>
+<td>Static IPv4 address</td>
+</tr>
+<tr>
+<td>list[x].ipv4.netmask</td>
+<td>optional</td>
+<td>string</td>
+<td>Static  ipv4 network mask</td>
+</tr>
+<tr>
+<td>list[x].ipv4.gateway</td>
+<td>optional</td>
+<td>string</td>
+<td>Static   ipv4 gateway</td>
+</tr>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code：</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gl_wifi_delete_save_wifi"><span id="gl_wifi_delete_save_wifi">gl_wifi_delete_save_wifi</span><a class="headerlink" href="#gl_wifi_delete_save_wifi" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x0a</p>
+</li>
+<li>
+<p>Function description: Delete WiFi configuration in saved wifi list</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ssid</td>
+<td>mandatory</td>
+<td>string</td>
+<td>which wifi ssid need to delete</td>
+</tr>
+<tr>
+<td>auth_mode</td>
+<td>mandatory</td>
+<td>number</td>
+<td>need to delete wifi authentication mode<br />0: open <br />1: WEP <br />2: WPA_PSK <br />3: WPA2_PSK  <br />4: WPA_WPA2_PSK <br />5: WPA2_ENTERPRISE (Not support)<br />6: WPA3_PSK <br />7: WPA2_WPA3_PSK <br />8: WAPI_PSK <br />9: OWE <br /></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gl_wifi_scan"><span id="gl_wifi_scan">gl_wifi_scan</span><a class="headerlink" href="#gl_wifi_scan" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x0b</p>
+</li>
+<li>
+<p>Function description: Scan the current WiFi environment, obtain a list of WiFi information</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<p>None</p>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>list</td>
+<td>mandatory</td>
+<td>array</td>
+<td>wifi list</td>
+</tr>
+<tr>
+<td>list[x].ssid</td>
+<td>optional</td>
+<td>string</td>
+<td>wifi ssid</td>
+</tr>
+<tr>
+<td>list[x].bssid</td>
+<td>optional</td>
+<td>string</td>
+<td>wifi bssid</td>
+</tr>
+<tr>
+<td>list[x].auth_mode</td>
+<td>optional</td>
+<td>number</td>
+<td>wifi authentication mode<br />0: open <br />1: WEP <br />2: WPA_PSK <br />3: WPA2_PSK  <br />4: WPA_WPA2_PSK <br />5: WPA2_ENTERPRISE (Not support)<br />6: WPA3_PSK <br />7: WPA2_WPA3_PSK <br />8: WAPI_PSK <br />9: OWE <br /></td>
+</tr>
+<tr>
+<td>list[x].rssi</td>
+<td>optional</td>
+<td>number</td>
+<td>signal intensity RSSI</td>
+</tr>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code：</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="wan_failover">Wan_failover<a class="headerlink" href="#wan_failover" title="Permanent link">&para;</a></h3>
+<h4 id="gl_wan_failover_get_config"><span id="gl_wan_failover_get_config">gl_wan_failover_get_config</span><a class="headerlink" href="#gl_wan_failover_get_config" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x0c</p>
+</li>
+<li>
+<p>Function description: Obtain the current WAN failover configuration</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<p>None</p>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eth</td>
+<td>mandatory</td>
+<td>object</td>
+<td>Ethernet failover configuration</td>
+</tr>
+<tr>
+<td>eth.enable</td>
+<td>mandatory</td>
+<td>boolean</td>
+<td>Whether enable Ethernet check</td>
+</tr>
+<tr>
+<td>eth.check_interval</td>
+<td>mandatory</td>
+<td>number</td>
+<td>eth check interval, unit is minutes</td>
+</tr>
+<tr>
+<td>eth.check_success_time</td>
+<td>mandatory</td>
+<td>number</td>
+<td>eth change to Available Condition: Accumulated Success Times of IP Ping Set</td>
+</tr>
+<tr>
+<td>eth.check_fail_time</td>
+<td>mandatory</td>
+<td>number</td>
+<td>eth change to fault condition: The cumulative number of ping failures for each set IP</td>
+</tr>
+<tr>
+<td>eth.check_ipv4</td>
+<td>mandatory</td>
+<td>array</td>
+<td>eth IPv4 test address list, up to 3</td>
+</tr>
+<tr>
+<td>eth.check_ipv4[x]</td>
+<td>mandatory</td>
+<td>string</td>
+<td>eth IPv4 test address</td>
+</tr>
+<tr>
+<td>eth.check_ipv6</td>
+<td>mandatory</td>
+<td>array</td>
+<td>eth IPv6 test address list, up to 3</td>
+</tr>
+<tr>
+<td>eth.check_ipv6[x]</td>
+<td>mandatory</td>
+<td>string</td>
+<td>eth IPv6 test address</td>
+</tr>
+<tr>
+<td>wifi</td>
+<td>mandatory</td>
+<td>object</td>
+<td>wifi Ethernet failover configuration</td>
+</tr>
+<tr>
+<td>wifi.enable</td>
+<td>mandatory</td>
+<td>boolean</td>
+<td>Whether enable wifi check</td>
+</tr>
+<tr>
+<td>wifi.check_interval</td>
+<td>mandatory</td>
+<td>number</td>
+<td>wifi check interval, unit is minutes</td>
+</tr>
+<tr>
+<td>wifi.check_success_time</td>
+<td>mandatory</td>
+<td>number</td>
+<td>wifi change to Available Condition: Accumulated Success Times of IP Ping Set</td>
+</tr>
+<tr>
+<td>wifi.check_fail_time</td>
+<td>mandatory</td>
+<td>number</td>
+<td>wifi change to fault condition: The cumulative number of ping failures for each set IP</td>
+</tr>
+<tr>
+<td>wifi.check_ipv4</td>
+<td>mandatory</td>
+<td>array</td>
+<td>wifi IPv4 test address list, up to 3</td>
+</tr>
+<tr>
+<td>wifi.check_ipv4[x]</td>
+<td>mandatory</td>
+<td>string</td>
+<td>wifi IPv4 test address</td>
+</tr>
+<tr>
+<td>wifi.check_ipv6</td>
+<td>mandatory</td>
+<td>array</td>
+<td>wifi IPv6 test address list, up to 3</td>
+</tr>
+<tr>
+<td>wifi.check_ipv6[x]</td>
+<td>mandatory</td>
+<td>string</td>
+<td>wifi IPv6 test address</td>
+</tr>
+<tr>
+<td>priority</td>
+<td>mandatory</td>
+<td>object</td>
+<td>Priority configuration</td>
+</tr>
+<tr>
+<td>priority.eth</td>
+<td>mandatory</td>
+<td>number</td>
+<td>eth priority, the smaller the number, the higher the priority</td>
+</tr>
+<tr>
+<td>priority.wifi</td>
+<td>mandatory</td>
+<td>number</td>
+<td>wifi priority, the smaller the number, the higher the priority</td>
+</tr>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code：</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gl_wan_failover_set_config"><span id="gl_wan_failover_set_config">gl_wan_failover_set_config</span><a class="headerlink" href="#gl_wan_failover_set_config" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x0d</p>
+</li>
+<li>
+<p>Function description: Set the current WAN failover configuration</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eth</td>
+<td>mandatory</td>
+<td>object</td>
+<td>Ethernet failover configuration</td>
+</tr>
+<tr>
+<td>eth.enable</td>
+<td>mandatory</td>
+<td>boolean</td>
+<td>Whether enable Ethernet check</td>
+</tr>
+<tr>
+<td>eth.check_ipv4</td>
+<td>mandatory</td>
+<td>array</td>
+<td>eth IPv4 test address list, up to 3</td>
+</tr>
+<tr>
+<td>eth.check_ipv4[x]</td>
+<td>mandatory</td>
+<td>string</td>
+<td>eth IPv4 test address</td>
+</tr>
+<tr>
+<td>eth.check_ipv6</td>
+<td>mandatory</td>
+<td>array</td>
+<td>eth IPv6 test address list, up to 3</td>
+</tr>
+<tr>
+<td>eth.check_ipv6[x]</td>
+<td>mandatory</td>
+<td>string</td>
+<td>eth IPv6 test address</td>
+</tr>
+<tr>
+<td>wifi</td>
+<td>mandatory</td>
+<td>object</td>
+<td>wifi Ethernet failover configuration</td>
+</tr>
+<tr>
+<td>wifi.enable</td>
+<td>mandatory</td>
+<td>boolean</td>
+<td>Whether enable wifi check</td>
+</tr>
+<tr>
+<td>wifi.check_ipv4</td>
+<td>mandatory</td>
+<td>array</td>
+<td>wifi IPv4 test address list, up to 3</td>
+</tr>
+<tr>
+<td>wifi.check_ipv4[x]</td>
+<td>mandatory</td>
+<td>string</td>
+<td>wifi IPv4 test address</td>
+</tr>
+<tr>
+<td>wifi.check_ipv6</td>
+<td>mandatory</td>
+<td>array</td>
+<td>wifi IPv6 test address list, up to 3</td>
+</tr>
+<tr>
+<td>wifi.check_ipv6[x]</td>
+<td>mandatory</td>
+<td>string</td>
+<td>wifi IPv6 test address</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="system">System<a class="headerlink" href="#system" title="Permanent link">&para;</a></h3>
+<h4 id="gl_set_admin_pwd"><span id="gl_set_admin_pwd">gl_set_admin_pwd</span><a class="headerlink" href="#gl_set_admin_pwd" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x0e</p>
+</li>
+<li>
+<p>Function description: Change web login password</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>mandatory</td>
+<td>string</td>
+<td>User name, must be 'root'</td>
+</tr>
+<tr>
+<td>old_pwd</td>
+<td>mandatory</td>
+<td>string</td>
+<td>Old password</td>
+</tr>
+<tr>
+<td>new_pwd</td>
+<td>mandatory</td>
+<td>string</td>
+<td>New password</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gl_sys_reset"><span id="gl_sys_reset">gl_sys_reset</span><a class="headerlink" href="#gl_sys_reset" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x0f</p>
+</li>
+<li>
+<p>Function description: Reset the device to factory</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<p>None</p>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gl_sys_restart"><span id="gl_sys_restart">gl_sys_restart</span><a class="headerlink" href="#gl_sys_restart" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>CmdID: 0x10</p>
+</li>
+<li>
+<p>Function description: Restart the device</p>
+</li>
+<li>
+<p>Input parameter</p>
+</li>
+</ul>
+<p>None</p>
+<ul>
+<li>Output parameter</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>field parameters</th>
+<th>required</th>
+<th>parameter type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>mandatory</td>
+<td>number</td>
+<td>Error code</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td>optional</td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 GL Technologies & Microuter Technologies
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.gl-inet.com" target="_blank" rel="noopener" title="www.gl-inet.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.4c2.2 20.4 3.3 41.8 3.3 64zm28.8-64h123.1c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6 78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7 10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5 11.6 26 20.9 58.2 27 94.7zm-209 0H18.6c30-74.1 93.6-130.9 172-151.6-25.5 34.2-45.3 87.7-55.3 151.6zM8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zm186.6 254.6c-11.6-26-20.9-58.2-27-94.6h176.6c-6.1 36.4-15.5 68.6-27 94.6-10.5 23.6-22.2 40.7-33.5 51.5-11.2 10.7-20.5 13.9-27.8 13.9s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6-78.4-20.7-142-77.5-172-151.6h116.7zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6 25.5-34.2 45.2-87.7 55.3-151.6h116.6z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gl-inet/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/gl.inet.wifi/" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/GLiNetWiFi" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/gl-inet.com/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCBfNEzurltlIeFFCbUgHQyg" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.pinterest.com/glinetWiFi/" target="_blank" rel="noopener" title="www.pinterest.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
