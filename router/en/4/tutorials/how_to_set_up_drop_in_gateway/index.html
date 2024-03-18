@@ -12,13 +12,13 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/router/en/4/tutorials/how_to_block_client_devices/">
+        <link rel="canonical" href="https://docs.gl-inet.com/router/en/4/tutorials/how_to_set_up_drop_in_gateway/">
       
       
-        <link rel="prev" href="../how_to_check_if_isp_assigns_you_a_public_ip_address/">
+        <link rel="prev" href="../how_to_set_up_a_guest_network/">
       
       
-        <link rel="next" href="../../interface_guide/">
+        <link rel="next" href="../manually_configure_static_ip/">
       
       
       <link rel="icon" href="../../images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>How to block client devices - GL.iNet Router Docs 4</title>
+        <title>How to set up drop-in gateway - GL.iNet Router Docs 4</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-block-specific-client-devices-on-a-glinet-router" class="md-skip">
+        <a href="#how-to-set-up-drop-in-gateway-on-a-glinet-router" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How to block client devices
+              How to set up drop-in gateway
             
           </span>
         </div>
@@ -2564,6 +2564,8 @@
                 
   
   
+    
+  
   
     
     
@@ -2576,12 +2578,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
         
           
           <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
@@ -2595,7 +2597,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             Network
@@ -2626,9 +2628,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../how_to_set_up_drop_in_gateway/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    How to set up drop-in gateway
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2637,6 +2659,148 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enable-drop-in-gateway-for-all-devices" class="md-nav__link">
+    Enable drop-in gateway for all devices
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable drop-in gateway for all devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-connect-the-glinet-router-to-the-main-router" class="md-nav__link">
+    1. Connect the GL.iNet router to the main router
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-enable-drop-in-gateway-mode" class="md-nav__link">
+    2. Enable drop-in gateway mode
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Enable drop-in gateway mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#via-the-router-admin-panel" class="md-nav__link">
+    Via the router admin panel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-the-glinet-mobile-app" class="md-nav__link">
+    Via the GL.iNet mobile app
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-disable-the-dhcp-server-on-the-main-router" class="md-nav__link">
+    3. Disable the DHCP server on the main router
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-set-up-adguard-dns-vpn-and-other-features" class="md-nav__link">
+    4. Set up AdGuard, DNS, VPN, and other features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-drop-in-gateway-for-specific-devices" class="md-nav__link">
+    Enable drop-in gateway for specific devices
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable drop-in gateway for specific devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-connect-the-glinet-router-to-the-main-router_1" class="md-nav__link">
+    1. Connect the GL.iNet router to the main router
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-enable-drop-in-gateway-mode_1" class="md-nav__link">
+    2. Enable drop-in gateway mode
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Enable drop-in gateway mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specific-devices-admin" class="md-nav__link">
+    Via the router admin panel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-devices-mobile" class="md-nav__link">
+    Via the GL.iNet mobile app
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-set-the-gateway-and-dns-on-the-device" class="md-nav__link">
+    3. Set the gateway and DNS on the device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-set-up-adguard-dns-vpn-and-other-features_1" class="md-nav__link">
+    4. Set up AdGuard, DNS, VPN, and other features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2654,8 +2818,6 @@
                 
   
   
-    
-  
   
     
     
@@ -2670,12 +2832,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
         
           
           <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
@@ -2689,7 +2851,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
             Other
@@ -2740,29 +2902,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    How to block client devices
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../how_to_block_client_devices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2771,100 +2913,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#block-client-devices-via-the-admin-panel" class="md-nav__link">
-    Block client devices via the admin panel
-  </a>
-  
-    <nav class="md-nav" aria-label="Block client devices via the admin panel">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-sign-in-to-the-admin-panel" class="md-nav__link">
-    1. Sign in to the admin panel
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-block-client-devices" class="md-nav__link">
-    2. Block client devices
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Block client devices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#method-1-block-devices-without-their-mac-addresses" class="md-nav__link">
-    Method 1: Block devices without their MAC addresses
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#method-2-block-devices-with-their-mac-addresses" class="md-nav__link">
-    Method 2: Block devices with their MAC addresses
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#block-client-devices-via-the-glinet-mobile-app" class="md-nav__link">
-    Block client devices via the GL.iNet mobile app
-  </a>
-  
-    <nav class="md-nav" aria-label="Block client devices via the GL.iNet mobile app">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mobile-1" class="md-nav__link">
-    Method 1: Block devices without their MAC addresses
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mobile-2" class="md-nav__link">
-    Method 2: Block devices with their MAC addresses
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4507,44 +4555,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#block-client-devices-via-the-admin-panel" class="md-nav__link">
-    Block client devices via the admin panel
+  <a href="#enable-drop-in-gateway-for-all-devices" class="md-nav__link">
+    Enable drop-in gateway for all devices
   </a>
   
-    <nav class="md-nav" aria-label="Block client devices via the admin panel">
+    <nav class="md-nav" aria-label="Enable drop-in gateway for all devices">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-sign-in-to-the-admin-panel" class="md-nav__link">
-    1. Sign in to the admin panel
+  <a href="#1-connect-the-glinet-router-to-the-main-router" class="md-nav__link">
+    1. Connect the GL.iNet router to the main router
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-block-client-devices" class="md-nav__link">
-    2. Block client devices
+  <a href="#2-enable-drop-in-gateway-mode" class="md-nav__link">
+    2. Enable drop-in gateway mode
   </a>
   
-    <nav class="md-nav" aria-label="2. Block client devices">
+    <nav class="md-nav" aria-label="2. Enable drop-in gateway mode">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#method-1-block-devices-without-their-mac-addresses" class="md-nav__link">
-    Method 1: Block devices without their MAC addresses
+  <a href="#via-the-router-admin-panel" class="md-nav__link">
+    Via the router admin panel
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#method-2-block-devices-with-their-mac-addresses" class="md-nav__link">
-    Method 2: Block devices with their MAC addresses
+  <a href="#via-the-glinet-mobile-app" class="md-nav__link">
+    Via the GL.iNet mobile app
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-disable-the-dhcp-server-on-the-main-router" class="md-nav__link">
+    3. Disable the DHCP server on the main router
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-set-up-adguard-dns-vpn-and-other-features" class="md-nav__link">
+    4. Set up AdGuard, DNS, VPN, and other features
+  </a>
   
 </li>
         
@@ -4554,23 +4616,57 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#block-client-devices-via-the-glinet-mobile-app" class="md-nav__link">
-    Block client devices via the GL.iNet mobile app
+  <a href="#enable-drop-in-gateway-for-specific-devices" class="md-nav__link">
+    Enable drop-in gateway for specific devices
   </a>
   
-    <nav class="md-nav" aria-label="Block client devices via the GL.iNet mobile app">
+    <nav class="md-nav" aria-label="Enable drop-in gateway for specific devices">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mobile-1" class="md-nav__link">
-    Method 1: Block devices without their MAC addresses
+  <a href="#1-connect-the-glinet-router-to-the-main-router_1" class="md-nav__link">
+    1. Connect the GL.iNet router to the main router
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mobile-2" class="md-nav__link">
-    Method 2: Block devices with their MAC addresses
+  <a href="#2-enable-drop-in-gateway-mode_1" class="md-nav__link">
+    2. Enable drop-in gateway mode
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Enable drop-in gateway mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specific-devices-admin" class="md-nav__link">
+    Via the router admin panel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-devices-mobile" class="md-nav__link">
+    Via the GL.iNet mobile app
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-set-the-gateway-and-dns-on-the-device" class="md-nav__link">
+    3. Set the gateway and DNS on the device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-set-up-adguard-dns-vpn-and-other-features_1" class="md-nav__link">
+    4. Set up AdGuard, DNS, VPN, and other features
   </a>
   
 </li>
@@ -4604,85 +4700,174 @@
   
 
   <!-- Markdown content -->
-  <h1 id="how-to-block-specific-client-devices-on-a-glinet-router">How to Block Specific Client Devices on a GL.iNet Router<a class="headerlink" href="#how-to-block-specific-client-devices-on-a-glinet-router" title="Permanent link">&para;</a></h1>
-<p>This tutorial will show you how to block specific client devices on a GL.iNet router. By blocking client devices, you prevent unauthorized access to your network. This helps to enhance your network security or control your family's access to the internet.</p>
-<p>GL.iNet routers block client devices based on their MAC addresses (a unique 12-character identifier assigned to individual devices on a network). This method is also called MAC address filtering. </p>
-<p>There are two methods of blocking client devices on your GL.iNet router: via the <a href="#block-client-devices-via-the-admin-panel">router admin panel</a> or the <a href="#block-client-devices-via-the-glinet-mobile-app">GL.iNet mobile app</a>. </p>
-<h2 id="block-client-devices-via-the-admin-panel">Block client devices via the admin panel<a class="headerlink" href="#block-client-devices-via-the-admin-panel" title="Permanent link">&para;</a></h2>
-<h3 id="1-sign-in-to-the-admin-panel">1. Sign in to the admin panel<a class="headerlink" href="#1-sign-in-to-the-admin-panel" title="Permanent link">&para;</a></h3>
-<p>In a web browser, enter 192.168.8.1. Enter your password, then click <strong>Login</strong>. </p>
-<h3 id="2-block-client-devices">2. Block client devices<a class="headerlink" href="#2-block-client-devices" title="Permanent link">&para;</a></h3>
-<p>There are two ways to block client devices, depending on whether you have their MAC addresses:</p>
-<ul>
-<li>If you do not have their MAC addresses: Use the <a href="#method-1-block-devices-without-their-mac-addresses">first method</a> which allows you to block the devices that appear in the lists.</li>
-<li>If you have their MAC addresses: Use the <a href="#method-2-block-devices-with-their-mac-addresses">second method</a>. </li>
-</ul>
-<h4 id="method-1-block-devices-without-their-mac-addresses">Method 1: Block devices without their MAC addresses<a class="headerlink" href="#method-1-block-devices-without-their-mac-addresses" title="Permanent link">&para;</a></h4>
+  <h1 id="how-to-set-up-drop-in-gateway-on-a-glinet-router">How to Set Up Drop-In Gateway on a GL.iNet Router<a class="headerlink" href="#how-to-set-up-drop-in-gateway-on-a-glinet-router" title="Permanent link">&para;</a></h1>
+<p>GL.iNet offers the drop-in gateway feature, which enhances the functionality of your primary router with features it may not have, including AdGuard Home, encrypted DNS, and VPN. By using this feature, you can keep using your primary router as usual while enjoying additional features. </p>
+<p>You can enable drop-in gateway for <a href="#enable-drop-in-gateway-for-all-devices">all your devices</a> or <a href="#enable-drop-in-gateway-for-specific-devices">specific devices</a> connected to your primary router. Follow the appropriate section for your setup.</p>
+<hr />
+<h2 id="enable-drop-in-gateway-for-all-devices">Enable drop-in gateway for all devices<a class="headerlink" href="#enable-drop-in-gateway-for-all-devices" title="Permanent link">&para;</a></h2>
+<h3 id="1-connect-the-glinet-router-to-the-main-router">1. Connect the GL.iNet router to the main router<a class="headerlink" href="#1-connect-the-glinet-router-to-the-main-router" title="Permanent link">&para;</a></h3>
+<p>Connect the WAN port of the GL.iNet router to the LAN port of the main router with an ethernet cable.</p>
+<h3 id="2-enable-drop-in-gateway-mode">2. Enable drop-in gateway mode<a class="headerlink" href="#2-enable-drop-in-gateway-mode" title="Permanent link">&para;</a></h3>
+<p>There are two methods for enabling drop-in gateway mode: via through the <a href="#via-the-router-admin-panel">router admin panel</a> or the <a href="#via-the-glinet-mobile-app">GL.iNet mobile app</a>. </p>
+<h4 id="via-the-router-admin-panel">Via the router admin panel<a class="headerlink" href="#via-the-router-admin-panel" title="Permanent link">&para;</a></h4>
 <ol>
+<li>In a web browser, enter 192.168.8.1.  </li>
+<li>Enter your password, then click <strong>Login</strong>. </li>
 <li>
-<p>In the left sidebar, click <strong>Clients</strong>.
-<img alt="click clients" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/click-clients.jpeg" /></p>
+<p>In the left sidebar, click <strong>Network</strong> &gt; <strong>Drop-in Gateway</strong>. 
+<img alt="click drop-in gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_drop_in_gateway/click-drop-in-gateway.jpeg" /></p>
 </li>
 <li>
-<p>Next to the device, toggle the switch to on. 
-<img alt="toggle switch" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/toggle-block.jpeg" /></p>
+<p>Next to <strong>Enable Drop-in Gateway Mode</strong>, toggle the switch to on. </p>
+</li>
+<li>
+<p>Select <strong>All devices are networked through drop-in gateway</strong>. 
+<img alt="click all devices" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_drop_in_gateway/select-all-devices.jpeg" /></p>
+</li>
+<li>
+<p>Click <strong>Apply</strong>. </p>
 </li>
 </ol>
-<p>If you do not see the devices you want to block in the lists, you will need to block them by <a href="#method-2-block-devices-with-their-mac-addresses">adding their MAC addresses to the blocklist</a>. </p>
-<h4 id="method-2-block-devices-with-their-mac-addresses">Method 2: Block devices with their MAC addresses<a class="headerlink" href="#method-2-block-devices-with-their-mac-addresses" title="Permanent link">&para;</a></h4>
-<p>To use this method, you will need to obtain the MAC address of the device. Refer to the instructions provided by the device manufacturer. 
-Once you have the device's MAC address, follow these steps: </p>
-<ol>
-<li>In the left sidebar, click <strong>Clients</strong>.</li>
-<li>At the top, click <strong>Blocklist</strong>. 
-<img alt="click blocklist" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/click-blocklist.jpeg" /></li>
-<li>Follow either method to block devices: <ul>
-<li>To enter the MAC addresses individually: Enter them in the empty field.</li>
-<li>To import a list of MAC addresses: Click <strong>Import Clients</strong>. Import a file, then click <strong>Import</strong>. </li>
-</ul>
-</li>
-<li>Click <strong>Apply</strong>. 
-<img alt="click apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/click-apply.jpeg" /></li>
-</ol>
-<h2 id="block-client-devices-via-the-glinet-mobile-app">Block client devices via the GL.iNet mobile app<a class="headerlink" href="#block-client-devices-via-the-glinet-mobile-app" title="Permanent link">&para;</a></h2>
+<h4 id="via-the-glinet-mobile-app">Via the GL.iNet mobile app<a class="headerlink" href="#via-the-glinet-mobile-app" title="Permanent link">&para;</a></h4>
 <p><strong>Note:</strong> Before you start, install and set up the GL.iNet mobile app on your device. </p>
-<p>There are two ways to block client devices, depending on whether you have their MAC addresses:</p>
-<ul>
-<li>If you do not have their MAC addresses: Use the <a href="#mobile-1">first method</a> which allows you to block the devices that appear in the list. </li>
-<li>If you have their MAC addresses: Use the <a href="#mobile-2">second method</a>. </li>
-</ul>
-<h3 id="mobile-1">Method 1: Block devices without their MAC addresses<a class="headerlink" href="#mobile-1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>On the main app screen, tap the device you want to block under <strong>Connected Clients</strong> and <strong>Office Clients</strong>. 
-<img alt="tap a device" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/tap-a-device.jpeg" /></p>
+<p>On the main app screen, tap the <strong>System</strong> tab &gt; <strong>Drop-in Gateway</strong>.<img alt="tap drop-in gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_drop_in_gateway/tap-drop-in-gateway.jpeg" /></p>
 </li>
 <li>
-<p>Under <strong>Settings</strong>, toggle the <strong>Block</strong> switch to on. 
-<img alt="toggle block" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/settings-toggle-block-to-on.jpeg" /></p>
+<p>Tap <strong>Enable</strong>. </p>
+</li>
+<li>For <strong>Devices are networked via drop-in gateway</strong>, tap <strong>All</strong>.<img alt="tap all" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_drop_in_gateway/drop-in-gateway-tap-all.jpeg" /></li>
+<li>Tap <strong>Done</strong>. </li>
+</ol>
+<h3 id="3-disable-the-dhcp-server-on-the-main-router">3. Disable the DHCP server on the main router<a class="headerlink" href="#3-disable-the-dhcp-server-on-the-main-router" title="Permanent link">&para;</a></h3>
+<p>To disable the DHCP server on your specific router, refer to the instructions provided by your router manufacturer. </p>
+<h3 id="4-set-up-adguard-dns-vpn-and-other-features">4. Set up AdGuard, DNS, VPN, and other features<a class="headerlink" href="#4-set-up-adguard-dns-vpn-and-other-features" title="Permanent link">&para;</a></h3>
+<p>Follow these articles to enable the features on your GL.iNet router:</p>
+<ul>
+<li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/adguardhome/" target="_blank">AdGuard Home</a></li>
+<li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/dns/" target="_blank">Encrypted DNS</a></li>
+<li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/parental_control/" target="_blank">Parental controls</a></li>
+<li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/wireguard_client/" target="_blank">WireGaurd client</a></li>
+<li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/openvpn_client/" target="_blank">OpenVPN client</a></li>
+</ul>
+<hr />
+<h2 id="enable-drop-in-gateway-for-specific-devices">Enable drop-in gateway for specific devices<a class="headerlink" href="#enable-drop-in-gateway-for-specific-devices" title="Permanent link">&para;</a></h2>
+<h3 id="1-connect-the-glinet-router-to-the-main-router_1">1. Connect the GL.iNet router to the main router<a class="headerlink" href="#1-connect-the-glinet-router-to-the-main-router_1" title="Permanent link">&para;</a></h3>
+<p>Connect the WAN port of the GL.iNet router to the LAN port of the main router with an ethernet cable.</p>
+<h3 id="2-enable-drop-in-gateway-mode_1">2. Enable drop-in gateway mode<a class="headerlink" href="#2-enable-drop-in-gateway-mode_1" title="Permanent link">&para;</a></h3>
+<p>There are two methods for enabling drop-in gateway mode: via through the <a href="#specific-devices-admin">router admin panel</a> or the <a href="#specific-devices-mobile">GL.iNet mobile app</a>. </p>
+<h4 id="specific-devices-admin">Via the router admin panel<a class="headerlink" href="#specific-devices-admin" title="Permanent link">&para;</a></h4>
+<ol>
+<li>In a web browser, enter 192.168.8.1. </li>
+<li>Enter your password, then click <strong>Login</strong>. </li>
+<li>In the left sidebar, click <strong>Network</strong> &gt; <strong>Drop-in Gateway</strong>. 
+<img alt="click drop-in gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_drop_in_gateway/click-drop-in-gateway.jpeg" /></li>
+<li>Next to <strong>Enable Drop-in Gateway Mode</strong>, toggle the switch to on. </li>
+<li>
+<p>Select <strong>Some devices select their own networking gateway</strong>. 
+<img alt="click some devices" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_drop_in_gateway/select-some-devices.jpeg" /></p>
+</li>
+<li>
+<p>Click <strong>Apply</strong>. </p>
 </li>
 </ol>
-<p>If you do not see the devices you want to block in the lists, you will need to block them by <a href="#method-2-block-devices-with-their-mac-addresses-1">adding their MAC addresses to the blocklist</a></p>
-<h3 id="mobile-2">Method 2: Block devices with their MAC addresses<a class="headerlink" href="#mobile-2" title="Permanent link">&para;</a></h3>
-<p>To use this method, you will need to obtain the MAC address of the device you want to block. Refer to the instructions provided by your manufacturer. 
-Once you have the device's MAC address, follow these steps: </p>
+<p><strong>Note:</strong> Do not close this tab. You will need to enter the IP address (shown on the screen) in the next step.</p>
+<h4 id="specific-devices-mobile">Via the GL.iNet mobile app<a class="headerlink" href="#specific-devices-mobile" title="Permanent link">&para;</a></h4>
+<p><strong>Note:</strong> Before you start, install and set up the GL.iNet mobile app on your device. </p>
 <ol>
-<li>
-<p>On the main app screen, tap the Settings icon &gt; <strong>Access Control</strong>. 
-<img alt="tap access control" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/tap-access-control.jpeg" /></p>
-</li>
-<li>
-<p>Tap <strong>Block</strong>.
-<img alt="tap block" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/tap-block.jpeg" /></p>
-</li>
-<li>
-<p>Follow either method to block devices: </p>
-<ul>
-<li>To enter the MAC addresses individually: Tap <strong>Add MAC address</strong>. Enter the MAC address, then tap <strong>Done</strong>.  </li>
-<li>To import a list of MAC addresses, click <strong>Import Clients</strong> &gt; <strong>Import Clients</strong>. Tap a file.</li>
+<li>On the main app screen, tap the <strong>System</strong> tab &gt; <strong>Drop-in Gateway</strong>.<img alt="tap drop-in gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_drop_in_gateway/tap-drop-in-gateway.jpeg" /></li>
+<li>Tap <strong>Enable</strong>. </li>
+<li>For <strong>Devices are networked via drop-in gateway</strong>, tap <strong>part</strong>.<img alt="tap part" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_drop_in_gateway/drop-in-gateway-tap-part.jpeg" /></li>
+<li>Tap <strong>Done</strong>. </li>
+</ol>
+<p><strong>Note:</strong> Do not close this tab. You will need to enter the IP address (shown on the screen) in the next step. </p>
+<h3 id="3-set-the-gateway-and-dns-on-the-device">3. Set the gateway and DNS on the device<a class="headerlink" href="#3-set-the-gateway-and-dns-on-the-device" title="Permanent link">&para;</a></h3>
+<details>
+<summary>Windows</summary>
+<ol>
+<li>Connect your device to the main router. </li>
+<li>On your Windows, open <strong>Settings</strong> &gt; <strong>Network &amp; Internet</strong>.</li>
+<li>Based on your connection method, follow these steps: <ul>
+<li>Ethernet: Click <strong>Ethernet</strong>. </li>
+<li>Wi-Fi: Click <strong>Wi-Fi</strong>, then click the Wi-Fi network name. </li>
 </ul>
 </li>
+<li>Copy the IPv4 address. Next to <strong>IP assignment</strong>, click <strong>Edit</strong>. </li>
+<li>Click <strong>Manual</strong>. </li>
+<li>Toggle <strong>IPv4</strong> to on.</li>
+<li>Enter the following information: <ul>
+<li><strong>IP address:</strong> Paste the IP address you copied in step 4. </li>
+<li><strong>Subnet mask:</strong> Enter <strong>255.255.255.0</strong>. </li>
+<li><strong>Gateway:</strong> Enter the IP address shown on the <strong>Drop-in Gateway</strong> page. </li>
+<li><strong>Preferred DNS:</strong>  Enter the IP address shown on the <strong>Drop-in Gateway</strong> page. </li>
+</ul>
+</li>
+<li>Click <strong>Save</strong>. </li>
 </ol>
+</details>
+<details>
+<summary>Android</summary>
+<ol>
+<li>Connect your device to the main router. </li>
+<li>On your Android, open <strong>Settings</strong>. </li>
+<li>Tap <strong>Connections</strong> &gt; <strong>Wi-Fi</strong>.</li>
+<li>Tap the <strong>Settings</strong> icon next to the network you are connected to. </li>
+<li>Tap <strong>View more</strong>. </li>
+<li>Tap <strong>IP settings</strong> &gt; <strong>Static</strong>. </li>
+<li>For <strong>Gateway</strong> and <strong>DNS 1</strong>, enter the IP address shown on the <strong>Drop-in Gateway</strong> screen. </li>
+<li>Tap <strong>Save</strong>. </li>
+</ol>
+</details>
+<details>
+<summary>iOS</summary>
+<ol>
+<li>Connect your device to the main router. </li>
+<li>On your iOS, open <strong>Settings</strong>.</li>
+<li>Tap <strong>Wi-Fi</strong>.</li>
+<li>Tap the Wi-Fi network you are connected to. </li>
+<li>Under <strong>IPv4 Address</strong>, keep a record of <strong>IP Address</strong> and <strong>Subnet Mask</strong>.</li>
+<li>Tap <strong>Configure IP</strong> &gt; <strong>Manual</strong>. </li>
+<li>Enter the following information: <ul>
+<li><strong>IP Address:</strong> Enter the IP Address you obtained in step 5. </li>
+<li><strong>Subnet Mask:</strong> Enter the Subnet Mask you obtained in step 5. </li>
+<li><strong>Router:</strong> Enter the IP address shown on the <strong>Drop-in Gateway</strong> screen. </li>
+</ul>
+</li>
+<li>Tap <strong>Save</strong>.</li>
+<li>Tap <strong>Configure DNS</strong>, then tap <strong>Manual</strong>. </li>
+<li>Tap <strong>Add Server</strong>, then enter the IP address shown on the <strong>Drop-in Gateway</strong> screen.</li>
+<li>Tap <strong>Save</strong>.</li>
+</ol>
+</details>
+<details>
+<summary>Mac</summary>
+<ol>
+<li>Connect your device to the main router.</li>
+<li>On your Mac, click the Apple icon &gt; <strong>System Settings</strong>, </li>
+<li>In the left sidebar, click <strong>Network</strong>.</li>
+<li>Next to the network you are connected to, click <strong>Details</strong>.</li>
+<li>Click <strong>TCP/IP</strong>.</li>
+<li>Keep a record of <strong>IP Address</strong> and <strong>Subnet Mask</strong>.</li>
+<li>Next to <strong>Configure IPv4</strong>, click <strong>Manually</strong>.</li>
+<li>Enter the following information: <ul>
+<li><strong>IP address:</strong> Enter the IP Address you obtained in step 5. </li>
+<li><strong>Subnet mask:</strong> Enter the IP Address you obtained in step 5. </li>
+<li><strong>Router:</strong> Enter the IP address shown on the <strong>Drop-in Gateway</strong> page. </li>
+</ul>
+</li>
+<li>Click <strong>OK</strong> &gt; <strong>OK</strong>. </li>
+</ol>
+</details>
+<h3 id="4-set-up-adguard-dns-vpn-and-other-features_1">4. Set up AdGuard, DNS, VPN, and other features<a class="headerlink" href="#4-set-up-adguard-dns-vpn-and-other-features_1" title="Permanent link">&para;</a></h3>
+<p>Follow these articles to enable the features on your GL.iNet router:</p>
+<ul>
+<li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/adguardhome/" target="_blank">AdGuard Home</a></li>
+<li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/dns/" target="_blank">Encrypted DNS</a></li>
+<li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/parental_control/" target="_blank">Parental controls</a></li>
+<li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/wireguard_client/" target="_blank">WireGaurd client</a></li>
+<li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/openvpn_client/" target="_blank">OpenVPN client</a></li>
+</ul>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
 
