@@ -97,7 +97,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#drop-in-gateway" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -3510,37 +3510,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#usage-scenarios" class="md-nav__link">
-    Usage Scenarios
+  <a href="#_2" class="md-nav__link">
+    使用シナリオ
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#network-typology" class="md-nav__link">
-    Network Typology
+  <a href="#_3" class="md-nav__link">
+    ネットワークトポロジー
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    Setup
+  <a href="#_4" class="md-nav__link">
+    セットアップ
   </a>
   
-    <nav class="md-nav" aria-label="Setup">
+    <nav class="md-nav" aria-label="セットアップ">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#all-devices-managed-by-the-drop-in-gateway" class="md-nav__link">
-    All devices managed by the Drop-in Gateway
+  <a href="#_5" class="md-nav__link">
+    ドロップインゲートウェイが管理するすべてのデバイス
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#some-devices-managed-by-the-drop-in-gateway" class="md-nav__link">
-    Some devices managed by the Drop-in Gateway
+  <a href="#_6" class="md-nav__link">
+    ドロップイン ゲートウェイによって管理される一部のデバイス
   </a>
   
 </li>
@@ -3551,8 +3551,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cautions" class="md-nav__link">
-    Cautions
+  <a href="#_7" class="md-nav__link">
+    注意事項
   </a>
   
 </li>
@@ -4127,178 +4127,178 @@
                   
 
 
-<h1 id="drop-in-gateway">Drop-in Gateway<a class="headerlink" href="#drop-in-gateway" title="Permanent link">&para;</a></h1>
-<p>Please upgrade to v4.2.x to use this feature. There are some bugs in v4.1.x.</p>
-<p>On the left side of web Admin Panel -&gt; NETWORK -&gt; Drop-in Gateway</p>
-<h2 id="usage-scenarios">Usage Scenarios<a class="headerlink" href="#usage-scenarios" title="Permanent link">&para;</a></h2>
-<p>For users who do not want to replace their main router, you can use this mode to extend the functionality of your main router.</p>
+<h1 id="_1">ドロップインゲートウェイ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>この機能を使用するには、v4.2.x にアップグレードしてください。</p>
+<p>Web 管理パネルの左側 -&gt; ネットワーク -&gt; ドロップイン ゲートウェイ</p>
+<h2 id="_2">使用シナリオ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>メインのルーターを交換したくないユーザーは、このモードを使用してメインのルーターの機能を拡張することができます。</p>
 <ul>
-<li>Use ADGuard Home to filter advertisements</li>
-<li>Use encrypted DNS</li>
-<li>Use VPN client</li>
-<li>It is recommended to use a more powerful router with large memory (e.g. GL-MT2500) and install other traffic forwarding and control tools yourself.</li>
+<li>ADGuard Homeを使用して広告をフィルタリングします。</li>
+<li>暗号化DNSを使用します。</li>
+<li>VPNクライアントを使用します。</li>
+<li>大容量メモリを搭載したより強力なルーター（GL-MT2500など）を使用し、他のトラフィック転送および制御ツールを自分でインストールすることをお勧めします。</li>
 </ul>
-<h2 id="network-typology">Network Typology<a class="headerlink" href="#network-typology" title="Permanent link">&para;</a></h2>
+<h2 id="_3">ネットワークトポロジー<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><img alt="drop-in gateway mode typology" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/drop-in_gateway_mode_topology.svg" /></p>
-<p>The diagram above has two colored lines, gray lines, and green lines with 3 arrows on the green lines, and a number next to each arrow.</p>
+<p>上の図には、灰色の線、緑の線があり、緑の線には3つの矢印があり、それぞれの矢印の横には数字が書かれている。</p>
 <ol>
 <li>
-<p>The gray lines show that the devices are connected to the main router, and the LAN port of the main router is connected to the WAN port of the GL.iNet router with Drop-in Gateway function via an Ethernet cable.</p>
+<p>灰色の線は、デバイスがメインルーターに接続され、メインルーターのLANポートがイーサネットケーブルでドロップインゲートウェイ機能付きGL.iNetルーターのWANポートに接続されていることを示しています。</p>
 </li>
 <li>
-<p>The green lines indicate that when the Drop-in Gateway mode is enabled, all or part of the devices' data will be processed by the GL.iNet device before being sent out through the main router.</p>
+<p>緑色の線は、ドロップイン・ゲートウェイ・モードが有効な場合、メイン・ルーターを経由して送信される前に、デバイスのデータの全部または一部がGL.iNetデバイスで処理されることを示しています。</p>
 </li>
 </ol>
-<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
-<p>There are two usage scenarios, where all devices can be managed by Drop-in Gateway or only some devices can be managed.</p>
-<p>The GL.iNet router referred to below is the GL.iNet router on which you want to enable the Drop-in Gateway function. The router ip address of our main router here is 192.168.1.1.</p>
-<h3 id="all-devices-managed-by-the-drop-in-gateway">All devices managed by the Drop-in Gateway<a class="headerlink" href="#all-devices-managed-by-the-drop-in-gateway" title="Permanent link">&para;</a></h3>
+<h2 id="_4">セットアップ<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>すべてのデバイスをDrop-in Gatewayで管理する場合と、一部のデバイスのみを管理する場合の2つの使用シナリオがあります。</p>
+<p>以下に言及するGL.iNetルーターは、ドロップインゲートウェイ機能を有効にしたいGL.iNetルーターです。ここでのメインルーターのルーターIPアドレスは192.168.1.1です。</p>
+<h3 id="_5">ドロップインゲートウェイが管理するすべてのデバイス<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>The LAN port of the main router connect to the WAN port of the GL.iNet router via an ethernet cable.</p>
+<p>メインルーターのLANポートとGL.iNetルーターのWANポートはイーサネットケーブルで接続します。</p>
 </li>
 <li>
-<p>Access web Admin Panel of GL.iNet router, enable Drop-in Gateway feature, it will generate the settings automatically.</p>
+<p>GL.iNetルーターのウェブ管理パネルにアクセスし、ドロップインゲートウェイ機能を有効にします。設定が自動的に作成されます。</p>
 <p><img alt="drop-in gateway generated settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/drop-in_gateway_all_device_enabled.png" /></p>
-<p>The <strong>IP Address</strong> is same of the IP address in <a href="../internet_ethernet/">Ethernet sector of Internet page</a>. The <strong>Gateway</strong> and <strong>DNS Server 1</strong> are the IP address of the main router. If these items are not set correctly, you can change them manually yourself.</p>
-<p>Write down the IP address here, you will use it in the following steps.</p>
-<p>You could choose the first configuration method, and click apply.</p>
+<p><strong>IP アドレス</strong>は <a href="../internet_ethernet/">インターネット ページのイーサネット セクター</a>の IP アドレスと同じです。<strong>ゲートウェイ</strong> と <strong>DNS サーバー 1</strong> は、メイン ルーターの IP アドレスです。 これらの項目が正しく設定されていない場合は、自分で手動で変更できます。</p>
+<p>ここに IP アドレスを書き留めます。次の手順で使用します。</p>
+<p>最初の設定方法を選択し、適用をクリックします。</p>
 </li>
 <li>
-<p>Log in to the main router's admin page.</p>
+<p>メインルーターの管理ページにログインします。</p>
 <details>
 <summary>GL.iNet</summary>
-<p>If the brand of main router is GL.iNet and its version is v4.2 and above.</p>
-<p>Access web Admin Panel -&gt; NETWORK -&gt; LAN -&gt; DHCP Server -&gt; Advanced</p>
+<p>メインルーターのブランドがGL.iNetで、バージョンがv4.2以上の場合。</p>
+<p>管理画面-&gt; NETWORK -&gt; LAN -&gt; DHCPサーバー -&gt; 詳細設定にアクセスします。</p>
 <p><img alt="glinet lan advanced" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/glinet/lan_advanced.png" /></p>
-<p>Fill in the DHCP Gateway as the IP Address in step 2, etc. <code>192.168.116.23</code>, then click <strong>Apply</strong>.</p>
+<p>ステップ2のIPアドレスとしてDHCPゲートウェイを記入します。 etc. <code>192.168.116.23</code>、そして<strong>Apply</strong>をクリックしてください。</p>
 <p><img alt="glinet lan, dhcp gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/glinet/tips_dhcp_gateway.png" /></p>
 <p><img alt="glinet lan, dhcp gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/glinet/lan_dhcp_gateway.png" /></p>
 </details>
 <details>
 <summary>TP-Link</summary>
-<p>If the brand of main router is TP-Link. Here is an example of TP-LINK Archer C3150.</p>
-<p>Access TP-Link's admin page. At the tab of <strong>Advanced</strong> -&gt; <strong>Network</strong> -&gt; <strong>DHCP Server</strong>, disable the <strong>DHCP</strong>.</p>
+<p>メインルーターのブランドがTP-Linkの場合: 以下は TP-LINK Archer C3150 の例です。</p>
+<p>TP-Link の管理ページにアクセスします。 <strong>詳細</strong> -&gt; <strong>ネットワーク</strong> -&gt; <strong>DHCP サーバー</strong> のタブで、<strong>DHCP</strong> を無効にします。</p>
 <p><img alt="tplink admin, disable dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/tplink/tplink_disable_dhcp_1.png" /></p>
-<p>Then click <strong>Save</strong>.</p>
+<p>そして<strong>保存</strong>をクリックします。</p>
 <p><img alt="tplink admin, disable dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/tplink/tplink_disable_dhcp_2.png" /></p>
 </details>
 <details>
 <summary>Linksys</summary>
-<p>If the brand of main router is Linksys. Here is an example of Linksys WHW01.</p>
-<p>Access Linksys's admin page.</p>
+<p>メインルーターのブランドがLinksysの場合：Linksys WHW01の例です。</p>
+<p>Linksysの管理ページにアクセスします。</p>
 <p><img alt="linksys admin, connectivity" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/linksys/linksys_connectivity.png" /></p>
-<p>At the tab of <strong>Local Network</strong>, disable the <strong>DHCP Server</strong>, then click <strong>OK</strong>.</p>
+<p><strong>ローカル ネットワーク</strong>タブで、<strong>DHCP サーバー</strong>を無効にして、<strong>OK</strong> をクリックします。</p>
 <p><img alt="linksys admin, local network, disable dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/linksys/linksys_disable_dhcp.png" /></p>
-<p>It will show a warning, click <strong>OK</strong>.</p>
+<p>警告が表示されます。<strong>OK</strong> をクリックします。</p>
 <p><img alt="linksys admin, apply changes" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/linksys/linksys_apply_changes.png" /></p>
 </details>
 <details>
-<summary>Others</summary>
-<p>Please search for the corresponding brand on how to disable DHCP, or consult customer service.</p>
+<summary>その他</summary>
+<p>DHCPを無効にする方法については、該当するブランドを検索するか、カスタマーサービスにご相談ください。</p>
 </details>
 </li>
 <li>
-<p>Go back to the GL.iNet router and set up features like <a href="../adguardhome/">ADGuard Home</a>, <a href="../dns/">encypted DNS</a>, <a href="../wireguard_client/">WireGaurd Client</a> and <a href="../openvpn_client/">OpenVPN Client</a>.</p>
+<p>GL.iNetルーターに戻り、 <a href="../adguardhome/">ADGuard Home</a>、<a href="../dns/">encypted DNS</a>、<a href="../wireguard_client/">WireGaurd Client</a> 、<a href="../openvpn_client/">OpenVPN Client</a>などの機能を設定します。</p>
 </li>
 </ol>
-<h3 id="some-devices-managed-by-the-drop-in-gateway">Some devices managed by the Drop-in Gateway<a class="headerlink" href="#some-devices-managed-by-the-drop-in-gateway" title="Permanent link">&para;</a></h3>
+<h3 id="_6">ドロップイン ゲートウェイによって管理される一部のデバイス<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>The LAN port of the main router connect to the WAN port of the GL.iNet router via an ethernet cable.</p>
+<p>メインルーターのLANポートとGL.iNetルーターのWANポートはイーサネットケーブルで接続します。</p>
 </li>
 <li>
-<p>Access web Admin Panel of GL.iNet router, enable Drop-in Gateway feature, it will generate the settings automatically.</p>
+<p>GL.iNetルーターのウェブ管理パネルにアクセスし、ドロップインゲートウェイ機能を有効にします。設定が自動的に作成されます。</p>
 <p><img alt="drop-in gateway generated settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/drop-in_gateway_some_device_enabled.png" /></p>
-<p>The <strong>IP Address</strong> is same of the IP address in <a href="../internet_ethernet/">Ethernet sector of Internet page</a>. The <strong>Gateway</strong> and <strong>DNS Server 1</strong> are the IP address of the main router. If these items are not set correctly, you can change them manually yourself.</p>
-<p>Write down the IP address here, you will use it in the following steps.</p>
-<p>You could choose the second configuration method, and click apply.</p>
+<p><strong>IPアドレス</strong>は、 <a href="../internet_ethernet/">インターネットページのイーサネットセクター</a>のIPアドレスと同じです。 <strong>ゲートウェイ</strong>と<strong>DNSサーバー1</strong>はメインルーターのIPアドレスです。これらの項目が正しく設定されていない場合は、ご自身で手動で変更してください。</p>
+<p>ここに IP アドレスを書き留めます。IPアドレスは次のステップで使用します。</p>
+<p>2番目の設定方法を選択し、適用をクリックします。</p>
 </li>
 <li>
-<p>Set the gateway and DNS on the device that you want to use the Drop-in Gateway feature to the IP address in Drop-in Gateway page.</p>
+<p>ドロップインゲートウェイ機能を使用するデバイスのゲートウェイとDNSを、ドロップインゲートウェイページのIPアドレスに設定します。</p>
 <details>
 <summary>Windows</summary>
-<p>Here is an example of Windows 11, Windows 10 is similar. Make sure your PC is connected to the main router, it is assumed here that your computer is connected to the main router via a network cable, and the setup is similar if you connect via WiFi.</p>
+<p>以下はWindows 11の例ですが、Windows 10も同様です。PCがメインルーターに接続されていることを確認してください。ここでは、PCがネットワークケーブルでメインルーターに接続されていることを想定しています。WiFiで接続する場合も、セットアップは同様です。</p>
 <ol>
 <li>
-<p>Open Settings.</p>
+<p>設定を開きます。</p>
 </li>
 <li>
-<p>Click on <strong>Network &amp; Internet</strong>.</p>
+<p><strong>Network &amp; Internet</strong>をクリックしてください。</p>
 </li>
 <li>
-<p>Click the <strong>Ethernet</strong> tab.</p>
+<p><strong>Ethernet</strong> タブをクリックします。</p>
 <p><img alt="windows 11 ethernet" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/windows/windwos11_ethernet.png" /></p>
 </li>
 <li>
-<p>You will find the IP address of this PC. Under the "IP assignment" section, click the <strong>Edit</strong> button.</p>
+<p>このPCのIPアドレスが表示されます。IP割り当て "セクションで、<strong>編集</strong>ボタンをクリックします。</p>
 <p><img alt="windows 11 ethernet edit" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/windows/windwos11_ethernet_ip_assignment_edit.png" /></p>
 </li>
 <li>
-<p>Select the <strong>Manual</strong> option. Turn on the <strong>IPv4 toggle</strong> switch.</p>
+<p><strong>Manual</strong>オプションを選択します。<strong>IPv4トグル</strong>スイッチをオンにします。</p>
 </li>
 <li>
-<p>Set the <strong>IP address</strong> as the IP address you see in step d, <strong>Subnet mask</strong> set as <code>255.255.255.0</code>, both <strong>Gateway</strong> and <strong>Preferred DNS</strong> set as the IP address in Drop-in Gateway page.</p>
+<p><strong>IPアドレス</strong>をステップdのIPアドレスに設定し、<strong>サブネットマスク</strong>を<code>255.255.255.0</code>に設定、<strong>ゲートウェイ</strong>と<strong>優先DNS</strong>の両方をドロップインゲートウェイページのIPアドレスに設定します。</p>
 <p><img alt="windows 11 ethernet edit" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/windows/windwos11_ethernet_edit_ip_settings.png" /></p>
 </li>
 <li>
-<p>Click the <strong>Save</strong> button.</p>
+<p><strong>保存</strong>ボタンをクリックします。</p>
 </li>
 </ol>
 </details>
 <details>
 <summary>Android</summary>
-<p>Here is an example of Samsung S21. Make sure your smartphone is connected to the main router.</p>
+<p>以下はSamsung S21の例です。スマートフォンがメインルーターに接続されていることを確認してください。</p>
 <ol>
 <li>
-<p>Open Settings, click on Connections.</p>
+<p>設定を開き、接続をクリックします。</p>
 <p><img alt="settings connections" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/settings_connections.jpg" /></p>
 </li>
 <li>
-<p>Click on Wi-Fi.</p>
+<p>Wi-Fiをクリックします。</p>
 <p><img alt="connection wifi" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/connections_wifi.jpg" /></p>
 </li>
 <li>
-<p>Click the cog icon of current SSID.</p>
+<p>現在のSSIDのコグアイコンをクリックします。</p>
 <p><img alt="wifi setting" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/wifi_cog.jpg" /></p>
 </li>
 <li>
-<p>Click <strong>View more</strong>.</p>
+<p><strong>もっと見る</strong>をクリックしてください。</p>
 <p><img alt="wifi settings, view more" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/wifi_view_more.jpg" /></p>
 </li>
 <li>
-<p>Click <strong>IP settings</strong>, choose <strong>Static</strong>.</p>
+<p><strong>IP構成</strong>をクリックし、<strong>スタティック</strong>を選択します。</p>
 <p><img alt="ip settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/wifi_ip_settings.jpg" /></p>
 <p><img alt="IP settings, static" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/ip_settings_static.jpg" /></p>
 </li>
 <li>
-<p>Set the <strong>Gateway</strong> and <strong>DNS 1</strong> as the IP address in Drop-in Gateway page, then click <strong>Save</strong>.</p>
+<p>ドロップイン・ゲートウェイのページで<strong>ゲートウェイ</strong>と<strong>DNS 1</strong>をIPアドレスに設定し、<strong>保存</strong>をクリックします。</p>
 <p><img alt="set gateway and dns ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/set_gateway.jpg" /></p>
 </li>
 </ol>
 </details>
 <details>
 <summary>iOS</summary>
-<p>Here is an example of iOS 16.3 of iPhone 8. Make sure your smartphone is connected to the main router.</p>
+<p>以下はiPhone 8のiOS 16.3の例です。スマートフォンがメインルーターに接続されていることを確認してください。</p>
 <ol>
 <li>
-<p>Open Settings, click Wi-Fi.</p>
+<p>設定を開き、Wi-Fiをクリックします。</p>
 <p><img alt="settings wifi" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/iphone/setting_wifi.jpg" /></p>
 </li>
 <li>
-<p>Click the SSID.</p>
+<p>SSIDをクリックします。</p>
 <p><img alt="settings wifi" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/iphone/wifi_list.jpg" /></p>
 </li>
 <li>
-<p>Scroll down, you will find the <strong>Configure IP</strong> is <strong>Automatic</strong>, please write dwon <strong>IP Address</strong> and <strong>Subnet Mask</strong>, you will need it at next step.</p>
+<p>下にスクロールすると、<strong>IP構成</strong>が<strong>自動</strong>になっています。<strong>IPアドレス</strong>とサブネットマスク**を書き留めてください。次のステップで必要になります。</p>
 <p><img alt="wifi ipv4" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/iphone/ipv4.jpg" /></p>
 </li>
 <li>
-<p>Change <strong>Configure IP</strong> to <strong>Manual</strong>, set the <strong>IP Address</strong> and <strong>Subnet Mask</strong> same as you see in previous step, and set the <strong>Router</strong> as the IP address in Drop-in Gateway page, then click <strong>Save</strong>.</p>
+<p><strong>IP構成</strong>を<strong>手動</strong>に変更し、<strong>IPアドレス</strong>と<strong>サブネットマスク</strong>を前のステップと同じように設定し、<strong>ルーター</strong>をドロップインゲートウェイページのIPアドレスとして設定し、<strong>保存</strong>をクリックします。</p>
 <p><img alt="wifi ipv4 manual" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/iphone/set_ipv4.jpg" /></p>
 </li>
 <li>
-<p>Click <strong>Configure DNS</strong>, change it to <strong>Manual</strong>. Click <strong>Add Server</strong>, set the server IP address as the IP address in Drop-in Gateway page, then click <strong>Save</strong>.</p>
+<p><strong>DNS 構成</strong>をクリックし、<strong>手動</strong>に変更します。サーバーを追加<strong>をクリックし、ドロップインゲートウェイページのIPアドレスとしてサーバーIPアドレスを設定し、</strong>保存**をクリックします。</p>
 <p><img alt="wifi dns" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/iphone/dns.jpg" /></p>
 <p><img alt="wifi set dns" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/iphone/set_dns.jpg" /></p>
 </li>
@@ -4306,13 +4306,13 @@
 </details>
 </li>
 <li>
-<p>Go back to the GL.iNet router and set up features like <a href="../adguardhome/">ADGuard Home</a>, <a href="../dns/">encypted DNS</a>, <a href="../wireguard_client/">WireGaurd Client</a> and <a href="../openvpn_client/">OpenVPN Client</a>.</p>
+<p>GL.iNet ルーターに戻り、 <a href="../adguardhome/">ADGuard Home</a>、<a href="../dns/">encypted DNS</a>、 <a href="../wireguard_client/">WireGaurd Client</a> 、 <a href="../openvpn_client/">OpenVPN Client</a>などの機能を設定します。</p>
 </li>
 </ol>
-<h2 id="cautions">Cautions<a class="headerlink" href="#cautions" title="Permanent link">&para;</a></h2>
+<h2 id="_7">注意事項<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ol>
-<li>It will increase the latency when using this mode.</li>
-<li>When this mode is enabled, the data transferred between the selected devices in the LAN will also pass through the drop-in gateway, so the bandwidth between the main router and the drop-in gateway will affect the bandwidth of the whole LAN.</li>
+<li>このモードを使用すると、レイテンシーが増加します。</li>
+<li>このモードを有効にすると、LAN内の選択したデバイス間で転送されるデータもドロップインゲートウェイを経由するため、メインルーターとドロップインゲートウェイ間の帯域幅がLAN全体の帯域幅に影響します。</li>
 </ol>
 <hr />
 <p>まだご質問はありますか？ <a href="https://forum.gl-inet.com" target="_blank">コミュニティ・フォーラム</a>をご覧ください。</p>
