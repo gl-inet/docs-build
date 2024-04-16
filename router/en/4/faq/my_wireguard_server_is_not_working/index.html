@@ -1376,6 +1376,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#my-wireguard-client-is-starting-and-never-connect" class="md-nav__link">
+    My WireGuard Client is starting and never connect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#my-wireguard-server-shows-client-connected-but-my-client-cannot-access-to-the-internet" class="md-nav__link">
     My WireGuard Server Shows Client connected but My Client cannot access to the internet
   </a>
@@ -2380,7 +2387,7 @@
         
   
   <span class="md-ellipsis">
-    Build your own OpenVPN Home Server with two GL.iNet Routers
+    How to set up an OpenVPN server on a GL.iNet router
   </span>
   
 
@@ -4505,6 +4512,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#my-wireguard-client-is-starting-and-never-connect" class="md-nav__link">
+    My WireGuard Client is starting and never connect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#my-wireguard-server-shows-client-connected-but-my-client-cannot-access-to-the-internet" class="md-nav__link">
     My WireGuard Server Shows Client connected but My Client cannot access to the internet
   </a>
@@ -4558,6 +4572,35 @@
   <!-- Markdown content -->
   <h1 id="my-wireguard-server-is-not-working">My WireGuard Server is not Working<a class="headerlink" href="#my-wireguard-server-is-not-working" title="Permanent link">&para;</a></h1>
 <p>There are many reasons your own WireGuard server is not working after the first setup. Please follow the below guide and figure out the reason one by one.</p>
+<h2 id="my-wireguard-client-is-starting-and-never-connect">My WireGuard Client is starting and never connect<a class="headerlink" href="#my-wireguard-client-is-starting-and-never-connect" title="Permanent link">&para;</a></h2>
+<p><img alt="client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/troubleshooting/My%20client%20is%20waiting/client.jpg" /></p>
+<p>It may be due to your port forward is not done, to ensure your Main router port forward is functioning, you can try to forward a HTTPS port to DDNS function.</p>
+<ol>
+<li>
+<p>Go to your Main router and forward the port 443 to our GL-iNet Router, just like what you do when you set up the VPN servers. Here is the example if you are using TP-Link as the Main router.</p>
+<p><img alt="DDNS1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/troubleshooting/My%20client%20is%20waiting/DDNS1.jpg" /></p>
+</li>
+<li>
+<p>Enable the DDNS function in your GL-iNet Router</p>
+<p><img alt="DDNS2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/troubleshooting/My%20client%20is%20waiting/DDNS2.jpg" /></p>
+</li>
+<li>
+<p>Enable the HTTPS Remote Access</p>
+<p><img alt="DDNS3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/troubleshooting/My%20client%20is%20waiting/DDNS3.jpg" /></p>
+</li>
+<li>
+<p>Connect your Laptop or PC to another network or cellular network. Launch a Windows Browser and type the DDNS address <strong>Https://abcd123.glddns.com</strong> and click <strong>Advance</strong></p>
+<p><img alt="DDNS4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/troubleshooting/My%20client%20is%20waiting/DDNS4.jpg" /></p>
+</li>
+<li>
+<p>Click Proceed to abcd123.glddns.com(unsafe)</p>
+<p><img alt="DDNS5" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/troubleshooting/My%20client%20is%20waiting/DDNS5.jpg" /></p>
+</li>
+<li>
+<p>If you can access our GL-iNet Router admin login, your Main router port forward is functioning.</p>
+<p><img alt="DDNS6" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/troubleshooting/My%20client%20is%20waiting/DDNS6.jpg" /></p>
+</li>
+</ol>
 <h2 id="my-wireguard-server-shows-client-connected-but-my-client-cannot-access-to-the-internet">My WireGuard Server Shows Client connected but My Client cannot access to the internet<a class="headerlink" href="#my-wireguard-server-shows-client-connected-but-my-client-cannot-access-to-the-internet" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -4579,7 +4622,7 @@
 <h2 id="my-wireguard-server-is-connected-but-my-clients-cannot-connect-to-it">My WireGuard Server is connected but My Clients cannot connect to it<a class="headerlink" href="#my-wireguard-server-is-connected-but-my-clients-cannot-connect-to-it" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Please check again your port forwarding is working. You can <a href="../../interface_guide/wireguard_server/#to-check-if-wireguard-server-is-working-properly">test the Server</a> by official WireGuard mobile App.</p>
+<p>Please check again your <a href="./#my-wireguard-client-is-starting-and-never-connect">port forwarding</a> is working. You can <a href="../../interface_guide/wireguard_server/#to-check-if-wireguard-server-is-working-properly">test the Server</a> by official WireGuard mobile App.</p>
 </li>
 <li>
 <p>Please double confirm you have a Public IP address. For details please click <a href="../../interface_guide/wireguard_server/#make-sure-internet-service-provider-assigns-you-a-public-ip-address">here</a>.</p>
@@ -4606,13 +4649,16 @@
 <p>Check your Main router if it has to enable the VPN passthrough function or not.</p>
 </li>
 <li>
-<p>Change the DNS on the configuration.</p>
+<p>Change the DNS on the <a href="./#my-wireguard-server-shows-client-connected-but-my-client-cannot-access-to-the-internet">configuration.</a></p>
+</li>
+<li>
+<p>Use <a href="../../interface_guide/dns/#dns-server-settings">encrypted DNS</a> on GL-Router.</p>
 </li>
 </ol>
 <h2 id="my-wireguard-server-is-suddenly-not-working">My WireGuard Server is suddenly not working<a class="headerlink" href="#my-wireguard-server-is-suddenly-not-working" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>It may due to a power outage, please check if your server is still on line.</p>
+<p>It may due to a power outage, please check if your server is still on line by <a href="./#my-wireguard-client-is-starting-and-never-connect">Https Remote Access</a> or <a href="../../interface_guide/cloud/">GoodCloud</a>.</p>
 </li>
 <li>
 <p>You didn't enable the DDNS before and the public IP address is changed.</p>
