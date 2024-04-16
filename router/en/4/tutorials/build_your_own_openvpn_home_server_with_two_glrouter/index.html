@@ -4610,19 +4610,17 @@
   
 
   <!-- Markdown content -->
-  <h1 id="how-to-set-up-an-openvpn-server-on-a-glinet-router">How to set Up an OpenVPN server on a GL.iNet router<a class="headerlink" href="#how-to-set-up-an-openvpn-server-on-a-glinet-router" title="Permanent link">&para;</a></h1>
+  <h1 id="how-to-set-up-an-openvpn-server-on-a-glinet-router">How to set up an OpenVPN server on a GL.iNet router<a class="headerlink" href="#how-to-set-up-an-openvpn-server-on-a-glinet-router" title="Permanent link">&para;</a></h1>
 <p>This tutorial will show you <strong>how to set up an OpenVPN server on a GL.iNet router</strong>. A VPN server allows you to establish a secure connection to your home or office network remotely. With a GL.iNet router, you can set up your OpenVPN server in minutes. </p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GSbytyaqOY0?si=lxFvOWjMCocYgtpb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 <div class="admonition note">
 <p class="admonition-title">Before you start, make sure to check the following requirements:</p>
 <p><strong>A public IP address</strong></p>
-<p>Setting up an OpenVPN server requires a public IP address. To check if you have one, follow <a href="https://docs.gl-inet.com/router/en/4/tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">these steps</a>. (If do not have a public IP address, you are recommended to use an intranet penetration tool. It allows you to access your VPN server even if you do not have a public IP address.)</p>
+<p>Setting up an OpenVPN server requires a public IP address. To check if you have one, follow <a href="https://docs.gl-inet.com/router/en/4/tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">these steps</a>.</p>
 <p><strong>Port forwarding</strong></p>
 <p>If your GL.iNet router is connected to a primary router, you will have to set up port forwarding on the primary router. Refer to the instructions provided by your router manufacturer. </p>
 </div>
 <h2 id="1-sign-in-to-your-router">1. Sign in to your router<a class="headerlink" href="#1-sign-in-to-your-router" title="Permanent link">&para;</a></h2>
-<p>In a web browser, enter 192.168.8.1. Enter your password, then click <strong>Login</strong>.</p>
+<p>In a web browser, enter the URL to your router admin panel (e.g., 192.168.8.1). Enter your password, then click <strong>Login</strong>.</p>
 <p><img alt="sign in" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/router-login.jpeg" /></p>
 <h2 id="2-set-up-dynamic-dns-optional">2. Set up Dynamic DNS (optional)<a class="headerlink" href="#2-set-up-dynamic-dns-optional" title="Permanent link">&para;</a></h2>
 <p>Setting up an OpenVPN server requires a static public IP address, which provdes a fixed address for your VPN server to be accessible to other devices. In most cases, you may not have a static public IP address. This requires setting up Dynamic DNS on your GL.iNet router. It allows you to connect to the OpenVPN server even if your public IP address is dynamic (instead of static) and changes constantly. </p>
@@ -4633,12 +4631,11 @@
 <li>Next to <strong>Enable DDNS</strong>, toggle the switch to on. </li>
 <li>Check the box for <strong>I have read and agree to the Terms of Service &amp; Privacy Policy</strong>.</li>
 <li>Click <strong>Apply</strong>. 
-<img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/dynamic-dns-click-apply.jpeg" /></li>
+<img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/dynamic-dns-click-apply.png" /></li>
 </ol>
 <h2 id="3-download-the-configuration-file">3. Download the configuration file<a class="headerlink" href="#3-download-the-configuration-file" title="Permanent link">&para;</a></h2>
 <ol>
-<li>In the left sidebar, click <strong>VPN</strong> &gt; <strong>OpenVPN Server</strong>.
-<img alt="click openvpn server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-openvpn-server.jpeg" /></li>
+<li>In the left sidebar, click <strong>VPN</strong> &gt; <strong>OpenVPN Server</strong>.</li>
 <li>Click <strong>Generate Configuration</strong>. </li>
 <li>Keep the default settings as-is, then click <strong>Export Client Configuration</strong>. 
 <img alt="click export" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-export-client-configuration.jpeg" /></li>
@@ -4654,7 +4651,7 @@
 <li>Click the Options icon.</li>
 <li>Toggle the switch to on for <strong>Remote Access LAN</strong>.</li>
 <li>Click <strong>Apply</strong>.
-<img alt="click apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/openvpn-server-options-apply.jpeg" /></li>
+<img alt="click apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/toggle-enable-remote-access-lan.png" /></li>
 </ol>
 </details>
 <h2 id="4-connect-to-the-openvpn-server">4. Connect to the OpenVPN server<a class="headerlink" href="#4-connect-to-the-openvpn-server" title="Permanent link">&para;</a></h2>
@@ -4685,13 +4682,14 @@
 <li>Select <strong>Connect</strong> &gt; <strong>OK</strong> &gt; <strong>Allow</strong>. </li>
 </ol>
 <p>You will see the word "Connected" at the top of the VPN profile. 
-<img alt="connected status" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/openvpn-connected-status.png" /> </p>
+<img alt="connected status" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/connected-status.png" /> </p>
 <h3 id="method-2-a-router-that-supports-setting-up-an-openvpn-client">Method 2: A router that supports setting up an OpenVPN client<a class="headerlink" href="#method-2-a-router-that-supports-setting-up-an-openvpn-client" title="Permanent link">&para;</a></h3>
 <p>You can use any routers that support setting up the OpenVPN client manual configuration. In this tutorial, we will use GL.iNet's travel router <a href="https://www.gl-inet.com/products/gl-mt3000/">Beryl AX (GL-MT3000)</a> as an example. </p>
 <ol>
-<li>In a web browser's address, enter 192.168.8.1.</li>
+<li>On another device, connect to a different Wi-Fi network (or connect to cellular if you are using a mobile device.). </li>
+<li>In a web browser's address, enter the URL to your router admin panel (e.g., 192.168.8.1).</li>
 <li>Enter your password, then click <strong>Login</strong>. </li>
-<li>In the left sidebar, tap <strong>VPN</strong> &gt; <strong>OpenVPN Client</strong>. 
+<li>In the left sidebar, click <strong>VPN</strong> &gt; <strong>OpenVPN Client</strong>. 
 <img alt="click openvpn client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-openvpn-client.png" /> </li>
 <li>Click <strong>Add Manually</strong>. 
 <img alt="click add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-add-manually.png" /> </li>
