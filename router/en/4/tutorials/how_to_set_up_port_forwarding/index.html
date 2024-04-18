@@ -4647,7 +4647,7 @@
 
   <!-- Markdown content -->
   <h1 id="how-to-set-up-port-forwarding-on-your-primary-router">How to set up port forwarding on your primary router<a class="headerlink" href="#how-to-set-up-port-forwarding-on-your-primary-router" title="Permanent link">&para;</a></h1>
-<p>If you are setting up a server (such as an <a href="https://docs.gl-inet.com/router/en/4/tutorials/build_your_own_openvpn_home_server_with_two_glrouter/">OpenVPN server</a> or <a href="https://docs.gl-inet.com/router/en/4/tutorials/build_your_own_wireguard_home_server_with_two_glinet_routers/">WireGuard server</a>) on your GL.iNet router and it is connected to a primary router, you will have to set up port forwarding on the primary router. This ensures the server to be accessible properly. </p>
+<p>If you are setting up a server (such as an <a href="https://docs.gl-inet.com/router/en/4/tutorials/build_your_own_openvpn_home_server_with_two_glrouter/">OpenVPN server</a> or <a href="https://docs.gl-inet.com/router/en/4/tutorials/build_your_own_wireguard_home_server_with_two_glinet_routers/">WireGuard server</a>) on your GL.iNet router and it is connected to a primary router, you will have to set up port forwarding on the primary router. This ensures the server to be accessible properly. (Note that if there are other routers between the primary router and the GL.iNet router, you will have set up port forwarding on all these preceding routers.)</p>
 <p>The steps for setting up port forwarding vary depending on the brand and model of your router. Refer to the section appropriate to you below. </p>
 <h2 id="glinet-router-as-my-primary-router">GL.iNet router as my primary router<a class="headerlink" href="#glinet-router-as-my-primary-router" title="Permanent link">&para;</a></h2>
 <p>If your primary router is a GL.iNet router, follow these steps to set up port forwarding on it. </p>
@@ -4659,10 +4659,10 @@
 <li><strong>Name:</strong> Enter any name for the rule.</li>
 <li><strong>Protocol:</strong> Keep it as-is. </li>
 <li><strong>External Zone:</strong> Keep it as-is. </li>
-<li><strong>External Port:</strong> Enter <strong>1194</strong> (if you are setting up an OpenVPN server) or <strong>51820</strong> (if you are setting up a WireGuard server).</li>
+<li><strong>External Port:</strong> Enter the port you are using. For example, the default ports are <strong>1194</strong> (for OpenVPN servers) and <strong>51820</strong> (for WireGuard servers).</li>
 <li><strong>Internal Zone:</strong> Keep it as-is. </li>
 <li><strong>Internal IP:</strong> Select the router you want to forward your port to. </li>
-<li><strong>Internal Port:</strong> Enter <strong>1194</strong> (if you are setting up an OpenVPN server) or <strong>51820</strong> (if you are setting up a WireGuard server).</li>
+<li><strong>Internal Port:</strong> Enter the port you are using. For example, the default ports are <strong>1194</strong> (for OpenVPN servers) and <strong>51820</strong> (for WireGuard servers).</li>
 </ul>
 </li>
 <li>Click <strong>Apply</strong>. </li>
@@ -4672,7 +4672,7 @@
 <p class="admonition-title">Make sure to enter the following information when setting up port forwarding:</p>
 <p>Different router brands and models have different ways of naming the information you have to provide when you set up port forwarding. In general, make sure to enter the following information on the router's port forwarding screen:</p>
 <ul>
-<li><strong>External port/Internal port:</strong> Enter <strong>1194</strong> (if you are setting up an OpenVPN server) or <strong>51820</strong> (if you are setting up a WireGuard server).</li>
+<li><strong>External port/Internal port:</strong> Enter the port you are using. For example, the default ports are <strong>1194</strong> (for OpenVPN servers) and <strong>51820</strong> (for WireGuard servers).</li>
 <li><strong>Protocol:</strong> Choose <strong>All</strong> or <strong>UDP/TCP</strong>.</li>
 <li><strong>Internal IP</strong> (or shown as <strong>Host IP</strong>): Enter your secondary router's WAN IP address or select your secondary router from the dropdown if available. </li>
 </ul>
