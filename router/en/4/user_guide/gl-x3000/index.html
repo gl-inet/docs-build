@@ -694,31 +694,11 @@
     How to set up a VPN
   </a>
   
-    <nav class="md-nav" aria-label="How to set up a VPN">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#openvpn" class="md-nav__link">
-    OpenVPN
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wireguard" class="md-nav__link">
-    WireGuard
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-set-up-tailscale" class="md-nav__link">
-    How to set up Tailscale
+  <a href="#how-to-set-up-port-forwarding" class="md-nav__link">
+    How to set up port forwarding
   </a>
   
 </li>
@@ -726,13 +706,6 @@
         <li class="md-nav__item">
   <a href="#how-to-set-up-multi-wan-failover-and-load-balancing" class="md-nav__link">
     How to set up multi-WAN (failover and load-balancing)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-set-up-port-forwarding" class="md-nav__link">
-    How to set up port forwarding
   </a>
   
 </li>
@@ -1549,7 +1522,7 @@
         
   
   <span class="md-ellipsis">
-    My Wireguard Server is not working
+    My Wireguard server is not working properly
   </span>
   
 
@@ -2947,6 +2920,8 @@
       
         
       
+        
+      
     
     
     
@@ -3028,6 +3003,26 @@
   
   <span class="md-ellipsis">
     How to block client devices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/how_to_upgrade_downgrade_router/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to upgrade or downgrade your router (from v4.x to v4.x)
   </span>
   
 
@@ -4732,31 +4727,11 @@
     How to set up a VPN
   </a>
   
-    <nav class="md-nav" aria-label="How to set up a VPN">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#openvpn" class="md-nav__link">
-    OpenVPN
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wireguard" class="md-nav__link">
-    WireGuard
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-set-up-tailscale" class="md-nav__link">
-    How to set up Tailscale
+  <a href="#how-to-set-up-port-forwarding" class="md-nav__link">
+    How to set up port forwarding
   </a>
   
 </li>
@@ -4764,13 +4739,6 @@
         <li class="md-nav__item">
   <a href="#how-to-set-up-multi-wan-failover-and-load-balancing" class="md-nav__link">
     How to set up multi-WAN (failover and load-balancing)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-set-up-port-forwarding" class="md-nav__link">
-    How to set up port forwarding
   </a>
   
 </li>
@@ -4876,7 +4844,9 @@
   <!-- Markdown content -->
   <h1 id="spitz-ax-gl-x3000-user-guide">Spitz AX (GL-X3000) User Guide<a class="headerlink" href="#spitz-ax-gl-x3000-user-guide" title="Permanent link">&para;</a></h1>
 <h2 id="how-to-set-up-spitz-ax">How to set up Spitz AX<a class="headerlink" href="#how-to-set-up-spitz-ax" title="Permanent link">&para;</a></h2>
-<p>To set up Spitz AX, you will use one of the four supported internet connection methods: Cellular (SIM cards), ethernet, repeater, and tethering. Follow the steps below. </p>
+<p>To set up Spitz AX, you will use one of the four supported internet connection methods: Cellular (SIM cards), ethernet, repeater, and tethering. Watch this setup video or follow the steps below. </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3dm0w5kjAlc?si=3YykOcaz_YK_vp28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><small>(This video uses a different GL.iNet router to demonstrate the setup but the steps are the same for Spitz AX and other router models.)</small></p>
 <div class="admonition note">
 <p class="admonition-title">Before you start, follow these steps (if connecting via the cellular method):</p>
 <p>To connect to the internet via the cellular method, you will need at least one nano SIM card. Once you have the nano SIM card(s) ready, follow these steps:</p>
@@ -4935,30 +4905,35 @@
 <p><strong>Note:</strong> If you want to use the multi-WAN feature, you will have to set up more than one internet connection methods. </p>
 <hr />
 <h2 id="how-to-set-up-a-vpn">How to set up a VPN<a class="headerlink" href="#how-to-set-up-a-vpn" title="Permanent link">&para;</a></h2>
-<p>A VPN (virtual private network) creates a secure, encrypted traffic between your device and the VPN server. It provides an added layer of privacy and security (VPN client) and allows you to access a remote network (VPN server). </p>
-<p>Spitz AX (and other GL.iNet routers) support the OpenVPN and WireGuard protocols. Both protocols offer strong security, but Wireguard offers greater speeds and convenience. If you do not have a preference in which VPN protocol to use, you can use WireGuard. </p>
-<h3 id="openvpn">OpenVPN<a class="headerlink" href="#openvpn" title="Permanent link">&para;</a></h3>
-<p>To set up OpenVPN, follow these tutorials:</p>
+<p>A VPN (virtual private network) creates a secure, encrypted traffic between your device and the VPN server. It provides an added layer of privacy and security (VPN client) and allows you to access a remote network (VPN server). Spitz AX (and other GL.iNet routers) support OpenVPN, WireGuard, and Tailscale. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">OpenVPN</label><label for="__tabbed_3_2">WireGuard</label><label for="__tabbed_3_3">Tailscale</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Spitz AX (and other GL.iNet routers) support the OpenVPN protocol which offers strong security. To set up OpenVPN, follow these tutorials:</p>
 <ul>
 <li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/openvpn_client/">How to set up an OpenVPN client</a></li>
 <li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/openvpn_server/">How to set up an OpenVPN server</a></li>
 </ul>
-<h3 id="wireguard">WireGuard<a class="headerlink" href="#wireguard" title="Permanent link">&para;</a></h3>
-<p>To set up WireGuard, follow these tutorials:</p>
+</div>
+<div class="tabbed-block">
+<p>Spitz AX (and other GL.iNet routers) support the WireGuard protocol which offers great speeds and convenience. To set up WireGuard, follow these tutorials:</p>
 <ul>
 <li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/wireguard_client/">How to set up a WireGuard client</a></li>
 <li><a href="https://docs.gl-inet.com/router/en/4/interface_guide/wireguard_server/">How to set up a WireGuard server</a></li>
 </ul>
+</div>
+<div class="tabbed-block">
+<p>Tailscale is a VPN service that allows you to access your devices and applications anywhere. To set up Tailscale, refer to <a href="https://docs.gl-inet.com/router/en/4/interface_guide/tailscale/">Tailscale</a>. </p>
+</div>
+</div>
+</div>
 <hr />
-<h2 id="how-to-set-up-tailscale">How to set up Tailscale<a class="headerlink" href="#how-to-set-up-tailscale" title="Permanent link">&para;</a></h2>
-<p>Tailscale is a VPN service that allows you to access your devices and applications anywhere. To set up tailscale, refer to <a href="https://docs.gl-inet.com/router/en/4/interface_guide/tailscale/">Tailscale</a>. </p>
+<h2 id="how-to-set-up-port-forwarding">How to set up port forwarding<a class="headerlink" href="#how-to-set-up-port-forwarding" title="Permanent link">&para;</a></h2>
+<p>Port forwarding allows remote servers and devices on the internet to access devices on a private network. To set up port forwarding, refer to <a href="https://docs.gl-inet.com/router/en/4/interface_guide/firewall/#port-forwards">Port Forwards</a>. </p>
 <hr />
 <h2 id="how-to-set-up-multi-wan-failover-and-load-balancing">How to set up multi-WAN (failover and load-balancing)<a class="headerlink" href="#how-to-set-up-multi-wan-failover-and-load-balancing" title="Permanent link">&para;</a></h2>
 <p>Multi-WAN is a networking feature that allows you to set up your router with multiple internet connections (e.g., cellular, repeater, and ethernet) at the same time. If your current internet connection fails, the router will automatically switch to another internet connection. This ensures smooth and uninterrupted internet access. </p>
 <p>To set up multi-WAN, refer to <a href="https://docs.gl-inet.com/router/en/4/interface_guide/multi-wan/">Multi-WAN</a>. </p>
-<hr />
-<h2 id="how-to-set-up-port-forwarding">How to set up port forwarding<a class="headerlink" href="#how-to-set-up-port-forwarding" title="Permanent link">&para;</a></h2>
-<p>Port forwarding allows remote servers and devices on the internet to access devices on a private network. To set up port forwarding, refer to <a href="https://docs.gl-inet.com/router/en/4/interface_guide/firewall/#port-forwards">Port Forwards</a>. </p>
 <hr />
 <h2 id="other-spitz-ax-features-and-settings">Other Spitz AX features and settings<a class="headerlink" href="#other-spitz-ax-features-and-settings" title="Permanent link">&para;</a></h2>
 <h3 id="adguard-home">AdGuard Home<a class="headerlink" href="#adguard-home" title="Permanent link">&para;</a></h3>
