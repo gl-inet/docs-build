@@ -12,13 +12,13 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/router/en/4/tutorials/winscp_share_file/">
+        <link rel="canonical" href="https://docs.gl-inet.com/router/en/4/tutorials/how_to_set_up_openvpn_client/">
       
       
-        <link rel="prev" href="../use_wireguard_to_secure_rdp_from_outside_network/">
+        <link rel="prev" href="../wireguard_server_access_to_client_lan_side/">
       
       
-        <link rel="next" href="../goodcloud_site_to_site/">
+        <link rel="next" href="../build_your_own_openvpn_home_server_with_two_glrouter/">
       
       
       <link rel="icon" href="../../images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>How to use WinSCP to access your share files - GL.iNet Router Docs 4</title>
+        <title>How to set up an OpenVPN client on a GL.iNet router - GL.iNet Router Docs 4</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#use-winscp-to-access-your-share-files" class="md-skip">
+        <a href="#how-to-set-up-an-openvpn-client-on-a-glinet-router" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How to use WinSCP to access your share files
+              How to set up an OpenVPN client on a GL.iNet router
             
           </span>
         </div>
@@ -2228,6 +2228,8 @@
                 
   
   
+    
+  
   
     
     
@@ -2256,12 +2258,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -2275,7 +2277,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             VPN
@@ -2306,9 +2308,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../how_to_set_up_openvpn_client/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    How to set up an OpenVPN client on a GL.iNet router
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2317,6 +2339,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-sign-in-to-the-router-admin-panel" class="md-nav__link">
+    1. Sign in to the router admin panel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-set-up-and-connect-to-the-vpn-profile" class="md-nav__link">
+    2. Set up and connect to the VPN profile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-check-if-you-are-connected-to-the-vpn-successfully" class="md-nav__link">
+    3. Check if you are connected to the VPN successfully
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2494,8 +2557,6 @@
                 
   
   
-    
-  
   
     
     
@@ -2506,12 +2567,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
           <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
@@ -2525,7 +2586,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             Network Storage
@@ -2536,29 +2597,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    How to use WinSCP to access your share files
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../winscp_share_file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2567,33 +2608,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#setup-links-in-winscp" class="md-nav__link">
-    Setup links in WinSCP
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4572,8 +4586,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup-links-in-winscp" class="md-nav__link">
-    Setup links in WinSCP
+  <a href="#1-sign-in-to-the-router-admin-panel" class="md-nav__link">
+    1. Sign in to the router admin panel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-set-up-and-connect-to-the-vpn-profile" class="md-nav__link">
+    2. Set up and connect to the VPN profile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-check-if-you-are-connected-to-the-vpn-successfully" class="md-nav__link">
+    3. Check if you are connected to the VPN successfully
   </a>
   
 </li>
@@ -4602,18 +4630,68 @@
   
 
   <!-- Markdown content -->
-  <h1 id="use-winscp-to-access-your-share-files">Use WinSCP to access your share files<a class="headerlink" href="#use-winscp-to-access-your-share-files" title="Permanent link">&para;</a></h1>
-<p>You can use <strong>WinSCP</strong> to access your share files with the file sharing function of <strong>GL-Routers</strong>.</p>
-<p>Please setup your <strong>WebDAV</strong> links in our network storage tab. For detail setup, please refer to the setup <a href="https://docs.gl-inet.com/router/en/4/interface_guide/network_storage/#set-up-webdav">WebDVA</a></p>
-<h2 id="setup-links-in-winscp">Setup links in WinSCP<a class="headerlink" href="#setup-links-in-winscp" title="Permanent link">&para;</a></h2>
-<p>After setup your WebDAV, you can go back to the <strong>Share Folders</strong> page of network storage.</p>
-<p><img alt="webdav1" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/webdav1.png" /></p>
-<p>Right click the <strong>"..."</strong> icon and copy the HTTPS link.</p>
-<p><img alt="webdav2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/webdav2.png" /></p>
-<p>Launch WinSCP and select WebDAV, also select the TLS/SSL encryption. Then paste the link to the <strong>Host name</strong>, the port number will automatically change to 6008.</p>
-<p><img alt="webdav3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/webdav3.png" /></p>
-<p>Input your user name and password, then click save and login, the shared folder will be opened.</p>
-<p><img alt="webdav4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/webdav4.png" /></p>
+  <h1 id="how-to-set-up-an-openvpn-client-on-a-glinet-router">How to set up an OpenVPN client on a GL.iNet router<a class="headerlink" href="#how-to-set-up-an-openvpn-client-on-a-glinet-router" title="Permanent link">&para;</a></h1>
+<p>This tutorial will show you <strong>how to set up an OpenVPN client on a GL.iNet router</strong>. </p>
+<p>Before you start, you will need an active subscription with a VPN service provider that supports the OpenVPN manual configuration. <a href="https://www.gl-inet.com/solutions/vpn/">See a list of OpenVPN-compatible VPNs that are supported by GL.iNet</a>. </p>
+<p>The following instructions were written for setting up an OpenVPN client through the router admin panel.  (To set up an OpenVPN client via the GL.iNet mobile app, <a href="https://www.gl-inet.com/app/">download the app</a> and set it up.)</p>
+<h2 id="1-sign-in-to-the-router-admin-panel">1. Sign in to the router admin panel<a class="headerlink" href="#1-sign-in-to-the-router-admin-panel" title="Permanent link">&para;</a></h2>
+<p>In a web browser, enter the URL to the router admin panel (e.g.,192.168.8.1).  Enter your password, then click <strong>Login</strong>. </p>
+<h2 id="2-set-up-and-connect-to-the-vpn-profile">2. Set up and connect to the VPN profile<a class="headerlink" href="#2-set-up-and-connect-to-the-vpn-profile" title="Permanent link">&para;</a></h2>
+<p>Follow the section appropriate to the VPN service provider you are using. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">NordVPN</label><label for="__tabbed_1_2">Other VPN service providers (E.g., ExpressVPN, Surfshark )</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>In the left sidebar, click <strong>VPN</strong> &gt; <strong>OpenVPN Client</strong>.</li>
+<li>
+<p>Click <strong>NordVPN</strong>.</p>
+<p><img alt="nordvpn" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/click-nordvpn.png" /></p>
+</li>
+<li>
+<p>Enter your service credentials, then click <strong>Save and Continue</strong>. </p>
+<p><img alt="save and continue" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/click-save-and-continue.png" /></p>
+</li>
+<li>
+<p>In the prompt, select the VPN locations you want to connect, then click <strong>Apply</strong>. </p>
+<p><img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/nordvpn-servers-click-apply.png" /></p>
+</li>
+<li>
+<p>Next to the VPN server you want to connect to, click the three-dot icon &gt; <strong>Start</strong>. </p>
+<p><img alt="start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/openvpn-click-start.png" /></p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>In the left sidebar, click <strong>VPN</strong> &gt; <strong>OpenVPN Client</strong>.</li>
+<li>
+<p>Click <strong>Add Manually</strong>. </p>
+<p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/openvpn-click-add-manually.png" /></p>
+</li>
+<li>
+<p>Enter the name of your VPN service provider (e.g., ExpressVPN), then click the check icon. </p>
+<p><img alt="click-check-icon" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/click-check-icon.png" /></p>
+</li>
+<li>
+<p>Find your service credentials and download the configuration file provided by your VPN service provider. </p>
+</li>
+<li>Upload the configuration file you downloaded earlier. </li>
+<li>
+<p>Enter the service credentials you found earlier, then click <strong>Apply</strong>. </p>
+<p><img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/openvpn-click-apply.png" /></p>
+</li>
+<li>
+<p>Next to the VPN server address, click the three-dot icon &gt; <strong>Start</strong>. </p>
+<p><img alt="start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/openvpn-manual-click-start.png" /></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<h2 id="3-check-if-you-are-connected-to-the-vpn-successfully">3. Check if you are connected to the VPN successfully<a class="headerlink" href="#3-check-if-you-are-connected-to-the-vpn-successfully" title="Permanent link">&para;</a></h2>
+<p>In a web browser, search your IP address location. If it matches the VPN server location you are connected to, your VPN connection is successful. You have completed the setup. </p>
+<hr />
+<p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
 
   <!-- Last update of source file -->
   
