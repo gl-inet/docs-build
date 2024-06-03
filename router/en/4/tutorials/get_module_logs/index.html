@@ -4778,7 +4778,10 @@
 </li>
 <li>
 <p>Use the following command to start qlog</p>
-<div class="highlight"><pre><span></span><code>qlog-mtk7981a-sha256-78dda4 -f /etc/default_v15.cfg -s /tmp/mountd/disk1_part1/qlogs_$(date +%Y%m%d%H%M) &amp; 
+<p><div class="highlight"><pre><span></span><code>qlog-mtk7981a-sha256-78dda4 -f /etc/default_v15.cfg -s /tmp/mountd/disk1_part1/qlogs_$(date +%Y%m%d%H%M) &amp; 
+</code></pre></div>
+4. Use the following command to reboot model.</p>
+<div class="highlight"><pre><span></span><code>gl_modem -B 0001:01:00.0 SAT sp AT+CFUN=0; sleep 1; gl_modem -B 0001:01:00.0 SAT sp AT+CFUN=1
 </code></pre></div>
 </li>
 <li>
