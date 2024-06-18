@@ -1,0 +1,5070 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for GL.iNet IoT Productions">
+      
+      
+        <meta name="author" content="GL.iNet">
+      
+      
+        <link rel="canonical" href="https://docs.gl-inet.com/iot/en/thread_board_router/gl-s200/otbr_http_api/">
+      
+      
+        <link rel="prev" href="../works_with_home_assistant/">
+      
+      
+        <link rel="next" href="../otbr_mgmt_ubus_api/">
+      
+      
+      <link rel="icon" href="../../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>OTBR HTTP API - GL.iNet IoT Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-CB08JFHVHT"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-CB08JFHVHT",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-CB08JFHVHT",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#generate_thread_network" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="GL.iNet IoT Docs" class="md-header__button md-logo" aria-label="GL.iNet IoT Docs" data-md-component="logo">
+      
+  <img src="../../../images/logo_white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GL.iNet IoT Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OTBR HTTP API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gl-inet/docs-iot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gl-inet/docs-iot
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ble_proxy/gl-s10/" class="md-tabs__link">
+          
+  
+    
+  
+  BLE Proxy
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../gl-s20/" class="md-tabs__link">
+          
+  
+    
+  
+  Thread Board Router
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../iot_dev_board/" class="md-tabs__link">
+          
+  
+    
+  
+  IoT Dev Board
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GL.iNet IoT Docs" class="md-nav__button md-logo" aria-label="GL.iNet IoT Docs" data-md-component="logo">
+      
+  <img src="../../../images/logo_white.svg" alt="logo">
+
+    </a>
+    GL.iNet IoT Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gl-inet/docs-iot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gl-inet/docs-iot
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BLE Proxy
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            BLE Proxy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ble_proxy/gl-s10/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GL-S10
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            GL-S10
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s10/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s10/user_manual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ble_proxy/gl-s10/firmware_compilation_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware Compilation Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Thread Board Router
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Thread Board Router
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gl-s20/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GL-S20
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            GL-S20
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-s20/hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-s20/user_manual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4" id="__nav_3_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-s20/http_restful_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Http RESTful API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-s20/ble_network_configuration_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BLE Network Configuration API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GL-S200
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            GL-S200
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluetooth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bluetooth
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thread_mesh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thread Mesh
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openthread_border_router_codelabs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenThread Border Router Codelabs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../works_with_home_assistant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Works with Home Assistant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    OTBR HTTP API
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    OTBR HTTP API
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generate_thread_network" class="md-nav__link">
+    generate_thread_network
+  </a>
+  
+    <nav class="md-nav" aria-label="generate_thread_network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export_thread_network" class="md-nav__link">
+    export_thread_network
+  </a>
+  
+    <nav class="md-nav" aria-label="export_thread_network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_1" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_1" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_1" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import_thread_network" class="md-nav__link">
+    import_thread_network
+  </a>
+  
+    <nav class="md-nav" aria-label="import_thread_network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_2" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_2" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_2" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_status" class="md-nav__link">
+    get_status
+  </a>
+  
+    <nav class="md-nav" aria-label="get_status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_3" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_3" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_3" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scan" class="md-nav__link">
+    scan
+  </a>
+  
+    <nav class="md-nav" aria-label="scan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_4" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_4" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_4" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set_config" class="md-nav__link">
+    set_config
+  </a>
+  
+    <nav class="md-nav" aria-label="set_config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_1" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_5" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_5" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_5" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set_txpower" class="md-nav__link">
+    set_txpower
+  </a>
+  
+    <nav class="md-nav" aria-label="set_txpower">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_2" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_6" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_6" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_6" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stop" class="md-nav__link">
+    stop
+  </a>
+  
+    <nav class="md-nav" aria-label="stop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_7" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_7" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_7" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start" class="md-nav__link">
+    start
+  </a>
+  
+    <nav class="md-nav" aria-label="start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_8" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_8" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_8" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    join
+  </a>
+  
+    <nav class="md-nav" aria-label="join">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_3" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_9" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_9" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_9" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add_joiner" class="md-nav__link">
+    add_joiner
+  </a>
+  
+    <nav class="md-nav" aria-label="add_joiner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_4" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_10" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_10" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_10" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export_joiner_list" class="md-nav__link">
+    export_joiner_list
+  </a>
+  
+    <nav class="md-nav" aria-label="export_joiner_list">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_5" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_11" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_11" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_11" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import_joiner_list" class="md-nav__link">
+    import_joiner_list
+  </a>
+  
+    <nav class="md-nav" aria-label="import_joiner_list">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_6" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_12" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_12" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_12" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rejoin_all" class="md-nav__link">
+    rejoin_all
+  </a>
+  
+    <nav class="md-nav" aria-label="rejoin_all">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_7" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_13" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_13" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_13" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove_joiner_list" class="md-nav__link">
+    remove_joiner_list
+  </a>
+  
+    <nav class="md-nav" aria-label="remove_joiner_list">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_8" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_14" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_14" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_14" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_joiner_list" class="md-nav__link">
+    get_joiner_list
+  </a>
+  
+    <nav class="md-nav" aria-label="get_joiner_list">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_15" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_15" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_15" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_network_data" class="md-nav__link">
+    get_network_data
+  </a>
+  
+    <nav class="md-nav" aria-label="get_network_data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_16" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_16" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_16" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_leader_data" class="md-nav__link">
+    get_leader_data
+  </a>
+  
+    <nav class="md-nav" aria-label="get_leader_data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_17" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_17" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_17" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_buffer_info" class="md-nav__link">
+    get_buffer_info
+  </a>
+  
+    <nav class="md-nav" aria-label="get_buffer_info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_18" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_18" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_18" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export_network_data" class="md-nav__link">
+    export_network_data
+  </a>
+  
+    <nav class="md-nav" aria-label="export_network_data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_19" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_19" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_19" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_neighbor_list" class="md-nav__link">
+    get_neighbor_list
+  </a>
+  
+    <nav class="md-nav" aria-label="get_neighbor_list">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_20" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_20" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_20" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_bbr_status" class="md-nav__link">
+    get_bbr_status
+  </a>
+  
+    <nav class="md-nav" aria-label="get_bbr_status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_21" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_21" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_21" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set_bbr_config" class="md-nav__link">
+    set_bbr_config
+  </a>
+  
+    <nav class="md-nav" aria-label="set_bbr_config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_9" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_22" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_22" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_22" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set_commissioning" class="md-nav__link">
+    set_commissioning
+  </a>
+  
+    <nav class="md-nav" aria-label="set_commissioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_10" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_23" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_23" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_23" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_srp_server_service" class="md-nav__link">
+    get_srp_server_service
+  </a>
+  
+    <nav class="md-nav" aria-label="get_srp_server_service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_24" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_24" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_24" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_srp_server_config" class="md-nav__link">
+    get_srp_server_config
+  </a>
+  
+    <nav class="md-nav" aria-label="get_srp_server_config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_25" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_25" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_25" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set_srp_server_config" class="md-nav__link">
+    set_srp_server_config
+  </a>
+  
+    <nav class="md-nav" aria-label="set_srp_server_config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_11" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_26" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_26" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_26" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_nat64_status" class="md-nav__link">
+    get_nat64_status
+  </a>
+  
+    <nav class="md-nav" aria-label="get_nat64_status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_27" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_27" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_27" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set_nat64_config" class="md-nav__link">
+    set_nat64_config
+  </a>
+  
+    <nav class="md-nav" aria-label="set_nat64_config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_12" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_28" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_28" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_28" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set_device_name" class="md-nav__link">
+    set_device_name
+  </a>
+  
+    <nav class="md-nav" aria-label="set_device_name">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_13" class="md-nav__link">
+    Request parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_29" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_29" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_29" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force_to_leader" class="md-nav__link">
+    force_to_leader
+  </a>
+  
+    <nav class="md-nav" aria-label="force_to_leader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-sample_30" class="md-nav__link">
+    Request sample:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-parameters_30" class="md-nav__link">
+    Response parameters:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-sample_30" class="md-nav__link">
+    Response sample:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../otbr_mgmt_ubus_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OTBR MGMT UBUS API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../iot_dev_board/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    IoT Dev Board
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            IoT Dev Board
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../iot_dev_board/using_tdb_on_gl-s20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thread Development Board for GL-S20
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>OTBR HTTP API</h1>
+
+<h2 id="generate_thread_network">generate_thread_network<a class="headerlink" href="#generate_thread_network" title="Permanent link">&para;</a></h2>
+<p>Initialize a network with random values, include PAN ID, Extended PAN ID and Network Key.</p>
+<h3 id="request-sample">Request sample:<a class="headerlink" href="#request-sample" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;generate_thread_network&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters">Response parameters:<a class="headerlink" href="#response-parameters" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample">Response sample:<a class="headerlink" href="#response-sample" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="export_thread_network">export_thread_network<a class="headerlink" href="#export_thread_network" title="Permanent link">&para;</a></h2>
+<p>Export the network configuration, the configuration file format is passphrase|datasetactive</p>
+<h3 id="request-sample_1">Request sample:<a class="headerlink" href="#request-sample_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;export_thread_network&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_1">Response parameters:<a class="headerlink" href="#response-parameters_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filename</td>
+<td>string</td>
+<td>The name of the exported file</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>The path of the exported file</td>
+</tr>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_1">Response sample:<a class="headerlink" href="#response-sample_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;thread_network.conf&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/tmp/thread_network.conf&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="import_thread_network">import_thread_network<a class="headerlink" href="#import_thread_network" title="Permanent link">&para;</a></h2>
+<p>If there is no interface to pass parameters, use the configuration file to import the network configuration.</p>
+<h3 id="request-parameters">Request parameters:<a class="headerlink" href="#request-parameters" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Passphrase</td>
+<td>string</td>
+<td>Thread network Passphrase, a user-defined character string that serves as Commissioner Credential and</td>
+</tr>
+<tr>
+<td>ActiveDataset</td>
+<td>string</td>
+<td>Operational Dataset TLVs.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_2">Request sample:<a class="headerlink" href="#request-sample_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;import_thread_network&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_2">Response parameters:<a class="headerlink" href="#response-parameters_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_2">Response sample:<a class="headerlink" href="#response-sample_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="get_status">get_status<a class="headerlink" href="#get_status" title="Permanent link">&para;</a></h2>
+<p>Get the Thread network status</p>
+<h3 id="request-sample_3">Request sample:<a class="headerlink" href="#request-sample_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;get_status&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_3">Response parameters:<a class="headerlink" href="#response-parameters_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenThreadVersionAPI</td>
+<td>string</td>
+<td>OpenThread API version</td>
+</tr>
+<tr>
+<td>OTBRVersion</td>
+<td>string</td>
+<td>ot-br-posix version</td>
+</tr>
+<tr>
+<td>ThreadVersion</td>
+<td>string</td>
+<td>Thread Specification version, v1.1 , v1.2, v1.3</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>object</td>
+<td>Thread network information</td>
+</tr>
+<tr>
+<td>Network.Channel</td>
+<td>number</td>
+<td>Thread network channel. The value ranges from 11 to 26</td>
+</tr>
+<tr>
+<td>Network.ExtPanId</td>
+<td>string</td>
+<td>Thread network Extended PAN ID. Its length is limited to 16 bytes of UTF-8 encoded characters</td>
+</tr>
+<tr>
+<td>Network.NetworkKey</td>
+<td>string</td>
+<td>Thread network key, which is 32 bytes long UTF-8 encoded characters</td>
+</tr>
+<tr>
+<td>Network.NetworkName</td>
+<td>string</td>
+<td>Thread network name. Its length is limited to 1 to 16 characters</td>
+</tr>
+<tr>
+<td>Network.PanId</td>
+<td>number</td>
+<td>Thread network PAN ID, value range: 0&lt;= PAN ID &lt;65535 or 0x0&lt;= PAN ID&lt;0xFFFF</td>
+</tr>
+<tr>
+<td>Network.PSKc</td>
+<td>string</td>
+<td>Thread network PSKc, PSKc is algorithmically generated by Passphrase, ExtendedPanId, and NetworkName,</td>
+</tr>
+<tr>
+<td>Network.Passphrase</td>
+<td>string</td>
+<td>Thread network Passphrase, a user-defined character string that serves as Commissioner Credential and</td>
+</tr>
+<tr>
+<td>Network.OnMeshPrefix</td>
+<td>array</td>
+<td>On-Mesh Prefix</td>
+</tr>
+<tr>
+<td>Network.LeaderData</td>
+<td>object</td>
+<td>Leader data</td>
+</tr>
+<tr>
+<td>Network.LeaderData.PartitionId</td>
+<td>number</td>
+<td>Partition ID of the leader node</td>
+</tr>
+<tr>
+<td>Network.LeaderData.Weighting</td>
+<td>number</td>
+<td>Weighting of the leader node</td>
+</tr>
+<tr>
+<td>Network.LeaderData.DataVersion</td>
+<td>number</td>
+<td>Data Version of the leader node</td>
+</tr>
+<tr>
+<td>Network.LeaderData.StableDataVersion</td>
+<td>number</td>
+<td>Stable Data Version of the leader node</td>
+</tr>
+<tr>
+<td>Network.LeaderData.LeaderRouterId</td>
+<td>number</td>
+<td>Leader Router ID of the leader node</td>
+</tr>
+<tr>
+<td>Network.IPv6</td>
+<td>array</td>
+<td>IPv6 information</td>
+</tr>
+<tr>
+<td>Network.ActiveDataset</td>
+<td>string</td>
+<td>Operational Dataset TLVs.</td>
+</tr>
+<tr>
+<td>RCP</td>
+<td>object</td>
+<td>RCP information</td>
+</tr>
+<tr>
+<td>RCP.State</td>
+<td>number</td>
+<td>The state of RCP module, disabled=0, detached=1, child=2, router=3 or leader=4</td>
+</tr>
+<tr>
+<td>RCP.RCPVersion</td>
+<td>string</td>
+<td>RCP version</td>
+</tr>
+<tr>
+<td>RCP.ExtAddress</td>
+<td>string</td>
+<td>IEEE 802.15.4 Extended Address</td>
+</tr>
+<tr>
+<td>RCP.EUI64</td>
+<td>string</td>
+<td>The factory-assigned IEEE EUI-64</td>
+</tr>
+<tr>
+<td>RCP.TXPower</td>
+<td>number</td>
+<td>The transmit power in dBm</td>
+</tr>
+<tr>
+<td>RCP.Rloc16</td>
+<td>number</td>
+<td>Thread RLOC16 value</td>
+</tr>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_3">Response sample:<a class="headerlink" href="#response-sample_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="scan">scan<a class="headerlink" href="#scan" title="Permanent link">&para;</a></h2>
+<p>Scan peripheral Thread devices.</p>
+<h3 id="request-sample_4">Request sample:<a class="headerlink" href="#request-sample_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;scan&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_4">Response parameters:<a class="headerlink" href="#response-parameters_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ScanList</td>
+<td>array</td>
+<td>Scan list</td>
+</tr>
+<tr>
+<td>ScanList.IsJoinable</td>
+<td>bool</td>
+<td>Whether the Thread node is allowed to join</td>
+</tr>
+<tr>
+<td>ScanList.Channel</td>
+<td>number</td>
+<td>Channel of the Thread node</td>
+</tr>
+<tr>
+<td>ScanList.Rssi</td>
+<td>number</td>
+<td>Signal strength of the Thread node</td>
+</tr>
+<tr>
+<td>ScanList.Lqi</td>
+<td>number</td>
+<td>Link quality indicator of the Thread node</td>
+</tr>
+<tr>
+<td>ScanList.NetworkName</td>
+<td>string</td>
+<td>Network name of the Thread node</td>
+</tr>
+<tr>
+<td>ScanList.ExtPanId</td>
+<td>string</td>
+<td>Extended PAN ID of the Thread node</td>
+</tr>
+<tr>
+<td>ScanList.PanId</td>
+<td>number</td>
+<td>PAN ID of the Thread node</td>
+</tr>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_4">Response sample:<a class="headerlink" href="#response-sample_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="set_config">set_config<a class="headerlink" href="#set_config" title="Permanent link">&para;</a></h2>
+<p>Create a new Thread network or modify the current Thread network.</p>
+<h3 id="request-parameters_1">Request parameters:<a class="headerlink" href="#request-parameters_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NetworkName</td>
+<td>string</td>
+<td>Thread network name, its length is limited to 1~16 characters</td>
+</tr>
+<tr>
+<td>ExtPanId</td>
+<td>string</td>
+<td>Thread Network Extended PAN ID</td>
+</tr>
+<tr>
+<td>PanId</td>
+<td>number</td>
+<td>Thread network PAN ID</td>
+</tr>
+<tr>
+<td>Passphrase</td>
+<td>string</td>
+<td>Thread network Passphrase, a user-defined character string that serves as Commissioner Credential and</td>
+</tr>
+<tr>
+<td>NetworkKey</td>
+<td>string</td>
+<td>Thread network key, its length is 32 bytes UTF-8 encoded characters</td>
+</tr>
+<tr>
+<td>Channel</td>
+<td>number</td>
+<td>Thread network channel, the value range is 11-26</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_5">Request sample:<a class="headerlink" href="#request-sample_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;set_config&quot;,</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;NetworkName&quot;: &quot;OpenThread&quot;,</span>
+<span class="s1">            &quot;Passphrase&quot;: &quot;654321&quot;,</span>
+<span class="s1">            &quot;PanId&quot;: &quot;0x1234&quot;,</span>
+<span class="s1">            &quot;ExtPanId&quot;: &quot;1122334455667788&quot;,</span>
+<span class="s1">            &quot;NetworkKey&quot;: &quot;7fa541ccdcece042b07ac34c98620a4c&quot;,</span>
+<span class="s1">            &quot;Channel&quot;: &quot;13&quot;</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_5">Response parameters:<a class="headerlink" href="#response-parameters_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_5">Response sample:<a class="headerlink" href="#response-sample_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="set_txpower">set_txpower<a class="headerlink" href="#set_txpower" title="Permanent link">&para;</a></h2>
+<p>Set the transmit power of the Thread device.</p>
+<h3 id="request-parameters_2">Request parameters:<a class="headerlink" href="#request-parameters_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TXPower</td>
+<td>number</td>
+<td>The transmit power in dBm</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_6">Request sample:<a class="headerlink" href="#request-sample_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;set_txpower&quot;,</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;TXPower&quot;: 8</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_6">Response parameters:<a class="headerlink" href="#response-parameters_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_6">Response sample:<a class="headerlink" href="#response-sample_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="stop">stop<a class="headerlink" href="#stop" title="Permanent link">&para;</a></h2>
+<p>Stop the Thread network of the device.</p>
+<h3 id="request-sample_7">Request sample:<a class="headerlink" href="#request-sample_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;stop&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_7">Response parameters:<a class="headerlink" href="#response-parameters_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_7">Response sample:<a class="headerlink" href="#response-sample_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="start">start<a class="headerlink" href="#start" title="Permanent link">&para;</a></h2>
+<p>Start the Thread network</p>
+<h3 id="request-sample_8">Request sample:<a class="headerlink" href="#request-sample_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;start&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_8">Response parameters:<a class="headerlink" href="#response-parameters_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_8">Response sample:<a class="headerlink" href="#response-sample_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="join">join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h2>
+<p>Join the Thread network.</p>
+<h3 id="request-parameters_3">Request parameters:<a class="headerlink" href="#request-parameters_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CredentialType</td>
+<td>string</td>
+<td>Supported values are 'networkKeyType' and 'pskdType'</td>
+</tr>
+<tr>
+<td>NetworkKey</td>
+<td>string</td>
+<td>Thread network key, which is 32 bytes long UTF-8 encoded characters</td>
+</tr>
+<tr>
+<td>PSKd</td>
+<td>string</td>
+<td>The Joiner Credential is a device-specific string of all uppercase alphanumeric characters</td>
+</tr>
+<tr>
+<td>Channel</td>
+<td>number</td>
+<td>Thread network channel</td>
+</tr>
+<tr>
+<td>PanId</td>
+<td>number</td>
+<td>Thread network PAN ID</td>
+</tr>
+<tr>
+<td>ExtendedPanId</td>
+<td>number</td>
+<td>Thread network ExtendedPanId</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_9">Request sample:<a class="headerlink" href="#request-sample_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;join&quot;,</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;CredentialType&quot;: &quot;networkKeyType&quot;,</span>
+<span class="s1">            &quot;NetworkKey&quot;: &quot;1ed99ba54e1b2bbbfe36b576cecaca8f&quot;,</span>
+<span class="s1">            &quot;Channel&quot;: 11,</span>
+<span class="s1">            &quot;PanId&quot;: &quot;0x3d32&quot;</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_9">Response parameters:<a class="headerlink" href="#response-parameters_9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_9">Response sample:<a class="headerlink" href="#response-sample_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="add_joiner">add_joiner<a class="headerlink" href="#add_joiner" title="Permanent link">&para;</a></h2>
+<p>Add Joiners.</p>
+<h3 id="request-parameters_4">Request parameters:<a class="headerlink" href="#request-parameters_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PSKd</td>
+<td>string</td>
+<td>The Joiner Credential is a device-specific string of all uppercase alphanumeric characters</td>
+</tr>
+<tr>
+<td>Timeout</td>
+<td>number</td>
+<td>Joiner timeout in seconds. Default 120s</td>
+</tr>
+<tr>
+<td>EUI64</td>
+<td>string</td>
+<td>The IEEE EUI-64 of the Joiner or '*' to match any Joiner.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_10">Request sample:<a class="headerlink" href="#request-sample_10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;add_joiner&quot;,</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;PSKd&quot;: &quot;654321&quot;,</span>
+<span class="s1">            &quot;EUI64&quot;: &quot;9483c4ea62f8cfcd&quot;,</span>
+<span class="s1">            &quot;Timeout&quot;: 120</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_10">Response parameters:<a class="headerlink" href="#response-parameters_10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_10">Response sample:<a class="headerlink" href="#response-sample_10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="export_joiner_list">export_joiner_list<a class="headerlink" href="#export_joiner_list" title="Permanent link">&para;</a></h2>
+<p>Export the Joiner information to /tmp/thread_devices, the file is a cvs format, and its data format is 'Joiner EUI64,Joiner Credential'.</p>
+<h3 id="request-parameters_5">Request parameters:<a class="headerlink" href="#request-parameters_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Timeout</td>
+<td>number</td>
+<td>Joiner timeout in seconds. Default 120s</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_11">Request sample:<a class="headerlink" href="#request-sample_11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;export_joiner_list&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_11">Response parameters:<a class="headerlink" href="#response-parameters_11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_11">Response sample:<a class="headerlink" href="#response-sample_11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="import_joiner_list">import_joiner_list<a class="headerlink" href="#import_joiner_list" title="Permanent link">&para;</a></h2>
+<p>Import Joiner list.</p>
+<h3 id="request-parameters_6">Request parameters:<a class="headerlink" href="#request-parameters_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Timeout</td>
+<td>number</td>
+<td>Joiner timeout in seconds. Default 120s</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_12">Request sample:<a class="headerlink" href="#request-sample_12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;import_joiner_list&quot;,</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;Timeout&quot;: 120</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_12">Response parameters:<a class="headerlink" href="#response-parameters_12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_12">Response sample:<a class="headerlink" href="#response-sample_12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="rejoin_all">rejoin_all<a class="headerlink" href="#rejoin_all" title="Permanent link">&para;</a></h2>
+<p>Start Commissining and add Joiner entry.</p>
+<h3 id="request-parameters_7">Request parameters:<a class="headerlink" href="#request-parameters_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Timeout</td>
+<td>number</td>
+<td>Joiner timeout in seconds. Default 120s</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>number</td>
+<td>Supported values are 1: Only Timeout, 2: Only Joined, 3: ALL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_13">Request sample:<a class="headerlink" href="#request-sample_13" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;rejoin_all&quot;,</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;Timeout&quot;: 120,</span>
+<span class="s1">            &quot;Type&quot;: 3</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_13">Response parameters:<a class="headerlink" href="#response-parameters_13" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code. -1:Invalied parameter</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_13">Response sample:<a class="headerlink" href="#response-sample_13" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="remove_joiner_list">remove_joiner_list<a class="headerlink" href="#remove_joiner_list" title="Permanent link">&para;</a></h2>
+<p>Delete Joiner entries.</p>
+<h3 id="request-parameters_8">Request parameters:<a class="headerlink" href="#request-parameters_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeviceList</td>
+<td>array</td>
+<td>DeviceList</td>
+</tr>
+<tr>
+<td>DeviceList[x]</td>
+<td>string</td>
+<td>Joiner EUI64</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_14">Request sample:<a class="headerlink" href="#request-sample_14" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;remove_joiners&quot;,</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;DeviceList&quot;: [</span>
+<span class="s1">                &quot;9483c4ea62f8cfcd&quot;,</span>
+<span class="s1">                &quot;9483c4ea62f8cfcf&quot;</span>
+<span class="s1">            ]</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_14">Response parameters:<a class="headerlink" href="#response-parameters_14" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_14">Response sample:<a class="headerlink" href="#response-sample_14" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="get_joiner_list">get_joiner_list<a class="headerlink" href="#get_joiner_list" title="Permanent link">&para;</a></h2>
+<p>Get the Joiner list.</p>
+<h3 id="request-sample_15">Request sample:<a class="headerlink" href="#request-sample_15" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;get_joiner_list&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_15">Response parameters:<a class="headerlink" href="#response-parameters_15" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeviceList</td>
+<td>array</td>
+<td>DeviceList</td>
+</tr>
+<tr>
+<td>DeviceList.EUI64</td>
+<td>string</td>
+<td>Joiner EUI64</td>
+</tr>
+<tr>
+<td>DeviceList.Status</td>
+<td>number</td>
+<td>Status of new devices not connected to the network. Supported values are 0: Reday to Join, 1: Joining, 2: Joined, 3: Timeout</td>
+</tr>
+<tr>
+<td>DeviceList.Timeout</td>
+<td>number</td>
+<td>Joiner network access timeout</td>
+</tr>
+<tr>
+<td>DeviceList.AddTime</td>
+<td>number</td>
+<td>Timestamp added</td>
+</tr>
+<tr>
+<td>DeviceList.JoinedTime</td>
+<td>number</td>
+<td>The Joiner successfully obtained the credential timestamp</td>
+</tr>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_15">Response sample:<a class="headerlink" href="#response-sample_15" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;DeviceList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;PSKd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AAAAAA&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;EUI64&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;94deb8fffef6e101&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="get_network_data">get_network_data<a class="headerlink" href="#get_network_data" title="Permanent link">&para;</a></h2>
+<p>Get Thread network topology map data.</p>
+<h3 id="request-sample_16">Request sample:<a class="headerlink" href="#request-sample_16" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;get_network_data&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_16">Response parameters:<a class="headerlink" href="#response-parameters_16" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExtAddress</td>
+<td>string</td>
+<td>IEEE 802.15.4 Extended Address</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>The name of the user-defined Thread network node.</td>
+</tr>
+<tr>
+<td>Rloc16</td>
+<td>number</td>
+<td>The Thread RLOC16 value.</td>
+</tr>
+<tr>
+<td>Rloc16s</td>
+<td>string</td>
+<td>The Thread RLOC16 value in hex string.</td>
+</tr>
+<tr>
+<td>Version</td>
+<td>string</td>
+<td>Thread version.</td>
+</tr>
+<tr>
+<td>IsBorderRouter</td>
+<td>bool</td>
+<td>IsBorderRouter.</td>
+</tr>
+<tr>
+<td>IsLeader</td>
+<td>bool</td>
+<td>IsLeader.</td>
+</tr>
+<tr>
+<td>IsThisDevice</td>
+<td>bool</td>
+<td>IsThisDevice.</td>
+</tr>
+<tr>
+<td>NeighborRouterTable</td>
+<td>object</td>
+<td>NeighborRouterTable.</td>
+</tr>
+<tr>
+<td>NeighborRouterTable.Name</td>
+<td>string</td>
+<td>NeighborRouterTable.Name</td>
+</tr>
+<tr>
+<td>NeighborRouterTable.ExtAddress</td>
+<td>string</td>
+<td>NeighborRouterTable.ExtAddress</td>
+</tr>
+<tr>
+<td>NeighborRouterTable.Rloc16</td>
+<td>number</td>
+<td>NeighborRouterTable.Rloc16</td>
+</tr>
+<tr>
+<td>NeighborRouterTable.ConnectionTime</td>
+<td>string</td>
+<td>NeighborRouterTable.ConnectionTime</td>
+</tr>
+<tr>
+<td>NeighborRouterTable.FrameErrorRate</td>
+<td>object</td>
+<td>NeighborRouterTable.FrameErrorRate</td>
+</tr>
+<tr>
+<td>NeighborRouterTable.LastRssi</td>
+<td>object</td>
+<td>NeighborRouterTable.LastRssi</td>
+</tr>
+<tr>
+<td>NeighborRouterTable.LinkMargin</td>
+<td>object</td>
+<td>NeighborRouterTable.LinkMargin</td>
+</tr>
+<tr>
+<td>NeighborRouterTable.MessageErrorRate</td>
+<td>object</td>
+<td>NeighborRouterTable.MessageErrorRate</td>
+</tr>
+<tr>
+<td>NeighborRouterTable.Version</td>
+<td>object</td>
+<td>NeighborRouterTable.Version</td>
+</tr>
+<tr>
+<td>ChildTable</td>
+<td>object</td>
+<td>ChildTable</td>
+</tr>
+<tr>
+<td>ChildTable.ExtAddress</td>
+<td>string</td>
+<td>ChildTable.ExtAddress</td>
+</tr>
+<tr>
+<td>ChildTable.Name</td>
+<td>number</td>
+<td>ChildTable.Name</td>
+</tr>
+<tr>
+<td>ChildTable.Age</td>
+<td>number</td>
+<td>ChildTable.Age</td>
+</tr>
+<tr>
+<td>ChildTable.AvgRssi</td>
+<td>number</td>
+<td>ChildTable.AvgRssi</td>
+</tr>
+<tr>
+<td>ChildTable.ConnectionTime</td>
+<td>string</td>
+<td>ChildTable.ConnectionTime</td>
+</tr>
+<tr>
+<td>ChildTable.CslChannel</td>
+<td>number</td>
+<td>ChildTable.CslChannel</td>
+</tr>
+<tr>
+<td>ChildTable.CslPeriod</td>
+<td>number</td>
+<td>ChildTable.CslPeriod</td>
+</tr>
+<tr>
+<td>ChildTable.CslSync</td>
+<td>number</td>
+<td>ChildTable.CslSync</td>
+</tr>
+<tr>
+<td>ChildTable.DeviceType</td>
+<td>number</td>
+<td>ChildTable.DeviceType</td>
+</tr>
+<tr>
+<td>ChildTable.FrameErrorRate</td>
+<td>number</td>
+<td>ChildTable.FrameErrorRate</td>
+</tr>
+<tr>
+<td>ChildTable.MessageErrorRate</td>
+<td>object</td>
+<td>ChildTable.MessageErrorRate</td>
+</tr>
+<tr>
+<td>ChildTable.IP6AddressList</td>
+<td>object</td>
+<td>ChildTable.IP6AddressList</td>
+</tr>
+<tr>
+<td>ChildTable.IsBorderRouter</td>
+<td>object</td>
+<td>ChildTable.IsBorderRouter</td>
+</tr>
+<tr>
+<td>ChildTable.IsThisDevice</td>
+<td>object</td>
+<td>ChildTable.IsThisDevice</td>
+</tr>
+<tr>
+<td>ChildTable.LastRssi</td>
+<td>object</td>
+<td>ChildTable.LastRssi</td>
+</tr>
+<tr>
+<td>ChildTable.LinkMargin</td>
+<td>object</td>
+<td>ChildTable.LinkMargin</td>
+</tr>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_16">Response sample:<a class="headerlink" href="#response-sample_16" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="get_leader_data">get_leader_data<a class="headerlink" href="#get_leader_data" title="Permanent link">&para;</a></h2>
+<p>Get Thread Leader data.</p>
+<h3 id="request-sample_17">Request sample:<a class="headerlink" href="#request-sample_17" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;get_leader_data&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_17">Response parameters:<a class="headerlink" href="#response-parameters_17" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LeaderData</td>
+<td>object</td>
+<td>Leader node information in the Thread network</td>
+</tr>
+<tr>
+<td>LeaderData.PartitionId</td>
+<td>number</td>
+<td>Partition ID of the leader node</td>
+</tr>
+<tr>
+<td>LeaderData.Weighting</td>
+<td>number</td>
+<td>Weighting of the Leader node</td>
+</tr>
+<tr>
+<td>LeaderData.DataVersion</td>
+<td>number</td>
+<td>Data Version of the Leader node</td>
+</tr>
+<tr>
+<td>LeaderData.StableDataVersion</td>
+<td>number</td>
+<td>Stable Data Version of the Leader node</td>
+</tr>
+<tr>
+<td>LeaderData.LeaderRouterId</td>
+<td>number</td>
+<td>Leader Router ID of the Leader node</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_17">Response sample:<a class="headerlink" href="#response-sample_17" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="get_buffer_info">get_buffer_info<a class="headerlink" href="#get_buffer_info" title="Permanent link">&para;</a></h2>
+<p>Get Buffer Info.</p>
+<h3 id="request-sample_18">Request sample:<a class="headerlink" href="#request-sample_18" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;get_buffer_info&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_18">Response parameters:<a class="headerlink" href="#response-parameters_18" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6loReassemblyQueue</td>
+<td>string</td>
+<td>6loReassemblyQueue</td>
+</tr>
+<tr>
+<td>6loSendQueue</td>
+<td>string</td>
+<td>6loSendQueue</td>
+</tr>
+<tr>
+<td>ApplicationCoapQueue</td>
+<td>string</td>
+<td>ApplicationCoapQueue</td>
+</tr>
+<tr>
+<td>CoapQueue</td>
+<td>string</td>
+<td>CoapQueue</td>
+</tr>
+<tr>
+<td>CoapSecureQueue</td>
+<td>string</td>
+<td>CoapSecureQueue</td>
+</tr>
+<tr>
+<td>FreeBuffers</td>
+<td>string</td>
+<td>FreeBuffers</td>
+</tr>
+<tr>
+<td>Ip6Queue</td>
+<td>string</td>
+<td>Ip6Queue</td>
+</tr>
+<tr>
+<td>MaxUsedBuffers</td>
+<td>string</td>
+<td>MaxUsedBuffers</td>
+</tr>
+<tr>
+<td>MleQueue</td>
+<td>string</td>
+<td>MleQueue</td>
+</tr>
+<tr>
+<td>MplQueue</td>
+<td>string</td>
+<td>MplQueue</td>
+</tr>
+<tr>
+<td>TotalBuffers</td>
+<td>string</td>
+<td>TotalBuffers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_18">Response sample:<a class="headerlink" href="#response-sample_18" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="export_network_data">export_network_data<a class="headerlink" href="#export_network_data" title="Permanent link">&para;</a></h2>
+<p>Export Thread network diagnostic data</p>
+<h3 id="request-sample_19">Request sample:<a class="headerlink" href="#request-sample_19" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;export_network_data&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_19">Response parameters:<a class="headerlink" href="#response-parameters_19" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_path</td>
+<td>string</td>
+<td>The file path</td>
+</tr>
+<tr>
+<td>file_name</td>
+<td>string</td>
+<td>The file name</td>
+</tr>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_19">Response sample:<a class="headerlink" href="#response-sample_19" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;file_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/js/thread_network_diagnostics.json&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;file_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;thread_network_diagnostics.json&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="get_neighbor_list">get_neighbor_list<a class="headerlink" href="#get_neighbor_list" title="Permanent link">&para;</a></h2>
+<p>desc</p>
+<h3 id="request-sample_20">Request sample:<a class="headerlink" href="#request-sample_20" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;get_neighbor_list&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_20">Response parameters:<a class="headerlink" href="#response-parameters_20" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NeighborNumber</td>
+<td>number</td>
+<td>The number of neighbor</td>
+</tr>
+<tr>
+<td>NeighborList</td>
+<td>array</td>
+<td>NeighborList</td>
+</tr>
+<tr>
+<td>NeighborList.Role</td>
+<td>string</td>
+<td>Neighbor network node roles,'R' or 'C'</td>
+</tr>
+<tr>
+<td>NeighborList.Rloc16</td>
+<td>number</td>
+<td>RLOC16</td>
+</tr>
+<tr>
+<td>NeighborList.Age</td>
+<td>number</td>
+<td>Time last heard</td>
+</tr>
+<tr>
+<td>NeighborList.AvgRssi</td>
+<td>number</td>
+<td>Average RSSI</td>
+</tr>
+<tr>
+<td>NeighborList.LastRssi</td>
+<td>number</td>
+<td>Last observed RSSI</td>
+</tr>
+<tr>
+<td>NeighborList.Mode</td>
+<td>object</td>
+<td>the Thread Device Mode value: - -no flags set (rx-off-when-idle, minimal Thread device, stable network data)</td>
+</tr>
+<tr>
+<td>NeighborList.ExtAddress</td>
+<td>string</td>
+<td>IEEE 802.15.4 Extended Address</td>
+</tr>
+<tr>
+<td>NeighborList.LinkQualityIn</td>
+<td>number</td>
+<td>Link Quality In</td>
+</tr>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_20">Response sample:<a class="headerlink" href="#response-sample_20" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="get_bbr_status">get_bbr_status<a class="headerlink" href="#get_bbr_status" title="Permanent link">&para;</a></h2>
+<p>Get Backbone Router status information</p>
+<h3 id="request-sample_21">Request sample:<a class="headerlink" href="#request-sample_21" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;get_bbr_status&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_21">Response parameters:<a class="headerlink" href="#response-parameters_21" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>bool</td>
+<td>Whether to enable the BackBone Router</td>
+</tr>
+<tr>
+<td>State</td>
+<td>string</td>
+<td>Represents the Backbone Router Status, the values of State are Disabled, Secondary, Primary</td>
+</tr>
+<tr>
+<td>MlrTimeout</td>
+<td>number</td>
+<td>The minimum value of Multicast Listener Registration Timeout (in seconds) is 300s, and the maximum value is 24d</td>
+</tr>
+<tr>
+<td>SequenceNumber</td>
+<td>number</td>
+<td>Sequence Number</td>
+</tr>
+<tr>
+<td>ReregistrationDelay</td>
+<td>number</td>
+<td>Reregistration Delay (in seconds)</td>
+</tr>
+<tr>
+<td>Jitter</td>
+<td>number</td>
+<td>Jitter</td>
+</tr>
+<tr>
+<td>Ifname</td>
+<td>string</td>
+<td>Current backboneIfName</td>
+</tr>
+<tr>
+<td>Ifnames</td>
+<td>array</td>
+<td>Supported backboneIfName</td>
+</tr>
+<tr>
+<td>Ifnames[x]</td>
+<td>string</td>
+<td>Supported backboneIfName</td>
+</tr>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_21">Response sample:<a class="headerlink" href="#response-sample_21" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;State&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Primary&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Ifname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;br-lan&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;SequenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Ifnames&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;eth0&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;br-lan&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;MlrTimeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Jitter&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Error&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ReregistrationDelay&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="set_bbr_config">set_bbr_config<a class="headerlink" href="#set_bbr_config" title="Permanent link">&para;</a></h2>
+<p>Set Backbone router config</p>
+<h3 id="request-parameters_9">Request parameters:<a class="headerlink" href="#request-parameters_9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MlrTimeout</td>
+<td>number</td>
+<td>The minimum value of Multicast Listener Registration Timeout (in seconds) is 300s, and the maximum value is 24d</td>
+</tr>
+<tr>
+<td>SequenceNumber</td>
+<td>number</td>
+<td>Sequence Number</td>
+</tr>
+<tr>
+<td>ReregistrationDelay</td>
+<td>number</td>
+<td>Reregistration Delay (in seconds)</td>
+</tr>
+<tr>
+<td>Jitter</td>
+<td>number</td>
+<td>Jitter</td>
+</tr>
+<tr>
+<td>IfName</td>
+<td>string</td>
+<td>backboneIfName</td>
+</tr>
+<tr>
+<td>Enable</td>
+<td>bool</td>
+<td>Enable Backbone router function</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_22">Request sample:<a class="headerlink" href="#request-sample_22" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;set_bbr_config&quot;,</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;MlrTimeout&quot;: 3500,</span>
+<span class="s1">            &quot;SequenceNumber&quot;: 30,</span>
+<span class="s1">            &quot;ReregistrationDelay&quot;: 1000,</span>
+<span class="s1">            &quot;Jitter&quot;: 10</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_22">Response parameters:<a class="headerlink" href="#response-parameters_22" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_22">Response sample:<a class="headerlink" href="#response-sample_22" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="set_commissioning">set_commissioning<a class="headerlink" href="#set_commissioning" title="Permanent link">&para;</a></h2>
+<p>Set commissioner status</p>
+<h3 id="request-parameters_10">Request parameters:<a class="headerlink" href="#request-parameters_10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>bool</td>
+<td>Enable Commissioner</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_23">Request sample:<a class="headerlink" href="#request-sample_23" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;set_commissioner&quot;,</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;Enable&quot;: true</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_23">Response parameters:<a class="headerlink" href="#response-parameters_23" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_23">Response sample:<a class="headerlink" href="#response-sample_23" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="get_srp_server_service">get_srp_server_service<a class="headerlink" href="#get_srp_server_service" title="Permanent link">&para;</a></h2>
+<p>Get SRP Server Service.</p>
+<h3 id="request-sample_24">Request sample:<a class="headerlink" href="#request-sample_24" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;get_srp_server_service&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_24">Response parameters:<a class="headerlink" href="#response-parameters_24" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Services</td>
+<td>array</td>
+<td>SRP Services</td>
+</tr>
+<tr>
+<td>Services.InstanceName</td>
+<td>string</td>
+<td>The service instance name</td>
+</tr>
+<tr>
+<td>Services.Deleted</td>
+<td>bool</td>
+<td>If Deleted is true then no other information</td>
+</tr>
+<tr>
+<td>Services.Subtypes</td>
+<td>string</td>
+<td>The service subtypes</td>
+</tr>
+<tr>
+<td>Services.Port</td>
+<td>number</td>
+<td>The service port number</td>
+</tr>
+<tr>
+<td>Services.Priority</td>
+<td>number</td>
+<td>The service priority</td>
+</tr>
+<tr>
+<td>Services.Weight</td>
+<td>number</td>
+<td>The service weight</td>
+</tr>
+<tr>
+<td>Services.Ttl</td>
+<td>number</td>
+<td>The service ttl</td>
+</tr>
+<tr>
+<td>Services.TXT</td>
+<td>array</td>
+<td>The service txt record</td>
+</tr>
+<tr>
+<td>Services.Host</td>
+<td>string</td>
+<td>The service host name</td>
+</tr>
+<tr>
+<td>Services.Address</td>
+<td>array</td>
+<td>The service host address</td>
+</tr>
+<tr>
+<td>Services.Lease</td>
+<td>number</td>
+<td>The service lease</td>
+</tr>
+<tr>
+<td>Services.KeyLease</td>
+<td>number</td>
+<td>The service key-lease</td>
+</tr>
+<tr>
+<td>ServicesNumber</td>
+<td>number</td>
+<td>The service number</td>
+</tr>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_24">Response sample:<a class="headerlink" href="#response-sample_24" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="get_srp_server_config">get_srp_server_config<a class="headerlink" href="#get_srp_server_config" title="Permanent link">&para;</a></h2>
+<p>Get SRP Server config.</p>
+<h3 id="request-sample_25">Request sample:<a class="headerlink" href="#request-sample_25" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;get_srp_server_config&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_25">Response parameters:<a class="headerlink" href="#response-parameters_25" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>bool</td>
+<td>Enable SRP Server</td>
+</tr>
+<tr>
+<td>DomainName</td>
+<td>string</td>
+<td>The SRP Server domain name</td>
+</tr>
+<tr>
+<td>MinLease</td>
+<td>number</td>
+<td>The minimum LEASE interval in seconds. mMinLease &lt;= mMaxLease, mMinLease &lt;= mMinKeyLease</td>
+</tr>
+<tr>
+<td>MaxLease</td>
+<td>number</td>
+<td>The maximum LEASE interval in seconds. mMaxLease &lt;= mMaxKeyLease</td>
+</tr>
+<tr>
+<td>MinKeyLease</td>
+<td>number</td>
+<td>The minimum KEY-LEASE interval in seconds. mMinKeyLease &lt;= mMaxKeyLease</td>
+</tr>
+<tr>
+<td>MaxKeyLease</td>
+<td>number</td>
+<td>The maximum KEY-LEASE interval in seconds</td>
+</tr>
+<tr>
+<td>SeqNum</td>
+<td>number</td>
+<td>The sequence number used with anycast address mode.</td>
+</tr>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_25">Response sample:<a class="headerlink" href="#response-sample_25" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="set_srp_server_config">set_srp_server_config<a class="headerlink" href="#set_srp_server_config" title="Permanent link">&para;</a></h2>
+<p>Set SRP Server config.</p>
+<h3 id="request-parameters_11">Request parameters:<a class="headerlink" href="#request-parameters_11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>bool</td>
+<td>Enable SRP Server</td>
+</tr>
+<tr>
+<td>DomainName</td>
+<td>string</td>
+<td>The SRP Server domain name</td>
+</tr>
+<tr>
+<td>MinLease</td>
+<td>number</td>
+<td>The minimum LEASE interval in seconds. mMinLease &lt;= mMaxLease, mMinLease &lt;= mMinKeyLease</td>
+</tr>
+<tr>
+<td>MaxLease</td>
+<td>number</td>
+<td>The maximum LEASE interval in seconds. mMaxLease &lt;= mMaxKeyLease</td>
+</tr>
+<tr>
+<td>MinKeyLease</td>
+<td>number</td>
+<td>The minimum KEY-LEASE interval in seconds. mMinKeyLease &lt;= mMaxKeyLease</td>
+</tr>
+<tr>
+<td>MaxKeyLease</td>
+<td>number</td>
+<td>The maximum KEY-LEASE interval in seconds</td>
+</tr>
+<tr>
+<td>SeqNum</td>
+<td>number</td>
+<td>The sequence number used with anycast address mode. The sequence number is included in "DNS/SRP Service Anycast Address" entry published in the Network Data.Front end does not need to display</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_26">Request sample:<a class="headerlink" href="#request-sample_26" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;set_srp_server_config&quot;,</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;Enable&quot;: true,</span>
+<span class="s1">            &quot;DomainName&quot;: &quot;default.service.arpa.&quot;,</span>
+<span class="s1">            &quot;MinLease&quot;: 1800,</span>
+<span class="s1">            &quot;MaxLease&quot;: 86400,</span>
+<span class="s1">            &quot;MinKeyLease&quot;: 86400,</span>
+<span class="s1">            &quot;MaxKeyLease&quot;: 1209600</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_26">Response parameters:<a class="headerlink" href="#response-parameters_26" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_26">Response sample:<a class="headerlink" href="#response-sample_26" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="get_nat64_status">get_nat64_status<a class="headerlink" href="#get_nat64_status" title="Permanent link">&para;</a></h2>
+<p>Get NAT64 Status</p>
+<h3 id="request-sample_27">Request sample:<a class="headerlink" href="#request-sample_27" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;get_nat64_status&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_27">Response parameters:<a class="headerlink" href="#response-parameters_27" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>bool</td>
+<td>Enable NAT64</td>
+</tr>
+<tr>
+<td>PrefixManager</td>
+<td>string</td>
+<td>show the state of NAT64 PrefixManager [Disable,NotRunning,Idle,Active]</td>
+</tr>
+<tr>
+<td>Translator</td>
+<td>string</td>
+<td>show the state of NAT64 translator [Disable,NotRunning,Active]</td>
+</tr>
+<tr>
+<td>Cidr</td>
+<td>string</td>
+<td>show the CIDR of NAT64</td>
+</tr>
+<tr>
+<td>Mappings</td>
+<td>array</td>
+<td>Mappings</td>
+</tr>
+<tr>
+<td>Mappings.ipv4</td>
+<td>string</td>
+<td>show the IPv4 value</td>
+</tr>
+<tr>
+<td>Mappings.ipv6</td>
+<td>string</td>
+<td>show the IPv6 value</td>
+</tr>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_27">Response sample:<a class="headerlink" href="#response-sample_27" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Translator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Active&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;PrefixManager&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Active&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Mappings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;ipv6&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fda1:20d6:69d5:1:24b6:6d65:7a84:d94f&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;ipv4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;192.168.255.254&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;Enable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Cidr&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;192.168.255.0/24&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="set_nat64_config">set_nat64_config<a class="headerlink" href="#set_nat64_config" title="Permanent link">&para;</a></h2>
+<p>Set NAT64 config.</p>
+<h3 id="request-parameters_12">Request parameters:<a class="headerlink" href="#request-parameters_12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>bool</td>
+<td>Enable NAT64 Translator</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_28">Request sample:<a class="headerlink" href="#request-sample_28" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;set_nat64_config&quot;,</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;Enable&quot;: true</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_28">Response parameters:<a class="headerlink" href="#response-parameters_28" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_28">Response sample:<a class="headerlink" href="#response-sample_28" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="set_device_name">set_device_name<a class="headerlink" href="#set_device_name" title="Permanent link">&para;</a></h2>
+<p>Set device name, it will show in topology.</p>
+<h3 id="request-parameters_13">Request parameters:<a class="headerlink" href="#request-parameters_13" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>string</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>ExtAddress</td>
+<td>string</td>
+<td>ExtAddress</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-sample_29">Request sample:<a class="headerlink" href="#request-sample_29" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;set_device_name&quot;,</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;ExtAddress&quot;: &quot;1241B519B4A43AA7&quot;,</span>
+<span class="s1">            &quot;Name&quot;: &quot;test&quot;</span>
+<span class="s1">        }</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_29">Response parameters:<a class="headerlink" href="#response-parameters_29" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_29">Response sample:<a class="headerlink" href="#response-sample_29" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="force_to_leader">force_to_leader<a class="headerlink" href="#force_to_leader" title="Permanent link">&para;</a></h2>
+<p>Try to force the device role from router to leader.</p>
+<h3 id="request-sample_30">Request sample:<a class="headerlink" href="#request-sample_30" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-k<span class="w"> </span>http://127.0.0.1/rpc<span class="w"> </span>-H<span class="w"> </span><span class="s1">&#39;glinet: 1&#39;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;</span>
+<span class="s1">{</span>
+<span class="s1">    &quot;jsonrpc&quot;: &quot;2.0&quot;,</span>
+<span class="s1">    &quot;id&quot;: &quot;0&quot;,</span>
+<span class="s1">    &quot;method&quot;: &quot;call&quot;,</span>
+<span class="s1">    &quot;params&quot;: [</span>
+<span class="s1">        &quot;&quot;,</span>
+<span class="s1">        &quot;otbr&quot;,</span>
+<span class="s1">        &quot;force_to_leader&quot;,</span>
+<span class="s1">        {}</span>
+<span class="s1">    ]</span>
+<span class="s1">}&#39;</span>
+</code></pre></div>
+<h3 id="response-parameters_30">Response parameters:<a class="headerlink" href="#response-parameters_30" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code    <code>option</code></td>
+<td>number</td>
+<td>Error code.</td>
+</tr>
+<tr>
+<td>err_msg    <code>option</code></td>
+<td>string</td>
+<td>Error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-sample_30">Response sample:<a class="headerlink" href="#response-sample_30" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;err_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 GL Technologies & Microuter Technologies
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.gl-inet.com" target="_blank" rel="noopener" title="www.gl-inet.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.4c2.2 20.4 3.3 41.8 3.3 64zm28.8-64h123.1c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6 78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7 10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5 11.6 26 20.9 58.2 27 94.7zm-209 0H18.6c30-74.1 93.6-130.9 172-151.6-25.5 34.2-45.3 87.7-55.3 151.6zM8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zm186.6 254.6c-11.6-26-20.9-58.2-27-94.6h176.6c-6.1 36.4-15.5 68.6-27 94.6-10.5 23.6-22.2 40.7-33.5 51.5-11.2 10.7-20.5 13.9-27.8 13.9s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6-78.4-20.7-142-77.5-172-151.6h116.7zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6 25.5-34.2 45.2-87.7 55.3-151.6h116.6z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gl-inet/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/gl.inet.wifi/" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/GLiNetWiFi" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/gl-inet.com/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCBfNEzurltlIeFFCbUgHQyg" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.pinterest.com/glinetWiFi/" target="_blank" rel="noopener" title="www.pinterest.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
