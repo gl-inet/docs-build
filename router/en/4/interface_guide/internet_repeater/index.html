@@ -3261,6 +3261,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#for-public-hotspot" class="md-nav__link">
+    For Public Hotspot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#join-network-advanced-setting" class="md-nav__link">
     Join network advanced setting
   </a>
@@ -3989,6 +3996,8 @@
       
         
       
+        
+      
     
     
     
@@ -4030,6 +4039,26 @@
   
   <span class="md-ellipsis">
     Firewall
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../port_forwarding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Port Forwarding
   </span>
   
 
@@ -4315,6 +4344,8 @@
       
         
       
+        
+      
     
     
     
@@ -4536,6 +4567,26 @@
   
   <span class="md-ellipsis">
     Advanced Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui_languages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Language
   </span>
   
 
@@ -4779,6 +4830,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#for-public-hotspot" class="md-nav__link">
+    For Public Hotspot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#join-network-advanced-setting" class="md-nav__link">
     Join network advanced setting
   </a>
@@ -4874,12 +4932,33 @@
 <p><img alt="repeater join wlan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/internet_repeater/repeater_join_wlan.png" /></p>
 <p>Choose a SSID from the drop-down list and enter its password. If the SSID you want to connect to is not in the list, click <a href="#join-other-network">Join Other Network</a> in the image above.</p>
 <p><img alt="repeater join network" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/internet_repeater/repeater_join_network.png" /></p>
-<p>For <a href="#join-network-advanced-setting">Advanced Settings</a>.</p>
+<p>If you want to connect to a public hotspot, such as those provided by hotels/airports/malls, please refer to  <a href="#for-public-hotspot">For Public Hotspot</a>.</p>
+<p>For other settings, please refer to <a href="#join-network-advanced-setting">Advanced Settings</a>.</p>
 <p>Wait a moment, if the password is correct, the connection will be successful.</p>
-<p><img alt="repeater connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/internet_repeater/repeater_connected.png" /></p>
+<p><img alt="repeater connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/repeater_connected.png" /></p>
+<h2 id="for-public-hotspot">For Public Hotspot<a class="headerlink" href="#for-public-hotspot" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Auto-Enable Login Mode for Public Hotspots</strong></li>
+</ul>
+<p>If this option is enabled, this router will automatically enter Login Mode for Public Hotspots when it successfully connected to a hotspot but not the Internet. This mode will pause VPNs, which may cause data leaks to the provider of the hotspot (e.g., hotel/mall).</p>
+<p>Even if you do not turn on this option, the device prompts you to enter this mode when it detects the captive portal existing in the hotspot and does not login successfully.</p>
+<p><img alt="login mode for public hotspots" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/login_mode_for_public_hotspots.png" /></p>
+<ul>
+<li><strong>Enable Camouflage</strong></li>
+</ul>
+<p>If this option is enabled, this router camouflage itself as the same device as the client device you are now using.</p>
+<p>If you enable camouflage mode, the device automatically emulates the MAC address based on the client device you are using.</p>
+<ul>
+<li><strong>MAC Mode</strong></li>
+</ul>
+<p>You can choose which MAC to use to connect to this hotspot.</p>
+<p><strong>Factory</strong>: The factory-written MAC address of the device.
+  <strong>Clone</strong>: Clone a client's MAC address. Note that many new devices now use a different random MAC address to connect to different WiFi, so the MAC address shown here may not be the actual MAC address of the user's device. The randomized MAC may also be called a Private Wi-Fi Address or a random hardware address on different devices. You can also manually enter the device's MAC you want to clone if it is not in the options.
+  <strong>Random</strong>: Generate a random MAC address.</p>
+<p>The mode and cloned/randomized MAC address used when saving the network follows each SSID save, and you can change it manually.</p>
 <h2 id="join-network-advanced-setting">Join network advanced setting<a class="headerlink" href="#join-network-advanced-setting" title="Permanent link">&para;</a></h2>
 <p>When joining the network, there are two additional options.</p>
-<p><img alt="repeater join network advanced setting" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/internet_repeater/repeater_join_network_advanced_setting.png" /></p>
+<p><img alt="repeater join network advanced setting" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/repeater_join_network_advanced_setting.png" /></p>
 <ul>
 <li>
 <p><strong>Lock BSSID</strong>. If this option is enabled, the router will only connect to the AP corresponding to the BSSID you selected when switching to a network using this SSID.</p>
@@ -4887,20 +4966,26 @@
 <li>
 <p><strong>Manually set static IP</strong>.</p>
 </li>
+<li>
+<p><strong>TTL</strong>: TTL (Time To Live) sets the maximum time for packets to survive in the network, and is filled in according to the requirements of the operator. By default, the router forwards the TTL of the incoming client device minus one. If you need to camouflage, you can set a fixed value here. the TTL is valid only for IPv4.</p>
+</li>
+<li>
+<p><strong>HL</strong>: In IPv6, the HL (Hop Limit) field is used to limit the number of transmission hops of data packets in the network, which is equivalent to the TTL in IPv4.</p>
+</li>
+<li>
+<p><strong>MTU</strong>: The default value is 1500.</p>
+</li>
 </ul>
 <h2 id="repeater-options">Repeater options<a class="headerlink" href="#repeater-options" title="Permanent link">&para;</a></h2>
 <p>Click the cog icon for Repeater options.</p>
 <p><img alt="repeater connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/internet_repeater/repeater_connected.png" /></p>
-<p><img alt="repeater options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/internet_repeater/repeater_options.png" /></p>
+<p><img alt="repeater options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/repeater_options.png" /></p>
 <ul>
 <li>
 <p><strong>Allow Switching To Other Saved Network</strong>. If the option is enabled, the router will automatically connect to other saved networks when it is unable to connect to the current Wi-Fi network.</p>
 </li>
 <li>
 <p><strong>Band Selection</strong>. If you manually select a band, the router will not scan or connect to any Wi-Fi with another band.</p>
-</li>
-<li>
-<p><strong>Allow Repeat DFS Channels</strong>. If the option is enabled, 5GHz Wi-Fi will be temporarily unavailable when a radar is using the channel which is currently router using; Otherwise, the router will not connect to any Wi-Fi using DFS channels.</p>
 </li>
 <li>
 <p><strong>Force 20MHz Bandwith For 2.4G</strong>. If the option is enabled, The device will prompting the stability of the connection in exchange of reducing the connection speed. It only works when repeating 2.4G Wi-Fi.</p>
@@ -4916,14 +5001,14 @@
 <h2 id="join-other-network">Join Other Network<a class="headerlink" href="#join-other-network" title="Permanent link">&para;</a></h2>
 <p>If the SSID is not in the Available Networks list, or if the SSID is hidden, you can click <strong>Join Other Network</strong>.</p>
 <p><img alt="join other network" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/internet_repeater/join_other_network.png" /></p>
-<p><img alt="join other network" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/internet_repeater/repeater_join_other_network.png" /></p>
+<p><img alt="join other network" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/repeater_join_other_network.png" /></p>
 <p>Input the SSID, for <strong>Security</strong>, It has the following three options.</p>
 <ul>
 <li>None, it doesn't need password.</li>
 <li>WPA/WPA2/WPA3</li>
 <li>
 <p>WPA/WPA2/WPA3 Enterprise, for Extensible Authentication Protocol (EAP), it requires a username and password for authentication.</p>
-<p><img alt="join other network, eap" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/internet_repeater/join_other_network_eap.png" /></p>
+<p><img alt="join other network, eap" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/join_other_network_eap.png" /></p>
 </li>
 </ul>
 <h2 id="reconnection">Reconnection<a class="headerlink" href="#reconnection" title="Permanent link">&para;</a></h2>
