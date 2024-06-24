@@ -1263,15 +1263,47 @@
 
 
 <h1 id="gl-s10-firmware-compilation-guide">GL-S10 Firmware Compilation Guide<a class="headerlink" href="#gl-s10-firmware-compilation-guide" title="Permanent link">&para;</a></h1>
-<p>This doc is intended to help users set the software building environment and build your own applications for GL-S10. <br />
-As an example, we build a simple demo. It 
-aims to recieve iBeacons from around and then send it to specified MQTT broker through WiFi. Note that WiFi and MQTT setting is written in the source code.</p>
+<p>This doc is intended to help users set the software building environment and build your own applications for GL-S10.
+ As an example, we build a simple demo. It  aims to recieve iBeacons from around and then send it to specified MQTT  broker through WiFi. Note that WiFi and MQTT setting is written in the  source code.</p>
 <h2 id="set-develop-environment">Set Develop Environment<a class="headerlink" href="#set-develop-environment" title="Permanent link">&para;</a></h2>
-<p>GL-S10 application is base on Espressif esp-idf(v3.3). You can get the detailed steps of building the compile environment by following the link. <a href="https://docs.espressif.com/projects/esp-idf/en/v3.3/get-started/index.html#introduction">https://docs.espressif.com/projects/esp-idf/en/v3.3/get-started/index.html#introduction</a> <em>(Attention: Please check the version of IDF before you download it.)</em>
-After configuring the develop environment, decompress and get into the source code folder <code>ble_ibeacon/</code>. Most code is in the file <code>ibeacon_demo.c</code>.</p>
+<p>GL-S10 application is base on Espressif esp-idf(v4.2). You can get  the detailed steps of building the compile environment by following the  link. https://docs.espressif.com/projects/esp-idf/en/release-v4.2/esp32/get-started/index.html <em>(Attention: Please check the version of IDF before you download it.)</em> After configuring the develop environment, decompress and get into the source code folder <code>ble_ibeacon/</code>. Most code is in the file <code>ibeacon_demo.c</code>.</p>
 <h2 id="modify-source-code">Modify source code<a class="headerlink" href="#modify-source-code" title="Permanent link">&para;</a></h2>
-<p><strong>1. Modify WiFi setting</strong></p>
-<p>Find contents as below in the <code>ibeacon_demo.c</code> and modify the WiFi setting to what you want.</p>
+<p><strong>1. Modify BLE setting</strong></p>
+<p>Find contents as below in the <code>examples/bluetooth/bluedroid/ble/ble_ibeacon/main/ibeacon_demo.c</code> and modify the BLE setting to what you want.</p>
+<p>Set your scanning parameters:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#if (IBEACON_MODE == IBEACON_RECEIVER)</span>
+<span class="k">static</span><span class="w"> </span><span class="n">esp_ble_scan_params_t</span><span class="w"> </span><span class="n">ble_scan_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="n">scan_type</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="n">BLE_SCAN_TYPE_ACTIVE</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">own_addr_type</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">BLE_ADDR_TYPE_PUBLIC</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">scan_filter_policy</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">BLE_SCAN_FILTER_ALLOW_ALL</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">scan_interval</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="mh">0x50</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">scan_window</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="mh">0x30</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">scan_duplicate</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">BLE_SCAN_DUPLICATE_DISABLE</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Get your scan results:</p>
+<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="no">ESP_GAP_BLE_SCAN_RESULT_EVT</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">esp_ble_gap_cb_param_t</span><span class="w"> </span><span class="o">*</span><span class="n">scan_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">esp_ble_gap_cb_param_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">param</span><span class="p">;</span>
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">scan_result</span><span class="o">-&gt;</span><span class="n">scan_rst</span><span class="p">.</span><span class="n">search_evt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">ESP_GAP_SEARCH_INQ_RES_EVT</span><span class="p">:</span>
+<span class="w">            </span><span class="cm">/* Search for BLE iBeacon Packet */</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">esp_ble_is_ibeacon_packet</span><span class="p">(</span><span class="n">scan_result</span><span class="o">-&gt;</span><span class="n">scan_rst</span><span class="p">.</span><span class="n">ble_adv</span><span class="p">,</span><span class="w"> </span><span class="n">scan_result</span><span class="o">-&gt;</span><span class="n">scan_rst</span><span class="p">.</span><span class="n">adv_data_len</span><span class="p">)){</span>
+<span class="w">                </span><span class="n">esp_ble_ibeacon_t</span><span class="w"> </span><span class="o">*</span><span class="n">ibeacon_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">esp_ble_ibeacon_t</span><span class="o">*</span><span class="p">)(</span><span class="n">scan_result</span><span class="o">-&gt;</span><span class="n">scan_rst</span><span class="p">.</span><span class="n">ble_adv</span><span class="p">);</span>
+<span class="w">                </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">DEMO_TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;----------iBeacon Found----------&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">esp_log_buffer_hex</span><span class="p">(</span><span class="s">&quot;IBEACON_DEMO: Device address:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">scan_result</span><span class="o">-&gt;</span><span class="n">scan_rst</span><span class="p">.</span><span class="n">bda</span><span class="p">,</span><span class="w"> </span><span class="n">ESP_BD_ADDR_LEN</span><span class="w"> </span><span class="p">);</span>
+<span class="w">                </span><span class="n">esp_log_buffer_hex</span><span class="p">(</span><span class="s">&quot;IBEACON_DEMO: Proximity UUID:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ibeacon_data</span><span class="o">-&gt;</span><span class="n">ibeacon_vendor</span><span class="p">.</span><span class="n">proximity_uuid</span><span class="p">,</span><span class="w"> </span><span class="n">ESP_UUID_LEN_128</span><span class="p">);</span>
+
+<span class="w">                </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENDIAN_CHANGE_U16</span><span class="p">(</span><span class="n">ibeacon_data</span><span class="o">-&gt;</span><span class="n">ibeacon_vendor</span><span class="p">.</span><span class="n">major</span><span class="p">);</span>
+<span class="w">                </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">minor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENDIAN_CHANGE_U16</span><span class="p">(</span><span class="n">ibeacon_data</span><span class="o">-&gt;</span><span class="n">ibeacon_vendor</span><span class="p">.</span><span class="n">minor</span><span class="p">);</span>
+<span class="w">                </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">DEMO_TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Major: 0x%04x (%d)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="p">);</span>
+<span class="w">                </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">DEMO_TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Minor: 0x%04x (%d)&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">minor</span><span class="p">,</span><span class="w"> </span><span class="n">minor</span><span class="p">);</span>
+<span class="w">                </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">DEMO_TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Measured power (RSSI at a 1m distance):%d dbm&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ibeacon_data</span><span class="o">-&gt;</span><span class="n">ibeacon_vendor</span><span class="p">.</span><span class="n">measured_power</span><span class="p">);</span>
+<span class="w">                </span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="n">DEMO_TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;RSSI of packet:%d dbm&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">scan_result</span><span class="o">-&gt;</span><span class="n">scan_rst</span><span class="p">.</span><span class="n">rssi</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>2. Modify WiFi setting</strong></p>
+<p>If you want to enable wifi sta mode, transplant code from <code>examples/wifi/fast_scan/main/fast_scan.c</code> and modify the WiFi setting to what you want.</p>
 <div class="highlight"><pre><span></span><code><span class="n">wifi_config_t</span><span class="w"> </span><span class="n">wifi_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="p">.</span><span class="n">sta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="p">.</span><span class="n">ssid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;WIFI SSID&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">//</span>
@@ -1279,8 +1311,8 @@ After configuring the develop environment, decompress and get into the source co
 <span class="w">    </span><span class="p">},</span>
 <span class="p">};</span>
 </code></pre></div>
-<p><strong>2. Modify MQTT setting</strong></p>
-<p>Similar with WiFi setting. Find and modify the struct <code>esp_mqtt_client_config_t</code> in the <code>ibeacon_demo.c</code>.</p>
+<p><strong>3. Modify MQTT setting</strong></p>
+<p>Similar with WiFi setting. Transplant code from <code>examples/protocols/mqtt/tcp/main/app_main.c</code> and modify the struct <code>esp_mqtt_client_config_t</code> to what you want.</p>
 <div class="highlight"><pre><span></span><code><span class="n">esp_mqtt_client_config_t</span><span class="w"> </span><span class="n">mqtt_cfg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="p">.</span><span class="n">uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mqtt://192.168.100.174:61613&quot;</span><span class="p">,</span><span class="c1">//IP:port</span>
 <span class="w">    </span><span class="p">.</span><span class="n">usernaem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MQTT username&quot;</span><span class="p">,</span>
@@ -1289,37 +1321,39 @@ After configuring the develop environment, decompress and get into the source co
 <span class="p">};</span>
 </code></pre></div>
 <p><em>(If you want to connect to MQTT broker except tcp, change the url prefix.)</em></p>
-<div class="highlight"><pre><span></span><code><span class="n">tcp</span><span class="w"> </span><span class="o">---&gt;</span><span class="w"> </span><span class="n">mqtt</span><span class="o">:</span><span class="c1">//</span>
-<span class="n">tcp</span><span class="o">-</span><span class="n">ssl</span><span class="w"> </span><span class="o">---&gt;</span><span class="w"> </span><span class="n">mqtts</span><span class="o">:</span><span class="c1">//</span>
-<span class="n">web</span><span class="w"> </span><span class="n">socket</span><span class="w"> </span><span class="o">---&gt;</span><span class="w"> </span><span class="n">ws</span><span class="o">:</span><span class="c1">//</span>
-<span class="n">web</span><span class="w"> </span><span class="n">socket</span><span class="w"> </span><span class="n">secure</span><span class="w"> </span><span class="o">---&gt;</span><span class="w"> </span><span class="n">wss</span><span class="o">:</span><span class="c1">//</span>
+<div class="highlight"><pre><span></span><code>tcp ---&gt; mqtt://
+tcp-ssl ---&gt; mqtts://
+web socket ---&gt; ws://
+web socket secure ---&gt; wss://
+</code></pre></div>
+<p>Here to publish your data:</p>
+<div class="highlight"><pre><span></span><code><span class="n">esp_mqtt_client_publish</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/topic/qos0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;data&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data_length</span><span class="p">,</span><span class="w"> </span><span class="n">qos</span><span class="p">,</span><span class="w"> </span><span class="n">retain</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="compile-and-flash">Compile and Flash<a class="headerlink" href="#compile-and-flash" title="Permanent link">&para;</a></h2>
 <p><strong>1. Configuration</strong></p>
-<p>Before compile the application, get into your project folder <em>(here is <code>ble_ibeacon/</code>)</em>, using command <code>make menuconfig</code> to configure some basic setting like serial port.<br />
-In the configuration inteface, you just need to change three point as follow.<br />
-Firstly, click <code>Serial flasher config</code>.</p>
-<p><img alt="espressif iot development framework configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/espressif_iot_development_framework_configuration.jpg" /></p>
+<p>Before compile the application, get into your project folder <em>(here is <code>ble_ibeacon/</code>)</em>, using command <code>idf.py menuconfig</code> to configure some basic setting like serial port.
+ In the configuration inteface, you just need to change three point as follow.
+ Firstly, click <code>Serial flasher config</code>.</p>
+<p><img alt="espressif iot development framework configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/Serial_flasher_config.png" /></p>
 <p>Then modify the three point marked by red line.</p>
-<p><img alt="espressif iot development framework configuration serial flasher config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/espressif_iot_development_framework_configuration_serial_flasher_config.jpg" /></p>
+<p><img alt="espressif iot development framework configuration serial flasher config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/Serial_flasher_mode.png" /></p>
 <p>Set <code>Default serial port</code> to the port name show in your PC, typically is <code>/dev/ttyUSB0</code>.
 Set <code>Serial flasher config ---&gt;Flash SPI speed</code> to <code>80MHz</code>.
 Set <code>Serial flasher config ---&gt;Flash size</code> to <code>4MB</code>.</p>
 <p><strong>2. Build</strong></p>
-<p>In your project folder, using command <code>make all</code>. It will compile and build the firmware. When finished sucessfully, it will show information like this.</p>
-<p><img alt="compile and build firmware" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/compile_and_build_firmware.jpg" /></p>
+<p>In your project folder, using command <code>idf.py build</code>. It will compile and build the firmware. When finished sucessfully, it will show information like this.</p>
+<p><img alt="compile and build firmware" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/build.png" /></p>
 <p><strong>3. Flash</strong></p>
-<p>GL-S10 using UART to flash the firmware, and also using this UART to output the system log.
-Connect the UART in S10 to the PC by a USB-UART converter. The PC will find a new usb device like <code>/dev/ttyUSB0</code>. It is the name you should write in the <code>Default serial port</code>.   </p>
+<p>GL-S10 using UART to flash the firmware, and also using this UART to output the system log. Connect the UART in S10 to the PC by a USB-TTL converter. The PC will find a new usb device like <code>/dev/ttyUSB0</code>. </p>
 <p><img alt="gl-s10 pcb" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/specification/gl-s10/gl-s10-pinout.jpg" /></p>
 <p>After connect S10 UART to the PC, using command <code>make flash</code> or <code>make flash monitor</code> to flash the firmware. When shows like that, it means the PC is waiting S10 to get into "download mode".</p>
-<p><img alt="wait flash" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/wait_flash.jpg" /></p>
-<p>How to get into "download mode", do in this way. Unplug the S10 power, press the flash button(do not release) and then plug in the power. When it shows like that,</p>
-<p><img alt="flash" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/flash.jpg" /></p>
+<p><img alt="wait flash" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/flash.png" /></p>
+<p>How to get into "download mode", do in this way. Unplug the S10 power, press the flash button(GPIO0 Mode Button do not release) and then plug in the power. When it shows like that,</p>
+<p><img alt="flash" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/flash_result.png" /></p>
 <p>means flash starts sucessfully, then you can release the flash button and wait for the flash finished.
 When flash has been finished, restart the GL-S10.</p>
 <h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
-<p>If you have connect the S10 UART to the PC, using command <code>make monitor</code>, it will print all the system log like that. <em>(here shows the iBeacon data it recieved)</em></p>
+<p>If you have connect the S10 UART to the PC, using command <code>idf.py monitor -p /dev/ttyUSB0</code>, it will print all the system log like that. <em>(here shows the iBeacon data it recieved)</em></p>
 <p><img alt="system log result" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/system_log_result.png" /></p>
 <p>In the MQTT broker, You can get the messages published by S10 like that.</p>
 <p><img alt="messages published result" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/messages_published_result.png" /></p>
