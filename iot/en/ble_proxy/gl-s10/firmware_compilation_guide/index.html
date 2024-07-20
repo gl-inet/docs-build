@@ -442,6 +442,8 @@
       
         
       
+        
+      
     
     
     
@@ -605,6 +607,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws_configuration_guide.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS Configuration Guide
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1334,29 +1356,29 @@ web socket secure ---&gt; wss://
 <p>Before compile the application, get into your project folder <em>(here is <code>ble_ibeacon/</code>)</em>, using command <code>idf.py menuconfig</code> to configure some basic setting like serial port.
  In the configuration inteface, you just need to change three point as follow.
  Firstly, click <code>Serial flasher config</code>.</p>
-<p><img alt="espressif iot development framework configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/Serial_flasher_config.png" /></p>
+<p><img alt="espressif iot development framework configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/firmware_compilation_guide/Serial_flasher_config.png" /></p>
 <p>Then modify the three point marked by red line.</p>
-<p><img alt="espressif iot development framework configuration serial flasher config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/Serial_flasher_mode.png" /></p>
+<p><img alt="espressif iot development framework configuration serial flasher config" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/firmware_compilation_guide/Serial_flasher_mode.png" /></p>
 <p>Set <code>Default serial port</code> to the port name show in your PC, typically is <code>/dev/ttyUSB0</code>.
 Set <code>Serial flasher config ---&gt;Flash SPI speed</code> to <code>80MHz</code>.
 Set <code>Serial flasher config ---&gt;Flash size</code> to <code>4MB</code>.</p>
 <p><strong>2. Build</strong></p>
 <p>In your project folder, using command <code>idf.py build</code>. It will compile and build the firmware. When finished sucessfully, it will show information like this.</p>
-<p><img alt="compile and build firmware" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/build.png" /></p>
+<p><img alt="compile and build firmware" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/firmware_compilation_guide/build.png" /></p>
 <p><strong>3. Flash</strong></p>
 <p>GL-S10 using UART to flash the firmware, and also using this UART to output the system log. Connect the UART in S10 to the PC by a USB-TTL converter. The PC will find a new usb device like <code>/dev/ttyUSB0</code>. </p>
-<p><img alt="gl-s10 pcb" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/specification/gl-s10/gl-s10-pinout.jpg" /></p>
+<p><img alt="gl-s10 pcb" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/hardware/gl-s10-pinout.jpg" /></p>
 <p>After connect S10 UART to the PC, using command <code>make flash</code> or <code>make flash monitor</code> to flash the firmware. When shows like that, it means the PC is waiting S10 to get into "download mode".</p>
-<p><img alt="wait flash" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/flash.png" /></p>
+<p><img alt="wait flash" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/firmware_compilation_guide/flash.png" /></p>
 <p>How to get into "download mode", do in this way. Unplug the S10 power, press the flash button(GPIO0 Mode Button do not release) and then plug in the power. When it shows like that,</p>
-<p><img alt="flash" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/flash_result.png" /></p>
+<p><img alt="flash" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/firmware_compilation_guide/flash_result.png" /></p>
 <p>means flash starts sucessfully, then you can release the flash button and wait for the flash finished.
 When flash has been finished, restart the GL-S10.</p>
 <h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
 <p>If you have connect the S10 UART to the PC, using command <code>idf.py monitor -p /dev/ttyUSB0</code>, it will print all the system log like that. <em>(here shows the iBeacon data it recieved)</em></p>
-<p><img alt="system log result" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/system_log_result.png" /></p>
+<p><img alt="system log result" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/firmware_compilation_guide/system_log_result.png" /></p>
 <p>In the MQTT broker, You can get the messages published by S10 like that.</p>
-<p><img alt="messages published result" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/setup/gl-s10/messages_published_result.png" /></p>
+<p><img alt="messages published result" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/firmware_compilation_guide/messages_published_result.png" /></p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
 
