@@ -630,6 +630,8 @@
       
         
       
+        
+      
     
     
     
@@ -909,6 +911,74 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4" id="__nav_3_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Secondary Development Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Secondary Development Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-s20/user_manual/gl-s20-tbr_firmware_compilation_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firmware Compilation Guide
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1525,13 +1595,16 @@
 <p>If you want to modify Thread Network configuration, you can follow <a href="https://docs.gl-inet.com/iot/en/thread_board_router/gl-s20/user_manual/#manual-setup">this instruction</a>.</p>
 <p>Then, based on your network topology, select the corresponding Backbone Router Interface at <strong>GL-S200 Web Admin Panel &gt; THREAD MESH &gt; Advanced &gt; Backbone Router &gt; Backbone Interface</strong>.</p>
 <ul>
-<li>If your Home Assistant Host is on GL-S200's <strong>LAN</strong> side(no matter wired or wireless), select "<strong>br-lan</strong>", click apply to take effect.</li>
+<li>
+<p>If your Home Assistant Host is on GL-S200's <strong>LAN</strong> side(no matter wired or wireless), select "<strong>br-lan</strong>", click apply to take effect.</p>
+<p><img alt="home_assistant_host_on_gl-s200_lan.png" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/enable_matter_over_thread_for_home_assistant/home_assistant_host_on_gl-s200_lan.png" /></p>
+</li>
+<li>
+<p>If your Home Assistant Host is on GL-S200's <strong>WAN</strong> side, select "<strong>eth0</strong>"(using wired WAN) or "<strong>wlan-sta0</strong>"(using repeater mode), click apply to take effect.</p>
+<p><img alt="home_assistant_host_on_gl-s200_wan_wired.png" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/enable_matter_over_thread_for_home_assistant/home_assistant_host_on_gl-s200_wan_wired.png" /></p>
+<p><img alt="home_assistant_host_on_gl-s200_wan_wireless.png" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/enable_matter_over_thread_for_home_assistant/home_assistant_host_on_gl-s200_wan_wireless.png" /></p>
+</li>
 </ul>
-<p><img alt="home_assistant_host_on_gl-s200_lan.png" src="https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/enable_matter_over_thread_for_home_assistant/home_assistant_host_on_gl-s200_lan.png" /></p>
-<ul>
-<li>If your Home Assistant Host is on GL-S200's <strong>WAN</strong> side, select "<strong>eth0</strong>"(using wired WAN) or "<strong>wlan-sta0</strong>"(using repeater mode), click apply to take effect.</li>
-</ul>
-<p><img alt="home_assistant_host_on_gl-s200_wan_wired.png" src="https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/enable_matter_over_thread_for_home_assistant/home_assistant_host_on_gl-s200_wan_wired.png" /><img alt="home_assistant_host_on_gl-s200_wan_wireless.png" src="https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/enable_matter_over_thread_for_home_assistant/home_assistant_host_on_gl-s200_wan_wireless.png" /></p>
 <p>If your Home Assistant Host is on the <strong>WAN</strong> side of GL-S200,  to enable Home Assistant access GL-S200. Navigate to <strong>SYSTEM</strong> &gt; <strong>Security</strong> &gt; <strong>Open Ports On Router</strong>, add port 8081, protocol TCP/UDP.</p>
 <h3 id="installing-the-open-thread-border-router-and-thread-intergration">Installing the Open Thread Border Router and Thread Intergration<a class="headerlink" href="#installing-the-open-thread-border-router-and-thread-intergration" title="Permanent link">&para;</a></h3>
 <p>The Open Thread Border Router integration allows Home Assistant to acess Open Thread Border Router.</p>
@@ -1559,9 +1632,9 @@ http://<strong>YOUR_GL-S200_IP_ADDRESS</strong>:8081</p>
 <p>To commission your device, open the Home Assistant app on your smartphone, go to <strong>Home Assistant &gt; Settings &gt; Devices &amp; Services</strong>, in the lower tabs bar, go to <strong>Devices</strong> and tap on <strong>Add Device</strong>, tap on <strong>Add Matter device</strong>.</p>
 <p>After you turn the End Devices in Commission mode, scan the Matter QR code on the End Devices. </p>
 <h3 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h3>
-<p><a href="https://www.home-assistant.io/integrations/otbr/">https://www.home-assistant.io/integrations/otbr/</a></p>
-<p><a href="https://www.home-assistant.io/integrations/thread/">https://www.home-assistant.io/integrations/thread/</a></p>
-<p><a href="https://www.home-assistant.io/integrations/matter/">https://www.home-assistant.io/integrations/matter/</a></p>
+<p><a href="https://www.home-assistant.io/integrations/otbr/" target="_blank">https://www.home-assistant.io/integrations/otbr/</a></p>
+<p><a href="https://www.home-assistant.io/integrations/thread/" target="_blank">https://www.home-assistant.io/integrations/thread/</a></p>
+<p><a href="https://www.home-assistant.io/integrations/matter/" target="_blank">https://www.home-assistant.io/integrations/matter/</a></p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
 
