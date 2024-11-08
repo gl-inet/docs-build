@@ -1156,7 +1156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/" class="md-nav__link">
+      <a href="../software.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1312,6 +1312,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#generate" class="md-nav__link">
+    generate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_buffer_info" class="md-nav__link">
+    get_buffer_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#get_calc_pskc" class="md-nav__link">
     get_calc_pskc
   </a>
@@ -1347,8 +1361,29 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#get_leader_data" class="md-nav__link">
+    get_leader_data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#get_network_data" class="md-nav__link">
     get_network_data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_operational_dataset" class="md-nav__link">
+    get_operational_dataset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_ot_service" class="md-nav__link">
+    get_ot_service
   </a>
   
 </li>
@@ -1375,8 +1410,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#get_srp_service" class="md-nav__link">
-    get_srp_service
+  <a href="#get_srp_server_service" class="md-nav__link">
+    get_srp_server_service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    join
   </a>
   
 </li>
@@ -1592,6 +1634,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#generate" class="md-nav__link">
+    generate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_buffer_info" class="md-nav__link">
+    get_buffer_info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#get_calc_pskc" class="md-nav__link">
     get_calc_pskc
   </a>
@@ -1627,8 +1683,29 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#get_leader_data" class="md-nav__link">
+    get_leader_data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#get_network_data" class="md-nav__link">
     get_network_data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_operational_dataset" class="md-nav__link">
+    get_operational_dataset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_ot_service" class="md-nav__link">
+    get_ot_service
   </a>
   
 </li>
@@ -1655,8 +1732,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#get_srp_service" class="md-nav__link">
-    get_srp_service
+  <a href="#get_srp_server_service" class="md-nav__link">
+    get_srp_server_service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    join
   </a>
   
 </li>
@@ -1704,6 +1788,45 @@
 
 <h1 id="otbr-mgmt">otbr-mgmt<a class="headerlink" href="#otbr-mgmt" title="Permanent link">&para;</a></h1>
 <h2 id="ubus-services">ubus services<a class="headerlink" href="#ubus-services" title="Permanent link">&para;</a></h2>
+<p>Get for help.</p>
+<div class="highlight"><pre><span></span><code>~# ubus -v list otbr-mgmt|sort
+        &quot;auto_resume_otbr_agent&quot;:{&quot;enable&quot;:&quot;Boolean&quot;}
+        &quot;commissioner_start&quot;:{&quot;timeout&quot;:&quot;Integer&quot;}
+        &quot;commissioner_state&quot;:{}
+        &quot;commissioner_stop&quot;:{}
+        &quot;force_to_leader&quot;:{}
+        &quot;force_to_update_ot_status&quot;:{}
+        &quot;generate&quot;:{}
+        &quot;get_buffer_info&quot;:{}
+        &quot;get_calc_pskc&quot;:{&quot;extpanid&quot;:&quot;String&quot;,&quot;networkname&quot;:&quot;String&quot;,&quot;passphrase&quot;:&quot;String&quot;}
+        &quot;get_child_table&quot;:{&quot;rloc16&quot;:&quot;Integer&quot;}
+        &quot;get_childip6&quot;:{&quot;rloc16&quot;:&quot;Integer&quot;}
+        &quot;get_device_list&quot;:{}
+        &quot;get_ip6_by_extaddr&quot;:{&quot;extaddr&quot;:&quot;String&quot;}
+        &quot;get_joiner_list&quot;:{}
+        &quot;get_keep_refresh_state&quot;:{}
+        &quot;get_leader_data&quot;:{}
+        &quot;get_network_data&quot;:{}
+        &quot;get_network_name&quot;:{}
+        &quot;get_operational_dataset&quot;:{}
+        &quot;get_ot_service&quot;:{}
+        &quot;get_ot_status&quot;:{}
+        &quot;get_ot_txpower&quot;:{}
+        &quot;get_rloc16&quot;:{}
+        &quot;get_router_neighbor_table&quot;:{&quot;rloc16&quot;:&quot;Integer&quot;}
+        &quot;get_scan_list&quot;:{}
+        &quot;get_srp_server_service&quot;:{}
+        &quot;join&quot;:{&quot;networkname&quot;:&quot;String&quot;,&quot;networkkey&quot;:&quot;String&quot;,&quot;extpanid&quot;:&quot;String&quot;,&quot;panid&quot;:&quot;String&quot;,&quot;channel&quot;:&quot;String&quot;,&quot;pskd&quot;:&quot;String&quot;}
+        &quot;remove_device_list&quot;:{&quot;device_list&quot;:&quot;Array&quot;}
+        &quot;set_device_info&quot;:{&quot;extaddr&quot;:&quot;String&quot;,&quot;name&quot;:&quot;String&quot;,&quot;location&quot;:&quot;String&quot;}
+        &quot;set_keep_refresh_state&quot;:{&quot;enable&quot;:&quot;Boolean&quot;}
+        &quot;set_log_level&quot;:{&quot;level&quot;:&quot;Integer&quot;}
+        &quot;set_ot_config&quot;:{&quot;networkname&quot;:&quot;String&quot;,&quot;networkkey&quot;:&quot;String&quot;,&quot;extpanid&quot;:&quot;String&quot;,&quot;panid&quot;:&quot;String&quot;,&quot;channel&quot;:&quot;Integer&quot;,&quot;passphrase&quot;:&quot;String&quot;}
+        &quot;set_ot_dataset&quot;:{&quot;dataset&quot;:&quot;String&quot;,&quot;passphrase&quot;:&quot;String&quot;}
+        &quot;set_ot_enable&quot;:{&quot;enable&quot;:&quot;Boolean&quot;}
+        &quot;set_ot_txpower&quot;:{&quot;txpower&quot;:&quot;String&quot;}
+        &quot;trigger_network_diagnostic&quot;:{}
+</code></pre></div>
 <h3 id="auto_resume_otbr_agent">auto_resume_otbr_agent<a class="headerlink" href="#auto_resume_otbr_agent" title="Permanent link">&para;</a></h3>
 <p>Auto resume <code>otbr-agent</code> program when it crash.</p>
 <ul>
@@ -1820,6 +1943,46 @@
 </ul>
 <div class="highlight"><pre><span></span><code>{
     &quot;err_code&quot;: 0
+}
+</code></pre></div>
+<h3 id="generate">generate<a class="headerlink" href="#generate" title="Permanent link">&para;</a></h3>
+<p>Initialize a network with random values, include PAN ID, Extended PAN ID and Network Key.</p>
+<ul>
+<li>
+<p>Request parameters:</p>
+</li>
+<li>
+<p>Request sample: <code>ubus call otbr-mgmt generate'</code></p>
+</li>
+<li>Response sample:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>{
+    &quot;err_code&quot;: 0
+}
+</code></pre></div>
+<h3 id="get_buffer_info">get_buffer_info<a class="headerlink" href="#get_buffer_info" title="Permanent link">&para;</a></h3>
+<p>Get Buffer Info.</p>
+<ul>
+<li>
+<p>Request parameters:</p>
+</li>
+<li>
+<p>Request sample: <code>ubus call otbr-mgmt get_buffer_info'</code></p>
+</li>
+<li>Response sample:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>{
+  &quot;6loSendQueue&quot;: &quot;0 0 0&quot;,
+  &quot;Ip6Queue&quot;: &quot;0 0 0&quot;,
+  &quot;TotalBuffers&quot;: 65535,
+  &quot;CoapSecureQueue&quot;: &quot;0 0 0&quot;,
+  &quot;6loReassemblyQueue&quot;: &quot;0 0 0&quot;,
+  &quot;ApplicationCoapQueue&quot;: &quot;0 0 0&quot;,
+  &quot;MplQueue&quot;: &quot;0 0 0&quot;,
+  &quot;MleQueue&quot;: &quot;0 0 0&quot;,
+  &quot;CoapQueue&quot;: &quot;0 0 0&quot;,
+  &quot;MaxUsedBuffers&quot;: 32,
+  &quot;FreeBuffers&quot;: 65535
 }
 </code></pre></div>
 <h3 id="get_calc_pskc">get_calc_pskc<a class="headerlink" href="#get_calc_pskc" title="Permanent link">&para;</a></h3>
@@ -2038,6 +2201,25 @@
         &quot;joinerMax&quot;: 256
 }
 </code></pre></div>
+<h3 id="get_leader_data">get_leader_data<a class="headerlink" href="#get_leader_data" title="Permanent link">&para;</a></h3>
+<p>Get Leader data.</p>
+<ul>
+<li>
+<p>Request parameters:</p>
+</li>
+<li>
+<p>Request sample: <code>ubus call otbr-mgmt get_leader_data</code></p>
+</li>
+<li>Response sample:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>{
+  &quot;Weighting&quot;: 64,
+  &quot;PartitionId&quot;: 1496441175,
+  &quot;DataVersion&quot;: 155,
+  &quot;StableDataVersion&quot;: 148,
+  &quot;LeaderRouterId&quot;: 2
+}
+</code></pre></div>
 <h3 id="get_network_data">get_network_data<a class="headerlink" href="#get_network_data" title="Permanent link">&para;</a></h3>
 <p>Get network data.</p>
 <ul>
@@ -2119,6 +2301,59 @@
                         ]
                 }
         ]
+}
+</code></pre></div>
+<h3 id="get_operational_dataset">get_operational_dataset<a class="headerlink" href="#get_operational_dataset" title="Permanent link">&para;</a></h3>
+<p>Get operational dataset.</p>
+<ul>
+<li>
+<p>Request parameters:</p>
+</li>
+<li>
+<p>Request sample: <code>ubus call otbr-mgmt get_operational_dataset</code></p>
+</li>
+<li>Response sample:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>{
+  &quot;operational_dataset&quot;: &quot;0e080000000000010000000300001a35060004001fffe0020846c68403308eae8b0708fd87cda81a3ac2930510599eaa9bd01c5f87f67f2b2ec179d821030b474c2d533230302d6134340102396c04102d738e37564dd3ff2bdde031b6d6172d0c0402a0f7f8&quot;
+}
+</code></pre></div>
+<h3 id="get_ot_service">get_ot_service<a class="headerlink" href="#get_ot_service" title="Permanent link">&para;</a></h3>
+<p>Get OT Services.</p>
+<ul>
+<li>
+<p>Request parameters:</p>
+</li>
+<li>
+<p>Request sample: <code>ubus call otbr-mgmt get_ot_service</code></p>
+</li>
+<li>Response sample:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>{
+  &quot;Services&quot;: [
+    {
+      &quot;ServicesData&quot;: &quot;01&quot;,
+      &quot;Stable&quot;: true,
+      &quot;ServerDataLength&quot;: 7,
+      &quot;ServiceId&quot;: 0,
+      &quot;EnterpriseNumber&quot;: 44970,
+      &quot;ServiceDataLength&quot;: 1,
+      &quot;Rloc16&quot;: 2048,
+      &quot;ServicesName&quot;: &quot;BBR&quot;,
+      &quot;ServerData&quot;: &quot;11000500000e10&quot;
+    },
+    {
+      &quot;ServicesData&quot;: &quot;5d&quot;,
+      &quot;Stable&quot;: true,
+      &quot;ServerDataLength&quot;: 18,
+      &quot;ServiceId&quot;: 1,
+      &quot;EnterpriseNumber&quot;: 44970,
+      &quot;ServiceDataLength&quot;: 1,
+      &quot;Rloc16&quot;: 2048,
+      &quot;ServicesName&quot;: &quot;SRP server&quot;,
+      &quot;ServerData&quot;: &quot;fd87cda81a3ac293b45a14152518520bd120&quot;
+    }
+  ]
 }
 </code></pre></div>
 <h3 id="get_ot_status">get_ot_status<a class="headerlink" href="#get_ot_status" title="Permanent link">&para;</a></h3>
@@ -2329,10 +2564,10 @@
         ]
 }
 </code></pre></div>
-<h3 id="get_srp_service">get_srp_service<a class="headerlink" href="#get_srp_service" title="Permanent link">&para;</a></h3>
+<h3 id="get_srp_server_service">get_srp_server_service<a class="headerlink" href="#get_srp_server_service" title="Permanent link">&para;</a></h3>
 <p>Get srp service list.</p>
 <ul>
-<li>Request sample: <code>ubus call otbr-mgmt get_srp_service</code></li>
+<li>Request sample: <code>ubus call otbr-mgmt get_srp_server_service</code></li>
 <li>Response sample:</li>
 </ul>
 <div class="highlight"><pre><span></span><code>{
@@ -2359,6 +2594,60 @@
                         &quot;Priority&quot;: 0
                 }
         }
+}
+</code></pre></div>
+<h3 id="join">join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h3>
+<p>Set the log level.</p>
+<ul>
+<li>Request parameters:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">networkname</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">networkkey</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">extpanid</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">panid</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">channel</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">pskd</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Request sample: <code>ubus call otbr-mgmt join'{"networkname":"String","networkkey":"String","extpanid":"String","panid":"String","channel":"String","pskd":"String"}'</code></li>
+<li>Response sample:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>{
+    &quot;err_code&quot;: 0
 }
 </code></pre></div>
 <h3 id="set_log_level">set_log_level<a class="headerlink" href="#set_log_level" title="Permanent link">&para;</a></h3>
