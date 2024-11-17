@@ -5096,8 +5096,8 @@
 <h2 id="usage-scenarios">Usage Scenarios<a class="headerlink" href="#usage-scenarios" title="Permanent link">&para;</a></h2>
 <p>After enabling TAP-S2S mode, the OpenVPN client device can remotely access the OpenVPN server device, and the OpenVPN server device can also remotely access the OpenVPN client device. However, the downside is that the VPN rules set by the OpenVPN client themselves will not take effect after enabling TAP-S2S mode.</p>
 <h2 id="network-topology">Network Topology<a class="headerlink" href="#network-topology" title="Permanent link">&para;</a></h2>
-<p><img alt="tap_s2s_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tap_s2s_topology.png" /></p>
-<p><img alt="tun_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tun_topology.png" /></p>
+<p><img alt="tap_s2s_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tap_s2s_topology.png" /></p>
+<p><img alt="tun_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tun_topology.png" /></p>
 <p>TAP-S2S and TUN modes have the same physical connection method, but their logical connection methods are different. Here are the differences:</p>
 <ol>
 <li>When devices on the GL-X3000 LAN side access the management backend of the GL-MT6000, TAP-S2S mode does not use a virtual IP, but TUN mode does.</li>
@@ -5107,13 +5107,13 @@
 </ol>
 <h2 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>
 <p>Firstly, use a router (assumed to be GL-MT6000) with a public IP to open the OpenVPN Server, set the device mode to <strong>TAP-S2S</strong>, click Apply, and then click <strong>Export Client Configuration</strong>.</p>
-<p><img alt="tutorials_select_mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_select_mode.png" /></p>
-<p><img alt="tutorials_export" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_export.png" /></p>
+<p><img alt="tutorials_select_mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tutorials_select_mode.png" /></p>
+<p><img alt="tutorials_export" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tutorials_export.png" /></p>
 <p>In addition, use a router (assuming it is GL-X3000) with a public IP to open the OpenVPN client, import the configuration file downloaded in the above steps, click <strong>Apply</strong>, and then enable the function.</p>
-<p><img alt="tutorials_select_file" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_select_file.png" /></p>
-<p><img alt="tutorials_start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_start.png" /></p>
+<p><img alt="tutorials_select_file" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tutorials_select_file.png" /></p>
+<p><img alt="tutorials_start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tutorials_start.png" /></p>
 <p>At this time, the IP address of the GL-X3000 router will change. You can log in to the GL-MT6000 management dashboard, open <strong>Clients</strong>, and find the new IP address of the GL-X3000.</p>
-<p><img alt="tutorials_new_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/tap_s2s_vs_tun/tutorials_new_IP_address.png" /></p>
+<p><img alt="tutorials_new_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tutorials_new_IP_address.png" /></p>
 <p>If the GL-MT6000 loses network connection or turns off the OpenVPN server, or the GL-X3000 turns off the OpenVPN client , the  IP address of the GL-X3000 will be restored.</p>
 <p>Points to Note:</p>
 <ul>
