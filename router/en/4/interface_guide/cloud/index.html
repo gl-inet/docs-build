@@ -5822,10 +5822,16 @@
 <h2 id="site-to-site">Site to Site<a class="headerlink" href="#site-to-site" title="Permanent link">&para;</a></h2>
 <p>Please refer to <a href="../../tutorials/goodcloud_site_to_site/">GoodCloud Site to Site</a>.</p>
 <h2 id="goodcloud-and-vpn">GoodCloud and VPN<a class="headerlink" href="#goodcloud-and-vpn" title="Permanent link">&para;</a></h2>
-<p>If you enable GoodCloud function and running VPN client at the same time on router, by default, the connection between the router and the GoodCloud server will also go through the VPN, but sometimes the VPN connection is unstable, or the VPN provider mistakenly filters the GoodCloud connection, you can make the GoodCloud connection not go through the VPN by using the following settings.</p>
-<p>Go to web Admin Panel, on the left side, VPN -&gt; VPN Dashboard -&gt; VPN Client -&gt; Global Options.</p>
+<p>If you enable GoodCloud function and running VPN client at the same time on router, by default, the connection between the router and the GoodCloud server will not go through the VPN. This ensures a more stable connection to GoodCloud services.</p>
+<p>However, if you want the GoodCloud connection to go through the VPN, you can change this setting in the router's web Admin Panel. Go to VPN -&gt; VPN Dashboard -&gt; VPN Client -&gt; Global Options, and enable the option for GoodCloud to use VPN.</p>
 <p><img alt="Services from GL.iNet doesn't Use VPN" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/cloud/goodcloud_donot_use_vpn.png" /></p>
-<p>It is not recommended to run Site to Site while its nodes are also running VPN client, which can make the network particularly complex.</p>
+<p>Note that routing GoodCloud through VPN may affect the stability of the cloud connection, especially if:</p>
+<ul>
+<li>The VPN connection is unstable</li>
+<li>The VPN provider filters or blocks GoodCloud traffic</li>
+<li>The VPN adds significant latency to the connection</li>
+</ul>
+<p>It's generally recommended to keep the default setting where GoodCloud bypasses the VPN for optimal performance and reliability.</p>
 <h2 id="view-logs">View Logs<a class="headerlink" href="#view-logs" title="Permanent link">&para;</a></h2>
 <p>You can see your activities in GoodCloud Platform.</p>
 <p><img alt="View Logs" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/cloud/view_logs.png" /></p>
