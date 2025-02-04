@@ -18,7 +18,7 @@
         <link rel="prev" href="../aws_configuration_guide/">
       
       
-        <link rel="next" href="../../../thread_board_router/gl-s20/">
+        <link rel="next" href="../ha_integration_guide/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
@@ -438,6 +438,8 @@
       
         
       
+        
+      
     
     
     
@@ -639,6 +641,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ha_integration_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HA Integration Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -787,6 +809,8 @@
       
         
           
+        
+      
         
       
         
@@ -1014,6 +1038,26 @@
   
   <span class="md-ellipsis">
     Flash Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thread_board_router/gl-s20/user_manual/work_with_home_assistant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Work with Home Assistant
   </span>
   
 
@@ -1506,14 +1550,21 @@
 </ol>
 <p><img alt="s10_flash_guide_usb" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_usb.png" /></p>
 <ol>
-<li>
-<p>The distribution of flashing pins on the GL-S10 PCB is as follows.<img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_pcb.png" alt="011" style="zoom: 80%;" /></p>
-</li>
-<li>
-<p>Connect GL-S10 to computer via USB-TTL.</p>
-</li>
+<li>The distribution of flashing pins on the GL-S10 PCB is as follows.<img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_pcb_1.png" alt="011" style="zoom: 80%;" /></li>
+<li>Connect GL-S10 to computer via USB-TTL.</li>
 </ol>
 <p><img alt="s10_flash_guide_usb_ttl" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_usb_ttl.png" /></p>
+<p>There are two kinds of s10 flashing way of connection :</p>
+<ul>
+<li>Complete connection</li>
+</ul>
+<p>Use usb-ttl to connect all the pins shown above, then directly using the flash_download_tool.</p>
+<ul>
+<li>Simple connection</li>
+</ul>
+<p>Use sub-ttl to connect <em>TX, Rx, GND</em>,  and holding the download button to start the download mode, then using the flash_download_tool.</p>
+<p>Specific steps as shown below :</p>
+<p><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_pcb_2.png" alt="011" style="zoom: 80%;" /></p>
 <h2 id="flash-firmware">Flash firmware<a class="headerlink" href="#flash-firmware" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Extract flash_download_tool and execute flash_download_tool.exe.</li>
@@ -1569,6 +1620,7 @@
 </ul>
 <p>The address is 0x0000, as the folowing picture:</p>
 <p><img alt="s10_flash_guide_combine_bin" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_combine_bin.png" /></p>
+<p>Finally, re-plug the power to make it work.</p>
 
 
 
