@@ -12,26 +12,28 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/iot/en/iot_dev_board/using_tdb_on_gl-s20/">
+        <link rel="canonical" href="https://docs.gl-inet.com/iot/en/thread_board_router/gl-s200/ble_development_guide/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../otbr_mgmt_ubus_api/">
       
       
+        <link rel="next" href="../../../iot_dev_board/">
       
-      <link rel="icon" href="../../images/favicon.png">
+      
+      <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
-        <title>Thread Development Board for GL-S20 - GL.iNet IoT Docs</title>
+        <title>Bluetooth Development Guide - GL.iNet IoT Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -56,9 +58,9 @@
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -87,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-use-glinet-thread-development-boards-with-gl-s20" class="md-skip">
+        <a href="#bluetooth-development-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -101,9 +103,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="GL.iNet IoT Docs" class="md-header__button md-logo" aria-label="GL.iNet IoT Docs" data-md-component="logo">
+    <a href="../../.." title="GL.iNet IoT Docs" class="md-header__button md-logo" aria-label="GL.iNet IoT Docs" data-md-component="logo">
       
-  <img src="../../images/logo_white.svg" alt="logo">
+  <img src="../../../images/logo_white.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -120,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Thread Development Board for GL-S20
+              Bluetooth Development Guide
             
           </span>
         </div>
@@ -210,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -235,7 +237,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../ble_proxy/gl-s10/" class="md-tabs__link">
+        <a href="../../../ble_proxy/gl-s10/" class="md-tabs__link">
           
   
     
@@ -254,17 +256,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../thread_board_router/gl-s20/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../gl-s20/" class="md-tabs__link">
           
   
     
@@ -283,13 +289,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../iot_dev_board/" class="md-tabs__link">
           
   
     
@@ -324,9 +328,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="GL.iNet IoT Docs" class="md-nav__button md-logo" aria-label="GL.iNet IoT Docs" data-md-component="logo">
+    <a href="../../.." title="GL.iNet IoT Docs" class="md-nav__button md-logo" aria-label="GL.iNet IoT Docs" data-md-component="logo">
       
-  <img src="../../images/logo_white.svg" alt="logo">
+  <img src="../../../images/logo_white.svg" alt="logo">
 
     </a>
     GL.iNet IoT Docs
@@ -352,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -446,7 +450,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../ble_proxy/gl-s10/" class="md-nav__link ">
+            <a href="../../../ble_proxy/gl-s10/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -478,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ble_proxy/gl-s10/hardware/" class="md-nav__link">
+      <a href="../../../ble_proxy/gl-s10/hardware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -498,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ble_proxy/gl-s10/user_manual/" class="md-nav__link">
+      <a href="../../../ble_proxy/gl-s10/user_manual/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -518,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ble_proxy/gl-s10/firmware_compilation_guide/" class="md-nav__link">
+      <a href="../../../ble_proxy/gl-s10/firmware_compilation_guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -538,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ble_proxy/gl-s10/aws_configuration_guide/" class="md-nav__link">
+      <a href="../../../ble_proxy/gl-s10/aws_configuration_guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -558,7 +562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ble_proxy/gl-s10/flash_guide/" class="md-nav__link">
+      <a href="../../../ble_proxy/gl-s10/flash_guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -578,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ble_proxy/gl-s10/ha_integration_guide/" class="md-nav__link">
+      <a href="../../../ble_proxy/gl-s10/ha_integration_guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -611,6 +615,8 @@
       
   
   
+    
+  
   
     
     
@@ -626,12 +632,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -645,7 +651,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Thread Board Router
@@ -684,7 +690,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../thread_board_router/gl-s20/" class="md-nav__link ">
+            <a href="../../gl-s20/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -716,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s20/hardware/" class="md-nav__link">
+      <a href="../../gl-s20/hardware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -768,7 +774,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../thread_board_router/gl-s20/user_manual/" class="md-nav__link ">
+            <a href="../../gl-s20/user_manual/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -800,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s20/user_manual/buttons_and_leds/" class="md-nav__link">
+      <a href="../../gl-s20/user_manual/buttons_and_leds/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -820,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s20/user_manual/web_admin_panel_guide/" class="md-nav__link">
+      <a href="../../gl-s20/user_manual/web_admin_panel_guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -840,7 +846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s20/user_manual/app_guide/" class="md-nav__link">
+      <a href="../../gl-s20/user_manual/app_guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -884,7 +890,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../thread_board_router/gl-s20/user_manual/apis/" class="md-nav__link ">
+            <a href="../../gl-s20/user_manual/apis/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -916,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s20/user_manual/apis/http_restful_api/" class="md-nav__link">
+      <a href="../../gl-s20/user_manual/apis/http_restful_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -936,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s20/user_manual/apis/ble_network_configuration_api/" class="md-nav__link">
+      <a href="../../gl-s20/user_manual/apis/ble_network_configuration_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s20/user_manual/flash_guide/" class="md-nav__link">
+      <a href="../../gl-s20/user_manual/flash_guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -984,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s20/user_manual/work_with_home_assistant/" class="md-nav__link">
+      <a href="../../gl-s20/user_manual/work_with_home_assistant/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1052,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s20/user_manual/gl-s20-tbr_firmware_compilation_guide/" class="md-nav__link">
+      <a href="../../gl-s20/user_manual/gl-s20-tbr_firmware_compilation_guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1086,6 +1092,8 @@
                 
   
   
+    
+  
   
     
     
@@ -1116,17 +1124,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../thread_board_router/gl-s200/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1143,7 +1151,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             GL-S200
@@ -1158,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s200/hardware/" class="md-nav__link">
+      <a href="../hardware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1178,7 +1186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s200/bluetooth/" class="md-nav__link">
+      <a href="../bluetooth/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1198,7 +1206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s200/thread_mesh/" class="md-nav__link">
+      <a href="../thread_mesh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1218,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s200/openthread_border_router_codelabs/" class="md-nav__link">
+      <a href="../openthread_border_router_codelabs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1238,7 +1246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s200/software.md" class="md-nav__link">
+      <a href="../software.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1258,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s200/work_with_home_assistant/" class="md-nav__link">
+      <a href="../work_with_home_assistant/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1278,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s200/otbr_http_api/" class="md-nav__link">
+      <a href="../otbr_http_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1298,7 +1306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s200/otbr_mgmt_ubus_api/" class="md-nav__link">
+      <a href="../otbr_mgmt_ubus_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1310,100 +1318,6 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../thread_board_router/gl-s200/ble_development_guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Bluetooth Development Guide
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    IoT Dev Board
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            IoT Dev Board
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
             
               
@@ -1425,7 +1339,7 @@
           
   
   <span class="md-ellipsis">
-    Thread Development Board for GL-S20
+    Bluetooth Development Guide
   </span>
   
 
@@ -1436,7 +1350,7 @@
         
   
   <span class="md-ellipsis">
-    Thread Development Board for GL-S20
+    Bluetooth Development Guide
   </span>
   
 
@@ -1458,23 +1372,76 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-set-up-a-thread-network" class="md-nav__link">
-    1. Set up a Thread network
+  <a href="#introduction" class="md-nav__link">
+    Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-commission-the-thread-development-boards-into-the-gl-s20s-thread-network" class="md-nav__link">
-    2. Commission the Thread Development Boards into the GL-S20's Thread network
+  <a href="#bluetooth-configuration" class="md-nav__link">
+    Bluetooth Configuration
   </a>
+  
+    <nav class="md-nav" aria-label="Bluetooth Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic_scan_param" class="md-nav__link">
+    basic_scan_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy_scan_param-extended_scan_param" class="md-nav__link">
+    legacy_scan_param &amp; extended_scan_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sync_param" class="md-nav__link">
+    sync_param
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-test-the-thread-development-boards-on-the-thread-network" class="md-nav__link">
-    3. Test the Thread Development Boards on the Thread network
+  <a href="#change-bluetooth-default-configuration" class="md-nav__link">
+    Change Bluetooth Default Configuration
   </a>
+  
+    <nav class="md-nav" aria-label="Change Bluetooth Default Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1" class="md-nav__link">
+    Method 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-2" class="md-nav__link">
+    Method 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1482,6 +1449,98 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../iot_dev_board/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    IoT Dev Board
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            IoT Dev Board
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../iot_dev_board/using_tdb_on_gl-s20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thread Development Board for GL-S20
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1521,23 +1580,76 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-set-up-a-thread-network" class="md-nav__link">
-    1. Set up a Thread network
+  <a href="#introduction" class="md-nav__link">
+    Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-commission-the-thread-development-boards-into-the-gl-s20s-thread-network" class="md-nav__link">
-    2. Commission the Thread Development Boards into the GL-S20's Thread network
+  <a href="#bluetooth-configuration" class="md-nav__link">
+    Bluetooth Configuration
   </a>
+  
+    <nav class="md-nav" aria-label="Bluetooth Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic_scan_param" class="md-nav__link">
+    basic_scan_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy_scan_param-extended_scan_param" class="md-nav__link">
+    legacy_scan_param &amp; extended_scan_param
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sync_param" class="md-nav__link">
+    sync_param
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-test-the-thread-development-boards-on-the-thread-network" class="md-nav__link">
-    3. Test the Thread Development Boards on the Thread network
+  <a href="#change-bluetooth-default-configuration" class="md-nav__link">
+    Change Bluetooth Default Configuration
   </a>
+  
+    <nav class="md-nav" aria-label="Change Bluetooth Default Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1" class="md-nav__link">
+    Method 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-2" class="md-nav__link">
+    Method 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1556,83 +1668,123 @@
                   
 
 
-<h1 id="how-to-use-glinet-thread-development-boards-with-gl-s20">How to use GL.iNet Thread Development Boards with GL-S20<a class="headerlink" href="#how-to-use-glinet-thread-development-boards-with-gl-s20" title="Permanent link">&para;</a></h1>
-<p>To use GL.iNet Thread Development Boards with GL-S20, you will need these devices: </p>
+<h1 id="bluetooth-development-guide">Bluetooth Development Guide<a class="headerlink" href="#bluetooth-development-guide" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>This document is intended to guide S200 users in configuring and using the Bluetooth function within the <a href="https://github.com/gl-inet/glbuilder">glbuilder</a> project.</p>
+<h2 id="bluetooth-configuration">Bluetooth Configuration<a class="headerlink" href="#bluetooth-configuration" title="Permanent link">&para;</a></h2>
+<p>Before configuring the Bluetooth function, first inquire about the storage path of the configuration file and understand the functions of each configuration option:</p>
+<p>Path to Bluetooth configuration file: <code>/etc/config/gl_ble_d</code></p>
+<p><img src="https://static.gl-inet.com/docs/iot/en/thread_board_router/gl-s200/bluetooth/s200_ble_config_1.png"></p>
+<h3 id="basic_scan_param">basic_scan_param<a class="headerlink" href="#basic_scan_param" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>config<span class="w"> </span>scan<span class="w"> </span><span class="s1">&#39;basic_scan_param&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>scan_type<span class="w"> </span><span class="s1">&#39;passive&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>scan_interval_time<span class="w"> </span><span class="s1">&#39;16&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>scan_window_time<span class="w"> </span><span class="s1">&#39;16&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>scan_phy<span class="w"> </span><span class="s1">&#39;1&#39;</span>
+<span class="w">        </span>option<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="s1">&#39;0&#39;</span>
+</code></pre></div>
 <ul>
-<li>A GL-S20 Thread Border Router</li>
-<li>At least two GL.iNet Thread Development Boards</li>
+<li><strong>scan_type</strong>: switching between <strong>active</strong> or <strong>passive</strong> scanning.</li>
+<li><strong>scan_interval_time</strong>: the interval between the start times of two consecutive scan windows.</li>
+<li><strong>scan_window_time</strong>: the width of time to perform a scan.</li>
+<li><strong>scan_phy</strong>: If coded phy is selected, traditional broadcast packets cannot be scanned.</li>
+<li><strong>enable</strong>: The switch to enable basic_scan, set to '1' if turned on, and set to '0' if turned off.</li>
 </ul>
-<p>Once you have these devices ready, follow the steps below.</p>
-<h2 id="1-set-up-a-thread-network">1. Set up a Thread network<a class="headerlink" href="#1-set-up-a-thread-network" title="Permanent link">&para;</a></h2>
+<h3 id="legacy_scan_param-extended_scan_param">legacy_scan_param &amp; extended_scan_param<a class="headerlink" href="#legacy_scan_param-extended_scan_param" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>config<span class="w"> </span>scan<span class="w"> </span><span class="s1">&#39;legacy_scan_param&#39;</span>
+<span class="w">        </span>option<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="s1">&#39;0&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>rssi_threshold<span class="w"> </span><span class="s1">&#39;-100&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>mac_filter_enable<span class="w"> </span><span class="s1">&#39;0&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>raw_data_filter_enable<span class="w"> </span><span class="s1">&#39;0&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>mac_filter_path<span class="w"> </span><span class="s1">&#39;/etc/ble_list/legacy_ble_filter_list/mac_list.json&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>raw_data_filter_path<span class="w"> </span><span class="s1">&#39;/etc/ble_list/legacy_ble_filter_list/raw_data_list.json&#39;</span>
+
+config<span class="w"> </span>scan<span class="w"> </span><span class="s1">&#39;extended_scan_param&#39;</span>
+<span class="w">        </span>option<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="s1">&#39;0&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>rssi_threshold<span class="w"> </span><span class="s1">&#39;-100&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>mac_filter_enable<span class="w"> </span><span class="s1">&#39;0&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>raw_data_filter_enable<span class="w"> </span><span class="s1">&#39;0&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>mac_filter_path<span class="w"> </span><span class="s1">&#39;/etc/ble_list/extended_ble_filter_list/mac_list.json&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>raw_data_filter_path<span class="w"> </span><span class="s1">&#39;/etc/ble_list/extended_ble_filter_list/raw_data_list.json&#39;</span>
+</code></pre></div>
+<ul>
+<li><strong>enable</strong>: The enabling switch is set to 1 when turned on and set to 0 when turned off.</li>
+<li><strong>rssi_threshold</strong>: If you set the threshold, the gateway will only report data from devices whose signal strength is greater than the value.</li>
+<li><strong>mac_filter_enable</strong>: If the switch is on, the configuration in the MAC filter will take effect. If the switch is off, the configuration in the filter will be disabled.</li>
+<li><strong>raw_data_filter_enable</strong>: If the switch is on, the configuration in the raw data filter will take effect. If the switch is off, the configuration in the filter will be disabled.</li>
+<li><strong>mac_filter_path</strong>: The path to store MAC filter configurations.</li>
+<li><strong>raw_data_filter_path</strong>: The path to store raw data filter configurations.</li>
+</ul>
+<h3 id="sync_param">sync_param<a class="headerlink" href="#sync_param" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>config<span class="w"> </span>scan<span class="w"> </span><span class="s1">&#39;sync_param&#39;</span>
+<span class="w">        </span>option<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="s1">&#39;0&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>skip<span class="w"> </span><span class="s1">&#39;0&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>timeout<span class="w"> </span><span class="s1">&#39;1000&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>sync_list_path<span class="w"> </span><span class="s1">&#39;/etc/ble_list/sync_list/sync_list.json&#39;</span><span class="w">     </span>
+</code></pre></div>
+<ul>
+<li><strong>enable</strong>: The enabling switch is set to 1 when turned on and set to 0 when turned off.</li>
+<li><strong>skip</strong>: Maximum number of periodic advertising packets that can be skipped after successful reception.</li>
+<li><strong>timeout</strong>: The maximum time allowed for successful reception, if this time is exceeded the sync will be lost.</li>
+<li><strong>sync_list_path</strong>: The path to store sync lists.</li>
+</ul>
+<h2 id="change-bluetooth-default-configuration">Change Bluetooth Default Configuration<a class="headerlink" href="#change-bluetooth-default-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="method-1">Method 1<a class="headerlink" href="#method-1" title="Permanent link">&para;</a></h3>
+<p>Refer to the '<a href="https://github.com/gl-inet/glbuilder/tree/main?tab=readme-ov-file#add-your-own-files">Add your own files</a>' method provided in the README of the glbuilder project, for example</p>
 <ol>
 <li>
-<p>Power on the GL-S20.</p>
+<p>Please get the <strong>/etc/config/gl_ble_d</strong> file in the S200 device file system via winscp tools.</p>
 </li>
 <li>
-<p>Connect the WAN port of the GL-S20 and the LAN port of an upstream device, such as a modem, using an ethernet cable.</p>
+<p>You can modify gl_ded_d to set the Bluetooth scanning mode you want. For example, if you want to turn on Bluetooth scanning on your device and enable legacy mode, you need to make the following changes in the gl_ded_d file:
+   <div class="highlight"><pre><span></span><code>config<span class="w"> </span>service<span class="w"> </span><span class="s1">&#39;ble&#39;</span>
+<span class="w">        </span>option<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="s1">&#39;1&#39;</span>
+
+config<span class="w"> </span>scan<span class="w"> </span><span class="s1">&#39;basic_scan_param&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>scan_type<span class="w"> </span><span class="s1">&#39;passive&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>scan_interval_time<span class="w"> </span><span class="s1">&#39;16&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>scan_window_time<span class="w"> </span><span class="s1">&#39;16&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>scan_phy<span class="w"> </span><span class="s1">&#39;1&#39;</span>
+<span class="w">        </span>option<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="s1">&#39;0&#39;</span>
+
+config<span class="w"> </span>scan<span class="w"> </span><span class="s1">&#39;legacy_scan_param&#39;</span>
+<span class="w">        </span>option<span class="w"> </span><span class="nb">enable</span><span class="w"> </span><span class="s1">&#39;1&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>rssi_threshold<span class="w"> </span><span class="s1">&#39;-100&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>mac_filter_enable<span class="w"> </span><span class="s1">&#39;0&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>raw_data_filter_enable<span class="w"> </span><span class="s1">&#39;0&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>mac_filter_path<span class="w"> </span><span class="s1">&#39;/etc/ble_list/legacy_ble_filter_list/mac_list.json&#39;</span>
+<span class="w">        </span>option<span class="w"> </span>raw_data_filter_path<span class="w"> </span><span class="s1">&#39;/etc/ble_list/legacy_ble_filter_list/raw_data_list.json&#39;</span>
+</code></pre></div></p>
 </li>
 <li>
-<p>On a web browser, enter <code>http://gl-s20-otbr/</code> in the address bar. (If your GL-S20 is connected to an upstream device, enter the upstream device's IP address. Ensure they are on the same network.)</p>
+<p>Create a files directory in the glbuilder project root directory and put your own files.
+   <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>files/etc/config
+</code></pre></div></p>
 </li>
 <li>
-<p>From the left sidebar, click <strong>Thread Mesh</strong> &gt; <strong>Thread Network</strong>.</p>
+<p>cp <strong>gl_ble_d</strong> file to <strong>files/etc/config</strong>.</p>
 </li>
 <li>
-<p>Click <strong>Manual Setup</strong>. </p>
-<p><img alt="control TDB" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/iot_dev_board/using_tdb_on_gl-s20/S20-TDB-01.png" /></p>
+<p>Change the <strong>gl_ble_d</strong> file permission.
+   <div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">775</span><span class="w"> </span>files/etc/config/gl_ble_d
+</code></pre></div></p>
 </li>
 <li>
-<p>Click <strong>Generate</strong> &gt; <strong>Apply</strong>. </p>
-<p><img alt="control TDB" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/iot_dev_board/using_tdb_on_gl-s20/S20-TDB-02.png" /></p>
-</li>
-<li>
-<p>Wait for a while until the word "Leader" appears next to the name of your GL-S20.</p>
-<p><img alt="control TDB" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/iot_dev_board/using_tdb_on_gl-s20/S20-TDB-03.png" /></p>
+<p>Compile the firmware again.
+   <div class="highlight"><pre><span></span><code>make
+</code></pre></div></p>
 </li>
 </ol>
-<h2 id="2-commission-the-thread-development-boards-into-the-gl-s20s-thread-network">2. Commission the Thread Development Boards into the GL-S20's Thread network<a class="headerlink" href="#2-commission-the-thread-development-boards-into-the-gl-s20s-thread-network" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>From the left sidebar, click <strong>Thread Commissioning</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Start</strong>. The Thread LED on your GL-S20 will start blinking in orange. </p>
-<p><img alt="control TDB" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/iot_dev_board/using_tdb_on_gl-s20/S20-TDB-04.png" /></p>
-</li>
-<li>
-<p>Under "Joiners," click <strong>Add</strong>. </p>
-</li>
-<li>
-<p>Enter the following information:</p>
-<ul>
-<li><strong>Joiner EUI-64</strong>: Enter *. This allows any Thread Development Boards to join the Thread network. (To add a specific board, enter the EUI-64 of the board.)</li>
-<li><strong>Joiner Credential</strong>: Enter <strong>AAAAAA</strong>.</li>
-</ul>
-</li>
-<li>
-<p>Click <strong>Apply</strong>. </p>
-<p><img alt="control TDB" class="glboxshadow" src="https://static.gl-inet.com/docs/iot/en/iot_dev_board/using_tdb_on_gl-s20/S20-TDB-05.png" /></p>
-</li>
-<li>
-<p>Press the SW2 on each Thread Development Board you added. The LED will blink in green. (The board is entering commissioning mode.)</p>
-</li>
-<li>
-<p>Wait for a few seconds until the green LED stops blinking. (When the LED becomes static, the board has been commissioned into the Thread network.)</p>
-</li>
-</ol>
-<h2 id="3-test-the-thread-development-boards-on-the-thread-network">3. Test the Thread Development Boards on the Thread network<a class="headerlink" href="#3-test-the-thread-development-boards-on-the-thread-network" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Long press the SW1 on each Thread Development Board you added for about 3 seconds. The Thread Development Boards will enter the demo mode.</p>
-</li>
-<li>
-<p>Use the rotary knob to control the RGB LED of other Thread Development Boards on the same thread network:</p>
-<ul>
-<li>To turn on or off the RGB LED: Press down the rotary knob. </li>
-<li>To change the RGB LED colors: Rotate the rotary knob. </li>
-</ul>
-</li>
-</ol>
+<p>The firmware compiled in this way can see the <strong>gl_ble_d</strong> file in the <strong>/etc/config/</strong> directory in the file system. Please ensure that the configuration parameters are correct and complete, otherwise it will cause the Bluetooth function to fail to work properly!</p>
+<h4 id="method-2">Method 2<a class="headerlink" href="#method-2" title="Permanent link">&para;</a></h4>
+<p>To log in to your device via SSH, use the <code>uci</code> command to configure Bluetooth functionality, for example:</p>
+<p>This command will set the enable option in the basic_scan_param configuration section of the gl_ble_d configuration file to 1.</p>
+<div class="highlight"><pre><span></span><code>uci<span class="w"> </span><span class="nb">set</span><span class="w"> </span>gl_ble_d.basic_scan_param.enable<span class="o">=</span><span class="m">1</span>
+</code></pre></div>
+<p>This command will save all changes made to the gl_ble_d configuration file onto the disk.</p>
+<div class="highlight"><pre><span></span><code>uci<span class="w"> </span>commit<span class="w"> </span>gl_ble_d
+</code></pre></div>
+<p>Additionally, please be cautious when directly editing configuration files or using the <code>uci</code> command to avoid accidentally overwriting or deleting important configurations. It is advisable to back up the original configuration file before making any changes.</p>
 
 
 
@@ -1762,10 +1914,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
       
@@ -1775,7 +1927,7 @@
       
         <script src="https://www.gl-inet.com/js/cookieconsent.js"></script>
       
-        <script src="../../javascripts/extra.js"></script>
+        <script src="../../../javascripts/extra.js"></script>
       
     
   </body>
