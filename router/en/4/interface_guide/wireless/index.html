@@ -3514,6 +3514,8 @@
       
         
       
+        
+      
     
     
     
@@ -3655,6 +3657,26 @@
   
   <span class="md-ellipsis">
     How to SSH log in to the Router
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/how_to_use_winscp_to_modify_files_on_glinet_routers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to use WinSCP to modify files on GL.iNet routers
   </span>
   
 
@@ -4162,6 +4184,13 @@
         <li class="md-nav__item">
   <a href="#guest-wi-fi" class="md-nav__link">
     Guest Wi-Fi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#randomized-bssid" class="md-nav__link">
+    Randomized BSSID
   </a>
   
 </li>
@@ -5644,6 +5673,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#randomized-bssid" class="md-nav__link">
+    Randomized BSSID
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5697,12 +5733,7 @@
 <p><img alt="wifi qr code" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireless/wifi_ssid_qr_code.png" /></p>
 </li>
 <li>
-<p><strong>Randomized BSSID</strong></p>
-<p>This feature is available since firmware v4.6</p>
-<p>Using randomized BSSID can protect your privacy.</p>
-<p>Clients vendor collect the geolocation of Wi-Fi access points based on their unique BSSID to locate the device. When client device scan or connect your router, merely being within Wi-Fi range of a client device can lead to a device’s location and movements being made widely and publicly available. When a client device uses GPS to determine its location, it periodically reports nearby Wi-Fi BSSIDs and their GPS coordinates to clients vendor servers. This allows other clients devices to query visible BSSIDs to estimate their location, even without GPS connectivity. An attacker can exploit client’s crowdsourced location tracking system to amass a worldwide database of Wi-Fi access point locations and track devices’ movements over time.</p>
-<p><img alt="randomized bssid" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireless/randomized-bssid.jpg" /></p>
-<p>BSSID Option enabled by default. If this option is enabled, the device uses a randomly generated BSSID and renews it at each booting. When the random BSSID is disabled, you can use the real MAC.</p>
+<p><strong>Randomized BSSID</strong>: This feature is enabled by default. It aims to prevent the client vendors from collecting nearby Wi-Fi BSSIDs and client devices' GPS coordinates to their servers. Click <a href="#randomized-bssid">here</a> for more details.</p>
 </li>
 <li>
 <p>The <strong>Bandwidth</strong> and <strong>Channel</strong> can't be modified when <a href="../internet_repeater/">repeater</a> is enabled.</p>
@@ -5723,9 +5754,14 @@
 <p><img alt="guest wifi 5g" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireless/guest_wifi_5g.png" /></p>
 <p><strong>2.4G Guest Wi-Fi</strong></p>
 <p><img alt="guest wifi 2.4g" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireless/guest_wifi_2.4g.png" /></p>
-<ul>
-<li>Note: Guest Wi-Fi BSSID is consistent with the primary Wi-Fi BSSID in the same band.</li>
-</ul>
+<h2 id="randomized-bssid">Randomized BSSID<a class="headerlink" href="#randomized-bssid" title="Permanent link">&para;</a></h2>
+<p><strong>Note</strong>: This feature is available since firmware v4.6</p>
+<p>Randomized BSSID aims to prevent the client vendors from collecting nearby Wi-Fi BSSIDs and client devices' GPS coordinates to their servers.</p>
+<p>Client vendors collect the geographical location data of Wi-Fi access points by leveraging their unique BSSIDs to locate devices. When client devices such as mobile phones and computers scan or connect to a router, if other devices are within the Wi-Fi signal coverage area of that router, their location and movement trajectory information may be widely disseminated. If a client device uses GPS for positioning, it will periodically upload the BSSIDs of nearby Wi-Fi access points and their corresponding GPS coordinates to the vendor's server. As a result, even if other devices do not have GPS functionality, or do not enable GPS, they can estimate their own location by querying the visible BSSID information. However, this crowdsourced location tracking system has security vulnerabilities. Attackers can use it to accumulate a global database of Wi-Fi access point locations and continuously track the movement trajectories of devices, posing a threat to user privacy and security. </p>
+<p><img alt="randomized bssid" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireless/randomized-bssid-new.jpg" /></p>
+<p>Therefore, GL.iNet routers' Randomized BSSID feature can protect your privacy. </p>
+<p>In the GL.iNet router's web Admin Panel, go to WIRELESS -&gt; 5GHz Wi-Fi or 2.4GHz Wi-Fi，BSSID option is enabled by default. As a result, the device uses a randomly generated BSSID and renews it at each booting. When the random BSSID is disabled, you can use the real MAC.</p>
+<p>Guest Wi-Fi BSSID is consistent with the primary Wi-Fi BSSID in the same band.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
 
