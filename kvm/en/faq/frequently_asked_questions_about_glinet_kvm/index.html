@@ -601,8 +601,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#power-management-related" class="md-nav__link">
-    Power Management Related
+  <a href="#power-control-related" class="md-nav__link">
+    Power Control Related
   </a>
   
 </li>
@@ -1251,8 +1251,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#power-management-related" class="md-nav__link">
-    Power Management Related
+  <a href="#power-control-related" class="md-nav__link">
+    Power Control Related
   </a>
   
 </li>
@@ -1304,39 +1304,43 @@
 <hr />
 <p><strong>Q2. Do I need to install any software to use KVM?</strong></p>
 <p>A2. No software is required to be installed on the controlled device. </p>
+<p>As to the controlling device, whether software needs to be installed on it depends on the way you want to access the controlled device.</p>
 <ul>
 <li>
-<p>When accessing the controlled device in the local area network (LAN), you can directly launch a browser on the controlling PC to access the KVM control panel; </p>
+<p>Local Access</p>
+<p>If you want to access the controlled device in the local area network (LAN), you can directly launch a browser on the controlling PC, enter <code>glkvm.local</code> in the address bar to access the glkvm local management page. No need to install any sofeware on the controlling device.</p>
 </li>
 <li>
-<p>For remote access, you need to install the GLKVM application on the controlling device, so as to access KVM and the controlled device.</p>
+<p>Remote Access</p>
+<p>If your controlling device is Windows or macOS, you can install the <a href="https://www.gl-inet.com/app-rm/" target="_blank">GLKVM application</a> on it to remotely access GL.iNet KVM and the controlled device. </p>
+<p>Alternatively, if you cannot or don't want to install GLKVM application, you may use <strong>Tailscale</strong> to achieve remote access, which is integrated in Comet (GL-RM1). In this way, simply type Comet's Tailscale virtual IP into a browser, you can directly access Comet and the controlled device without installing GLKVM app.</p>
 </li>
 </ul>
 <hr />
-<p><strong>Q3. How do I access the device connected to GL-RM1 (Comet)? Through Web or a seperate application?</strong></p>
-<p>A3. There are two methods: web or Application.</p>
+<p><strong>Q3. How do I access the GL.iNet KVM and the controlled device connected to it?</strong></p>
+<p>A3. Take GL-RM1 (Comet) as an example. There are three ways to access the GL-RM1 and the controlled device: </p>
 <ul>
-<li>
-<p>Web is suitable for local LAN access, which means that the controlling devices and Comet need to be connected to the same LAN. Then enter "glkvm.local" on the web browser, you will be taken to the local management page. Alternatively, search for Comet's LAN IP address through the router, enter its IP address in the browser, it will take you to the local management page as well.</p>
-</li>
-<li>
-<p>Application is suitable for remote access. Install the GLKVM application on the controlling device, so as to access KVM and the controlled device.</p>
-</li>
+<li>Local access via Web browser</li>
+<li>Remote access via GLKVM application</li>
+<li>Remote access via Tailscale</li>
 </ul>
+<p>Click <a href="../how_to_access_the_controlled_device_connected_to_kvm/">here</a> for more details.</p>
 <hr />
-<p><strong>Q4. Do I need open ports for Comet to work (exposed to WAN) when accessing KVM from remote location?</strong></p>
+<p><strong>Q4. Do I need to open ports (exposed to WAN) for GL.iNet KVM to achieve remote access?</strong></p>
 <p>A4. No. No open ports or even a public IP is needed.</p>
 <hr />
-<p><strong>Q5. Does it support Chrome OS?</strong></p>
-<p>A5. The GLKVM application currently does not support installation on Chrome OS, so if your controlling device is running Chrome OS, remote access to KVM is not supported. However, you can locally access the controlled device through a web browser in the local LAN network.</p>
+<p><strong>Q5. Does GLKVM application support ChromeOS/Linux?</strong></p>
+<p>A5. No. Currently the GLKVM app does not support installation on Chrome or Linux OS. </p>
+<p>If your controlling device is running Chrome/Linux OS, the GLKVM app cannot be installed, thus remote access to controlled device via GLKVM app is not supported.</p>
+<p>However, you may use <strong>Tailscale</strong> to achieve remote access, which is integrated in Comet (GL-RM1). In this way, you can directly access Comet by typing its Tailscale virtual IP into a browser, without installing GLKVM app.</p>
+<p>Alternatively, you can locally access the controlled device through a web browser in the local LAN network.</p>
+<p>As to the remotely-controlled device, no need to install any software on it. That is to say, it can be Windows, macOS, ChromeOS, Linux, etc.</p>
 <hr />
-<p><strong>Q6. Does it support Linux OS?</strong></p>
-<p>A6. Controlled devices running Linux operating system can be remotely accessed and controlled. If the controlling device runs Linux, installing the desktop application GLKVM is not supported, you can only access the controlled device using a web browser in the local LAN network.</p>
-<hr />
-<p><strong>Q7. Can GL.iNet KVM connect to wireless network?</strong></p>
+<p><strong>Q7. Can GL-RM1 (Comet) connect to wireless network?</strong></p>
 <p>A7. GL-RM1 (Comet) does not support connecting to wireless network.</p>
+<p>You need to connect it to a network device (such as a router) via an Ethernet cable to get Internet access.</p>
 <hr />
-<h2 id="power-management-related">Power Management Related<a class="headerlink" href="#power-management-related" title="Permanent link">&para;</a></h2>
+<h2 id="power-control-related">Power Control Related<a class="headerlink" href="#power-control-related" title="Permanent link">&para;</a></h2>
 <p><strong>Q1. Can GL.iNet KVM control the power of a computer?</strong></p>
 <p>A1. Sure. You can control the power of the controlled devices in the following ways:</p>
 <ul>
@@ -1351,8 +1355,8 @@
 </li>
 </ul>
 <hr />
-<p><strong>Q2. How to use ATX Board for remote power management?</strong></p>
-<p>A2. Please refer to this <a href="https://docs.gl-inet.com/kvm/en/user_guide/gl-rm1/#atx-package">User Guide</a>.</p>
+<p><strong>Q2. How to use ATX Board for remote power control?</strong></p>
+<p>A2. Please refer to <a href="https://docs.gl-inet.com/kvm/en/user_guide/gl-rm1/#atx-package">this tutorial</a>.</p>
 <hr />
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <p><strong>Q1. Do I have to use KVM cloud service?</strong></p>
@@ -1366,10 +1370,12 @@
 <hr />
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p><strong>Q1. Why can't I control the keyboard and mouse even if I have all wires connected?</strong></p>
-<p>A1. Please confirm that the cable used is capable of data transmission, otherwise it will not be able to control the keyboard and mouse.</p>
+<p>A1. Please refer to <a href="../cannot_control_the_mouse/">this document</a>.</p>
 <hr />
-<p><strong>Q2. Why can't my mouse cursor overlap with that on the controlled device screen when using macOS to remotely connect to KVM?</strong></p>
-<p>A2. You can modify the resolution of the controlled computer to the appropriate parameters, or modify the EDID of the KVM to adjust it.</p>
+<p><strong>Q2. Why can't my mouse cursor overlap with that on the controlled device screen?</strong></p>
+<p>A2. It usually happens when the controlled device is macOS.</p>
+<p>You can modify the resolution of the controlled device to the appropriate parameters (recommended), or modify the EDID of the KVM to adjust it.</p>
+<p>Click <a href="../how_to_fix_mouse_cursor_overlay_issue_on_macOS/">here</a> for more instructions.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
