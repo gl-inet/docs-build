@@ -1727,21 +1727,21 @@
 </li>
 </ol>
 <p><strong>Method 2</strong>. via Tailscale</p>
-<p>You can bind Comet to your Tailscale account, add it into your Tailscale virtual network. </p>
-<p>In this way, you can directly access Comet by typing its Tailscale virtual IP into a web browser on the controlling device, without installing GLKVM app.</p>
+<p>Comet integrates with Tailscale since firmware v1.1.0, allowing you to bind it to the Tailscale virtual network for remote access.</p>
+<p>In Comet's control panel, navigate to Apps Center -&gt; Tailscale, bind Comet to your Tailscale account, then you can remotely access it by typing its Tailscale virtual IP into a web browser on the controlling device, without installing GLKVM app.</p>
 <p>More instructions about Tailscale, please refer to <a class="_blank" href="https://tailscale.com/kb">Tailscale documentation</a>.</p>
 <h2 id="function-introduction">Function Introduction<a class="headerlink" href="#function-introduction" title="Permanent link">&para;</a></h2>
 <h3 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h3>
-<p>Move to the top navigation bar, click <strong>Settings</strong>, you will get a page as below.</p>
+<p>In the Comet's control page, navigate to <strong>Settings</strong>, you will get a page as below.</p>
 <p><img alt="settings" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/settings.png" /></p>
 <ul>
 <li>
 <p>Video</p>
-<p>You can modify the video quality, orientation and EDID of GL-RM1 control page. </p>
+<p>You can modify the video quality, orientation and EDID settings of Comet's control page. </p>
 <ul>
 <li>Quality: Adjust the video quality to low/medium/high according to your network and resolution requirements.</li>
-<li>Orientation: Adjust the rotation degree of GL-RM1 control page.</li>
-<li>EDID: Extended Display Identification Data. It aims to automatically match the display optimal parameters. The default configuration is suitable for most scenarios and usually does not need to be modified. Refer to <a href="https://docs.gl-inet.com/kvm/en/faq/how_to_set_edid_for_glkvm/" target="_blank">this link</a> for more details.</li>
+<li>Orientation: Adjust the control page rotation degree.</li>
+<li>EDID: Extended Display Identification Data. It aims to automatically match the display optimal parameters. The default configuration is suitable for most scenarios and usually does not need to be modified. Click <a href="https://docs.gl-inet.com/kvm/en/faq/how_to_set_edid_for_glkvm/" target="_blank">here</a> for details.</li>
 </ul>
 </li>
 <li>
@@ -1765,83 +1765,88 @@
 </li>
 </ul>
 <h3 id="toolbox">Toolbox<a class="headerlink" href="#toolbox" title="Permanent link">&para;</a></h3>
-<p>In the top navigation bar, click  <strong>Toolbox</strong>.</p>
+<p>In the Comet's control page, navigate to <strong>Toolbox</strong>.</p>
 <p><img alt="toolbox" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/toolbox.png" /></p>
 <ul>
 <li>
 <p>Clipboard</p>
-<p>The clipboard allows you to paste the text content of the control end into the controlled device.</p>
+<p>The clipboard allows you to easily paste text from the controlling device to the controlled device, without the need to transfer files.</p>
 </li>
 <li>
 <p>Shortcut</p>
-<p>Here are some common shortcut key options. Click "ALL" to show all options.</p>
+<p>It shows some common shortcut key options. Click "ALL" to show all options.</p>
 <p><img alt="all shortcuts" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/shortcut_all.png" />  </p>
 </li>
 <li>
 <p>Wake On Lan</p>
-<p>Wake on LAN (WOL) is a technology that allows the controoled device to be remotely powered on or awakened from a low-power state.</p>
+<p>Wake on LAN (WOL) is a technology that allows the controlled device to be remotely powered on or awakened from a low-power state.</p>
 <p>Click Add Device to set it up.</p>
 </li>
 <li>
 <p>Terminal</p>
-<p>Access Terminal: You can access the terminal of GL-RM1 through this function.</p>
+<p>Access Terminal: You can access the terminal of Comet through this function.</p>
 <p><img alt="access terminal" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/access_terminal.png" /> </p>
 </li>
 </ul>
 <h3 id="accessories">Accessories<a class="headerlink" href="#accessories" title="Permanent link">&para;</a></h3>
-<p>GL.iNet provides optional accessories, which you can connect to the GL-RM1 for use.</p>
-<p>In the top navigation bar, click  <strong>Accessories</strong>.</p>
+<p>GL.iNet offers optional accessories for KVM devices to provide additional convenience for remote management. </p>
+<p>Firstly, connect the accessories to the controlled device. For Fingerbot, please click <a href="#fingerbot">here</a>. For ATX board, please click <a href="https://docs.gl-inet.com/kvm/en/user_guide/gl-atx-board/" target="_blank">here</a>.</p>
+<p>Then log in to the Comet's control page, navigate to <strong>Accessories</strong>. </p>
 <p><img alt="accessories" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/accessories.png" /></p>
+<p><strong>Note</strong>: Accessory settings are only displayed after installation.</p>
 <ul>
 <li>
 <p>Fingerbot</p>
-<p>The FingerBot is an optional accessory. Acting as a physical button emulator, it is designed to enable remote control of physical power button on the controlled device.</p>
+<p>The Fingerbot is adhered to the physical power button of the controlled device, to achieve remote control of the controlled device's power supply.</p>
+<p>It works as per the following settings.</p>
 <ul>
 <li>Time: The duration for which the Fingerbot presses.</li>
 <li>Strength: Two levels of pressing strength are provided.</li>
 </ul>
-<p>Click <a href="#fingerbot">here</a> to find more details about FingerBot.</p>
 </li>
 <li>
 <p>ATX Power</p>
-<p>The ATX Board is another optional accessory. It is installed in the computer host box, enabling remote control of the controlled device's power supply (power on/off/reboot).</p>
+<p>The ATX Board is installed in the computer host box to achieve remote control of the controlled device's power on/off/reboot.</p>
+<p>It works as per the following settings.</p>
 <ul>
 <li>Power: Provides short press and long press functions.</li>
 <li>Restart: Restart the device.</li>
 </ul>
-<p>Click <a href="https://docs.gl-inet.com/kvm/en/user_guide/gl-atx-board/" target="_blank">here</a> to find more details about ATX board.</p>
 </li>
 </ul>
 <h3 id="virtual-media">Virtual Media<a class="headerlink" href="#virtual-media" title="Permanent link">&para;</a></h3>
-<p>GL-RM1 allows you to transfer files from the host to GL-RM1, and then from GL-RM1 to the controlled device.</p>
+<p>Comet allows you to transfer files between the host controlling device and the controlled device.</p>
 <p>In the top navigation bar, click  <strong>Virtual Media</strong>.</p>
 <p><img alt="virtual media" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/virtual_media.png" /></p>
-<p>You can drag or click the box to upload files from host or from URL. As an example, two images were uploaded from the host to the GL-RM1 here.</p>
+<p>Drag or click the box to upload files from host, or upload from URL. </p>
+<p>As an example, two images were uploaded from the host controlling device to the Comet here.</p>
 <p><img alt="upload files" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/upload_files_example.png" /></p>
-<p>You can perform operations such as deletion and download.</p>
 <p>Click <strong>Mount To Remote</strong>, two options are provided: <strong>File Sharing</strong> and <strong>Image Mounting</strong>.</p>
 <ul>
 <li>
-<p>File Sharing: Emulates a read-write USB drive. Upload the files to the KVM (GL-RM1) and transfer from the host to the remoted device.</p>
+<p>File Sharing: Emulates a read-write USB drive. Upload the files from the host to the Comet and transfer to the controlled device.</p>
 <p>Click "File Sharing", a window will pop up in the upper right corner of the control page.</p>
 <p><img alt="file sharing 1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/file_sharing.png" /></p>
-<p>Check the GL-RM1 control page, go to "This PC" of your controlled device, you will see a Drive named "GLKVM(F:)". Now you can view, move or delete the files in this drive.</p>
+<p>Then turn to the Comet's control page, go to "This PC" of your controlled device, you will see a Drive named "GLKVM(F:)". </p>
+<p>Now you can view, move or delete the files in this drive.</p>
 <p><img alt="file sharing 2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/file_sharing_2.jpg" /></p>
 </li>
 <li>
 <p>Image Mounting: Emulates a read-only CD-Rom, supports BIOS/UEFI boot, for system reinstallation or ISO-based software installation.</p>
-<p>GL-RM1 can simulate a read-only virtual CD/DVD or disk drive on the target host. You can access this drive during the BIOS or UEFI startup process. This function can help you reinstall the operating system or mount an ISO to install applications on the target host and other tasks.</p>
+<p>Comet can simulate a read-only virtual CD/DVD or disk drive on the target host. You can access this drive during the BIOS or UEFI startup process. </p>
+<p>This function can help you reinstall the operating system or mount an ISO to install applications on the target host and other tasks.</p>
 <p>Click "Image Mounting", in the Mount Settings, select the image you need and click "Mount Image". The image will be mounting. </p>
 <p><img alt="image mounting" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/image_mounting.png" /></p>
 <p>Then you can use this file on the controlled end.</p>
 </li>
 </ul>
 <h3 id="apps-center">Apps Center<a class="headerlink" href="#apps-center" title="Permanent link">&para;</a></h3>
-<p>In the top navigation bar, click  <strong>Apps Center</strong>.</p>
+<p>In the top navigation bar, click <strong>Apps Center</strong>, the integrated applications can be found here.</p>
 <p><img alt="image mounting" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/apps_center.png" /></p>
 <h4 id="tailscale">Tailscale<a class="headerlink" href="#tailscale" title="Permanent link">&para;</a></h4>
 <p>This feature is available since firmware v1.1.0</p>
-<p>Bind Comet to your own Tailscale account, then you can remotly access it by its Tailscale virtual IP.</p>
+<p>Comet integrates with Tailscale, allowing you to bind it to the Tailscale virtual network for remote access.</p>
+<p>In Comet's control panel, navigate to Apps Center -&gt; Tailscale, bind Comet to your Tailscale account, then you can remotely access it by typing its Tailscale virtual IP into a web browser on the controlling device, without installing GLKVM app.</p>
 <p>More instructions about Tailscale, please refer to <a class="_blank" href="https://tailscale.com/kb">Tailscale documentation</a>.</p>
 <h3 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h3>
 <p>Here you can find more information about GL.iNet KVM, or export log for troubleshooting.</p>
@@ -1857,7 +1862,7 @@
 <li>
 <p>Cloud Service</p>
 <p>GL.iNet KVM panel can be accessed locally, so as to manage the controlled device under local network. Click <a href="#local-access-to-the-controlled-device">here</a> for more details.</p>
-<p>If you want to access the controlled device remotely, please download the App to use Cloud service.</p>
+<p>If you want to access the controlled device remotely, we suggest you download the App to use Cloud service.</p>
 <p><img alt="cloud service" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/cloud_service.png" /></p>
 </li>
 <li>
@@ -1874,14 +1879,15 @@
 </li>
 </ul>
 <h2 id="accessories_1">Accessories<a class="headerlink" href="#accessories_1" title="Permanent link">&para;</a></h2>
-<p>GL.iNet provides standard accessories that you can connect to the GL-RM1.</p>
+<p>GL.iNet offers optional accessories for KVM devices to provide additional convenience for remote management.</p>
 <h3 id="fingerbot">FingerBot<a class="headerlink" href="#fingerbot" title="Permanent link">&para;</a></h3>
 <p>The FingerBot, acting as a physical button emulator, is designed to enable remote control of physical power button on the controlled device. </p>
-<p>Remove the cover above the FingerBot to find a USB wireless receiver, and insert it into the USB port of GL-RM1. Then attach the FingerBot to the physical power button of the controlled device, it will be able to remote control the ON/OFF of the controlled device by physically pressing the power button.</p>
-<p>Then you can log in to GL-RM1, go to <a href="#accessories">Accessories</a> to set the FingerBot.</p>
+<p>Remove the cover above the FingerBot to find a USB wireless receiver, and insert it into the USB port of Comet. </p>
+<p>Then attach the Fingerbot to the controlled device, ensure that the robotic arm of the Fingerbot can reach the physical power button of the controlled device when pressed downward, so as to achieve control of the power supply of the controlled device.</p>
+<p>Then you can log in to Comet's control page, go to <a href="#accessories">Accessories</a> to set the FingerBot.</p>
 <p><strong>Note</strong>: This product is not available yet.</p>
 <h3 id="atx-board">ATX Board<a class="headerlink" href="#atx-board" title="Permanent link">&para;</a></h3>
-<p>The ATX Board is an optional accessory. Like a smart power management module, it enables remote control of the controlled device's power supply by simulating physical power button operations (power on/off/reboot). </p>
+<p>The ATX Board, acting as a smart power management module, enables remote control of the controlled device's power supply by simulating physical power button operations (power on/off/reboot). </p>
 <p>Unlike the FingerBot, which controls device through physical button presses, the ATX main board will be directly installed in the controlled device's host box, providing more concealed and stable power management.</p>
 <p>Please refer to <a href="https://docs.gl-inet.com/kvm/en/user_guide/gl-atx-board/" target="_blank">GL-ATX Board User Guide</a> for details.</p>
 <hr />
