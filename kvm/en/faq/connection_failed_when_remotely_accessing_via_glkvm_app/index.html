@@ -12,13 +12,13 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/kvm/en/faq/how_to_fix_mouse_cursor_overlay_issue_on_macOS/">
+        <link rel="canonical" href="https://docs.gl-inet.com/kvm/en/faq/connection_failed_when_remotely_accessing_via_glkvm_app/">
       
       
-        <link rel="prev" href="../cannot_control_the_mouse/">
+        <link rel="prev" href="../what_to_do_if_no_device_is_found_in_the_glkvm_app/">
       
       
-        <link rel="next" href="../how_to_set_edid_for_glkvm/">
+        <link rel="next" href="../cannot_control_the_mouse/">
       
       
       <link rel="icon" href="../../images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>How to Fix Mouse Cursor Overlay Issue on macOS - GL.iNet KVM Docs</title>
+        <title>Connection failed when remotely accessing via GLKVM application - GL.iNet KVM Docs</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-fix-mouse-cursor-overlay-issue-on-macos" class="md-skip">
+        <a href="#connection-failed-when-remotely-accessing-via-glkvm-application" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How to Fix Mouse Cursor Overlay Issue on macOS
+              Connection failed when remotely accessing via GLKVM application
             
           </span>
         </div>
@@ -936,9 +936,18 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../connection_failed_when_remotely_accessing_via_glkvm_app/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -947,6 +956,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -976,18 +986,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../how_to_fix_mouse_cursor_overlay_issue_on_macOS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -996,7 +997,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1269,16 +1269,25 @@
   
 
   <!-- Markdown content -->
-  <h1 id="how-to-fix-mouse-cursor-overlay-issue-on-macos">How to Fix Mouse Cursor Overlay Issue on macOS?<a class="headerlink" href="#how-to-fix-mouse-cursor-overlay-issue-on-macos" title="Permanent link">&para;</a></h1>
-<p>When using GL-RM1, you may get the issue that the mouse cursor of the controlling device can't be superimposed on the controlled macOS device.</p>
-<p><img alt="mouse cursor cannot be superimposed" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/kvm/faq/mouse_cursor_overlay_issue/mouse_cursor_cannot_be_superimposed.png" /></p>
-<p>It's related to the display resolution. The macOS resolution is different from that of GLKVM.</p>
-<p>Please go to the Settings -&gt; Displays -&gt; Optimize for.</p>
-<p><img alt="settings" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/kvm/faq/mouse_cursor_overlay_issue/mac_settings.png" /></p>
-<p>Change it to <strong>GLKVM</strong>.</p>
-<p><img alt="select glkvm" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/kvm/faq/mouse_cursor_overlay_issue/select_glkvm.png" /></p>
-<p>Choose the Resolution you prefer, and you’ll find the mouse cursor is superimposed. Then you can enjoy using it.</p>
-<p><img alt="resolution" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/kvm/faq/mouse_cursor_overlay_issue/resolution.png" /></p>
+  <h1 id="connection-failed-when-remotely-accessing-via-glkvm-application">Connection failed when remotely accessing via GLKVM application<a class="headerlink" href="#connection-failed-when-remotely-accessing-via-glkvm-application" title="Permanent link">&para;</a></h1>
+<p>When accessing remotely through the GLKVM app, sometimes you may encounter a problem where the KVM device displays Online in the GLKVM app, but when clicked, it shows "Connection Failed".</p>
+<p><img alt="device online" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/connection_failed_when_remotely_accessing_via_glkvm/device.jpg" /></p>
+<p><img alt="connecting" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/connection_failed_when_remotely_accessing_via_glkvm/connecting.png" /></p>
+<p><img alt="connection failed" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/connection_failed_when_remotely_accessing_via_glkvm/connection_failed.png" /></p>
+<p>Here are some troubleshooting tips:</p>
+<ol>
+<li>
+<p>Make sure the KVM is connected to the Internet. A solid-white LED indicates normal network connectivity.</p>
+<p>For LED explanation of Comet (GL-RM1), please click <a href="../../user_guide/gl-rm1/#led" target="_blank">here</a>.</p>
+</li>
+<li>
+<p>Check whether the controlling device (on which the GLKVM app is installed) has VPN enabled. Disable the VPN and try finding device again.</p>
+</li>
+<li>
+<p>Check whether the local firewall of the controlling device blocks the GLKVM app's access to the Internet, or intercepts GL.iNet-related domains' traffic (such as goodcloud.xyz, gl-inet.net, astrowarp.net, etc.). </p>
+<p>Disable the local firewall or add GL.iNet-related domains into the firewall allowlist, then try again.</p>
+</li>
+</ol>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
