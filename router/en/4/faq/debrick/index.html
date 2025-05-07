@@ -1440,22 +1440,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#windows-7-windows-10" class="md-nav__link">
-    Windows 7 / Windows 10
+  <a href="#preparation" class="md-nav__link">
+    Preparation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#windows-11" class="md-nav__link">
-    Windows 11
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
+  <a href="#debrick-steps" class="md-nav__link">
+    Debrick Steps
   </a>
   
 </li>
@@ -5668,22 +5661,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#windows-7-windows-10" class="md-nav__link">
-    Windows 7 / Windows 10
+  <a href="#preparation" class="md-nav__link">
+    Preparation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#windows-11" class="md-nav__link">
-    Windows 11
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
+  <a href="#debrick-steps" class="md-nav__link">
+    Debrick Steps
   </a>
   
 </li>
@@ -5716,15 +5702,17 @@
 <p>You may have bricked your router if you were doing some DIY projects or flashed a wrong firmware. You may not be able to access your router but you can re-install the firmware by using Uboot failsafe.</p>
 <p><strong>Note:</strong> The Uboot operation will remove your router's settings and installed plugins.</p>
 <hr />
-<p>Please prepare a computer with an ethernet port, if not, please prepare an additional USB Ethernet Adapter.</p>
+<h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
+<p>Please prepare a computer with an ethernet port. If your computer does not have ethernet port, please prepare an additional USB Ethernet Adapter.</p>
+<h2 id="debrick-steps">Debrick Steps<a class="headerlink" href="#debrick-steps" title="Permanent link">&para;</a></h2>
 <p>Please follow the procedures below to access the Uboot Web UI and re-install the firmware.</p>
 <p>You can also refer to video tutorial below.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/EAaaw8nyrnE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <ol>
 <li>
-<p>Please download firmware <a href="https://dl.gl-inet.com/" target="_blank">here</a> to your computer.</p>
-<p>Some models, such as GL-AR750S-EXT, is available in two formats of firmware, please use the firmware for Uboot, its file name extension is <strong>.img</strong>.</p>
+<p>Download firmware <a href="https://dl.gl-inet.com/" target="_blank">here</a> to your computer.</p>
+<p>Some models, such as GL-AR750S-EXT, are available in two formats of firmware. Please use the firmware for Uboot, whose file name extension is <strong>.img</strong>.</p>
 </li>
 <li>
 <p>Remove the power of router. Connect your computer to the <strong>Ethernet LAN port</strong> of the router. You <strong>MUST</strong> leave all the other ports <strong>unconnected</strong>.</p>
@@ -5734,11 +5722,19 @@
 </div>
 </li>
 <li>
-<p>Press and hold the Reset button firmly, and then power up the router. If your router doesn't have a power button, plugging the power in will power it on automatically.</p>
-<p>Then you will see a LED flashing in a regular sequence a few times, please release your finger after the sequence changes.</p>
+<p>Press and hold the Reset button firmly, <strong>at the same time power up the router</strong>. If your router doesn't have a power button, plugging the power in will power it on automatically.</p>
+<p>Then you will see a LED flashing in a regular sequence a few times, please release your finger <strong>after</strong> the sequence changes.</p>
 <p>The following will give the description of sequence of each model of LED flashing.</p>
 <p><strong>Note:</strong> Same router models with different manufacturing dates may have different LED colours or flashing sequences, it won't affect the UBoot process. Please pay more attention to the change of the flashing LED.</p>
 <ul>
+<li>
+<p>For <strong>GL-BE3600(Slate 7)</strong>, after holding down the reset button for about 5 seconds, a 5-second countdown will appear on the LED display. Keep pressing the reset button until the next step is displayed on the screen:</p>
+<ol>
+<li>Manually set the IP address of your computer to 192.168.1.2</li>
+<li>Use browser to visit  http://192.168.1.1</li>
+</ol>
+<p>Turn to Step 4 for further instruction.</p>
+</li>
 <li>
 <p>For <strong>GL-B3000(Marble)</strong>, the blue LED light flashes 7 times, then the white light turns on and stays on.</p>
 </li>
@@ -5816,7 +5812,6 @@
 <p>Manually set the IP address of your computer to <strong>192.168.1.2</strong>. Please check the step-by-step guide for different operating systems below:</p>
 <details>
 <summary>Windows 7 / Windows 10</summary>
-<h2 id="windows-7-windows-10">Windows 7 / Windows 10<a class="headerlink" href="#windows-7-windows-10" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Go to <strong>Control Panel</strong> -&gt; <strong>Network and Internet</strong> -&gt; <strong>Network and Sharing Center</strong> -&gt; <strong>Change adapter settings</strong>.</p>
@@ -5841,7 +5836,6 @@
 </details>
 <details>
 <summary>Windows 11</summary>
-<h2 id="windows-11">Windows 11<a class="headerlink" href="#windows-11" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Open Settings.</p>
@@ -5878,7 +5872,6 @@
 </details>
 <details>
 <summary>macOS</summary>
-<h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Click the <strong>Apple</strong> icon in the top left corner of the screen, and select <strong>System Preferences</strong>.</p>
@@ -5900,7 +5893,7 @@
 </details>
 </li>
 <li>
-<p>Use browser to visit <strong>http://192.168.1.1</strong>, this is the Uboot Web UI.</p>
+<p>Use browser to visit <strong>http://192.168.1.1</strong>. This is the Uboot Web UI.</p>
 <p><img alt="Uboot web ui" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/debrick/uboot_ui.png" width="700" /></p>
 <p><strong>Note:</strong> The Uboot Web UI above may not be exactly the same as what you see, because the Uboot version is different for different production dates. In some extreme cases, we recommend upgrading the Uboot version. Please refer to the tutorial <a href="../upgrade_uboot_version/">here</a>.</p>
 </li>
