@@ -2140,11 +2140,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/i_must_use_ethernet_wan_when_use_vpn/" class="md-nav__link">
+      <a href="../../faq/do_i_have_to_configure_ethernet_wan_when_using_vpn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    I must use Ethernet WAN when use VPN?
+    Do I have to configure Ethernet WAN when using VPN?
   </span>
   
 
@@ -2189,8 +2189,6 @@
   
     
     
-      
-        
       
         
       
@@ -2257,26 +2255,6 @@
   
   <span class="md-ellipsis">
     Upgrade to firmware v4.x
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../faq/gl-ax1800_upgrade_to_4/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Upgrade GL-AX1800 to firmware v4.x
   </span>
   
 
@@ -4466,8 +4444,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#make-sure-internet-service-provider-assigns-you-a-public-ip-address" class="md-nav__link">
-    Make sure Internet Service Provider assigns you a public IP address
+  <a href="#make-sure-you-have-a-public-ip-address" class="md-nav__link">
+    Make sure you have a public IP address
   </a>
   
 </li>
@@ -5722,8 +5700,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#make-sure-internet-service-provider-assigns-you-a-public-ip-address" class="md-nav__link">
-    Make sure Internet Service Provider assigns you a public IP address
+  <a href="#make-sure-you-have-a-public-ip-address" class="md-nav__link">
+    Make sure you have a public IP address
   </a>
   
 </li>
@@ -5826,12 +5804,15 @@
 <p>OpenVPN is an open-source VPN protocol that makes use of virtual private network (VPN) techniques to establish safe site-to-site or point-to-point connections. </p>
 <p>We recommend WireGuard over OpenVPN because it is much faster. For setup a WireGuard Server, please check out <a href="../wireguard_server/">here</a>.</p>
 <hr />
-<h2 id="make-sure-internet-service-provider-assigns-you-a-public-ip-address">Make sure Internet Service Provider assigns you a public IP address<a class="headerlink" href="#make-sure-internet-service-provider-assigns-you-a-public-ip-address" title="Permanent link">&para;</a></h2>
-<p>Please check if you Internet Service Provider assigns you a public IP address <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">here</a>.</p>
-<p><strong>If not, you can't connect to the OpenVPN Server.</strong></p>
-<p>Alternative methods:
-* To use a SDWAN solution, we suggest <a href="https://www.astrowarp.net" target="_blank">AstroWarp</a>.
-* To use a reverse proxy solution, we suggest <a href="https://www.astrorelay.com" target="_blank">AstroRelay</a>, check the tutorial <a href="../../tutorials/how_to_set_up_wireguard_server_via_astrorelay/">here</a>.</p>
+<h2 id="make-sure-you-have-a-public-ip-address">Make sure you have a public IP address<a class="headerlink" href="#make-sure-you-have-a-public-ip-address" title="Permanent link">&para;</a></h2>
+<p>Please check if your Internet Service Provider assigns you a public IP address <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">here</a>.</p>
+<p><strong>If not, your router cannot be set as the OpenVPN Server.</strong></p>
+<p>Alternative methods:</p>
+<ol>
+<li>If you have a main router, you shall login to it and check if it gets the Public IP from your ISP.</li>
+<li>Ask your ISP for a Public IP address. It may require an extra fee.</li>
+<li>If the above two ways don't work, for example, if you are in a CGNAT, you can take the reverse proxy method such as <a href="../../tutorials/how_to_set_up_wireguard_server_via_astrorelay/">Astrorelay</a>. Alternatively, you may try an SDWAN solution - <a href="https://www.astrowarp.net/">AstroWarp</a>. </li>
+</ol>
 <h2 id="network-topology">Network Topology<a class="headerlink" href="#network-topology" title="Permanent link">&para;</a></h2>
 <h3 id="confirm-you-need-to-do-port-forwarding-or-not">Confirm you need to do Port Forwarding or not?<a class="headerlink" href="#confirm-you-need-to-do-port-forwarding-or-not" title="Permanent link">&para;</a></h3>
 <details>
