@@ -2684,7 +2684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build_your_own_openvpn_home_server_with_two_glrouter/" class="md-nav__link">
+      <a href="../how_to_set_up_openvpn_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3424,11 +3424,25 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#other-router-brands-as-my-primary-router" class="md-nav__link">
-    Other router brands as my primary router
+  <a href="#preperation" class="md-nav__link">
+    Preperation
   </a>
   
-    <nav class="md-nav" aria-label="Other router brands as my primary router">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-a-glinet-router-as-your-primary-router" class="md-nav__link">
+    Using a GL.iNet Router as Your Primary Router
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-another-router-brand-as-your-primary-router" class="md-nav__link">
+    Using Another Router Brand as Your Primary Router
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Another Router Brand as Your Primary Router">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5702,11 +5716,25 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#other-router-brands-as-my-primary-router" class="md-nav__link">
-    Other router brands as my primary router
+  <a href="#preperation" class="md-nav__link">
+    Preperation
   </a>
   
-    <nav class="md-nav" aria-label="Other router brands as my primary router">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-a-glinet-router-as-your-primary-router" class="md-nav__link">
+    Using a GL.iNet Router as Your Primary Router
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-another-router-brand-as-your-primary-router" class="md-nav__link">
+    Using Another Router Brand as Your Primary Router
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Another Router Brand as Your Primary Router">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5781,19 +5809,25 @@
 
   <!-- Markdown content -->
   <h1 id="how-to-set-up-port-forwarding-on-your-primary-router">How to set up port forwarding on your primary router<a class="headerlink" href="#how-to-set-up-port-forwarding-on-your-primary-router" title="Permanent link">&para;</a></h1>
-<p>If you are setting up a server (such as an <a href="https://docs.gl-inet.com/router/en/4/tutorials/build_your_own_openvpn_home_server_with_two_glrouter/">OpenVPN server</a> or <a href="https://docs.gl-inet.com/router/en/4/tutorials/build_your_own_wireguard_home_server_with_two_glinet_routers/">WireGuard server</a>) on your GL.iNet router and it is connected to a primary router, you will have to set up port forwarding on the primary router. This ensures the server to be accessible properly. (Note that if there are other routers between the primary router and the GL.iNet router, you will have set up port forwarding on all these preceding routers.)</p>
-<p>The steps for setting up port forwarding vary depending on the brand and model of your router. Refer to the section appropriate to you below. </p>
-<h2 id="other-router-brands-as-my-primary-router">Other router brands as my primary router<a class="headerlink" href="#other-router-brands-as-my-primary-router" title="Permanent link">&para;</a></h2>
+<p>If you are setting up a server (such as an <a href="https://docs.gl-inet.com/router/en/4/tutorials/build_your_own_openvpn_home_server_with_two_glrouter/">OpenVPN server</a> or <a href="https://docs.gl-inet.com/router/en/4/tutorials/build_your_own_wireguard_home_server_with_two_glinet_routers/">WireGuard server</a>) on your GL.iNet router and it is connected to a primary router, you will have to set up port forwarding on the primary router. This ensures the server to be accessible properly. (Note that if there are other routers between the primary router and the GL.iNet router, you have to set up port forwarding on all these preceding routers.)</p>
+<h2 id="preperation">Preperation<a class="headerlink" href="#preperation" title="Permanent link">&para;</a></h2>
+<p>Before configuring port forwarding, we recommend <strong>reserving a static IP address</strong> for the GL.iNet router on your primary router. This ensures the GL.iNet router is always assigned a fixed IP address. </p>
+<p>Otherwise, if the primary router or GL.iNet router restarts, the primary router may assign a new IP address to the GL.iNet router, causing the port forwarding rule to fail. </p>
+<p>Next, set up port forwarding on your primary router for the GL.iNet router. </p>
+<p>The steps for configuring port forwarding vary by router brand and model. Refer to the appropriate section below.</p>
+<h2 id="using-a-glinet-router-as-your-primary-router">Using a GL.iNet Router as Your Primary Router<a class="headerlink" href="#using-a-glinet-router-as-your-primary-router" title="Permanent link">&para;</a></h2>
+<p>Please refer to <a href="../../interface_guide/port_forwarding/" target="_blank">this link</a>.</p>
+<h2 id="using-another-router-brand-as-your-primary-router">Using Another Router Brand as Your Primary Router<a class="headerlink" href="#using-another-router-brand-as-your-primary-router" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
-<p class="admonition-title">Make sure to enter the following information when setting up port forwarding:</p>
-<p>Different router brands and models have different ways of naming the information you have to provide when you set up port forwarding. In general, make sure to enter the following information on the router's port forwarding screen:</p>
+<p class="admonition-title">Make sure to enter the following information when setting up port forwarding</p>
+<p>When configuring port forwarding, ensure the following information is provided. Note that terminology may vary across router brands and models.</p>
 <ul>
 <li><strong>External port/Internal port:</strong> Enter the port you are using. For example, the default ports are <strong>1194</strong> (for OpenVPN servers) and <strong>51820</strong> (for WireGuard servers).</li>
 <li><strong>Protocol:</strong> Choose <strong>All</strong> or <strong>UDP/TCP</strong>.</li>
 <li><strong>Internal IP</strong> (or shown as <strong>Host IP</strong>): Enter your secondary router's WAN IP address or select your secondary router from the dropdown if available. </li>
 </ul>
 </div>
-<p>Here are the instructions for setting up port forwarding on certain router brands and models as your primary router:</p>
+<p>Here are step-by-step instructions for setting up port forwarding on common primary router brands and models. </p>
 <h3 id="att">AT&amp;T<a class="headerlink" href="#att" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://www.att.com/support/article/u-verse-high-speed-internet/KM1010280/">NVG589</a></li>
@@ -5812,7 +5846,7 @@
 <p><a href="https://kb.netgear.com/24290/How-do-I-add-a-custom-port-forwarding-service-on-my-NETGEAR-router">Refer to these instructions.</a></p>
 <h3 id="tp-link">TP-Link<a class="headerlink" href="#tp-link" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.tp-link.com/us/support/faq/1379/">Refer to these instructions.</a></p>
-<p>If you need assistance because your specific router brand or model is not listed above, contact your router manufacturer or the GL.iNet Support Team via email at <a href="mailto:support@glinet.biz">support@glinet.biz</a>.</p>
+<p>If your primary router brand or model is not listed above, refer to your router manufacturer’s documentation or contact their support team for further assistance.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
