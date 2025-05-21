@@ -12,13 +12,13 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/kvm/en/faq/how_to_set_edid_for_glkvm/">
+        <link rel="canonical" href="https://docs.gl-inet.com/kvm/en/faq/display_black_screen_when_using_glkvm/">
       
       
-        <link rel="prev" href="../how_to_fix_mouse_cursor_overlay_issue_on_macOS/">
+        <link rel="prev" href="../can_only_see_desktop_wallpaper_when_using_glkvm/">
       
       
-        <link rel="next" href="../../tutorials/">
+        <link rel="next" href="../how_to_fix_mouse_cursor_overlay_issue_on_macOS/">
       
       
       <link rel="icon" href="../../images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>How to set EDID for GL.iNet KVM - GL.iNet KVM Docs</title>
+        <title>Display black screen when using GLKVM - GL.iNet KVM Docs</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-set-edid-for-glinet-kvm" class="md-skip">
+        <a href="#display-black-screen-when-accessing-the-controlled-device-using-glkvm" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How to set EDID for GL.iNet KVM
+              Display black screen when using GLKVM
             
           </span>
         </div>
@@ -886,6 +886,8 @@
       
         
       
+        
+      
     
     
     
@@ -922,11 +924,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../what_to_do_if_no_device_is_found_in_the_glkvm_app/" class="md-nav__link">
+      <a href="../no_device_is_found_in_the_glkvm_app/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    What to do if no device is found in the GLKVM app
+    No device is found in the GLKVM app
   </span>
   
 
@@ -986,7 +988,7 @@
         
   
   <span class="md-ellipsis">
-    Why can't I control the mouse even if I have all the cables connected
+    Cannot control the mouse
   </span>
   
 
@@ -1006,7 +1008,7 @@
         
   
   <span class="md-ellipsis">
-    Why can't I hear the audio from the controlled device?
+    Cannot hear audio from the controlled device
   </span>
   
 
@@ -1022,11 +1024,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_fix_mouse_cursor_overlay_issue_on_macOS/" class="md-nav__link">
+      <a href="../can_only_see_desktop_wallpaper_when_using_glkvm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    How to fix mouse cursor overlay issue on macOS
+    Can only see desktop wallpaper when using GLKVM
   </span>
   
 
@@ -1055,7 +1057,7 @@
           
   
   <span class="md-ellipsis">
-    How to set EDID for GL.iNet KVM
+    Display black screen when using GLKVM
   </span>
   
 
@@ -1066,7 +1068,7 @@
         
   
   <span class="md-ellipsis">
-    How to set EDID for GL.iNet KVM
+    Display black screen when using GLKVM
   </span>
   
 
@@ -1088,15 +1090,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-edid" class="md-nav__link">
-    What is EDID
+  <a href="#check-hardware-connection" class="md-nav__link">
+    Check Hardware Connection
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-set-edid-for-glinet-kvm_1" class="md-nav__link">
-    How to set EDID for GL.iNet KVM
+  <a href="#check-controlled-device-status-and-settings" class="md-nav__link">
+    Check Controlled Device Status and Settings
   </a>
   
 </li>
@@ -1105,6 +1107,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_fix_mouse_cursor_overlay_issue_on_macOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fix mouse cursor overlay issue on macOS
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1364,15 +1386,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-edid" class="md-nav__link">
-    What is EDID
+  <a href="#check-hardware-connection" class="md-nav__link">
+    Check Hardware Connection
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-set-edid-for-glinet-kvm_1" class="md-nav__link">
-    How to set EDID for GL.iNet KVM
+  <a href="#check-controlled-device-status-and-settings" class="md-nav__link">
+    Check Controlled Device Status and Settings
   </a>
   
 </li>
@@ -1401,37 +1423,55 @@
   
 
   <!-- Markdown content -->
-  <h1 id="how-to-set-edid-for-glinet-kvm">How to set EDID for GL.iNet KVM?<a class="headerlink" href="#how-to-set-edid-for-glinet-kvm" title="Permanent link">&para;</a></h1>
-<h2 id="what-is-edid">What is EDID<a class="headerlink" href="#what-is-edid" title="Permanent link">&para;</a></h2>
-<p>EDID, i.e. Extended Display Identification Data, is a standard data format formulated by the Video Electronics Standards Association (VESA). It is stored in the non-volatile memory of the display and contains key information of the display such as the manufacturer, maximum resolution, refresh rate, etc. Devices like computers can automatically adjust the parameters of the output signal by reading the EDID to ensure that the display shows images in the best state.</p>
-<p>Generally speaking, when devices such as computers, laptops, and game consoles are connected to a display, they will automatically read the EDID to set appropriate display parameters, avoiding problems such as blurry images and flickering, and providing users with a clear and stable visual experience.</p>
-<p>The EDID configuration in GL.iNet KVM aims to automatically match the optimal parameters of the display. When GL.iNet KVM is connected to the controlled device, it can automatically adjust the display output to present the best picture by reading the EDID of the display. </p>
-<h2 id="how-to-set-edid-for-glinet-kvm_1">How to set EDID for GL.iNet KVM<a class="headerlink" href="#how-to-set-edid-for-glinet-kvm_1" title="Permanent link">&para;</a></h2>
-<p>In the GLKVM panel -&gt; Settings -&gt; EDID, there are some preset EDID configuration. </p>
-<p><img alt="edid preset" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/edid_preset.jpg" /></p>
-<p><strong>The default EDID configuration of GL.iNet KVM is already suitable for most scenarios and usually does not need to be modified</strong>.</p>
-<p>In case of special situations, such as to configure UEFI/BIOS or customize the resolution/refresh rate, you can select a preset value, e.g., 1920×1280/AUO/60HZ, or switch to Customize and enter the custom EDID code.</p>
-<p>If you can't find a suitable code, you may refer to <a href="https://github.com/linuxhw/EDID" target="blank">this link</a> or steps below to customize EDID configuration.</p>
+  <h1 id="display-black-screen-when-accessing-the-controlled-device-using-glkvm">Display black screen when accessing the controlled device using GLKVM<a class="headerlink" href="#display-black-screen-when-accessing-the-controlled-device-using-glkvm" title="Permanent link">&para;</a></h1>
+<p>If it displays black screen when accessing the controlled device via GLKVM, please check the following possible causes one by one:</p>
+<h2 id="check-hardware-connection">Check Hardware Connection<a class="headerlink" href="#check-hardware-connection" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Find a suitable EDID configuration in <a href="https://github.com/linuxhw/EDID" target="blank">this link</a>.</p>
-<p><img alt="edid code" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/edid_code.jpg" /></p>
+<p><strong>Faulty HDMI Cable</strong></p>
+<p>Aging HDMI cables, oxidized connectors, or internal breaks can interrupt signal transmission. Replace with a high-quality HDMI cable.</p>
 </li>
 <li>
-<p>Go to the GLKVM control panel -&gt; Settings -&gt; EDID, switch to Customize mode, copy the parameters to the input box. Click Set Custom to apply the EDID settings.</p>
-<p><img alt="edid customize" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/edid_customize.png" /></p>
+<p><strong>Incorrect Connection</strong></p>
+<p>Take GL-RM1 as an example: The HDMI IN port of GL-RM1 must be connected to the HDMI OUT port of the controlled device's graphics card/motherboard. Ensure the plug is fully inserted and secure.</p>
+<p>If the controlled device has multiple HDMI ports (e.g., graphics card + motherboard), test by switching to different ports.</p>
+</li>
+<li>
+<p><strong>Improper Use of Adapters</strong></p>
+<p>If an HDMI adapter is required, use a <strong>VGA-to-HDMI</strong> adapter to connect the controlled device to the GL.iNet KVM's HDMI IN port. </p>
+<p>Using an HDMI-to-VGA adapter for this connection will fail to transmit video signals properly, resulting in a black screen or no display.</p>
+<p><img alt="adapter comparison" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/blank_screen/adapter_comparison.png" /></p>
 </li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<h2 id="check-controlled-device-status-and-settings">Check Controlled Device Status and Settings<a class="headerlink" href="#check-controlled-device-status-and-settings" title="Permanent link">&para;</a></h2>
 <ol>
-<li>The resolution shall not exceed 2560x1440/60. For example, the setting of 2560x1600/60 cannot be used.</li>
-<li>The maximum resolution/recommended resolution shall not exceed 60FPS.</li>
-<li>Avoid including interlaced resolutions, otherwise it will cause the image to display abnormally.</li>
-<li>The input EDID code block shall not exceed two.</li>
-<li>Basic audio support is required. Otherwise the sound card may not be selectable in the controlled device, resulting in no sound. </li>
+<li>
+<p><strong>Device Not Powered On or in Sleep Mode</strong></p>
+<p>Ensure the controlled device is fully powered on and not in sleep/hibernation mode due to power management settings (wake it via local buttons if needed).</p>
+</li>
+<li>
+<p><strong>Abnormal Graphics Card Drivers on the Controlled Device</strong></p>
+<p>Uninstalled or corrupted graphics card drivers can cause no video output. Update or reinstall the graphics card drivers on the controlled device (when logged in locally).</p>
+</li>
+<li>
+<p><strong>Incorrect Connection of Dedicated and Integrated Graphics</strong></p>
+<p>If the controlled device has both a dedicated and integrated graphics card, ensure the HDMI cable is connected to the correct graphics port (e.g., connect the HDMI cable to the dedicated graphics port if it is installed).</p>
+</li>
+<li>
+<p><strong>Abnormal Display Settings on the Controlled Device (Low Probability)</strong></p>
+<p>When the GL.iNet KVM connects to the controlled device, it automatically adjusts display output by reading the monitor's EDID for optimal performance. In most cases, the default EDID configuration is suitable for most scenarios and no need to modify.</p>
+<p>If the controlled device is compatible with a standard monitor, black screens or display issues are unlikely when accessing via GLKVM. However, compatibility issues (e.g., Linux system + ASUS monitor) may cause black screens or no display when using GLKVM.</p>
+<p>If you customize the KVM's EDID, ensure the following conditions are met:</p>
+<ul>
+<li>
+<p>The resolution shall not exceed 2560×1440@60Hz. For example, a resolution of 2560×1600@60Hz is not supported.</p>
+</li>
+<li>
+<p>The maximum supported refresh rate is 60Hz. For resolutions higher than 1920×1080, a frame rate of 60FPS or lower is recommended.</p>
+</li>
+</ul>
+</li>
 </ol>
-</div>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
