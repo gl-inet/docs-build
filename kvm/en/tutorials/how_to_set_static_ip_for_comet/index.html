@@ -884,6 +884,8 @@
       
         
       
+        
+      
     
     
     
@@ -1065,6 +1067,26 @@
   
   <span class="md-ellipsis">
     Fix mouse cursor overlay issue on macOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/how_to_set_edid_for_glkvm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set EDID for GL.iNet KVM
   </span>
   
 
@@ -1390,19 +1412,19 @@
 <ul>
 <li>
 <p><strong>Configure IP</strong>: </p>
-<p><em>connmanctl config <code>connmanctl services |grep ethernet|awk -F' '  '{print $3}'</code> --ipv4 manual 192.168.113.131 255.255.255.0 192.168.113.1</em></p>
-<p>Note: The three values are IP address, subnet mask, and gateway respectively.</p>
+<p><code>connmanctl config `connmanctl services |grep ethernet|awk -F' '  '{print $3}'` --ipv4 manual 192.168.113.131 255.255.255.0 192.168.113.1</code></p>
+<p>(The three values are IP address, subnet mask, and gateway respectively.)</p>
 </li>
 <li>
 <p><strong>Configure DNS</strong>:</p>
-<p><em>connmanctl config <code>connmanctl services |grep ethernet|awk -F' '  '{print $3}'</code> nameservers 8.8.8.8</em></p>
-<p>Note: The above value 8.8.8.8 is the DNS server. </p>
+<p><code>connmanctl config `connmanctl services |grep ethernet|awk -F' '  '{print $3}'` nameservers 8.8.8.8</code></p>
+<p>(The above value 8.8.8.8 is the DNS server.) </p>
 <p>If multiple DNS servers need to be configured, please separate them with spaces, e.g. </p>
-<p><em>connmanctl config <code>connmanctl services |grep ethernet|awk -F' '  '{print $3}'</code> nameservers 8.8.8.8 1.1.1.1</em></p>
+<p><code>connmanctl config `connmanctl services |grep ethernet|awk -F' '  '{print $3}'` nameservers 8.8.8.8 1.1.1.1</code></p>
 </li>
 <li>
 <p><strong>Configure DHCP</strong>:</p>
-<p><em>connmanctl config <code>connmanctl services |grep ethernet|awk -F' '  '{print $3}'</code> --ipv4 dhcp</em></p>
+<p><code>connmanctl config `connmanctl services |grep ethernet|awk -F' '  '{print $3}'` --ipv4 dhcp</code></p>
 </li>
 </ul>
 </li>
