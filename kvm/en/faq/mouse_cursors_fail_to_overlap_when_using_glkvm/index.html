@@ -12,7 +12,7 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/kvm/en/faq/how_to_fix_mouse_cursor_overlay_issue_on_macOS/">
+        <link rel="canonical" href="https://docs.gl-inet.com/kvm/en/faq/mouse_cursors_fail_to_overlap_when_using_glkvm/">
       
       
         <link rel="prev" href="../display_blank_screen_when_using_glkvm/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Fix mouse cursor overlay issue on macOS - GL.iNet KVM Docs</title>
+        <title>Mouse cursors fail to overlap when using GLKVM - GL.iNet KVM Docs</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-fix-mouse-cursor-overlay-issue-on-macos" class="md-skip">
+        <a href="#mouse-cursors-fail-to-overlap-when-using-glkvm" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fix mouse cursor overlay issue on macOS
+              Mouse cursors fail to overlap when using GLKVM
             
           </span>
         </div>
@@ -1079,7 +1079,7 @@
         
   
   <span class="md-ellipsis">
-    Fix mouse cursor overlay issue on macOS
+    Mouse cursors fail to overlap when using GLKVM
   </span>
   
 
@@ -1401,16 +1401,23 @@
   
 
   <!-- Markdown content -->
-  <h1 id="how-to-fix-mouse-cursor-overlay-issue-on-macos">How to fix mouse cursor overlay issue on macOS?<a class="headerlink" href="#how-to-fix-mouse-cursor-overlay-issue-on-macos" title="Permanent link">&para;</a></h1>
-<p>When using GL-RM1, you may get the issue that the mouse cursor of the controlling device can't be superimposed on the controlled macOS device.</p>
-<p><img alt="mouse cursor cannot be superimposed" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/kvm/faq/mouse_cursor_overlay_issue/mouse_cursor_cannot_be_superimposed.png" /></p>
-<p>It's related to the display resolution. The macOS resolution is different from that of GLKVM.</p>
-<p>Please go to the Settings -&gt; Displays -&gt; Optimize for.</p>
+  <h1 id="mouse-cursors-fail-to-overlap-when-using-glkvm">Mouse cursors fail to overlap when using GLKVM<a class="headerlink" href="#mouse-cursors-fail-to-overlap-when-using-glkvm" title="Permanent link">&para;</a></h1>
+<p>When using GLKVM, you may get the issue that the mouse cursor of the controlling device cannot be superimposed on the controlled device.</p>
+<p><img alt="mouse cursors do not overlap" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/kvm/faq/mouse_cursor_overlay_issue/mouse_cursor_cannot_be_superimposed.png" /></p>
+<p>Please follow the steps below for troubleshooting.</p>
+<p><strong>Step 1</strong>. Confirm whether the issue occurs when the mouse is moving or stationary. </p>
+<p>If the cursor can overlap when stationary but lags when moving the mouse on the controlling device, causing it to fail to overlap with the cursor on the controlled device, please check the network environment on both sides and ensure network stability.</p>
+<p>If the cursor can not be overlapped in stationary, turn to the next step.</p>
+<p><strong>Step 2</strong>. If the controlled device is a laptop, it may be a display resolution issue. Please confirm the screen aspect ratio of your laptop, then either switch the display resolution of the controlled laptop or switch the EDID in the GLKVM app.</p>
+<p>The following is an example of switching display resolution on a macOS laptop.</p>
+<p>Go to the Settings -&gt; Displays -&gt; Optimize for.</p>
 <p><img alt="settings" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/kvm/faq/mouse_cursor_overlay_issue/mac_settings.png" /></p>
 <p>Change it to <strong>GLKVM</strong>.</p>
 <p><img alt="select glkvm" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/kvm/faq/mouse_cursor_overlay_issue/select_glkvm.png" /></p>
-<p>Choose the Resolution you prefer, and you’ll find the mouse cursor is superimposed. Then you can enjoy using it.</p>
+<p>Choose the corresponding resolution, and check if the mouse cursor is superimposed.</p>
 <p><img alt="resolution" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/kvm/faq/mouse_cursor_overlay_issue/resolution.png" /></p>
+<p><strong>Step 3</strong>. If the controlled device is not a laptop, please confirm the ratio of the controlled device's main screen, then switch the EDID in the GLKVM app based on this screen ratio.</p>
+<p>Click <a href="../how_to_set_edid_for_glkvm/">here</a> to learn how to set EDID for GL.iNet KVM.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
