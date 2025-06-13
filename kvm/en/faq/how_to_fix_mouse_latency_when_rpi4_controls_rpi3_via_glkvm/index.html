@@ -12,13 +12,13 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/kvm/en/faq/does_glkvm_application_support_chromeos_or_linux/">
+        <link rel="canonical" href="https://docs.gl-inet.com/kvm/en/faq/how_to_fix_mouse_latency_when_rpi4_controls_rpi3_via_glkvm/">
       
       
-        <link rel="prev" href="../how_to_access_the_controlled_device_connected_to_kvm/">
+        <link rel="prev" href="../mouse_cursors_fail_to_overlap_when_using_glkvm/">
       
       
-        <link rel="next" href="../can_comet_connect_to_wireless_network/">
+        <link rel="next" href="../how_to_set_edid_for_glkvm/">
       
       
       <link rel="icon" href="../../images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Does GLKVM application support ChromeOS/Linux - GL.iNet KVM Docs</title>
+        <title>Mouse latency when RPi4 controls RPi3 via GLKVM - GL.iNet KVM Docs</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#does-glkvm-application-support-chromeoslinux" class="md-skip">
+        <a href="#how-to-fix-mouse-latency-when-rpi4-controls-rpi3-via-glkvm" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Does GLKVM application support ChromeOS/Linux
+              Mouse latency when RPi4 controls RPi3 via GLKVM
             
           </span>
         </div>
@@ -618,8 +618,6 @@
                 
   
   
-    
-  
   
     
     
@@ -636,12 +634,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -655,7 +653,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Basic Information
@@ -706,18 +704,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../does_glkvm_application_support_chromeos_or_linux/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -726,7 +715,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -900,6 +888,8 @@
                 
   
   
+    
+  
   
     
     
@@ -932,12 +922,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
         
           
           <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
@@ -951,7 +941,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             Troubleshooting
@@ -1162,9 +1152,18 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../how_to_fix_mouse_latency_when_rpi4_controls_rpi3_via_glkvm/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1173,6 +1172,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1511,11 +1511,9 @@
   
 
   <!-- Markdown content -->
-  <h1 id="does-glkvm-application-support-chromeoslinux">Does GLKVM application support ChromeOS/Linux?<a class="headerlink" href="#does-glkvm-application-support-chromeoslinux" title="Permanent link">&para;</a></h1>
-<p>The GLKVM application is designed for the controlling device (i.e. the Host). Currently the GLKVM app does not support installation on Chrome or Linux OS, so if your controlling device is running Chrome/Linux OS, the GLKVM app cannot be installed, thus remote access to controlled device via GLKVM app is not supported. </p>
-<p>However, you may use Tailscale to achieve remote access, which is integrated in Comet (GL-RM1). In this way, you can directly access Comet by typing its Tailscale virtual IP into a browser, without installing GLKVM app.</p>
-<p>Alternatively, you can locally access the controlled device through a web browser in the local LAN network. </p>
-<p>As to the remotely-controlled device, no need to install any software on it. That is to say, it can be Windows, macOS, ChromeOS, Linux, etc.</p>
+  <h1 id="how-to-fix-mouse-latency-when-rpi4-controls-rpi3-via-glkvm">How to fix mouse latency when RPi4 controls RPi3 via GLKVM?<a class="headerlink" href="#how-to-fix-mouse-latency-when-rpi4-controls-rpi3-via-glkvm" title="Permanent link">&para;</a></h1>
+<p>When using a Raspberry Pi4 to control a Raspberry Pi3 via GL.iNet KVM, mouse latency issues may occur, typically lasting for a few seconds.</p>
+<p>To fix it, append <code>usbhid.mousepoll=0</code> to the boot line in <code>/boot/cmdline.txt</code> (or in <code>/boot/firmware/cmdline.txt</code>) on the managed server (i.e. RPI3 in this case) and reboot it.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
