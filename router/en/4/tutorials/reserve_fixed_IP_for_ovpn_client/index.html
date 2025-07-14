@@ -5740,21 +5740,19 @@
 <p><img alt="add ccd folder" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/add_ccd_folder.png" /></p>
 </li>
 <li>
-<p>Add a file "GLsupport", followed by <code>ifconfig-push 10.8.0.10 255.255.255.0</code></p>
+<p>Add a file "GLsupport", type inside <code>ifconfig-push 10.8.0.10 255.255.255.0</code></p>
+<p>Verify the contect by <code>cat GLsupport</code></p>
 <p><img alt="ifconfig-push" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/ifconfig-push.png" /></p>
 <ul>
 <li>
-<p>Replace the "GLsupport" with the username you created in Step 2.</p>
-</li>
-<li>
-<p>Replace the "10.8.0.10" with the fixed IP you want to reserve for your ovpn client, ensuring this fixed IP is within the IPv4 subnet of your OpenVPN server. </p>
+<p>When you use GLsupport to connect your OpenVPN server, it will assign a fixed IP 10.8.0.10 for this GLsupport user. </p>
 </li>
 <li>
 <p>The "255.255.255.0" is the subnet mask and you can replace it with your OpenVPN server subnet mask.</p>
 </li>
 </ul>
 <p><strong>Note</strong>: If you want to fix IP addresses for multiple OpenVPN clients, please create multiple usernames and passwords in Step 2, then repeat Step 5, add files to the CCD folder in the order of users, such as user_1, user_2, user_3, followed by the "ifconfig push" command and their corresponding fixed IP and subnet mask. </p>
-<p>For example, <code>ipconfig-push 10.8.0.31 225.225.225.0</code>, <code>ipconfig-push 10.8.0.32 225.225.225.0</code>, <code>ipconfig-push 10.8.0.33 225.225.225.0</code></p>
+<p>For example, <code>ipconfig-push 10.8.0.20 225.225.225.0</code>, <code>ipconfig-push 10.8.0.30 225.225.225.0</code>, <code>ipconfig-push 10.8.0.40 225.225.225.0</code></p>
 </li>
 <li>
 <p>At last, test with your OVPN client and check if the Client Virtual IP (IPv4) is the reserved one you set. </p>
