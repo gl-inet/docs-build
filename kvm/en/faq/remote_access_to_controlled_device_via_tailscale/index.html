@@ -12,13 +12,13 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/kvm/en/faq/glkvm_app/">
+        <link rel="canonical" href="https://docs.gl-inet.com/kvm/en/faq/remote_access_to_controlled_device_via_tailscale/">
       
       
-        <link rel="prev" href="../frequently_asked_questions_about_glinet_kvm/">
+        <link rel="prev" href="../remote_access_to_controlled_device_via_glkvm_app/">
       
       
-        <link rel="next" href="../what_devices_can_glinet_kvm_control/">
+        <link rel="next" href="../power_on_off_control/">
       
       
       <link rel="icon" href="../../images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Download GLKVM App - GL.iNet KVM Docs</title>
+        <title>Remote access the controlled device via Tailscale - GL.iNet KVM Docs</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#glkvm-app" class="md-skip">
+        <a href="#how-to-remotely-access-the-controlled-device-via-tailscale" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Download GLKVM App
+              Remote access the controlled device via Tailscale
             
           </span>
         </div>
@@ -578,8 +578,6 @@
                 
   
   
-    
-  
   
     
     
@@ -592,12 +590,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -611,7 +609,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             General
@@ -642,18 +640,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../glkvm_app/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -662,7 +651,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -792,6 +780,8 @@
                 
   
   
+    
+  
   
     
     
@@ -806,12 +796,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
         
           
           <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
@@ -825,7 +815,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             Local/Remote Access
@@ -876,9 +866,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../remote_access_to_controlled_device_via_tailscale/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Remote access the controlled device via Tailscale
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -887,6 +897,54 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enable-tailscale-in-local-access" class="md-nav__link">
+    Enable Tailscale in local access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bind-kvm-to-your-tailsnet" class="md-nav__link">
+    Bind KVM to your tailsnet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bind-controlling-device-to-your-tailnet" class="md-nav__link">
+    Bind controlling device to your tailnet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-access-via-tailscale-virtual-ip" class="md-nav__link">
+    Remote access via Tailscale Virtual IP
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1673,6 +1731,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enable-tailscale-in-local-access" class="md-nav__link">
+    Enable Tailscale in local access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bind-kvm-to-your-tailsnet" class="md-nav__link">
+    Bind KVM to your tailsnet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bind-controlling-device-to-your-tailnet" class="md-nav__link">
+    Bind controlling device to your tailnet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-access-via-tailscale-virtual-ip" class="md-nav__link">
+    Remote access via Tailscale Virtual IP
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1695,11 +1789,63 @@
   
 
   <!-- Markdown content -->
-  <h1 id="glkvm-app">GLKVM App<a class="headerlink" href="#glkvm-app" title="Permanent link">&para;</a></h1>
-<p><img alt="GLKVM app icon" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/glkvm_app/icon_glinet_rm.jpg" style="border-radius:15px" width="128" /></p>
-<p>The GLKVM App is a Windows and macOS-exclusive application designed for remote access and control of devices connected to GL.iNet's KVM, making it ideal for IT professionals, remote workers, and power users who need direct access to distanct machines.</p>
-<p>For macOS users, download it from <a href="https://apps.apple.com/us/app/glkvm/id6740846845?mt=12" target="_blank">here</a></p>
-<p>For Windows users, download it from <a href="https://www.gl-inet.com/app-rm/#" target="_blank">here</a></p>
+  <h1 id="how-to-remotely-access-the-controlled-device-via-tailscale">How to remotely access the controlled device via Tailscale?<a class="headerlink" href="#how-to-remotely-access-the-controlled-device-via-tailscale" title="Permanent link">&para;</a></h1>
+<p>GL.iNet KVM integrates Tailscale, allowing you to bind it to the Tailscale virtual network for remote access - no need to install GLKVM app. This is particularly useful when your controlling device runs neither Windows nor macOS. </p>
+<p><strong>Before you begin, please connect the controlling device and the controlled device to the same network.</strong></p>
+<p>Then follow these steps to remotely access your GL.iNet KVM and the controlled device via Tailscale.</p>
+<h2 id="enable-tailscale-in-local-access">Enable Tailscale in local access<a class="headerlink" href="#enable-tailscale-in-local-access" title="Permanent link">&para;</a></h2>
+<p>You can access your GL.iNet KVM locally using domain name or IP address. A domain name will be used here for illustration.</p>
+<p>Firstly, launch a browser on the controlling device. Chrome or Edge is recommended for better compatibility.</p>
+<p>Secondly, enter <code>glkvm.local</code> in the address bar. You will be directed to the GLKVM login page.</p>
+<p><img alt="local access via domain" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/local_access_controlled_device_via_browser/local_access_domain.png" /></p>
+<p>Enter the admin password, and you will be able to access your KVM's control panel locally.</p>
+<p><img alt="local access via domain" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/local_access_domain.png" /></p>
+<p>Thirdly, in the control panel, navigate to <strong>Apps Center</strong> -&gt; <strong>Tailscale</strong>, enable Tailscale.</p>
+<p><img alt="apps center" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/apps_center.jpg" /></p>
+<h2 id="bind-kvm-to-your-tailsnet">Bind KVM to your tailsnet<a class="headerlink" href="#bind-kvm-to-your-tailsnet" title="Permanent link">&para;</a></h2>
+<p>Upon enabling tailscale, the page will display an option to bind device. Click on <strong>Bind Device</strong>.</p>
+<p><img alt="enable tailscale" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/enable_tailscale.png" /></p>
+<p>You will be directed to the Tailscale login page. Enter your email to log in.</p>
+<p><img alt="log in tailscale" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/log_in_tailscale.png" /></p>
+<p>After logging in, the page prompts that you are about to connect the device glkvm to your Tailnet. Click on <strong>Connect</strong>.</p>
+<p><img alt="connect kvm to tailnet" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/connect_kvm_to_tailscale.png" /></p>
+<p>Device binding successful. Your KVM device has been successfully bound to your tailnet. </p>
+<p><img alt="bind kvm successful" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/bind_kvm_successful.png" /></p>
+<p>You will be re-directed to your Tailscale console shortly, where a device labeled <strong>glkvm</strong> is displayed under <strong>Machines</strong>.</p>
+<p><img alt="tailscale console 1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/tailscale_panel_1.png" /></p>
+<h2 id="bind-controlling-device-to-your-tailnet">Bind controlling device to your tailnet<a class="headerlink" href="#bind-controlling-device-to-your-tailnet" title="Permanent link">&para;</a></h2>
+<p>Install Tailscale on your controlling device from <a href="https://tailscale.com/download" target="_blank">here</a>, and log in with the same Tailscale account. Your controlling device will be bound to your tailnet.</p>
+<p>The following is an example of binding a Windows laptop as a controlling device to tailnet.</p>
+<p>Run Tailscale on the controlling device. Log in with the same email.</p>
+<p><img alt="log in tailscale" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/log_in_tailscale.png" /></p>
+<p>After logging in, the page prompts that you are about to connect the controlling device (e.g. a laptop) to your Tailnet. Click on <strong>Connect</strong>.</p>
+<p><img alt="connect pc to tailnet" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/connect_pc_to_tailscale.png" /></p>
+<p>Device binding successful. The controlling device has been successfully bound to your tailnet. </p>
+<p><img alt="bind pc successful" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/bind_pc_successful.png" /></p>
+<p>You will be re-directed to your Tailscale console shortly, where the controlling device is also displayed under <strong>Machines</strong>.</p>
+<p><img alt="tailscale console 2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/tailscale_panel_2.png" /></p>
+<h2 id="remote-access-via-tailscale-virtual-ip">Remote access via Tailscale Virtual IP<a class="headerlink" href="#remote-access-via-tailscale-virtual-ip" title="Permanent link">&para;</a></h2>
+<p>In the Tailscale console, click on the <strong>Address</strong> of glkvm, which is <strong>100.104.185.26</strong> in the following image.</p>
+<p><img alt="get vittual ip" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/get_vitual_ip.png" /></p>
+<p>Four values will be displayed above:</p>
+<ul>
+<li>glkvm (device name)</li>
+<li>glkvm.tail1fd0.ts.net (Tailscale-assigned domain)</li>
+<li>fd7a:115c:a1e0:301:b92f” (virtual IPv6)</li>
+<li>100.104.185.26 (virtual IPv4). </li>
+</ul>
+<p>They are allocated by Tailscale for device identification and virtual network communication. You can remotely access your KVM device using the Tailscale-assigned domain, vitual IPv4 and virtual IPv6.</p>
+<p>Take the virtual IPv4 as an example.</p>
+<p>Copy the virtual IPv4 of your KVM device. Open a new tab and enter the copied IP address.</p>
+<p><img alt="access vitual ip" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/access_vitual_ip.png" /></p>
+<p>It may prompt a privacy error.</p>
+<p><img alt="privacy error" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/privacy_error.png" /></p>
+<p>Click on <strong>Advanced</strong>, and <strong>Proceed to 100.104.185.26</strong>.</p>
+<p><img alt="proceed" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/proceed.png" /></p>
+<p>You will be directed to the GLKVM login page. Enter the admin password to log in. </p>
+<p><img alt="access login page" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/access_login_page.png" /></p>
+<p>You will be able to access your GL.iNet KVM and the controlled device via Tailscale virtual IP.</p>
+<p><img alt="remote access success" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/remote_access_via_tailscale.png" /></p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
