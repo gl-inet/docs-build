@@ -1661,7 +1661,7 @@
       
         <li class="md-nav__item">
   <a href="#local-access-via-web-browser" class="md-nav__link">
-    Local Access via Web browser
+    Local Access via web browser
   </a>
   
 </li>
@@ -1705,23 +1705,35 @@
 
   <!-- Markdown content -->
   <h1 id="how-to-access-the-controlled-device-connected-to-glinet-kvm">How to access the controlled device connected to GL.iNet KVM?<a class="headerlink" href="#how-to-access-the-controlled-device-connected-to-glinet-kvm" title="Permanent link">&para;</a></h1>
-<p>Take GL-RM1 (Comet) as an example. There are three ways to access the controlled device: </p>
+<p>There are three ways to access the controlled device connected to GL.iNet KVM: </p>
 <ul>
-<li>Local access via Web browser</li>
-<li>Remote access via GLKVM application</li>
+<li>Local access via web browser</li>
+<li>Remote access via GLKVM app</li>
 <li>Remote access via Tailscale</li>
 </ul>
-<h2 id="local-access-via-web-browser">Local Access via Web browser<a class="headerlink" href="#local-access-via-web-browser" title="Permanent link">&para;</a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PlJ5JLt7aUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<p>To locally access the controlled device via web browser, please ensure the controlling device (i.e. the host) and the controlled device are in the same LAN network.</p>
-<p>Then enter <code>glkvm.local</code> in the web browser (Chrome or Edge is recommended for better compatibility), and you will be directed to the GLKVM local management page.</p>
-<p>Alternatively, find the LAN IP address of your GL.iNet KVM device from the upper router, then enter its IP address in the browser, it will also take you to the local management page as well.</p>
+<h2 id="local-access-via-web-browser">Local Access via web browser<a class="headerlink" href="#local-access-via-web-browser" title="Permanent link">&para;</a></h2>
+<p>Before you begin, please ensure your KVM and the controlling device are in the same LAN network.</p>
+<p>There are two ways to locally access the controlled device via web browser.</p>
+<p><strong>Method 1. Using Domain Name</strong></p>
+<p>Launch a browser on the controlling device. Chrome or Edge is recommended for better compatibility.</p>
+<p>Enter <code>glkvm.local</code> in the address bar. You will be directed to the GLKVM login page. Enter the admin password.</p>
+<p><img alt="local access via domain" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/local_access_controlled_device_via_browser/local_access_domain_1.png" /></p>
+<p>You will be able to access your KVM's control panel locally, thus access the controlled device connected to it.</p>
+<p><img alt="local access via domain" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/local_access_controlled_device_via_browser/local_access_domain_2.png" /></p>
+<p><strong>Method 2. Using IP Address</strong></p>
+<p>Find your KVM's IP address in the upper router, enter this IP into the browser, and you will be able to access your KVM locally, thus access the controlled device.</p>
+<p>Take a router GL-AXT1800 and a KVM Comet as an example: Comet is connected to the LAN port of GL-AXT1800 router via an Ethernet cable, and the controlled device is connected to Comet correctly via HD cable and USB cable.</p>
+<p>Log in to the web admin panel of GL-AXT1800, find the IP address of Comet in the Client list, as shown below.</p>
+<p><img alt="local access via ip" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm1/local_access_via_ip.png" /></p>
+<p>Open a new tab in the browser, enter Comet's IP in the address bar. You will be directed to the GLKVM login page. Enter the admin password.</p>
+<p><img alt="local access via ip" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/local_access_controlled_device_via_browser/local_access_ip_1.jpg" /></p>
+<p>You will be able to access the Comet's control panel locally, thus access the controlled device connected to it.</p>
+<p><img alt="local access via ip" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/local_access_controlled_device_via_browser/local_access_ip_2.png" /></p>
 <h2 id="remote-access-via-glkvm-app">Remote Access via GLKVM App<a class="headerlink" href="#remote-access-via-glkvm-app" title="Permanent link">&para;</a></h2>
-<p>Install the <a href="https://www.gl-inet.com/app-rm/" target="_blank">GLKVM application</a> on the controlling device, then you can remotely access GL.iNet KVM and the controlled device.</p>
+<p>Install the <a href="https://www.gl-inet.com/app-rm/" target="_blank">GLKVM app</a> on your controlling device, and follow <a href="../remote_access_to_controlled_device_via_glkvm_app/" target="_blank">this link</a> to remotely access your GL.iNet KVM and the controlled device via GLKVM app.</p>
 <h2 id="remote-access-via-tailscale">Remote Access via Tailscale<a class="headerlink" href="#remote-access-via-tailscale" title="Permanent link">&para;</a></h2>
-<p>If you cannot or don't want to install GLKVM application, you may use Tailscale to achieve remote access, which is integrated in Comet (GL-RM1). </p>
-<p>In this way, you can directly access Comet by typing its Tailscale virtual IP into a browser, without installing GLKVM app.</p>
+<p>GL.iNet KVM integrates Tailscale, allowing you to bind it to the Tailscale virtual network for remote access - no need to install GLKVM app. This is particularly useful when your controlling device runs neither Windows nor macOS. </p>
+<p>Follow <a href="../remote_access_to_controlled_device_via_tailscale/" target="_blank">this link</a> to remotely access your GL.iNet KVM and the controlled device via Tailscale.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
