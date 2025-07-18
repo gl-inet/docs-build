@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#privacy-error-when-accessing-kvm-locally-via-browser" class="md-skip">
+        <a href="#privacy-error-when-accessing-kvm-via-browser" class="md-skip">
           Skip to content
         </a>
       
@@ -1775,23 +1775,23 @@
   
 
   <!-- Markdown content -->
-  <h1 id="privacy-error-when-accessing-kvm-locally-via-browser">Privacy error when accessing KVM locally via browser<a class="headerlink" href="#privacy-error-when-accessing-kvm-locally-via-browser" title="Permanent link">&para;</a></h1>
-<p>When accessing the GL.iNet KVM locally via browser by entering the domain "glkvm.local" or the KVM's local IP assigned by the upper router, you may encounter a browser alert: <strong>Your connection isn't private</strong>.</p>
+  <h1 id="privacy-error-when-accessing-kvm-via-browser">Privacy error when accessing KVM via browser<a class="headerlink" href="#privacy-error-when-accessing-kvm-via-browser" title="Permanent link">&para;</a></h1>
+<p>When accessing the GL.iNet KVM via browser, you may encounter a browser alert: <strong>Your connection isn't private</strong>.</p>
 <p><img alt="privacy error" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/privacy_error_1.png" /></p>
 <p>This is a standard security warning that browsers issue when they detect a website lacking an SSL/TLS certificate, as HTTPS connections rely on certificates to verify server identity and encrypt data.</p>
 <h2 id="why-do-i-get-this-warning">Why do I get this warning?<a class="headerlink" href="#why-do-i-get-this-warning" title="Permanent link">&para;</a></h2>
-<p>In the example above, the IP "192.168.8.11" is the KVM's local IP address dynamically assigned by the upper router via DHCP. </p>
+<p>In the example above, <strong>192.168.8.11</strong> is the KVM's local IP address dynamically assigned by the upper router via DHCP. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If the gateway of your router which your GL.iNet KVM is connected to is "192.168.x.1" (where x is typically 0, 1, or 8 in private networks), the local IP of your KVM should be "192.168.x.y" (where y is a valid host address in the subnet).</p>
+<p>If the gateway of your router that your GL.iNet KVM is connected to is "192.168.x.1" (where x is typically 0, 1, or 8 in private networks), the local IP of your KVM should be "192.168.x.y" (where y is a valid host address in the subnet).</p>
 </div>
-<p>This local IP is used to access the GL.iNet KVM’s local management interface, not a public website.</p>
-<p>However, browsers usually do not distinguish between local management IP addresses and normal websites; they treat all IP addresses as websites and expect HTTPS connections to be secured by SSL/TLS certificates.</p>
-<p>A genuinely secure website uses an SSL/TLS certificate, so when browsers access a local management IP (which does not have a certificate), they trigger a security alert due to the missing certificate.</p>
+<p>This local IP is used to access the GL.iNet KVM's local admin panel, not a public website.</p>
+<p>However, browsers usually do not distinguish between local admin panel and normal public websites; they treat all IP addresses as websites and expect HTTPS connections to be secured by SSL/TLS certificates.</p>
+<p>A genuinely secure website uses an SSL/TLS certificate, so when browsers access a local admin panel (which does not have a certificate), they trigger a security alert due to the missing certificate.</p>
 <h2 id="what-can-i-do-with-this-alert">What can I do with this alert?<a class="headerlink" href="#what-can-i-do-with-this-alert" title="Permanent link">&para;</a></h2>
 <p>Please click <strong>Advanced</strong> and <strong>Continue to "192.168.8.11"</strong>.</p>
 <p><img alt="Continue to 192.168.8.11" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/privacy_error_2.jpg" /></p>
-<p>Then you will be re-directed to the GL.iNet web management page.</p>
+<p>Then you will be re-directed to the GL.iNet KVM admin panel. Log in to access your KVM and the controlled device.</p>
 <p><img alt="local access to kvm admin" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/local_access.png" /></p>
 <h2 id="can-i-add-a-ssl-certicate-in-the-kvm">Can I add a SSL certicate in the KVM?<a class="headerlink" href="#can-i-add-a-ssl-certicate-in-the-kvm" title="Permanent link">&para;</a></h2>
 <p>Yes, you can add your SSL certicate in the GL.iNet KVM.</p>
