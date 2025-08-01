@@ -1018,8 +1018,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#can-i-add-a-ssl-certificate-in-the-kvm" class="md-nav__link">
-    Can I add a SSL certificate in the KVM?
+  <a href="#can-i-use-an-ssl-certificate-in-the-kvm" class="md-nav__link">
+    Can I use an SSL certificate in the KVM?
   </a>
   
 </li>
@@ -1771,8 +1771,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#can-i-add-a-ssl-certificate-in-the-kvm" class="md-nav__link">
-    Can I add a SSL certificate in the KVM?
+  <a href="#can-i-use-an-ssl-certificate-in-the-kvm" class="md-nav__link">
+    Can I use an SSL certificate in the KVM?
   </a>
   
 </li>
@@ -1819,10 +1819,12 @@
 <p><img alt="Continue to 192.168.8.11" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/privacy_error_2.jpg" /></p>
 <p>Then you will be re-directed to the GL.iNet KVM admin panel. Log in to access your KVM and the controlled device.</p>
 <p><img alt="local access to kvm admin" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/local_access.png" /></p>
-<h2 id="can-i-add-a-ssl-certificate-in-the-kvm">Can I add a SSL certificate in the KVM?<a class="headerlink" href="#can-i-add-a-ssl-certificate-in-the-kvm" title="Permanent link">&para;</a></h2>
-<p>Yes, you can add your SSL certificate in the GL.iNet KVM.</p>
-<p>First, please apply for an SSL cert or use a self-signed SSL cert. </p>
-<p>Then, SSH into your GL-iNet KVM or use WinSCP to upload the updated certificate and key to the KVM. The path is <code>/etc/kvmd/nginx/ssl</code>.</p>
+<h2 id="can-i-use-an-ssl-certificate-in-the-kvm">Can I use an SSL certificate in the KVM?<a class="headerlink" href="#can-i-use-an-ssl-certificate-in-the-kvm" title="Permanent link">&para;</a></h2>
+<p>Yes, you can use your SSL certificate in the GL.iNet KVM.</p>
+<p>Firstly, please apply for an SSL cert or use a self-signed SSL cert. </p>
+<p>Secondly, access KVM's terminal or use WinSCP (recommended) to modify files on your KVM. The automatically generated certificate and key are storaged in this path: <code>/etc/kvmd/nginx/ssl</code>. Please replace them with the new SSL certificate and key.</p>
+<p><strong>Note</strong>: The certificate for KVM will be automatically regenerated after each firmware upgrade, and the uploaded SSL certificate will not be backed up. </p>
+<p>If necessary, please replace the auto-generated certificate with an SSL certificate again after firmware upgrade.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
