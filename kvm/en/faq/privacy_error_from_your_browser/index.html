@@ -1822,9 +1822,18 @@
 <h2 id="can-i-use-an-ssl-certificate-in-the-kvm">Can I use an SSL certificate in the KVM?<a class="headerlink" href="#can-i-use-an-ssl-certificate-in-the-kvm" title="Permanent link">&para;</a></h2>
 <p>Yes, you can use your SSL certificate in the GL.iNet KVM.</p>
 <p>Firstly, please apply for an SSL cert or use a self-signed SSL cert. </p>
-<p>Secondly, access KVM's terminal or use WinSCP (recommended) to modify files on your KVM. The automatically generated certificate and key are storaged in this path: <code>/etc/kvmd/nginx/ssl</code>. Please replace them with the new SSL certificate and key.</p>
-<p><strong>Note</strong>: The certificate for KVM will be automatically regenerated after each firmware upgrade, and the uploaded SSL certificate will not be backed up. </p>
-<p>If necessary, please replace the auto-generated certificate with an SSL certificate again after firmware upgrade.</p>
+<p>Secondly, access KVM's terminal or use WinSCP (recommended) to modify files on your KVM. The automatically generated certificate and key are storaged in this path: <code>/etc/kvmd/nginx/ssl</code> (which has been changed to <code>/etc/kvmd/user/ssl</code> since firmware v1.4.0). </p>
+<p>Please replace them with the new SSL certificate and key.</p>
+<p><strong>Note</strong>: </p>
+<ol>
+<li>
+<p>Prior to firmware v1.4.0, the KVM certificate is automatically regenerated after each firmware upgrade, and uploaded SSL certificates are not backed up.</p>
+<p>If necessary, please re-upload the SSL certificate to replace the auto-generated one after a firmware upgrade.</p>
+</li>
+<li>
+<p>Starting from firmware v1.4.0, firmware upgrades will not cause the KVM certificate to be regenerated, unless the firmware is manually reset.</p>
+</li>
+</ol>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
