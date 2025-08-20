@@ -5760,17 +5760,82 @@
   
 
   <!-- Markdown content -->
-  <h1 id="macos-cannot-write-to-a-samba-share">MacOS cannot write to a Samba share<a class="headerlink" href="#macos-cannot-write-to-a-samba-share" title="Permanent link">&para;</a></h1>
-<p>When using an ExFAT-formatted storage device with a Samba share on macOS, some Mac devices may display an error message when trying to write a file: </p>
-<p><strong>"The operation can't be completed because an unexpected error occurred (error code 100093)."</strong></p>
-<p><img alt="macopyerror" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/macos_cannot_write_samba/macopyerror.jpg" /></p>
-<p>This is because the Finder adds file attributes before transferring, making the file different from the original when copying.</p>
-<p>You can solve this issue by the following methods.</p>
-<p>Method 1. Change your storage device into <strong>NTFS</strong> format.</p>
-<p>Method 2. Use the <strong>cp -X file-name</strong> command to copy the file.</p>
+  <h1 id="macos-cannot-write-to-a-samba-share">macOS cannot write to a Samba share<a class="headerlink" href="#macos-cannot-write-to-a-samba-share" title="Permanent link">&para;</a></h1>
+<p>When using an exFAT-formatted storage device for a Samba share, some macOS devices may encounter one of the following errors when attempting to write files to the share.</p>
+<ul>
+<li>
+<p>"The operation can't be completed because an unexpected error occurred (error code 100093)."</p>
+<p><img alt="error code 100093" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/macos_cannot_write_samba/macopyerror.jpg" /></p>
+</li>
+<li>
+<p>"The operation can't be completed because an unexpected error occurred (error code -50)."</p>
+<p><img alt="error code -50" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/macos_cannot_write_samba/error-code-50.jpg" /></p>
+</li>
+</ul>
+<p>Try solving this issue by the following methods.</p>
+<ol>
+<li>
+<p><strong>Check Samba share permissions​.</strong></p>
+<p>Ensure the Samba share is configured with write access. Log in to your router’s web Admin Panel, and verify the shared folder has "Read/Write" permissions enabled for your user account.</p>
+</li>
+<li>
+<p><strong>Use the <code>cp -X file-name</code> command to copy the file.</strong></p>
+<p>Since Finder automatically adds extended attributes (e.g., resource forks, metadata) during transfers, which may conflict with Samba’s handling of exFAT storage, please try using the <strong>cp -X file-name</strong> command to copy the file.</p>
 <p><img alt="macopyfile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/macos_cannot_write_samba/macopyfile.png" /></p>
-<p>Or use <strong>cp -rX floder-name</strong> command to copy the folder.</p>
+<p>Or use <strong>cp -rX folder-name</strong> command to copy the folder.</p>
 <p><img alt="macopyfolder" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/macos_cannot_write_samba/macopyfolder.png" /></p>
+</li>
+<li>
+<p><strong>Restart your Mac.</strong></p>
+<p>Click the Apple menu and click on Restart. If problems persist, shut down, disconnect all external devices, wait 30 seconds, then restart.​</p>
+</li>
+<li>
+<p><strong>Rename the file.</strong></p>
+<p>Right-click the file and click on Rename. Use simple names and avoid special characters like !@# or spaces.​</p>
+</li>
+<li>
+<p><strong>Reconnect the storage device.</strong></p>
+<p>If using an external drive such as a USB drive, eject it first before unpluging it, wait 10 seconds, then plug it back in. You can also try different USB port.</p>
+</li>
+<li>
+<p><strong>Repair disk errors with First Aid.</strong></p>
+<p>Corrupted disk data can cause write failures. You can use macOS Disk Utility to fix issues. </p>
+<ol>
+<li>​Open Finder -&gt; Applications -&gt; Utilities -&gt; Disk Utility.​ </li>
+<li>Select the drive/storage device (local or external) in the left sidebar.​ </li>
+<li>Click First Aid -&gt; Run. Wait for the process to complete.</li>
+</ol>
+</li>
+<li>
+<p><strong>Adjust File System or Format the Drive​.</strong></p>
+<p>If using an exFAT-formatted drive, compatibility issues with Samba may occur on macOS. You can try the following methods.​</p>
+<ul>
+<li>
+<p><strong>Format to FAT32</strong> (for external drives, cross-platform compatibility)</p>
+<ol>
+<li>Back up data on the drive first (formatting erases all files).​</li>
+<li>Open Disk Utility -&gt; Select the drive -&gt; Erase.​</li>
+<li>Choose "MS-DOS (FAT)" (FAT32) as the format -&gt; Click Erase.​</li>
+</ol>
+</li>
+<li>
+<p><strong>Format to ext4</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ext4 is primarily supported by Linux systems. After formatting to ext4, the storage device may be incompatible with Windows operating systems, potentially leading to issues such as inability to recognize or write to the drive on Windows devices.​</p>
+</div>
+<ol>
+<li>Back up all data on the drive as formatting will erase it.​</li>
+<li>Use a tool like Disk Utility or a Linux system to format the drive to ext4.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Update macOS and Clear Caches​.</strong></p>
+<p>Outdated software or corrupted caches can cause conflicts. Go to System Settings -&gt; General -&gt; Software Update and install the latest version, and clear system caches.</p>
+</li>
+</ol>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
