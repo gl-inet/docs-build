@@ -1746,20 +1746,83 @@
 
   <!-- Markdown content -->
   <h1 id="what-should-i-do-if-i-failed-to-bind-device-to-the-glkvm-app">What should I do if I failed to bind device to the GLKVM app?<a class="headerlink" href="#what-should-i-do-if-i-failed-to-bind-device-to-the-glkvm-app" title="Permanent link">&para;</a></h1>
-<p>To remotely access a controlled device via the GLKVM app, you must first bind your GL.iNet KVM device (e.g., Comet) to the app. However, binding failures may occur during this process.</p>
-<p><img alt="binding failed" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/failed_to_bind_device_to_glkvm_app/binding_failed_windows.png" /></p>
-<p>Here are some suggestions for troubleshooting.</p>
+<p>The <a href="https://www.gl-inet.com/app-rm/" target="_blank">GLKVM app</a> allows you to remotely access your controlled device from a host device. Simply install the app on your host device and bind your GL.iNet KVM device to it.</p>
+<p>However, binding failures may occur during this process.</p>
+<p>Click on the error message below to view the corresponding solution.</p>
+<details>
+<summary>Binding failed, unable to obtain basic KVM device information.</summary>
+<ol>
+<li>Check the LED state. Ensure the LED is solid white and your KVM device is connected to Internet.</li>
+<li>Restart your KVM device, wait for 2 minutes and try to bind it again.</li>
+<li>
+<p>Follow the steps below to check the network by Ping command.</p>
 <ol>
 <li>
-<p>Check the LED and ensure your KVM device is connected to Internet.</p>
-<p>Take Comet (GL-RM1) as an exmaple. A solid white LED indicates stable Internet connection.</p>
+<p>Connect your controlling device to the same network as your KVM.</p>
+</li>
+<li>
+<p>Launch a browser (Chrome or Edge is recommended) on the controlling device, and enter <code>glkvm.local</code> in the address bar. Enter the admin password to log in.</p>
+<p><img alt="local access via domain" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/local_access_controlled_device_via_browser/local_access_domain_1.png" /></p>
+</li>
+<li>
+<p>After login, navigate to <strong>Toolbox</strong> -&gt; <strong>Terminal</strong>, click on <strong>Access</strong> to log in to the terminal.</p>
+<p><img alt="access terminal" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/failed_to_bind_device_to_glkvm_app/access_terminal.png" /></p>
+</li>
+<li>
+<p>Ping <code>google.com</code> to check the network status.</p>
+<p><img alt="ping" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/failed_to_bind_device_to_glkvm_app/ping_test.png" /></p>
+<p>If the network is working fine, you will get the result as shown below.</p>
+<p><img alt="ping" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/failed_to_bind_device_to_glkvm_app/ping_success.png" /></p>
+<p>If the network is unstable or unavailable, please contact your ISP or router support.</p>
+</li>
+</ol>
+</li>
+</ol>
+</details>
+<details>
+<summary>Device network error, binding failed.</summary>
+<ol>
+<li>Check the LED state. Ensure the LED is solid white and your KVM device is connected to Internet.</li>
+<li>Restart your KVM device, wait for 2 minutes and try to bind it again.</li>
+<li>
+<p>Follow the steps below to check the network by Ping command.</p>
+<ol>
+<li>
+<p>Connect your controlling device to the same network as your KVM.</p>
+</li>
+<li>
+<p>Launch a browser (Chrome or Edge is recommended) on the controlling device, and enter <code>glkvm.local</code> in the address bar. Enter the admin password to log in.</p>
+<p><img alt="local access via domain" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/local_access_controlled_device_via_browser/local_access_domain_1.png" /></p>
+</li>
+<li>
+<p>After login, navigate to <strong>Toolbox</strong> -&gt; <strong>Terminal</strong>, click on <strong>Access</strong> to log in to the terminal.</p>
+<p><img alt="access terminal" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/failed_to_bind_device_to_glkvm_app/access_terminal.png" /></p>
+</li>
+<li>
+<p>Ping <code>google.com</code> to check the network status.</p>
+<p><img alt="ping" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/failed_to_bind_device_to_glkvm_app/ping_test.png" /></p>
+<p>If the network is working fine, you will get the result as shown below.</p>
+<p><img alt="ping" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/failed_to_bind_device_to_glkvm_app/ping_success.png" /></p>
+<p>If the network is unstable or unavailable, please contact your ISP or router support.</p>
+</li>
+</ol>
 </li>
 <li>
 <p>Ensure the Cloud service is enabled. </p>
-<p>The Cloud service is enabled by default, but if you disable it manually via web browser, device re-binding to the GLKVM app will fail. In that case, please access your KVM device locally via web browser to re-enable the Cloud service.</p>
+<p>The Cloud service is enabled by default, but if you disable it manually via web browser, device re-binding to the GLKVM app will fail. Please access your KVM device locally via web browser to re-enable the Cloud service.</p>
 </li>
 </ol>
-<p>If problem persists, please contact us at <a href="mailto:support@glinet.biz">support@gl-inet.com</a> and provide Device Model, Firmware version and MAC address.</p>
+</details>
+<details>
+<summary>Binding failed, KVM is already bind by others.</summary>
+<p>The KVM device has been bound to another email. Please check if you have bound it to your another email address.</p>
+</details>
+<details>
+<summary>Other</summary>
+<p>Check if VPN is enabled on your controlling device, on which the GLKVM app is installed. </p>
+<p>Disable any VPN or proxy software, including AstroWarp, Tailscale and ZeroTier, then try to bind your KVM to the GLKVM app again.</p>
+</details>
+<p>If problem persists, please contact us at <a href="mailto:support@gl-inet.com">support@gl-inet.com</a> and provide Device Model, Firmware version and MAC address.</p>
 
   <!-- Last update of source file -->
   
