@@ -12,7 +12,7 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/router/en/4/tutorials/can_i_use_multiwan_wired_input/">
+        <link rel="canonical" href="https://docs.gl-inet.com/router/en/4/tutorials/configure_dual_ethernet_wan/">
       
       
         <link rel="prev" href="../how_to_set_up_port_forwarding/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Set up two wired WAN without two WAN ports - GL.iNet Router Docs 4</title>
+        <title>Configure dual wired WAN access - GL.iNet Router Docs 4</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#can-i-use-multi-wan-wired-input-if-my-gl-router-doesnt-have-two-wan-ports" class="md-skip">
+        <a href="#configure-dual-wired-ethernet-wan-via-an-ethernet-to-usb-a-adapter" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Set up two wired WAN without two WAN ports
+              Configure dual wired WAN access
             
           </span>
         </div>
@@ -3517,7 +3517,7 @@
           
   
   <span class="md-ellipsis">
-    Set up two wired WAN without two WAN ports
+    Configure dual wired WAN access
   </span>
   
 
@@ -3528,7 +3528,7 @@
         
   
   <span class="md-ellipsis">
-    Set up two wired WAN without two WAN ports
+    Configure dual wired WAN access
   </span>
   
 
@@ -3557,15 +3557,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-usb-driver" class="md-nav__link">
-    Install USB Driver
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-by-tethering" class="md-nav__link">
-    Connect by Tethering
+  <a href="#setup-steps" class="md-nav__link">
+    Setup steps
   </a>
   
 </li>
@@ -5803,15 +5796,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-usb-driver" class="md-nav__link">
-    Install USB Driver
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-by-tethering" class="md-nav__link">
-    Connect by Tethering
+  <a href="#setup-steps" class="md-nav__link">
+    Setup steps
   </a>
   
 </li>
@@ -5840,19 +5826,31 @@
   
 
   <!-- Markdown content -->
-  <h1 id="can-i-use-multi-wan-wired-input-if-my-gl-router-doesnt-have-two-wan-ports">Can I use Multi-WAN wired input if my GL router doesn't have two WAN ports?<a class="headerlink" href="#can-i-use-multi-wan-wired-input-if-my-gl-router-doesnt-have-two-wan-ports" title="Permanent link">&para;</a></h1>
-<p>Yes, you can. Our router supports most common Ethernet to USB-A adapters. Simply plug the Ethernet to USB-A adapter into the USB port on the router and connect the other end to your ISP router.</p>
+  <h1 id="configure-dual-wired-ethernet-wan-via-an-ethernet-to-usb-a-adapter">Configure dual wired Ethernet WAN via an Ethernet to USB-A adapter<a class="headerlink" href="#configure-dual-wired-ethernet-wan-via-an-ethernet-to-usb-a-adapter" title="Permanent link">&para;</a></h1>
+<p>You can configure dual wired Ethernet WAN access on a single-WAN-port router via an Ethernet to USB-A adapter. </p>
+<p>GL-iNet routers support most common Ethernet to USB-A adapters. Simply plug the Ethernet to USB-A adapter into the USB port on the router, and connect the other end to your ISP router.</p>
 <h2 id="topology">Topology<a class="headerlink" href="#topology" title="Permanent link">&para;</a></h2>
 <p><img alt="Topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/adaptor.png" /></p>
-<h2 id="install-usb-driver">Install USB Driver<a class="headerlink" href="#install-usb-driver" title="Permanent link">&para;</a></h2>
-<p>Then, navigate to <strong>Application</strong>, <strong>Plug-ins</strong> to install the USB network driver for your adapter. </p>
+<h2 id="setup-steps">Setup steps<a class="headerlink" href="#setup-steps" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Install the USB driver. Plug the Ethernet to USB-A adapter into the USB port of your GL-iNet router, and connect the other end to your ISP router.</p>
+</li>
+<li>
+<p>Log in to the router's web admin panel. Navigate to <strong>Application</strong> -&gt; <strong>Plug-ins</strong>, install the USB network driver for your adapter. </p>
 <p><img alt="plugins" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/plugins_usb.png" /></p>
-<p>For instance, if you’re using a Realtek adapter, please select the <strong>kmod-usb-net-rtl8152</strong> driver. </p>
-<h2 id="connect-by-tethering">Connect by Tethering<a class="headerlink" href="#connect-by-tethering" title="Permanent link">&para;</a></h2>
+<p>instance, if you're using a Realtek adapter, please select the <strong>kmod-usb-net-rtl8152</strong> driver. </p>
+</li>
+<li>
+<p>Connect by Tethering.</p>
 <p>Once the installation is complete, the USB connection will be detected, allowing you to connect to your ISP router.</p>
 <p><img alt="suceeded" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/suceeded.png" /></p>
 <p><img alt="detected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/detected.png" /></p>
 <p><img alt="tether" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/tether.png" /></p>
+</li>
+</ol>
+<hr />
+<p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
   <!-- Last update of source file -->
   

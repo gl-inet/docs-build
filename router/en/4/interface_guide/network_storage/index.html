@@ -3500,11 +3500,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/can_i_use_multiwan_wired_input/" class="md-nav__link">
+      <a href="../../tutorials/configure_dual_ethernet_wan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Set up two wired WAN without two WAN ports
+    Configure dual wired WAN access
   </span>
   
 
@@ -5936,12 +5936,22 @@
 <li><a href="#webdav-client">WebDAV Client</a></li>
 </ul>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>Some GL.iNet models support MicroSD(TF) card, some models have USB port and support USB flash drive and portable external hard drive, you can set up Samba, WebDAV, DLNA on this page for the disk.</p>
-<p>The supported disk formats are NTFS, FAT32.</p>
-<p><strong>Note</strong>: The power consumption of USB hard drive is quite high. You should use it with an external power supply. Otherwise, it may cause malfunction.</p>
-<p><strong>Note</strong>: Some models have USB Port/MicroSD slot but have limited storage space and do not support file sharing.</p>
+<p>Some GL.iNet models have MicroSD(TF) card slots, while some models have USB ports, supporting USB flash drives and portable external hard drives. You can set up Samba, WebDAV, DLNA shares for the disk.</p>
+<p>The supported disk formats are NTFS, FAT32, ext4.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol>
+<li>
+<p>The power consumption of a USB hard drive is quite high. You should use it with an external power supply, otherwise it may cause malfunction.</p>
+</li>
+<li>
+<p>Some models have a USB port/MicroSD slot but have limited storage space and do not support file sharing.</p>
+</li>
+</ol>
+</div>
 <h2 id="supported-models">Supported models<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h2>
-<p>Usually models with USB ports or MicroSD(TF) slots are supported for file sharing. For devices with Flash space less than or equal to 32MB, the Network Storage function is not yet supported and is still being developed and optimized.</p>
+<p>Usually, models with USB ports or MicroSD(TF) slots support network storage (i.e. file sharing). </p>
+<p>For devices with flash storage of 32MB or less, the Network Storage function is not yet supported and is still under development and optimization.</p>
 <table>
 <thead>
 <tr>
@@ -6043,7 +6053,7 @@
 <td style="text-align: center;">-</td>
 </tr>
 <tr>
-<td style="text-align: left;">GL-SFT1200 (Opal)*FW 4.7.2</td>
+<td style="text-align: left;">GL-SFT1200 (Opal)</br><strong>*FW 4.7.2</strong></td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
@@ -6051,7 +6061,7 @@
 <td style="text-align: center;">-</td>
 </tr>
 <tr>
-<td style="text-align: left;">GL-E750V2 (Mudi V2)*FW 4.7.2</td>
+<td style="text-align: left;">GL-E750V2 (Mudi V2)</br><strong>*FW 4.7.2</strong></td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
@@ -6063,16 +6073,16 @@
 <h2 id="insert-storage-device">Insert Storage Device<a class="headerlink" href="#insert-storage-device" title="Permanent link">&para;</a></h2>
 <p>For TF card, you need to power off the router first, insert the TF card and then power on the router.</p>
 <p>For USB Drive, you can directly plug it into the USB port. For portable external hard drive, if you have a separate power supply, please connect it to the power supply.</p>
-<p>Go to web Admin Panel -&gt; APPLICATIONS -&gt; Network Storage</p>
+<p>Go to web Admin Panel -&gt; APPLICATIONS -&gt; Network Storage.</p>
 <p><img alt="network storage" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/network_storage_init.png" /></p>
-<p>When a disk is found.</p>
+<p>When a disk is detected, the page is displayed as below.</p>
 <p><img alt="network storage, disk found" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/disk_found.png" /></p>
 <h2 id="set-up-samba">Set Up Samba<a class="headerlink" href="#set-up-samba" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Toggle on to enable Samba and click <strong>Apply</strong>.</p>
 <ul>
-<li>Allow Access Samba from WAN: Enable it if you want the upstream devices can access the Samba.</li>
+<li>Allow Access Samba from WAN: Enable it if you want the upstream devices to access Samba.</li>
 </ul>
 <p><img alt="enable samba" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/enable_samba.png" /></p>
 </li>
@@ -6104,16 +6114,16 @@
 <h2 id="set-up-webdav">Set Up WebDAV<a class="headerlink" href="#set-up-webdav" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Toggle on to enable WebDAV, for other parameters, please refer to the following, then click <strong>Apply</strong>.</p>
+<p>Toggle on to enable WebDAV, and click <strong>Apply</strong>. For other parameters, please refer to the following instructions.</p>
 <ul>
 <li>
-<p>Allow Access WebDAV from WAN, enable it if you want the upstream devices can access the WebDAV.</p>
+<p>Allow Access WebDAV from WAN: Enable it if you want the upstream devices to access WebDAV.</p>
 </li>
 <li>
-<p>WebDAV Protocol, <strong>HTTP</strong> is not encrypted, using on your risk; <strong>HTTPS</strong> is encrypted, it uses self signed certificate.</p>
+<p>WebDAV Protocol: <strong>HTTP</strong> is not encrypted; use it at your own risk. <strong>HTTPS</strong> is encrypted and it uses self-signed certificate.</p>
 </li>
 <li>
-<p>WebDAV Port, generally you do not need to modify the port number unless it is conflicts. Port number range 1024 - 65535.</p>
+<p>WebDAV Port: Generally, you do not need to modify the port number unless it conflicts. The recommended port number range is 1024 - 65535.</p>
 </li>
 </ul>
 <p><img alt="enable webdav" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_quick_setup_share/enable_webdav.png" /></p>
