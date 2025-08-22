@@ -5827,25 +5827,29 @@
 
   <!-- Markdown content -->
   <h1 id="configure-dual-wired-ethernet-wan-via-an-ethernet-to-usb-a-adapter">Configure dual wired Ethernet WAN via an Ethernet to USB-A adapter<a class="headerlink" href="#configure-dual-wired-ethernet-wan-via-an-ethernet-to-usb-a-adapter" title="Permanent link">&para;</a></h1>
-<p>You can configure dual wired Ethernet WAN access on a single-WAN-port router via an Ethernet to USB-A adapter. </p>
-<p>GL-iNet routers support most common Ethernet to USB-A adapters. Simply plug the Ethernet to USB-A adapter into the USB port on the router, and connect the other end to your ISP router.</p>
+<p>You can configure dual wired Ethernet WAN access on a single-WAN-port router via an Ethernet-to-USB-A adapter. </p>
+<p>GL.iNet routers support common Ethernet-to-USB-A adapters, allowing you to convert the wired Ethernet access from your ISP router to a USB connection via the router's USB port, providing the router with an additional wired Ethernet access alongside the WAN port.des the WAN port.</p>
 <h2 id="topology">Topology<a class="headerlink" href="#topology" title="Permanent link">&para;</a></h2>
 <p><img alt="Topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/adaptor.png" /></p>
 <h2 id="setup-steps">Setup steps<a class="headerlink" href="#setup-steps" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Install the USB driver. Plug the Ethernet to USB-A adapter into the USB port of your GL-iNet router, and connect the other end to your ISP router.</p>
+<p>Plug the Ethernet to USB-A adapter into the USB port of your GL-iNet router, and connect the other end to your ISP router.</p>
 </li>
 <li>
-<p>Log in to the router's web admin panel. Navigate to <strong>Application</strong> -&gt; <strong>Plug-ins</strong>, install the USB network driver for your adapter. </p>
+<p>Install the USB driver. </p>
+<p>Log in to the router's web admin panel, navigate to <strong>Application</strong> -&gt; <strong>Plug-ins</strong>, and install the USB network driver for your adapter. </p>
+<p>For instance, if you're using a Realtek adapter, please install the <strong>kmod-usb-net-rtl8152</strong> driver. </p>
 <p><img alt="plugins" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/plugins_usb.png" /></p>
-<p>instance, if you're using a Realtek adapter, please select the <strong>kmod-usb-net-rtl8152</strong> driver. </p>
+<p>Wait for installation to complete.</p>
+<p><img alt="installation suceeded" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/suceeded.png" /></p>
 </li>
 <li>
-<p>Connect by Tethering.</p>
-<p>Once the installation is complete, the USB connection will be detected, allowing you to connect to your ISP router.</p>
-<p><img alt="suceeded" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/suceeded.png" /></p>
+<p>Connect by USB Tethering.</p>
+<p>Once the driver installation is complete, navigate to <strong>INTERNET</strong> -&gt; <strong>Tethering</strong> section. </p>
+<p>The USB connection will be detected, allowing you to connect to your ISP router.</p>
 <p><img alt="detected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/detected.png" /></p>
+<p>Click on <strong>Connect</strong> and wait a minute. When a green dot lights up and the page displays information such as IP address, it indicates that USB Tethering connection is successful.</p>
 <p><img alt="tether" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/tether.png" /></p>
 </li>
 </ol>
