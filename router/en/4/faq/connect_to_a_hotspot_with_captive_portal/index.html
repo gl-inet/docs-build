@@ -1463,22 +1463,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#solution-1-change-dns-settings" class="md-nav__link">
-    Solution 1: Change DNS settings
+  <a href="#solution-1-enable-public-hotspot-login-mode-camouflage" class="md-nav__link">
+    Solution 1: Enable Public Hotspot Login Mode &amp; Camouflage
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#solution-2mac-clone" class="md-nav__link">
-    Solution 2：MAC Clone
+  <a href="#solution-2-change-dns-settings" class="md-nav__link">
+    Solution 2: Change DNS settings
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#solution-3seek-help-from-hotel-staff" class="md-nav__link">
-    Solution 3：Seek help from hotel staff
+  <a href="#solution-3mac-clone" class="md-nav__link">
+    Solution 3：MAC Clone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-4seek-help-from-hotel-staff" class="md-nav__link">
+    Solution 4：Seek help from hotel staff
   </a>
   
 </li>
@@ -5859,22 +5866,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#solution-1-change-dns-settings" class="md-nav__link">
-    Solution 1: Change DNS settings
+  <a href="#solution-1-enable-public-hotspot-login-mode-camouflage" class="md-nav__link">
+    Solution 1: Enable Public Hotspot Login Mode &amp; Camouflage
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#solution-2mac-clone" class="md-nav__link">
-    Solution 2：MAC Clone
+  <a href="#solution-2-change-dns-settings" class="md-nav__link">
+    Solution 2: Change DNS settings
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#solution-3seek-help-from-hotel-staff" class="md-nav__link">
-    Solution 3：Seek help from hotel staff
+  <a href="#solution-3mac-clone" class="md-nav__link">
+    Solution 3：MAC Clone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-4seek-help-from-hotel-staff" class="md-nav__link">
+    Solution 4：Seek help from hotel staff
   </a>
   
 </li>
@@ -5940,20 +5954,34 @@
 </li>
 </ol>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<p>However, you may find that you are unable to enter the captive portal, so you cannot connect to the hotspot or access the Internet. In this case, please try the following solutions one at a time.</p>
+<p>However, you may find that you are unable to enter the captive portal, so you cannot connect to the hotspot or access the Internet. In this case, please try the following solutions.</p>
+<h3 id="solution-1-enable-public-hotspot-login-mode-camouflage">Solution 1: Enable Public Hotspot Login Mode &amp; Camouflage<a class="headerlink" href="#solution-1-enable-public-hotspot-login-mode-camouflage" title="Permanent link">&para;</a></h3>
+<p><strong>Note</strong>: These two features are available only in firmware v4.6 and above.</p>
+<p>When connecting the router to a public hotspot with a captive portal, on the Join Network page, enabling the following features can help improve the connection success rate.</p>
+<p><img alt="hotspot login mode &amp; camouflage" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_a_hotspot_with_captive_portal/hotspot_login_mode_camouflage.png" /></p>
+<ul>
+<li>
+<p>Auto-Enable Login Mode for Public Hotspots</p>
+<p>If this option is enabled, this router will automatically enter Login Mode for Public Hotspots when it is successfully connected to a hotspot but not the Internet. In this mode, some services will be suspended while the DNS mode will be switched to automatic, which may leak your network activity to the hotspot provider (e.g. hotel or shopping mall).</p>
+</li>
+<li>
+<p>Enable Camouflage</p>
+<p>If enabled, the router will masquerade as the client device you use to access the admin panel by emulating that device’s MAC address.</p>
+</li>
+</ul>
 <hr />
-<h3 id="solution-1-change-dns-settings">Solution 1: Change DNS settings<a class="headerlink" href="#solution-1-change-dns-settings" title="Permanent link">&para;</a></h3>
+<h3 id="solution-2-change-dns-settings">Solution 2: Change DNS settings<a class="headerlink" href="#solution-2-change-dns-settings" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Go to web Admin Panel -&gt; NETWORK -&gt; DNS. Then, make sure the <strong>DNS Rebinding Attack Protection</strong> is disabled and the <strong>Mode</strong> is set to <strong>Automatic</strong>.</p>
-<p><img alt="dns rebinding attack protection" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_a_hotspot_with_captive_portal/dns_rebinding_attack_protection.png" width="580" /></p>
+<p><img alt="dns rebinding attack protection" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_a_hotspot_with_captive_portal/dns_rebinding_attack_protection.png" width="600" /></p>
 </li>
 <li>
 <p>Go to web Admin Panel -&gt; VPN -&gt; VPN Dashboard. Make sure the connection of OpenVPN and WireGuard client is disabled.</p>
-<p><img alt="vpn client disabled v4.7" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_a_hotspot_with_captive_portal/vpn_client_is_disable.png" width="580" /></p>
-<p><small>(v4.7 and earlier)</small></p>
-<p><img alt="vpn client disabled v4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_a_hotspot_with_captive_portal/vpn_disabled_4.8.jpg" width="580" /></p>
-<p><small>(v4.8)</small></p>
+<p><strong>For firmware v4.7 and earlier</strong>, the page is displayed as below. </p>
+<p><img alt="vpn client disabled v4.7" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_a_hotspot_with_captive_portal/vpn_client_is_disable.png" width="600" /></p>
+<p><strong>For firmware v4.8 and higher</strong>, the page is displayed as below.</p>
+<p><img alt="vpn client disabled v4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_a_hotspot_with_captive_portal/vpn_disabled_4.8.png" width="600" /></p>
 </li>
 <li>
 <p>Go to web Admin Panel -&gt; APPLICATIONS -&gt; AdGuard Home. Make sure the AdGuard Home is disabled.</p>
@@ -5966,7 +5994,7 @@
 </li>
 </ol>
 <hr />
-<h3 id="solution-2mac-clone">Solution 2：MAC Clone<a class="headerlink" href="#solution-2mac-clone" title="Permanent link">&para;</a></h3>
+<h3 id="solution-3mac-clone">Solution 3：MAC Clone<a class="headerlink" href="#solution-3mac-clone" title="Permanent link">&para;</a></h3>
 <p>Sometimes, <a href="#solution-1-change-dns-settings">Solution 1</a> is not enough to solve this issue. Some hotels limit the number of devices each customer can access by MAC address, and they record the MAC address of your phone (or other device) when it first time accesses the hotel WiFi. In this case, we need to clone the MAC address that the your phone uses to connect to the hotel WiFi to the router.</p>
 <ol>
 <li>
@@ -5980,10 +6008,10 @@
 </li>
 <li>
 <p>Connect your phone or computer to the router. Access the router's web Admin Panel, clone or manually input this MAC access.</p>
-<p><strong>For v4.5 and earlier</strong>, please select NETWORK from the left side -&gt; MAC Address.</p>
+<p><strong>For firmware v4.5 and earlier</strong>, please select NETWORK from the left side -&gt; MAC Address.</p>
 <p>Select Manual Mode, fill in the MAC address you wrote down in step 2 into the input box and click Apply.</p>
 <p><img alt="MAC manual" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_a_hotspot_with_captive_portal/mac_address_manual.png" /></p>
-<p><strong>For v4.6 and higher</strong>, please select INTERNET from the left side -&gt; Repeater section, click Modify.</p>
+<p><strong>For firmware v4.6 and higher</strong>, please select INTERNET from the left side -&gt; Repeater section, click Modify.</p>
 <p><img alt="repeater modify" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_a_hotspot_with_captive_portal/repeater_modify.png" /></p>
 <p>In the pop-up window, switch the MAC Mode to Clone, manually input the MAC address written down in step 2 and click Apply.</p>
 <p><img alt="repeater clone mac" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_a_hotspot_with_captive_portal/repeater_clone_mac.png" /></p>
@@ -5993,7 +6021,7 @@
 </li>
 </ol>
 <hr />
-<h3 id="solution-3seek-help-from-hotel-staff">Solution 3：Seek help from hotel staff<a class="headerlink" href="#solution-3seek-help-from-hotel-staff" title="Permanent link">&para;</a></h3>
+<h3 id="solution-4seek-help-from-hotel-staff">Solution 4：Seek help from hotel staff<a class="headerlink" href="#solution-4seek-help-from-hotel-staff" title="Permanent link">&para;</a></h3>
 <p>Some hotels' networks have very strict verification policies. If neither solution 1 nor solution 2 works, you can ask the hotel staff to add the router's MAC address (the factory default one) to their whitelist directly.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
