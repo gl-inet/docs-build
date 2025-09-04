@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#does-glkvm-application-support-chromeoslinux" class="md-skip">
+        <a href="#does-glkvm-app-support-chromeoslinux" class="md-skip">
           Skip to content
         </a>
       
@@ -660,7 +660,7 @@
         
   
   <span class="md-ellipsis">
-    Frequently Asked Questions about GL.iNet
+    Frequently Asked Questions about GL.iNet KVM
   </span>
   
 
@@ -680,7 +680,7 @@
         
   
   <span class="md-ellipsis">
-    What devices can GL.iNet KVM control? Any software needed to use KVM?
+    What devices can GL.iNet KVM control? Any software is needed?
   </span>
   
 
@@ -862,7 +862,7 @@
         
   
   <span class="md-ellipsis">
-    How does GL.iNet KVM remotely control the power on/off of controlled device
+    How to achieve remote power control for the controlled device?
   </span>
   
 
@@ -1833,11 +1833,25 @@
   
 
   <!-- Markdown content -->
-  <h1 id="does-glkvm-application-support-chromeoslinux">Does GLKVM application support ChromeOS/Linux?<a class="headerlink" href="#does-glkvm-application-support-chromeoslinux" title="Permanent link">&para;</a></h1>
-<p>The GLKVM application is designed for the controlling device (i.e. the Host). Currently the GLKVM app does not support installation on Chrome or Linux OS, so if your controlling device is running Chrome/Linux OS, the GLKVM app cannot be installed, thus remote access to controlled device via GLKVM app is not supported. </p>
-<p>However, you may use Tailscale to achieve remote access, which is integrated in Comet (GL-RM1). In this way, you can directly access Comet by typing its Tailscale virtual IP into a browser, without installing GLKVM app.</p>
-<p>Alternatively, you can locally access the controlled device through a web browser in the local LAN network. </p>
-<p>As to the remotely-controlled device, no need to install any software on it. That is to say, it can be Windows, macOS, ChromeOS, Linux, etc.</p>
+  <h1 id="does-glkvm-app-support-chromeoslinux">Does GLKVM app support ChromeOS/Linux?<a class="headerlink" href="#does-glkvm-app-support-chromeoslinux" title="Permanent link">&para;</a></h1>
+<p>The GLKVM app is designed for the controlling device (i.e. the Host). Currently the GLKVM app does not support installation on Chrome or Linux OS, so if your controlling device is running Chrome/Linux OS, the GLKVM app cannot be installed, thus remote access to controlled device via GLKVM app is not supported. </p>
+<p>However, you can use <strong>Cloud Service</strong> or <strong>Tailscale</strong> to achieve remote access.</p>
+<ul>
+<li>
+<p>Cloud Service</p>
+<p>This method is ideal for those who cannot or do not want to install the GLKVM app.</p>
+<p>Bind your KVM to your Cloud account, then you can remotely access your KVM by typing <code>glkvm.com</code> into a web browser on your controlling device, thus accessing the controlled device, without installing the GLKVM app.</p>
+<p>Click <a href="../remote_access_to_controlled_device_via_cloud/" target="_blank">here</a> for details.</p>
+</li>
+<li>
+<p>Tailscale</p>
+<p>This method is also suitable for those who cannot or do not want to install the GLKVM app, but it requires more steps.</p>
+<p>Bind your KVM and controlling device to the same Tailscale account, then you can remotely access your KVM by typing the KVM's Tailscale virtual IP into a web browser on your controlling device, thus accessing the controlled device, without installing the GLKVM app.</p>
+<p>Click <a href="../remote_access_to_controlled_device_via_tailscale/" target="_blank">here</a> for details.</p>
+</li>
+</ul>
+<p>Alternatively, you can locally access the controlled device through a web browser in the same local network. </p>
+<p>As to the controlled device, no need to install any software on it. That is to say, it can be Windows, macOS, ChromeOS, Linux, etc.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
