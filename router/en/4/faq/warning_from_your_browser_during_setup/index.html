@@ -1397,15 +1397,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-i-still-get-a-warning" class="md-nav__link">
-    Why I still get a warning?
+  <a href="#why-do-i-still-get-a-warning" class="md-nav__link">
+    Why do I still get a warning?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-can-i-do-with-this-alert" class="md-nav__link">
-    What can I do with this alert?
+  <a href="#what-can-i-do-with-this-warning" class="md-nav__link">
+    What can I do with this warning?
   </a>
   
 </li>
@@ -5852,15 +5852,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-i-still-get-a-warning" class="md-nav__link">
-    Why I still get a warning?
+  <a href="#why-do-i-still-get-a-warning" class="md-nav__link">
+    Why do I still get a warning?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-can-i-do-with-this-alert" class="md-nav__link">
-    What can I do with this alert?
+  <a href="#what-can-i-do-with-this-warning" class="md-nav__link">
+    What can I do with this warning?
   </a>
   
 </li>
@@ -5899,17 +5899,18 @@
   <h1 id="warning-from-your-browser-your-connection-is-not-private">Warning from your browser: Your Connection is not Private<a class="headerlink" href="#warning-from-your-browser-your-connection-is-not-private" title="Permanent link">&para;</a></h1>
 <p>You may encounter this browser alert if this is your first time setting up your GL.iNet router: Your Connection is not Private.</p>
 <p><img alt="alert" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/warning_from_your_browser/alert.jpg" /></p>
-<p>This is a standard security warning that browsers issue when they detect a website lacking an SSL/TLS certificate.</p>
+<p>This is a standard security warning issued by the browser when it detects a website without a trusted SSL/TLS certificate.</p>
+<p>Browsers are typically designed to trust certificates issued by third-party certificate authorities (CAs). However, GL.iNet routers use self-signed certificates, which are not issued by CAs. Therefore, browsers flag them as insecure and display this warning.</p>
 <h2 id="is-it-safe-to-browse-19216881">Is it safe to browse 192.168.8.1?<a class="headerlink" href="#is-it-safe-to-browse-19216881" title="Permanent link">&para;</a></h2>
 <p>We prioritize your network security. During the initial setup, you do not need an internet connection, as the process is entirely local.</p>
-<p>When connecting to the GL.iNet router’s Wi-Fi during setup, you may see <strong>"Connected, No internet"</strong>. This is expected, as the router operates in a standalone local network during configuration.</p>
+<p>When connecting to the GL.iNet router's Wi-Fi during setup, you may see <strong>"Connected, No internet"</strong>. This is expected, as the router operates in a standalone local network during configuration.</p>
 <p><img alt="nointernet" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/warning_from_your_browser/nointernet.jpg" /></p>
-<p>Similarly, the setup IP <strong>192.168.8.1</strong> is a private local IP address assigned to the router itself. It is used to access the device’s local management interface, not a public website. </p>
+<p>Similarly, the IP <strong>192.168.8.1</strong> is a private local IP address assigned to the router itself. It is used to access the device's local admin panel, not a public website. </p>
 <p>Since the connection is purely local and no internet access is required during setup, there is <strong>no risk of privacy leakage</strong>. This ensures a secure, isolated environment for configuring your router.</p>
-<h2 id="why-i-still-get-a-warning">Why I still get a warning?<a class="headerlink" href="#why-i-still-get-a-warning" title="Permanent link">&para;</a></h2>
-<p>Browsers usually do not distinguish between setup IP addresses and normal websites; they treat all IP addresses as websites and expect HTTPS connections to be secured by SSL/TLS certificates. </p>
-<p>A genuinely secure website uses an SSL/TLS certificate, so when browsers access a router's setup IP (which does not have a certificate), they trigger a security alert due to the missing certificate.</p>
-<h2 id="what-can-i-do-with-this-alert">What can I do with this alert?<a class="headerlink" href="#what-can-i-do-with-this-alert" title="Permanent link">&para;</a></h2>
+<h2 id="why-do-i-still-get-a-warning">Why do I still get a warning?<a class="headerlink" href="#why-do-i-still-get-a-warning" title="Permanent link">&para;</a></h2>
+<p>Browsers usually do not distinguish between a preset setup IP address and normal websites; they treat all IP addresses as websites and expect HTTPS connections to be secured by SSL/TLS certificates. </p>
+<p>GL.iNet routers do use SSL/TLS certificates, but it is self-signed and not issued by third-party certificate authorities (CAs). Although accessing this IP is secure (as it is on a private local network), it is still considered "insecure" by the browser, which is why an alert is issued.</p>
+<h2 id="what-can-i-do-with-this-warning">What can I do with this warning?<a class="headerlink" href="#what-can-i-do-with-this-warning" title="Permanent link">&para;</a></h2>
 <p>Please click <strong>Advanced</strong> and <strong>Continue to 192.168.8.1</strong> </p>
 <p><img alt="continue" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/warning_from_your_browser/continue.jpg" /></p>
 <p>Then you will re-direct to the web Admin Panel.</p>
