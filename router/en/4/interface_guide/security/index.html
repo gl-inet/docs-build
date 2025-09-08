@@ -5509,12 +5509,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#local-access-control" class="md-nav__link">
-    Local Access Control
+  <a href="#access-control" class="md-nav__link">
+    Access Control
   </a>
   
-    <nav class="md-nav" aria-label="Local Access Control">
+    <nav class="md-nav" aria-label="Access Control">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admin-panel" class="md-nav__link">
+    Admin Panel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#luci" class="md-nav__link">
+    LuCI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    SSH
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#prohibited-port" class="md-nav__link">
@@ -5865,12 +5886,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#local-access-control" class="md-nav__link">
-    Local Access Control
+  <a href="#access-control" class="md-nav__link">
+    Access Control
   </a>
   
-    <nav class="md-nav" aria-label="Local Access Control">
+    <nav class="md-nav" aria-label="Access Control">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admin-panel" class="md-nav__link">
+    Admin Panel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#luci" class="md-nav__link">
+    LuCI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    SSH
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#prohibited-port" class="md-nav__link">
@@ -5926,24 +5968,60 @@
 <p>This feature is available since v4.5.</p>
 <p>On the left side of web Admin Panel -&gt; SYSTEM -&gt; Security</p>
 <h2 id="admin-password">Admin Password<a class="headerlink" href="#admin-password" title="Permanent link">&para;</a></h2>
-<p><img alt="admin password" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/admin_password.png" /></p>
-<p>Change the password of login the web Admin Panel. You have to input your current password to change it.</p>
-<p>For security reasons, we recommend that you turn on <strong>Prevent Weak Password</strong>.</p>
-<p>When <strong>Prevent Weak Password</strong> is turned on, the requirements for new passwords are as follows.</p>
+<p>You can change the login password of the web Admin Panel here.</p>
+<p><img alt="admin password" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/admin_password.jpg" /></p>
+<p>The requirements for the admin passwords are as follows.</p>
 <ul>
-<li>5 characters and maximum 63 characters.</li>
+<li>Minimum 10 characters and maximum 63 characters.</li>
 <li>Letters (case senstive), numbers and symbols <code>! @ # $ % ^ &amp; * ( ) _ + - = , . &gt; &lt; | ? / \ [ ] { } : ; " ' ` ~</code> are allowed.</li>
 <li>At least two of uppercase letters, lowercase letters, numbers, and symbols are required.</li>
 </ul>
-<h2 id="local-access-control">Local Access Control<a class="headerlink" href="#local-access-control" title="Permanent link">&para;</a></h2>
-<p>The local control feature can prevent scanning and intrusion attempts on the default port and avoid network problems caused by port conflicts.</p>
-<p><strong>Note</strong>: If the port number is modified in the firmware, you need to enter the correct port number on the mobile phone to enter the admin panel. If the port number is forgotten, please reset the router to the default port number.</p>
-<p><img alt="security_default_local_access_control" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/security_default_local_access_control.png" /></p>
-<p><strong>Auto-Logout Time</strong>: Interval between closing or hibernating the browser page and logging out.</p>
+<h2 id="access-control">Access Control<a class="headerlink" href="#access-control" title="Permanent link">&para;</a></h2>
+<p>The Access Control, also called Local Access Control in firmware v4.7 and earlier, manages access for different management interfaces of the router.</p>
+<p>It can prevent scanning and intrusion attempts on the default port and avoid network problems caused by port conflicts.</p>
+<p><strong>Note</strong>: If the port number is modified in the firmware, you need to enter the correct port number to access the admin panel. If you forgot the port number, please reset the router to the default port number.</p>
+<p><img alt="security_access_control" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/access_control_4.8.png" /></p>
+<h3 id="admin-panel">Admin Panel<a class="headerlink" href="#admin-panel" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>HTTP Port</strong>: Defaults to 80, used for unencrypted HTTP access to the web admin panel.</p>
+</li>
+<li>
+<p><strong>HTTPS Port</strong>: Defaults to 443, used for secure HTTPS access to the web admin panel.</p>
+</li>
+<li>
+<p><strong>Force HTTPS</strong>: When enabled, access to the web admin panel is enforced to use a secure HTTPS connection.</p>
+</li>
+<li>
+<p><strong>Auto-Logout Time</strong>: Set to 5 minutes by default, it automatically logs out idle admin sessions after this duration for security. You can customize the auto-logout time, ranging from 1 minute to 3 hours.</p>
+</li>
+</ul>
+<h3 id="luci">LuCI<a class="headerlink" href="#luci" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>HTTP Port</strong>: Defaults to 8080, for unencrypted HTTP access to the LuCI interface.</p>
+</li>
+<li>
+<p><strong>HTTPS Port</strong>: Defaults to 8443, for secure HTTPS access to the LuCI interface.</p>
+</li>
+<li>
+<p><strong>Force HTTPS</strong>: When enabled, access to the LuCI interface is enforced to use a secure HTTPS connection.</p>
+</li>
+</ul>
+<h3 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Enable SSH</strong>: It controls whether SSH access to the router is permitted. It is enabled by default.</p>
+</li>
+<li>
+<p><strong>SSH Port</strong>: Defaults to 22, the port used for SSH access to the router.</p>
+</li>
+</ul>
 <h3 id="prohibited-port">Prohibited Port<a class="headerlink" href="#prohibited-port" title="Permanent link">&para;</a></h3>
+<p>If you assign a port number that conflicts with a reserved port (or one reserved for specific services by browsers/network conventions), a prompt will appear stating "This port is forbidden by the browser".</p>
 <p><img alt="http_https_port_forbidden" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/http_https_port_forbidden.png" /></p>
 <details>
-<summary>The list of port numbers prohibited by the browser is as follows:</summary>
+<summary>List of port numbers prohibited by the browser</summary>
 <table>
 <thead>
 <tr>
@@ -6289,11 +6367,11 @@
 <p><strong>SSH Remote Access</strong>: SSH protocol is mainly used for securely accessing and managing remote computers and servers, as well as performing file transfer operations. When users need to remotely log in to servers through command lines or scripts for system management, file transfer, and other operations, SSH protocol can be used to establish a secure tunnel to ensure the security and privacy of data transmission.</p>
 </li>
 <li>
-<p><strong>Allow Remote Access from Specific IPs</strong>: This function is used in conjunction with the <strong>HTTPS Remote Access</strong> or <strong>SSH Remote Access</strong>.You can add multiple specified IP addresses to remotely manage routers from devices with these specified IP addresses.</p>
+<p><strong>Allow Remote Access from Specific IPs</strong>: This function is used in conjunction with <strong>Allow Ping from WAN</strong>, <strong>HTTPS Remote Access</strong> or <strong>SSH Remote Access</strong>. You can add multiple specified IP addresses to remotely manage routers from devices with these specified IP addresses.</p>
 </li>
 </ul>
-<p><img alt="add_ip_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/add_ip_address.png" /></p>
-<p><img alt="add_ip_address_list" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/add_ip_address_list.png" /></p>
+<p><img alt="add_ip_address_1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/add_ip_address_1.png" /></p>
+<p><img alt="add_ip_address_2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/add_ip_address_2.png" /></p>
 <hr />
 <h2 id="open-ports-on-router">Open Ports on Router<a class="headerlink" href="#open-ports-on-router" title="Permanent link">&para;</a></h2>
 <p>The router's services, such as web and FTP, requires their respective ports to be opened on the router in order to be publicly reachable.</p>
