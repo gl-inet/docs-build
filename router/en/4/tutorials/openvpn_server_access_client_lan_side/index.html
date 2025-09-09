@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-visit-openvpn-client-lan-side-from-server" class="md-skip">
+        <a href="#how-to-access-openvpn-client-lan-side-from-server" class="md-skip">
           Skip to content
         </a>
       
@@ -2894,36 +2894,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-topology-of-openvpn-site-to-site-tunnel" class="md-nav__link">
-    The Topology of OpenVPN site to site tunnel
-  </a>
-  
-    <nav class="md-nav" aria-label="The Topology of OpenVPN site to site tunnel">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-go-to-the-vpn-dashboard-of-openvpn-server" class="md-nav__link">
-    1. Go to the VPN Dashboard of OpenVPN server
+  <a href="#topology" class="md-nav__link">
+    Topology
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-set-up-the-custom-rule" class="md-nav__link">
-    2. Set up the custom rule
+      
+        <li class="md-nav__item">
+  <a href="#1-add-route-rule-on-server" class="md-nav__link">
+    1. Add route rule on server
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#3-check-the-ip-can-be-visited-or-not" class="md-nav__link">
-    3. Check the IP can be visited or not
+      
+        <li class="md-nav__item">
+  <a href="#2-test-connection" class="md-nav__link">
+    2. Test connection
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5851,36 +5838,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-topology-of-openvpn-site-to-site-tunnel" class="md-nav__link">
-    The Topology of OpenVPN site to site tunnel
-  </a>
-  
-    <nav class="md-nav" aria-label="The Topology of OpenVPN site to site tunnel">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-go-to-the-vpn-dashboard-of-openvpn-server" class="md-nav__link">
-    1. Go to the VPN Dashboard of OpenVPN server
+  <a href="#topology" class="md-nav__link">
+    Topology
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-set-up-the-custom-rule" class="md-nav__link">
-    2. Set up the custom rule
+      
+        <li class="md-nav__item">
+  <a href="#1-add-route-rule-on-server" class="md-nav__link">
+    1. Add route rule on server
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#3-check-the-ip-can-be-visited-or-not" class="md-nav__link">
-    3. Check the IP can be visited or not
+      
+        <li class="md-nav__item">
+  <a href="#2-test-connection" class="md-nav__link">
+    2. Test connection
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5908,17 +5882,24 @@
   
 
   <!-- Markdown content -->
-  <h1 id="how-to-visit-openvpn-client-lan-side-from-server">How to visit OpenVPN client LAN side from Server<a class="headerlink" href="#how-to-visit-openvpn-client-lan-side-from-server" title="Permanent link">&para;</a></h1>
-<h2 id="the-topology-of-openvpn-site-to-site-tunnel">The Topology of OpenVPN site to site tunnel<a class="headerlink" href="#the-topology-of-openvpn-site-to-site-tunnel" title="Permanent link">&para;</a></h2>
-<p>Visit the subnet of OpenVPN client (GL-MT2500), like NAS, printer, IP Cam......For example, Sub-router (GL-MT3000) with IP <strong>192.168.48.211</strong></p>
-<p><img alt="ovpnlantop" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ovpnlantop.jpg" /></p>
-<h3 id="1-go-to-the-vpn-dashboard-of-openvpn-server">1. Go to the VPN Dashboard of OpenVPN server<a class="headerlink" href="#1-go-to-the-vpn-dashboard-of-openvpn-server" title="Permanent link">&para;</a></h3>
-<p>Click the icon and enter the custom rule page</p>
-<p><img alt="ovpnoption" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ovpnoption.jpg" /></p>
-<h3 id="2-set-up-the-custom-rule">2. Set up the custom rule<a class="headerlink" href="#2-set-up-the-custom-rule" title="Permanent link">&para;</a></h3>
-<p>Input the subnet you wanted to visit, in this example the Target Address is <strong>192.168.48.0/24</strong>, Gateway <strong>10.8.0.1</strong> and input the Scope <strong>global</strong></p>
-<p><img alt="ovpnrule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ovpnrule.jpg" /></p>
-<h3 id="3-check-the-ip-can-be-visited-or-not">3. Check the IP can be visited or not<a class="headerlink" href="#3-check-the-ip-can-be-visited-or-not" title="Permanent link">&para;</a></h3>
+  <h1 id="how-to-access-openvpn-client-lan-side-from-server">How to access OpenVPN client LAN side from Server<a class="headerlink" href="#how-to-access-openvpn-client-lan-side-from-server" title="Permanent link">&para;</a></h1>
+<p>This tutorial introduces the steps to access the LAN subnet of OpenVPN client (such as NAS, IP camera, etc.) from your OpenVPN server side.</p>
+<h2 id="topology">Topology<a class="headerlink" href="#topology" title="Permanent link">&para;</a></h2>
+<p>As shown below, the GL-AXT1800 is an OpenVPN server and the GL-MT2500 is an OpenVPN client connected to it. You can access the devices on the GL-MT2500's LAN side (such as NAS or GL-MT3000, a sub-router) from the server side.</p>
+<p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ovpnlantop.jpg" /></p>
+<h2 id="1-add-route-rule-on-server">1. Add route rule on server<a class="headerlink" href="#1-add-route-rule-on-server" title="Permanent link">&para;</a></h2>
+<p>Log in to the web admin panel of your OpenVPN server, go to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN server</strong>.</p>
+<p>Click on the route icon on the right to enter the route rule.</p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-1.jpg" /></p>
+<p>Click <strong>Add Route Rule</strong> in the upper right corner, and input the subnet you want to access.</p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-2.png" /></p>
+<p>For example, the LAN subnet of the OpenVPN client GL-MT2500 is <strong>192.168.48.0/24</strong>, so the Target Address is <strong>192.168.48.0/24</strong>. </p>
+<p>Gateway is the client IP that your OpenVPN server generated for this OpenVPN client. Here we set the Gateway as <strong>10.8.0.1</strong>, and set the Scope as <strong>global</strong>.</p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-3.jpg" /></p>
+<h2 id="2-test-connection">2. Test connection<a class="headerlink" href="#2-test-connection" title="Permanent link">&para;</a></h2>
+<p>Here is an example of accessing the sub-router (GL-MT3000) with IP <strong>192.168.48.211</strong>.</p>
+<p>On a device connected to your OpenVPN server, open a browser and enter <strong>192.168.48.211</strong>. This is the IP address that OpenVPN client (GL-MT2500) assigns to the sub-router (GL-MT3000) in its LAN.</p>
+<p>If you can successfully access it, it means the settings are correct. You will be able to access all other devices within the OpenVPN client LAN subnet through their IP address.</p>
 <p><img alt="ovpnlan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ovpnlan.jpg" /></p>
 
   <!-- Last update of source file -->
