@@ -2672,6 +2672,8 @@
       
         
       
+        
+      
     
     
     
@@ -2828,11 +2830,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-wireguard-server" class="md-nav__link">
-    Set up the WireGuard server
+  <a href="#set-up-wireguard-server" class="md-nav__link">
+    Set up WireGuard server
   </a>
   
-    <nav class="md-nav" aria-label="Set up the WireGuard server">
+    <nav class="md-nav" aria-label="Set up WireGuard server">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2855,11 +2857,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-wireguard-client" class="md-nav__link">
-    Set up the WireGuard Client
+  <a href="#set-up-wireguard-client" class="md-nav__link">
+    Set up WireGuard Client
   </a>
   
-    <nav class="md-nav" aria-label="Set up the WireGuard Client">
+    <nav class="md-nav" aria-label="Set up WireGuard Client">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3135,6 +3137,26 @@
   
   <span class="md-ellipsis">
     Reserve fixed IP for OpenVPN client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_allow_access_to_wan_when_vpn_client_enabled/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Allow access to WAN when VPN client is enabled
   </span>
   
 
@@ -5953,11 +5975,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-wireguard-server" class="md-nav__link">
-    Set up the WireGuard server
+  <a href="#set-up-wireguard-server" class="md-nav__link">
+    Set up WireGuard server
   </a>
   
-    <nav class="md-nav" aria-label="Set up the WireGuard server">
+    <nav class="md-nav" aria-label="Set up WireGuard server">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5980,11 +6002,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-the-wireguard-client" class="md-nav__link">
-    Set up the WireGuard Client
+  <a href="#set-up-wireguard-client" class="md-nav__link">
+    Set up WireGuard Client
   </a>
   
-    <nav class="md-nav" aria-label="Set up the WireGuard Client">
+    <nav class="md-nav" aria-label="Set up WireGuard Client">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -6125,14 +6147,14 @@
 <p><img alt="tp_port1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/tp_port1.jpg" /></p>
 <p><strong>More <a href="../how_to_set_up_port_forwarding/">Port Forward</a> examples</strong></p>
 </details>
-<h2 id="set-up-the-wireguard-server">Set up the WireGuard server<a class="headerlink" href="#set-up-the-wireguard-server" title="Permanent link">&para;</a></h2>
+<h2 id="set-up-wireguard-server">Set up WireGuard server<a class="headerlink" href="#set-up-wireguard-server" title="Permanent link">&para;</a></h2>
 <h3 id="enable-ddns-optional">Enable DDNS (Optional)<a class="headerlink" href="#enable-ddns-optional" title="Permanent link">&para;</a></h3>
 <p>Enable the DDNS function if you do not have a static public IP but only a dynamic public IP.</p>
 <p>Log in to the web Admin Panel of GL-MT6000 and go to <strong>APPLICATIONS</strong> -&gt; <strong>Dynamic DNS</strong>. Toggle on the switch for <strong>Enable DDNS</strong>.</p>
 <p>Check the box for <strong>Terms of Service &amp; Privacy Policy</strong> and click <strong>Apply</strong>.</p>
 <p><img alt="ddnsapply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/enable_ddns.jpg" /></p>
-<p>Then go to the <strong>WireGuard Server</strong> -&gt; Configuration tab, make sure the Listen Port is 51820 and click <strong>Apply</strong>.</p>
-<p><img alt="wgserver" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgsever.jpg" /></p>
+<p>Then go to the <strong>WireGuard Server</strong> -&gt; Configuration tab, make sure the Listen Port is 51820, then click <strong>Apply</strong>.</p>
+<p><img alt="wgserver" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgserver-apply.png" /></p>
 <h3 id="generate-configuration">Generate Configuration<a class="headerlink" href="#generate-configuration" title="Permanent link">&para;</a></h3>
 <p>In the same page, click <strong>Profiles</strong> tab next to the Configuration tab, then click <strong>Add</strong> (marked as 1 in the image below).</p>
 <p>It will automatically generate a client configuration. Click the <strong>forward icon</strong> (marked as 2).</p>
@@ -6143,7 +6165,7 @@
 <p>Switch the configuration from QR code to text format by clicking <strong>Configuration File</strong> tab. </p>
 <p>Copy the text for the client, or click the Download button and save it for later use.</p>
 <p><img alt="configload" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/configload.jpg" /></p>
-<h2 id="set-up-the-wireguard-client">Set up the WireGuard Client<a class="headerlink" href="#set-up-the-wireguard-client" title="Permanent link">&para;</a></h2>
+<h2 id="set-up-wireguard-client">Set up WireGuard Client<a class="headerlink" href="#set-up-wireguard-client" title="Permanent link">&para;</a></h2>
 <h3 id="change-the-lan-ip">Change the LAN IP<a class="headerlink" href="#change-the-lan-ip" title="Permanent link">&para;</a></h3>
 <p>Since we use GL-MT6000 and GL-MT3000 as examples in this tutorial, whose default LAN IPs are both <strong>192.168.8.1</strong>, we need to change one of them to a different LAN IP to avoid conflict. </p>
 <p>Here are the steps to change the LAN IP of GL-MT3000 (the WireGuard client).</p>
@@ -6167,9 +6189,9 @@
 <p><img alt="wgstart" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgclientstart.png" /></p>
 <p>Wait a few minutes. Once it is connected successfully, a green dot will light up.</p>
 <p><img alt="wgconnected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgclient_connected.png" /></p>
-<p>Turn to the VPN Dashboard, and you will see that your client is connecting to the server with your home public IP.</p>
+<p>Turn to <strong>VPN Dashboard</strong>, and you will see that your client is connecting to the server with your home public IP.</p>
 <p><img alt="clientup" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgclientup.jpg" /></p>
-<p>Log in back to the web Admin Panel of GL-MT6000 (the WireGuard server), go to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> (or <strong>WireGuard Server</strong>), and you will also see the connnection status, indicating that the client is connected.</p>
+<p>Log in back to the web Admin Panel of GL-MT6000 (the WireGuard server), go to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> (or go to <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong> if you use firmware v.4.8), and you will also see the connnection status, indicating that the client is connected.</p>
 <p><img alt="servercon" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgservercon.jpg" /></p>
 <h2 id="prep-for-remote-vpn-fixes-ahead">Prep for Remote VPN Fixes Ahead<a class="headerlink" href="#prep-for-remote-vpn-fixes-ahead" title="Permanent link">&para;</a></h2>
 <p>In case of unforeseen issues while traveling, pre-bind both routers to your GoodCloud account for remote VPN troubleshooting.</p>
