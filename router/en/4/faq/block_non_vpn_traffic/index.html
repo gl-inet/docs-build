@@ -2131,6 +2131,26 @@
     For firmware v4.8 and higher
   </a>
   
+    <nav class="md-nav" aria-label="For firmware v4.8 and higher">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tunnel-kill-switch" class="md-nav__link">
+    Tunnel Kill Switch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-kill-switch" class="md-nav__link">
+    Global Kill Switch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -5864,6 +5884,26 @@
     For firmware v4.8 and higher
   </a>
   
+    <nav class="md-nav" aria-label="For firmware v4.8 and higher">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tunnel-kill-switch" class="md-nav__link">
+    Tunnel Kill Switch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-kill-switch" class="md-nav__link">
+    Global Kill Switch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -5894,17 +5934,34 @@
 <p>If you want all data on the router to pass through VPN and block all networks when the VPN connection failed, please follow the steps below to enable <strong>VPN Kill Switch</strong>.</p>
 <p><strong>Note</strong>: Set up VPN client on your GL.iNet router first before enabling VPN Kill Switch.</p>
 <h2 id="for-firmware-v47-and-earlier">For firmware v4.7 and earlier<a class="headerlink" href="#for-firmware-v47-and-earlier" title="Permanent link">&para;</a></h2>
-<p>On the left side of the web Admin Panel -&gt; VPN -&gt; VPN Dashboard.</p>
-<p>In the <strong>VPN Client</strong> section, click <strong>Global Options</strong>, toggle on <strong>Block Non-VPN Traffic</strong>, then click <strong>Apply</strong> button.</p>
-<p><img alt="vpn client global options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/global_options.png" /></p>
-<p><strong>Note:</strong> If VPN is disabled, no internet will pass between the router and connected devices</p>
+<p>Log in to your router's web Admin Panel, navigate to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Client</strong> section, and click <strong>Global Options</strong>.</p>
+<p><img alt="global options 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/4.7-global-options-1.png" /></p>
+<p>Toggle on <strong>Block Non-VPN Traffic</strong> (also called Kill Switch in some firmware version), then click <strong>Apply</strong>.</p>
+<p><img alt="global options 2" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/4.7-global-options-2.png" /></p>
+<p><strong>Note:</strong> When Block Non-VPN Traffic / Kill Switch is enabled, if your VPN is disabled or disconnected, all devices connected to the router will be restricted from accessing the Internet to prevent DNS leaks.</p>
 <h2 id="for-firmware-v48-and-higher">For firmware v4.8 and higher<a class="headerlink" href="#for-firmware-v48-and-higher" title="Permanent link">&para;</a></h2>
-<p>On the left side of the web Admin Panel -&gt; VPN -&gt; VPN Dashboard.</p>
-<p>In the Primary Tunnel, set all clients use VPN, travelling to all targets.</p>
-<p>Then click the greyed-out box under Execute.</p>
-<p><img alt="execute 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/execute_1.png" /></p>
-<p>In the pop-up window, enable <strong>Kill Switch</strong>.</p>
-<p><img alt="execute 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/execute_2.png" /></p>
+<p>In firmware v4.8, the VPN Kill Switch has been divided into two parts.</p>
+<ul>
+<li>
+<p><strong>Tunnel Kill Switch</strong>: It is enabled by default when the corresponding VPN tunnel is activated.</p>
+</li>
+<li>
+<p><strong>Global Kill Switch</strong>: It is disabled by default to ensure Internet access for traffic that doesn't go through any VPN tunnel or traffic that fails over from VPN connections.</p>
+</li>
+</ul>
+<h3 id="tunnel-kill-switch">Tunnel Kill Switch<a class="headerlink" href="#tunnel-kill-switch" title="Permanent link">&para;</a></h3>
+<p>If you have set your router as a VPN client, once the VPN is activated, on the router's web Admin Panel, navigate to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>, and you will see the Kill Switch for this VPN tunnel is enabled by default. </p>
+<p><img alt="tunnel kill switch on" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/4.8-tunnel-kill-switch.png" /></p>
+<p>Click on the three-dot icon next to the tunnel name and select <strong>Options</strong>.</p>
+<p><img alt="tunnel options 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/4.8-tunnel-options-1.png" /></p>
+<p>You will enter the Tunnel Options settings, where the Kill Switch for this tunnel is enabled by default.</p>
+<p><img alt="tunnel options 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/4.8-tunnel-options-2.png" /></p>
+<h3 id="global-kill-switch">Global Kill Switch<a class="headerlink" href="#global-kill-switch" title="Permanent link">&para;</a></h3>
+<p>The Global Kill Switch is usually displayed at the botton of the VPN Dashboard. </p>
+<p>On the router's web Admin Panel, navigate to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>, swipe down to the bottom, and you will see a tunnel named <strong>All Other Traffic</strong>. The page may vary slightly depending on the firmware version.</p>
+<p><img alt="global kill switch off" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/4.8-global-kill-switch.png" /></p>
+<p><strong>All Other Traffic</strong> is a basic tunnel to ensure Internet access for traffic that doesn't go through any VPN tunnel or traffic that fails over from VPN connections. This tunnel is enabled by default and is mutually exclusive with the Global Kill Switch, meaning that the Global Kill Switch is disabled by default.</p>
+<p>Turning this off will enable Global Kill Switch and block regular Internet access for all devices.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
