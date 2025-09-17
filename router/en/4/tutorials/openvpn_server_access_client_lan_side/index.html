@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://docs.gl-inet.com/router/en/4/tutorials/openvpn_server_access_client_lan_side/">
       
       
-        <link rel="prev" href="../wireguard_server_access_to_client_lan_side/">
+        <link rel="prev" href="../how_to_set_up_wireguard_server_via_astrorelay/">
       
       
-        <link rel="next" href="../how_to_enable_openvpn_tap_s2s_mode_on_glinet_routers/">
+        <link rel="next" href="../wireguard_server_access_to_client_lan_side/">
       
       
       <link rel="icon" href="../../images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Access Client LAN from Server(OpenVPN) - GL.iNet Router Docs 4</title>
+        <title>Access Client LAN from Server (OpenVPN) - GL.iNet Router Docs 4</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-visit-openvpn-client-lan-side-from-server" class="md-skip">
+        <a href="#how-to-access-openvpn-client-lan-side-from-server" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Access Client LAN from Server(OpenVPN)
+              Access Client LAN from Server (OpenVPN)
             
           </span>
         </div>
@@ -549,10 +549,6 @@
           
         
       
-        
-          
-        
-      
     
     
     
@@ -627,26 +623,6 @@
   
   <span class="md-ellipsis">
     GL-BE3600 (Slate 7)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../user_guide/gl-rm1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    GL-RM1 (Comet)
   </span>
   
 
@@ -1836,11 +1812,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/stuck_at_installing_screen/" class="md-nav__link">
+      <a href="../../faq/stuck_on_installing_screen/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Stuck at "Installing" screen during firmware update
+    Stuck on "Installing" screen during firmware update
   </span>
   
 
@@ -1856,11 +1832,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/stuck_at_reverting_screen/" class="md-nav__link">
+      <a href="../../faq/stuck_on_reverting_screen/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Stuck at "Reverting" screen during firmware reset
+    Stuck on "Reverting" screen during firmware reset
   </span>
   
 
@@ -1876,11 +1852,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/stuck_at_rebooting_screen/" class="md-nav__link">
+      <a href="../../faq/stuck_on_rebooting_screen/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Stuck at "Rebooting" screen during firmware reboot
+    Stuck on "Rebooting" screen during firmware reboot
   </span>
   
 
@@ -1940,7 +1916,7 @@
         
   
   <span class="md-ellipsis">
-    Why is my VPN speed slow
+    Why is my VPN speed slower than expected
   </span>
   
 
@@ -2138,7 +2114,7 @@
         
   
   <span class="md-ellipsis">
-    Do I have to configure Ethernet WAN when using VPN?
+    Do I have to configure Ethernet WAN when using VPN
   </span>
   
 
@@ -2611,8 +2587,6 @@
       
         
       
-        
-      
     
     
     
@@ -2665,6 +2639,12 @@
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -2866,26 +2846,6 @@
                 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../wireguard_server_access_to_client_lan_side/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Access Client LAN from Server(WireGuard)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -2901,7 +2861,7 @@
           
   
   <span class="md-ellipsis">
-    Access Client LAN from Server(OpenVPN)
+    Access Client LAN from Server (OpenVPN)
   </span>
   
 
@@ -2912,7 +2872,7 @@
         
   
   <span class="md-ellipsis">
-    Access Client LAN from Server(OpenVPN)
+    Access Client LAN from Server (OpenVPN)
   </span>
   
 
@@ -2934,36 +2894,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-topology-of-openvpn-site-to-site-tunnel" class="md-nav__link">
-    The Topology of OpenVPN site to site tunnel
-  </a>
-  
-    <nav class="md-nav" aria-label="The Topology of OpenVPN site to site tunnel">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-go-to-the-vpn-dashboard-of-openvpn-server" class="md-nav__link">
-    1. Go to the VPN Dashboard of OpenVPN server
+  <a href="#topology" class="md-nav__link">
+    Topology
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-set-up-the-custom-rule" class="md-nav__link">
-    2. Set up the custom rule
+      
+        <li class="md-nav__item">
+  <a href="#1-add-route-rule-on-server" class="md-nav__link">
+    1. Add route rule on server
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#3-check-the-ip-can-be-visited-or-not" class="md-nav__link">
-    3. Check the IP can be visited or not
+      
+        <li class="md-nav__item">
+  <a href="#2-test-connection" class="md-nav__link">
+    2. Test connection
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2971,6 +2918,46 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wireguard_server_access_to_client_lan_side/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Access Client LAN from Server (WireGuard)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_access_server_lan_device_via_domain_name/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Access Server LAN from Client (WireGuard) via domain name
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3047,6 +3034,46 @@
   
   <span class="md-ellipsis">
     Get config files from WireGuard service providers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reserve_fixed_IP_for_ovpn_client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reserve fixed IP for OpenVPN client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_allow_access_to_wan_when_vpn_client_enabled/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Allow access to WAN when VPN client is enabled
   </span>
   
 
@@ -3254,6 +3281,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3315,6 +3348,66 @@
   
   <span class="md-ellipsis">
     Use eSIM Physical Card with Android devices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_use_simpoyo_esim_physical_card_with_glinet_routers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use the SIMPoYo eSIM Physical Card with GL.iNet routers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_use_the_simpoyo_esim_physical_card_with_android_devices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use the SIMPoYo eSIM Physical Card with Android devices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_use_simpoyo_ufi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to use SIMPoYo uFi
   </span>
   
 
@@ -3534,11 +3627,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../can_i_use_multiwan_wired_input/" class="md-nav__link">
+      <a href="../configure_dual_ethernet_wan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Set up two wired WAN without two WAN ports
+    Configure dual wired WAN access
   </span>
   
 
@@ -3566,71 +3659,7 @@
       
         
       
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
         
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Network Storage
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
-            <span class="md-nav__icon md-icon"></span>
-            Network Storage
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../winscp_share_file/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Use WinSCP to access your share files
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-    
       
         
       
@@ -3665,10 +3694,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
         
           
-          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3679,8 +3708,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
             Others
           </label>
@@ -3792,11 +3821,51 @@
   
   
     <li class="md-nav__item">
+      <a href="../how_to_connect_glinet_router_to_an_eap_network_with_advanced_settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connect to EAP network with advanced settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ssh_log_in_to_the_router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     SSH log in to the Router
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../winscp_share_file/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use WinSCP to access share files
   </span>
   
 
@@ -5246,6 +5315,8 @@
       
         
       
+        
+      
     
     
     
@@ -5347,6 +5418,26 @@
   
   <span class="md-ellipsis">
     Admin Password
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface_guide/display_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Display Management
   </span>
   
 
@@ -5618,11 +5709,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video_library/tutorials/" class="md-nav__link">
+      <a href="../../video_library/unboxing_first_set_up/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tutorials
+    Unboxing & First Time Setup
   </span>
   
 
@@ -5638,11 +5729,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video_library/unboxing_first_set_up/" class="md-nav__link">
+      <a href="../../video_library/tutorials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Unboxing & First Time Setup
+    Tutorials
   </span>
   
 
@@ -5743,36 +5834,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-topology-of-openvpn-site-to-site-tunnel" class="md-nav__link">
-    The Topology of OpenVPN site to site tunnel
-  </a>
-  
-    <nav class="md-nav" aria-label="The Topology of OpenVPN site to site tunnel">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-go-to-the-vpn-dashboard-of-openvpn-server" class="md-nav__link">
-    1. Go to the VPN Dashboard of OpenVPN server
+  <a href="#topology" class="md-nav__link">
+    Topology
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-set-up-the-custom-rule" class="md-nav__link">
-    2. Set up the custom rule
+      
+        <li class="md-nav__item">
+  <a href="#1-add-route-rule-on-server" class="md-nav__link">
+    1. Add route rule on server
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#3-check-the-ip-can-be-visited-or-not" class="md-nav__link">
-    3. Check the IP can be visited or not
+      
+        <li class="md-nav__item">
+  <a href="#2-test-connection" class="md-nav__link">
+    2. Test connection
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5800,18 +5878,39 @@
   
 
   <!-- Markdown content -->
-  <h1 id="how-to-visit-openvpn-client-lan-side-from-server">How to visit OpenVPN client LAN side from Server<a class="headerlink" href="#how-to-visit-openvpn-client-lan-side-from-server" title="Permanent link">&para;</a></h1>
-<h2 id="the-topology-of-openvpn-site-to-site-tunnel">The Topology of OpenVPN site to site tunnel<a class="headerlink" href="#the-topology-of-openvpn-site-to-site-tunnel" title="Permanent link">&para;</a></h2>
-<p>Visit the subnet of OpenVPN client (GL-MT2500), like NAS, printer, IP Cam......For example, Sub-router (GL-MT3000) with IP <strong>192.168.48.211</strong></p>
-<p><img alt="ovpnlantop" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ovpnlantop.jpg" /></p>
-<h3 id="1-go-to-the-vpn-dashboard-of-openvpn-server">1. Go to the VPN Dashboard of OpenVPN server<a class="headerlink" href="#1-go-to-the-vpn-dashboard-of-openvpn-server" title="Permanent link">&para;</a></h3>
-<p>Click the icon and enter the custom rule page</p>
-<p><img alt="ovpnoption" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ovpnoption.jpg" /></p>
-<h3 id="2-set-up-the-custom-rule">2. Set up the custom rule<a class="headerlink" href="#2-set-up-the-custom-rule" title="Permanent link">&para;</a></h3>
-<p>Input the subnet you wanted to visit, in this example the Target Address is <strong>192.168.48.0/24</strong>, Gateway <strong>10.8.0.1</strong> and input the Scope <strong>global</strong></p>
-<p><img alt="ovpnrule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ovpnrule.jpg" /></p>
-<h3 id="3-check-the-ip-can-be-visited-or-not">3. Check the IP can be visited or not<a class="headerlink" href="#3-check-the-ip-can-be-visited-or-not" title="Permanent link">&para;</a></h3>
-<p><img alt="ovpnlan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ovpnlan.jpg" /></p>
+  <h1 id="how-to-access-openvpn-client-lan-side-from-server">How to access OpenVPN client LAN side from Server<a class="headerlink" href="#how-to-access-openvpn-client-lan-side-from-server" title="Permanent link">&para;</a></h1>
+<p>This tutorial introduces the steps to access the LAN subnet of OpenVPN client (such as NAS, IP camera, etc.) from your OpenVPN server side.</p>
+<h2 id="topology">Topology<a class="headerlink" href="#topology" title="Permanent link">&para;</a></h2>
+<p>As shown below, the GL-AXT1800 is an OpenVPN server and the GL-MT2500 is an OpenVPN client connected to it. You can access the devices on the GL-MT2500's LAN side (such as NAS or GL-MT3000, a sub-router) from the server side.</p>
+<p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ovpnlantop.jpg" /></p>
+<h2 id="1-add-route-rule-on-server">1. Add route rule on server<a class="headerlink" href="#1-add-route-rule-on-server" title="Permanent link">&para;</a></h2>
+<details>
+<summary>For firmware v4.7 and earlier</summary>
+<p>Log in to the web admin panel of your OpenVPN server, and go to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Server</strong>.</p>
+<p>Click on the route icon on the right to enter the route rule.</p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-1.jpg" /></p>
+<p>In the pop-up window, click on <strong>Add Route Rule</strong> button on the right side, and input the subnet you want to access.</p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-2.png" /></p>
+<p>For example, the LAN subnet of the OpenVPN client GL-MT2500 is <strong>192.168.48.0/24</strong>, so the Target Address is <strong>192.168.48.0/24</strong>. </p>
+<p>Gateway is the client IP that your OpenVPN server generated for this OpenVPN client. Here we set the Gateway as <strong>10.8.0.1</strong>, then click <strong>Apply</strong>.</p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-3.jpg" /></p>
+</details>
+<details>
+<summary>For firmware v4.8 and higher</summary>
+<p>Log in to the web admin panel of your OpenVPN server, and go to <strong>VPN</strong> -&gt; <strong>OpenVPN Server</strong>.</p>
+<p>Click the <strong>Route Rules</strong> tab, then click on <strong>Add Route Rule</strong> button on the right side.</p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-1.png" /></p>
+<p>In the pop-up window, input the subnet you want to access.</p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-2.png" /></p>
+<p>For example, the LAN subnet of the OpenVPN client GL-MT2500 is <strong>192.168.48.0/24</strong>, so the Target Address is <strong>192.168.48.0/24</strong>. </p>
+<p>Gateway is the client IP that your OpenVPN server generated for this OpenVPN client. Here we set the Gateway as <strong>10.8.0.1</strong>, then click <strong>Apply</strong>.</p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-3.png" /></p>
+</details>
+<h2 id="2-test-connection">2. Test connection<a class="headerlink" href="#2-test-connection" title="Permanent link">&para;</a></h2>
+<p>Here is an example of accessing the GL-MT3000 with IP <strong>192.168.48.211</strong>.</p>
+<p>On a device connected to your OpenVPN server, ping GL-MT3000's IP address <strong>192.168.48.211</strong>. This is the IP address that OpenVPN client (GL-MT2500) assigns to the GL-MT3000 in its LAN.</p>
+<p>If you can ping it successfully, it means the settings are correct. You will be able to access all other devices within the OpenVPN client LAN subnet through their IP addresses.</p>
+<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ping-test.png" /></p>
 
   <!-- Last update of source file -->
   
