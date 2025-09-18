@@ -4575,8 +4575,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-openvpn-client" class="md-nav__link">
-    Set Up OpenVPN Client
+  <a href="#set-up-openvpn-client-manually-for-other-providers" class="md-nav__link">
+    Set Up OpenVPN Client Manually (for other providers)
   </a>
   
 </li>
@@ -6092,8 +6092,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-up-openvpn-client" class="md-nav__link">
-    Set Up OpenVPN Client
+  <a href="#set-up-openvpn-client-manually-for-other-providers" class="md-nav__link">
+    Set Up OpenVPN Client Manually (for other providers)
   </a>
   
 </li>
@@ -6385,12 +6385,12 @@
 
 <p>OpenVPN is an open-source VPN protocol that makes use of virtual private network (VPN) techniques to establish safe site-to-site or point-to-point connections. </p>
 <p>We recommend WireGuard over OpenVPN because it is much faster. For setting up a WireGuard Client, please check out <a href="../wireguard_client/">here</a>.</p>
-<p>Before you start, ensure you have an active subscription with a VPN service provider that supports OpenVPN manual configuration. Check <a href="https://www.gl-inet.com/solutions/vpn/" target="_blank">a list of OpenVPN-compatible VPNs that are supported by GL.iNet</a>.</p>
+<p>Before you start, ensure you have an active subscription with a VPN service provider that supports OpenVPN manual configuration. Check <a href="https://www.gl-inet.com/solutions/vpn/" target="_blank">the list of OpenVPN-compatible VPN providers that are supported by GL.iNet</a>.</p>
 <p>Generally, you need to visit the official website of the VPN service provider you subscribed first, obtain the configuration file, and upload it to the router to set it as OpenVPN Client. If you don't know how to get the configuration file, refer to <a href="#get-configuration-files-from-openvpn-service-providers">this link</a> or ask their support.</p>
 <p>You can set up your GL.iNet router as OpenVPN client through the web admin panel or <a href="../../faq/mobile_app/">mobile app</a>. This article focuses on setting up OpenVPN client through the web admin panel.</p>
 <p>In the web Admin Panel, click on <strong>VPN</strong> -&gt; <strong>OpenVPN Client</strong>. </p>
 <p>Click the <strong>NordVPN</strong> button to log in if you have a NordVPN subscription, or click on <strong>Add Manually</strong> to upload the OpenVPN configuration files.</p>
-<p><img alt="openvpn client no initialized" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/openvpn_client_no_initialized.png" /></p>
+<p><img alt="openvpn client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/openvpn_client_initial.png" /></p>
 <h2 id="set-up-nordvpn">Set Up NordVPN<a class="headerlink" href="#set-up-nordvpn" title="Permanent link">&para;</a></h2>
 <p><a href="https://go.nordvpn.net/aff_c?offer_id=15&amp;aff_id=12016&amp;url_id=902" target="_blank">NordVPN</a> is a popular online VPN service for speed and security.</p>
 <p>NordVPN's OpenVPN/WireGuard quick setup is integrated into the admin panel of GL.iNet routers. You can acquire configuration files for all NordVPN servers online by entering your account credentials (obtained from the NordVPN Dashboard) in the router's web admin panel or mobile app, eliminating the need for manual file uploads.</p>
@@ -6405,87 +6405,103 @@
 <p><img alt="nordvpn service credential" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/nord_service_credentials.jpg" /></p>
 </li>
 <li>
-<p>Access GL.iNet web admin panel -&gt; VPN -&gt; OpenVPN Client -&gt; NordVPN, input your NordVPN account's <strong>service credentials</strong> you got in step 1 (Note: It is <strong>NOT</strong> the login account email/password), then click <strong>Save Credentials &amp; Get Servers</strong></p>
-<p><img alt="input nordvpn service credential" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/input_nordvpn_credential.png" /></p>
+<p>Log in to your router's web admin panel, navigate to VPN -&gt; OpenVPN Client -&gt; NordVPN. Input the <strong>service credentials</strong> obtained in step 1 (Note: It is <strong>NOT</strong> the login account email/password), then click <strong>Save and Continue</strong>.</p>
+<p><img alt="input nordvpn service credentials" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/nordvpn1.png" /></p>
 </li>
 <li>
-<p>Select protocol, max server count of each location, locations, then click <strong>Apply</strong>.</p>
-<p><img alt="select nordvpn servers" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/select_nordvpn_servers.png" /></p>
+<p>Select protocol, max server count of each location and locations, then click <strong>Apply</strong>.</p>
+<p><img alt="select nordvpn servers" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/nordvpn2.png" /></p>
 <p>It will download configuration files.</p>
-<p><img alt="downloaded configuration files" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/downloaded_configs.png" /></p>
+<p><img alt="nordvpn configuration files" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/nordvpn3.png" /></p>
 </li>
 <li>
-<p>Go to VPN Dashboard to enable the connection.</p>
-<p><img alt="vpn dashboard page" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/vpn_dashboard_to_connect.png" /></p>
-<p>Toggle the switch to enable the connection.</p>
-<p><img alt="openvpn connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/openvpn_connected.png" /></p>
+<p>Start a connection.</p>
+<p>Select a preferred server, and click the three-dot icon on the right to start a connection.</p>
+<p><img alt="nordvpn start connect" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/nordvpn4.png" /></p>
 </li>
 <li>
-<p>Update servers</p>
-<p>NordVPN may maintain or shutdown some servers, it will make the connection failed, you can <strong>Update Servers</strong> to get the latest available servers.</p>
-<p><img alt="update servers" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/update_servers.png" /></p>
+<p>Once connected, a green dot will appear next to the configuration file.</p>
+<p><img alt="nordvpn connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/nordvpn5.png" /></p>
+<p>And the VPN connection details will be displayed on the <strong>VPN Dashboard</strong>.</p>
+<p><img alt="vpn dashboard nordvpn connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/nordvpn6.png" /></p>
 </li>
 <li>
-<p>Edit credential</p>
-<p>Click the cog icon to edit the credential.</p>
-<p><img alt="edit credential" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/edit_credential.png" /></p>
+<p>Update servers.</p>
+<p>You can click <strong>Update Servers</strong> to obtain the latest available server list, avoiding connection failures caused by server maintenance or shutdown.</p>
+<p><img alt="nordvpn update servers" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/nordvpn7.png" /></p>
+</li>
+<li>
+<p>Edit credentials.</p>
+<p>Click the gear icon to edit your login credentials.</p>
+<p><img alt="nordvpn edit credentials" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/nordvpn8.png" /></p>
+</li>
+<li>
+<p>Delete all files.</p>
+<p>You can click <strong>Delete All</strong> to delete all configuration files with one click, and choose whether to delete the private and public keys simultaneously.</p>
+<p><img alt="nordvpn delete all" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/nordvpn9.png" /></p>
 </li>
 </ol>
-<h2 id="set-up-openvpn-client">Set Up OpenVPN Client<a class="headerlink" href="#set-up-openvpn-client" title="Permanent link">&para;</a></h2>
-<p>If your OpenVPN service provider has not yet been integrated into our admin panel, you need to visit the official website of the VPN service provider first, obtain the configuration file, and upload it to the router to set it up as OpenVPN client.</p>
-<p>We will use ExpressVPN as an example.</p>
+<h2 id="set-up-openvpn-client-manually-for-other-providers">Set Up OpenVPN Client Manually (for other providers)<a class="headerlink" href="#set-up-openvpn-client-manually-for-other-providers" title="Permanent link">&para;</a></h2>
+<p>If your OpenVPN service provider is not integrated into our admin panel, please first visit the official website of your subscribed service provider to obtain the configuration file. Next, upload it to the router to set up an OpenVPN client.</p>
+<p>In the following steps, we will use <a href="https://privateinternetaccess.com/offer/GLiNET_71dx4t8bl" target="_blank">PIA (Private Internet Access)</a> as an example.</p>
 <ol>
 <li>
-<p>Click <strong>Add Manually</strong>.</p>
-<p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/openvpn_client_add_manually.png" /></p>
+<p>Download a configuration file from Private Internet Access official website.</p>
 </li>
 <li>
-<p>Create a group.</p>
-<p><img alt="add a new group" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/add_a_new_group.png" /></p>
+<p>Log in to your router's web admin panel, navigate to VPN -&gt; OpenVPN Client, and click <strong>Add Manually</strong>.</p>
+<p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/manual1.png" /></p>
 </li>
 <li>
-<p>Give the group a descriptive name, e.g. expressvpn.</p>
-<p><img alt="set the new group name" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/set_new_group_name.png" /></p>
+<p>It will create a group on the left sidebar.</p>
+<p><img alt="add a new group" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/manual2.png" /></p>
 </li>
 <li>
-<p>Upload your OpenVPN configuration file, input the credential if required, then click <strong>Apply</strong>.</p>
+<p>Set a descriptive name for the group (e.g., private internet access).</p>
+<p><img alt="set the new group name" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/manual3.png" /></p>
+</li>
+<li>
+<p>Upload your OpenVPN configuration file. Input the credentials if required, then click <strong>Apply</strong>.</p>
+<p><img alt="manual upload files" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/manual4.png" /></p>
 <ul>
 <li>
-<p>Supports 4 types of configuration files:</p>
+<p>There are 4 types of credentials for authentication:</p>
 <ol>
 <li>
-<p>File requires <code>askpass</code> input.</p>
+<p>No authentication.</p>
 </li>
 <li>
-<p>File requires <code>username</code> and <code>password</code> input.</p>
+<p>Username and Password only. </p>
 </li>
 <li>
-<p>File requires <code>username</code>, <code>password</code>, and <code>askpass</code> input (since v4.5).</p>
+<p>Passphrase only.</p>
 </li>
 <li>
-<p>File requires no input.</p>
+<p>Username, Password, and Passphrase.</p>
 </li>
 </ol>
 </li>
 </ul>
-<p><img alt="upload profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/upload_profile_1.png" /></p>
-<p><img alt="after upload profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/after_upload_profile.png" /></p>
+<p>Then you will see the configuration file uploaded.</p>
+<p><img alt="manual upload files" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/manual5.png" /></p>
 </li>
 <li>
-<p>Click the three-dot icon to start / delete the configuration file.</p>
-<p><img alt="start the profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/start_the_profile.png" /></p>
+<p>Click the three-dot icon on the right to start a connection.</p>
+<p><img alt="start connect" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/manual6.png" /></p>
 </li>
 <li>
-<p>Check the connection status in the <a href="../vpn_dashboard/">VPN Dashboard</a> page.</p>
-<p><img alt="vpn dashboard page, openvpn status" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/vpn_dashboard_openvpn_status.png" /></p>
+<p>Once connected, a green dot will appear next to the configuration file.</p>
+<p><img alt="openvpn connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/manual7.png" /></p>
+<p>And the VPN connection details will be displayed on the <strong>VPN Dashboard</strong>.</p>
+<p><img alt="vpn dashboard openvpn status" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_client/manual8.png" /></p>
 </li>
 </ol>
 <h2 id="set-up-openvpn-server-on-glinet-router">Set Up OpenVPN Server on GL.iNet Router<a class="headerlink" href="#set-up-openvpn-server-on-glinet-router" title="Permanent link">&para;</a></h2>
-<p>If you have two GL.iNet routers, you can consider setting one as OpenVPN server (a public IP is required), and the other as an OpenVPN client. In this way, you can build your own VPN connection without subscribing to third-party VPN services.</p>
-<p>For setting up OpenVPN server, please check out <a href="../openvpn_server/">here</a>.</p>
+<p>If you have two GL.iNet routers, you may consider setting one as an OpenVPN server (a public IP is required), and the other as an OpenVPN client. In this way, you can establish your own VPN connection without subscribing to third-party VPN services.</p>
+<p>For setting up OpenVPN server, please check <a href="../openvpn_server/">here</a>.</p>
 <h2 id="get-configuration-files-from-openvpn-service-providers">Get Configuration Files from OpenVPN Service Providers<a class="headerlink" href="#get-configuration-files-from-openvpn-service-providers" title="Permanent link">&para;</a></h2>
-<p>We have tested different OpenVPN service providers. Therefore, if you don't know how to get the configuration file, you can follow the instruction below. However, you have to contact your service provider for the configuration file if they are not listed below. </p>
-<p>If you have any problem in the setup of OpenVPN, please contact <a href="mailto:support@glinet.biz">support@glinet.biz</a> or report in <a href="https://forum.gl-inet.com/t/openvpn-and-wireguard-compatibility-report/15621" target="_blank">this forum post</a>.</p>
+<p>We have tested 30+ OpenVPN service providers and documented the steps to obtain configuration files. If you are unsure how to get the configuration file, please refer to the steps below.</p>
+<p>If the service provider you subscribed to is not listed below, please contact their support for further assistance.</p>
 <details>
 <summary>NordVPN</summary>
 <h3 id="nordvpn">NordVPN<a class="headerlink" href="#nordvpn" title="Permanent link">&para;</a></h3>
