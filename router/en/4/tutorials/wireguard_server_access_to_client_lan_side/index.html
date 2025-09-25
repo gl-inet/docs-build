@@ -2928,22 +2928,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-add-allowed-ip-and-get-a-new-configuration" class="md-nav__link">
-    2. Add allowed IP and get a new configuration
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Add allowed IP and get a new configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#3-upload-the-configuration-and-test-connection" class="md-nav__link">
-    3. Upload the configuration and test connection
+  <a href="#2-allow-remote-access-to-client-lan" class="md-nav__link">
+    2. Allow remote access to client LAN
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#3-test-connection" class="md-nav__link">
+    3. Test connection
+  </a>
   
 </li>
       
@@ -5118,7 +5112,7 @@
         
   
   <span class="md-ellipsis">
-    Network Port Management
+    Port Management
   </span>
   
 
@@ -5861,22 +5855,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-add-allowed-ip-and-get-a-new-configuration" class="md-nav__link">
-    2. Add allowed IP and get a new configuration
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Add allowed IP and get a new configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#3-upload-the-configuration-and-test-connection" class="md-nav__link">
-    3. Upload the configuration and test connection
+  <a href="#2-allow-remote-access-to-client-lan" class="md-nav__link">
+    2. Allow remote access to client LAN
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#3-test-connection" class="md-nav__link">
+    3. Test connection
+  </a>
   
 </li>
       
@@ -5910,27 +5898,52 @@
 <p>As shown below, the GL-MT2500 is a WireGuard server and the GL-AXT1800 is a WireGuard client connected to it. You can access the devices on the GL-AXT1800's LAN side (such as IP camera or NAS) from the server side.</p>
 <p><img alt="Topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/Topology.jpg" /></p>
 <h2 id="1-add-route-rule-on-server">1. Add route rule on server<a class="headerlink" href="#1-add-route-rule-on-server" title="Permanent link">&para;</a></h2>
-<p>Log in to the web admin panel of your WireGuard server, then go to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN server</strong>.</p>
+<details>
+<summary>For firmware v4.7 and earlier</summary>
+<p>Log in to the web admin panel of <u>your WireGuard server</u>, then go to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Server</strong>.</p>
 <p>Click on the route icon on the right to enter the route rule.</p>
 <p><img alt="add route rule 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-route-rule-1.jpg" /></p>
 <p>Click <strong>Add Route Rule</strong> in the upper right corner, and input the subnet you want to access.</p>
 <p><img alt="add route rule 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-route-rule-2.png" /></p>
 <p>For example, the LAN subnet of the WireGuard client GL-AXT1800 is <strong>192.168.8.0/24</strong>, so the Target Address is <strong>192.168.8.0/24</strong>. </p>
-<p>Gateway is the client IP that your WireGuard server generated for this WireGuard client. You can find it under the Profiles tab of <strong>WireGuard Server</strong> page. Here we set the Gateway as <strong>10.0.0.4</strong>. Set the Scope as <strong>global</strong>.</p>
+<p>Gateway is the client IP that your WireGuard server generated for this WireGuard client. You can find it under the <strong>Profiles</strong> tab of <strong>WireGuard Server</strong> page. As shown below, the client IP for the WireGuard client GL-AXT1800 is <strong>10.0.0.4</strong>.</p>
+<p><img alt="client ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-client-ip.png" /></p>
+<p>So set the Gateway as <strong>10.0.0.4</strong>, and the Scope as <strong>global</strong>, then click <strong>Apply</strong>.</p>
 <p><img alt="add route rule 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-route-rule-3.jpg" /></p>
-<h2 id="2-add-allowed-ip-and-get-a-new-configuration">2. Add allowed IP and get a new configuration<a class="headerlink" href="#2-add-allowed-ip-and-get-a-new-configuration" title="Permanent link">&para;</a></h2>
-<p>In the web admin panel of your WireGuard server, go to <strong>WireGuard Server</strong> -&gt; <strong>Profiles</strong>, and you will find the client IP (Gateway) of GL-AXT1800. </p>
-<p>Click the gear icon on the right to modify configuration.</p>
-<p><img alt="gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/gateway.jpg" /></p>
-<p>Click <strong>Set More</strong></p>
-<p><img alt="client config set more" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/client-config-set-more.jpg" /></p>
-<p>Click <strong>+ Add New</strong> under the Allowed IPs list.</p>
-<p><img alt="add new allowed ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/add-new-allowed-ip.png" /></p>
-<p>Input the subnet of your WireGuard client, which is <strong>192.168.8.0/24</strong> in this case, then click <strong>Apply</strong> to get a new configuration</p>
-<p><img alt="get new config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/get-new-config-file.png" /></p>
-<h3 id="3-upload-the-configuration-and-test-connection">3. Upload the configuration and test connection<a class="headerlink" href="#3-upload-the-configuration-and-test-connection" title="Permanent link">&para;</a></h3>
-<p>Upload the new configuration to your client router, which is the GL-AXT1800 in this case. Start the VPN connection and test if you can access the LAN devices of your WireGuard client from the Server side.</p>
-<p>You can test the connection via ping. For example, on a device connected to the WireGuard server (GL-MT2500), ping the IP of a device in the LAN side of the WireGuard client (GL-AXT1800), and check if it can ping successfully.</p>
+</details>
+<details>
+<summary>For firmware v4.8 and higher</summary>
+<p>Log in to the web admin panel of <u>your WireGuard server</u>, then go to <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong>.</p>
+<p>Click the <strong>Route Rules</strong> tab, and click <strong>Add Route Rule</strong> on the right side.</p>
+<p><img alt="add route rule 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-1.png" /></p>
+<p>In the pop-up window, input the subnet you want to access.</p>
+<p><img alt="add route rule 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-2.png" /></p>
+<p>For example, the LAN subnet of the WireGuard client GL-AXT1800 is <strong>192.168.8.0/24</strong>, so the Target Address is <strong>192.168.8.0/24</strong>. </p>
+<p>Gateway is the client IP that your WireGuard server generated for this WireGuard client. You can find it under the <strong>Profiles</strong> tab on the same page. As shown below, the client IP for the WireGuard client GL-AXT1800 is <strong>10.1.0.2</strong>.</p>
+<p><img alt="client ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-client-ip.png" /></p>
+<p>So set the Gateway as <strong>10.1.0.2</strong>, then click <strong>Apply</strong>.</p>
+<p><img alt="add route rule 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-3.png" /></p>
+</details>
+<h2 id="2-allow-remote-access-to-client-lan">2. Allow remote access to client LAN<a class="headerlink" href="#2-allow-remote-access-to-client-lan" title="Permanent link">&para;</a></h2>
+<details>
+<summary>For firmware v4.7 and earlier</summary>
+<p>Log in to the web admin panel of <u>your WireGuard client</u>, and go to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Client</strong>.</p>
+<p>Click on the gear icon on the right side of WireGuard.</p>
+<p><img alt="wgclient options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-wgclient-options.png" /></p>
+<p>In the pop-up window, enable <strong>Remote Access LAN</strong>, then click <strong>Apply</strong>.</p>
+<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-allow-remote-access-lan.png" /></p>
+</details>
+<details>
+<summary>For firmware v4.8 and higher</summary>
+<p>Log in to the web admin panel of <u>your WireGuard client</u>, and go to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>.</p>
+<p>On the top-left corner of your VPN tunnel, click the gear icon to enter the tunnel options.</p>
+<p><img alt="tunnel options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-tunnel-options.png" /></p>
+<p>In the pop-up window, enable <strong>Allow Remote Access the LAN Subnet</strong>, then click <strong>Apply</strong>.</p>
+<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-allow-remote-access-lan.png" /></p>
+</details>
+<h2 id="3-test-connection">3. Test connection<a class="headerlink" href="#3-test-connection" title="Permanent link">&para;</a></h2>
+<p>Test if you can access the LAN devices of your WireGuard client from the Server side.</p>
+<p>You can test the connection via ping. For example, on a device connected to the WireGuard server (GL-MT2500), ping the IP address of a device within the LAN of your WireGuard client (GL-AXT1800), and check if it can ping successfully.</p>
 <p><img alt="ping" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/ping.jpg" /></p>
 
   <!-- Last update of source file -->

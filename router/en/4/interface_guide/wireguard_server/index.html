@@ -5119,7 +5119,7 @@
         
   
   <span class="md-ellipsis">
-    Network Port Management
+    Port Management
   </span>
   
 
@@ -5912,13 +5912,13 @@
 <p>WireGuard® is an extremely simple yet fast and modern VPN that utilizes <strong>state-of-the-art cryptography</strong>. It aims to be <a href="https://www.wireguard.com/performance/" target="_blank">faster</a>, <a href="https://www.wireguard.com/quickstart/" target="_blank">simpler</a>, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. </p>
 <hr />
 <h2 id="make-sure-you-have-a-public-ip-address">Make sure you have a public IP address<a class="headerlink" href="#make-sure-you-have-a-public-ip-address" title="Permanent link">&para;</a></h2>
-<p>Please check if your Internet Service Provider assigns you a public IP address <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">here</a>.</p>
-<p><strong>If not, your router cannot be set as the WireGuard Server.</strong></p>
+<p>Please click <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">here</a> to check if your Internet Service Provider assigns you a public IP address.</p>
+<p><strong>If not, your router cannot be set up as a WireGuard Server.</strong></p>
 <p>Alternative methods:</p>
 <ol>
-<li>If you have a main router, you shall login to it and check if it gets the Public IP from your ISP.</li>
-<li>Ask your ISP for a Public IP address. It may require an extra fee.</li>
-<li>If the above two ways don't work, for example, if you are in a CGNAT, you can take the reverse proxy method such as <a href="../../tutorials/how_to_set_up_wireguard_server_via_astrorelay/">Astrorelay</a>. Alternatively, you may try an SDWAN solution - <a href="https://www.astrowarp.net/" target="_blank">AstroWarp</a>. </li>
+<li>If you have a main router, log in to it and check if it gets a public IP from your ISP.</li>
+<li>Ask your ISP for a public IP address. This may incur an extra fee.</li>
+<li>If the above two methods don't work (e.g., if your network is behind CGNAT), you can use a reverse proxy solution such as <a href="../../tutorials/how_to_set_up_wireguard_server_via_astrorelay/">Astrorelay</a>. Alternatively, you may try our SD-WAN solution: <a href="https://www.astrowarp.net/" target="_blank">AstroWarp</a>. </li>
 </ol>
 <h2 id="confirm-if-port-forwarding-is-required">Confirm if Port Forwarding is required<a class="headerlink" href="#confirm-if-port-forwarding-is-required" title="Permanent link">&para;</a></h2>
 <p><strong>Network Topology</strong></p>
@@ -5940,50 +5940,80 @@
 </ul>
 </details>
 <h2 id="setup-wireguard-server">Setup WireGuard Server<a class="headerlink" href="#setup-wireguard-server" title="Permanent link">&para;</a></h2>
-<p>Access to web Admin Panel, on the left side -&gt; VPN -&gt; WireGuard Server.</p>
+<p>Log in to the web Admin Panel, and navigate to VPN -&gt; WireGuard Server.</p>
 <ol>
 <li>
 <p>Click <strong>Generate Configuration</strong> (for vpn server initial setup only).</p>
-<p><img alt="wireguard server generate configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/wireguard_server_generate_configuration.png" /></p>
+<p><img alt="generate configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/generate_configuration.png" /></p>
 </li>
 <li>
-<p>Apply the configuration.</p>
-<p>The default configuration works for most cases. </p>
-<p>If you find that the IPv4 address conflicts with your upstream router's gateway, modify the address to others such as <strong>10.1.0.1/24</strong> and click <strong>Apply</strong>. Ensure the "/24" subnet mask is included to avoid connectivity issues.</p>
-<p><img alt="wireguard server apply configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/wireguard_server_apply_configuration.png" /></p>
-<p>For example, if you use an Xfinity router in the upstream of GL.iNet router, the Xfinity router's IP might be 10.0.0.1, which will be same as our WireGuard Server IP, then you will need to do the above changes.</p>
-<p><img alt="xfinitygateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/xfinitygateway.jpg" /></p>
+<p>Check the configuration.</p>
+<p>The default configuration works for most cases, as shown below. No need to modify the IPv4 address if it does not conflict with your upstream router's gateway.</p>
+<p><img alt="check configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/check_configuration.png" /></p>
+<p>(The IPv6 on GL.iNet is disabled by default. If you want to use IPv6 address, please enable IPv6 on your router.)</p>
+<p>If you notice that the IPv4 address conflicts with your upstream router's gateway, modify the address to another one such as <strong>10.1.0.1/24</strong> and click <strong>Apply</strong>. Ensure the "/24" CIDR notation is included to avoid connectivity issues.</p>
+<p><img alt="modify configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/modify_configuration.png" /></p>
+<p>For example, if there's an Xfinity router in the upstream of a GL.iNet router, the Xfinity router's IP might be 10.0.0.1, which will conflict with the WireGuard Server's Tunnel IP when the GL.iNet router is set up as a WireGuard server, so you need to make the above changes.</p>
+<p><img alt="xfinity gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/xfinitygateway.jpg" /></p>
 </li>
 <li>
 <p>Add a profile.</p>
-<p>Switch to <strong>Profiles</strong> tab, generate a profile for your device by clicking the <strong>Add</strong> button.</p>
-<p><img alt="wireguard server profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/wireguard_server_profiles.png" /></p>
-<p>Enter a descriptive name.</p>
-<p><img alt="wireguard server profile setting" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/wireguard_server_profile_setting.png" /></p>
-<p>If you need to set advanced settings, click <strong>Set More</strong>.</p>
-<p><img alt="wireguard server profile advanced setting" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/wireguard_server_profile_setting_more.png" /></p>
-<p>Click <strong>Apply</strong> to continue. It will generate a profile.</p>
-<p><img alt="download wireguard client configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/download_wireguard_client_configuration.png" /></p>
-<p>If your network's public IP changes from time to time, you can enable <a href="../ddns/">DDNS</a> by using DDNS domain in the configuration.</p>
-<p>Click <strong>Download</strong> to save the profile.</p>
+<p>Switch to <strong>Profiles</strong> tab, click the <strong>Add</strong> button to generate a profile for your device.</p>
+<p><img alt="add profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/add_profiles.png" /></p>
+<p>Set a descriptive name and click <strong>Apply</strong> to continue.</p>
+<p><img alt="profile name" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/add_profiles_name.png" /></p>
+<p>If you need to set advanced settings, click <strong>Set More</strong>. Then click <strong>Apply</strong> to continue.</p>
+<p><img alt="profile settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/add_profiles_set_more.png" /></p>
+<details>
+<summary>Add route rules if needed</summary>
+<p>It is not necessary to add route rules in most cases.</p>
+<p>If you want to access WireGuard client's LAN devices from server, please switch to the <strong>Route Rules</strong> tab on the <strong>WireGuard Server</strong> page to set the route rules. Click <a href="../../tutorials/wireguard_server_access_to_client_lan_side/">here</a> for more instructions.</p>
+<p><img alt="route rules" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/route_rules.png" /></p>
+<p>Otherwise, turn to Step 4 to download a client configuration.</p>
+</details>
+</li>
+<li>
+<p>Download configuration.</p>
+<p>After adding a profile and apply, it will generate a configuration file in three formats: QR code, plain text, and .conf file. Choose your preferred method to obtain the configuration file.</p>
+<ul>
+<li>
+<p><strong>QR code</strong>: Suitable for end devices (e.g., smartphone, tablet, laptop) with the WireGuard App installed. If you want to set a certain device as a WireGuard client, simply open the WireGuard App, scan the QR code, and the configuration will be automatically imported.</p>
+<p><img alt="client configuration qrcode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/download_config_qrcode.png" /></p>
+</li>
+<li>
+<p><strong>Plain text</strong>: In plain text format, you can review configuration details and conveniently copy-paste them elsewhere for manual configuration, such as the WireGuard App or a GL.iNet router.</p>
+<p><img alt="client configuration plain text" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/download_config_text.png" /></p>
+</li>
+<li>
+<p><strong>.conf file</strong>: Click the <strong>Download</strong> button to save the .conf file to your local device. It is also convenient and can be directly uploaded to the WireGuard app or a GL.iNet router.</p>
+<p><img alt="client configuration file" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/download_config_file.png" /></p>
+</li>
+</ul>
+<p>If required, you can specify the server address from among the public IP, DDNS domain, and current WAN IP. This feature has been available since firmware v4.8. Once changed, the server address in the configuration file will be updated simultaneously.</p>
+<p>For example, it is recommended to enable <a href="../ddns/">DDNS</a> and use DDNS domain as the server address if your network's public IP changes frequently. </p>
+<p><img alt="change server address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/change_server_address.png" /></p>
 </li>
 <li>
 <p>Start WireGuard server.</p>
-<p>Click the <strong>Start</strong> button in the upper right corner to start WireGuard server. Go to VPN Dashboard page to check its status and other settings.</p>
-<p><img alt="start wireguard server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/start_wireguard_server.png" /></p>
+<p>Click the <strong>Start</strong> button in the upper right corner to start WireGuard server.</p>
+<p><img alt="start wireguard server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/start_wgserver.png" /></p>
+<p>The connection status will be displayed on the same page.</p>
+<p><img alt="wireguard server status" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/wgserver_status.png" /></p>
 </li>
 </ol>
 <h2 id="check-if-wireguard-server-is-working-properly">Check if WireGuard Server is working properly<a class="headerlink" href="#check-if-wireguard-server-is-working-properly" title="Permanent link">&para;</a></h2>
-<p>Many people assume that the server has been successfully established as soon as they see it started, but in fact, it is not. </p>
-<p>Even if you forward the wrong port or address, the server can still run.</p>
-<p><img alt="wgconnected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/wgconnected.jpg" /></p>
-<p>To verify if the WireGuard Server is functioning properly, use another device on a separate network and import the previously exported WireGuard configuration to test connectivity and check the assigned IP address.</p>
-<p>The simplest method is to use a smartphone with the official <a href="https://www.wireguard.com/install" target="_blank">WireGuard App</a> installed. First, disable the phone’s Wi-Fi and connect exclusively to the internet via cellular data (3G/4G/5G). Then launch the WireGuard app, import the pre-exported configuration file, and initiate the connection. Confirm whether the phone gains internet access and whether its IP address matches the WireGuard Server’s IP.</p>
+<p>You can check the server connection status on the <strong>WireGuard Server</strong> page. </p>
+<p>If it shows upload/download traffic statistics and online connected devices, it means the WireGuard server is running and there are WireGuard clients connected to it.</p>
+<p><img alt="wireguard server connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/wgserver_status.png" /></p>
+<p>If it shows 0 traffic and 0 client, it means that there's no WireGuard client connected.</p>
+<p><img alt="wireguard server no client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wireguard_server/wgserver_status_no_client.png" /></p>
+<p>To verify if the WireGuard Server is functioning properly, please import the previously exported WireGuard configuration to a device on a different network (not the same local network as the server). Test the VPN connectivity and the device's public IP address.</p>
+<p>The simplest method is to use a smartphone with the official <a href="https://www.wireguard.com/install" target="_blank">WireGuard App</a> installed. First, disable the smartphone's Wi-Fi and connect exclusively to the internet via cellular data (4G/5G). Then open the WireGuard App, import the configuration file, and initiate the connection. Check if the smartphone can access the internet and if its IP address matches the WireGuard Server's IP.</p>
 <p>If the connection fails, there are several common reasons:</p>
 <ul>
 <li>The Internet Service Provider doesn't assign you a public IP address. Please check <a href="#make-sure-you-have-a-public-ip-address">here</a>.</li>
 <li>You may need to set up port forwarding. Please check <a href="#confirm-if-port-forwarding-is-required">here</a>.</li>
-<li>The port you are using for WireGuard Server is blocked by the Internet Service Provider.Change to another port, or contact the Internet Service Provider for further assistance.</li>
+<li>The port used for the WireGuard Server is blocked by your Internet Service Provider. Change to another port, or contact the Internet Service Provider for further assistance.</li>
 <li>Some countries/regions may block the VPN connection.</li>
 </ul>
 <h2 id="wireguard-client-app">WireGuard Client App<a class="headerlink" href="#wireguard-client-app" title="Permanent link">&para;</a></h2>

@@ -2908,8 +2908,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-test-connection" class="md-nav__link">
-    2. Test connection
+  <a href="#2-allow-remote-access-to-client-lan" class="md-nav__link">
+    2. Allow remote access to client LAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-test-connection" class="md-nav__link">
+    3. Test connection
   </a>
   
 </li>
@@ -5105,7 +5112,7 @@
         
   
   <span class="md-ellipsis">
-    Network Port Management
+    Port Management
   </span>
   
 
@@ -5848,8 +5855,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-test-connection" class="md-nav__link">
-    2. Test connection
+  <a href="#2-allow-remote-access-to-client-lan" class="md-nav__link">
+    2. Allow remote access to client LAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-test-connection" class="md-nav__link">
+    3. Test connection
   </a>
   
 </li>
@@ -5886,31 +5900,50 @@
 <h2 id="1-add-route-rule-on-server">1. Add route rule on server<a class="headerlink" href="#1-add-route-rule-on-server" title="Permanent link">&para;</a></h2>
 <details>
 <summary>For firmware v4.7 and earlier</summary>
-<p>Log in to the web admin panel of your OpenVPN server, and go to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Server</strong>.</p>
+<p>Log in to the web admin panel of <u>your OpenVPN server</u>, and go to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Server</strong>.</p>
 <p>Click on the route icon on the right to enter the route rule.</p>
 <p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-1.jpg" /></p>
 <p>In the pop-up window, click on <strong>Add Route Rule</strong> button on the right side, and input the subnet you want to access.</p>
 <p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-2.png" /></p>
 <p>For example, the LAN subnet of the OpenVPN client GL-MT2500 is <strong>192.168.48.0/24</strong>, so the Target Address is <strong>192.168.48.0/24</strong>. </p>
-<p>Gateway is the client IP that your OpenVPN server generated for this OpenVPN client. Here we set the Gateway as <strong>10.8.0.1</strong>, then click <strong>Apply</strong>.</p>
+<p>Gateway is the Client IP that your OpenVPN server generated for this OpenVPN client. Here we set the Gateway as <strong>10.8.0.1</strong>, then click <strong>Apply</strong>.</p>
 <p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-3.jpg" /></p>
+<p>Note: If you have multiple OpenVPN clients whose LAN subnets need to be accessed, please refer to <a href="../reserve_fixed_IP_for_ovpn_client/">this link</a> to reserve a Client IP for each OpenVPN client before setting the route rules.</p>
 </details>
 <details>
 <summary>For firmware v4.8 and higher</summary>
-<p>Log in to the web admin panel of your OpenVPN server, and go to <strong>VPN</strong> -&gt; <strong>OpenVPN Server</strong>.</p>
+<p>Log in to the web admin panel of <u>your OpenVPN server</u>, and go to <strong>VPN</strong> -&gt; <strong>OpenVPN Server</strong>.</p>
 <p>Click the <strong>Route Rules</strong> tab, then click on <strong>Add Route Rule</strong> button on the right side.</p>
 <p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-1.png" /></p>
 <p>In the pop-up window, input the subnet you want to access.</p>
 <p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-2.png" /></p>
 <p>For example, the LAN subnet of the OpenVPN client GL-MT2500 is <strong>192.168.48.0/24</strong>, so the Target Address is <strong>192.168.48.0/24</strong>. </p>
-<p>Gateway is the client IP that your OpenVPN server generated for this OpenVPN client. Here we set the Gateway as <strong>10.8.0.1</strong>, then click <strong>Apply</strong>.</p>
-<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-3.png" /></p>
+<p>Gateway is the Client IP that your OpenVPN server generated for this OpenVPN client. Here we set the Gateway as <strong>10.8.0.2</strong>, then click <strong>Apply</strong>.</p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-3.jpg" /></p>
+<p>Note: If you have multiple OpenVPN clients whose LAN subnets need to be accessed, please refer to <a href="../reserve_fixed_IP_for_ovpn_client/">this link</a> to reserve a Client IP for each OpenVPN client before setting the route rules.</p>
 </details>
-<h2 id="2-test-connection">2. Test connection<a class="headerlink" href="#2-test-connection" title="Permanent link">&para;</a></h2>
-<p>Here is an example of accessing the GL-MT3000 with IP <strong>192.168.48.211</strong>.</p>
+<h2 id="2-allow-remote-access-to-client-lan">2. Allow remote access to client LAN<a class="headerlink" href="#2-allow-remote-access-to-client-lan" title="Permanent link">&para;</a></h2>
+<details>
+<summary>For firmware v4.7 and earlier</summary>
+<p>Log in to the web admin panel of <u>your OpenVPN client</u>, and go to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Client</strong>.</p>
+<p>Click on the gear icon to enter the client options.</p>
+<p><img alt="ovpnclient options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-client-options.png" /></p>
+<p>In the pop-up window, enable <strong>Remote Access LAN</strong>, then click <strong>Apply</strong>.</p>
+<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-allow-remote-access-lan.jpg" /></p>
+</details>
+<details>
+<summary>For firmware v4.8 and higher</summary>
+<p>Log in to the web admin panel of <u>your OpenVPN client</u>, and go to <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>.</p>
+<p>On the top-left corner of your VPN tunnel, click the gear icon to enter the tunnel options.</p>
+<p><img alt="ovpnclient options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-client-tunnel-options.png" /></p>
+<p>In the pop-up window, enable <strong>Allow Remote Access the LAN Subnet</strong>, then click <strong>Apply</strong>.</p>
+<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-allow-remote-access-lan.png" /></p>
+</details>
+<h2 id="3-test-connection">3. Test connection<a class="headerlink" href="#3-test-connection" title="Permanent link">&para;</a></h2>
+<p>Here is an example of accessing the GL-MT3000 (a device in OpenVPN client's LAN) with IP <strong>192.168.48.211</strong>.</p>
 <p>On a device connected to your OpenVPN server, ping GL-MT3000's IP address <strong>192.168.48.211</strong>. This is the IP address that OpenVPN client (GL-MT2500) assigns to the GL-MT3000 in its LAN.</p>
 <p>If you can ping it successfully, it means the settings are correct. You will be able to access all other devices within the OpenVPN client LAN subnet through their IP addresses.</p>
-<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ping-test.png" /></p>
+<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ping-test.jpg" /></p>
 
   <!-- Last update of source file -->
   

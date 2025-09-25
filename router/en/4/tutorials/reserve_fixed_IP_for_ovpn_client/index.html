@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-reserve-fixed-ip-for-openvpn-client-in-a-self-built-openvpn-connection" class="md-skip">
+        <a href="#how-to-reserve-a-fixed-ip-for-openvpn-client-in-a-self-built-openvpn-connection" class="md-skip">
           Skip to content
         </a>
       
@@ -5054,7 +5054,7 @@
         
   
   <span class="md-ellipsis">
-    Network Port Management
+    Port Management
   </span>
   
 
@@ -5798,16 +5798,16 @@
   
 
   <!-- Markdown content -->
-  <h1 id="how-to-reserve-fixed-ip-for-openvpn-client-in-a-self-built-openvpn-connection">How to reserve fixed IP for OpenVPN client in a self built OpenVPN connection?<a class="headerlink" href="#how-to-reserve-fixed-ip-for-openvpn-client-in-a-self-built-openvpn-connection" title="Permanent link">&para;</a></h1>
-<p>If you have successfully set up your OpenVPN server using a GL.iNet router, this tutorial will show you how to reserve a fixed IP for your OpenVPN client connecting to your server.</p>
+  <h1 id="how-to-reserve-a-fixed-ip-for-openvpn-client-in-a-self-built-openvpn-connection">How to reserve a fixed IP for OpenVPN client in a self built OpenVPN connection?<a class="headerlink" href="#how-to-reserve-a-fixed-ip-for-openvpn-client-in-a-self-built-openvpn-connection" title="Permanent link">&para;</a></h1>
+<p>This tutorial will show you how to reserve a fixed IP for your OpenVPN client connecting to your server. Set up a GL.iNet router as your OpenVPN server first before following the steps below.</p>
 <ol>
 <li>
 <p>Log in to the web admin panel of your OpenVPN server, from the left sidebar, navigate to <strong>VPN</strong> -&gt; <strong>OpenVPN Server</strong>.</p>
-<p>In the <strong>Configuration</strong> tab, note down the <strong>IPv4 subnet</strong>, and switch the Authentication Mode to <strong>Username and Password Only</strong>. For example, the following shows that the IPv4 subnet is 10.8.0.0/24.</p>
+<p>In the <strong>Configuration</strong> tab, note down the <strong>IPv4 subnet</strong> (such as 10.8.0.0/24 in the following image), and switch the Authentication Mode to <strong>Username and Password Only</strong>.</p>
 <p><img alt="ovpn configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/ovpn_server_config.png" /></p>
 </li>
 <li>
-<p>Turn to <strong>Users</strong> tab, create a username and password. As shown below, a username "GLsupport" has been created as an example.</p>
+<p>Turn to the <strong>Users</strong> tab, create a username and password, as shown below.</p>
 <p><img alt="ovpn users" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/ovpn_server_users.png" /></p>
 </li>
 <li>
@@ -5815,14 +5815,14 @@
 <p><code>vi /etc/lib/netifd/proto/openserver.sh</code></p>
 <p>In the opened file, check if the line "<em>client-config-dir /etc/openvpn/ccd</em>" exists in the script. </p>
 <p><img alt="check config line" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/check_config_line.png" /></p>
-<p>If not, add it manually, then save and exit the file (in the vi editor, press the <strong>Esc</strong> key, then enter <strong>:wq</strong> and press Enter).</p>
+<p>If not, add it manually, then save and exit the file.</p>
 </li>
 <li>
 <p>Go to <code>/etc/openvpn/</code>, add a ccd folder <code>mkdir ccd</code>.</p>
 <p><img alt="add ccd folder" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/add_ccd_folder.png" /></p>
 </li>
 <li>
-<p>Add a file "GLsupport", type inside <code>ifconfig-push 10.8.0.10 255.255.255.0</code></p>
+<p>Add a file "GLsupport", type in <code>ifconfig-push 10.8.0.10 255.255.255.0</code>, then save and exit the file.</p>
 <p>Verify the content by <code>cat GLsupport</code></p>
 <p><img alt="ifconfig-push" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/ifconfig-push.png" /></p>
 <ul>
@@ -5837,11 +5837,12 @@
 <p>For example, <code>ifconfig-push 10.8.0.20 225.225.225.0</code>, <code>ifconfig-push 10.8.0.30 225.225.225.0</code>, <code>ifconfig-push 10.8.0.40 225.225.225.0</code></p>
 </li>
 <li>
-<p>At last, test with your OVPN client and check if the Client Virtual IP (IPv4) is the reserved one you set. </p>
-<p>For example, if your OpenVPN client is a GL.iNet router, you can log in to the OpenVPN client router’s web admin panel, navigate to VPN Dashboard -&gt; OpenVPN Client, and verify the Client Virtual IP (IPv4).</p>
-<p><img alt="test 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/test_e.g.1.png" /></p>
-<p><img alt="test 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/test_e.g.2.png" /></p>
-<p><img alt="test 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/test_e.g.3.png" /></p>
+<p>At last, test with your OVPN client and check if the Client Virtual IP (IPv4) is the reserved one. </p>
+<p>For example, if your OpenVPN client is a GL.iNet router, you can log in to the OpenVPN client router's web admin panel, navigate to VPN Dashboard to verify the Client Virtual IP (IPv4).</p>
+<p><img alt="ovpn client test v4.7" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/ovpn_client_test_4.7.png" />
+<small>(VPN Dashboard in firmware v4.7 and earlier)</small></p>
+<p><img alt="ovpn client test v4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/ovpn_client_test_4.8.png" />
+<small>(VPN Dashboard in firmware v4.8)</small></p>
 </li>
 </ol>
 <hr />
