@@ -2982,10 +2982,10 @@
       
         <li class="md-nav__item">
   <a href="#how-to-enable-vpn-cascading" class="md-nav__link">
-    How to enable VPN cascading
+    How to enable VPN Cascading
   </a>
   
-    <nav class="md-nav" aria-label="How to enable VPN cascading">
+    <nav class="md-nav" aria-label="How to enable VPN Cascading">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3004,13 +3004,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#does-vpn-policy-affect-vpn-cascading" class="md-nav__link">
-    Does VPN policy affect VPN Cascading
-  </a>
   
 </li>
       
@@ -5862,10 +5855,10 @@
       
         <li class="md-nav__item">
   <a href="#how-to-enable-vpn-cascading" class="md-nav__link">
-    How to enable VPN cascading
+    How to enable VPN Cascading
   </a>
   
-    <nav class="md-nav" aria-label="How to enable VPN cascading">
+    <nav class="md-nav" aria-label="How to enable VPN Cascading">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5884,13 +5877,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#does-vpn-policy-affect-vpn-cascading" class="md-nav__link">
-    Does VPN policy affect VPN Cascading
-  </a>
   
 </li>
       
@@ -5924,68 +5910,82 @@
 <p><img alt="gl.inet vpn cascading" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/mt2500_vpn-cascading.jpg" /></p>
 <p><strong>VPN 1 (Router as VPN Server)</strong>: When the router acts as a VPN server, clients connected to this server will access the internet via the router's ISP network by default.</p>
 <p><strong>VPN 2 (Router as VPN Client)</strong>: The router also acts as a VPN client, connecting to a third-party VPN service.</p>
-<p><strong>VPN Cascading</strong>: By configuring the router to forward traffic from the VPN 1 tunnel to the VPN 2 tunnel, end devices (such as laptops, desktops, and smartphones) connected to VPN 1 can access the internet through the third-party VPN service — no additional setup is required on the end devices themselves.</p>
-<h2 id="how-to-enable-vpn-cascading">How to enable VPN cascading<a class="headerlink" href="#how-to-enable-vpn-cascading" title="Permanent link">&para;</a></h2>
+<p><strong>VPN Cascading</strong>: The router will forward traffic from the VPN 1 tunnel to the VPN 2 tunnel, allowing devices connected to the router via VPN 1 to access the internet through the third-party VPN service (VPN 2) instead of the router's ISP network.</p>
+<h2 id="how-to-enable-vpn-cascading">How to enable VPN Cascading<a class="headerlink" href="#how-to-enable-vpn-cascading" title="Permanent link">&para;</a></h2>
 <h3 id="for-firmware-v47-and-earlier">For firmware v4.7 and earlier<a class="headerlink" href="#for-firmware-v47-and-earlier" title="Permanent link">&para;</a></h3>
-<p>Please follow the steps below.</p>
 <ol>
 <li>
-<p>First, set your router as a VPN server. WireGuard protocol is recommended for faster speed. Please refer to <a href="../../interface_guide/wireguard_server/" target="_blank">this</a> link.</p>
+<p>First, set your router as a VPN server. WireGuard protocol is recommended for faster speed. Please refer to <a href="../../interface_guide/wireguard_server/" target="_blank">this link</a>.</p>
 </li>
 <li>
 <p>Export a configuration file from your router and upload it to a client device, which will be connecting to the router via VPN.</p>
 </li>
 <li>
-<p>Set your router as a VPN client, connecting to a third-party VPN service. WireGuard protocol is recommended for faster speed. Please refer to <a href="../../interface_guide/wireguard_client/" target="_blank">this</a> link.</p>
+<p>Set your router as a VPN client, connecting to a third-party VPN service. WireGuard protocol is recommended for faster speed. Please refer to <a href="../../interface_guide/wireguard_client/" target="_blank">this link</a>.</p>
 </li>
 <li>
-<p>Once connected, the <strong>VPN Dashboard</strong> page will display as below, where the router has been set as a VPN server, and also a VPN client, connecting to a third-party VPN service.</p>
+<p>Once connected, the <strong>VPN Dashboard</strong> page will display as below, where the router has been set as a VPN server and a VPN client simultaneously.</p>
 <p><img alt="vpn dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/4.7-vpn-dashboard.png" /></p>
-<p>Turn to the VPN Server section and click on <strong>Global Options</strong>.</p>
+<p>Turn to the VPN Server section on the same page and click <strong>Global Options</strong>.</p>
 <p><img alt="global options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/4.7-global-options.png" /></p>
 <p>Enable <strong>VPN Cascading</strong> and click <strong>Apply</strong>.</p>
 <p><img alt="enable vpn cascading" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/enable_vpn_cascading.png" /></p>
 </li>
+<li>
+<p>The VPN Cascading is enabled. Devices connected to your router via VPN will access the Internet through the third-party VPN service, instead of the router's ISP network.</p>
+</li>
 </ol>
 <h3 id="for-firmware-v48-and-higher">For firmware v4.8 and higher<a class="headerlink" href="#for-firmware-v48-and-higher" title="Permanent link">&para;</a></h3>
-<p>The VPN Cascading option has been removed since firmware v4.8. </p>
-<p>As long as you set a router as a VPN server, which is also been set as a VPN client connecting to a third-party VPN service at the same time, in the default VPN global mode, all VPN clients connecting to the router through VPN will eventually access the Internet through the third-party VPN service – no need to enable VPN Cascading.</p>
-<p>Take GL-AXT1800 as an example.</p>
 <ol>
 <li>
-<p>First, set the GL-AXT1800 as a WireGuard server. Please refer to <a href="../../interface_guide/wireguard_server/">this</a> link.</p>
+<p>First, set your router as a VPN server. WireGuard protocol is recommended for faster speed. Please refer to <a href="../../interface_guide/wireguard_server/" target="_blank">this link</a>.</p>
 </li>
 <li>
-<p>Export a configuration file from GL-AXT1800 and upload it to a laptop, which will be set as a WireGuard client connecting to GL-AXT1800 via VPN.</p>
+<p>Export a configuration file from your router and upload it to a client device, which will be connecting to the router via VPN.</p>
 </li>
 <li>
-<p>Set the GL-AXT1800 as a WireGuard client, connecting to a third-party VPN service (e.g., IPVanish). Please refer to <a href="../../interface_guide/wireguard_client/">this</a> link.</p>
+<p>Set your router as a VPN client, connecting to a third-party VPN service. WireGuard protocol is recommended for faster speed. Please refer to <a href="../../interface_guide/wireguard_client/" target="_blank">this link</a>.</p>
 </li>
 <li>
-<p>Once connected, the <strong>VPN Dashboard</strong> page will display as below, indicating that this router has been set as a WireGuard client connecting to a third-party VPN service.</p>
+<p>In the web admin panel, navigate to <strong>VPN Dashboard</strong>. Choose the corresponding instructions below based on your VPN mode.</p>
+<details>
+<summary>Global Mode</summary>
+<p>If your VPN mode is Global Mode, once the VPN client is enabled (as shown below), the VPN Cascading will be enabled automatically. </p>
+<p>Devices connected to your router via VPN will access the Internet through the third-party VPN service, instead of the router's ISP network.</p>
+<p><img alt="vpn connected global mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/4.8-global-mode.png" /></p>
+</details>
+<details>
+<summary>Policy Mode</summary>
+<p>If your VPN mode is Policy Mode, you need to set up the VPN tunnel rule.</p>
+<p>Click the greyed-out box on the left.</p>
+<p><img alt="traffic from" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/traffic_from_1.png" /></p>
+<p>Select the traffic source to apply to this rule. To enable VPN Cascading, please select <strong>All Clients</strong>, or select <strong>Specified Connection Types</strong> and then <strong>WireGuard/OpenVPN Server</strong>.</p>
+<p><img alt="select traffic source" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/select_traffic.jpg" /></p>
+<ul>
+<li>
+<p><strong>All Clients</strong>: It includes all LAN devices, devices from Drop-in Gateway, devices from Guest network, and devices connected to your router via VPN. </p>
+<p>If you want the traffic from all devices to apply the same tunnel rule, select <strong>All Clients</strong> and click <strong>Apply</strong>.</p>
+<p><img alt="all clients" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/all_clients.png" /></p>
+</li>
+<li>
+<p><strong>Specified Connection Types</strong>: It allows you to specify those devices connected to the router through a specific method (e.g., devices connected via VPN) to apply this tunnel rule. </p>
+<p>If you want to specify the VPN clients of your router to apply different rule from other devices, select <strong>WireGuard/OpenVPN Server</strong> and click <strong>Apply</strong>.</p>
+<p><img alt="specified connection" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/specified_connection_types.png" /></p>
+<p>This is an example of VPN tunnel rules in Policy Mode.</p>
 <p><img alt="vpn dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/4.8-vpn-dashboard.png" /></p>
-<p>The server status is displayed on the <strong>WireGuard Server</strong> page.</p>
-<p><img alt="vpn server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/4.8-wgserver.png" /></p>
-<p>Now the laptop, which has been set as a WireGuard client connecting to the GL-AXT1800 (VPN 1), will access the Internet via the third-party VPN service (VPN 2), rather than the the GL-AXT1800's ISP network.</p>
+</li>
+</ul>
+</details>
 </li>
 <li>
-<p><strong>Connection Test</strong>: On the laptop, open a browser and visit <a href="https://whatismyipaddress.com/" target="_blank">What Is My IP</a> to check its public IP. If it shows the laptop's IP address is in the region of the third-party VPN server (which is Buenos Aires in this example), it indicates that VPN cascading has taken effect.</p>
+<p>The VPN Cascading is enabled. Devices connected to your router via VPN will access the Internet through the third-party VPN service, instead of the router's ISP network.</p>
+</li>
+<li>
+<p><strong>Connection Test</strong>: On a laptop connected to the router via VPN, open a browser and visit <a href="https://whatismyipaddress.com/" target="_blank">What Is My IP</a> to check its public IP. </p>
+<p>If it shows the laptop's IP address is in the region of the third-party VPN server (which is Buenos Aires in this instruction), it indicates that VPN Cascading has taken effect.</p>
 <p><img alt="vpn test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/4.8-ipcheck.png" /></p>
 </li>
 </ol>
-<h2 id="does-vpn-policy-affect-vpn-cascading">Does VPN policy affect VPN Cascading<a class="headerlink" href="#does-vpn-policy-affect-vpn-cascading" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>Case 1. Policies DO NOT affect VPN Cascading</p>
-<p>VPN policies, including <strong>Global Proxy</strong>, <strong>Based on the Target Domain or IP</strong>, <strong>Based on the Client Device</strong> and <strong>Based on the VLAN</strong>, does not affect VPN cascading. These polices only affect on the devices connected on the router physically, i.e. in the router's own subnet.</p>
-<p><img alt="gl.inet vpn dashboard, vpn policy" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/modify_vpn_policy_mode_1.png" /></p>
-</li>
-<li>
-<p>Case 2. Policies DO affect VPN Cascading</p>
-<p>When you use <strong>Auto Detect</strong> or <strong>Customized Routing Rules</strong>, the routing rules comes with the VPN config or you set up will affect how the router route data so VPN cascading may not work.</p>
-<p><img alt="gl.inet vpn dashboard, vpn policy" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/modify_vpn_policy_mode_2.png" /></p>
-</li>
-</ul>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
