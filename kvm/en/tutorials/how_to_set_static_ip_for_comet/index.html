@@ -2236,33 +2236,15 @@
 
   <!-- Markdown content -->
   <h1 id="how-to-set-a-static-ip-for-comet-gl-rm1">How to set a static IP for Comet (GL-RM1)<a class="headerlink" href="#how-to-set-a-static-ip-for-comet-gl-rm1" title="Permanent link">&para;</a></h1>
-<p>If you need to set a static IP for Comet, but its upstream router cannot allocate a static IP or does not have DHCP, you can customize network parameters on Comet's terminal and set a static IP for it.</p>
+<p>If you need to set a static IP for Comet but its upstream router can't allocate one, you can customize network parameters on Comet to configure it.</p>
 <ol>
 <li>
-<p>In the GLKVM app, navigate to Toolbox -&gt; Terminal -&gt; Access Terminal.</p>
-<p><img alt="toolbox" class="glboxshadow gl-50-desktop" src="https://static.gl-inet.com/docs/kvm/tutorials/set_static_ip/toolbox.png" /></p>
-<p><img alt="access terminal" class="glboxshadow gl-50-desktop" src="https://static.gl-inet.com/docs/kvm/tutorials/set_static_ip/access_terminal.png" /></p>
+<p>Log in to your Comet's control panel, and navigate to <strong>Settings</strong> -&gt; <strong>Network</strong> -&gt; <strong>Modify</strong>.</p>
+<p><img alt="settings-network" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/set_static_ip/settings-network.png" /></p>
 </li>
 <li>
-<p>Input the commands.</p>
-<ul>
-<li>
-<p><strong>Configure IP</strong>: </p>
-<p><code>connmanctl config `connmanctl services |grep ethernet|awk -F' '  '{print $3}'` --ipv4 manual 192.168.113.131 255.255.255.0 192.168.113.1</code></p>
-<p>(The three values are IP address, subnet mask, and gateway respectively.)</p>
-</li>
-<li>
-<p><strong>Configure DNS</strong>:</p>
-<p><code>connmanctl config `connmanctl services |grep ethernet|awk -F' '  '{print $3}'` nameservers 8.8.8.8</code></p>
-<p>(The above value 8.8.8.8 is the DNS server.) </p>
-<p>If multiple DNS servers need to be configured, please separate them with spaces, e.g. </p>
-<p><code>connmanctl config `connmanctl services |grep ethernet|awk -F' '  '{print $3}'` nameservers 8.8.8.8 1.1.1.1</code></p>
-</li>
-<li>
-<p><strong>Configure DHCP</strong>:</p>
-<p><code>connmanctl config `connmanctl services |grep ethernet|awk -F' '  '{print $3}'` --ipv4 dhcp</code></p>
-</li>
-</ul>
+<p>Switch to <strong>Static</strong> tab. Specify the IP address, Netmask, Gateway and DNS for your Comet, and click <strong>Confirm</strong>.</p>
+<p><img alt="ethernet-settings-static" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/set_static_ip/ethernet-settings-static.png" /></p>
 </li>
 </ol>
 <hr />
