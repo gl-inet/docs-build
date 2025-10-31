@@ -5941,8 +5941,7 @@
 
   <!-- Markdown content -->
   <h1 id="dynamic-dns">Dynamic DNS<a class="headerlink" href="#dynamic-dns" title="Permanent link">&para;</a></h1>
-<p>Dynamic Domain Name Service (Dynamic DNS or DDNS) is a service used to map a domain name to the dynamic IP address of a network device.</p>
-<p>You can enable Dynamic DNS for this router and access this router remotely. An Internet Public IP address is required to use Dynamic DNS.</p>
+<p>Dynamic Domain Name Service (Dynamic DNS or DDNS) is a service used to map a domain name to the dynamic IP address of a network device. With Dynamic DNS, you can access your router remotely. An Internet public IP address is required for this functionality.</p>
 <h2 id="enable-ddns">Enable DDNS<a class="headerlink" href="#enable-ddns" title="Permanent link">&para;</a></h2>
 <p>On the left side of web Admin Panel -&gt; APPLICATIONS -&gt; Dynamic DNS, the page is displayed as below.</p>
 <p><img alt="ddns" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/ddns/ddns.png" /></p>
@@ -5954,9 +5953,10 @@
 <p><img alt="security settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/ddns/security_settings-2.png" /></p>
 <p>Enable the remote access protocol you want, and click <strong>Apply</strong>.</p>
 <p><img alt="security remote access" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/ddns/remote_access_enabled.jpg" /></p>
-<p>There may be a delay of up to 10 minutes in record synchronization between DNS servers. This may cause you to be unable to access through the DDNS domain name immediately after you have just enabled it or your public IP has changed.</p>
-<p><strong>Note</strong>: If you use DDNS and VPN Client at the same time, make sure that the option <strong>Services From GL.iNet Use VPN</strong> is disabled in <a href="../vpn_dashboard_v4.7/#global-options-of-vpn-client">Global Option of VPN Client</a>.</p>
+<p>There may be a delay of up to 10 minutes in record synchronization between DNS servers. This may prevent you from accessing through the DDNS domain name immediately after enabling it or when your public IP changes.</p>
+<p><strong>Note</strong>: If you enable DDNS and VPN Client at the same time, make sure that <strong>Services From GL.iNet Use VPN</strong> is disabled. This feature can be found in the <a href="../vpn_dashboard/#tunnel-options">VPN Client Options</a> of the VPN Dashboard.</p>
 <h2 id="check-if-ddns-works">Check If DDNS Works<a class="headerlink" href="#check-if-ddns-works" title="Permanent link">&para;</a></h2>
+<p>You can check if DDNS works using the DDNS test tool or check it manually using commands.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Using the DDNS Test tool</label><label for="__tabbed_1_2">Check it manually</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -5969,10 +5969,10 @@
 <div class="tabbed-block">
 <ol>
 <li>
-<p>Use <code>nslookup</code> command to obtain the mapping between domain name and IP address, as shown below.</p>
-<p><img alt="nslookup" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/ddns/nslookup.png" /></p>
+<p>Use <code>nslookup</code> command to obtain the mapping between domain name and IP address, as shown below.</p>
+<p><img alt="nslookup" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/ddns/nslookup.jpg" /></p>
 <p>Replace the "xxxxxxx.glddns.com" in the image above with your Host Name. </p>
-<p>The "8.8.8.8" in the image above is the Google DNS. You can use it or replace it with other DNS.</p>
+<p>The "8.8.8.8" in the image above is the Google DNS. Use it or replace it with other DNS.</p>
 <p>You will get an IP address as an output, such as the IP "103.81.180.10" in the image above.</p>
 </li>
 <li>
@@ -5998,7 +5998,7 @@
 </li>
 </ol>
 </div>
-<p>Then follow the steps below to enable HTTPS remote access for your router.</p>
+<p>Follow the steps below to enable HTTPS remote access for your router.</p>
 <ol>
 <li>
 <p>On the Dynamic DNS page, toggle on <strong>Enable DDNS</strong>, agree to the <strong>Terms of Services &amp; Privacy Policy</strong>, then click <strong>Apply</strong>.</p>
@@ -6036,7 +6036,7 @@
 </li>
 </ol>
 </div>
-<p>Then follow the steps below to enable SSH remote access for your router.</p>
+<p>Follow the steps below to enable SSH remote access for your router.</p>
 <ol>
 <li>
 <p>On the Dynamic DNS page, toggle on <strong>Enable DDNS</strong>, agree to the <strong>Terms of Services &amp; Privacy Policy</strong>, then click <strong>Apply</strong>.</p>
