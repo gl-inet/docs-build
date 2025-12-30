@@ -3192,7 +3192,7 @@
         
   
   <span class="md-ellipsis">
-    Check the carrier aggregation status
+    Check carrier aggregation status
   </span>
   
 
@@ -5874,6 +5874,7 @@
 <details>
 <summary>Supported Models</summary>
 <ul>
+<li>GL-MT3600BE (Beryl 7)</li>
 <li>GL-BE6500 (Flint 3e)</li>
 <li>GL-BE9300 (Flint 3)</li>
 <li>GL-BE3600 (Slate 7)</li>
@@ -5889,15 +5890,15 @@
 </ul>
 </details>
 <details>
-<summary>Not Supported Models</summary>
+<summary>Unsupported Models</summary>
 <ul>
 <li>GL-AXT1800 (Slate AX)</li>
 <li>GL-AX1800 (Flint)</li>
 <li>GL-A1300 (Slate Plus)</li>
 <li>GL-E750/E750V2 (Mudi)</li>
+<li>GL-X750/GL-X750V2 (Spitz)</li>
 <li>GL-AR750S (Slate)</li>
 <li>GL-XE300 (Puli)</li>
-<li>GL-X750 (Spitz)</li>
 <li>GL-MT300N-V2 (Mango)</li>
 <li>GL-AR300M Series (Shadow)</li>
 <li>GL-B1300 (Convexa-B)</li>
@@ -5907,19 +5908,21 @@
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <p>On the left side of web Admin Panel -&gt; NETWORK -&gt; Network Acceleration.</p>
 <p><img alt="Network Acceleration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_acceleration/network_acceleration.png" /></p>
-<p>Mode has three options.</p>
+<p>There are three modes.</p>
 <ul>
 <li>
-<p>Auto</p>
+<p><strong>Auto</strong></p>
 <p>Auto mode will automatically switch between the two acceleration modes based on actual usage.</p>
 </li>
 <li>
-<p>Hardware Acceleration</p>
-<p>Hardware acceleration works on Ethernet and Repeater.</p>
+<p><strong>Hardware Acceleration</strong></p>
+<p>Hardware acceleration works on <u>Ethernet</u> and <u>Repeater</u>. </p>
+<p>Hardware acceleration offloads high-frequency network tasks (e.g., NAT, packet forwarding, checksum verification) to dedicated hardware like NPUs or HWNAT chips. It specifically works on Ethernet (wired WAN/LAN) and Repeater connections, excelling in these scenarios with fixed paths and simple rules to deliver high throughput, low latency, and minimal CPU load for wire-speed data transmission.</p>
 </li>
 <li>
-<p>Software Acceleration</p>
-<p>Software acceleration works on Cellular.</p>
+<p><strong>Software Acceleration</strong></p>
+<p>Software acceleration works on <u>Cellular</u>. </p>
+<p>Software acceleration relies on a router's general CPU paired with optimized kernels or drivers (e.g., SWNAT). It works on Cellular (4G/5G) access, typically the primary scenario where hardware acceleration is unavailable, offering strong compatibility and support for complex protocols. While flexible, it may hit CPU bottlenecks under high-bandwidth loads, especially when running advanced features like DPI, QoS, or port forwarding.</p>
 </li>
 </ul>
 <hr />
