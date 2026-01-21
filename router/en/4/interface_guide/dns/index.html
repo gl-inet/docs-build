@@ -6074,7 +6074,8 @@
   <!-- Markdown content -->
   <h1 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h1>
 <p>On the left side of web Admin Panel -&gt; NETWORK -&gt; DNS</p>
-<p>If you set custom DNS servers, any dns name will be resolved through the DNS servers set here instead of the one obtained from wan, repeater, cellular, hotspot sharing or VPN configuration DNS server.</p>
+<p>The DNS settings on your router control how domain names are translated into IP addresses. This page lets you use the DNS server(s) automatically obtained from upstream devices, or set custom ones, and configure DNS priorities.</p>
+<p>If you set custom DNS server(s), any DNS queries will be resolved through the specified one(s), instead of the DNS servers obtained through individual network interfaces. Otherwise, you will use the DNS settings configured for each interface.</p>
 <p><img alt="dns" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/dns/dns_page.png" /></p>
 <ul>
 <li>
@@ -6084,15 +6085,15 @@
 <p><strong>Override DNS Settings for All Clients:</strong> If enabled, your router will override unencrypted DNS settings for all clients.</p>
 </li>
 <li>
-<p><strong>Allow Custom DNS to Override VPN DNS:</strong> If this option is enabled, once you have set custom DNS, packets transmitted through the VPN tunnel will be resolved using the custom DNS override instead of the DNS server settings from the VPN connections.</p>
+<p><strong>Allow Custom DNS to Override VPN DNS:</strong> If enabled, once you have set custom DNS, packets transmitted through the VPN tunnel will be resolved using the custom DNS override instead of the DNS server settings from the VPN connections.</p>
 </li>
 </ul>
 <h2 id="dns-server-settings">DNS Server Settings<a class="headerlink" href="#dns-server-settings" title="Permanent link">&para;</a></h2>
 <p>There are four modes: Automatic, Encrypted DNS, Manual DNS, and DNS Proxy.</p>
 <ul>
 <li>
-<p><strong>Automatic</strong>: The router will use the gateway of the uptream device (e.g., ISP modem, primary router).</p>
-<p><img alt="automatic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/dns/dns_server_settings_automatic.png" /></p>
+<p><strong>Automatic</strong>: The router will automatically use the DNS server provided by the upstream device (e.g., ISP modem, primary router), or the DNS settings corresponding to each network interface.</p>
+<p><img alt="automatic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/dns/dns_auto.png" /></p>
 </li>
 <li>
 <p><strong>Encrypted DNS</strong>: Four Encryption Type are available: DNS over TLS, DNSCrypt-Proxy, DNS over HTTPS, Oblivious DNS over HTTPS.</p>
@@ -6119,7 +6120,7 @@
 </ul>
 <h2 id="edit-hosts">Edit Hosts<a class="headerlink" href="#edit-hosts" title="Permanent link">&para;</a></h2>
 <p>Requests from clients will be resolved preferentially using the static DNS rules you write in Hosts.</p>
-<p><img alt="hosts" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/dns/edit_hosts.png" /></p>
+<p><img alt="hosts" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/dns/edit_hosts.png" /></p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
