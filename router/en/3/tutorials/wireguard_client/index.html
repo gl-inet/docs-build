@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setup-wireguard-on-glinet-router" class="md-skip">
+        <a href="#set-up-wireguard-on-glinet-router" class="md-skip">
           Skip to content
         </a>
       
@@ -6616,29 +6616,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup-azirevpn" class="md-nav__link">
-    Setup AzireVPN
+  <a href="#set-up-azirevpn" class="md-nav__link">
+    Set up AzireVPN
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-mullvad" class="md-nav__link">
-    Setup Mullvad
+  <a href="#set-up-mullvad" class="md-nav__link">
+    Set up Mullvad
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-wireguard-client" class="md-nav__link">
-    Setup WireGuard Client
+  <a href="#set-up-wireguard-client-manually-for-other-providers" class="md-nav__link">
+    Set Up WireGuard Client Manually (for other providers)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-wireguard-server-on-glinet-router" class="md-nav__link">
-    Setup WireGuard server on GL.iNet router
+  <a href="#set-up-wireguard-server-on-glinet-router" class="md-nav__link">
+    Set up WireGuard server on GL.iNet router
   </a>
   
 </li>
@@ -8046,19 +8046,21 @@
   
 
   <!-- Markdown content -->
-  <h1 id="setup-wireguard-on-glinet-router">Setup WireGuard on GL.iNet router<a class="headerlink" href="#setup-wireguard-on-glinet-router" title="Permanent link">&para;</a></h1>
-<p>WireGuard® is an extremely simple yet fast and modern VPN that utilizes <strong>state-of-the-art cryptography</strong>. It aims to be <a href="https://www.wireguard.com/performance/" target="_blank">faster</a>, simpler, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. </p>
-<p>GL.iNet routers have pre-installed WireGuard Client and Server.</p>
-<p>If you have already bought WireGuard service from a provider, but you don't know how to get the configuration files, please refer to <a href="#get-configuration-files-from-wireguard-service-providers">get configuration files from WireGuard service providers</a> or ask its support.</p>
-<p>You can setup WireGuard Client via web Admin Panel and <a href="../mobile_app/">mobile app</a>. For the mobile app, it has already integrated some WireGuard Service Providers, they are AzireVPN, Mullvad VPN, OVPN, StrongVPN, PIA VPN, SpiderVPN.</p>
-<p>For setup via web Admin Panel, please follow the guide below.</p>
+  <h1 id="set-up-wireguard-on-glinet-router">Set up WireGuard on GL.iNet router<a class="headerlink" href="#set-up-wireguard-on-glinet-router" title="Permanent link">&para;</a></h1>
+<p>WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN.</p>
+<p>GL.iNet routers have pre-installed WireGuard Server and Client. You can set a GL.iNet router as an WireGuard server or client and establish VPN connection.</p>
 <hr />
-<h2 id="setup-azirevpn">Setup AzireVPN<a class="headerlink" href="#setup-azirevpn" title="Permanent link">&para;</a></h2>
+<p>Before you start, ensure you have an active subscription with a VPN service provider that supports WireGuard manual configuration. Click <a href="https://www.gl-inet.com/solutions/vpn/" target="_blank">here</a> to check the WireGuard providers compatible with GL.iNet.</p>
+<p>Generally, you need to visit the official website of the VPN service provider you subscribed first, obtain the configuration file, and upload it to the router to set it as a WireGuard client. If you don't know how to get the configuration file, refer to <a href="(#get-configuration-files-from-wireguard-service-providers)">here</a> or contact their support.</p>
+<p>You can set up a WireGuard client via the web Admin Panel or mobile app. Both have integrated some WireGuard Service Providers for easy setup, such as AzireVPN and Mullvad.</p>
+<p>Below are steps to set up via the web admin panel.</p>
+<hr />
+<h2 id="set-up-azirevpn">Set up AzireVPN<a class="headerlink" href="#set-up-azirevpn" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.azirevpn.com/aff/9x7wisg4" target="_blank">AzireVPN</a> is privacy-minded VPN service providing secure, modern and robust tunnels such as WireGuard.</p>
 <p>Firmware 3.x has integrated AzireVPN WireGuard service.</p>
 <ol>
 <li>
-<p>Click <strong>Now set up</strong>.</p>
+<p>Log in to the web Admin Panel and navigate to VPN -&gt; WireGuard Client. Select <strong>azirevpn</strong> then click <strong>Now set up</strong>.</p>
 <p><img alt="wireguard client azirevpn set up" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/wireguard_client/azirevpn/wireguard_client_azirevpn_now_set_up.png" width="700" /></p>
 </li>
 <li>
@@ -8067,10 +8069,10 @@
 <p>It will take several minutes to get configs, please be patient.</p>
 </li>
 </ol>
-<h2 id="setup-mullvad">Setup Mullvad<a class="headerlink" href="#setup-mullvad" title="Permanent link">&para;</a></h2>
+<h2 id="set-up-mullvad">Set up Mullvad<a class="headerlink" href="#set-up-mullvad" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Select as <strong>mullvad</strong> then click <strong>Now set up</strong>.</p>
+<p>Log in to the web Admin Panel and navigate to VPN -&gt; WireGuard Client. Select <strong>mullvad</strong> then click <strong>Now set up</strong>.</p>
 <p><img alt="wireguard client mullvad vpn set up" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/wireguard_client/mullvadvpn/wireguard_client_mullvadvpn_now_set_up.png" width="700" /></p>
 </li>
 <li>
@@ -8079,11 +8081,11 @@
 <p>It will take a little longer, please be patient.</p>
 </li>
 </ol>
-<h2 id="setup-wireguard-client">Setup WireGuard Client<a class="headerlink" href="#setup-wireguard-client" title="Permanent link">&para;</a></h2>
-<p>There is a video tutorial, please check out <a href="#video-tutorial">here</a>.</p>
+<h2 id="set-up-wireguard-client-manually-for-other-providers">Set Up WireGuard Client Manually (for other providers)<a class="headerlink" href="#set-up-wireguard-client-manually-for-other-providers" title="Permanent link">&para;</a></h2>
+<p>Check a video tutorial <a href="#video-tutorial">here</a>, or follow the steps below.</p>
 <ol>
 <li>
-<p>Please click <strong>+ Set up WireGuard Manually</strong>.</p>
+<p>Log in to the web Admin Panel and navigate to VPN -&gt; WireGuard Client. Click <strong>Set up WireGuard Manually</strong>.</p>
 <p><img alt="setup wireguard manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/wireguard_client/setup_wireguard_manually.png" /></p>
 </li>
 <li>
@@ -8107,7 +8109,7 @@
 </li>
 </ol>
 <p><strong>Note:</strong> It can't running VPN Client and Server at the same time, and also can't running OpenVPN Client and WireGuard Client at the same time.</p>
-<h2 id="setup-wireguard-server-on-glinet-router">Setup WireGuard server on GL.iNet router<a class="headerlink" href="#setup-wireguard-server-on-glinet-router" title="Permanent link">&para;</a></h2>
+<h2 id="set-up-wireguard-server-on-glinet-router">Set up WireGuard server on GL.iNet router<a class="headerlink" href="#set-up-wireguard-server-on-glinet-router" title="Permanent link">&para;</a></h2>
 <p>You can get a GL.iNet router to set as WireGuard server, and get another GL.iNet router to set as WireGuard client. For setup WireGuard server, please check out <a href="../wireguard_server/">here</a>.</p>
 <h2 id="get-configuration-files-from-wireguard-service-providers">Get configuration files from WireGuard service providers<a class="headerlink" href="#get-configuration-files-from-wireguard-service-providers" title="Permanent link">&para;</a></h2>
 <details>
@@ -8460,7 +8462,6 @@ Endpoint = <i>paste Endpoint information</i></br>
 <p>If you are using <a href="https://12vpx.com/?aff=1174" target="_blank">12VPX</a>, login then access <a href="https://12vpx.com/setup/wireguard" target="_blank">this page</a>, you will see the configs of all servers.</p>
 <p>Then follow the <a href="#setup-wireguard-client">guide</a> to continue.</p>
 </details>
-<p>Suggest a WireGuard provider? Please contact <a href="mailto:support@glinet.biz">support@glinet.biz</a></p>
 <h2 id="video-tutorial">Video Tutorial<a class="headerlink" href="#video-tutorial" title="Permanent link">&para;</a></h2>
 <p>How to Set Up an WireGuard Client on GL.iNet Routers</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oTrche1jprQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
