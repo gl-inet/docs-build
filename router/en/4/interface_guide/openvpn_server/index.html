@@ -4744,8 +4744,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-openvpn-server" class="md-nav__link">
-    Setup OpenVPN Server
+  <a href="#set-up-openvpn-server" class="md-nav__link">
+    Set up OpenVPN Server
   </a>
   
 </li>
@@ -4754,6 +4754,26 @@
   <a href="#check-if-openvpn-server-is-working-properly" class="md-nav__link">
     Check if OpenVPN Server is working properly
   </a>
+  
+    <nav class="md-nav" aria-label="Check if OpenVPN Server is working properly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify-server-status" class="md-nav__link">
+    Verify Server status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-clients-ip" class="md-nav__link">
+    Verify Client's IP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4765,8 +4785,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#openvpn-client-app" class="md-nav__link">
-    OpenVPN Client App
+  <a href="#openvpn-app-install" class="md-nav__link">
+    OpenVPN App Install
   </a>
   
 </li>
@@ -6167,8 +6187,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-openvpn-server" class="md-nav__link">
-    Setup OpenVPN Server
+  <a href="#set-up-openvpn-server" class="md-nav__link">
+    Set up OpenVPN Server
   </a>
   
 </li>
@@ -6177,6 +6197,26 @@
   <a href="#check-if-openvpn-server-is-working-properly" class="md-nav__link">
     Check if OpenVPN Server is working properly
   </a>
+  
+    <nav class="md-nav" aria-label="Check if OpenVPN Server is working properly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify-server-status" class="md-nav__link">
+    Verify Server status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-clients-ip" class="md-nav__link">
+    Verify Client's IP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6188,8 +6228,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#openvpn-client-app" class="md-nav__link">
-    OpenVPN Client App
+  <a href="#openvpn-app-install" class="md-nav__link">
+    OpenVPN App Install
   </a>
   
 </li>
@@ -6228,30 +6268,31 @@
 <p><strong>If not, your router cannot be set as an OpenVPN Server.</strong></p>
 <p>Alternative methods:</p>
 <ol>
-<li>If you have a main router, log in to it and check if it gets a public IP from your ISP.</li>
+<li>If you have a primary router, log in to it and check if it gets a public IP from your ISP.</li>
 <li>Ask your ISP for a public IP address. This may incur an extra fee.</li>
-<li>If the above two methods don't work (e.g., if your network is behind CGNAT), you can use a reverse proxy solution such as <a href="../../tutorials/how_to_set_up_wireguard_server_via_astrorelay/">Astrorelay</a>. Alternatively, you may try our SD-WAN solution: <a href="https://www.astrowarp.net/" target="_blank">AstroWarp</a>. </li>
+<li>If the above two methods don't work (e.g., if your network is behind CGNAT), you may try our SD-WAN solution <a href="https://www.astrowarp.net/" target="_blank">AstroWarp</a>. </li>
 </ol>
 <h2 id="confirm-if-port-forwarding-is-required">Confirm if Port Forwarding is required<a class="headerlink" href="#confirm-if-port-forwarding-is-required" title="Permanent link">&para;</a></h2>
 <p><strong>Network Topology</strong></p>
 <details>
-<summary>GL.iNet is the Main Router</summary>
+<summary>GL.iNet is the primary router</summary>
 <ul>
-<li>If GL.iNet router is the main router in your network, this is simple, please move to the <a href="#setup-openvpn-server">next step</a>.</li>
+<li>If GL.iNet router is the primary router in your network, no port forwarding is required. Please move to the <a href="#setup-openvpn-server">next step</a>.</li>
 </ul>
 </details>
 <details>
-<summary> GL.iNet is the Sub-Router</summary>
+<summary> GL.iNet is the sub-router</summary>
 <ul>
 <li>
-<p>If you already have a main router, then the GL.iNet router is under the main router, you may need to setup a <a href="../../tutorials/how_to_set_up_port_forwarding/">port forwarding</a> on the main router.</p>
+<p>If a primary router is already in use and the GL.iNet router is configured as a secondary router, you will need to configure <a href="../../tutorials/how_to_set_up_port_forwarding/">port forwarding</a> on the primary router.</p>
 </li>
 <li>
-<p>If you already have a main router, the GL.iNet router is several levels below it and you need to set up <a href="../../tutorials/how_to_set_up_port_forwarding/">port forwarding</a> on each level.</p>
+<p>If a primary router is already in use and the GL.iNet router is several levels below the primary router, configure <a href="../../tutorials/how_to_set_up_port_forwarding/">port forwarding</a> on each intermediate level.</p>
 </li>
 </ul>
 </details>
-<h2 id="setup-openvpn-server">Setup OpenVPN Server<a class="headerlink" href="#setup-openvpn-server" title="Permanent link">&para;</a></h2>
+<h2 id="set-up-openvpn-server">Set up OpenVPN Server<a class="headerlink" href="#set-up-openvpn-server" title="Permanent link">&para;</a></h2>
+<p>Log in to the web Admin Panel, and navigate to VPN -&gt; OpenVPN Server.</p>
 <ol>
 <li>
 <p>Click <strong>Generate Configuration</strong> (for vpn server initial setup only).</p>
@@ -6313,12 +6354,14 @@
 </li>
 </ol>
 <h2 id="check-if-openvpn-server-is-working-properly">Check if OpenVPN Server is working properly<a class="headerlink" href="#check-if-openvpn-server-is-working-properly" title="Permanent link">&para;</a></h2>
+<h3 id="verify-server-status">Verify Server status<a class="headerlink" href="#verify-server-status" title="Permanent link">&para;</a></h3>
 <p>Since firmware v4.8, you can check the server connection status on the <strong>OpenVPN Server</strong> page. </p>
 <p>If it shows upload/download traffic statistics, it means the OpenVPN server is running.</p>
 <p><img alt="openvpn server connected v4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/ovpnserver_status.jpg" /></p>
 <p>For firmware v4.7 and earlier, please check the server connection status on the <strong>VPN Dashboard</strong> page.</p>
 <p><img alt="openvpn server connected v4.7" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/openserverup.jpg" /></p>
-<p>To verify if the OpenVPN Server is functioning properly, please import the previously exported client configuration to a device on a different network (not the same local network as the server). Test the VPN connectivity and check the device's public IP address.</p>
+<h3 id="verify-clients-ip">Verify Client's IP<a class="headerlink" href="#verify-clients-ip" title="Permanent link">&para;</a></h3>
+<p>Verify a successful connection to the server: Import the previously exported OpenVPN configuration to a device on a different network (not the same local network as the server). Then open a web browser, search for your IP address and location. If they match the VPN server's IP (instead of your Internet service provider's IP) and location, the VPN connection is successful.</p>
 <p>The simplest method is to use a smartphone with the official <a href="https://openvpn.net/vpn-client/" target="_blank">OpenVPN App</a> installed. First, disable the smartphone's Wi-Fi and connect exclusively to the internet via cellular data (4G/5G). Then open the OpenVPN app, import the configuration file, and initiate the connection. Check if the smartphone can access the internet and if its IP address matches the OpenVPN Server's IP.</p>
 <p>When importing the configuration file into the OpenVPN app, a reminder may appear as shown below. Click <strong>CONTINUE</strong> to proceed, as the certificate is already embedded in the configuration file.</p>
 <p><img alt="openvpn app select certificate" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/select_certificate.png" width="360" /></p>
@@ -6334,8 +6377,8 @@
 <p><img alt="ptptopology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/ptptopology.jpg" /></p>
 <p>Enable the client to client toggle and export a new configuration to clients, your clients can access to each other now.</p>
 <p><img alt="peertopeer" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server/peertopeer.jpg" /></p>
-<h2 id="openvpn-client-app">OpenVPN Client App<a class="headerlink" href="#openvpn-client-app" title="Permanent link">&para;</a></h2>
-<p>Please refer to OpenVPN Official Website: <a href="https://openvpn.net/vpn-client/" target="_blank">https://openvpn.net/vpn-client/</a></p>
+<h2 id="openvpn-app-install">OpenVPN App Install<a class="headerlink" href="#openvpn-app-install" title="Permanent link">&para;</a></h2>
+<p>Please download the OpenVPN App from <a href="https://openvpn.net/vpn-client/" target="_blank">OpenVPN Official Website</a>.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
