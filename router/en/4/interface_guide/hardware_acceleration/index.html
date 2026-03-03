@@ -5355,15 +5355,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    Setup
+  <a href="#quick-setup" class="md-nav__link">
+    Quick Setup
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-summary-hardware-nat-vs-software-nat" class="md-nav__link">
-    Quick summary — Hardware NAT vs Software NAT
+  <a href="#quick-summary" class="md-nav__link">
+    Quick Summary
   </a>
   
 </li>
@@ -6139,15 +6139,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    Setup
+  <a href="#quick-setup" class="md-nav__link">
+    Quick Setup
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-summary-hardware-nat-vs-software-nat" class="md-nav__link">
-    Quick summary — Hardware NAT vs Software NAT
+  <a href="#quick-summary" class="md-nav__link">
+    Quick Summary
   </a>
   
 </li>
@@ -6177,7 +6177,8 @@
 
   <!-- Markdown content -->
   <h1 id="hardware-acceleration">Hardware Acceleration<a class="headerlink" href="#hardware-acceleration" title="Permanent link">&para;</a></h1>
-<p><strong>Note</strong>: Hardware Acceleration features have been renamed to <a href="../network_acceleration/">Network Acceleration</a> since v4.3.</p>
+<p><strong>Note</strong>: This feature has been renamed to <a href="../network_acceleration/">Network Acceleration</a> since v4.3. </p>
+<p>This guide applies to firmware v4.2 and earlier.</p>
 <hr />
 <p>Hardware acceleration (sometimes called <em>hardware NAT, flow offloading, or offload</em>) reduces CPU load by moving packet forwarding out of the CPU and into the router SoC/NIC hardware. That usually increases maximum throughput and reduces CPU utilization, but it comes iwth important trade-offs, especially for features that rely on the Linux networking stack (netfilter / iptables / nftables) or on the kernel queuing disciplines (qdisc) used by SQM (Smart Queue Management)  </p>
 <p>When hardware acceleration is enabled, the following functions will not work properly: Client Speed and Traffic Statistics, Client Speed Limit.</p>
@@ -6185,6 +6186,8 @@
 <details>
 <summary>Supported Models</summary>
 <ul>
+<li>GL-E5800 (Mudi 7)</li>
+<li>GL-MT5000 (Brume 3)</li>
 <li>GL-MT3600BE (Beryl 7)</li>
 <li>GL-BE6500 (Flint 3e)</li>
 <li>GL-BE9300 (Flint 3)</li>
@@ -6216,19 +6219,21 @@
 <li>GL-X300B (Collie)</li>
 </ul>
 </details>
-<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<h2 id="quick-setup">Quick Setup<a class="headerlink" href="#quick-setup" title="Permanent link">&para;</a></h2>
 <p>On the left side of web Admin Panel -&gt; NETWORK -&gt; Hardware Acceleration.</p>
 <p><img alt="Hardware Acceleration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/hardware_acceleration/hardware_acceleration.png" /></p>
 <hr />
-<h2 id="quick-summary-hardware-nat-vs-software-nat">Quick summary — Hardware NAT vs Software NAT<a class="headerlink" href="#quick-summary-hardware-nat-vs-software-nat" title="Permanent link">&para;</a></h2>
+<h2 id="quick-summary">Quick Summary<a class="headerlink" href="#quick-summary" title="Permanent link">&para;</a></h2>
+<p><strong>Hardware NAT vs. Software NAT</strong></p>
 <ul>
 <li>
-<p>You care most about throughput (e.g., multi-gigabit broadband) and don’t need on-router SQM or per-client shaping → enable Hardware NAT / Network Acceleration. This will give the highest throughput and lowest CPU use.</p>
+<p>You care most about throughput (e.g., multi‑gigabit broadband) and don't need on‑router SQM or per‑client shaping → enable Hardware NAT / Network Acceleration. This delivers the highest throughput and lowest CPU usage.</p>
 </li>
 <li>
-<p>You care about low latency, consistent QoS, per-client limits, or you rely on SQM (cake/fq_codel) → use Software NAT (disable hardware offload). SQM and QoS require packets to traverse the kernel qdisc stack — offloaded packets bypass that path and therefore are not shaped.</p>
+<p>You care about low latency, consistent QoS, per‑client limits, or you rely on SQM (cake/fq_codel) → use Software NAT (disable hardware offload). SQM and QoS require packets to traverse the kernel qdisc stack — offloaded packets bypass this path and are therefore not shaped.</p>
 </li>
 </ul>
+<hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
   <!-- Last update of source file -->
