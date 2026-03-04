@@ -5362,8 +5362,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-summary" class="md-nav__link">
-    Quick Summary
+  <a href="#hardware-nat-vs-software-nat" class="md-nav__link">
+    Hardware NAT vs. Software NAT
   </a>
   
 </li>
@@ -6146,8 +6146,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-summary" class="md-nav__link">
-    Quick Summary
+  <a href="#hardware-nat-vs-software-nat" class="md-nav__link">
+    Hardware NAT vs. Software NAT
   </a>
   
 </li>
@@ -6177,10 +6177,9 @@
 
   <!-- Markdown content -->
   <h1 id="hardware-acceleration">Hardware Acceleration<a class="headerlink" href="#hardware-acceleration" title="Permanent link">&para;</a></h1>
-<p><strong>Note</strong>: This feature has been renamed to <a href="../network_acceleration/">Network Acceleration</a> since v4.3. </p>
-<p>This guide applies to firmware v4.2 and earlier.</p>
+<p><strong>Note</strong>: This guide applies to firmware v4.2 and earlier. For newer versions, please refer to <a href="../network_acceleration/">Network Acceleration</a>. </p>
 <hr />
-<p>Hardware acceleration (sometimes called <em>hardware NAT, flow offloading, or offload</em>) reduces CPU load by moving packet forwarding out of the CPU and into the router SoC/NIC hardware. That usually increases maximum throughput and reduces CPU utilization, but it comes iwth important trade-offs, especially for features that rely on the Linux networking stack (netfilter / iptables / nftables) or on the kernel queuing disciplines (qdisc) used by SQM (Smart Queue Management)  </p>
+<p>Hardware acceleration (sometimes called <em>hardware NAT, flow offloading, or offloading</em>) reduces CPU load by moving packet forwarding from the CPU to the router's SoC/NIC hardware. This typically increases maximum throughput and lowers CPU utilization, but it has important trade-offs, especially for features that rely on the Linux networking stack (netfilter/iptables/nftables) or the kernel queuing disciplines (qdisc) used by SQM (Smart Queue Management).</p>
 <p>When hardware acceleration is enabled, the following functions will not work properly: Client Speed and Traffic Statistics, Client Speed Limit.</p>
 <h2 id="supported-models">Supported Models<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h2>
 <details>
@@ -6220,11 +6219,11 @@
 </ul>
 </details>
 <h2 id="quick-setup">Quick Setup<a class="headerlink" href="#quick-setup" title="Permanent link">&para;</a></h2>
-<p>On the left side of web Admin Panel -&gt; NETWORK -&gt; Hardware Acceleration.</p>
+<p>On the left side of the web Admin Panel, go to <strong>NETWORK</strong> -&gt; <strong>Hardware Acceleration</strong>.</p>
 <p><img alt="Hardware Acceleration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/hardware_acceleration/hardware_acceleration.png" /></p>
+<p>Toggle the switch to enable, and click Apply.</p>
 <hr />
-<h2 id="quick-summary">Quick Summary<a class="headerlink" href="#quick-summary" title="Permanent link">&para;</a></h2>
-<p><strong>Hardware NAT vs. Software NAT</strong></p>
+<h2 id="hardware-nat-vs-software-nat">Hardware NAT vs. Software NAT<a class="headerlink" href="#hardware-nat-vs-software-nat" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>You care most about throughput (e.g., multi‑gigabit broadband) and don't need on‑router SQM or per‑client shaping → enable Hardware NAT / Network Acceleration. This delivers the highest throughput and lowest CPU usage.</p>
