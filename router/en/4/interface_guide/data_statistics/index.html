@@ -1890,11 +1890,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/stuck_on_installing_screen/" class="md-nav__link">
+      <a href="../../faq/stuck_on_installing_during_firmware_update/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Stuck on "Installing" screen during firmware update
+    Stuck on "Installing" during firmware update
   </span>
   
 
@@ -1910,11 +1910,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/stuck_on_reverting_screen/" class="md-nav__link">
+      <a href="../../faq/stuck_on_reverting_during_firmware_reset/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Stuck on "Reverting" screen during firmware reset
+    Stuck on "Reverting" during firmware reset
   </span>
   
 
@@ -1930,11 +1930,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/stuck_on_rebooting_screen/" class="md-nav__link">
+      <a href="../../faq/stuck_on_rebooting_during_firmware_reboot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Stuck on "Rebooting" screen during firmware reboot
+    Stuck on "Rebooting" during firmware reboot
   </span>
   
 
@@ -5447,6 +5447,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Data Statistics
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -5456,6 +5467,39 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-setup" class="md-nav__link">
+    Quick Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-storage-rules" class="md-nav__link">
+    Data Storage Rules
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -5537,6 +5581,8 @@
   
     
     
+      
+        
       
         
       
@@ -5685,6 +5731,26 @@
   
   <span class="md-ellipsis">
     Display Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usb_power/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    USB & Power
   </span>
   
 
@@ -6074,6 +6140,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-setup" class="md-nav__link">
+    Quick Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-storage-rules" class="md-nav__link">
+    Data Storage Rules
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6097,8 +6185,8 @@
 
   <!-- Markdown content -->
   <h1 id="data-statistics">Data Statistics<a class="headerlink" href="#data-statistics" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p>Data Statistics offers an intelligent traffic insight dashboard that categorizes and visualizes network usage by applications, helping you monitor real-time and historical traffic for better network awareness and control.</p>
+<p><strong>Note</strong>:</p>
 <ol>
 <li>
 <p>This feature is now available only on <strong>GL-MT5000 (Brume 3)</strong>.</p>
@@ -6107,9 +6195,10 @@
 <p>This feature cannot work with Network Acceleration. Enabling it will automatically disable Network Acceleration to ensure proper operation.</p>
 </li>
 </ol>
-</div>
-<p>Data Statistics offers an intelligent traffic insight dashboard that categorizes and visualizes network usage by applications, helping you monitor real-time and historical traffic for better network awareness and control.</p>
-<p>Log in to the router's web admin panel, navigate to <strong>FLOW CONTROL</strong> &gt; <strong>Data Statistics</strong> and enable it. You will be able to view the <strong>Application Total Data</strong>.</p>
+<hr />
+<h2 id="quick-setup">Quick Setup<a class="headerlink" href="#quick-setup" title="Permanent link">&para;</a></h2>
+<p>On the left side of the web Admin Panel, go to <strong>FLOW CONTROL</strong> &gt; <strong>Data Statistics</strong>.</p>
+<p>Toggle the switch in the upper right corner to view the <strong>Application Total Data</strong>.</p>
 <p><img alt="data statistics" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/data_statistics/data-statistics.png" /></p>
 <ul>
 <li>
@@ -6121,6 +6210,18 @@
 <p>Search for specific apps in the search bar if required.</p>
 </li>
 </ul>
+<h2 id="data-storage-rules">Data Storage Rules<a class="headerlink" href="#data-storage-rules" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Traffic statistics are saved to RAM every 15 seconds and stored in flash every 1 hour. Frequent flash writes are avoided to protect flash memory lifespan.</p>
+</li>
+<li>
+<p>A soft reboot will not cause data loss. The system first writes data from RAM to flash before restarting.</p>
+</li>
+<li>
+<p>A hard reboot (unplugging and replugging the power) or a firmware upgrade (retaining settings) may result in data loss of up to the most recent hour.</p>
+</li>
+</ol>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 

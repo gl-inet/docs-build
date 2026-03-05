@@ -1890,11 +1890,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/stuck_on_installing_screen/" class="md-nav__link">
+      <a href="../../faq/stuck_on_installing_during_firmware_update/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Stuck on "Installing" screen during firmware update
+    Stuck on "Installing" during firmware update
   </span>
   
 
@@ -1910,11 +1910,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/stuck_on_reverting_screen/" class="md-nav__link">
+      <a href="../../faq/stuck_on_reverting_during_firmware_reset/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Stuck on "Reverting" screen during firmware reset
+    Stuck on "Reverting" during firmware reset
   </span>
   
 
@@ -1930,11 +1930,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/stuck_on_rebooting_screen/" class="md-nav__link">
+      <a href="../../faq/stuck_on_rebooting_during_firmware_reboot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Stuck on "Rebooting" screen during firmware reboot
+    Stuck on "Rebooting" during firmware reboot
   </span>
   
 
@@ -2905,8 +2905,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-set-up-dynamic-dns-optional" class="md-nav__link">
-    2. Set up Dynamic DNS (Optional)
+  <a href="#2-enable-dynamic-dns-optional" class="md-nav__link">
+    2. Enable Dynamic DNS (Optional)
   </a>
   
 </li>
@@ -2926,8 +2926,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-check-vpn-connection" class="md-nav__link">
-    5. Check VPN connection
+  <a href="#5-verify-vpn-connection" class="md-nav__link">
+    5. Verify VPN connection
   </a>
   
 </li>
@@ -5629,6 +5629,8 @@
       
         
       
+        
+      
     
     
     
@@ -5750,6 +5752,26 @@
   
   <span class="md-ellipsis">
     Display Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface_guide/usb_power/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    USB & Power
   </span>
   
 
@@ -6153,8 +6175,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-set-up-dynamic-dns-optional" class="md-nav__link">
-    2. Set up Dynamic DNS (Optional)
+  <a href="#2-enable-dynamic-dns-optional" class="md-nav__link">
+    2. Enable Dynamic DNS (Optional)
   </a>
   
 </li>
@@ -6174,8 +6196,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-check-vpn-connection" class="md-nav__link">
-    5. Check VPN connection
+  <a href="#5-verify-vpn-connection" class="md-nav__link">
+    5. Verify VPN connection
   </a>
   
 </li>
@@ -6214,28 +6236,27 @@
 <p>If your GL.iNet router is connected behind a primary router, <a href="https://docs.gl-inet.com/router/en/4/tutorials/how_to_set_up_port_forwarding/">set up port forwarding on the primary router</a>.</p>
 </div>
 <h2 id="1-log-in-to-your-router">1. Log in to your router<a class="headerlink" href="#1-log-in-to-your-router" title="Permanent link">&para;</a></h2>
-<p>In a web browser, enter the URL (e.g., 192.168.8.1) to access the router admin panel. Enter your admin password, then click <strong>Login</strong>.</p>
+<p>Open a web browser and access the router's web admin panel (default IP: 192.168.8.1). Log in with your admin password.</p>
 <p><img alt="log in" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/router-login.jpeg" /></p>
-<h2 id="2-set-up-dynamic-dns-optional">2. Set up Dynamic DNS (Optional)<a class="headerlink" href="#2-set-up-dynamic-dns-optional" title="Permanent link">&para;</a></h2>
-<p>Setting up an OpenVPN server typically requires a <strong>static public IP address</strong>, which provides a fixed endpoint for other devices to access your VPN server. However, most users do not have a static public IP address. In such cases, you can configure <strong>Dynamic DNS (DDNS)</strong> on your GL.iNet router. This allows persistent connectivity to the OpenVPN server even when your public IP address changes dynamically.</p>
-<p>To set up Dynamic DNS, follow these steps: </p>
+<h2 id="2-enable-dynamic-dns-optional">2. Enable Dynamic DNS (Optional)<a class="headerlink" href="#2-enable-dynamic-dns-optional" title="Permanent link">&para;</a></h2>
+<p>Setting up an OpenVPN server typically requires a <strong>static public IP address</strong>, which provides a fixed endpoint for other devices to access your VPN server. </p>
+<p>However, if you do not have a static public IP address, e.g., a dynamic one instead, you may need to enable <strong>Dynamic DNS (DDNS)</strong> on your GL.iNet router. This allows persistent connectivity to the OpenVPN server even when your public IP address changes dynamically.</p>
+<p>Follow the steps below to enable Dynamic DNS.</p>
 <ol>
-<li>In the left sidebar, click <strong>Applications</strong> &gt; <strong>Dynamic DNS</strong>. 
+<li>In the router's web admin panel, go to <strong>APPLICATIONS</strong> &gt; <strong>Dynamic DNS</strong>. 
 <img alt="dynamic DNS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-dynamic-dns.jpeg" /></li>
-<li>Next to <strong>Enable DDNS</strong>, toggle the switch to on. </li>
-<li>Check the box for <strong>I have read and agree to the Terms of Service &amp; Privacy Policy</strong>.</li>
-<li>Click <strong>Apply</strong>. 
+<li>Toggle on <strong>Enable DDNS</strong>, read and agree to the <strong>Terms of Service &amp; Privacy Policy</strong>, then click <strong>Apply</strong>. 
 <img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/dynamic-dns-click-apply.png" /></li>
 </ol>
 <h2 id="3-download-configuration-file">3. Download configuration file<a class="headerlink" href="#3-download-configuration-file" title="Permanent link">&para;</a></h2>
 <ol>
-<li>In the left sidebar, click <strong>VPN</strong> &gt; <strong>OpenVPN Server</strong>.</li>
+<li>In the router's web admin panel, go to <strong>VPN</strong> &gt; <strong>OpenVPN Server</strong>.</li>
 <li>Click <strong>Generate Configuration</strong>. </li>
 <li>Keep the default settings as-is, then click <strong>Export Client Configuration</strong>. 
 <img alt="click export" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-export-client-configuration.jpeg" /></li>
-<li>In the pop-up page, if you set up <strong>Dynamic DNS</strong> previously, toggle the switch to on for <strong>Use DDNS Domain</strong>. </li>
+<li>In the pop-up window, toggle the switch <strong>Use DDNS Domain</strong> to on if you have set up <strong>Dynamic DNS</strong> previously. </li>
 <li>Click <strong>Download</strong>, then save the file. </li>
-<li>At the top of OpenVPN Server page, click <strong>Start</strong>.
+<li>At the top of <strong>OpenVPN Server</strong> page, click <strong>Start</strong>.
 <img alt="click start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/openvpn-server-click-start.jpeg" /></li>
 </ol>
 <details>
@@ -6307,8 +6328,8 @@
 <li>Connect a device to the router running the OpenVPN client. </li>
 </ol>
 </details>
-<h2 id="5-check-vpn-connection">5. Check VPN connection<a class="headerlink" href="#5-check-vpn-connection" title="Permanent link">&para;</a></h2>
-<p>To check if you are successfully connected to the OpenVPN server, look up your public IP address. If it matches the one provided by the VPN server (not your Internet service provider), you are connected to the OpenVPN server successfully.</p>
+<h2 id="5-verify-vpn-connection">5. Verify VPN connection<a class="headerlink" href="#5-verify-vpn-connection" title="Permanent link">&para;</a></h2>
+<p>Open a web browser and search for your IP address and location. If they match the VPN server's IP (instead of your Internet service provider's IP) and location, the VPN connection is successful.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 

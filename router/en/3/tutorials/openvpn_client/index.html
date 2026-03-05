@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-setup-openvpn-client-on-glinet-router" class="md-skip">
+        <a href="#how-to-set-up-openvpn-client-on-glinet-router" class="md-skip">
           Skip to content
         </a>
       
@@ -6556,8 +6556,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup-openvpn-client" class="md-nav__link">
-    Setup OpenVPN Client
+  <a href="#set-up-openvpn-client" class="md-nav__link">
+    Set up OpenVPN Client
   </a>
   
 </li>
@@ -6570,8 +6570,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-openvpn-server-on-glinet-router" class="md-nav__link">
-    Setup OpenVPN server on GL.iNet router
+  <a href="#set-up-openvpn-server-on-glinet-router" class="md-nav__link">
+    Set up OpenVPN server on GL.iNet router
   </a>
   
 </li>
@@ -6713,13 +6713,6 @@
           <li class="md-nav__item">
   <a href="#hideme-vpn" class="md-nav__link">
     Hide.me VPN
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hotspot-shield" class="md-nav__link">
-    Hotspot Shield
   </a>
   
 </li>
@@ -8116,25 +8109,25 @@
   
 
   <!-- Markdown content -->
-  <h1 id="how-to-setup-openvpn-client-on-glinet-router">How to Setup OpenVPN Client on GL.iNet router<a class="headerlink" href="#how-to-setup-openvpn-client-on-glinet-router" title="Permanent link">&para;</a></h1>
-<p>OpenVPN is an open-source VPN protocol that makes use of virtual private network (VPN) techniques to establish safe site-to-site or point-to-point connections. </p>
-<p>GL.iNet routers have pre-installed OpenVPN Client and Server.</p>
-<p>We recommend WireGuard over OpenVPN because it is much faster. For setup a WireGuard Client, please check out <a href="../wireguard_client/">here</a>.</p>
-<p>If you have already bought OpenVPN service from a provider, but don't know how to get the configuration file, please refer to <a href="#get-configuration-files-from-openvpn-service-providers">get configuration files from OpenVPN service providers</a> or ask its support.</p>
-<p>We can setup OpenVPN Client via web Admin Panel and <a href="../mobile_app/">mobile app</a>. For the mobile app, it has already integrated NordVPN.</p>
-<h2 id="setup-openvpn-client">Setup OpenVPN Client<a class="headerlink" href="#setup-openvpn-client" title="Permanent link">&para;</a></h2>
-<p>There is a video tutorial as ExpressVPN as example, please check out <a href="#video-tutorial">here</a>.</p>
-<p>OpenVPN client requires OpenVPN configuration file (.ovpn) to create the OpenVPN connection.</p>
+  <h1 id="how-to-set-up-openvpn-client-on-glinet-router">How to set up OpenVPN Client on GL.iNet router<a class="headerlink" href="#how-to-set-up-openvpn-client-on-glinet-router" title="Permanent link">&para;</a></h1>
+<p>OpenVPN is an open-source VPN protocol that uses virtual private network (VPN) techniques to establish secure site-to-site or point-to-point connections. </p>
+<p>GL.iNet routers have pre-installed OpenVPN Server and Client. You can set a GL.iNet router as an OpenVPN server or client and establish VPN connection.</p>
+<p>We recommend WireGuard over OpenVPN because it is much faster. For setting up a WireGuard client, please check <a href="../wireguard_client/">here</a>.</p>
+<hr />
+<p>Before you start, ensure you have an active subscription with a VPN service provider that supports OpenVPN manual configuration. Click <a href="https://www.gl-inet.com/solutions/vpn/" target="_blank">here</a> to check the OpenVPN providers compatible with GL.iNet.</p>
+<p>Generally, you need to visit the official website of the VPN service provider you subscribed first, obtain the configuration file, and upload it to the router to set it as an OpenVPN client. If you don't know how to get the configuration file, refer to <a href="#get-configuration-files-from-openvpn-service-providers">here</a> or contact their support.</p>
+<p>You can set up an OpenVPN client via the web admin panel or mobile app. Below are steps to set up via the web admin panel.</p>
+<h2 id="set-up-openvpn-client">Set up OpenVPN Client<a class="headerlink" href="#set-up-openvpn-client" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Access to web Admin Panel, on the left side -&gt; VPN -&gt; OpenVPN Client</p>
+<p>Log in to web Admin Panel and navigate to VPN -&gt; OpenVPN Client.</p>
 </li>
 <li>
 <p>Click <strong>Add a New OpenVPN Configuration</strong>.</p>
 <p><img alt="add a new openvpn configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/openvpn_client/add_a_new_openvpn_configuration.png" /></p>
 </li>
 <li>
-<p>Upload your OpenVPN configuration file</p>
+<p>Upload your OpenVPN configuration file.</p>
 <p>Simply drag and drop your file to the pop up windows. It can be a single .ovpn file or a zip/tar.gz file which contains multiple .ovpn files.</p>
 <p>Be careful that some .ovpn files use separated ca, cert, crl files. These files must be zipped together with the .ovpn file before upload.</p>
 <p><img alt="Upload openvpn config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/openvpn_client/upload_openvpn_config.png" /></p>
@@ -8159,7 +8152,7 @@
 <h2 id="manage-configuration-files">Manage configuration files<a class="headerlink" href="#manage-configuration-files" title="Permanent link">&para;</a></h2>
 <p>Click <strong>Management</strong> to check the list of configuration files. You can modify the <strong>Description</strong>, <strong>User Name</strong> and <strong>Password</strong> of each configuration file. You can also add, delete a configuration file or even purge all your uploaded configuration files.</p>
 <p><img alt="edit openvpn config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/3/tutorials/openvpn_client/edit_openvpn_config.png" /></p>
-<h2 id="setup-openvpn-server-on-glinet-router">Setup OpenVPN server on GL.iNet router<a class="headerlink" href="#setup-openvpn-server-on-glinet-router" title="Permanent link">&para;</a></h2>
+<h2 id="set-up-openvpn-server-on-glinet-router">Set up OpenVPN server on GL.iNet router<a class="headerlink" href="#set-up-openvpn-server-on-glinet-router" title="Permanent link">&para;</a></h2>
 <p>You can get a GL.iNet router to set as OpenVPN server, and get another GL.iNet router to set as OpenVPN client. For setup OpenVPN server, please check out <a href="../openvpn_server/">here</a>.</p>
 <h2 id="get-configuration-files-from-openvpn-service-providers">Get configuration files from OpenVPN service providers<a class="headerlink" href="#get-configuration-files-from-openvpn-service-providers" title="Permanent link">&para;</a></h2>
 <p>We have tested different VPN service providers. Therefore, if you don't know how to get the configuration file, you can follow the instruction below. However, you have to contact your service provider for the configuration file if they are not listed below. </p>
@@ -8490,23 +8483,6 @@
 </ol>
 </details>
 <details>
-<summary>Hotspot Shield</summary>
-<h3 id="hotspot-shield">Hotspot Shield<a class="headerlink" href="#hotspot-shield" title="Permanent link">&para;</a></h3>
-<p><a href="https://trk.aclktrkr.com/aff_c?offer_id=59&amp;aff_id=3722" target="_blank">Official Website</a></p>
-<ol>
-<li>
-<p>Go to <a href="https://www.hotspotshield.com/">https://www.hotspotshield.com/</a> and click on Account. Sign in if you’re asked.</p>
-<p><img alt="hotspot shield login" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/openvpn_client/hotspot_shield/hotspotshield_front_page.png" /></p>
-</li>
-<li>
-<p>Go to <a href="https://app.hotspotshield.com/app/hotspotshield/router">https://app.hotspotshield.com/app/hotspotshield/router</a></p>
-<p>Go to the Select location dropdown and pick the virtual location that the router will use. Now click on "Download file". The configuration file (config.ovpn) will be downloaded to your computer. The username and password will need to be entered when you set up the OpenVPN client on the router.</p>
-<p><img alt="hotspot shield link router" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/openvpn_client/hotspot_shield/link_router.png" /></p>
-</li>
-</ol>
-<p><a href="https://support.hotspotshield.com/hc/en-us/articles/360038538012-How-do-I-install-Hotspot-Shield-on-my-GL-iNet-router">Refer link</a></p>
-</details>
-<details>
 <summary>IPVANISH</summary>
 <h3 id="ipvanish">IPVANISH<a class="headerlink" href="#ipvanish" title="Permanent link">&para;</a></h3>
 <p><a href="https://affiliate.ipvanish.com/aff_c?offer_id=1&amp;aff_id=3073" target="_blank">Official Website</a></p>
@@ -8692,7 +8668,7 @@
 <p>Then follow the <a href="#setup-openvpn-client">guide to setup OpenVPN Client on GL.iNet router</a>, the username and password are the same as the ones used to log into ZoogVPN website.</p>
 </details>
 <h2 id="video-tutorial">Video tutorial<a class="headerlink" href="#video-tutorial" title="Permanent link">&para;</a></h2>
-<p>These video tutorial as ExpressVPN as example to setup OpenVPN Client.</p>
+<p>This video tutorial takes ExpressVPN as example to set up OpenVPN Client.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oSTA9-bBUIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p>4 Common Problems and Solution When Configuring OpenVPN</p>
