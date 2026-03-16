@@ -1770,11 +1770,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/i_replaced_my_old_router_with_gl_inet_router_but_no_internet/" class="md-nav__link">
+      <a href="../../faq/no_internet_after_replacing_the_old_router_with_glinet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Replacing the old router with GL.iNet router but has no internet
+    No internet after replacing the old router with GL.iNet
   </span>
   
 
@@ -2414,7 +2414,7 @@
         
   
   <span class="md-ellipsis">
-    LED Indication
+    LED indicator status
   </span>
   
 
@@ -3370,7 +3370,7 @@
         
   
   <span class="md-ellipsis">
-    Install or change external antennas for Spitz AX or Puli AX
+    Install or change external antennas
   </span>
   
 
@@ -3606,6 +3606,8 @@
       
         
       
+        
+      
     
     
     
@@ -3635,6 +3637,26 @@
             Network
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/eap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connect to EAP network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -3686,7 +3708,7 @@
         
   
   <span class="md-ellipsis">
-    Set up port forwarding on your primary router
+    Set up port forwarding on primary router
   </span>
   
 
@@ -3731,10 +3753,6 @@
   
     
     
-      
-        
-      
-        
       
         
       
@@ -3861,46 +3879,6 @@
   
   <span class="md-ellipsis">
     Upgrade or downgrade your router
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorials/eap/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Connect to EAP network
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorials/how_to_connect_glinet_router_to_an_eap_network_with_advanced_settings/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Connect to EAP network with advanced settings
   </span>
   
 
@@ -5195,8 +5173,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dhcp-server-settings" class="md-nav__link">
-    DHCP Server settings
+  <a href="#dhcp-server" class="md-nav__link">
+    DHCP Server
   </a>
   
 </li>
@@ -5236,11 +5214,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../network_port_management/" class="md-nav__link">
+      <a href="../ethernet_port/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Port Management
+    Ethernet Port
   </span>
   
 
@@ -6154,8 +6132,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dhcp-server-settings" class="md-nav__link">
-    DHCP Server settings
+  <a href="#dhcp-server" class="md-nav__link">
+    DHCP Server
   </a>
   
 </li>
@@ -6189,25 +6167,55 @@
 <p>On the left side of the web Admin Panel, go to <strong>NETWORK</strong> -&gt; <strong>Guest Network</strong>. </p>
 <p>It includes Guest Network basic settings and DHCP server settings.</p>
 <h2 id="basic-settings">Basic Settings<a class="headerlink" href="#basic-settings" title="Permanent link">&para;</a></h2>
+<p>You can set the subnet within the IPv4 private address ranges: <code>192.168.0.0/16</code>, <code>172.16.0.0/12</code>, <code>10.0.0.0/8</code></p>
 <p><img alt="guest network 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/guest_network/guest_network_1.png" /></p>
-<p>You can set a separate, isolated network designed for temporary users, providing limited access and enhanced security by segregating it from the primary network.</p>
-<p><strong>Note</strong>: Some models do not have Wi-Fi (e.g. GL-MT2500/GL-MT2500A), so there is no Guest Network tab.</p>
-<p>The <strong>Default Gateway</strong> is <strong>192.168.9.1</strong>, If you have enable the Guest Wi-Fi and it conflicts with your network, you can change it.</p>
-<p>Security settings: </p>
+<p>You can set a separate, isolated network designed for temporary users, providing limited access and enhanced security by being segregated from the primary network.</p>
+<p><strong>Note</strong>: Some models (e.g., GL-MT5000, GL-MT2500/GL-MT2500A) do not support Wi-Fi, thus the Guest Network settings are not available on their web Admin Panel.</p>
 <ul>
 <li>
-<p>AP Isolation.</p>
-<p>You can isolate your network's client devices into a separate network area. These devices cannot communicate with other devices on the network.</p>
+<p><strong>Gateway</strong></p>
+<p>The <strong>default gateway</strong> of the Guest Network is <strong>192.168.9.1</strong>. If it conflicts with your local network, change it to a different one.</p>
 </li>
 <li>
-<p>Block WAN Subnets.</p>
-<p>This feature is available in v4.8</p>
-<p>If this function is enabled, the guest network will not be able to access the upper network and the network segment where the upper network is located.</p>
+<p><strong>Netmask</strong></p>
+<p>Defaults to <strong>255.255.255.0</strong>. You can also select <strong>255.255.0.0</strong> if you need a larger subnet with more IP addresses.</p>
+</li>
+<li>
+<p><strong>AP Isolation</strong></p>
+<p>This feature has been available since firmware v4.5</p>
+<p>You can isolate client devices into a separate network segment. These devices will not be able to communicate with other devices on the same network.</p>
+</li>
+<li>
+<p><strong>Block WAN Subnets</strong></p>
+<p>This feature has been available since firmware v4.8</p>
+<p>When enabled, the guest network cannot access the upstream network and its subnet.</p>
 </li>
 </ul>
-<p>Other basic settings and the DHCP server settings are the same as <a href="../lan/">LAN</a>.</p>
-<h2 id="dhcp-server-settings">DHCP Server settings<a class="headerlink" href="#dhcp-server-settings" title="Permanent link">&para;</a></h2>
+<h2 id="dhcp-server">DHCP Server<a class="headerlink" href="#dhcp-server" title="Permanent link">&para;</a></h2>
+<p>If the Guest Network is enabled, the DHCP Server will be enabled by default.</p>
+<p>The DHCP server automatically assigns IP addresses and other communication parameters to each client devices connected to Guest Network. If the DHCP server is disabled, you will need to configure network settings for client devices manually. Click <a href="../../tutorials/manually_configure_static_ip/">here</a> to learn how to manually configure a static IP.</p>
+<p>You can change the starting and ending IP addresses to suit your needs — for example, if your network expands or shrinks, if IP address conflicts occur, or if the subnet mask range is modified.</p>
 <p><img alt="guest network 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/guest_network/guest_network_2.png" /></p>
+<p>Click <strong>Advanced</strong> for further configuration if needed.</p>
+<p><img alt="dhcp advanced 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/guest_network/dhcp_advanced1.png" /></p>
+<p><img alt="dhcp advanced 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/guest_network/dhcp_advanced2.png" /></p>
+<ul>
+<li>
+<p><strong>Lease Time</strong>: The period for which a DHCP-assigned IP address is valid for a device.</p>
+</li>
+<li>
+<p><strong>Gateway</strong>: The device that routes traffic between the guest network and external networks such as the Internet.</p>
+</li>
+<li>
+<p><strong>DNS Server 1</strong>: The primary server that translates domain names into IP addresses.</p>
+</li>
+<li>
+<p><strong>DNS Server 2</strong>: The secondary server used for domain name resolution if the primary DNS server is unavailable.</p>
+</li>
+<li>
+<p><strong>LPR Server</strong>: (Line Printer Remote Server) A service that manages print jobs and allows network devices to send print requests to remote printers. Multiple LPR printer ports can be configured.</p>
+</li>
+</ul>
 <hr />
 <p>Related Articles:</p>
 <ul>
