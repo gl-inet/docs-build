@@ -6161,7 +6161,7 @@
 </li>
 </ol>
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
-<p>When entering this page for the first time, if you have not uploaded any VPN configurations, the page will display as follows. Click <strong>Add VPN Tunnel</strong> to get started.</p>
+<p>When entering this page for the first time, if no tunnels have been created, the page will appear as shown below. Click <strong>Add VPN Tunnel</strong> to get started.</p>
 <p><img alt="getting started" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/getting_started.png" /></p>
 <p><strong>Select a VPN provider</strong>. The VPN providers listed are integrated into the GL.iNet router web Admin Panel. With an active subscription, users simply enter their credentials to log in instantly and obtain configuration files for VPN connections.</p>
 <p><img alt="select vpn provider" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/select_vpn_client.png" /></p>
@@ -6175,7 +6175,7 @@
 <p>You will be directed to the VPN Dashboard, where the VPN Tunnel 1 has been enabled and connected. </p>
 <p><img alt="tunnel 1 global policy" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/tunnel1_global_policy.png" /></p>
 <p><strong>In this example, all clients connected to this router will access the Internet through this VPN tunnel.</strong></p>
-<p>If you want to configure VPN tunnel rules, please refer to <a href="#vpn-policy">VPN Policy</a>.</p>
+<p>If you want to configure VPN policy, please refer to <a href="#vpn-policy">VPN Policy</a>.</p>
 <p>The <strong>All Other Traffic</strong> is a pre-enabled tunnel displaying at the bottom of the VPN Dashboard. Click <a href="#all-other-traffic">here</a> for details.</p>
 <h2 id="tunnel-details">Tunnel Details<a class="headerlink" href="#tunnel-details" title="Permanent link">&para;</a></h2>
 <p><img alt="tunnel details" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/tunnel_details.png" /></p>
@@ -6229,7 +6229,7 @@
 <img alt="specified domain ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/specified_domain_ip.png" /></p>
 </li>
 <li>
-<p><strong>Exclude specified Domain / IP List</strong>: If selected, traffic matching this rule will not be routed to specified Domain / IP. You need to enter them manually.
+<p><strong>Exclude specified Domain / IP List</strong>: If selected, traffic matching this rule will not be routed to specified domains or IP addresses. You need to enter them manually.
 <img alt="exclude specified domain ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/exclude_specified_domain_ip.png" /></p>
 </li>
 </ul>
@@ -6375,7 +6375,7 @@
 <p>This option controls whether traffic that does not match any of the above VPN tunnel groups can access the Internet. It is enabled by default to ensure normal Internet access for traffic not routed via VPN.</p>
 <p>When enabled, unmatched traffic can still access the Internet.</p>
 <p><img alt="all other traffic on" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/all_other_traffic_on.png" /></p>
-<p>When disabled, only traffic routed via VPN is allowed to access the Internet. All non-VPN traffic and traffic that fails over from VPN connections will be blocked. This global setting overrides and disables the individual Kill Switch for each VPN tunnel.</p>
+<p>When disabled, only traffic routed via VPN is allowed to access the Internet. All non-VPN traffic and traffic that fails over from VPN connections will be blocked. This option does not override the individual Kill Switch for each VPN tunnel.</p>
 <p><img alt="all other traffic off" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/all_other_traffic_off.png" /></p>
 <h2 id="tunnel-priority">Tunnel Priority<a class="headerlink" href="#tunnel-priority" title="Permanent link">&para;</a></h2>
 <p>To adjust tunnel priority, click the gear icon in a tunnel group and select <strong>Sort</strong>.</p>
@@ -6394,10 +6394,10 @@
 <p>Multiple profiles can be selected within each tunnel group to enable intra-tunnel failover. When the highest-priority profile in a tunnel group goes down, the tunnel will automatically connect using the second-highest priority profile, and so on.</p>
 </li>
 <li>
-<p>If a VPN tunnel disconnects unexpectedly, the system will determine whether to fail over the traffic to the All Other Traffic tunnel based on whether this tunnel's <strong>Kill Switch</strong> is enabled. is enabled. </p>
+<p>If a VPN tunnel disconnects unexpectedly, the system will determine whether to fail over the traffic to the All Other Traffic tunnel based on whether this tunnel's <strong>Kill Switch</strong> is enabled. </p>
 <ul>
-<li>If the Kill Switch is enabled, traffic matching this tunnel will be blocked and will not fail over to the All Other Traffic tunnel.</li>
-<li>If the Kill Switch is disabled, traffic matching this tunnel will fail over to the All Other Traffic tunnel.</li>
+<li>If the Kill Switch is enabled, traffic will be blocked and will not fail over to the All Other Traffic tunnel.</li>
+<li>If the Kill Switch is disabled, traffic will fail over to the All Other Traffic tunnel.</li>
 </ul>
 </li>
 <li>
