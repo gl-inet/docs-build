@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#glinetopenvpn" class="md-skip">
+        <a href="#glinet-openvpn" class="md-skip">
           Skip to content
         </a>
       
@@ -2921,6 +2921,13 @@
         <li class="md-nav__item">
   <a href="#4-openvpn" class="md-nav__link">
     4. OpenVPNサーバーに接続する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vpn" class="md-nav__link">
+    5. VPN 接続を確認する
   </a>
   
 </li>
@@ -6166,6 +6173,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5-vpn" class="md-nav__link">
+    5. VPN 接続を確認する
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6181,56 +6195,56 @@
                   
 
 
-<h1 id="glinetopenvpn">GL.iNetルー器でOpenVPNサーバーを設定する方法<a class="headerlink" href="#glinetopenvpn" title="Permanent link">&para;</a></h1>
-<p>このチュートリアルでは、GL.iNetルー器でOpenVPNサーバーを設定する方法を説明します。VPNサーバーを使用すると、家庭やオフィスのネットワークに安全にリモート接続できます。GL.iNetルー器を使用すると、数分でOpenVPNサーバーを設定できます。</p>
+<h1 id="glinet-openvpn">GL.iNet ルーターで OpenVPN サーバーを設定する方法<a class="headerlink" href="#glinet-openvpn" title="Permanent link">&para;</a></h1>
+<p>このチュートリアルでは、GL.iNet ルーターで OpenVPN サーバーを設定する方法を説明します。VPN サーバーを使うと、自宅やオフィスのネットワークへ安全にリモート接続できます。GL.iNet ルーターなら、数分で OpenVPN サーバーを構成できます。</p>
 <div class="admonition note">
 <p class="admonition-title">開始する前に、以下の要件を満たしていることを確認してください</p>
 <p><strong>パブリックIPアドレス</strong></p>
-<p>OpenVPNサーバーを設定するには、パブリックIPアドレスが必要です。持っているかどうかを確認するには、<a href="https://docs.gl-inet.com/router/en/4/tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">このリンク</a>を参照してください。</p>
+<p>OpenVPN サーバーの構築にはパブリック IP アドレスが必要です。お使いの回線に割り当てられているかどうかは、<a href="https://docs.gl-inet.com/router/en/4/tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">こちら</a> を参照してください。</p>
 <p><strong>ポート転送</strong></p>
-<p>GL.iNetルー器が主ルー器の背後につながっている場合は、<a href="https://docs.gl-inet.com/router/en/4/tutorials/how_to_set_up_port_forwarding/">主ルー器でポート転送を設定</a>してください。</p>
+<p>GL.iNet ルーターが主ルーターの背後に接続されている場合は、<a href="https://docs.gl-inet.com/router/en/4/tutorials/how_to_set_up_port_forwarding/">主ルーターでポート転送を設定</a> してください。</p>
 </div>
 <h2 id="1">1. ルーターにログインする<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>Webブラウザを開き、ルーターのWeb管理パネルにアクセスします（デフォルトIP：192.168.8.1）。管理パスワードでログインします。</p>
 <p><img alt="log in" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/router-login.jpeg" /></p>
 <h2 id="2-dns">2. ダイナミックDNSを有効にする（オプション）<a class="headerlink" href="#2-dns" title="Permanent link">&para;</a></h2>
-<p>OpenVPNサーバーを設定するには通例、<strong>静のパブリックIPアドレス</strong>が必要です。これは彼のデバイスがVPNサーバーにアクセスするための固定エンドポイントを提供します。</p>
-<p>ただし、静のパブリックIPアドレスがない場合（例：代わりに動のIPアドレスの場合）、GL.iNetルー器で<strong>ダイナミックDNS（DDNS）</strong>を有効にする必要があるかもしれません。これにより、パブリックIPアドレスが動のに変更しても、OpenVPNサーバーへの持続のな接続が可能になります。</p>
+<p>OpenVPN サーバーを設定するには、通常 <strong>固定のパブリック IP アドレス</strong> が必要です。これにより、他のデバイスが VPN サーバーへアクセスするための固定エンドポイントを用意できます。</p>
+<p>ただし、固定のパブリック IP アドレスがなく、動的 IP アドレスが割り当てられている場合は、GL.iNet ルーターで <strong>Dynamic DNS（DDNS）</strong> を有効にする必要がある場合があります。これにより、パブリック IP アドレスが変わっても OpenVPN サーバーへ継続的に接続できます。</p>
 <p>ダイナミックDNSを有効にするには、以下の手順に従ってください。</p>
 <ol>
-<li>ルーターのWeb管理パネルで、<strong>アプリケーション</strong> &gt; <strong>ダイナミックDNS</strong>に移動します。
-<img alt="dynamic DNS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-dynamic-dns.jpeg" /></li>
-<li><strong>DDNSを有効にする</strong>をオンにし、利用規約とプライバシーポリシーを読んで同意し、<strong>適用</strong>をクリックします。
-<img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/dynamic-dns-click-apply.png" /></li>
+<li>ルーターの Web 管理パネルで、<strong>APPLICATIONS</strong> &gt; <strong>Dynamic DNS</strong> に移動します。
+   <img alt="dynamic DNS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-dynamic-dns.jpeg" /></li>
+<li><strong>Enable DDNS</strong> をオンにし、<strong>Terms of Service &amp; Privacy Policy</strong> を読んで同意したうえで、<strong>Apply</strong> をクリックします。
+   <img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/dynamic-dns-click-apply.png" /></li>
 </ol>
 <h2 id="3">3. 設定ファイルをダウンロード<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>ルーターのWeb管理パネルで、<strong>VPN</strong> &gt; <strong>OpenVPNサーバー</strong>に移動します。</li>
 <li><strong>設定ファイルを生成</strong>をクリックします。</li>
 <li>デフォルト設定のままにし、<strong>クライアント設定ファイルをエクスポート</strong>をクリックします。
-<img alt="click export" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-export-client-configuration.jpeg" /></li>
-<li>ポップアップウィンドウで、で前に<strong>ダイナミックDNS</strong>を設定している場合は、<strong>DDNSドメインを使用</strong>のスイッチをオンにします。</li>
+   <img alt="click export" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-export-client-configuration.jpeg" /></li>
+<li>ポップアップウィンドウで、以前に <strong>Dynamic DNS</strong> を設定している場合は、<strong>Use DDNS Domain</strong> をオンにします。</li>
 <li><strong>ダウンロード</strong>をクリックし、ファイルを保存します。</li>
 <li><strong>OpenVPNサーバー</strong>ページの上部で、<strong>開始</strong>をクリックします。
-<img alt="click start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/openvpn-server-click-start.jpeg" /></li>
+   <img alt="click start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/openvpn-server-click-start.jpeg" /></li>
 </ol>
 <details>
-<summary>（オプション）VPNサーバーのローカルネットワークにアクセスするには、以下の設定を有効にしてください：</summary>
-<p>ファームウェアv4.7で前の場合：</p>
+<summary>（オプション）VPN サーバー側のローカルネットワークへアクセスするには、以下の設定を有効にしてください:</summary>
+<p>ファームウェア v4.7 以前の場合:</p>
 <ol>
 <li>左サイドバーで、<strong>VPN</strong> &gt; <strong>VPNダッシュボード</strong>をクリックします。</li>
 <li>オプションアイコンをクリックします。</li>
-<li><strong>リモートアクセスLAN</strong>のスイッチをオンにします。</li>
+<li><strong>Remote Access LAN</strong> をオンにします。</li>
 <li>
 <p><strong>適用</strong>をクリックします。</p>
 <p><img alt="remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/toggle-enable-remote-access-lan.png" /></p>
 </li>
 </ol>
-<p>ファームウェアv4.8で降の場合：</p>
+<p>ファームウェア v4.8 以降の場合:</p>
 <ol>
 <li>左サイドバーで、<strong>VPN</strong> &gt; <strong>OpenVPNサーバー</strong>をクリックします。</li>
 <li>右上の<strong>オプション</strong>をクリックします。</li>
-<li><strong>LANサブネットへのリモートアクセスを許可</strong>のスイッチをオンにします。</li>
+<li><strong>Allow Remote Access the LAN Subnet</strong> をオンにします。</li>
 <li>
 <p><strong>適用</strong>をクリックします。</p>
 <p><img alt="remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/enable-remote-access-lan-4.8.png" /></p>
@@ -6238,14 +6252,14 @@
 </ol>
 </details>
 <h2 id="4-openvpn">4. OpenVPNサーバーに接続する<a class="headerlink" href="#4-openvpn" title="Permanent link">&para;</a></h2>
-<p>OpenVPNサーバーに接続するには、OpenVPNクライアントが必要です。以下のいずれかの方法で設定できます：</p>
+<p>OpenVPN サーバーへ接続するには、OpenVPN クライアントが必要です。以下のいずれかの方法で設定できます。</p>
 <details>
-<summary>方法1：サードパーティのOpenVPNクライアントアプリ（追加のOpenVPNクライアントを設定できるルー器がない場合、この方法を使用してください）</summary>
-<p>このチュートリアルでは、OpenVPN Incが開発した 公式アプリであるOpenVPN Connectアプリ例をとして使用します。</p>
+<summary>方法 1: サードパーティ製 OpenVPN クライアントアプリを使う（OpenVPN クライアントを設定できる追加ルーターがない場合）</summary>
+<p>このチュートリアルでは、OpenVPN Inc が提供する公式アプリ <strong>OpenVPN Connect</strong> を例に使用します。</p>
 <ol>
-<li>別のデバイスで、別のWi-Fiネットワークに接続します（モバイルデバイスを使用している場合は、モバイルネットワークに接続します）。</li>
-<li>で前にダウンロードした設定ファイルをデバイスに送信します（例：メールで送信）。</li>
-<li>デバイスのオペレーティングシステム用のOpenVPN Connectをダウンロードします：<ul>
+<li>別のデバイスで、別の Wi-Fi ネットワークへ接続します。モバイルデバイスを使う場合は、モバイル回線へ接続してください。</li>
+<li>先ほどダウンロードした設定ファイルを、そのデバイスへ送ります。たとえばメールで送信できます。</li>
+<li>使用する OS に対応した OpenVPN Connect をダウンロードします:<ul>
 <li><a href="https://openvpn.net/client/client-connect-vpn-for-windows/">Windows</a></li>
 <li><a href="https://openvpn.net/client-connect-vpn-for-mac-os/">Mac</a></li>
 <li><a href="https://play.google.com/store/apps/details?id=net.openvpn.openvpn&amp;hl=en&amp;gl=US&amp;pli=1">Android</a></li>
@@ -6253,44 +6267,40 @@
 <li><a href="https://openvpn.net/openvpn-client-for-linux/">Linux</a></li>
 </ul>
 </li>
-<li>アプリで利用規約を読み、<strong>同意する</strong>を選択します。</li>
-<li><strong>ファイルをアップロード</strong>を選択します。
+<li>アプリで利用規約を読み、<strong>Agree</strong> を選択します。</li>
+<li><strong>Upload File</strong> を選択します。
 <img alt="upload file" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/tap-upload-file.png" /></li>
-<li><strong>参照</strong>を選択し、で前にダウンロードした設定ファイルを選択します。</li>
-<li><strong>OK</strong>を選択します。
-    <img alt="tap ok" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/tap-ok.png" /> </li>
-<li><strong>接続</strong> &gt; <strong>OK</strong> &gt; <strong>許可</strong>を選択します。</li>
+<li><strong>Browse</strong> を選択し、先ほどダウンロードした設定ファイルを指定します。</li>
+<li><strong>OK</strong> を選択します。
+    <img alt="tap ok" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/tap-ok.png" /></li>
+<li><strong>Connect</strong> &gt; <strong>OK</strong> &gt; <strong>Allow</strong> を選択します。</li>
 </ol>
-<p>VPNプロファイルの上部に「接続済み」という単語が表示されます。
-<img alt="connected status" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/connected-status.png" /> </p>
+<p>VPN プロファイルの上部に "Connected" と表示されれば接続完了です。
+<img alt="connected status" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/connected-status.png" /></p>
 </details>
 <details>
-<summary>方法2：OpenVPNクライアントを設定できるルー器</summary>
-<p>OpenVPNクライアントの手動設定をサポートする任意のルー器を使用できます。このチュートリアルでは、GL.iNetのトラベルルー器<a href="https://www.gl-inet.com/products/gl-mt3000/">Beryl AX (GL-MT3000)</a>を例として使用します。</p>
+<summary>方法 2: OpenVPN クライアントを設定できるルーターを使う</summary>
+<p>OpenVPN クライアントの手動設定に対応した任意のルーターを使用できます。このチュートリアルでは、GL.iNet のトラベルルーター <a href="https://www.gl-inet.com/products/gl-mt3000/">Beryl AX (GL-MT3000)</a> を例に使用します。</p>
 <ol>
-<li>別のデバイスで、別のWi-Fiネットワークに接続します（モバイルデバイスを使用している場合は、モバイルネットワークに接続します）。</li>
-<li>Webブラウザのアドレスバーで、ルー器管理面板のURLを入力します（例：192.168.8.1）。</li>
+<li>別のデバイスで、別の Wi-Fi ネットワークへ接続します。モバイルデバイスを使用している場合は、モバイル回線へ接続してください。</li>
+<li>Web ブラウザのアドレスバーに、ルーター管理画面の URL（例: 192.168.8.1）を入力します。</li>
 <li>パスワードを入力し、<strong>ログイン</strong>をクリックします。</li>
-<li>
-<p>左サイドバーで、<strong>VPN</strong> &gt; <strong>OpenVPNクライアント</strong>をクリックします。</p>
-<p><img alt="client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/openvpn-client.jpeg" /></p>
-</li>
-<li>
-<p><strong>追加</strong>をクリックして新しい接続を追加します。</p>
-<p><img alt="add" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-add.png" /></p>
-</li>
-<li>
-<p>前にダウンロードした設定ファイルをインポートします。ファイルをドラッグ＆ドロップするか、<strong>ファイルを参照</strong>をクリックして選択します。</p>
-<p><img alt="import" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/import-profile.jpeg" /></p>
-</li>
-<li>
-<p>設定ファイルをインポートした後、绿の時がinfeld場合は、VPNクライアントがOpenVPNサーバーに接続されていることを意味します。</p>
-<p><img alt="connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/connected-to-server.png" /></p>
-</li>
+<li>左サイドバーで、<strong>VPN</strong> &gt; <strong>OpenVPN Client</strong> をクリックします。
+<img alt="click openvpn client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-openvpn-client.png" /></li>
+<li><strong>Add Manually</strong> をクリックします。
+<img alt="click add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-add-manually.png" /></li>
+<li>名前を入力し、チェックアイコンをクリックします。</li>
+<li>先ほどダウンロードした設定ファイルをアップロードします。
+<img alt="select a file" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/click-select-a-file.png" /></li>
+<li><strong>Apply</strong> をクリックします。</li>
+<li>三点アイコンをクリックし、<strong>Start</strong> をクリックします。</li>
+<li>OpenVPN クライアントを動かしているルーターにデバイスを接続します。</li>
 </ol>
 </details>
+<h2 id="5-vpn">5. VPN 接続を確認する<a class="headerlink" href="#5-vpn" title="Permanent link">&para;</a></h2>
+<p>Web ブラウザを開き、IP アドレスと位置情報を確認してください。表示された IP アドレスと位置情報が、インターネットサービスプロバイダーのものではなく VPN サーバーのものになっていれば、VPN 接続は正常です。</p>
 <hr />
-<p>まだ質問がありますか？<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>または<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a>をご覧ください。</p>
+<p>まだご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a> または <a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> をご利用ください。</p>
 
 
 

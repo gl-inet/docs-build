@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#glinetip" class="md-skip">
+        <a href="#glinet-ip" class="md-skip">
           Skip to content
         </a>
       
@@ -4098,14 +4098,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    保護者へけコントロールの新しいルールセットのフィルタ形式
+  <a href="#parental-control-add-a-new-ruleset" class="md-nav__link">
+    Parental Control の Add a New Ruleset に対応するフィルタ形式
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     例
   </a>
   
@@ -6193,14 +6193,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    保護者へけコントロールの新しいルールセットのフィルタ形式
+  <a href="#parental-control-add-a-new-ruleset" class="md-nav__link">
+    Parental Control の Add a New Ruleset に対応するフィルタ形式
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     例
   </a>
   
@@ -6221,52 +6221,52 @@
                   
 
 
-<h1 id="glinetip">GL.iNetルー器のドメインとIPフィルタリングルールをオンラインテキストファイルで構成する方法<a class="headerlink" href="#glinetip" title="Permanent link">&para;</a></h1>
-<p>ファームウェアv4.7.0で降、VPN機能の「VPN Policy Based on the Target Domain or IP」と保護者へけコントロール機能の「Add a New Ruleset」はオンラインテキストファイルへのリンクからのルールのインポートをサポートします。このでは、このテキストファイルの形式を紹介します。</p>
+<h1 id="glinet-ip">GL.iNet ルーターのドメイン / IP フィルタリングルールをオンラインテキストファイルで設定する方法<a class="headerlink" href="#glinet-ip" title="Permanent link">&para;</a></h1>
+<p>ファームウェア v4.7.0 以降では、VPN 機能の「VPN Policy Based on the Target Domain or IP」と、Parental Control 機能の「Add a New Ruleset」が、オンラインテキストファイルへのリンクからルールをインポートできるようになっています。この記事では、そのテキストファイルの形式を紹介します。</p>
 <h2 id="url">URL形式の説明<a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
 <h3 id="url_1">対応および非対応のURL形式<a class="headerlink" href="#url_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>テキストファイル対応ファイル形式：.txt、.conf、.logなど</li>
-<li>非対応ファイル形式：.exe、.zip、.jpgなどのバイナリファイル</li>
+<li>対応するテキストファイル形式: <code>.txt</code>、<code>.conf</code>、<code>.log</code> など</li>
+<li>非対応のファイル形式: <code>.exe</code>、<code>.zip</code>、<code>.jpg</code> などのバイナリファイル</li>
 </ul>
 <h3 id="github">GitHubを使用したテキストファイルのホスティング<a class="headerlink" href="#github" title="Permanent link">&para;</a></h3>
-<p>テキストファイルをパブリックGitHubリポジトリでホスティングしている場合は、通例のGitHub URLではなく生のコンテンツURLを使用するようにしてください。</p>
+<p>テキストファイルを公開 GitHub リポジトリでホストしている場合は、通常の GitHub URL ではなく raw content URL を使用してください。</p>
 <p>例えば、以下のGitHub URLは生のコンテンツではなくWebコンテンツを指しています：</p>
 <p><code>https://github.com/SecOps-Institute/FacebookIPLists/blob/master/facebook_ipv4_cidr_blocks.lst</code></p>
-<p>ルー器が正しいコンテンツをダウンロードできるようにするには、以下の形式で生のコンテンツURLを使用してください：</p>
+<p>ルーターが正しい内容をダウンロードできるようにするには、以下の形式の raw content URL を使用してください:</p>
 <p><code>https://raw.githubusercontent.com/SecOps-Institute/FacebookIPLists/master/facebook_ipv4_cidr_blocks.lst</code></p>
-<p>これ样することで、ルー器はファイルのプレーンテキストコンテンツを取なければならないできるようになります。</p>
+<p>これにより、ルーターはファイルのプレーンテキスト内容を取得できるようになります。</p>
 <h2 id="ipvpn">ターゲットドメインまたはIPに基づくVPNポリシーのフィルタ形式<a class="headerlink" href="#ipvpn" title="Permanent link">&para;</a></h2>
 <p>「VPN Policy Based on the Target Domain or IP」機能は、オンラインテキストファイルで以下のフィルタ形式をサポートします：</p>
 <ul>
-<li>ドメイン名形式： <code>netflix.com</code>などのドメイン名を使用して、<code>netflix.com</code>のすべてのサブドメインにマッチさせます。</li>
-<li>サブドメイン形式： <code>www.netflix.com</code>などの完全なサブドメインを指定して、特定のサブドメインのみにマッチさせます。</li>
-<li>CIDR形式： <code>192.168.10.0/24</code>などのCIDR表記を使用してIPアドレス範囲を指定します。</li>
-<li>IPv4アドレス形式： <code>192.168.10.10</code>などの個々のIPv4アドレスを指定します。</li>
+<li>ドメイン名形式: <code>netflix.com</code> のようなドメイン名を使うと、<code>netflix.com</code> のすべてのサブドメインに一致します。</li>
+<li>サブドメイン形式: <code>www.netflix.com</code> のように完全なサブドメインを指定すると、その特定のサブドメインのみに一致します。</li>
+<li>CIDR 形式: <code>192.168.10.0/24</code> のような CIDR 表記で IP アドレス範囲を指定できます。</li>
+<li>IPv4 アドレス形式: <code>192.168.10.10</code> のような個別の IPv4 アドレスを指定できます。</li>
 </ul>
-<h2 id="_1">保護者へけコントロールの新しいルールセットのフィルタ形式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>保護者へけコントロールの「Add a New Ruleset」機能は、オンラインテキストファイルで以下のフィルタ形式をサポートします：</p>
+<h2 id="parental-control-add-a-new-ruleset">Parental Control の Add a New Ruleset に対応するフィルタ形式<a class="headerlink" href="#parental-control-add-a-new-ruleset" title="Permanent link">&para;</a></h2>
+<p>Parental Control の「Add a New Ruleset」機能では、オンラインテキストファイルで以下のフィルタ形式をサポートします:</p>
 <ul>
-<li>ドメイン名形式： <code>instagram.com</code>などのドメイン名を使用して、<code>instagram.com</code>のすべてのサブドメインにマッチさせます。</li>
-<li>サブドメイン形式： <code>www.instagram.com</code>などの完全なサブドメインを指定して、特定のサブドメインのみにマッチさせます。</li>
+<li>ドメイン名形式: <code>instagram.com</code> のようなドメイン名を使うと、<code>instagram.com</code> のすべてのサブドメインに一致します。</li>
+<li>サブドメイン形式: <code>www.instagram.com</code> のように完全なサブドメインを指定すると、その特定のサブドメインのみに一致します。</li>
 </ul>
-<p>オンラインテキストファイルを作成する場合、行ごとに1つのフィルタを使用します。ルーターは各行を指定された形式に従って処理し、関連するルールをVPNまたは保護者へけコントロール機能に適用します。</p>
-<h2 id="_2">例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>オンラインテキストファイルを作成する際は、1 行につき 1 つのフィルタを記述してください。ルーターは各行を指定された形式に従って処理し、対応するルールを VPN または Parental Control 機能に適用します。</p>
+<h2 id="_1">例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>「VPN Policy Based on the Target Domain or IP」の場合：</p>
 <div class="highlight"><pre><span></span><code>netflix.com
 www.hulu.com
 192.168.10.0/24
 192.168.10.10
 </code></pre></div>
-<p>「Parental Control Add a New Ruleset」の場合：</p>
+<p>「Parental Control Add a New Ruleset」の場合:</p>
 <div class="highlight"><pre><span></span><code>instagram.com
 facebook
 x.com
 snapchat
 </code></pre></div>
-<p>これらのフィルタ形式に従うことで、ルー器のVPNと保護者へけコントロール機能を構成するためのオンラインテキストファイルを簡単に作成してメンテナンスできます。</p>
+<p>これらの形式に従うことで、ルーターの VPN および Parental Control 機能向けのオンラインテキストファイルを簡単に作成し、維持管理できます。</p>
 <hr />
-<p>ご不明な時がございましたら、<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>または<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a>をご覧ください。</p>
+<p>まだご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a> または <a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> をご利用ください。</p>
 
 
 

@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#glinet-openvpn" class="md-skip">
+        <a href="#glinetopenvpn" class="md-skip">
           Skip to content
         </a>
       
@@ -2879,21 +2879,21 @@
       
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    1. ルーター管理パネルにサインインする
+    1. ルーターにログインする
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2-vpn" class="md-nav__link">
-    2. VPN プロファイルを設定して接続する
+    2. VPNクライアントを設定する
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#3-vpn" class="md-nav__link">
-    3. VPN に正常に接続されているか確認する
+    3. VPN接続を確認する
   </a>
   
 </li>
@@ -6133,21 +6133,21 @@
       
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    1. ルーター管理パネルにサインインする
+    1. ルーターにログインする
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2-vpn" class="md-nav__link">
-    2. VPN プロファイルを設定して接続する
+    2. VPNクライアントを設定する
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#3-vpn" class="md-nav__link">
-    3. VPN に正常に接続されているか確認する
+    3. VPN接続を確認する
   </a>
   
 </li>
@@ -6167,68 +6167,76 @@
                   
 
 
-<h1 id="glinet-openvpn">GL.iNet ルーターに OpenVPN クライアントを設定する方法<a class="headerlink" href="#glinet-openvpn" title="Permanent link">&para;</a></h1>
-<p>このチュートリアルでは、<strong>GL.iNet ルーターに OpenVPN クライアントを設定する方法</strong>を説明します。</p>
-<p>始める前に、OpenVPN の手動構成をサポートする VPN サービスプロバイダーの有効なサブスクリプションが必要です。<a href="https://www.gl-inet.com/solutions/vpn/">GL.iNet がサポートする OpenVPN 対応 VPN のリストをご覧ください</a>。</p>
-<p>以下の手順は、ルーター管理パネルを通じて OpenVPN クライアントを設定するために書かれています。（GL.iNet モバイルアプリ経由で OpenVPN クライアントを設定するには、<a href="https://www.gl-inet.com/app/">アプリをダウンロード</a>して設定してください。）</p>
-<h2 id="1">1. ルーター管理パネルにサインインする<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>ウェブブラウザでルーター管理パネルの URL（例：192.168.8.1）を入力します。パスワードを入力し、<strong>ログイン</strong>をクリックします。</p>
-<h2 id="2-vpn">2. VPN プロファイルを設定して接続する<a class="headerlink" href="#2-vpn" title="Permanent link">&para;</a></h2>
-<p>使用している VPN サービスプロバイダーに応じて、適切なセクションに従ってください。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">NordVPN</label><label for="__tabbed_1_2">その彼の VPN サービスプロバイダー（例：ExpressVPN、Surfshark）</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<h1 id="glinetopenvpn">GL.iNetルーターにOpenVPNクライアントを設定する方法<a class="headerlink" href="#glinetopenvpn" title="Permanent link">&para;</a></h1>
+<p>このチュートリアルでは、GL.iNet ルーターで OpenVPN クライアントを設定する方法を説明します。</p>
+<p>以下の動画を見るか、手順を参照してください。</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/04sW3l6_rDM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<hr />
+<p>始める前に、OpenVPN の手動設定に対応した VPN サービスプロバイダーの有効な契約が必要です。GL.iNet と互換性のある OpenVPN プロバイダーは <a href="https://www.gl-inet.com/solutions/vpn/" target="_blank">こちら</a> で確認できます。</p>
+<p>以下では、ルーターの Web 管理パネルから OpenVPN クライアントを設定する手順を説明します。</p>
+<h2 id="1">1. ルーターにログインする<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>ブラウザを開き、ルーターの Web 管理パネルにアクセスします。デフォルトの IP アドレスは <code>192.168.8.1</code> です。管理者パスワードを入力してログインします。</p>
+<p><img alt="log in" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/router-login.jpeg" /></p>
+<h2 id="2-vpn">2. VPNクライアントを設定する<a class="headerlink" href="#2-vpn" title="Permanent link">&para;</a></h2>
+<p>利用する VPN サービスプロバイダーに応じて、対応する手順に従ってください。</p>
+<details>
+<summary>NordVPN</summary>
 <ol>
-<li>左側のサイドバーで <strong>VPN</strong> &gt; <strong>OpenVPN クライアント</strong> をクリックします。</li>
+<li>
+<p>ルーターの Web 管理パネルで <strong>VPN</strong> &gt; <strong>OpenVPN Client</strong> に移動します。</p>
+</li>
 <li>
 <p><strong>NordVPN</strong> をクリックします。</p>
 <p><img alt="nordvpn" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/click-nordvpn.png" /></p>
 </li>
 <li>
-<p>サービスの認証情報を入力し、<strong>保存して続行</strong>をクリックします。</p>
+<p>サービス用の認証情報を入力し、<strong>Save and Continue</strong> をクリックします。</p>
+<p>Note: ログイン用のメールアドレスやパスワードではなく、NordVPN の Web サイトにある Nord Dashboard から取得したサービス認証情報を使用してください。</p>
 <p><img alt="save and continue" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/click-save-and-continue.png" /></p>
 </li>
 <li>
-<p>プロンプトで接続したい VPN ロケーションを選択し、<strong>適用</strong>をクリックします。</p>
+<p>表示された画面で接続したい VPN ロケーションを選択し、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/nordvpn-servers-click-apply.png" /></p>
 </li>
 <li>
-<p>接続したい VPN サーバーの横にある三時アイコンをクリックし、<strong>開始</strong>を選択します。</p>
+<p>接続したい VPN サーバーを選択し、三点アイコンから <strong>Start</strong> をクリックします。</p>
 <p><img alt="start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/openvpn-click-start.png" /></p>
 </li>
 </ol>
-</div>
-<div class="tabbed-block">
+</details>
+<details>
+<summary>その他のVPNサービスプロバイダー（例: Surfshark）</summary>
 <ol>
-<li>左側のサイドバーで <strong>VPN</strong> &gt; <strong>OpenVPN クライアント</strong> をクリックします。</li>
 <li>
-<p><strong>手動で追加</strong> をクリックします。</p>
+<p>ルーターの Web 管理パネルで <strong>VPN</strong> &gt; <strong>OpenVPN Client</strong> に移動します。</p>
+</li>
+<li>
+<p><strong>Add Manually</strong> をクリックします。</p>
 <p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/openvpn-click-add-manually.png" /></p>
 </li>
 <li>
-<p>VPN サービスプロバイダーの名前（例：ExpressVPN）を入力し、チェックアイコンをクリックします。</p>
+<p>名前を設定します。VPN サービスプロバイダー名を入力し、チェックアイコンをクリックしてください。</p>
 <p><img alt="click-check-icon" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/click-check-icon.png" /></p>
 </li>
 <li>
-<p>サービスの認証情報を見つけ、VPN サービスプロバイダーから提供された構成ファイルをダウンロードします。</p>
+<p>VPN サービスプロバイダーから提供された設定ファイルと、必要であればサービス認証情報を事前に用意しておきます。</p>
 </li>
-<li>先ほどダウンロードした構成ファイルをアップロードします。</li>
-<li>先ほど見つけたサービスの認証情報を入力し、<strong>適用</strong>をクリックします。</li>
-</ol>
-</div>
-</div>
-</div>
-<p><img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/openvpn-click-apply.png" /></p>
-<ol>
 <li>
-<p>VPN サーバーアドレスの横にある三時アイコンをクリックし、<strong>開始</strong>を選択します。</p>
+<p>ダウンロードした設定ファイルをアップロードします。</p>
+<p>認証情報が必要な場合は入力し、<strong>Apply</strong> をクリックします。</p>
+<p><img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/openvpn-click-apply.png" /></p>
+</li>
+<li>
+<p>VPN サーバーアドレスの横にある三点アイコンをクリックし、<strong>Start</strong> を選択します。</p>
 <p><img alt="start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_client/openvpn-manual-click-start.png" /></p>
 </li>
 </ol>
-<h2 id="3-vpn">3. VPN に正常に接続されているか確認する<a class="headerlink" href="#3-vpn" title="Permanent link">&para;</a></h2>
-<p>ウェブブラウザでから分の IP アドレスの場所を検索します。接続している VPN サーバーの場所と一致する場合、VPN 接続は成功です。これで設定は完たです。</p>
+</details>
+<h2 id="3-vpn">3. VPN接続を確認する<a class="headerlink" href="#3-vpn" title="Permanent link">&para;</a></h2>
+<p>ブラウザで自分の IP アドレスと位置情報を確認してください。表示される IP と場所が、契約しているインターネット回線ではなく、接続先 VPN サーバーの情報と一致していれば、VPN 接続は成功です。</p>
 <hr />
-<p>まだ質問がありますか？<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>をご覧ください。</p>
+<p>まだ質問がありますか？<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>または<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a>をご覧ください。</p>
 
 
 

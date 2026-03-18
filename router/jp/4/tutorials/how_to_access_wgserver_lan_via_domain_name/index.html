@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wireguard-lan" class="md-skip">
+        <a href="#wireguardlan" class="md-skip">
           Skip to content
         </a>
       
@@ -3114,42 +3114,42 @@
         
           <li class="md-nav__item">
   <a href="#1-hosts" class="md-nav__link">
-    1. サーバーでのHostsの編集（オプション）
+    1. サーバー側で Hosts を編集する（任意）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#2-lan" class="md-nav__link">
-    2. サーバーでリモートアクセスLANを許可
+    2. サーバー側で LAN へのリモートアクセスを許可する
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#3-vpn" class="md-nav__link">
-    3. VPN設定のエクスポート
+    3. VPN設定をエクスポートする
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#4-vpn" class="md-nav__link">
-    4. VPNサーバーの有効化
+    4. VPNサーバーを有効にする
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#5-vpn" class="md-nav__link">
-    5. VPN設定のアップロード
+    5. VPN設定をアップロードする
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#6-vpn" class="md-nav__link">
-    6. VPNクライアント接続の開始
+    6. VPNクライアント接続を開始する
   </a>
   
 </li>
@@ -6189,42 +6189,42 @@
         
           <li class="md-nav__item">
   <a href="#1-hosts" class="md-nav__link">
-    1. サーバーでのHostsの編集（オプション）
+    1. サーバー側で Hosts を編集する（任意）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#2-lan" class="md-nav__link">
-    2. サーバーでリモートアクセスLANを許可
+    2. サーバー側で LAN へのリモートアクセスを許可する
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#3-vpn" class="md-nav__link">
-    3. VPN設定のエクスポート
+    3. VPN設定をエクスポートする
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#4-vpn" class="md-nav__link">
-    4. VPNサーバーの有効化
+    4. VPNサーバーを有効にする
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#5-vpn" class="md-nav__link">
-    5. VPN設定のアップロード
+    5. VPN設定をアップロードする
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#6-vpn" class="md-nav__link">
-    6. VPNクライアント接続の開始
+    6. VPNクライアント接続を開始する
   </a>
   
 </li>
@@ -6249,65 +6249,65 @@
                   
 
 
-<h1 id="wireguard-lan">WireGuardサーバ LAN機器にドメイン名を使用してクライアントからアクセスする方法<a class="headerlink" href="#wireguard-lan" title="Permanent link">&para;</a></h1>
-<p>このチュートリアルでは、ドメイン名を使用してクライアントからWireGuardサーバーのLANにある家庭内機器（NAS、IPカメラなど）にアクセスする方法について説明します。</p>
+<h1 id="wireguardlan">ドメイン名を使ってクライアントからWireGuardサーバー側LAN機器へアクセスする方法<a class="headerlink" href="#wireguardlan" title="Permanent link">&para;</a></h1>
+<p>このチュートリアルでは、クライアント側から WireGuard サーバーの LAN 上にある家庭内機器（NAS、IP カメラなど）へ、ドメイン名を使ってアクセスする方法を説明します。</p>
 <h2 id="_1">ネットワーク構成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>下図のように client's LAN上のPCから、それぞれのドメイン名を使用してWireGuardサーバーのLAN上にあるNASやIPカメラなどのデバイスにアクセスできます。</p>
+<p>以下のように、クライアント側 LAN 上の PC から、それぞれのドメイン名を使って WireGuard サーバー側 LAN にある NAS や IP カメラへアクセスできます。</p>
 <p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/topology_be9300_be3600.png" /></p>
 <h2 id="_2">設定手順<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="1-hosts">1. サーバーでのHostsの編集（オプション）<a class="headerlink" href="#1-hosts" title="Permanent link">&para;</a></h3>
-<p>このステップは、VPNサーバーがローカルドメイン名を適切に解決できない場合に適用します。不確実な場合はこのステップをスキップしてください。</p>
-<p>VPNサーバールーターのWeb管理パネルにログインし、<strong>NETWORK</strong> -&gt; <strong>DNS</strong> -&gt; <strong>Edit Hosts</strong>に移動します。</p>
+<h3 id="1-hosts">1. サーバー側で Hosts を編集する（任意）<a class="headerlink" href="#1-hosts" title="Permanent link">&para;</a></h3>
+<p>この手順は、VPN サーバーがローカルドメイン名を正しく解決できない場合に必要です。必要かどうか分からない場合は、この手順はスキップしてください。</p>
+<p>VPN サーバールーターの Web 管理パネルにログインし、<strong>NETWORK</strong> -&gt; <strong>DNS</strong> -&gt; <strong>Edit Hosts</strong> に移動します。</p>
 <p><img alt="edit hosts" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/edit_hosts.png" /></p>
-<p>アクセスしたい家庭内デバイスのIPとドメイン名を入力し、<strong>Apply</strong>をクリックします。</p>
+<p>アクセスしたい家庭内機器の IP アドレスとドメイン名を入力し、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="input ip domain" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/input_ip_domain.png" /></p>
-<h3 id="2-lan">2. サーバーでリモートアクセスLANを許可<a class="headerlink" href="#2-lan" title="Permanent link">&para;</a></h3>
+<h3 id="2-lan">2. サーバー側で LAN へのリモートアクセスを許可する<a class="headerlink" href="#2-lan" title="Permanent link">&para;</a></h3>
 <details>
-<summary>ファームウェアv4.8を実行しているサーバーの場合</summary>
-<p>サーバーのWeb管理パネルで、<strong>VPN</strong> -&gt; <strong>WireGuard Server</strong>に移動します。右上隅の<strong>Options</strong>をクリックします。</p>
+<summary>ファームウェア v4.8 のサーバールーターの場合</summary>
+<p>サーバーの Web 管理パネルで、<strong>VPN</strong> -&gt; <strong>WireGuard Server</strong> に移動し、右上の <strong>Options</strong> をクリックします。</p>
 <p><img alt="server options 4.8" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/server_options_4.8.png" /></p>
-<p><strong>Allow Remote Access the LAN Subnet</strong>を有効化し、<strong>Apply</strong>をクリックします。</p>
+<p><strong>Allow Remote Access the LAN Subnet</strong> を有効にし、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="server allow access lan 4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/server-allow-access-lan-4.8.png" /></p>
-<p><strong>有効にすると、このルーターとLANデバイスにVPN経由でリモートアクセスできます。</strong></p>
+<p><strong>有効にすると、VPN 経由でこのルーターおよび LAN 上の機器へリモートアクセスできるようになります。</strong></p>
 </details>
 <details>
-<summary>ファームウェアv4.7で前のサーバールーターの場合</summary>
-<p>サーバーのWeb管理パネルで、<strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Server</strong>セクションに移動します。WireGuardサーバーの右側にある歯車アイコンをクリックします。</p>
+<summary>ファームウェア v4.7 以前のサーバールーターの場合</summary>
+<p>サーバーの Web 管理パネルで、<strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Server</strong> セクションに移動し、WireGuard サーバー右側の歯車アイコンをクリックします。</p>
 <p><img alt="server options 4.7" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/server_options_4.7.png" /></p>
-<p><strong>Remote Access LAN</strong>を有効化し、<strong>Apply</strong>をクリックします。</p>
+<p><strong>Remote Access LAN</strong> を有効にし、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="server allow access lan 4.7" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/server-allow-access-lan-4.7.png" /></p>
-<p><strong>有効にすると、このルーターとLANデバイスにVPN経由でリモートアクセスできます。</strong></p>
+<p><strong>有効にすると、VPN 経由でこのルーターおよび LAN 上の機器へリモートアクセスできるようになります。</strong></p>
 </details>
-<h3 id="3-vpn">3. VPN設定のエクスポート<a class="headerlink" href="#3-vpn" title="Permanent link">&para;</a></h3>
-<p>サーバーの管理パネルで、<strong>VPN</strong> -&gt; <strong>WireGuard Server</strong> -&gt; <strong>Profiles</strong>タブに移動し、<strong>Add</strong>をクリックして設定プロファイルをエクスポートします。</p>
+<h3 id="3-vpn">3. VPN設定をエクスポートする<a class="headerlink" href="#3-vpn" title="Permanent link">&para;</a></h3>
+<p>サーバーの管理パネルで、<strong>VPN</strong> -&gt; <strong>WireGuard Server</strong> -&gt; <strong>Profiles</strong> タブに移動し、<strong>Add</strong> をクリックして設定プロファイルをエクスポートします。</p>
 <p><img alt="export config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/export_config.png" /></p>
-<p>以下のとおり<strong>設定ファイル</strong>を取なければならないできます。</p>
+<p>すると、以下のような <strong>.conf</strong> ファイルが取得できます。</p>
 <p><img alt="downloads" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/downloads.png" /></p>
-<p>このファイルを開きます。ファイル内のDNSフィールドが、WireGuard Serverページの<strong>Configuration</strong>タブに表示されるサーバーのトンネルIPを指していることを確認します。DNS解決の失敗を避けるため、DNSフィールドに「64.6.64.6」があれば削除してください。</p>
+<p>このファイルを開き、DNS フィールドが WireGuard Server ページの <strong>Configuration</strong> タブに表示されているサーバーのトンネル IP を指していることを確認してください。DNS 解決エラーを避けるため、DNS フィールドに <code>64.6.64.6</code> が含まれている場合は削除します。</p>
 <p><img alt="dns field" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/dns_field.png" /></p>
 <p><img alt="wg tunnel ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/wg_tunnel_ip.png" /></p>
-<p><strong>注意</strong>：WireGuardサーバーのトンネルIPはファームウェアバージョンによって異なります。サーバーのトンネルIPを確認してください。</p>
-<h3 id="4-vpn">4. VPNサーバーの有効化<a class="headerlink" href="#4-vpn" title="Permanent link">&para;</a></h3>
-<p><strong>WireGuard Server</strong>ページで、右上隅の<strong>Start</strong>ボタンをクリックしてサーバーを起動します。</p>
+<p><strong>Note</strong>: WireGuard サーバーのトンネル IP はファームウェアのバージョンによって異なります。実際のサーバーのトンネル IP を確認してください。</p>
+<h3 id="4-vpn">4. VPNサーバーを有効にする<a class="headerlink" href="#4-vpn" title="Permanent link">&para;</a></h3>
+<p><strong>WireGuard Server</strong> ページで、右上の <strong>Start</strong> ボタンをクリックしてサーバーを起動します。</p>
 <p><img alt="start server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/start_server.png" /></p>
-<h3 id="5-vpn">5. VPN設定のアップロード<a class="headerlink" href="#5-vpn" title="Permanent link">&para;</a></h3>
-<p>VPNクライアントルー器のWeb管理パネルにログインし、<strong>VPN</strong> -&gt; <strong>WireGuard Client</strong>に移動し、<strong>Add Manually</strong>をクリックします。</p>
+<h3 id="5-vpn">5. VPN設定をアップロードする<a class="headerlink" href="#5-vpn" title="Permanent link">&para;</a></h3>
+<p>VPN クライアントルーターの Web 管理パネルにログインし、<strong>VPN</strong> -&gt; <strong>WireGuard Client</strong> に移動して <strong>Add Manually</strong> をクリックします。</p>
 <p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/wgclient_add_manually.png" /></p>
-<p>このグループの名前を作成し、設定ファイルをアップロードします。</p>
+<p>このグループの名前を設定し、設定ファイルをアップロードします。</p>
 <p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/wgclient_add_manually-2.png" /></p>
-<p>アップロード成功。<strong>Apply</strong>をクリックします。</p>
+<p>アップロードが成功したら <strong>Apply</strong> をクリックします。</p>
 <p><img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/wgclient_add_apply.png" /></p>
-<p>ここに設定ファイルが一覧表示されます。</p>
+<p>設定ファイルが一覧に表示されます。</p>
 <p><img alt="applied" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/wgclient_add_applied.png" /></p>
-<h3 id="6-vpn">6. VPNクライアント接続の開始<a class="headerlink" href="#6-vpn" title="Permanent link">&para;</a></h3>
-<p>3時アイコンをクリックしてVPN接続を開始します。</p>
+<h3 id="6-vpn">6. VPNクライアント接続を開始する<a class="headerlink" href="#6-vpn" title="Permanent link">&para;</a></h3>
+<p>三点アイコンをクリックして VPN 接続を開始します。</p>
 <p><img alt="start client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/start_client.png" /></p>
-<p>灰色ドットが緑色に変わると、WireGuardクライアントは正常にサーバーに接続されています。</p>
+<p>灰色のドットが緑色に変われば、WireGuard クライアントは正常にサーバーへ接続できています。</p>
 <p><img alt="wgclient connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/wg_client_connected.png" /></p>
-<p>これによりクライアントのLAN上のPCから、ドメイン名を使用してサーバーのLAN上の家庭内デバイス（NASなど）にアクセスできます。</p>
+<p>これで、クライアント側 LAN の PC から、ドメイン名を使ってサーバー側 LAN の家庭内機器（NAS など）へアクセスできます。</p>
 <p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/ping_nas.png" /></p>
 <hr />
-<p>ご不明な時がございましたら、<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>または<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a>をご覧ください。</p>
+<p>まだ質問がありますか？<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>または<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a>をご覧ください。</p>
 
 
 

@@ -3079,50 +3079,57 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    構成
+    ネットワーク構成
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    セットアップ手順
+    設定手順
   </a>
   
-    <nav class="md-nav" aria-label="セットアップ手順">
+    <nav class="md-nav" aria-label="設定手順">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1-hosts" class="md-nav__link">
-    1. サーバーでHostsを編集（オプション）
+    1. サーバー側で Hosts を編集する（任意）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#2-lan" class="md-nav__link">
-    2. サーバーでリモートアクセスLANを許可
+    2. サーバー側で LAN へのリモートアクセスを許可する
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#3-vpn" class="md-nav__link">
-    3. VPN設定をエクスポート
+    3. VPN設定をエクスポートする
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#4-vpn" class="md-nav__link">
-    4. VPNクライアントを設定
+    4. VPNサーバーを有効にする
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-lan" class="md-nav__link">
-    5. クライアントからサーバーハウスのLANデバイスにアクセス
+  <a href="#5-vpn" class="md-nav__link">
+    5. VPN設定をアップロードする
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-vpn" class="md-nav__link">
+    6. VPNクライアント接続を開始する
   </a>
   
 </li>
@@ -6167,50 +6174,57 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    構成
+    ネットワーク構成
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    セットアップ手順
+    設定手順
   </a>
   
-    <nav class="md-nav" aria-label="セットアップ手順">
+    <nav class="md-nav" aria-label="設定手順">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1-hosts" class="md-nav__link">
-    1. サーバーでHostsを編集（オプション）
+    1. サーバー側で Hosts を編集する（任意）
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#2-lan" class="md-nav__link">
-    2. サーバーでリモートアクセスLANを許可
+    2. サーバー側で LAN へのリモートアクセスを許可する
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#3-vpn" class="md-nav__link">
-    3. VPN設定をエクスポート
+    3. VPN設定をエクスポートする
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#4-vpn" class="md-nav__link">
-    4. VPNクライアントを設定
+    4. VPNサーバーを有効にする
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-lan" class="md-nav__link">
-    5. クライアントからサーバーハウスのLANデバイスにアクセス
+  <a href="#5-vpn" class="md-nav__link">
+    5. VPN設定をアップロードする
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-vpn" class="md-nav__link">
+    6. VPNクライアント接続を開始する
   </a>
   
 </li>
@@ -6235,45 +6249,57 @@
                   
 
 
-<h1 id="openvpnlan">ドメイン名を使用してクライアントからOpenVPNサーバーのLANデバイスにアクセスする方法<a class="headerlink" href="#openvpnlan" title="Permanent link">&para;</a></h1>
-<p>このチュートリアルでは、ドメイン名を使用してクライアントからOpenVPNサーバーのLANにあるホームデバイス（NAS、IPカメラなど）にアクセスする方法を説明します。</p>
-<h2 id="_1">構成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>下図のようにのように、クライアントのPCから各からのドメイン名を使用して、OpenVPNサーバーのLANにあるNASやIPカメラなどのデバイスにアクセスできます。</p>
+<h1 id="openvpnlan">ドメイン名を使ってクライアントからOpenVPNサーバー側LAN機器へアクセスする方法<a class="headerlink" href="#openvpnlan" title="Permanent link">&para;</a></h1>
+<p>このチュートリアルでは、クライアント側から OpenVPN サーバーの LAN 上にある家庭内機器（NAS、IP カメラなど）へ、ドメイン名を使ってアクセスする方法を説明します。</p>
+<h2 id="_1">ネットワーク構成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>以下のように、クライアント側 LAN 上の PC から、それぞれのドメイン名を使って OpenVPN サーバー側 LAN にある NAS や IP カメラへアクセスできます。</p>
 <p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/topology_be9300_be3600.png" /></p>
-<h2 id="_2">セットアップ手順<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="1-hosts">1. サーバーでHostsを編集（オプション）<a class="headerlink" href="#1-hosts" title="Permanent link">&para;</a></h3>
-<p>この手順は、VPNサーバーがローカルドメイン名を適切に解決できない場合に適用されます。 unsureの場合は、この手順をスキップしてください。</p>
-<p>VPNサーバールー器官のWeb管理パネルにログインし、<strong>ネットワーク</strong> -&gt; <strong>DNS</strong> -&gt; <strong>Hostsを編集</strong>に移動します。</p>
+<h2 id="_2">設定手順<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1-hosts">1. サーバー側で Hosts を編集する（任意）<a class="headerlink" href="#1-hosts" title="Permanent link">&para;</a></h3>
+<p>この手順は、VPN サーバーがローカルドメイン名を正しく解決できない場合に必要です。必要かどうか分からない場合は、この手順はスキップしてください。</p>
+<p>VPN サーバールーターの Web 管理パネルにログインし、<strong>NETWORK</strong> -&gt; <strong>DNS</strong> -&gt; <strong>Edit Hosts</strong> に移動します。</p>
 <p><img alt="edit hosts" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/edit_hosts.png" /></p>
-<p>アクセスしたいホームデバイスのIPとドメイン名を入力し、<strong>適用</strong>をクリックします。</p>
+<p>アクセスしたい家庭内機器の IP アドレスとドメイン名を入力し、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="input ip domain" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/input_ip_domain.png" /></p>
-<h3 id="2-lan">2. サーバーでリモートアクセスLANを許可<a class="headerlink" href="#2-lan" title="Permanent link">&para;</a></h3>
-<p>サーバーのWeb管理パネルで、<strong>VPN</strong> -&gt; <strong>OpenVPNサーバー</strong>に移動します。右上の<strong>オプション</strong>をクリックします。</p>
+<h3 id="2-lan">2. サーバー側で LAN へのリモートアクセスを許可する<a class="headerlink" href="#2-lan" title="Permanent link">&para;</a></h3>
+<p>サーバーの Web 管理パネルで、<strong>VPN</strong> -&gt; <strong>OpenVPN Server</strong> に移動し、右上の <strong>Options</strong> をクリックします。</p>
 <p><img alt="ovpnserver options 4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnserver_options.png" /></p>
-<p><strong>LANサブネットへのリモートアクセスを許可</strong>を有効にし、<strong>適用</strong>をクリックします。</p>
+<p><strong>Allow Remote Access the LAN Subnet</strong> を有効にし、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="ovpnserver allow access lan 4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/allow_remote_access_lan.png" /></p>
-<p>有効にすると、ルー器官とLANデバイスはVPN経由でリモートアクセスできます。</p>
-<h3 id="3-vpn">3. VPN設定をエクスポート<a class="headerlink" href="#3-vpn" title="Permanent link">&para;</a></h3>
-<p>サーバーの管理パネルで、<strong>VPN</strong> -&gt; <strong>OpenVPNサーバー</strong> -&gt; <strong>設定</strong>タブに移動し、下部の<strong>クライアント設定ファイルをエクスポート</strong>をクリックします。</p>
+<p>有効にすると、VPN 経由でこのルーターおよび LAN 上の機器へリモートアクセスできるようになります。</p>
+<h3 id="3-vpn">3. VPN設定をエクスポートする<a class="headerlink" href="#3-vpn" title="Permanent link">&para;</a></h3>
+<p>サーバーの管理パネルで、<strong>VPN</strong> -&gt; <strong>OpenVPN Server</strong> -&gt; <strong>Configuration</strong> タブに移動し、下部の <strong>Export Client Configuration</strong> をクリックします。</p>
 <p><img alt="export config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/export1.png" /></p>
-<p>ポップアップウィンドウで、<strong>エクスポート</strong>をクリックします。</p>
-<p><strong>注意</strong>：サーバー上のパブリックIPアドレスが動ので時々変更する場合は、クライアント設定をエクスポートする前に、<strong>アプリケーション</strong> -&gt; <strong>ダイナミックDNS</strong>に移動して<strong>DDNS</strong>を有効にしてください。</p>
+<p>ポップアップウィンドウで <strong>Export</strong> をクリックします。</p>
+<p><strong>Note</strong>: サーバーのパブリック IP アドレスが動的で、ときどき変更される場合は、クライアント設定をエクスポートする前に <strong>APPLICATIONS</strong> -&gt; <strong>Dynamic DNS</strong> で <strong>DDNS</strong> を有効にしてください。</p>
 <p><img alt="export config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/export2.png" /></p>
-<p>すると、下図のようにのように<strong>.ovpn</strong>ファイルがなければならないられます。</p>
+<p>すると、以下のような <strong>.ovpn</strong> ファイルが取得できます。</p>
 <p><img alt="downloads" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/download.png" /></p>
-<p>サーバールー器官がファームウェアv4.8で降を実行している場合は、設定ファイルを編集する必要はありません。次の手順に進んでください。</p>
-<p>サーバールー器官がファームウェアv4.7で前を実行している場合は、このファイルを開き、DNSサーバーをOpenVPNサーバーのトンネルIPに設定するために以下の行を追加し、変更を保存します。</p>
+<p>サーバールーターがファームウェア v4.8 以降の場合は、設定ファイルを編集する必要はありません。そのまま次の手順へ進んでください。</p>
+<p>サーバールーターがファームウェア v4.7 以前の場合は、このファイルを開き、DNS サーバーを OpenVPN サーバーのトンネル IP に設定するために、以下の 1 行を追加して保存してください。</p>
 <p><code>dns server 1 address 10.8.0.1</code></p>
 <p><img alt="edit config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/edit_config.png" /></p>
-<h3 id="4-vpn">4. VPNクライアントを設定<a class="headerlink" href="#4-vpn" title="Permanent link">&para;</a></h3>
-<p>OpenVPNクライアントにログインし、ステップ3でエクスポートした設定ファイルをインポートします。</p>
-<p><img alt="client import config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/client_import.png" /></p>
-<p>接続が成功すると、緑色のドットが表示されます。</p>
-<p><img alt="client connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/client_connected.png" /></p>
-<h3 id="5-lan">5. クライアントからサーバーハウスのLANデバイスにアクセス<a class="headerlink" href="#5-lan" title="Permanent link">&para;</a></h3>
-<p>VPNに接続すると、ドメイン名を使用してOpenVPNサーバーのLANにあるホームデバイスにアクセスできます。</p>
-<p>例えば、ブラウザで<strong>http://gl-homeserver.local</strong>と入力してホームデバイスにアクセスできます。</p>
-<p>ブラウザがドメイン名を解決できない場合は、IPアドレス（例：<strong>http://192.168.8.168</strong>）を使用できます。</p>
+<p>ヒント: OpenVPN サーバーのトンネル IPv4 サブネットは、下図のように OpenVPN Server ページの <strong>Configuration</strong> タブで確認できます。ファームウェアによって異なるため、実際のトンネル IP を確認してください。</p>
+<p><img alt="ovpnserver tunnel ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnserver_tunnel_ip.png" /></p>
+<h3 id="4-vpn">4. VPNサーバーを有効にする<a class="headerlink" href="#4-vpn" title="Permanent link">&para;</a></h3>
+<p><strong>OpenVPN Server</strong> ページで、右上の <strong>Start</strong> ボタンをクリックしてサーバーを起動します。</p>
+<p><img alt="start server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnserver_start.png" /></p>
+<h3 id="5-vpn">5. VPN設定をアップロードする<a class="headerlink" href="#5-vpn" title="Permanent link">&para;</a></h3>
+<p>VPN クライアントルーターの Web 管理パネルにログインし、<strong>VPN</strong> -&gt; <strong>OpenVPN Client</strong> に移動して <strong>Add Manually</strong> をクリックします。</p>
+<p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnclient_upload1.png" /></p>
+<p>このグループの名前を設定し、設定ファイルをアップロードします。</p>
+<p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnclient_upload2.png" /></p>
+<p>アップロードが成功したら <strong>Apply</strong> をクリックします。</p>
+<p><img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnclient_upload3.png" /></p>
+<p>設定ファイルが一覧に表示されます。</p>
+<p><img alt="applied" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnclient_upload4.png" /></p>
+<h3 id="6-vpn">6. VPNクライアント接続を開始する<a class="headerlink" href="#6-vpn" title="Permanent link">&para;</a></h3>
+<p>三点アイコンをクリックして VPN 接続を開始します。</p>
+<p><img alt="start client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnclient_start.png" /></p>
+<p>灰色のドットが緑色に変われば、OpenVPN クライアントは正常にサーバーへ接続できています。</p>
+<p><img alt="ovpnclient connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnclient_connected.png" /></p>
+<p>これで、クライアント側 LAN の PC から、ドメイン名を使ってサーバー側 LAN の家庭内機器（NAS など）へアクセスできます。</p>
+<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ping_test.png" /></p>
 <hr />
 <p>まだ質問がありますか？<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>または<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a>をご覧ください。</p>
 
