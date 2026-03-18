@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#glinetvpn" class="md-skip">
+        <a href="#glinet-vpn" class="md-skip">
           Skip to content
         </a>
       
@@ -3146,22 +3146,22 @@
       
         <li class="md-nav__item">
   <a href="#vpn" class="md-nav__link">
-    VPNカスケードを有効にする方法
+    VPN カスケードを有効にする方法
   </a>
   
-    <nav class="md-nav" aria-label="VPNカスケードを有効にする方法">
+    <nav class="md-nav" aria-label="VPN カスケードを有効にする方法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#v47" class="md-nav__link">
-    ファームウェアv4.7で前
+    ファームウェア v4.7 以前
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#v48" class="md-nav__link">
-    ファームウェアv4.8で降
+    ファームウェア v4.8 以降
   </a>
   
 </li>
@@ -6153,22 +6153,22 @@
       
         <li class="md-nav__item">
   <a href="#vpn" class="md-nav__link">
-    VPNカスケードを有効にする方法
+    VPN カスケードを有効にする方法
   </a>
   
-    <nav class="md-nav" aria-label="VPNカスケードを有効にする方法">
+    <nav class="md-nav" aria-label="VPN カスケードを有効にする方法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#v47" class="md-nav__link">
-    ファームウェアv4.7で前
+    ファームウェア v4.7 以前
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#v48" class="md-nav__link">
-    ファームウェアv4.8で降
+    ファームウェア v4.8 以降
   </a>
   
 </li>
@@ -6193,90 +6193,90 @@
                   
 
 
-<h1 id="glinetvpn">GL.iNetルー器でVPNカスケードを使用する方法<a class="headerlink" href="#glinetvpn" title="Permanent link">&para;</a></h1>
+<h1 id="glinet-vpn">GL.iNet ルーターで VPN カスケードを使う方法<a class="headerlink" href="#glinet-vpn" title="Permanent link">&para;</a></h1>
 <h2 id="_1">はじめに<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>VPNカスケードはある些语境では「Double VPN」と呼ばれることがありますが、GL.iNetルー器では少し異なります。核心概念は下図のようにの通りです。</p>
+<p>VPN カスケードは、文脈によっては「Double VPN」と呼ばれることがありますが、GL.iNet ルーターでは少し意味合いが異なります。基本的な考え方は次のとおりです。</p>
 <p><img alt="gl.inet vpn cascading" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/mt2500_vpn-cascading.jpg" /></p>
-<p><strong>VPN 1（ルー器をVPNサーバーとして）</strong>：ルー器がVPNサーバーとして機能する場合、このサーバーに接続されたクライアントはデフォルトでルー器のISPネットワーク経由でインターネットにアクセスします。</p>
-<p><strong>VPN 2（ルー器をVPNクライアントとして）</strong>：ルー器はVPNクライアントとしても機能し、サードパーティのVPNサービスに接続します。</p>
-<p><strong>VPNカスケード</strong>：ルー器はVPN 1トンネルからVPN 2トンネルへトラフィックを転送し、VPN 1経由でルー器に接続された機器が、ルー器のISPネットワークではなくサードパーティのVPNサービス（VPN 2）経由でインターネットにアクセスできるようになります。</p>
-<h2 id="vpn">VPNカスケードを有効にする方法<a class="headerlink" href="#vpn" title="Permanent link">&para;</a></h2>
-<h3 id="v47">ファームウェアv4.7で前<a class="headerlink" href="#v47" title="Permanent link">&para;</a></h3>
+<p><strong>VPN 1（ルーターを VPN サーバーとして使用）</strong>: ルーターが VPN サーバーとして動作している場合、このサーバーに接続したクライアントは、デフォルトではルーターの ISP ネットワーク経由でインターネットにアクセスします。</p>
+<p><strong>VPN 2（ルーターを VPN クライアントとして使用）</strong>: ルーターは VPN クライアントとしても動作し、第三者の VPN サービスに接続します。</p>
+<p><strong>VPN カスケード</strong>: ルーターは VPN 1 のトンネルから VPN 2 のトンネルへトラフィックを転送します。これにより、VPN 1 経由でルーターに接続したデバイスは、ルーターの ISP ネットワークではなく、第三者の VPN サービス（VPN 2）経由でインターネットにアクセスできるようになります。</p>
+<h2 id="vpn">VPN カスケードを有効にする方法<a class="headerlink" href="#vpn" title="Permanent link">&para;</a></h2>
+<h3 id="v47">ファームウェア v4.7 以前<a class="headerlink" href="#v47" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>まず、ルー器をVPNサーバーとして設定します。速度をへ上させるためにWireGuardプロトコルを推奨します。<a href="../../interface_guide/wireguard_server/" target="_blank">このリンク</a>を参照してください。</p>
+<p>まず、ルーターを VPN サーバーとして設定します。より高速に利用するため、WireGuard プロトコルを推奨します。詳しくは <a href="../../interface_guide/wireguard_server/" target="_blank">こちら</a> をご覧ください。</p>
 </li>
 <li>
-<p>ルー器から設定ファイルをエクスポートし、VPN経由でルー器に接続するクライアント機器にアップロードします。</p>
+<p>ルーターから設定ファイルをエクスポートし、VPN 経由でルーターに接続するクライアントデバイスへアップロードします。</p>
 </li>
 <li>
-<p>ルー器をVPNクライアントとして設定し、サードパーティのVPNサービスに接続します。速度をへ上させるためにWireGuardプロトコルを推奨します。<a href="../../interface_guide/wireguard_client/" target="_blank">このリンク</a>を参照してください。</p>
+<p>ルーターを VPN クライアントとして設定し、第三者の VPN サービスに接続します。より高速に利用するため、WireGuard プロトコルを推奨します。詳しくは <a href="../../interface_guide/wireguard_client/" target="_blank">こちら</a> をご覧ください。</p>
 </li>
 <li>
-<p>接続が完たすると、<strong>VPN Dashboard</strong>ページが下図のようにのように表示され、ルー器はVPNサーバーとVPNクライアントの両方に設定されています。</p>
-<p><img alt="vpn dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/4.7-vpn-dashboard.png" /></p>
-<p>同じページのVPN Serverセクションに移動し、<strong>Global Options</strong>をクリックします。</p>
-<p><img alt="global options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/4.7-global-options.png" /></p>
-<p><strong>VPN Cascading</strong>を有効にし、<strong>Apply</strong>をクリックします。</p>
-<p><img alt="enable vpn cascading" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/enable_vpn_cascading.png" /></p>
-</li>
-<li>
-<p>VPNカスケードが有効になります。VPN経由でルー器に接続された機器は、ルー器のISPネットワークではなく、サードパーティのVPNサービス経由でインターネットにアクセスします。</p>
+<p>接続が完了すると、<strong>VPN Dashboard</strong> ページは以下のように表示され、ルーターが VPN サーバーと VPN クライアントの両方として設定されていることが分かります。</p>
 </li>
 </ol>
-<h3 id="v48">ファームウェアv4.8で降<a class="headerlink" href="#v48" title="Permanent link">&para;</a></h3>
+<p><img alt="vpn dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/4.7-vpn-dashboard.png" /></p>
+<p>同じページの <strong>VPN Server</strong> セクションに移動し、<strong>Global Options</strong> をクリックします。</p>
+<p><img alt="global options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/4.7-global-options.png" /></p>
+<p><strong>VPN Cascading</strong> を有効にして、<strong>Apply</strong> をクリックします。</p>
+<p><img alt="enable vpn cascading" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/enable_vpn_cascading.png" /></p>
+<ol>
+<li>これで VPN カスケードが有効になります。VPN 経由でルーターに接続したデバイスは、ルーターの ISP ネットワークではなく、第三者の VPN サービス経由でインターネットにアクセスします。</li>
+</ol>
+<h3 id="v48">ファームウェア v4.8 以降<a class="headerlink" href="#v48" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>まず、ルー器をVPNサーバーとして設定します。速度をへ上させるためにWireGuardプロトコルを推奨します。<a href="../../interface_guide/wireguard_server/" target="_blank">このリンク</a>を参照してください。</p>
+<p>まず、ルーターを VPN サーバーとして設定します。より高速に利用するため、WireGuard プロトコルを推奨します。詳しくは <a href="../../interface_guide/wireguard_server/" target="_blank">こちら</a> をご覧ください。</p>
 </li>
 <li>
-<p>ルー器から設定ファイルをエクスポートし、VPN経由でルー器に接続するクライアント機器にアップロードします。</p>
+<p>ルーターから設定ファイルをエクスポートし、VPN 経由でルーターに接続するクライアントデバイスへアップロードします。</p>
 </li>
 <li>
-<p>ルー器をVPNクライアントとして設定し、サードパーティのVPNサービスに接続します。速度をへ上させるためにWireGuardプロトコルを推奨します。<a href="../../interface_guide/wireguard_client/" target="_blank">このリンク</a>を参照してください。</p>
+<p>ルーターを VPN クライアントとして設定し、第三者の VPN サービスに接続します。より高速に利用するため、WireGuard プロトコルを推奨します。詳しくは <a href="../../interface_guide/wireguard_client/" target="_blank">こちら</a> をご覧ください。</p>
 </li>
 <li>
-<p>Web管理パネルで、<strong>VPN Dashboard</strong>に移動します。VPNモードに基づいて以下の該当する指示に従ってください。</p>
+<p>Web 管理パネルで <strong>VPN Dashboard</strong> に移動し、現在の VPN モードに応じて以下の手順を選択してください。</p>
 <details>
 <summary>Global Mode</summary>
-<p>VPNモードがGlobal Modeの場合、VPNクライアントが有効になると（下図のようにのように）、VPNカスケードが自動的に有効になります。</p>
-<p>VPN経由でルー器に接続された機器は、ルー器のISPネットワークではなく、サードパーティのVPNサービス経由でインターネットにアクセスします。</p>
+<p>VPN モードが <strong>Global Mode</strong> の場合、VPN クライアントを有効にすると（下図のとおり）、VPN カスケードは自動的に有効になります。</p>
+<p>VPN 経由でルーターに接続したデバイスは、ルーターの ISP ネットワークではなく、第三者の VPN サービス経由でインターネットにアクセスします。</p>
 <p><img alt="vpn connected global mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/4.8-global-mode.png" /></p>
 </details>
 <details>
 <summary>Policy Mode</summary>
-<p>VPNモードがPolicy Modeの場合、VPNトンネルのルールを設定する必要があります。</p>
+<p>VPN モードが <strong>Policy Mode</strong> の場合は、VPN トンネルルールを設定する必要があります。</p>
 <p>左側のグレーアウトされたボックスをクリックします。</p>
 <p><img alt="traffic from" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/traffic_from_1.png" /></p>
-<p>このルールに適用するトラフィックソースを選択します。VPNカスケードを有効にするには、<strong>All Clients</strong>を選択するか、<strong>Specified Connection Types</strong>を選択して<strong>WireGuard/OpenVPN Server</strong>をクリックします。</p>
+<p>このルールに適用するトラフィック送信元を選択します。VPN カスケードを有効にするには、<strong>All Clients</strong> を選択するか、<strong>Specified Connection Types</strong> を選択してから <strong>WireGuard/OpenVPN Server</strong> を選びます。</p>
 <p><img alt="select traffic source" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/select_traffic.jpg" /></p>
 <ul>
 <li>
-<p><strong>All Clients</strong>：これには、すべてのLAN機器、Drop-in Gatewayからの機器、Guestネットワークからの機器、およびVPN経由でルー器に接続された機器が含まれます。</p>
-<p>すべての機器からのトラフィックに同じトンネルを適用する場合は、<strong>All Clients</strong>を選択して<strong>Apply</strong>をクリックします。</p>
+<p><strong>All Clients</strong>: これには、すべての LAN デバイス、Drop-in Gateway 経由のデバイス、ゲストネットワークのデバイス、および VPN 経由でルーターに接続したデバイスが含まれます。</p>
+<p>すべてのデバイスのトラフィックに同じトンネルルールを適用したい場合は、<strong>All Clients</strong> を選択して <strong>Apply</strong> をクリックします。</p>
 <p><img alt="all clients" class="glboxshadow" src="https://static.gl.inet.com/docs/router/en/4/tutorials/vpn_cascading/all_clients.png" /></p>
 </li>
 <li>
-<p><strong>Specified Connection Types</strong>：特定の方法（例：VPN経由で接続された機器など）でルー器に接続された機器を指定して、このトンネルルールを適用できます。</p>
-<p>VPNクライアントに彼の機器とは異なるルールを適用する場合は、<strong>WireGuard/OpenVPN Server</strong>を選択して<strong>Apply</strong>をクリックします。</p>
+<p><strong>Specified Connection Types</strong>: 特定の接続方法でルーターに接続したデバイス（例: VPN 経由で接続したデバイス）だけに、このトンネルルールを適用できます。</p>
+<p>ルーターに接続している他のデバイスとは異なるルールを VPN クライアントに適用したい場合は、<strong>WireGuard/OpenVPN Server</strong> を選択して <strong>Apply</strong> をクリックします。</p>
 <p><img alt="specified connection" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/specified_connection_types.png" /></p>
-<p>これはPolicy ModeでのVPNトンネルルールの例です。</p>
+<p>以下は、<strong>Policy Mode</strong> における VPN トンネルルールの例です。</p>
 <p><img alt="vpn dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/4.8-vpn-dashboard.png" /></p>
 </li>
 </ul>
 </details>
 </li>
 <li>
-<p>VPNカスケードが有効になります。VPN経由でルー器に接続された機器は、ルー器のISPネットワークではなく、サードパーティのVPNサービス経由でインターネットにアクセスします。</p>
+<p>これで VPN カスケードが有効になります。VPN 経由でルーターに接続したデバイスは、ルーターの ISP ネットワークではなく、第三者の VPN サービス経由でインターネットにアクセスします。</p>
 </li>
 <li>
-<p><strong>接続テスト</strong>：VPN経由でルー器に接続されたラップトップでブラウザを開き、<a href="https://whatismyipaddress.com/" target="_blank">What Is My IP</a>にアクセスしてパブリックIPを確認します。</p>
-<p>ラップトップのIPアドレスがサードパーティのVPNサーバーの領域（この説明ではブエノスアイレス）に表示されている場合、VPNカスケードが生效していることを示します。</p>
+<p><strong>接続テスト</strong>: VPN 経由でルーターに接続したノート PC でブラウザを開き、<a href="https://whatismyipaddress.com/" target="_blank">What Is My IP</a> にアクセスしてパブリック IP を確認します。</p>
+<p>表示された IP アドレスの所在地が第三者 VPN サーバーの所在地（この例ではブエノスアイレス）になっていれば、VPN カスケードが有効になっていることを示します。</p>
 <p><img alt="vpn test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/4.8-ipcheck.png" /></p>
 </li>
 </ol>
 <hr />
-<p>ご不明な時がございましたら、<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>または<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a>をご覧ください。</p>
+<p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a> または <a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> をご利用ください。</p>
 
 
 
