@@ -2796,6 +2796,8 @@
       
         
       
+        
+      
     
     
     
@@ -3058,36 +3060,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wireguard" class="md-nav__link">
-    WireGuardサイト間トンネルのトポロジー
-  </a>
-  
-    <nav class="md-nav" aria-label="WireGuardサイト間トンネルのトポロジー">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-vpn" class="md-nav__link">
-    1. サーバーのVPNダッシュボードに移動する
+  <a href="#_1" class="md-nav__link">
+    トポロジー
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-wireguardip" class="md-nav__link">
-    2. WireGuardサーバーに移動し、プロファイルでクライアントIP（ゲートウェイ）を確認し、修正アイコンをクリックします。
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. サーバー側でルートルールを追加する
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#2-lan" class="md-nav__link">
+    2. クライアント側で LAN へのリモートアクセスを許可する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    3. 設定をダウンロードする
+    3. 接続をテストする
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3271,6 +3267,26 @@
   
   <span class="md-ellipsis">
     VPN クライアント DNS をサーバー上流 DNS にルーティングする
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_update_openvpn_server_certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenVPN サーバー証明書を更新する
   </span>
   
 
@@ -6145,36 +6161,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wireguard" class="md-nav__link">
-    WireGuardサイト間トンネルのトポロジー
-  </a>
-  
-    <nav class="md-nav" aria-label="WireGuardサイト間トンネルのトポロジー">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-vpn" class="md-nav__link">
-    1. サーバーのVPNダッシュボードに移動する
+  <a href="#_1" class="md-nav__link">
+    トポロジー
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-wireguardip" class="md-nav__link">
-    2. WireGuardサーバーに移動し、プロファイルでクライアントIP（ゲートウェイ）を確認し、修正アイコンをクリックします。
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. サーバー側でルートルールを追加する
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#2-lan" class="md-nav__link">
+    2. クライアント側で LAN へのリモートアクセスを許可する
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    3. 設定をダウンロードする
+    3. 接続をテストする
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -6193,26 +6203,61 @@
                   
 
 
-<h1 id="wireguardlan">サーバーからWireGuardクライアントLAN側にアクセスする方法<a class="headerlink" href="#wireguardlan" title="Permanent link">&para;</a></h1>
-<h2 id="wireguard">WireGuardサイト間トンネルのトポロジー<a class="headerlink" href="#wireguard" title="Permanent link">&para;</a></h2>
-<p>クライアント側の<strong>192.168.8.1</strong> <strong>(GL-AXT1800)</strong>のサブネット（NAS、IPカメラなど）にアクセスしたい場合：</p>
+<h1 id="wireguardlan">サーバー側からWireGuardクライアントのLAN側へアクセスする方法<a class="headerlink" href="#wireguardlan" title="Permanent link">&para;</a></h1>
+<p>このチュートリアルでは、WireGuardサーバー側から、WireGuardクライアント側のLANサブネットにあるデバイス（IPカメラ、NAS など）へアクセスする手順を説明します。</p>
+<h2 id="_1">トポロジー<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>下図では、GL-MT2500 が WireGuard サーバー、GL-AXT1800 がその WireGuard クライアントです。サーバー側から、GL-AXT1800 の LAN 側にあるデバイス（IPカメラや NAS など）へアクセスできます。</p>
 <p><img alt="Topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/Topology.jpg" /></p>
-<h3 id="1-vpn">1. サーバーのVPNダッシュボードに移動する<a class="headerlink" href="#1-vpn" title="Permanent link">&para;</a></h3>
-<p>アイコンをクリックしてカスタムルールページに入ります。
-<img alt="Custom rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/Custom%20rule.jpg" /></p>
-<p>アクセスしたいサブネットを入力します。この場合は<strong>192.168.8.0/24</strong>で、スコープに<strong>global</strong>を入力します。</p>
-<p>ゲートウェイはクライアントルーターのWireGuard IPです。WireGuardサーバーページで確認できます。</p>
-<p><img alt="addrule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/addrule.jpg" /></p>
-<h3 id="2-wireguardip">2. <strong>WireGuardサーバー</strong>に移動し、<strong>プロファイル</strong>でクライアントIP（ゲートウェイ）を確認し、修正アイコンをクリックします。<a class="headerlink" href="#2-wireguardip" title="Permanent link">&para;</a></h3>
-<p><img alt="gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/gateway.jpg" /></p>
-<p><strong>もっと詳しく</strong>をクリックします。</p>
-<p><img alt="Setup" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/setup.jpg" /></p>
-<p><strong>+</strong>をクリックして許可するIPを追加し、<strong>適用</strong>をクリックして新しい設定を取なければならないします。</p>
-<p><img alt="allowip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/allowip.jpg" /></p>
-<h3 id="3">3. 設定をダウンロードする<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<p>設定をクライアントルーター<strong>192.168.8.1</strong>にロードします。この場合はGL-AXT1800です。</p>
-<p><strong>GL-MT2500</strong>から<strong>192.168.8.1</strong> <strong>(GL-AXT1800)</strong>にpingを送信してテストできます。</p>
+<h2 id="1">1. サーバー側でルートルールを追加する<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<details>
+<summary>For firmware v4.7 and earlier</summary>
+<p><u>WireGuard サーバー側</u>の Web 管理画面にログインし、<strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Server</strong> に移動します。</p>
+<p>右側のルートアイコンをクリックして、ルートルール設定画面を開きます。</p>
+<p><img alt="add route rule 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-route-rule-1.jpg" /></p>
+<p>右上の <strong>Add Route Rule</strong> をクリックし、アクセスしたいサブネットを入力します。</p>
+<p><img alt="add route rule 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-route-rule-2.png" /></p>
+<p>たとえば、WireGuard クライアント GL-AXT1800 の LAN サブネットが <strong>192.168.8.0/24</strong> の場合、Target Address には <strong>192.168.8.0/24</strong> を入力します。</p>
+<p>Gateway には、WireGuard サーバーがこのクライアント向けに割り当てたクライアント IP を入力します。これは <strong>WireGuard Server</strong> ページの <strong>Profiles</strong> タブで確認できます。下図では、WireGuard クライアント GL-AXT1800 のクライアント IP は <strong>10.0.0.4</strong> です。</p>
+<p><img alt="client ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-client-ip.png" /></p>
+<p>そのため、Gateway は <strong>10.0.0.4</strong>、Scope は <strong>global</strong> に設定し、<strong>Apply</strong> をクリックします。</p>
+<p><img alt="add route rule 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-route-rule-3.jpg" /></p>
+</details>
+<details>
+<summary>For firmware v4.8 and higher</summary>
+<p><u>WireGuard サーバー側</u>の Web 管理画面にログインし、<strong>VPN</strong> -&gt; <strong>WireGuard Server</strong> に移動します。</p>
+<p><strong>Route Rules</strong> タブをクリックし、右側の <strong>Add Route Rule</strong> をクリックします。</p>
+<p><img alt="add route rule 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-1.png" /></p>
+<p>ポップアップウィンドウで、アクセスしたいサブネットを入力します。</p>
+<p><img alt="add route rule 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-2.png" /></p>
+<p>たとえば、WireGuard クライアント GL-AXT1800 の LAN サブネットが <strong>192.168.8.0/24</strong> の場合、Target Address には <strong>192.168.8.0/24</strong> を入力します。</p>
+<p>Gateway には、WireGuard サーバーがこのクライアント向けに割り当てたクライアント IP を入力します。これは同じページの <strong>Profiles</strong> タブで確認できます。下図では、WireGuard クライアント GL-AXT1800 のクライアント IP は <strong>10.1.0.2</strong> です。</p>
+<p><img alt="client ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-client-ip.png" /></p>
+<p>そのため、Gateway は <strong>10.1.0.2</strong> に設定し、<strong>Apply</strong> をクリックします。</p>
+<p><img alt="add route rule 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-3.png" /></p>
+</details>
+<h2 id="2-lan">2. クライアント側で LAN へのリモートアクセスを許可する<a class="headerlink" href="#2-lan" title="Permanent link">&para;</a></h2>
+<details>
+<summary>For firmware v4.7 and earlier</summary>
+<p><u>WireGuard クライアント側</u>の Web 管理画面にログインし、<strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Client</strong> に移動します。</p>
+<p>WireGuard の右側にある歯車アイコンをクリックします。</p>
+<p><img alt="wgclient options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-wgclient-options.png" /></p>
+<p>ポップアップウィンドウで <strong>Remote Access LAN</strong> を有効にし、<strong>Apply</strong> をクリックします。</p>
+<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-allow-remote-access-lan.png" /></p>
+</details>
+<details>
+<summary>For firmware v4.8 and higher</summary>
+<p><u>WireGuard クライアント側</u>の Web 管理画面にログインし、<strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> に移動します。</p>
+<p>VPN トンネル左上の歯車アイコンをクリックして、トンネルオプションを開きます。</p>
+<p><img alt="tunnel options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-tunnel-options.png" /></p>
+<p>ポップアップウィンドウで <strong>Allow Remote Access the LAN Subnet</strong> を有効にし、<strong>Apply</strong> をクリックします。</p>
+<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-allow-remote-access-lan.png" /></p>
+</details>
+<h2 id="3">3. 接続をテストする<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>WireGuard サーバー側から、WireGuard クライアントの LAN 側デバイスへアクセスできるか確認します。</p>
+<p><code>ping</code> を使って接続確認できます。たとえば、WireGuard サーバー（GL-MT2500）へ接続されているデバイスから、WireGuard クライアント（GL-AXT1800）の LAN 内にあるデバイスの IP アドレスへ <code>ping</code> を送り、応答が返るか確認してください。</p>
 <p><img alt="ping" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/ping.jpg" /></p>
+<hr />
+<p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> をご利用いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a> からお問い合わせください。</p>
 
 
 

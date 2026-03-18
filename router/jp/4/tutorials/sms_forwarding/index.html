@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.gl-inet.com/router/jp/4/tutorials/sms_forwarding/">
       
       
-        <link rel="prev" href="../route_vpn_client_dns_to_server_upstream_dns/">
+        <link rel="prev" href="../how_to_update_openvpn_server_certificates/">
       
       
         <link rel="next" href="../get_module_logs/">
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sms" class="md-skip">
+        <a href="#sms-forwarding" class="md-skip">
           Skip to content
         </a>
       
@@ -2794,6 +2794,8 @@
       
         
       
+        
+      
     
     
     
@@ -3204,6 +3206,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_update_openvpn_server_certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenVPN サーバー証明書を更新する
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3327,19 +3349,25 @@
     設定
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sms_1" class="md-nav__link">
-    メールへのSMS転送
+    <nav class="md-nav" aria-label="設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    メールで転送する
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#sms_2" class="md-nav__link">
-    携帯電話へのSMS転送
+        
+          <li class="md-nav__item">
+  <a href="#sms" class="md-nav__link">
+    SMSで転送する
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6150,19 +6178,25 @@
     設定
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sms_1" class="md-nav__link">
-    メールへのSMS転送
+    <nav class="md-nav" aria-label="設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    メールで転送する
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#sms_2" class="md-nav__link">
-    携帯電話へのSMS転送
+        
+          <li class="md-nav__item">
+  <a href="#sms" class="md-nav__link">
+    SMSで転送する
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6181,84 +6215,56 @@
                   
 
 
-<h1 id="sms">SMS転送<a class="headerlink" href="#sms" title="Permanent link">&para;</a></h1>
-<p>バージョン4.1で降、ルーターから携帯電話やメールにSMSメッセージを転送する機能が利用可能です。</p>
-<p><strong>注意</strong>：この機能は、オリジナルの4G LTE/5G NRモジュールを搭載したGL.iNetの4G/5Gモデルでのみ動作し、彼のモジュールやUSBモジュールではサポートされていません。</p>
-<p>SMSを転送する方法は2つあります：</p>
-<ul>
-<li>メールへのSMS転送</li>
-<li>携帯電話へのSMS転送</li>
-</ul>
+<h1 id="sms-forwarding">SMS Forwarding<a class="headerlink" href="#sms-forwarding" title="Permanent link">&para;</a></h1>
+<p>GL.iNet のセルラールーターは SMS Forwarding をサポートしており、受信したSMSメッセージを指定した宛先へ自動転送できます。</p>
+<p><strong>Note</strong>: この機能は、オリジナルの 4G LTE / 5G NR モジュールを搭載した GL.iNet のセルラールーターでのみ利用できます。他のモジュールやUSBモジュールではサポートされません。</p>
 <h2 id="_1">対応モデル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">ルーターモデル</th>
-<th style="text-align: center;">サポート</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">GL-XE3000 (Puli AX)</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-X3000 (Spitz AX)</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-XE300 (Puli)</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-E750 (Mudi)</td>
-<td style="text-align: center;">√</td>
-</tr>
-</tbody>
-</table>
+<p>??? "Supported Models" - GL-E5800 (Mudi 7) - GL-X2000 (Spitz Plus) - GL-X3000 (Spitz AX) - GL-XE3000 (Puli AX) - GL-E750 / E750V2 (Mudi) - GL-X750 / GL-X750V2 (Spitz) - GL-XE300 (Puli) - GL-X300B (Collie)</p>
+<p>??? "Unsupported Models" - GL-MT5000 (Brume 3) - GL-MT3600BE (Beryl 7) - GL-BE6500 (Flint 3e) - GL-BE9300 (Flint 3) - GL-BE3600 (Slate 7) - GL-B3000 (Marble) - GL-MT6000 (Flint2) - GL-AX1800 (Flint) - GL-MT2500 / GL-MT2500A (Brume 2) - GL-MT3000 (Beryl AX) - GL-AXT1800 (Slate AX) - GL-SFT1200 (Opal) - GL-A1300 (Slate Plus) - GL-MT1300 (Beryl) - GL-AR750S (Slate) - GL-MT300N-V2 (Mango) - GL-AR300M Series (Shadow) - GL-B1300 (Convexa-B) - GL-AP1300 (Cirrus)</p>
 <h2 id="_2">設定<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>ここではGL-XE300 (Puli)を例にとります。</p>
-<p>Web管理パネルの左側 -&gt; インターネット、セルラーセクター。封筒アイコンをクリックしてSMSページに移動すると、SMS転送設定が見つかります。</p>
-<p><img alt="sms setting" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/sms_forwarding/cellular_sms.png" /></p>
-<h2 id="sms_1">メールへのSMS転送<a class="headerlink" href="#sms_1" title="Permanent link">&para;</a></h2>
-<p><img alt="sms forwarding email" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/sms_forwarding/sms_forwarding_email.png" /></p>
+<p>ここでは GL-XE3000 (Puli AX) を例に説明します。</p>
+<p>Web管理画面の左側で <strong>INTERNET</strong> -&gt; <strong>Cellular</strong> に移動します。</p>
+<p>右上の封筒アイコンをクリックして SMS ページを開くと、SMS Forwarding の設定項目が表示されます。</p>
+<p><img alt="sms setting" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.8/sms.png" /></p>
+<h3 id="_3">メールで転送する<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><img alt="sms forwarding email" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/sms_forwarding/sms_forward_email.png" /></p>
 <ul>
-<li><strong>SMTPサーバーアドレス</strong>、ドロップダウンリストにはGmail、Outlook、iCloud、Yahooのプリセットサーバーアドレスが含まれています。彼のメールプロバイダーを使用している場合は、そのドキュメントを確認するかサポートに連絡してください。</li>
-<li><strong>暗号化方法</strong>、オプションは3つあります：なし、SSL/TLS、STARTTLS。</li>
-<li><strong>ユーザー名</strong>、メールアドレス。</li>
-<li><strong>パスワード</strong>、アプリ固有のパスワードまたはログインアカウントのパスワード。Gmail、Outlook、iCloud、Yahooについては、以下のガイドを確認してください。</li>
-<li><strong>件名</strong>、メールの件名。</li>
+<li><strong>SMTP Server Address</strong>: ドロップダウンリストには Gmail、Outlook、iCloud、Yahoo のプリセットサーバーアドレスがあります。他のメールプロバイダーを使用する場合は、その公式ドキュメントを確認するか、サポートへ問い合わせてください。</li>
+<li><strong>Encryption Method</strong>: <code>none</code>、<code>SSL/TLS</code>、<code>STARTTLS</code> の3種類があります。</li>
+<li><strong>Username</strong>: メールアドレスを入力します。</li>
+<li><strong>Password</strong>: アプリ専用パスワード、またはログイン用アカウントのパスワードを入力します。Gmail、Outlook、iCloud、Yahoo については以下の案内を参照してください。</li>
+<li><strong>Subject</strong>: メールの件名を設定します。</li>
 </ul>
 <details>
 <summary>Gmail</summary>
-<p>Gmailの場合、Googleアカウントにログインして<strong>アプリパスワード</strong>を作成する必要があります。公式ガイド<a href="https://support.google.com/accounts/answer/185833?hl=ja" target="_blank">アプリパスワードでサインイン</a>を確認してください。アプリパスワードを作成する前に、2段階認証を有効にする必要があります。</p>
-<p>465と587の両方のポートが使用可能です。</p>
+<p>Gmail を使用する場合は、Google アカウントへログインして <strong>App Passwords</strong> を作成する必要があります。公式ガイド <a href="https://support.google.com/accounts/answer/185833?hl=en" target="_blank">Sign in with App Passwords</a> を参照してください。App Passwords を作成する前に、2段階認証を有効にする必要があります。</p>
+<p>ポート 465 と 587 の両方を使用できます。</p>
 </details>
 <details>
 <summary>Outlook</summary>
-<p>Outlookの場合、特別な設定なしに直接パスワードを使用できます。ポート587をサポートしています。公式ガイド<a href="https://support.microsoft.com/ja-jp/office/pop-imap-and-smtp-settings-for-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040" target="_blank">Outlook.comのPOP、IMAP、およびSMTP設定</a>を確認してください。</p>
+<p>Outlook では特別な設定なしで通常のパスワードを使用でき、ポート 587 をサポートしています。公式ガイド <a href="https://support.microsoft.com/en-us/office/pop-imap-and-smtp-settings-for-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040" target="_blank">POP, IMAP, and SMTP settings for Outlook.com</a> を参照してください。</p>
 </details>
 <details>
 <summary>iCloud</summary>
-<p>iCloudを使用する場合、ログインにはアプリケーション固有のパスワードを作成する必要があり、ポート587をサポートしています。公式ガイドを参照してください：<a href="https://support.apple.com/en-hk/HT202304" target="_blank">彼のメールクライアントアプリ用のiCloudメールサーバー設定</a>および<a href="https://support.apple.com/en-gb/HT204397" target="_blank">アプリケーション固有のパスワードの生成</a>。</p>
+<p>iCloud を使用する場合は、ログイン用に app-specific password を作成する必要があり、ポート 587 をサポートしています。公式ガイド <a href="https://support.apple.com/en-hk/HT202304" target="_blank">iCloud Mail server settings for other email client apps</a> と <a href="https://support.apple.com/en-gb/HT204397" target="_blank">Generate an app-specific password</a> を参照してください。</p>
 </details>
 <details>
 <summary>Yahoo</summary>
-<p>Yahooの場合、ログインにアプリパスワードを設定する必要があります。ポート465と587の両方をサポートしています。公式ガイド<a href="https://help.yahoo.com/kb/SLN4724.html" target="_blank">YahooメールのPOPアクセス設定と手順</a>および<a href="https://help.yahoo.com/kb/SLN15241.html" target="_blank">サードパーティのアプリパスワードの生成と管理</a>を参照してください。</p>
+<p>Yahoo を使用する場合は、ログイン用に app password を設定する必要があり、ポート 465 と 587 の両方をサポートしています。公式ガイド <a href="https://help.yahoo.com/kb/SLN4724.html" target="_blank">POP access settings and instructions for Yahoo Mail</a> と <a href="https://help.yahoo.com/kb/SLN15241.html" target="_blank">Generate and manage third-party app passwords</a> を参照してください。</p>
 </details>
-<p><strong>注意</strong>：メールサービスによっては、SMTPで送信できるメールの数に1日あたりの制限があります。サービスプロバイダーに相談してください。</p>
-<p>最大10件のメールアドレスを追加できます。</p>
-<h2 id="sms_2">携帯電話へのSMS転送<a class="headerlink" href="#sms_2" title="Permanent link">&para;</a></h2>
-<p><img alt="sms forwarding phone" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/sms_forwarding/sms_forwarding_phone.png" /></p>
-<p>トグルをオンにして、国番号を選択し、電話番号を入力し、最も後に適用ボタンをクリックします。</p>
-<p>最大10件の携帯電話番号を追加できます。</p>
+<p><strong>Note</strong>: 各メール送信元には SMTP の送信制限がある場合があります。たとえば、1日に送信できるメール数に上限があることがあります。詳細は利用中のサービスプロバイダーへ確認してください。</p>
+<p>メールアドレスは最大 10 件まで追加できます。</p>
+<h3 id="sms">SMSで転送する<a class="headerlink" href="#sms" title="Permanent link">&para;</a></h3>
+<p><img alt="sms forwarding phone" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/sms_forwarding/sms_forward_phone.png" /></p>
+<p>国番号を選択し、電話番号を入力して <strong>Apply</strong> をクリックします。</p>
+<p>携帯電話番号は最大 10 件まで追加できます。</p>
 <hr />
-<p>関連する記事</p>
+<p>関連記事</p>
 <ul>
 <li><a href="../../interface_guide/sms/">SMS</a></li>
 </ul>
 <hr />
-<p>まだ質問がありますか？私たちの<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>をご覧ください。</p>
+<p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> をご利用いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a> からお問い合わせください。</p>
 
 
 

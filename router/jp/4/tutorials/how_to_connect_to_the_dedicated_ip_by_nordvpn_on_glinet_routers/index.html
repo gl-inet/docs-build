@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#glinetnordvpnip" class="md-skip">
+        <a href="#glinetnordvpndedicated-ip" class="md-skip">
           Skip to content
         </a>
       
@@ -2796,6 +2796,8 @@
       
         
       
+        
+      
     
     
     
@@ -3207,6 +3209,26 @@
   
   <span class="md-ellipsis">
     VPN クライアント DNS をサーバー上流 DNS にルーティングする
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_update_openvpn_server_certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenVPN サーバー証明書を更新する
   </span>
   
 
@@ -6087,37 +6109,36 @@
                   
 
 
-<h1 id="glinetnordvpnip">GL.iNetルーターでNordVPNの専用IPに接続する方法<a class="headerlink" href="#glinetnordvpnip" title="Permanent link">&para;</a></h1>
-<p>この記事では、NordVPNの専用IPを設定する手順を紹介します。ここではGL-AXT1800を例にしていますが、彼のモデルも same 様です。</p>
+<h1 id="glinetnordvpndedicated-ip">GL.iNetルーターでNordVPNのDedicated IPに接続する方法<a class="headerlink" href="#glinetnordvpndedicated-ip" title="Permanent link">&para;</a></h1>
+<p>この記事では、NordVPNのDedicated IPを設定する手順を紹介します。</p>
+<p>ここでは GL-AXT1800 を例に説明します。</p>
 <ol>
-<li>
-<p>Nordアカウントにログインして、専用IP情報を確認します。以下の画像のように、割り当てられたIPは<strong>193.32.211.142</strong>で、サーバ情報は<strong>United Kingdom #1625</strong>です。</p>
+<li>Nord Account にログインし、Dedicated IP の情報を確認します。下図の例では、割り当てられたIPアドレスは <strong>193.32.211.142</strong>、サーバー情報は <strong>United Kingdom #1625</strong> です。</li>
+</ol>
 <p><img alt="nordvpn dedicated ip info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/dedicated_ip_info.png" /></p>
-</li>
-<li>
-<p>このリンクにアクセスします: <a href="https://nordvpn.com/ovpn/">https://nordvpn.com/ovpn/</a> そして<strong>United Kingdom #1625</strong>の設定ファイルを見つけます。ここでは<strong>uk1625.nordvpn.com</strong>です。UDPまたはTCPの設定ファイルをダウンロードします。</p>
+<ol>
+<li><a href="https://nordvpn.com/ovpn/" target="_blank">https://nordvpn.com/ovpn/</a> にアクセスし、<strong>United Kingdom #1625</strong> の設定ファイルを探します。必要に応じてUDPまたはTCPの設定ファイルをダウンロードしてください。</li>
+</ol>
 <p><img alt="download nordvpn dedicated ip info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/download_dedicated_ip_config.png" /></p>
-</li>
-<li>
-<p>Nordアカウントページに戻り、マニュアル設定に進み、<strong>Set up NordVPN Manually</strong>をクリックしてサービス認証情報を取なければならないします。</p>
+<ol>
+<li>Nord Account のページへ戻り、Manual setup に進んで <strong>Set up NordVPN Manually</strong> をクリックし、サービス認証情報を確認します。</li>
+</ol>
 <p><img alt="nordvpn manual setup" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/nordvpn_manual_setup.png" /></p>
 <p><img alt="nordvpn manual setup service credential" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/nordvpn_manual_setup_service_credential.png" /></p>
-</li>
-<li>
-<p>ルーターのWeb管理パネルにログインし、VPN &gt; OpenVPN Clientに進み、新しいグループを作成して、ステップ2でダウンロードした設定ファイルをアップロードします。その後、ステップ3で取なければならないしたサービス認証情報を入力します。</p>
-<p><img alt="set up nordvpn on glinet router" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/set_up_nordvpn_on_glinet_router.png" /></p>
-</li>
-<li>
-<p>VPNダッシュボードに進み、設定ファイルを選択して<strong>適用</strong>をクリックして接続します。</p>
-<p><img alt="connect nordvpn on glinet router" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/connect_nordvpn_on_glinet_router.png" /></p>
-</li>
-<li>
-<p>接続が完了したら、このウェブサイトにアクセスして公開IPを確認します: <a href="https://whatismyipaddress.com/">https://whatismyipaddress.com/</a> そして、NordVPNの専用IPと一致するか確認します。</p>
-<p><img alt="check ip after connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/check_ip_after_connected.png" /></p>
-</li>
+<ol>
+<li>ルーターのWeb管理画面にログインし、<strong>VPN</strong> &gt; <strong>OpenVPN Client</strong> に移動します。新しいグループを作成して、手順2でダウンロードした設定ファイルをアップロードします。続いて、手順3で確認したサービス認証情報を入力します。</li>
 </ol>
+<p><img alt="set up nordvpn on glinet router" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/set_up_nordvpn_on_glinet_router.png" /></p>
+<ol>
+<li><strong>VPN Dashboard</strong> に移動し、設定ファイルを選択して <strong>Apply</strong> をクリックし、接続します。</li>
+</ol>
+<p><img alt="connect nordvpn on glinet router" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/connect_nordvpn_on_glinet_router.png" /></p>
+<ol>
+<li>接続後、<a href="https://whatismyipaddress.com/" target="_blank">https://whatismyipaddress.com/</a> で現在のパブリックIPアドレスを確認し、NordVPNのDedicated IPと一致しているか確認します。</li>
+</ol>
+<p><img alt="check ip after connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/check_ip_after_connected.png" /></p>
 <hr />
-<p>まだ質問がありますか？私たちの<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>にアクセスしてください。</p>
+<p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> をご利用いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a> からお問い合わせください。</p>
 
 
 

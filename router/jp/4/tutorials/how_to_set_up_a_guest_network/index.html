@@ -2794,6 +2794,8 @@
       
         
       
+        
+      
     
     
     
@@ -3195,6 +3197,26 @@
   
   <span class="md-ellipsis">
     VPN クライアント DNS をサーバー上流 DNS にルーティングする
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_update_openvpn_server_certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenVPN サーバー証明書を更新する
   </span>
   
 
@@ -3715,10 +3737,10 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    管理パネル経由でゲストネットワークを設定
+    管理画面からゲストネットワークを設定する
   </a>
   
-    <nav class="md-nav" aria-label="管理パネル経由でゲストネットワークを設定">
+    <nav class="md-nav" aria-label="管理画面からゲストネットワークを設定する">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3730,7 +3752,7 @@
         
           <li class="md-nav__item">
   <a href="#2-wi-fi" class="md-nav__link">
-    2. 新しいゲストWi-Fiネットワークのパスワードを設定する
+    2. ゲストWi-Fiネットワークの新しいパスワードを設定する
   </a>
   
 </li>
@@ -3742,10 +3764,10 @@
       
         <li class="md-nav__item">
   <a href="#glinet" class="md-nav__link">
-    GL.iNetモバイルアプリ経由でゲストネットワークを設定
+    GL.iNetモバイルアプリからゲストネットワークを設定する
   </a>
   
-    <nav class="md-nav" aria-label="GL.iNetモバイルアプリ経由でゲストネットワークを設定">
+    <nav class="md-nav" aria-label="GL.iNetモバイルアプリからゲストネットワークを設定する">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3757,7 +3779,7 @@
         
           <li class="md-nav__item">
   <a href="#2-wi-fi_1" class="md-nav__link">
-    2. 新しいゲストWi-Fiネットワークのパスワードを設定する
+    2. ゲストWi-Fiネットワークの新しいパスワードを設定する
   </a>
   
 </li>
@@ -6166,10 +6188,10 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    管理パネル経由でゲストネットワークを設定
+    管理画面からゲストネットワークを設定する
   </a>
   
-    <nav class="md-nav" aria-label="管理パネル経由でゲストネットワークを設定">
+    <nav class="md-nav" aria-label="管理画面からゲストネットワークを設定する">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -6181,7 +6203,7 @@
         
           <li class="md-nav__item">
   <a href="#2-wi-fi" class="md-nav__link">
-    2. 新しいゲストWi-Fiネットワークのパスワードを設定する
+    2. ゲストWi-Fiネットワークの新しいパスワードを設定する
   </a>
   
 </li>
@@ -6193,10 +6215,10 @@
       
         <li class="md-nav__item">
   <a href="#glinet" class="md-nav__link">
-    GL.iNetモバイルアプリ経由でゲストネットワークを設定
+    GL.iNetモバイルアプリからゲストネットワークを設定する
   </a>
   
-    <nav class="md-nav" aria-label="GL.iNetモバイルアプリ経由でゲストネットワークを設定">
+    <nav class="md-nav" aria-label="GL.iNetモバイルアプリからゲストネットワークを設定する">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -6208,7 +6230,7 @@
         
           <li class="md-nav__item">
   <a href="#2-wi-fi_1" class="md-nav__link">
-    2. 新しいゲストWi-Fiネットワークのパスワードを設定する
+    2. ゲストWi-Fiネットワークの新しいパスワードを設定する
   </a>
   
 </li>
@@ -6235,48 +6257,53 @@
 
 <h1 id="glinetwi-fi">GL.iNetルーターでゲストWi-Fiネットワークを設定する方法<a class="headerlink" href="#glinetwi-fi" title="Permanent link">&para;</a></h1>
 <p>このチュートリアルでは、GL.iNetルーターでゲストWi-Fiネットワークを設定する方法を説明します。</p>
-<p>ゲストWi-Fiネットワークとは、ルーター上の別のネットワークで、ゲストデバイスやスマートホームデバイスなど、メインデバイスから隔離したいデバイス用のものです。ゲストネットワークを作成することで、メインネットワークへの不正アクセスや潜在的な攻撃を防ぎ、ネットワークのセキュリティを強化することができます。</p>
-<p>GL.iNetルーターでゲストWi-Fiネットワークを設定する方法は2つあります: <a href="#管理パネル経由でゲストネットワークを設定">ルーター管理パネル</a> または <a href="#glinetモバイルアプリ経由でゲストネットワークを設定">GL.iNetモバイルアプリ</a> を使用する方法です。</p>
-<h2 id="_1">管理パネル経由でゲストネットワークを設定<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>ゲストWi-Fiネットワークは、メインのデバイスとは分離して運用したい端末向けの別ネットワークです。たとえば、来客用デバイスやスマートホーム機器などを接続できます。ゲストネットワークを作成することで、メインネットワークへの不正アクセスや潜在的な攻撃を防ぎ、ネットワークの安全性を高められます。</p>
+<p>GL.iNetルーターでゲストWi-Fiネットワークを設定する方法は2つあります。<a href="#管理画面からゲストネットワークを設定する">ルーターの管理画面</a>を使う方法と、<a href="#glinetモバイルアプリからゲストネットワークを設定する">GL.iNetモバイルアプリ</a>を使う方法です。</p>
+<h2 id="_1">管理画面からゲストネットワークを設定する<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="1-wi-fi">1. ゲストWi-Fiネットワークを有効にする<a class="headerlink" href="#1-wi-fi" title="Permanent link">&para;</a></h3>
 <ol>
-<li>ウェブブラウザで「192.168.8.1」と入力します。</li>
-<li>パスワードを入力し、<strong>ログイン</strong>をクリックします。</li>
-<li>左側のサイドバーで<strong>ワイヤレス</strong>をクリックします。
-<img alt="click wireless" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_a_guest_network/click-wireless.jpeg" /></li>
-<li>5GHzまたは2.4GHzのWi-Fiネットワークセクションで、<strong>ゲストWi-Fi</strong>タブをクリックします。
-<img alt="click guest" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_a_guest_network/click-guest-wifi.jpeg" /></li>
-<li><strong>Wi-Fiを有効にする</strong>の横のスイッチをオンにします。</li>
+<li>Webブラウザーで <code>192.168.8.1</code> を開きます。</li>
+<li>パスワードを入力し、<strong>Login</strong> をクリックします。</li>
+<li>左側のサイドバーで <strong>Wireless</strong> をクリックします。
+   <img alt="click wireless" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_a_guest_network/click-wireless.jpeg" /></li>
+<li>5GHz または 2.4GHz のWi-Fiネットワークセクションで、<strong>Guest Wi-Fi</strong> タブをクリックします。
+   <img alt="click guest" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_a_guest_network/click-guest-wifi.jpeg" /></li>
+<li><strong>Enable Wi-Fi</strong> の横にあるスイッチをオンにします。</li>
 </ol>
-<h3 id="2-wi-fi">2. 新しいゲストWi-Fiネットワークのパスワードを設定する<a class="headerlink" href="#2-wi-fi" title="Permanent link">&para;</a></h3>
-<p>セキュリティを確保するために、ゲストWi-Fiネットワークの新しいパスワードを設定することをお勧めします。以下の手順に従ってください：</p>
+<h3 id="2-wi-fi">2. ゲストWi-Fiネットワークの新しいパスワードを設定する<a class="headerlink" href="#2-wi-fi" title="Permanent link">&para;</a></h3>
+<p>セキュリティ向上のため、ゲストWi-Fiネットワークには新しいパスワードを設定することを推奨します。手順は次のとおりです。</p>
 <ol>
-<li><strong>修正</strong>をクリックします。
-<img alt="click modify" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_a_guest_network/click-modify.jpeg" /></li>
-<li><strong>Wi-Fiパスワード</strong>の横に新しいパスワードを入力します。（<strong>Wi-Fi名</strong>の横に新しいネットワーク名を入力することもできます。）</li>
-<li>その後、<strong>適用する</strong>をクリックします。</li>
+<li><strong>Modify</strong> をクリックします。
+   <img alt="click modify" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_a_guest_network/click-modify.jpeg" /></li>
+<li><strong>Wi-Fi Password</strong> の横に新しいパスワードを入力します。必要に応じて、<strong>Wi-Fi Name</strong> の横に新しいネットワーク名を入力することもできます。</li>
+<li><strong>Apply</strong> をクリックします。</li>
 </ol>
-<p>これでゲストWi-Fiネットワークが設定されました。デバイスを接続するには、利用可能なネットワークのリストからゲストネットワーク名を見つけ、パスワードを入力します。</p>
-<h2 id="glinet">GL.iNetモバイルアプリ経由でゲストネットワークを設定<a class="headerlink" href="#glinet" title="Permanent link">&para;</a></h2>
-<p><strong>注意:</strong> 始める前に、GL.iNetモバイルアプリをデバイスにインストールして設定してください。</p>
+<p>これでゲストWi-Fiネットワークの設定は完了です。デバイスを接続するには、利用可能なネットワーク一覧からゲストネットワーク名を選び、設定したパスワードを入力してください。</p>
+<h2 id="glinet">GL.iNetモバイルアプリからゲストネットワークを設定する<a class="headerlink" href="#glinet" title="Permanent link">&para;</a></h2>
+<p><strong>Note:</strong> 開始前に、GL.iNetモバイルアプリを端末へインストールし、初期設定を済ませてください。</p>
 <h3 id="1-wi-fi_1">1. ゲストWi-Fiネットワークを有効にする<a class="headerlink" href="#1-wi-fi_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li>メインアプリ画面で、<strong>ネットワーク</strong>タブ &gt; <strong>ワイヤレス</strong>をタップします。</li>
-<li><strong>ゲスト・ネットワーク</strong>を見つけます。</li>
+<li>アプリのメイン画面で、<strong>Network</strong> タブ &gt; <strong>Wireless</strong> をタップします。</li>
+<li><strong>Guest Network</strong> を見つけます。</li>
 <li>ゲストWi-Fiネットワークを設定したいネットワークのスイッチをオンにします。
-<img alt="toggle the switch" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_a_guest_network/toggle-on-guest-network.jpeg" /></li>
+   <img alt="toggle the switch" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_a_guest_network/toggle-on-guest-network.jpeg" /></li>
 </ol>
-<h3 id="2-wi-fi_1">2. 新しいゲストWi-Fiネットワークのパスワードを設定する<a class="headerlink" href="#2-wi-fi_1" title="Permanent link">&para;</a></h3>
-<p>セキュリティを確保するために、ゲストWi-Fiネットワークの新しいパスワードを設定することをお勧めします。以下の手順に従ってください：</p>
+<h3 id="2-wi-fi_1">2. ゲストWi-Fiネットワークの新しいパスワードを設定する<a class="headerlink" href="#2-wi-fi_1" title="Permanent link">&para;</a></h3>
+<p>セキュリティ向上のため、ゲストWi-Fiネットワークには新しいパスワードを設定することを推奨します。手順は次のとおりです。</p>
 <ol>
-<li>ゲストWi-Fiネットワークを設定したネットワークの<strong>SSID</strong>オプションをタップします。</li>
-<li><strong>パスワード</strong>の横に新しいパスワードを入力します。（SSIDフィールドに新しいネットワーク名を入力することもできます。）
-<img alt="enter a new password" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_a_guest_network/tap-password.jpeg" /></li>
-<li><strong>完た</strong>をタップします</li>
+<li>ゲストWi-Fiネットワークを設定した対象ネットワークの <strong>SSID</strong> をタップします。</li>
+<li><strong>Password</strong> の横に新しいパスワードを入力します。必要に応じて、SSID欄で新しいネットワーク名を入力することもできます。
+   <img alt="enter a new password" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_set_up_a_guest_network/tap-password.jpeg" /></li>
+<li><strong>Done</strong> をタップします。</li>
 </ol>
-<p>これでゲストWi-Fiネットワークが設定されました。デバイスを接続するには、利用可能なネットワークのリストからゲストネットワーク名を見つけ、パスワードを入力します。</p>
+<p>これでゲストWi-Fiネットワークの設定は完了です。デバイスを接続するには、利用可能なネットワーク一覧からゲストネットワーク名を選び、設定したパスワードを入力してください。</p>
 <hr />
-<p>まだ質問がありますか？私たちの<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>にアクセスしてください。</p>
+<p>関連記事:</p>
+<ul>
+<li><a href="../../interface_guide/guest_network/">Guest Network</a></li>
+</ul>
+<hr />
+<p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> をご利用いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a> からお問い合わせください。</p>
 
 
 

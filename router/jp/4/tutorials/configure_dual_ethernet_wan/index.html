@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ethernet-to-usb-a-lan-wan" class="md-skip">
+        <a href="#ethernet-to-usb-aethernet-wan" class="md-skip">
           Skip to content
         </a>
       
@@ -2794,6 +2794,8 @@
       
         
       
+        
+      
     
     
     
@@ -3195,6 +3197,26 @@
   
   <span class="md-ellipsis">
     VPN クライアント DNS をサーバー上流 DNS にルーティングする
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_update_openvpn_server_certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenVPN サーバー証明書を更新する
   </span>
   
 
@@ -3775,7 +3797,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    構成
+    トポロジー
   </a>
   
 </li>
@@ -6126,7 +6148,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    構成
+    トポロジー
   </a>
   
 </li>
@@ -6153,35 +6175,35 @@
                   
 
 
-<h1 id="ethernet-to-usb-a-lan-wan">Ethernet to USB-A アダプターを使用して有線LAN WANを二重に設定する<a class="headerlink" href="#ethernet-to-usb-a-lan-wan" title="Permanent link">&para;</a></h1>
-<p>単一WANポートルーターで、Ethernet to USB-A アダプターを使用して有線LAN WANアクセスを二重に設定できます。</p>
-<p>GL.iNetルーターは、一般的なEthernet to USB-A アダプターをサポートしています。これにより、ISPルーターからの有線LANアクセスをルーターのUSBポート経由でUSB接続に変換し、WANポートに加えてルーターに追加の有線LANアクセスを提供します。</p>
-<h2 id="_1">構成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h1 id="ethernet-to-usb-aethernet-wan">Ethernet to USB-Aアダプター経由でデュアル有線Ethernet WANを設定する方法<a class="headerlink" href="#ethernet-to-usb-aethernet-wan" title="Permanent link">&para;</a></h1>
+<p>Ethernet to USB-A アダプターを使うことで、WANポートが1つしかないルーターでも、デュアル有線Ethernet WANアクセスを構成できます。</p>
+<p>GL.iNetルーターは一般的なEthernet to USB-A アダプターをサポートしています。これにより、ISPルーターからの有線Ethernet接続を、ルーターのUSBポート経由のUSB接続へ変換できます。その結果、WANポートに加えて、追加の有線Ethernet接続を利用できるようになります。</p>
+<h2 id="_1">トポロジー<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><img alt="Topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/adaptor.png" /></p>
 <h2 id="_2">セットアップ手順<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Ethernet to USB-A アダプターをGL.iNetルーターのUSBポートに差し込み、もう一方の端をISPルーターに接続します。</p>
+<p>Ethernet to USB-A アダプターを GL.iNet ルーターのUSBポートへ接続し、もう一方の端を ISP ルーターへ接続します。</p>
 </li>
 <li>
 <p>USBドライバーをインストールします。</p>
-<p>ルーターのWeb管理パネルにログインし、<strong>アプリケーション</strong> -&gt; <strong>プラグイン</strong>に移動して、アダプター用のUSBネットワークドライバーをインストールします。</p>
-<p>例えば、Realtek アダプターを使用する場合は、<strong>kmod-usb-net-rtl8152</strong>ドライバーをインストールしてください。</p>
-<p><img alt="plugins" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/plugins_usb.png" /></p>
-<p>インストールが完たするまでお待ちください。</p>
-<p><img alt="installation suceeded" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/suceeded.png" /></p>
-</li>
-<li>
-<p>USBテザリングで接続します。</p>
-<p>ドライバーインストールが完了したら、<strong>インターネット</strong> -&gt; <strong>テザリング</strong>セクションに移動します。</p>
-<p>USB接続が検出され、ISPルーターに接続できます。</p>
-<p><img alt="detected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/detected.png" /></p>
-<p><strong>接続</strong>をクリックして1分待ちます。绿灯が時灯し、ページ上にIPアドレスなどの情報が表示された場合、USBテザリング接続は成功しています。</p>
-<p><img alt="tether" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/tether.png" /></p>
 </li>
 </ol>
+<p>ルーターのWeb管理画面にログインし、<strong>Application</strong> -&gt; <strong>Plug-ins</strong> に移動して、使用しているアダプター向けのUSBネットワークドライバーをインストールします。</p>
+<p>たとえば、Realtek 製アダプターを使用している場合は、<strong>kmod-usb-net-rtl8152</strong> ドライバーをインストールしてください。</p>
+<p><img alt="plugins" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/plugins_usb.png" /></p>
+<p>インストールが完了するまで待ちます。</p>
+<p><img alt="installation suceeded" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/suceeded.png" /></p>
+<ol>
+<li>USB Tethering で接続します。</li>
+</ol>
+<p>ドライバーのインストールが完了したら、<strong>INTERNET</strong> -&gt; <strong>Tethering</strong> セクションに移動します。</p>
+<p>USB接続が検出され、ISPルーターへ接続できるようになります。</p>
+<p><img alt="detected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/detected.png" /></p>
+<p><strong>Connect</strong> をクリックして1分ほど待ちます。緑色のドットが点灯し、ページにIPアドレスなどの情報が表示されれば、USB Tethering 接続は成功しています。</p>
+<p><img alt="tether" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/multiwan_wire/tether.png" /></p>
 <hr />
-<p>まだ質問がありますか？<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>または<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a>をご覧ください。</p>
+<p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> をご利用いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a> からお問い合わせください。</p>
 
 
 

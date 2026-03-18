@@ -2794,6 +2794,8 @@
       
         
       
+        
+      
     
     
     
@@ -3195,6 +3197,26 @@
   
   <span class="md-ellipsis">
     VPN クライアント DNS をサーバー上流 DNS にルーティングする
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_update_openvpn_server_certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenVPN サーバー証明書を更新する
   </span>
   
 
@@ -3847,6 +3869,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    クライアントデバイスに静的 IP を手動で設定する
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -3856,6 +3889,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ethernetip" class="md-nav__link">
+    Ethernetアダプターで静的IPアドレスを設定する
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -6074,6 +6133,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ethernetip" class="md-nav__link">
+    Ethernetアダプターで静的IPアドレスを設定する
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6087,250 +6161,198 @@
                   
 
 
-<h1 id="ip">静のIPを手動で設定する方法<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h1>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows 11</label><label for="__tabbed_1_2">macOS</label><label for="__tabbed_1_3">Android</label></div>
+<h1 id="ip">クライアントデバイスで静的IPを手動設定する方法<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h1>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows 11</label><label for="__tabbed_1_2">macOS</label><label for="__tabbed_1_3">Android</label><label for="__tabbed_1_4">iOS</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Windows 11では、無線および有線アダプターに対して設定アプリから静のIPアドレスを設定できます。</p>
-<p><strong>Wi-Fiアダプターに静のIPアドレスを設定する</strong></p>
-<p>Wi-Fiアダプターに静のIPアドレスを設定するには、以下の手順に従ってください：</p>
+<p>Windows 11 では、無線アダプターと有線アダプターの両方で、Settings アプリから静的IPアドレスを設定できます。</p>
+<p><strong>Wi-Fiアダプターで静的IPアドレスを設定する</strong></p>
+<p>Wi-Fiアダプターに静的IPアドレスを割り当てるには、以下の手順を実行します。</p>
 <ol>
 <li>
-<p>Windows 11の設定を開く -&gt; ネットワークとインターネット -&gt; Wi-Fiタブ -&gt; 現にのネットワーク接続を選択します。</p>
+<p>Windows 11 で Settings を開き、<strong>Network &amp; Internet</strong> -&gt; <strong>Wi-Fi</strong> タブ -&gt; 現在接続しているネットワークを選択します。</p>
 </li>
 <li>
-<p>「IP設定」セクションの下にある「編集」ボタンをクリックします。</p>
-<p><img alt="Windows 11 edit IP address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/manually_configure_static_ip/Windows_11_edit_IP_address.webp" /></p>
+<p>「IP settings」セクションで <strong>Edit</strong> ボタンをクリックします。</p>
+<p><img alt="Windows 11 edit IP address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Windows_11_edit_IP_address.webp" /></p>
 </li>
 <li>
-<p>以下の手順に従って設定を行います：</p>
-<p><img alt="Settings_app_set_static_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/manually_configure_static_ip/Settings_app_set_static_IP_address.webp" /></p>
+<p>以下のように設定します。</p>
+<p><img alt="Settings_app_set_static_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Settings_app_set_static_IP_address.webp" /></p>
 <ul>
-<li>
-<p>手動オプションを選択し、IPv4トグルスイッチをオンにします。</p>
-</li>
-<li>
-<p>Windows 11用に静のIPアドレスを設定します - 例：10.1.4.119。</p>
-</li>
-<li>
-<p>サブネットマスクを指定します - 例：255.255.255.0。</p>
-</li>
-<li>
-<p>デフォルトゲートウェイアドレスを指定します。</p>
-</li>
-<li>
-<p>優先DNSアドレスを指定します（必須）。</p>
-</li>
-<li>
-<p>（オプション）「代替DNS」アドレスを指定します。</p>
-</li>
-<li>
-<p>「DNS over HTTPS」ドロップダウンメニューを使用して、優先および代替アドレスのオフオプションを選択しますが、以下のオプションでDoHを有効にすることもできます：</p>
-<ul>
-<li>
-<p>オフ：すべてのDNSトラフィックを暗号化せずに送信します。</p>
-</li>
-<li>
-<p>オン（から動テンプレート）：すべてのDNSトラフィックを暗号化して送信します。</p>
-</li>
-<li>
-<p>オン（手動テンプレート）：特定のテンプレートを指定できます。DNSサービスが自動的に機能しない場合や、期待通りに機能するテンプレートがある場合にのみ必要です。</p>
-</li>
+<li><strong>Manual</strong> を選択し、IPv4 のトグルスイッチをオンにします。</li>
+<li>Windows 11 用の静的IPアドレスを設定します。例: <code>10.1.4.119</code></li>
+<li>Subnet mask を指定します。例: <code>255.255.255.0</code></li>
+<li>Default Gateway address を指定します。</li>
+<li>Preferred DNS address を指定します。必須です。</li>
+<li>必要に応じて Alternate DNS address を指定します。</li>
+<li>「DNS over HTTPS」ドロップダウンメニューで、Preferred DNS と Alternate DNS の両方を <strong>Off</strong> に設定します。必要に応じて、次のDoHオプションも利用できます。<ul>
+<li><strong>Off</strong>: すべてのDNSトラフィックを暗号化せずに送信します。</li>
+<li><strong>On (automatic template)</strong>: すべてのDNSトラフィックを暗号化して送信します。</li>
+<li><strong>On (manual template)</strong>: 特定のテンプレートを手動指定できます。DNSサービスが自動で動作しない場合や、期待どおりに動くテンプレートがある場合にのみ必要です。</li>
 </ul>
 </li>
 <li>
-<p>「プレーンテキストへのフォールバック」トグルスイッチをオフにします（DoHを有効にする場合）。</p>
+<p>DoH を有効にした場合は、「Fallback to plaintext」トグルスイッチをオフにします。</p>
 <ul>
-<li>クイックヒント：この機能を有効にすると、システムはDNSトラフィックを暗号化しますが、暗号化なしでクエリを送信することを許可します。</li>
+<li>Quick tip: この機能をオンにするとDNSトラフィックは暗号化されますが、暗号化なしでクエリを送信できるようにもなります。</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p>「保存」ボタンをクリックします。</p>
-<p>手順を完たすると、コンピューターに静のネットワーク設定が適用されます。ウェブブラウザを開いてウェブサイトを読み込むことで、新しい設定をテストできます。</p>
+<p><strong>Save</strong> ボタンをクリックします。</p>
+<p>手順が完了すると、静的ネットワーク設定がコンピューターへ適用されます。Webブラウザーでサイトを開き、新しい設定を確認してください。</p>
 </li>
 </ol>
-<p><strong>イーサネットアダプターに静のIPアドレスを設定する</strong></p>
-<p>Windows 11でイーサネット（有線）アダプターに静のIPアドレスを設定するには、以下の手順に従ってください：</p>
+<h2 id="ethernetip"><strong>Ethernetアダプターで静的IPアドレスを設定する</strong><a class="headerlink" href="#ethernetip" title="Permanent link">&para;</a></h2>
+<p>Windows 11 で Ethernet（有線）アダプターに静的IPアドレスを割り当てるには、以下の手順を実行します。</p>
 <ol>
 <li>
-<p>設定を開く -&gt; ネットワークとインターネット -&gt; イーサネットタブ。</p>
+<p>Settings を開き、<strong>Network &amp; Internet</strong> -&gt; <strong>Ethernet</strong> タブへ移動します。</p>
 </li>
 <li>
-<p>「IP設定」セクションの下にある「編集」ボタンをクリックします。</p>
-<p><img alt="Edit_TCP/IP_Ethernet_settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/manually_configure_static_ip/Edit_TCP_IP_Ethernet_settings.webp" /></p>
+<p>「IP settings」セクションで <strong>Edit</strong> ボタンをクリックします。</p>
+<p><img alt="Edit_TCP/IP_Ethernet_settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Edit_TCP_IP_Ethernet_settings.webp" /></p>
 </li>
 <li>
-<p>以下の手順に従って設定を行います：</p>
-<p><img alt="Settings_app_set_static_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/manually_configure_static_ip/Settings_app_set_static_IP_address.webp" /></p>
+<p>以下のように設定します。</p>
+<p><img alt="Settings_app_set_static_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Settings_app_set_static_IP_address.webp" /></p>
 <ul>
-<li>
-<p>手動オプションを選択します。</p>
+<li><strong>Manual</strong> を選択します。</li>
+<li>IPv4 のトグルスイッチをオンにします。</li>
+<li>Windows 11 用の静的IPアドレスを設定します。例: <code>10.1.4.119</code></li>
+<li>Subnet mask を指定します。例: <code>255.255.255.0</code></li>
+<li>Default Gateway address を指定します。</li>
+<li>Preferred DNS address を指定します。必須です。</li>
+<li>必要に応じて Alternate DNS address を指定します。</li>
+<li>「DNS over HTTPS」ドロップダウンメニューで、Preferred DNS と Alternate DNS の両方を <strong>Off</strong> に設定します。必要に応じて、次のDoHオプションも利用できます。<ul>
+<li><strong>Off</strong>: すべてのDNSトラフィックを暗号化せずに送信します。</li>
+<li><strong>On (automatic template)</strong>: すべてのDNSトラフィックを暗号化して送信します。</li>
+<li><strong>On (manual template)</strong>: 特定のテンプレートを手動指定できます。DNSサービスが自動で動作しない場合や、期待どおりに動くテンプレートがある場合にのみ必要です。</li>
+</ul>
 </li>
-<li>
-<p>IPv4トグルスイッチをオンにします。</p>
-</li>
-<li>
-<p>Windows 11用に静のIPアドレスを設定します - 例：10.1.4.119。</p>
-</li>
-<li>
-<p>サブネットマスクを指定します - 例：255.255.255.0。</p>
-</li>
-<li>
-<p>デフォルトゲートウェイアドレスを指定します。</p>
-</li>
-<li>
-<p>優先DNSアドレスを指定します（必須）。</p>
-</li>
-<li>
-<p>（オプション）「代替DNS」アドレスを指定します。</p>
-</li>
-<li>
-<p>「DNS over HTTPS」ドロップダウンメニューを使用して、優先および代替アドレスのオフオプションを選択しますが、以下のオプションでDoHを有効にすることもできます：</p>
-<ul>
-<li>
-<p>オフ：すべてのDNSトラフィックを暗号化せずに送信します。</p>
-</li>
-<li>
-<p>オン（から動テンプレート）：すべてのDNSトラフィックを暗号化して送信します。</p>
-</li>
-<li>
-<p>オン（手動テンプレート）：特定のテンプレートを指定できます。DNSサービスが自動的に機能しない場合や、期待通りに機能するテンプレートがある場合にのみ必要です。</p>
-</li>
+<li>DoH を有効にした場合は、「Fallback to plaintext」トグルスイッチをオフにします。</li>
 </ul>
 </li>
 <li>
-<p>「プレーンテキストへのフォールバック」トグルスイッチをオフにします（DoHを有効にする場合）。</p>
-</li>
-</ul>
-</li>
-<li>
-<p>「保存」ボタンをクリックします。</p>
-<p>手順を完たすると、ウェブブラウザを使ってウェブサイトを開くことで設定をテストできます。</p>
+<p><strong>Save</strong> ボタンをクリックします。</p>
+<p>手順が完了したら、Webブラウザーでサイトを開いて設定を確認できます。</p>
 </li>
 </ol>
 </div>
 <div class="tabbed-block">
-<p>macOSで静のIPアドレスを設定する方法は以下の通りです：</p>
-<p>MacBookをすべてのしている場合、新しいネットワークロケーションを作成することをお勧めします。これにより、特定のネットワークに対して静のIPアドレスを使用し、彼のネットワークに対しては使用しないようにすることができます。</p>
-<p>Appleメニューから「システム環境設定」を選択します。</p>
-<p>「ネットワーク」を選択します。以下のウィンドウが表示されます。</p>
-<p><img alt="Mac_network_settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/manually_configure_static_ip/Mac_network_settings.webp" /></p>
-<p>サイドバーからアクティブなネットワークインターフェイスを選択します。この例では、無線ネットワークに接続しているので、Wi-Fiを選択します。</p>
-<p>Macに割り当てられている現にのIPアドレスをメモしておきます。次に、新しいIPアドレスをプライベートIPアドレス範囲から選択する必要があります。それについては後ほど説明します。</p>
-<p>「詳細」をクリックします。</p>
-<p>「TCP/IP」を選択します。以下のウィンドウが表示されます。</p>
-<p><img alt="Mac_Wi-Fi_settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/manually_configure_static_ip/Mac_Wi-Fi_settings.webp" /></p>
-<p>「IPv4の設定」メニューから「手動」を選択します。</p>
-<p>「IPv4アドレス」フィールドに静のIPアドレスを入力します。どの番号を入力すればよいでしょうか？一つの方法は、現にのIPアドレスの最も後の部分を変更することです。この例では、192.168.7.0から192.168.7.255の範囲内で、彼のデバイスに割り当てられていないアドレスを選択します。</p>
-<p>「OK」をクリック -&gt; 「適用」をクリックします。</p>
+<p>macOS で静的IPアドレスを設定する方法は以下のとおりです。</p>
+<p>MacBook を使用している場合は、新しいネットワークロケーションを作成すると便利です。これにより、特定のネットワークだけで静的IPアドレスを使い、他のネットワークでは使わないようにできます。</p>
+<p>Apple メニューから <strong>System Preferences</strong> を選択します。</p>
+<p><strong>Network</strong> を選択します。以下のウィンドウが表示されます。</p>
+<p><img alt="Mac_network_settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Mac_network_settings.webp" /></p>
+<p>サイドバーから、現在使用中のネットワークインターフェースを選択します。この例では無線ネットワークへ接続しているため、Wi-Fi を選択します。</p>
+<p>現在 Mac に割り当てられているIPアドレスを控えておきます。このあと、表示されているプライベートIPアドレス帯の中から新しいIPアドレスを選びます。</p>
+<p><strong>Advanced</strong> をクリックします。</p>
+<p><strong>TCP/IP</strong> を選択します。以下のウィンドウが表示されます。</p>
+<p><img alt="Mac_Wi-Fi_settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Mac_Wi-Fi_settings.webp" /></p>
+<p>Configure IPv4 メニューで <strong>Manually</strong> を選択します。</p>
+<p>IPv4 Address フィールドに静的IPアドレスを入力します。たとえば、現在のIPアドレスの最後の数字だけを変更する方法があります。この例では、<code>192.168.7.0</code> から <code>192.168.7.255</code> の範囲で、他のデバイスに割り当てられていないアドレスを選択できます。</p>
+<p><strong>OK</strong> をクリックし、続けて <strong>Apply</strong> をクリックします。</p>
 </div>
 <div class="tabbed-block">
-<p>手順はAndroidのバージョンによって異なります。このドキュメントはAndroidバージョン11に基づいています。</p>
+<p>手順はAndroidのバージョンによって異なります。ここでは Android 11 を例に説明します。</p>
 <ol>
-<li>設定に移動 -&gt; 「ネットワークとインターネット」を選択し、次に「Wi-Fi」を選択 -&gt; 現に接続されているネットワークをタップして設定メニューを開きます。</li>
+<li><strong>Settings</strong> を開き、<strong>Network &amp; Internet</strong> -&gt; <strong>Wi-Fi</strong> を選択し、現在接続中のネットワークをタップして設定画面を開きます。</li>
 </ol>
-<p class="glboxshadow"><img alt="list_available_networks" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/manually_configure_static_ip/list_available_networks.png" /></p>
+<p class="glboxshadow"><img alt="list_available_networks" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/list_available_networks.png" /></p>
 <ol>
 <li>
-<p>静のIPアドレスを設定するには、以下の手順に従います：</p>
+<p>静的IPアドレスを設定するには、以下の手順を実行します。</p>
 </li>
 <li>
-<p>右上の鉛筆アイコンを選択してネットワーク設定にアクセスします。</p>
-<p class="glboxshadow"><img alt="pencil_icon" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/manually_configure_static_ip/pencil_icon.png" /></p>
+<p>右上の鉛筆アイコンをタップしてネットワーク設定を開きます。</p>
+<p class="glboxshadow"><img alt="pencil_icon" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/pencil_icon.png" /></p>
 </li>
 <li>
-<p>「詳細オプション」を選択します。</p>
-<p class="glboxshadow"><img alt="advanced_options" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/manually_configure_static_ip/advanced_options.png" /></p>
+<p><strong>Advanced Options</strong> を選択します。</p>
+<p class="glboxshadow"><img alt="advanced_options" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/advanced_options.png" /></p>
 </li>
 <li>
-<p>「IP設定」を選択します。</p>
+<p><strong>IP Settings</strong> を選択します。</p>
 </li>
 <li>
-<p>設定を「DHCP」から「静の」に変更します。</p>
-<p class="glboxshadow"><img alt="DHCP_to_Static" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/manually_configure_static_ip/DHCP_to_Static.png" /></p>
+<p>設定を <strong>DHCP</strong> から <strong>Static</strong> に変更します。</p>
+<p class="glboxshadow"><img alt="DHCP_to_Static" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/DHCP_to_Static.png" /></p>
 </li>
-</ol>
-</div>
-</div>
-</div>
-<ul>
 <li>
-<p>ホームやその彼のプライベートネットワークで静のIPアドレスを使用する場合、以下の標準プライベートIPアドレス範囲内から選択する必要があります：10.0.0.0 から 10.255.255.255、172.16.0.0 から 172.31.255.255、192.168.0.0 から 192.168.255.255</p>
-<ul>
+<p>自宅やその他のプライベートネットワークで静的IPアドレスを使う場合は、以下の標準的なプライベートIPアドレス範囲内から選択してください。<code>10.0.0.0</code> から <code>10.255.255.255</code>、<code>172.16.0.0</code> から <code>172.31.255.255</code>、<code>192.168.0.0</code> から <code>192.168.255.255</code></p>
+</li>
 <li>
 <p>IPアドレスを入力します。</p>
 <ul>
-<li>このステップは各ネットワークに特有です。例：192.168.1.128</li>
+<li>この値はネットワークごとに異なります。例: <code>192.168.1.128</code></li>
 </ul>
 </li>
 <li>
-<p>IPアドレスに基づいてゲートウェイが自動的に入力されるはずです。されない場合は、IPアドレスをコピーして最も後の数字を1に置き換えます。</p>
+<p>Gateway は通常、入力したIPアドレスに基づいて自動入力されます。入力されない場合は、同じIPアドレスの最後の数字だけを <code>1</code> に変更してください。</p>
 <ul>
-<li>例：前述の例に基づく場合：192.168.1.1</li>
+<li>例: 上記の例なら <code>192.168.1.1</code></li>
 </ul>
 </li>
 <li>
-<p>保存をタップし、ネットワークが再接続するのを待ちます。</p>
+<p><strong>Save</strong> をタップし、ネットワークが再接続されるまで待ちます。</p>
 </li>
-</ul>
-</li>
-</ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">iOS</label></div>
-<div class="tabbed-content">
+</ol>
+</div>
 <div class="tabbed-block">
-<p>ホームやその彼のプライベートネットワークで静のIPアドレスを使用する場合、以下の標準プライベートIPアドレス範囲内から選択する必要があります：</p>
-<p>10.0.0.0 から 10.255.255.255
-172.16.0.0 から 172.31.255.255
-192.168.0.0 から 192.168.255.255</p>
-<p>静のIPアドレスを設定するには、以下の手順に従います：</p>
+<p>自宅やその他のプライベートネットワークで静的IPアドレスを使う場合は、以下の標準的なプライベートIPアドレス範囲内から選択してください。</p>
+<p><code>10.0.0.0</code> から <code>10.255.255.255</code>
+<code>172.16.0.0</code> から <code>172.31.255.255</code>
+<code>192.168.0.0</code> から <code>192.168.255.255</code></p>
+<p>静的IPアドレスを設定するには、以下の手順を実行します。</p>
 <ul>
 <li>
-<p>設定アイコンをタップします。</p>
+<p>Settings アイコンをタップします。</p>
 </li>
 <li>
-<p>Wi-Fiに移動します。</p>
+<p><strong>Wi-Fi</strong> に移動します。</p>
 </li>
 <li>
-<p>Wi-Fiネットワーク名の横にある青い情報アイコン (i) をタップします。</p>
+<p>Wi-Fiネットワーク名の横にある青い情報アイコン <code>(i)</code> をタップします。</p>
 <ul>
-<li>iOS 7より古いバージョンを使用している場合は青いエラーになるかもしれません。</li>
+<li>iOS 7 より前の古いバージョンでは、表示が異なる場合があります。</li>
 </ul>
 </li>
 <li>
-<p>以下の画像のように、静のタブに移動します。</p>
+<p>下の画像のように <strong>Static</strong> タブへ移動します。</p>
 </li>
 </ul>
-<p><img alt="IP_Settings_Screen_iOS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials_new/manually_configure_static_ip/IP_Settings_Screen_iOS.png" /></p>
+<p><img alt="IP_Settings_Screen_iOS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/IP_Settings_Screen_iOS.png" /></p>
 <ul>
 <li>
-<p>IPアドレスフィールドをタップします。</p>
+<p><strong>IP Address</strong> フィールドをタップします。</p>
 </li>
 <li>
-<p>iPhone/iPadで使用したい静のIPアドレスを入力します。</p>
+<p>iPhone / iPad で使用したい静的IPアドレスを入力します。</p>
 </li>
 <li>
-<p>ルーターフィールドをタップします。</p>
+<p><strong>Router</strong> フィールドをタップします。</p>
 </li>
 <li>
 <p>ルーターのIPアドレスを入力します。</p>
 </li>
 <li>
-<p>サブネットマスクをタップして情報を入力します。</p>
+<p><strong>Subnet Mask</strong> をタップして入力します。</p>
 <ul>
-<li>通例は225.225.0.0です。</li>
+<li>通常は <code>225.225.0.0</code> です。</li>
 </ul>
 </li>
 <li>
-<p>画面左上のWi-Fiボタンをタップして設定を保存します。</p>
+<p>画面左上の <strong>Wi-Fi</strong> ボタンをタップして設定を保存します。</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <hr />
-<p>まだ質問がありますか？私たちの<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>をご覧ください。</p>
+<p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> をご利用いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a> からお問い合わせください。</p>
 
 
 

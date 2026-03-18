@@ -2794,6 +2794,8 @@
       
         
       
+        
+      
     
     
     
@@ -3195,6 +3197,26 @@
   
   <span class="md-ellipsis">
     VPN クライアント DNS をサーバー上流 DNS にルーティングする
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_update_openvpn_server_certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenVPN サーバー証明書を更新する
   </span>
   
 
@@ -3865,15 +3887,15 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    ルーター管理パネルからクライアントデバイスをブロックする
+    管理画面からクライアントデバイスをブロックする
   </a>
   
-    <nav class="md-nav" aria-label="ルーター管理パネルからクライアントデバイスをブロックする">
+    <nav class="md-nav" aria-label="管理画面からクライアントデバイスをブロックする">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    1. 管理パネルにサインインする
+    1. 管理画面にサインインする
   </a>
   
 </li>
@@ -3888,14 +3910,14 @@
         
           <li class="md-nav__item">
   <a href="#1-mac" class="md-nav__link">
-    方法1: MACアドレスなしでデバイスをブロックする
+    方法1: MACアドレスがわからないデバイスをブロックする
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#2-mac" class="md-nav__link">
-    方法2: MACアドレスを使用してデバイスをブロックする
+    方法2: MACアドレスがわかっているデバイスをブロックする
   </a>
   
 </li>
@@ -3920,14 +3942,14 @@
         
           <li class="md-nav__item">
   <a href="#mobile-1" class="md-nav__link">
-    方法1: MACアドレスなしでデバイスをブロックする
+    方法1: MACアドレスがわからないデバイスをブロックする
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#mobile-2" class="md-nav__link">
-    方法2: MACアドレスを使用してデバイスをブロックする
+    方法2: MACアドレスがわかっているデバイスをブロックする
   </a>
   
 </li>
@@ -6186,15 +6208,15 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    ルーター管理パネルからクライアントデバイスをブロックする
+    管理画面からクライアントデバイスをブロックする
   </a>
   
-    <nav class="md-nav" aria-label="ルーター管理パネルからクライアントデバイスをブロックする">
+    <nav class="md-nav" aria-label="管理画面からクライアントデバイスをブロックする">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    1. 管理パネルにサインインする
+    1. 管理画面にサインインする
   </a>
   
 </li>
@@ -6209,14 +6231,14 @@
         
           <li class="md-nav__item">
   <a href="#1-mac" class="md-nav__link">
-    方法1: MACアドレスなしでデバイスをブロックする
+    方法1: MACアドレスがわからないデバイスをブロックする
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#2-mac" class="md-nav__link">
-    方法2: MACアドレスを使用してデバイスをブロックする
+    方法2: MACアドレスがわかっているデバイスをブロックする
   </a>
   
 </li>
@@ -6241,14 +6263,14 @@
         
           <li class="md-nav__item">
   <a href="#mobile-1" class="md-nav__link">
-    方法1: MACアドレスなしでデバイスをブロックする
+    方法1: MACアドレスがわからないデバイスをブロックする
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#mobile-2" class="md-nav__link">
-    方法2: MACアドレスを使用してデバイスをブロックする
+    方法2: MACアドレスがわかっているデバイスをブロックする
   </a>
   
 </li>
@@ -6274,86 +6296,82 @@
 
 
 <h1 id="glinet">GL.iNetルーターで特定のクライアントデバイスをブロックする方法<a class="headerlink" href="#glinet" title="Permanent link">&para;</a></h1>
-<p>このチュートリアルでは、GL.iNetルーターで特定のクライアントデバイスをブロックする方法を説明します。クライアントデバイスをブロックすることで、ネットワークへの不正アクセスを防止できます。これにより、ネットワークのセキュリティを強化したり、家族のインターネットアクセスを管理したりすることができます。</p>
-<p>GL.iNetルーターは、MACアドレス（ネットワーク上の個々のデバイスに割り当てられた一意の12文字の識別子）に基づいてクライアントデバイスをブロックします。この方法はMACアドレスフィルタリングとも呼ばれます。</p>
-<p>GL.iNetルーターでクライアントデバイスをブロックする方法は2つあります：<a href="#ルーター管理パネルからクライアントデバイスをブロックする">ルーター管理パネル</a>または<a href="#glinetモバイルアプリからクライアントデバイスをブロックする">GL.iNetモバイルアプリ</a>を使用する方法です。</p>
-<h2 id="_1">ルーター管理パネルからクライアントデバイスをブロックする<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="1">1. 管理パネルにサインインする<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p>ウェブブラウザに「192.168.8.1」と入力します。パスワードを入力し、<strong>ログイン</strong>をクリックします。</p>
+<p>このチュートリアルでは、GL.iNetルーターで特定のクライアントデバイスをブロックする方法を説明します。クライアントデバイスをブロックすると、ネットワークへの不正アクセスを防止できます。これにより、ネットワークのセキュリティ向上や、家族のインターネット利用管理に役立ちます。</p>
+<p>GL.iNetルーターでは、MACアドレスをもとにクライアントデバイスをブロックします。MACアドレスは、ネットワーク上の各デバイスに割り当てられた12文字の固有識別子です。この方式はMACアドレスフィルタリングとも呼ばれます。</p>
+<p>クライアントデバイスをブロックする方法は2つあります。ルーターの<a href="#管理画面からクライアントデバイスをブロックする">管理画面</a>を使う方法と、<a href="#glinetモバイルアプリからクライアントデバイスをブロックする">GL.iNetモバイルアプリ</a>を使う方法です。</p>
+<h2 id="_1">管理画面からクライアントデバイスをブロックする<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 管理画面にサインインする<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>Webブラウザーで <code>192.168.8.1</code> を開きます。パスワードを入力し、<strong>Login</strong> をクリックします。</p>
 <h3 id="2">2. クライアントデバイスをブロックする<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<p>MACアドレスの有無に応じて、クライアントデバイスをブロックする方法は2つあります：</p>
+<p>MACアドレスを把握しているかどうかによって、手順が異なります。</p>
 <ul>
-<li>MACアドレスがない場合: <a href="#方法1-macアドレスなしでデバイスをブロックする">最も初の方法</a>を使用して、リストに表示されるデバイスをブロックします。</li>
-<li>MACアドレスがある場合: <a href="#方法2-macアドレスを使用してデバイスをブロックする">第二の方法</a>を使用します。</li>
+<li>MACアドレスがわからない場合: <a href="#方法1-macアドレスがわからないデバイスをブロックする">方法1</a>を使うと、一覧に表示されているデバイスをブロックできます。</li>
+<li>MACアドレスがわかっている場合: <a href="#方法2-macアドレスがわかっているデバイスをブロックする">方法2</a>を使います。</li>
 </ul>
-<h4 id="1-mac">方法1: MACアドレスなしでデバイスをブロックする<a class="headerlink" href="#1-mac" title="Permanent link">&para;</a></h4>
+<h4 id="1-mac">方法1: MACアドレスがわからないデバイスをブロックする<a class="headerlink" href="#1-mac" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p>左側のサイドバーで<strong>クライアント</strong>をクリックします。
-<img alt="クライアントをクリック" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/click-clients.jpeg" /></p>
+<p>左側のサイドバーで <strong>Clients</strong> をクリックします。
+   <img alt="click clients" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/click-clients.jpeg" /></p>
 </li>
 <li>
-<p>デバイスの横にあるスイッチをオンに切り替えます。
-<img alt="スイッチを切り替え" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/toggle-block.jpeg" /></p>
+<p>対象デバイスの横にあるスイッチをオンにします。
+   <img alt="toggle switch" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/toggle-block.jpeg" /></p>
 </li>
 </ol>
-<p>リストにブロックしたいデバイスが表示されない場合は、<a href="#方法2-macアドレスを使用してデバイスをブロックする">MACアドレスをブロックリストに追加してブロック</a>する必要があります。</p>
-<h4 id="2-mac">方法2: MACアドレスを使用してデバイスをブロックする<a class="headerlink" href="#2-mac" title="Permanent link">&para;</a></h4>
-<p>この方法を使用するには、デバイスのMACアドレスを取なければならないする必要があります。デバイスの製造元が提供する指示を参照してください。
-デバイスのMACアドレスを取なければならないしたら、次の手順に従います：</p>
+<p>一覧にブロックしたいデバイスが表示されない場合は、<a href="#方法2-macアドレスがわかっているデバイスをブロックする">MACアドレスをブロックリストへ追加する方法</a>を使用してください。</p>
+<h4 id="2-mac">方法2: MACアドレスがわかっているデバイスをブロックする<a class="headerlink" href="#2-mac" title="Permanent link">&para;</a></h4>
+<p>この方法では、ブロックしたいデバイスのMACアドレスが必要です。確認方法は、デバイスメーカーが案内している手順を参照してください。
+MACアドレスを確認したら、次の手順を実行します。</p>
 <ol>
-<li>左側のサイドバーで<strong>クライアント</strong>をクリックします。</li>
-<li>上部で<strong>ブロックリスト</strong>をクリックします。
-<img alt="ブロックリストをクリック" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/click-blocklist.jpeg" /></li>
-<li>次のいずれかの方法でデバイスをブロックします：<ul>
-<li>MACアドレスを個別に入力する場合: 空のフィールドに入力します。</li>
-<li>MACアドレスのリストをインポートする場合: <strong>クライアントのインポート</strong>をクリックし、ファイルをインポートしてから<strong>インポート</strong>をクリックします。</li>
-</ul>
-</li>
-<li><strong>適用する</strong>をクリックします。
-<img alt="適用をクリック" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/click-apply.jpeg" /></li>
+<li>左側のサイドバーで <strong>Clients</strong> をクリックします。</li>
+<li>上部で <strong>Blocklist</strong> をクリックします。
+   <img alt="click blocklist" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/click-blocklist.jpeg" /></li>
+<li>次のいずれかの方法でデバイスをブロックします。</li>
+<li>MACアドレスを個別に入力する場合: 空欄にMACアドレスを入力します。</li>
+<li>MACアドレスの一覧をインポートする場合: <strong>Import Clients</strong> をクリックし、ファイルを読み込んでから <strong>Import</strong> をクリックします。</li>
+<li><strong>Apply</strong> をクリックします。
+   <img alt="click apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/click-apply.jpeg" /></li>
 </ol>
 <h2 id="glinet_1">GL.iNetモバイルアプリからクライアントデバイスをブロックする<a class="headerlink" href="#glinet_1" title="Permanent link">&para;</a></h2>
-<p><strong>注意:</strong> 始める前に、デバイスに GL.iNet モバイル アプリをインストールして設定してください。</p>
-<p>クライアントデバイスをブロックする方法は、MACアドレスの有無に応じて2つあります：</p>
+<p><strong>Note:</strong> 開始前に、端末へGL.iNetモバイルアプリをインストールし、初期設定を済ませてください。</p>
+<p>MACアドレスを把握しているかどうかによって、手順が異なります。</p>
 <ul>
-<li>MACアドレスがない場合: リストに表示されるデバイスをブロックできる<a href="#mobile-1">最も初の方法</a>を使用します。</li>
-<li>MACアドレスがある場合: <a href="#mobile-2">第二の方法</a>を使用します。</li>
+<li>MACアドレスがわからない場合: <a href="#mobile-1">方法1</a>を使うと、一覧に表示されているデバイスをブロックできます。</li>
+<li>MACアドレスがわかっている場合: <a href="#mobile-2">方法2</a>を使います。</li>
 </ul>
-<h3 id="mobile-1">方法1: MACアドレスなしでデバイスをブロックする<a class="headerlink" href="#mobile-1" title="Permanent link">&para;</a></h3>
+<h3 id="mobile-1">方法1: MACアドレスがわからないデバイスをブロックする<a class="headerlink" href="#mobile-1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>メインアプリ画面で、<strong>接続されたクライアント</strong>または<strong>オフィスクライアント</strong>の下にあるブロックしたいデバイスをタップします。
-<img alt="デバイスをタップ" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/tap-a-device.jpeg" /></p>
+<p>アプリのメイン画面で、<strong>Connected Clients</strong> または <strong>Office Clients</strong> の一覧から、ブロックしたいデバイスをタップします。
+   <img alt="tap a device" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/tap-a-device.jpeg" /></p>
 </li>
 <li>
-<p><strong>設定</strong>の下で、<strong>ブロック</strong>スイッチをオンに切り替えます。
-<img alt="ブロックスイッチを切り替え" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/settings-toggle-block-to-on.jpeg" /></p>
+<p><strong>Settings</strong> 内にある <strong>Block</strong> スイッチをオンにします。
+   <img alt="toggle block" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/settings-toggle-block-to-on.jpeg" /></p>
 </li>
 </ol>
-<p>リストにブロックしたいデバイスが表示されない場合は、<a href="#mobile-2">MACアドレスをブロックリストに追加してブロック</a>する必要があります。</p>
-<h3 id="mobile-2">方法2: MACアドレスを使用してデバイスをブロックする<a class="headerlink" href="#mobile-2" title="Permanent link">&para;</a></h3>
-<p>この方法を使用するには、ブロックしたいデバイスのMACアドレスを取なければならないする必要があります。デバイスの製造元が提供する指示を参照してください。
-デバイスのMACアドレスを取なければならないしたら、次の手順に従います：</p>
+<p>一覧にブロックしたいデバイスが表示されない場合は、<a href="#mobile-2">MACアドレスを使ってブロックリストへ追加する方法</a>を使用してください。</p>
+<h3 id="mobile-2">方法2: MACアドレスがわかっているデバイスをブロックする<a class="headerlink" href="#mobile-2" title="Permanent link">&para;</a></h3>
+<p>この方法では、ブロックしたいデバイスのMACアドレスが必要です。確認方法は、デバイスメーカーが案内している手順を参照してください。
+MACアドレスを確認したら、次の手順を実行します。</p>
 <ol>
 <li>
-<p>メインアプリ画面で、設定アイコン &gt; <strong>アクセス制御</strong>をタップします。
-<img alt="アクセスコントロールをタップ" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/tap-access-control.jpeg" /></p>
+<p>アプリのメイン画面で、設定アイコン &gt; <strong>Access Control</strong> をタップします。
+   <img alt="tap access control" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/tap-access-control.jpeg" /></p>
 </li>
 <li>
-<p><strong>ブロック</strong>をタップします。
-<img alt="ブロックをタップ" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/tap-block.jpeg" /></p>
+<p><strong>Block</strong> をタップします。
+   <img alt="tap block" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how-to-block-client-devices/tap-block.jpeg" /></p>
 </li>
 <li>
-<p>次のいずれかの方法でデバイスをブロックします：</p>
-<ul>
-<li>MACアドレスを個別に入力する場合: <strong>MACアドレスを追加</strong>をタップし、MACアドレスを入力して<strong>完た</strong>をタップします。</li>
-<li>MACアドレスのリストをインポートする場合: <strong>クライアントのインポート</strong> &gt; <strong>クライアントのインポート</strong>をタップしてファイルを選択します。</li>
-</ul>
+<p>次のいずれかの方法でデバイスをブロックします。</p>
 </li>
+<li>MACアドレスを個別に入力する場合: <strong>Add MAC address</strong> をタップし、MACアドレスを入力して <strong>Done</strong> をタップします。</li>
+<li>MACアドレスの一覧をインポートする場合: <strong>Import Clients</strong> &gt; <strong>Import Clients</strong> をタップし、ファイルを選択します。</li>
 </ol>
 <hr />
-<p>まだ質問がありますか？<a href="https://forum.gl-inet.com">コミュニティフォーラム</a>をご覧ください。</p>
+<p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> をご利用いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a> からお問い合わせください。</p>
 
 
 
