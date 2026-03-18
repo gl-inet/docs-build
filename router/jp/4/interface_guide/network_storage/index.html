@@ -4912,7 +4912,7 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    ストレージ・デバイスの挿入
+    ストレージデバイスの挿入
   </a>
   
 </li>
@@ -4926,28 +4926,35 @@
       
         <li class="md-nav__item">
   <a href="#webdav" class="md-nav__link">
-    WebDAV のセットアップ
+    WebDAVをセットアップする
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#dlna" class="md-nav__link">
-    DLNAのセットアップ
+    DLNAをセットアップする
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#samba_1" class="md-nav__link">
-    Samba クライアント
+    Sambaクライアント
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#webdav_1" class="md-nav__link">
-    WebDAV クライアント
+    WebDAVクライアント
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    モバイルアプリの使い方
   </a>
   
 </li>
@@ -6196,7 +6203,7 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    ストレージ・デバイスの挿入
+    ストレージデバイスの挿入
   </a>
   
 </li>
@@ -6210,28 +6217,35 @@
       
         <li class="md-nav__item">
   <a href="#webdav" class="md-nav__link">
-    WebDAV のセットアップ
+    WebDAVをセットアップする
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#dlna" class="md-nav__link">
-    DLNAのセットアップ
+    DLNAをセットアップする
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#samba_1" class="md-nav__link">
-    Samba クライアント
+    Sambaクライアント
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#webdav_1" class="md-nav__link">
-    WebDAV クライアント
+    WebDAVクライアント
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    モバイルアプリの使い方
   </a>
   
 </li>
@@ -6251,36 +6265,90 @@
                   
 
 
-<h1 id="_1">ネットワーク・ストレージ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">ネットワークストレージ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">コンテンツ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="#introduction">はじめに</a></li>
-<li><a href="#insert-storage-device">ストレージ・デバイスの挿入</a></li>
+<li><a href="#supported-models">対応モデル</a></li>
+<li><a href="#insert-storage-device">ストレージデバイスの挿入</a></li>
 <li><a href="#set-up-samba">Sambaをセットアップする</a></li>
 <li><a href="#set-up-webdav">WebDAVをセットアップする</a></li>
-<li><a href="#set-up-dlna">DLNAのセットアップ</a></li>
-<li><a href="#samba-client">Samba クライアント</a></li>
-<li><a href="#webdav-client">WebDAV クライアント</a></li>
+<li><a href="#set-up-dlna">DLNAをセットアップする</a></li>
+<li><a href="#samba-client">Sambaクライアント</a></li>
+<li><a href="#webdav-client">WebDAVクライアント</a></li>
 </ul>
 <h2 id="_3">はじめに<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>一部のGL.iNetモデルはMicroSD(TF)カードをサポートし、一部のモデルはUSBポートを搭載、USBフラッシュドライブとポータブル外付けハードドライブをサポートし、このページでディスクのSamba、WebDAV、DLNAを設定できます。</p>
-<p>サポートされているディスクフォーマットはNTFS、FAT32です。</p>
-<p><strong>注意</strong>： USBハードディスクの消費電力はかなり高いです。外部電源と一緒に使用してください。そうしないと、ゆえに障の原因になる可能性があります。</p>
-<p><strong>注意</strong>： 一部のモデルにはUSBポート/MicroSDスロットがありますが、ストレージ容量に制限があり、ファイル共有には対応していません。</p>
+<p>USBドライブまたはSDカードをルーターに接続することで、デバイス間でワイヤレスにファイルを共有できます。ルーターはストレージデバイスを共有ネットワークドライブとして扱い、Wi-Fiに接続されたすべてのデバイスからアクセスできるようにします。</p>
+<p>GL.iNetの一部モデルにはMicroSD（TF）カードスロットがあり、一部モデルにはUSBポートがあります。これらのストレージデバイスに対して、Samba、WebDAV、DLNAを設定できます。NTFS、FAT32、EXT4などの一般的なフォーマットに対応しています。</p>
+<div class="admonition 注意">
+<p class="admonition-title">注意</p>
+<ol>
+<li>
+<p>USBハードドライブは消費電力が大きいため、外部電源と併用してください。そうしないと、正常に動作しない場合があります。</p>
+</li>
+<li>
+<p>一部のモデルにはUSBポートまたはMicroSDスロットがありますが、内蔵ストレージ容量の制限により、ネットワークストレージに対応していません。</p>
+</li>
+<li>
+<p>Web管理パネルでは共有フォルダーのみ管理できます。ストレージデバイス上のファイルを管理するには、<a href="https://www.gl-inet.com/app/#download-app-glinet" target="_blank">モバイルアプリ</a>を使用してください。</p>
+</li>
+</ol>
+</div>
 <h2 id="_4">対応モデル<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>通例、USBポートまたはMicroSD(TF)スロットを搭載したモデルは、ファイル共有に対応しています。フラッシュ容量が32MB以下のデバイスの場合、ネットワークストレージ機能はまだサポートされていません。</p>
+<p>通常、USBポートまたはMicroSD（TF）スロットを搭載したモデルは、ネットワークストレージ、つまりファイル共有に対応しています。</p>
+<p>フラッシュストレージが32MB以下のデバイスでは、ネットワークストレージ機能はまだサポートされていません。</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">ルーターモデル</th>
+<th style="text-align: center;">Samba</th>
+<th style="text-align: center;">WebDAV</th>
+<th style="text-align: center;">DLNA</th>
 <th style="text-align: center;">USBポート</th>
 <th style="text-align: center;">MicroSDカード</th>
-<th style="text-align: center;">Samba</th>
-<th style="text-align: center;">Webdav</th>
-<th style="text-align: center;">DLNA</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: left;">GL-E5800 (Mudi 7)</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">GL-MT5000 (Brume 3)</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">GL-BE3600 (Slate 7)</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">GL-X2000 (Spitz Plus)</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">GL-MT6000 (Flint 2)</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">-</td>
+</tr>
 <tr>
 <td style="text-align: left;">GL-XE3000 (Puli AX)</td>
 <td style="text-align: center;">√</td>
@@ -6300,10 +6368,18 @@
 <tr>
 <td style="text-align: left;">GL-MT3000 (Beryl AX)</td>
 <td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
 <td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">GL-MT2500/GL-MT2500A (Brume 2)</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr>
 <td style="text-align: left;">GL-AXT1800 (Slate AX)</td>
@@ -6314,326 +6390,276 @@
 <td style="text-align: center;">√</td>
 </tr>
 <tr>
-<td style="text-align: left;">GL-A1300 (Slate Plus)</td>
+<td style="text-align: left;">GL-AX1800 (Flint)</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
 </tr>
 <tr>
-<td style="text-align: left;">GL-MT2500/GL-MT2500A (Brume 2)</td>
+<td style="text-align: left;">GL-A1300 (Slate Plus)</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
 </tr>
 <tr>
 <td style="text-align: left;">GL-S1300 (Convexa-S)</td>
 <td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">GL-SFT1200 (Opal)</br><strong>*FW 4.7.2</strong></td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">√</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">GL-E750V2 (Mudi V2)</br><strong>*FW 4.7.2</strong></td>
+<td style="text-align: center;">√</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
 </tr>
 <tr>
-<td style="text-align: left;">GL-MT1300 (Beryl)</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-AX1800 (Flint)</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-AR750S (Slate)</td>
-<td style="text-align: center;">√</td>
+<td style="text-align: left;">GL-AR750S-EXT (Slate)</br><strong>*FW 4.7.2</strong></td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-XE300 (Puli)</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-X750 (Spitz)</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-SFT1200 (Opal)</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-B1300 (Convexa-B)</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-AP1300 (Cirrus)</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-X300B (Collie)</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-MV1000/GL-MV1000W (Brume)</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
-<td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
 <td style="text-align: center;">√</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_5">ストレージ・デバイスの挿入<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>TFカードの場合は、まずルーターの電源を切り、TFカードを挿入してからルーターの電源を入れる必要があります。</p>
-<p>USBドライブの場合、USBポートに直接差し込むことができます。ポータブル外付けハードドライブの場合、別途電源をお持ちの場合は、電源に接続してください。</p>
-<p>ウェブ管理パネル -&gt; アプリケーション -&gt; ネットワークストレージ</p>
+<h2 id="_5">ストレージデバイスの挿入<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>TFカードを使用する場合は、まずルーターの電源を切り、TFカードを挿入してから電源を入れてください。</p>
+<p>USBドライブは、そのままUSBポートに接続できます。ポータブル外付けハードドライブを使用する場合は、別電源があるならそちらにも接続してください。</p>
+<p>ルーターのWeb管理パネルにログインし、<strong>アプリケーション</strong> -&gt; <strong>ネットワークストレージ</strong> に移動します。</p>
 <p><img alt="network storage" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/network_storage_init.png" /></p>
-<p>ディスクが見つかると</p>
+<p>ストレージデバイスを接続すると、認識後に以下のように表示されます。</p>
 <p><img alt="network storage, disk found" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/disk_found.png" /></p>
 <h2 id="samba">Sambaをセットアップする<a class="headerlink" href="#samba" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p>Sambaを有効にするにはトグルをオンにし、その彼のパラメーターについては以下を参照し、<strong>Apply</strong>をクリックする。</p>
-<ul>
-<li>WANからのWebDAVアクセスを許可します。上位のデバイスがWebDAVにアクセスできるようにしたい場合は、これを有効にします。</li>
-</ul>
+<li><strong>Enable Samba</strong> をオンにし、<strong>Apply</strong> をクリックします。</li>
+<li><strong>Allow Access Samba from WAN</strong>: 上位ネットワーク側のデバイスからSambaにアクセスさせたい場合は有効にします。</li>
+</ol>
 <p><img alt="enable samba" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/enable_samba.png" /></p>
-</li>
-<li>
-<p>次に、共有リンクを取なければならないするように設定しましょう。 ディスクが検出されると、<strong>クイック セットアップ共有</strong>のリンクが表示されます。<strong>クイック セットアップ共有</strong> をクリックします。</p>
-<p><img alt="samba quick setup share" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share.png" /></p>
-</li>
-<li>
-<p>ユーザーを追加します。すでにアカウントをお持ちの場合は、このステップはスキップされます。<strong>次へ</strong>をクリックします。</p>
-<p><img alt="samba quick setup share, add a user" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share_add_user.png" /></p>
-</li>
-<li>
-<p>三角形のアイコンをクリックしてすべてのフォルダーを表示し、共有するフォルダーを選択します。 または、disk1_part1をクリックしてディスク全体を共有します。 <strong>次へ</strong>をクリックします。</p>
-<p><img alt="samba quick setup share, add shared folder" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share_add_shared_folder.png" /></p>
-</li>
-<li>
-<p>共有フォルダの設定</p>
-<p>セキュリティ上の理よりから、<strong>匿名アクセス</strong>を有効にすることはお勧めしません。</p>
-<p>作成したユーザーは、デフォルトで<strong>Read-Only User</strong>に追加されます。このアカウントをファイルの書き込みや削除ができるようにしたい場合は、Read-Only Userから外し、<strong>Writable User</strong>に追加します。<strong>Apply</strong> をクリックします。</p>
-<p><img alt="samba quick setup share, shared folder settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share_shared_folder_settings.png" /></p>
-</li>
-<li>
-<p>フォルダアクセスリンク。 WindowsとUnix系OSのリンクが表示されます。Unix系OSには、Android、iOS、macOS、Ubuntuなどがあります。それでは、様々なOSでSambaにアクセスしてみてください。 <a href="#samba-client">こちら</a>チェックします。</p>
-<p><strong>注意:</strong> <strong>WANからのSambaアクセスを許可する</strong> を有効にしてWANからアクセスする場合、下図のルーターIP(デフォルト192.168.8.1)をインターネット(INTERNET)ページにあるWAN IPに置き換える必要があります。</p>
-<p><img alt="samba quick setup share, folder access link" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share_folder_access_link.png" /></p>
-</li>
-</ol>
-<hr />
-<h2 id="webdav">WebDAV のセットアップ<a class="headerlink" href="#webdav" title="Permanent link">&para;</a></h2>
 <ol>
+<li><strong>Quick Setup Share</strong> をクリックして共有リンクを設定します。</li>
+</ol>
+<p><img alt="samba quick setup share" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share.png" /></p>
+<ol>
+<li>ユーザーを追加し、<strong>Next</strong> をクリックします。すでにアカウントがある場合、この手順はスキップされます。</li>
+</ol>
+<p><img alt="samba quick setup share, add a user" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share_add_user.png" /></p>
+<ol>
+<li>三角アイコンをクリックしてすべてのフォルダーを表示します。共有するフォルダーを選択するか、ディスク全体を共有したい場合はディスク名（disk1_part1）をクリックし、<strong>Next</strong> をクリックします。</li>
+</ol>
+<p><img alt="samba quick setup share, add shared folder" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share_add_shared_folder.png" /></p>
+<ol>
+<li>共有フォルダーを設定します。</li>
+</ol>
+<p>セキュリティ上、<strong>Anonymous Access</strong> を有効にすることは推奨しません。</p>
+<p>前の手順で作成したユーザーは、デフォルトで <strong>Read-Only User</strong> に追加されます。このユーザーに書き込みや削除を許可したい場合は、<strong>Read-Only User</strong> から外し、<strong>Writable User</strong> に追加して <strong>Apply</strong> をクリックしてください。</p>
+<p><img alt="samba quick setup share, shared folder settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share_shared_folder_settings.png" /></p>
+<ol>
+<li>フォルダーのアクセスリンクを取得します。</li>
+</ol>
+<p>Windows用とUnix系OS用のリンクが表示されます。Unix系OSにはAndroid、iOS、macOS、Ubuntuなどが含まれます。</p>
+<p>これらのリンクを使ってSamba経由で共有フォルダーにアクセスできます。詳細は<a href="#samba-client">こちら</a>をご覧ください。</p>
+<p><img alt="samba quick setup share, folder access link" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share_folder_access_link.png" /></p>
+<p><strong>注意:</strong> <strong>Allow Access Samba from WAN</strong> を有効にして上位ネットワークから共有フォルダーにアクセスする場合は、アクセスリンク内のルーターIP（デフォルトは192.168.8.1）を、Web管理パネルの <strong>INTERNET</strong> ページで確認できるWAN IPに置き換えてください。</p>
+<hr />
+<h2 id="webdav">WebDAVをセットアップする<a class="headerlink" href="#webdav" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Enable WebDAV</strong> をオンにし、<strong>Apply</strong> をクリックします。</li>
 <li>
-<p>オンに切り替えるとWebDAVが有効になります。その彼のパラメータについては、以下を参照し、<strong>Apply</strong>をクリックしてください。</p>
-<ul>
-<li>
-<p>WANからのWebDAVアクセスを許可します。上位のデバイスがWebDAVにアクセスできるようにしたい場合は、これを有効にします。</p>
+<p><strong>Allow Access WebDAV from WAN</strong>: 上位ネットワーク側のデバイスからWebDAVにアクセスさせたい場合は有効にします。</p>
 </li>
 <li>
-<p>WebDAV プロトコル、<strong>HTTP</strong> は暗号化されません。使用する場合はリスクを負ってください。 <strong>HTTPS</strong> は暗号化されており、から身署名証明書を使用します。</p>
+<p><strong>WebDAV Protocol</strong>: <strong>HTTP</strong> は暗号化されません。使用は自己責任です。<strong>HTTPS</strong> は暗号化されますが、自己署名証明書を使用します。</p>
 </li>
 <li>
-<p>WebDAV ポートは、競合しない限り、通例は変更する必要はありません。ポート番号の範囲は 1024 ～ 65535 です。</p>
-</li>
-</ul>
-<p><img alt="enable webdav" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_quick_setup_share/enable_webdav.png" /></p>
-</li>
-<li>
-<p>次に、共有リンクを取なければならないするように設定しましょう。 ディスクが検出されると、<strong>クイック セットアップ共有</strong>のリンクが表示されます。<strong>クイック セットアップ共有</strong> をクリックします。</p>
-<p><img alt="enable webdav" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_quick_setup_share/webdav_quick_setup_share.png" /></p>
-</li>
-<li>
-<p>ユーザーを追加します。すでにアカウントをお持ちの場合は、このステップはスキップされます。<strong>次へ</strong>をクリックします。</p>
-<p><img alt="webdav quick setup share, add a user" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share_add_user.png" /></p>
-</li>
-<li>
-<p>三角形のアイコンをクリックしてすべてのフォルダーを表示し、共有するフォルダーを選択します。 または、disk1_part1 をクリックしてディスク全体を共有します。 <strong>次へ</strong>をクリックします。</p>
-<p><img alt="webdav quick setup share, add shared folder" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share_add_shared_folder.png" /></p>
-</li>
-<li>
-<p>共有フォルダの設定。</p>
-<p>セキュリティ上の理よりから、<strong>匿名アクセス</strong>を有効にすることはお勧めしません。</p>
-<p>作成したユーザーは、デフォルトで<strong>Read-Only User</strong>に追加されます。このアカウントをファイルの書き込みや削除ができるようにしたい場合は、Read-Only Userから外し、<strong>Writable User</strong>に追加します。<strong>Apply</strong> をクリックします。</p>
-<p><img alt="webdav quick setup share, shared folder settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_quick_setup_share/webdav_quick_setup_share_shared_folder_settings.png" /></p>
-</li>
-<li>
-<p>フォルダアクセスリンク。 WindowsとUnix系OSのリンクが表示されます。Unix系OSには、Android、iOS、macOS、Ubuntuなどがあります。それでは、様々なOSでSambaにアクセスしてみてください。 <a href="#webdav-client">こちら</a>チェックします。</p>
-<p><strong>注意:</strong> <strong>WANからのSambaアクセスを許可する</strong> を有効にしてWANからアクセスする場合、下図のルーターIP(デフォルト192.168.8.1)をインターネット(INTERNET)ページにあるWAN IPに置き換える必要があります。</p>
-<p><img alt="webdav quick setup share, folder access link" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_quick_setup_share/webdav_quick_setup_share_folder_access_link.png" /></p>
+<p><strong>WebDAV Port</strong>: ポート競合がない限り変更は不要です。推奨ポート範囲は1024〜65535です。</p>
 </li>
 </ol>
+<p><img alt="enable webdav" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_quick_setup_share/enable_webdav.png" /></p>
+<ol>
+<li><strong>Quick Setup Share</strong> をクリックして共有リンクを設定します。</li>
+</ol>
+<p><img alt="enable webdav" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_quick_setup_share/webdav_quick_setup_share.png" /></p>
+<ol>
+<li>ユーザーを追加し、<strong>Next</strong> をクリックします。すでにアカウントがある場合、この手順はスキップされます。</li>
+</ol>
+<p><img alt="webdav quick setup share, add a user" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share_add_user.png" /></p>
+<ol>
+<li>三角アイコンをクリックしてすべてのフォルダーを表示します。共有するフォルダーを選択するか、ディスク全体を共有したい場合はディスク名（disk1_part1）をクリックし、<strong>Next</strong> をクリックします。</li>
+</ol>
+<p><img alt="webdav quick setup share, add shared folder" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_quick_setup_share/samba_quick_setup_share_add_shared_folder.png" /></p>
+<ol>
+<li>共有フォルダーを設定します。</li>
+</ol>
+<p>セキュリティ上、<strong>Anonymous Access</strong> を有効にすることは推奨しません。</p>
+<p>前の手順で作成したユーザーは、デフォルトで <strong>Read-Only User</strong> に追加されます。このユーザーに書き込みや削除を許可したい場合は、<strong>Read-Only User</strong> から外し、<strong>Writable User</strong> に追加して <strong>Apply</strong> をクリックしてください。</p>
+<p><img alt="webdav quick setup share, shared folder settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_quick_setup_share/webdav_quick_setup_share_shared_folder_settings.png" /></p>
+<ol>
+<li>フォルダーのアクセスリンクを取得します。</li>
+</ol>
+<p>Windows用とUnix系OS用のリンクが表示されます。Unix系OSにはAndroid、iOS、macOS、Ubuntuなどが含まれます。</p>
+<p>これらのリンクを使ってWebDAV経由で共有フォルダーにアクセスできます。詳細は<a href="#webdav-client">こちら</a>をご覧ください。</p>
+<p><img alt="webdav quick setup share, folder access link" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_quick_setup_share/webdav_quick_setup_share_folder_access_link.png" /></p>
+<p><strong>注意:</strong> <strong>Allow Access WebDAV from WAN</strong> を有効にして上位ネットワークから共有フォルダーにアクセスする場合は、アクセスリンク内のルーターIP（デフォルトは192.168.8.1）を、Web管理パネルの <strong>INTERNET</strong> ページで確認できるWAN IPに置き換えてください。</p>
 <hr />
-<h2 id="dlna">DLNAのセットアップ<a class="headerlink" href="#dlna" title="Permanent link">&para;</a></h2>
-<p>DLNAを有効に切り替え、必要に応じて<strong>共有パス</strong>を変更し、<strong>Apply</strong>をクリックします。これで完たです。</p>
-<p><img alt="network storage, enable dlna" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/enable_dlna.png" /></p>
-<p>スマートテレビをルーターに接続すると、DLNAサーバーが見つかります。</p>
+<h2 id="dlna">DLNAをセットアップする<a class="headerlink" href="#dlna" title="Permanent link">&para;</a></h2>
+<p><strong>Enable DLNA</strong> をオンにし、<strong>Apply</strong> をクリックします。</p>
+<p><img alt="network storage, enable dlna" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/enable_dlna.jpg" /></p>
+<p>スマートTVをルーターに接続すると、DLNAサーバーが検出されます。</p>
 <hr />
-<h2 id="samba_1">Samba クライアント<a class="headerlink" href="#samba_1" title="Permanent link">&para;</a></h2>
+<h2 id="samba_1">Sambaクライアント<a class="headerlink" href="#samba_1" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">macOS</label><label for="__tabbed_1_3">Android</label><label for="__tabbed_1_4">iOS</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>ここでは Windows 11 の例を示しますが、Windows 10 も same 様です。</p>
-<p>ファイルエクスプローラーを開き、<strong>このPC</strong>（左ペイン）を右クリックします。表示されるコンテキストメニューから、<strong>その彼のオプションを表示</strong> -&gt; <strong>ネットワークの場所を追加</strong> を選択します。</p>
+<p>ここではWindows 11を例に説明しますが、Windows 10でも同様です。</p>
+<p>エクスプローラーを開き、左ペインの <strong>This PC</strong> を右クリックします。表示されたコンテキストメニューから <strong>Show more options</strong> -&gt; <strong>Add a network location</strong> を選択します。</p>
 <p><img alt="windows 11 add network location" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/windows11_add_network_location.png" /></p>
-<p><strong>カスタムネットワークの場所を選択する</strong> をクリックし、<strong>次へ</strong>をクリックします。</p>
+<p><strong>Choose a custom network location</strong> をクリックし、<strong>Next</strong> をクリックします。</p>
 <p><img alt="windows 11 add network location" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/windows11_add_network_location_2.png" /></p>
-<p>Sambaアクセスリンクを入力します。<strong>次へ</strong>をクリックします。</p>
+<p>Sambaのアクセスリンクを入力し、<strong>Next</strong> をクリックします。</p>
 <p><img alt="windows 11 add network location" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/windows11_add_network_location_3.png" /></p>
-<p>この場所の名前を付けます。<strong>次へ</strong>をクリックしてください。</p>
+<p>この場所の名前を入力し、<strong>Next</strong> をクリックします。</p>
 <p><img alt="windows 11 add network location" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/windows11_add_network_location_4.png" /></p>
-<p><strong>完た</strong>をクリックします。</p>
+<p><strong>Finish</strong> をクリックします。</p>
 <p><img alt="windows 11 add network location" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/windows11_add_network_location_5.png" /></p>
-<p>ユーザー名とパスワードが必要な場合は、クレデンシャルの入力を求められます。その後、<strong>OK</strong>をクリックします。</p>
+<p>ユーザー名とパスワードが必要な場合は、認証情報の入力を求められます。入力後、<strong>OK</strong> をクリックします。</p>
 <p><img alt="windows 11 add network location" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/windows11_add_network_location_6.png" /></p>
 </div>
 <div class="tabbed-block">
-<p>FinderでSambaにアクセスできます。</p>
-<p>Finderを開き、メニューのGo -&gt; Connect to Serverをクリックします。Sambaアクセスリンクをコピー＆ペーストし ます。</p>
+<p>SambaにはFinderからアクセスできます。</p>
+<p>Finderを開き、メニューの <strong>Go</strong> -&gt; <strong>Connect to Server</strong> をクリックして、Sambaのアクセスリンクを貼り付けます。</p>
 <p><img alt="network storage, mac os finder connect to server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/finder_connect_to_server.png" /></p>
-<p>ユーザー名とパスワードの入力を求められますが、ユーザー名は<strong>共有フォルダ設定</strong>を設定したときのものです。</p>
-<p>匿名アクセスを設定した場合は、下の画像で<strong>ゲスト</strong>を選択してください。</p>
+<p>ユーザー名とパスワードの入力を求められます。ユーザー名は <strong>Shared Folder Settings</strong> で設定したものです。</p>
+<p>匿名アクセスを設定している場合は、下の画面で <strong>Guest</strong> を選択してください。</p>
 <p><img alt="network storage, mac os finder connect to server username password" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/finder_username_password.png" /></p>
-<p><strong>続行</strong>をクリックすると、Finder のサイドバーに Samba が表示されます。</p>
+<p><strong>Continue</strong> をクリックすると、FinderのサイドバーにSambaが表示されます。</p>
 <p><img alt="network storage, mac os finder samba connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/finder_samba_connected.png" /></p>
 </div>
 <div class="tabbed-block">
-<p>SambaをサポートするAndroidアプリは多数ありますが、ここでは <a href="https://play.google.com/store/apps/details?id=com.cxinventor.file.explorer&amp;hl=en&amp;gl=US" target="_blank">Cx File Explorer</a>の例をご紹介します。</p>
-<p>ホームページで<strong>ネットワーク</strong>をクリックします。</p>
+<p>Sambaに対応したAndroidアプリは多数あります。ここでは <a href="https://play.google.com/store/apps/details?id=com.cxinventor.file.explorer&amp;hl=en&amp;gl=US" target="_blank">Cx File Explorer</a> を例にします。</p>
+<p>ホーム画面で <strong>NETWORK</strong> をタップします。</p>
 <p><img alt="cx file explorer home page" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/cx_file_explorer_home.png" width="400" /></p>
-<p><strong>新しい場所</strong>をクリックします。</p>
+<p><strong>New Location</strong> をタップします。</p>
 <p><img alt="cx file explorer home page" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/cx_file_explorer_new_location.png" width="400" /></p>
-<p><strong>SMB</strong>をクリックします。</p>
+<p><strong>SMB</strong> をタップします。</p>
 <p><img alt="cx file explorer home page" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/cx_file_explorer_remote.png" width="350" /></p>
-<p><strong>ホスト</strong>、<strong>ユーザー名</strong>、<strong>パスワード</strong>を入力してください。<strong>匿名アクセス</strong>の場合は、<strong>匿名</strong>にチェックを入れてください。</p>
+<p><strong>Host</strong>、<strong>Username</strong>、<strong>Password</strong> を入力します。匿名アクセスの場合は <strong>Anonymous</strong> にチェックを入れてください。</p>
 <p><img alt="cx file explorer home page" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/cx_file_explorer_smb.png" width="350" /></p>
 </div>
 <div class="tabbed-block">
-<p>iOS <a href="https://apps.apple.com/us/app/files/id1232058109" target="_blank">ファイル</a>アプリはSambaをサポートしています。あるいは、彼のアプリ、例えば<a href="https://apps.apple.com/us/app/documents-file-reader-browser/id364901807" target="_blank">Documents</a>を使うこともできます。</p>
-<p>次のセクションでは、それぞれ<strong>Files</strong>アプリと<strong>Documents</strong>アプリを使用してSambaに接続する方法を説明します。</p>
+<p>iOSの<a href="https://apps.apple.com/us/app/files/id1232058109" target="_blank">Files</a>アプリはSambaに対応しています。ほかにも、<a href="https://apps.apple.com/us/app/documents-file-reader-browser/id364901807" target="_blank">Documents</a> などのアプリを利用できます。</p>
+<p>以下では、<strong>Files</strong> アプリと <strong>Documents</strong> アプリでSambaサーバーに接続する方法を説明します。</p>
 <ul>
 <li>
-<p><a href="https://apps.apple.com/us/app/files/id1232058109" target="_blank">Files</a> appによるSambaサーバーへの接続ガイド。</p>
-<p><strong>Files</strong> アプリを開きます。デフォルトでインストールされているので、ホーム画面にあるはずです。現に<strong>Files</strong>は取り外し可能なアプリなので、表示されない場合はApp Storeから再インストールする必要があるかもしれません。</p>
+<p><a href="https://apps.apple.com/us/app/files/id1232058109" target="_blank">Files</a> アプリでSambaサーバーに接続する方法。</p>
+<p><strong>Files</strong> アプリを開きます。通常は標準でインストールされています。<strong>Files</strong> は削除可能なアプリのため、表示されない場合はApp Storeから再インストールしてください。</p>
 <p><img alt="search files on iphone" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/ios15-iphone-12-pro-home-screen-search-files.jpg" width="300&quot;" /></p>
-<p>画面下部の<strong>ブラウズ</strong>タブにいることを確認します。右上の「...」（3つの時）アイコンをタップし、アプリのコンテキストメニューを表示します。</p>
+<p>画面下部の <strong>Browse</strong> タブを開き、右上の「...」アイコンをタップしてメニューを表示します。</p>
 <p><img alt="ios files set up SMB" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/ios_files_smb_1.png" width="560&quot;" /></p>
-<p>メニューの上部にある<strong>Connect to Server</strong>オプションをタップします。次の画面で、サーバーの接続URLを入力します。URLは<a href="#shared-link">共有リンク</a>にあります。 右上の<strong>次へ</strong>ボタンをタップして次に進みます。</p>
+<p><strong>Connect to Server</strong> をタップします。次の画面でサーバーの接続URLを入力します。URLは共有リンクで確認できます。右上の <strong>Next</strong> をタップします。</p>
 <p><img alt="ios files set up SMB" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/ios_files_smb_2.png" width="560&quot;" /></p>
-<p>保護された共有ネットワークに接続する場合は、次の画面で認証情報を入力します。<strong>登録ユーザー</strong>をタップし、<strong>名前</strong>と<strong>パスワード</strong>フィールドにSambaのユーザー名とパスワードを入力します。<strong>匿名アクセス</strong>を有効にすると、代わりに "ゲスト"をタップすることができます。</p>
+<p>保護されたネットワーク共有に接続する場合は、認証情報を入力します。<strong>Registered User</strong> を選び、Sambaのユーザー名とパスワードを入力してください。匿名アクセスを有効にしている場合は <strong>Guest</strong> を選択できます。</p>
 <p><img alt="ios files set up SMB" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/ios_files_smb_3.png" width="560&quot;" /></p>
-<p>右上の<strong>次へ</strong>ボタンを押して接続を完たします。iOSデバイスがサーバーへの接続に成功し、利用可能な共有のリストが表示されるはずです。</p>
+<p>右上の <strong>Next</strong> をタップすると接続が完了します。iOSデバイスがサーバーに接続され、利用可能な共有の一覧が表示されます。</p>
 <p><img alt="ios files set up SMB" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/ios_files_smb_4.png" width="560&quot;" /></p>
-<p>Samba共有はメニューの一番下、<strong>共有</strong>見出しの下にリストさ れます。</p>
+<p>Samba共有は、メニュー下部の <strong>Shared</strong> の下に表示されます。</p>
 <p><img alt="ios files set up SMB" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/ios_files_smb_5.png" width="560&quot;" /></p>
 </li>
 <li>
-<p><a href="https://apps.apple.com/us/app/documents-file-reader-browser/id364901807" target="_blank">Documents</a> appによるSambaサーバーへの接続ガイド。</p>
-<p>右下のプラスボタンをクリックします。</p>
+<p><a href="https://apps.apple.com/us/app/documents-file-reader-browser/id364901807" target="_blank">Documents</a> アプリでSambaサーバーに接続する方法。</p>
+<p>右下のプラスボタンをタップします。</p>
 <p><img alt="documents samba" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/documents_1.png" width="560" /></p>
-<p><strong>接続の追加</strong>をクリックします。</p>
+<p><strong>Add Connection</strong> をタップします。</p>
 <p><img alt="documents samba" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/documents_2.png" width="560" /></p>
-<p><strong>Windows SMB</strong>をクリックします。</p>
+<p><strong>Windows SMB</strong> をタップします。</p>
 <p><img alt="documents samba" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/documents_3.png" width="560" /></p>
-<p><strong>タイトル</strong>は、この接続の名前です。<strong>URL</strong>はアクセス・リンクです。<strong>ログイン</strong>はユーザー名です。匿名アクセスの場合は、<strong>ログイン</strong>と<strong>パスワード</strong>は空のままにしてください。</p>
-<p><strong>完た</strong>ボタンをクリックして設定を完たします。</p>
+<p><strong>Title</strong> は接続名、<strong>URL</strong> はアクセスリンク、<strong>Login</strong> はユーザー名です。匿名アクセスの場合は <strong>Login</strong> と <strong>Password</strong> を空欄のままにします。</p>
+<p><strong>Done</strong> をタップして設定を完了します。</p>
 <p><img alt="documents samba" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/documents_4_samba.png" width="560" /></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<h2 id="webdav_1">WebDAV クライアント<a class="headerlink" href="#webdav_1" title="Permanent link">&para;</a></h2>
+<h2 id="webdav_1">WebDAVクライアント<a class="headerlink" href="#webdav_1" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Windows</label><label for="__tabbed_2_2">macOS</label><label for="__tabbed_2_3">Android</label><label for="__tabbed_2_4">iOS</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>WebDAV をサポートするソフトウェアは多数あります、例えば <a href="https://www.raidrive.com/" target="_blank">RaiDrive</a>, <a href="https://cyberduck.io/download/" target="_blank">Cyberduck</a>, <a href="https://winscp.net/eng/index.php" target="_blank">WinSCP</a>。</p>
-<p>以下は RaiDrive の例です。</p>
-<p><strong>追加</strong> をクリックします。</p>
+<p>WebDAVに対応したソフトウェアは多数あります。例えば <a href="https://www.raidrive.com/" target="_blank">RaiDrive</a>、<a href="https://cyberduck.io/download/" target="_blank">Cyberduck</a>、<a href="https://winscp.net/eng/index.php" target="_blank">WinSCP</a> などがあります。</p>
+<p>ここではRaiDriveを例に説明します。</p>
+<p><strong>Add</strong> をクリックします。</p>
 <p><img alt="RaiDrive WebDAV" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/raidrive_add.png" /></p>
-<p><strong>Storage</strong> エリアで、<strong>NAS</strong> -&gt; <strong>WebDAV</strong> をクリックします。</p>
-<p><strong>Address</strong> エリアで、Address の近くにあるチェックボックスをオン/オフして https/http を切り替え、アドレスを入力します。</p>
-<p><strong>Account</strong> エリアで、ユーザー名とパスワードを入力するか、<strong>匿名</strong>にチェックを入れます。</p>
-<p>最も後に、<strong>接続</strong>をクリックすると、ファイルエクスプローラーにXドライブが追加されます。</p>
+<p><strong>Storage</strong> エリアで <strong>NAS</strong> -&gt; <strong>WebDAV</strong> を選択します。</p>
+<p><strong>Address</strong> エリアでは、Address横のチェックボックスで https/http を切り替え、アドレスを入力します。</p>
+<p><strong>Account</strong> エリアでは、ユーザー名とパスワードを入力するか、<strong>Anonymous</strong> をチェックします。</p>
+<p>最後に <strong>Connect</strong> をクリックすると、エクスプローラーにXドライブが追加されます。</p>
 <p><img alt="RaiDrive WebDAV" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/raidrive_new_drive_webdav.png" /></p>
 </div>
 <div class="tabbed-block">
-<p>WebDAVに対応したアプリは多数あります、例えば <a href="https://apps.apple.com/hk/app/fe-file-explorer/id1444382558?l=en&amp;mt=12" target="_blank">FE File Explorer</a>, <a href="https://cyberduck.io/download/" target="_blank">Cyberduck</a>.</p>
-<p>FEファイルエクスプローラーの例です。</p>
-<p>追加ボタンをクリックします。</p>
+<p>WebDAVに対応したアプリは多数あります。例えば <a href="https://apps.apple.com/hk/app/fe-file-explorer/id1444382558?l=en&amp;mt=12" target="_blank">FE File Explorer</a> や <a href="https://cyberduck.io/download/" target="_blank">Cyberduck</a> などがあります。</p>
+<p>ここではFE File Explorerを例に説明します。</p>
+<p>Addボタンをクリックします。</p>
 <p><img alt="FE File Explorer WebDAV" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/fe_file_explorer_add.png" /></p>
-<p><strong>WebDAV</strong>を選択します。</p>
+<p><strong>WebDAV</strong> を選択します。</p>
 <p><img alt="FE File Explorer WebDAV" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/fe_file_explorer_webdav.png" /></p>
-<p>接続設定を入力します。 匿名アクセスの場合は、<strong>ユーザー名</strong> と <strong>パスワード</strong> を空のままにしておきます。 次に、<strong>保存して接続</strong> をクリックします。</p>
+<p>接続設定を入力します。匿名アクセスの場合は <strong>User Name</strong> と <strong>Password</strong> を空欄のままにしてください。その後、<strong>Save &amp; Connect</strong> をクリックします。</p>
 <p><img alt="FE File Explorer WebDAV" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/fe_file_explorer_webdav_connection_setting.png" /></p>
-<p><em>以下のセキュアサーバー（null）は信頼できない証明書を使用しています</em>という警告が表示されることがありますが、これはから身署名証明書を使用しているため、信頼してください。</p>
+<p><em>The following secure server (null) uses an untrusted certificate. Trust this server?</em> という警告が表示される場合があります。これは自己署名証明書を使用しているためです。問題なければ信頼してください。</p>
 </div>
 <div class="tabbed-block">
-<p>WebDAVをサポートするiOSアプリはたくさんありますが、ここでは <a href="https://play.google.com/store/apps/details?id=com.cxinventor.file.explorer&amp;hl=en&amp;gl=US" target="_blank">Cx File Explorer</a>の例を紹介します。</p>
-<p>注意：Cxファイルエクスプローラーは匿名アクセスをサポートしていません。</p>
-<p>ホームページで<strong>ネットワーク</strong>をクリックします。</p>
+<p>WebDAVに対応したAndroidアプリは多数あります。ここでは <a href="https://play.google.com/store/apps/details?id=com.cxinventor.file.explorer&amp;hl=en&amp;gl=US" target="_blank">Cx File Explorer</a> を例にします。</p>
+<p>注意: Cx File Explorerは匿名アクセスに対応していません。</p>
+<p>ホーム画面で <strong>NETWORK</strong> をタップします。</p>
 <p><img alt="cx file explorer home page" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/cx_file_explorer_home.png" width="400" /></p>
-<p><strong>新しい場所</strong>をクリックしてください。</p>
+<p><strong>New Location</strong> をタップします。</p>
 <p><img alt="cx file explorer home page" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/cx_file_explorer_new_location.png" width="400" /></p>
-<p><strong>WebDAV</strong>をクリックします。</p>
+<p><strong>WebDAV</strong> をタップします。</p>
 <p><img alt="cx file explorer home page" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/samba_client/cx_file_explorer_remote.png" width="350" /></p>
-<p><strong>ホスト</strong>、<strong>ポート</strong>、<strong>ユーザー名</strong>、<strong>パスワード</strong>を入力します。</p>
+<p><strong>Host</strong>、<strong>Port</strong>、<strong>Username</strong>、<strong>Password</strong> を入力します。</p>
 <p><img alt="cx file explorer home page" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/cx_file_explorer_webdav.png" width="350" /></p>
 </div>
 <div class="tabbed-block">
-<p>WebDAVをサポートするiOSアプリはたくさんあるが、ここでは <a href="https://apps.apple.com/us/app/documents-file-reader-browser/id364901807" target="_blank">Documents</a>の例を紹介します。</p>
-<p>右下のプラスボタンをクリックします。</p>
+<p>WebDAVに対応したiOSアプリは多数あります。ここでは <a href="https://apps.apple.com/us/app/documents-file-reader-browser/id364901807" target="_blank">Documents</a> を例にします。</p>
+<p>右下のプラスボタンをタップします。</p>
 <p><img alt="documents WebDAV" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/documents_1.png" width="560" /></p>
-<p><strong>接続の追加</strong>をクリックします。</p>
+<p><strong>Add Connection</strong> をタップします。</p>
 <p><img alt="documents WebDAV" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/documents_2.png" width="560" /></p>
-<p><strong>WebDAV Server</strong>をクリックします。</p>
+<p><strong>WebDAV Server</strong> をタップします。</p>
 <p><img alt="documents WebDAV" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/documents_3.png" width="560" /></p>
-<p><strong>タイトル</strong> は、この接続の名前です。 <strong>URL</strong> はアクセスリンクです。 <strong>ログイン</strong> はユーザー名です。</p>
-<p><strong>完た</strong>ボタンをクリックして、このセットアップを完たします。</p>
+<p><strong>Title</strong> は接続名、<strong>URL</strong> はアクセスリンク、<strong>Login</strong> はユーザー名です。</p>
+<p><strong>Done</strong> をタップして設定を完了します。</p>
 <p><img alt="documents WebDAV" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/network_storage/webdav_client/documents_4_webdav.png" width="560" /></p>
 </div>
 </div>
 </div>
+<h2 id="_6">モバイルアプリの使い方<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Web管理パネルでは共有フォルダーのみ管理できます。ストレージデバイス上のファイルを管理するには、<a href="https://www.gl-inet.com/app/#download-app-glinet" target="_blank">モバイルアプリ</a>を使用してください。</p>
+<ul>
+<li>
+<p><strong>ローカルネットワーク</strong>経由でアプリにアクセスすると、ストレージデバイスとその容量が表示され、読み書きが可能です。</p>
+</li>
+<li>
+<p><strong>クラウド</strong>経由でアプリにアクセスすると、ストレージデバイスとその容量は表示されますが、読み書きはできません。</p>
+</li>
+</ul>
 <hr />
-<p>まだご質問はありますか？ <a href="https://forum.gl-inet.com" target="_blank">コミュニティ・フォーラム</a>をご覧ください。</p>
+<p>まだご質問はありますか？ <a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>または<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a>をご利用ください。</p>
 
 
 
