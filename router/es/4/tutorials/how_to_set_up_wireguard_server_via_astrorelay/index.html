@@ -2914,11 +2914,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_the_dedicated_ip_by_nordvpn_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_connect_to_nordvpn_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Conectarse a la IP dedicada de NordVPN
+    Conectarse a NordVPN con una IP dedicada
   </span>
   
 
@@ -2934,11 +2934,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_the_dedicated_ip_by_surfshark_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Conectarse a la IP dedicada de Surfshark
+    Conectarse a Surfshark con una IP dedicada
   </span>
   
 
@@ -6119,30 +6119,46 @@
 
   <!-- Markdown content -->
   <h1 id="como-configurar-un-servidor-wireguard-mediante-astrorelay">¿Cómo configurar un servidor WireGuard mediante AstroRelay?<a class="headerlink" href="#como-configurar-un-servidor-wireguard-mediante-astrorelay" title="Permanent link">&para;</a></h1>
-<p>Escenario: quiere configurar un servidor WireGuard en un router GL.iNet en casa o en la oficina para acceder de forma remota a su servicio local, pero su ISP no le proporciona una dirección IP pública.</p>
+<p>Este tutorial presenta los pasos para configurar un servidor WireGuard mediante AstroRelay en un router GL.iNet. Es ideal para quienes necesitan acceder de forma remota a servicios locales de su casa u oficina, pero no disponen de una dirección IP pública proporcionada por su ISP.</p>
 <p><a href="https://www.astrorelay.com" target="_blank">AstroRelay</a> proporciona un túnel seguro de proxy inverso, mediante el cual puede acceder de forma segura a recursos situados detrás de NAT y firewalls.</p>
 <ol>
-<li>Siga la guía <a href="../../interface_guide/wireguard_server/">aquí</a> para configurar un servidor WireGuard incluso si no tiene una dirección IP pública. Active <strong>Allow Access Local Network</strong>.</li>
+<li>Siga <a href="../../interface_guide/wireguard_server/">esta guía</a> para configurar un servidor WireGuard en su router GL.iNet, aunque no tenga una dirección IP pública.</li>
 </ol>
 <p><img alt="set up wireguard server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/start_wg_server4x.jpg" /></p>
-<p>Luego exporte una configuración de WireGuard. La imagen de abajo muestra un ejemplo.</p>
+<p>Después haga clic en <strong>Profiles</strong> para exportar la configuración de WireGuard. A continuación se muestra un archivo de configuración de ejemplo.</p>
 <p><img alt="wireguard config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/wireguard_config.png" /></p>
+<ol>
+<li>(Opcional) Si necesita acceder de forma remota a la LAN del servidor VPN, habilite <strong>Allow Remote Access LAN</strong>. De lo contrario, omita este paso.</li>
+</ol>
+<p>??? "Para firmware v4.7 y anteriores"</p>
+<p>En el panel de administración web del servidor, vaya a <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; sección <strong>VPN Server</strong>. Haga clic en el icono de engranaje situado a la derecha del servidor WireGuard.</p>
+<p><img alt="server options 4.7" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/server_options_4.7.png" /></p>
+<p>Active <strong>Remote Access LAN</strong> y haga clic en <strong>Apply</strong>.</p>
+<p><img alt="server allow access lan 4.7" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/server-allow-access-lan-4.7.png" /></p>
+<p><strong>Cuando esta opción está habilitada, se puede acceder de forma remota a este router y a los dispositivos de la LAN a través de la VPN.</strong></p>
+<p>??? "Para firmware v4.8 y posteriores"</p>
+<p>En el panel de administración web del servidor, vaya a <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong>. Haga clic en <strong>Options</strong> en la esquina superior derecha.</p>
+<p><img alt="server options 4.8" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/server_options_4.8.png" /></p>
+<p>Active <strong>Allow Remote Access the LAN Subnet</strong> y haga clic en <strong>Apply</strong>.</p>
+<p><img alt="server allow access lan 4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/server-allow-access-lan-4.8.png" /></p>
+<p><strong>Cuando esta opción está habilitada, se puede acceder de forma remota a este router y a los dispositivos de la LAN a través de la VPN.</strong></p>
 <ol>
 <li>Registre una cuenta en AstroRelay y siga este <a href="https://www.astrorelay.com/tutorial.html" target="_blank">tutorial</a> para completar la configuración inicial.</li>
 </ol>
 <p>Al añadir un nuevo dominio, elija el servidor más cercano a su router.</p>
 <p><img alt="astrorelay add a new domain" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/astrorelay_add_a_new_domain.png" /></p>
-<p>Al añadir un nuevo enlace, introduzca la <strong>dirección IP LAN</strong> de su router en el cuadro <strong>Destination Host IP</strong>. Introduzca <strong>51820</strong> en el cuadro <strong>Destination Port</strong>.</p>
+<p>Al añadir un nuevo enlace, introduzca la <strong>dirección IP LAN</strong> de su router en el campo <strong>Destination Host IP</strong> e introduzca <strong>51820</strong> en el campo <strong>Destination Port</strong>.</p>
 <p><img alt="link for wireguard server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/astrorelay_wg_server.png" /></p>
-<p>Después obtendrá un enlace, por ejemplo <strong>wg_server_test.arlab1.cc:33331</strong>. Haga clic en él para copiarlo.</p>
+<p>A continuación obtendrá un enlace, por ejemplo <strong>wg_server_test.arlab1.cc:33331</strong>. Haga clic en él para copiarlo.</p>
 <p><img alt="astrorelay link" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/astrorelay_link.png" /></p>
 <ol>
-<li>Abra la configuración de WireGuard y reemplace los datos después de <strong>Endpoint</strong> por el enlace que obtuvo en el paso anterior. Después podrá usar la configuración modificada en la aplicación cliente de WireGuard.</li>
+<li>Abra el archivo de configuración de WireGuard, reemplace el valor que aparece después de <strong>Endpoint</strong> por el enlace obtenido en el paso anterior y aplique el cambio.</li>
 </ol>
 <p><img alt="replace link in wireguard config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/replace_endpoint_in_wireguard_config.png" /></p>
 <ol>
-<li>Cuando no esté en casa o en la oficina, puede cargar el archivo de configuración modificado en la aplicación cliente de WireGuard para acceder a su servicio local de casa u oficina como si estuviera allí.</li>
+<li>Instale la <a href="https://www.wireguard.com/install/" target="_blank">aplicación WireGuard</a> en el dispositivo que quiera usar como cliente WireGuard. Después cargue el archivo de configuración modificado en la aplicación e inicie la conexión. Como alternativa, también puede subirlo a otro router GL.iNet para configurarlo como cliente WireGuard.</li>
 </ol>
+<p>Una vez conectado, podrá acceder de forma remota a sus servicios locales de casa u oficina.</p>
 <hr />
 <p>¿Todavía tiene preguntas? Visite nuestro <a href="https://forum.gl-inet.com" target="_blank">Foro de la comunidad</a> o <a href="https://www.gl-inet.com/contacts/" target="_blank">contáctenos</a>.</p>
 

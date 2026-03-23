@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.gl-inet.com/router/jp/4/tutorials/how_to_set_up_openvpn_server_via_astrorelay/">
       
       
-        <link rel="prev" href="../how_to_connect_to_the_dedicated_ip_by_surfshark_on_glinet_routers/">
+        <link rel="prev" href="../how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/">
       
       
         <link rel="next" href="../how_to_set_up_wireguard_server_via_astrorelay/">
@@ -2914,11 +2914,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_the_dedicated_ip_by_nordvpn_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_connect_to_nordvpn_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    NordVPN の専用 IP への接続
+    NordVPN に Dedicated IP で接続する
   </span>
   
 
@@ -2934,11 +2934,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_the_dedicated_ip_by_surfshark_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Surfshark の専用 IP への接続
+    Surfshark に Dedicated IP で接続する
   </span>
   
 
@@ -6110,33 +6110,64 @@
 
 
 <h1 id="astrorelayopenvpn">AstroRelay経由でOpenVPNサーバーを設定する方法<a class="headerlink" href="#astrorelayopenvpn" title="Permanent link">&para;</a></h1>
-<p>シナリオ: GL.iNetルーターでOpenVPNサーバーを設定してローカルサービスにリモートアクセスしたいが、ISPがパブリックIPアドレスを提供していない場合。</p>
-<p><a href="https://www.astrorelay.com" target="_blank">AstroRelay</a>は、NATおよびファイアウォールの背後にあるリソースにアクセスできる安全なリバースプロキシトンネルを提供します。</p>
+<p>このチュートリアルでは、GL.iNet ルーターで AstroRelay 経由の OpenVPN サーバーを設定する手順を紹介します。ISP からパブリック IP アドレスが提供されていない場合でも、自宅やオフィスのローカルサービスへリモートアクセスしたいユーザーに適しています。</p>
+<p><a href="https://www.astrorelay.com" target="_blank">AstroRelay</a> は、安全なリバースプロキシトンネルを提供し、NAT やファイアウォールの背後にあるリソースへ安全にアクセスできます。</p>
 <ol>
 <li>
-<p>パブリックIPアドレスがないことを無視して、<a href="../../interface_guide/openvpn_server/">こちら</a>のガイドに従ってOpenVPNサーバーを設定してください。<strong>ローカルネットワークへのアクセスを許可</strong>を有効にしてください。</p>
+<p><a href="../../interface_guide/openvpn_server/">このガイド</a>に従って、パブリック IP アドレスがなくても GL.iNet ルーターで OpenVPN サーバーを設定します。</p>
 <p><img alt="openvpnサーバーを設定" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/start_ovpn_server4x.jpg" /></p>
-<p>次に、OpenVPN構成をエクスポートします。以下の画像はその例です。</p>
+<p>その後、OpenVPN 設定ファイルをエクスポートします。以下は設定ファイルの例です。</p>
 <p><img alt="openvpn構成" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnpastelink.jpg" /></p>
 </li>
 <li>
-<p>AstroRelayアカウントにサインアップし、<a href="https://www.astrorelay.com/tutorial.html" target="_blank">チュートリアル</a>に従ってください。</p>
-<p>新しいドメインを追加する際、ルーターに最もも近いサーバーを選択してください。</p>
+<p>（任意）VPN サーバーの LAN にリモートアクセスする必要がある場合は、<strong>Allow Remote Access LAN</strong> を有効にします。不要な場合はこの手順をスキップしてください。</p>
+<details>
+<summary>ファームウェア v4.7 以前の場合</summary>
+<ol>
+<li>左側のサイドバーで <strong>VPN</strong> &gt; <strong>VPN Dashboard</strong> をクリックします。</li>
+<li>オプションアイコンをクリックします。</li>
+<li><strong>Remote Access LAN</strong> のスイッチをオンにします。</li>
+<li>
+<p><strong>Apply</strong> をクリックします。</p>
+<p><img alt="remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/toggle-enable-remote-access-lan.png" /></p>
+</li>
+</ol>
+</details>
+<details>
+<summary>ファームウェア v4.8 以降の場合</summary>
+<ol>
+<li>左側のサイドバーで <strong>VPN</strong> &gt; <strong>OpenVPN Server</strong> をクリックします。</li>
+<li>右上の <strong>Options</strong> をクリックします。</li>
+<li><strong>Allow Remote Access the LAN Subnet</strong> のスイッチをオンにします。</li>
+<li>
+<p><strong>Apply</strong> をクリックします。</p>
+<p><img alt="remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/enable-remote-access-lan-4.8.png" /></p>
+</li>
+</ol>
+</details>
+</li>
+<li>
+<p>AstroRelay アカウントを登録し、この<a href="https://www.astrorelay.com/tutorial.html" target="_blank">チュートリアル</a>に従って初期設定を完了します。</p>
+<p>新しいドメインを追加する際は、ルーターに最も近いサーバーを選択してください。</p>
 <p><img alt="astrorelay 新しいドメインを追加" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astrorelay_add_a_new_domain.png" /></p>
-<p>新しいリンクを追加する際、<strong>Destination Host IP</strong>にはルーターのIPアドレス（この場合は<strong>192.168.48.1</strong>）を入力してください。</p>
+<p>新しいリンクを追加する際は、ルーターの <strong>LAN IP アドレス</strong> を <strong>Destination Host IP</strong> フィールドに入力し、<strong>Destination Port</strong> フィールドに <strong>1194</strong> を入力します。</p>
 <p><img alt="openvpnサーバーのリンク" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnaddlink.jpg" /></p>
-<p>最も終のにリンクを取なければならないできます。例えば、<strong>testforx3000.arlab1.cc:37202</strong>のようになります。アイコンをクリックしてリンクをコピーできます。</p>
+<p>すると <strong>testforx3000.arlab1.cc:37202</strong> のようなリンクが発行されます。クリックしてリンクをコピーしてください。</p>
 <p><img alt="astrorelayリンク" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpncopylink.jpg" /></p>
 </li>
 <li>
-<p>このリンクをOpenVPN構成の<strong>リモート</strong>の後に置き、<strong>":"</strong>をスペースに置き換えます。その後、修正された構成をOpenVPNクライアントアプリで使用できます。</p>
+<p>OpenVPN 設定ファイルを開き、<strong>Remote</strong> の後ろの値を前の手順で取得したリンクに置き換えます。以下の例では、"42.200.00.00 1194" を "testforx3000.arlab1.cc:37202" に置き換えます。その後、コロン ":" を半角スペースに置き換えて変更を反映します。</p>
+<p><img alt="openvpn構成" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnpastelink.jpg" /></p>
 <p><img alt="openvpn構成にリンクを置き換える" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnconfig.jpg" /></p>
 </li>
 <li>
-<p>から宅やオフィスにいない場合でも、上記で作成した構成を使用してOpenVPNクライアントアプリを利用し、から宅やオフィスのローカルサービスにアクセスできます。</p>
+<p>OpenVPN クライアントとして使用するデバイスに <a href="https://openvpn.net/client/" target="_blank">OpenVPN Connect アプリ</a> をインストールします。次に、修正した設定ファイルをアプリへアップロードして接続を開始します。別の GL.iNet ルーターへアップロードして OpenVPN クライアントとして設定することもできます。</p>
+<p>接続後は、自宅やオフィスのローカルサービスへリモートからアクセスできます。</p>
 <p><img alt="openvpn起動" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnup.jpg" /></p>
 </li>
 </ol>
+<hr />
+<p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> をご利用いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a> からお問い合わせください。</p>
 
 
 

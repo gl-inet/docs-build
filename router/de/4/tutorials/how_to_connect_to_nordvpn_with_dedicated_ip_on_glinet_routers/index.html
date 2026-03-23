@@ -1,24 +1,24 @@
 
 <!doctype html>
-<html lang="es" class="no-js">
+<html lang="de" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentación de routers GL.iNet">
+        <meta name="description" content="Dokumentation für GL.iNet-Routerprodukte">
       
       
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/router/es/4/tutorials/how_to_connect_to_the_dedicated_ip_by_surfshark_on_glinet_routers/">
+        <link rel="canonical" href="https://docs.gl-inet.com/router/de/4/tutorials/how_to_connect_to_nordvpn_with_dedicated_ip_on_glinet_routers/">
       
       
-        <link rel="prev" href="../how_to_connect_to_the_dedicated_ip_by_nordvpn_on_glinet_routers/">
+        <link rel="prev" href="../vpn_obfuscation/">
       
       
-        <link rel="next" href="../how_to_set_up_openvpn_server_via_astrorelay/">
+        <link rel="next" href="../how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/">
       
       
       <link rel="icon" href="https://static.gl-inet.com/docs/router/common/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Conectarse a la IP dedicada de Surfshark - Documentación de routers GL.iNet 4</title>
+        <title>NordVPN mit einer dedizierten IP verbinden - GL.iNet Router-Dokumentation 4</title>
       
     
     
@@ -79,8 +79,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#como-conectarse-a-la-ip-dedicada-de-surfshark-en-routers-glinet" class="md-skip">
-          Saltar a contenido
+        <a href="#so-verbinden-sie-nordvpn-mit-einer-dedizierten-ip-auf-glinet-routern" class="md-skip">
+          Zum Inhalt
         </a>
       
     </div>
@@ -96,8 +96,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="../.." title="Documentación de routers GL.iNet 4" class="md-header__button md-logo" aria-label="Documentación de routers GL.iNet 4" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../.." title="GL.iNet Router-Dokumentation 4" class="md-header__button md-logo" aria-label="GL.iNet Router-Dokumentation 4" data-md-component="logo">
       
   <img src="https://static.gl-inet.com/docs/router/common/logo_white.svg" alt="logo">
 
@@ -110,13 +110,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Documentación de routers GL.iNet 4
+            GL.iNet Router-Dokumentation 4
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Conectarse a la IP dedicada de Surfshark
+              NordVPN mit einer dedizierten IP verbinden
             
           </span>
         </div>
@@ -127,7 +127,7 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
     </button>
     <div class="md-select__inner">
@@ -159,16 +159,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Buscar">
+      <nav class="md-search__options" aria-label="Suche">
         
-        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
@@ -179,7 +179,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Inicializando búsqueda
+            Suche wird initialisiert
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -190,7 +190,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/gl-inet/docs4.x" title="Ir al repositorio" class="md-source" data-md-component="source">
+        <a href="https://github.com/gl-inet/docs4.x" title="Zum Repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -211,7 +211,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Hauptnavigation" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -225,7 +225,7 @@
   
     
   
-  Inicio
+  Startseite
 
       </a>
     </li>
@@ -244,7 +244,7 @@
   
     
   
-  Guía del usuario
+  Benutzerhandbuch
 
         </a>
       </li>
@@ -264,7 +264,7 @@
   
     
   
-  Preguntas frecuentes
+  FAQ
 
         </a>
       </li>
@@ -286,7 +286,7 @@
   
     
   
-  Tutoriales
+  Tutorials
 
         </a>
       </li>
@@ -306,7 +306,7 @@
   
     
   
-  Guía de la interfaz
+  Oberflächenleitfaden
 
         </a>
       </li>
@@ -326,7 +326,7 @@
   
     
   
-  Biblioteca de videos
+  Videobibliothek
 
         </a>
       </li>
@@ -346,7 +346,7 @@
   
     
   
-  Comunidad
+  Community
 
         </a>
       </li>
@@ -374,18 +374,18 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Documentación de routers GL.iNet 4" class="md-nav__button md-logo" aria-label="Documentación de routers GL.iNet 4" data-md-component="logo">
+    <a href="../.." title="GL.iNet Router-Dokumentation 4" class="md-nav__button md-logo" aria-label="GL.iNet Router-Dokumentation 4" data-md-component="logo">
       
   <img src="https://static.gl-inet.com/docs/router/common/logo_white.svg" alt="logo">
 
     </a>
-    Documentación de routers GL.iNet 4
+    GL.iNet Router-Dokumentation 4
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/gl-inet/docs4.x" title="Ir al repositorio" class="md-source" data-md-component="source">
+      <a href="https://github.com/gl-inet/docs4.x" title="Zum Repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -408,7 +408,7 @@
         
   
   <span class="md-ellipsis">
-    Inicio
+    Startseite
   </span>
   
 
@@ -586,7 +586,7 @@
               
   
   <span class="md-ellipsis">
-    Guía del usuario
+    Benutzerhandbuch
   </span>
   
 
@@ -602,7 +602,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Guía del usuario
+            Benutzerhandbuch
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1340,7 +1340,7 @@
               
   
   <span class="md-ellipsis">
-    Preguntas frecuentes
+    FAQ
   </span>
   
 
@@ -1356,7 +1356,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Preguntas frecuentes
+            FAQ
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1418,7 +1418,7 @@
         
   
   <span class="md-ellipsis">
-    Configuración inicial
+    Ersteinrichtung
   </span>
   
 
@@ -1438,7 +1438,7 @@
         
   
   <span class="md-ellipsis">
-    Advertencia del navegador
+    Warnung des Browsers
   </span>
   
 
@@ -1458,7 +1458,7 @@
         
   
   <span class="md-ellipsis">
-    Conectarse a un hotspot público con portal cautivo
+    Verbindung mit öffentlichem Hotspot mit Captive Portal
   </span>
   
 
@@ -1478,7 +1478,7 @@
         
   
   <span class="md-ellipsis">
-    Conectar un dispositivo solo Ethernet a la red Wi-Fi
+    Ethernet-Gerät nur über Wi-Fi verbinden
   </span>
   
 
@@ -1524,7 +1524,7 @@
             
   
   <span class="md-ellipsis">
-    Avisos de problemas
+    Problemhinweise
   </span>
   
 
@@ -1534,7 +1534,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Avisos de problemas
+            Problemhinweise
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1548,7 +1548,7 @@
         
   
   <span class="md-ellipsis">
-    Aviso de problema para GL-MT2500/GL-X3000/GL-XE3000
+    Problemhinweis für GL-MT2500/GL-X3000/GL-XE3000
   </span>
   
 
@@ -1568,7 +1568,7 @@
         
   
   <span class="md-ellipsis">
-    Aviso de problema y soluciones para GL-X3000/GL-X2000 cuando no funcionan con tarjetas SIM de EE
+    Problemhinweis und Lösungen für GL-X3000/GL-X2000 bei Problemen mit EE-SIM-Karten
   </span>
   
 
@@ -1650,7 +1650,7 @@
             
   
   <span class="md-ellipsis">
-    Solución de problemas
+    Fehlerbehebung
   </span>
   
 
@@ -1660,7 +1660,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            Solución de problemas
+            Fehlerbehebung
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1674,7 +1674,7 @@
         
   
   <span class="md-ellipsis">
-    No se puede acceder al panel de administración web
+    Kein Zugriff auf das webbasierte Admin Panel
   </span>
   
 
@@ -1694,7 +1694,7 @@
         
   
   <span class="md-ellipsis">
-    No se puede detectar el hotspot 5G de Android
+    Android-5G-Hotspot kann nicht gescannt werden
   </span>
   
 
@@ -1714,7 +1714,7 @@
         
   
   <span class="md-ellipsis">
-    No se puede detectar el hotspot 5G del iPhone
+    iPhone-5G-Hotspot kann nicht gescannt werden
   </span>
   
 
@@ -1734,7 +1734,7 @@
         
   
   <span class="md-ellipsis">
-    Fallo del tethering del iPhone
+    iPhone-Tethering fehlgeschlagen
   </span>
   
 
@@ -1754,7 +1754,7 @@
         
   
   <span class="md-ellipsis">
-    Guía de solución de problemas de red celular
+    Leitfaden zur Fehlerbehebung bei Mobilfunknetzen
   </span>
   
 
@@ -1774,7 +1774,7 @@
         
   
   <span class="md-ellipsis">
-    No hay Internet después de sustituir el router antiguo por uno de GL.iNet
+    Kein Internet nach dem Ersetzen des alten Routers durch einen GL.iNet-Router
   </span>
   
 
@@ -1794,7 +1794,7 @@
         
   
   <span class="md-ellipsis">
-    El módem USB no funciona
+    USB-Modem funktioniert nicht
   </span>
   
 
@@ -1814,7 +1814,7 @@
         
   
   <span class="md-ellipsis">
-    Reparar la red o restablecer
+    Netzwerk reparieren oder zurücksetzen
   </span>
   
 
@@ -1834,7 +1834,7 @@
         
   
   <span class="md-ellipsis">
-    Qué hacer si el router queda inutilizado
+    Was tun, wenn der Router beschädigt ist?
   </span>
   
 
@@ -1854,7 +1854,7 @@
         
   
   <span class="md-ellipsis">
-    macOS no puede escribir en un recurso compartido Samba
+    macOS kann nicht auf eine Samba-Freigabe schreiben
   </span>
   
 
@@ -1874,7 +1874,7 @@
         
   
   <span class="md-ellipsis">
-    El servidor WireGuard no funciona correctamente
+    WireGuard-Server funktioniert nicht ordnungsgemäß
   </span>
   
 
@@ -1894,7 +1894,7 @@
         
   
   <span class="md-ellipsis">
-    Se queda en "Installing" durante la actualización del firmware
+    Hängt bei „Installing“ während des Firmware-Updates
   </span>
   
 
@@ -1914,7 +1914,7 @@
         
   
   <span class="md-ellipsis">
-    Se queda en "Reverting" durante el restablecimiento del firmware
+    Hängt bei „Reverting“ während des Firmware-Resets
   </span>
   
 
@@ -1934,7 +1934,7 @@
         
   
   <span class="md-ellipsis">
-    Se queda en "Rebooting" durante el reinicio del firmware
+    Hängt bei „Rebooting“ während des Firmware-Neustarts
   </span>
   
 
@@ -1954,7 +1954,7 @@
         
   
   <span class="md-ellipsis">
-    Cómo resolver un conflicto de subred
+    Wie behebt man einen Subnetzkonflikt?
   </span>
   
 
@@ -1974,7 +1974,7 @@
         
   
   <span class="md-ellipsis">
-    Por qué aparece un mensaje en la prueba de DDNS
+    Warum erscheint eine Meldung beim DDNS-Test?
   </span>
   
 
@@ -1994,7 +1994,7 @@
         
   
   <span class="md-ellipsis">
-    Por qué la velocidad de mi VPN es más lenta de lo esperado
+    Warum ist meine VPN-Geschwindigkeit langsamer als erwartet?
   </span>
   
 
@@ -2014,7 +2014,7 @@
         
   
   <span class="md-ellipsis">
-    Cuál es la capacidad de dispositivos de mi router
+    Wie hoch ist die Gerätekapazität meines Routers?
   </span>
   
 
@@ -2034,7 +2034,7 @@
         
   
   <span class="md-ellipsis">
-    Cuál es la cobertura inalámbrica de mi router
+    Wie groß ist die WLAN-Abdeckung meines Routers?
   </span>
   
 
@@ -2054,7 +2054,7 @@
         
   
   <span class="md-ellipsis">
-    Actualizar la versión de U-Boot
+    U-Boot-Version aktualisieren
   </span>
   
 
@@ -2132,7 +2132,7 @@
         
   
   <span class="md-ellipsis">
-    Cómo configurar OpenVPN
+    OpenVPN einrichten
   </span>
   
 
@@ -2152,7 +2152,7 @@
         
   
   <span class="md-ellipsis">
-    Cómo configurar WireGuard
+    WireGuard einrichten
   </span>
   
 
@@ -2172,7 +2172,7 @@
         
   
   <span class="md-ellipsis">
-    Cómo bloquear el tráfico fuera de la VPN
+    Nicht-VPN-Datenverkehr blockieren
   </span>
   
 
@@ -2192,7 +2192,7 @@
         
   
   <span class="md-ellipsis">
-    Kill Switch de VPN
+    VPN Kill Switch
   </span>
   
 
@@ -2212,7 +2212,7 @@
         
   
   <span class="md-ellipsis">
-    TCP o UDP
+    TCP oder UDP
   </span>
   
 
@@ -2232,7 +2232,7 @@
         
   
   <span class="md-ellipsis">
-    Tengo que configurar Ethernet WAN al usar VPN
+    Muss ich Ethernet WAN bei Verwendung eines VPN konfigurieren?
   </span>
   
 
@@ -2278,7 +2278,7 @@
             
   
   <span class="md-ellipsis">
-    Actualización
+    Upgrade
   </span>
   
 
@@ -2288,7 +2288,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
-            Actualización
+            Upgrade
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2302,7 +2302,7 @@
         
   
   <span class="md-ellipsis">
-    Descargar firmware
+    Firmware herunterladen
   </span>
   
 
@@ -2322,7 +2322,7 @@
         
   
   <span class="md-ellipsis">
-    Actualizar o degradar manualmente
+    Manuell aktualisieren oder downgraden
   </span>
   
 
@@ -2390,7 +2390,7 @@
             
   
   <span class="md-ellipsis">
-    Otros
+    Weitere Themen
   </span>
   
 
@@ -2400,7 +2400,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
-            Otros
+            Weitere Themen
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2414,7 +2414,7 @@
         
   
   <span class="md-ellipsis">
-    Estado del indicador LED
+    Status der LED-Anzeige
   </span>
   
 
@@ -2434,7 +2434,7 @@
         
   
   <span class="md-ellipsis">
-    App móvil de GL.iNet
+    GL.iNet App
   </span>
   
 
@@ -2454,7 +2454,7 @@
         
   
   <span class="md-ellipsis">
-    Añadir Brume 2 a la app móvil
+    Brume 2 zur mobilen App hinzufügen
   </span>
   
 
@@ -2474,7 +2474,7 @@
         
   
   <span class="md-ellipsis">
-    Cambiar WAN a LAN
+    WAN in LAN ändern
   </span>
   
 
@@ -2494,7 +2494,7 @@
         
   
   <span class="md-ellipsis">
-    Acceder a GL.iNet y AdGuard Home mediante HTTPS
+    Zugriff auf GL.iNet und AdGuard Home über HTTPS
   </span>
   
 
@@ -2514,7 +2514,7 @@
         
   
   <span class="md-ellipsis">
-    Conectarse a la antena Starlink
+    Verbindung mit Starlink Dish
   </span>
   
 
@@ -2534,7 +2534,7 @@
         
   
   <span class="md-ellipsis">
-    Administración web remota
+    Remote Web Admin
   </span>
   
 
@@ -2554,7 +2554,7 @@
         
   
   <span class="md-ellipsis">
-    SSH remoto al router
+    Remote-SSH zum Router
   </span>
   
 
@@ -2574,7 +2574,7 @@
         
   
   <span class="md-ellipsis">
-    Comprobar IP pública
+    Öffentliche IP prüfen
   </span>
   
 
@@ -2594,7 +2594,7 @@
         
   
   <span class="md-ellipsis">
-    Hacer que Wi-Fi Calling funcione en Opal
+    Wi-Fi Calling auf Opal zum Laufen bringen
   </span>
   
 
@@ -2614,7 +2614,7 @@
         
   
   <span class="md-ellipsis">
-    Encontrar todas las direcciones MAC
+    Alle MAC-Adressen finden
   </span>
   
 
@@ -2634,7 +2634,7 @@
         
   
   <span class="md-ellipsis">
-    Encontrar información del dispositivo
+    Geräteinformationen finden
   </span>
   
 
@@ -2654,7 +2654,7 @@
         
   
   <span class="md-ellipsis">
-    Qué es LuCI
+    Was ist LuCI?
   </span>
   
 
@@ -2726,7 +2726,7 @@
               
   
   <span class="md-ellipsis">
-    Tutoriales
+    Tutorials
   </span>
   
 
@@ -2742,7 +2742,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Tutoriales
+            Tutorials
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2838,7 +2838,7 @@
         
   
   <span class="md-ellipsis">
-    Configurar cliente OpenVPN
+    OpenVPN-Client einrichten
   </span>
   
 
@@ -2858,7 +2858,7 @@
         
   
   <span class="md-ellipsis">
-    Configurar servidor OpenVPN
+    OpenVPN-Server einrichten
   </span>
   
 
@@ -2878,7 +2878,7 @@
         
   
   <span class="md-ellipsis">
-    Crear tu propio servidor doméstico WireGuard
+    Eigenen WireGuard-Heimserver aufbauen
   </span>
   
 
@@ -2898,27 +2898,7 @@
         
   
   <span class="md-ellipsis">
-    Configurar la ofuscación de VPN
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../how_to_connect_to_the_dedicated_ip_by_nordvpn_on_glinet_routers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Conectarse a la IP dedicada de NordVPN
+    VPN-Obfuskation einrichten
   </span>
   
 
@@ -2947,7 +2927,7 @@
         
   
   <span class="md-ellipsis">
-    Conectarse a la IP dedicada de Surfshark
+    NordVPN mit einer dedizierten IP verbinden
   </span>
   
 
@@ -2964,11 +2944,31 @@
   
   
     <li class="md-nav__item">
+      <a href="../how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Surfshark mit einer dedizierten IP verbinden
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../how_to_set_up_openvpn_server_via_astrorelay/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configurar servidor OpenVPN mediante AstroRelay
+    OpenVPN-Server über AstroRelay einrichten
   </span>
   
 
@@ -2988,7 +2988,7 @@
         
   
   <span class="md-ellipsis">
-    Configurar servidor WireGuard mediante AstroRelay
+    WireGuard-Server über AstroRelay einrichten
   </span>
   
 
@@ -3008,7 +3008,7 @@
         
   
   <span class="md-ellipsis">
-    Acceder a la LAN del cliente OpenVPN desde el servidor
+    Auf das OpenVPN-Client-LAN vom Server aus zugreifen
   </span>
   
 
@@ -3028,7 +3028,7 @@
         
   
   <span class="md-ellipsis">
-    Acceder a la LAN del cliente WireGuard desde el servidor
+    Auf das WireGuard-Client-LAN vom Server aus zugreifen
   </span>
   
 
@@ -3048,7 +3048,7 @@
         
   
   <span class="md-ellipsis">
-    Acceder a la LAN del servidor OpenVPN desde el cliente mediante nombre de dominio
+    Auf das OpenVPN-Server-LAN vom Client per Domainnamen zugreifen
   </span>
   
 
@@ -3068,7 +3068,7 @@
         
   
   <span class="md-ellipsis">
-    Acceder a la LAN del servidor WireGuard desde el cliente mediante nombre de dominio
+    Auf das WireGuard-Server-LAN vom Client per Domainnamen zugreifen
   </span>
   
 
@@ -3088,7 +3088,7 @@
         
   
   <span class="md-ellipsis">
-    Activar OpenVPN TAP-S2S
+    OpenVPN TAP-S2S aktivieren
   </span>
   
 
@@ -3108,7 +3108,7 @@
         
   
   <span class="md-ellipsis">
-    Activar VPN Cascading
+    VPN-Cascading aktivieren
   </span>
   
 
@@ -3128,7 +3128,7 @@
         
   
   <span class="md-ellipsis">
-    Usar WireGuard para proteger RDP desde fuera de la red
+    WireGuard zum Schutz von RDP von außerhalb des Netzwerks verwenden
   </span>
   
 
@@ -3148,7 +3148,7 @@
         
   
   <span class="md-ellipsis">
-    Obtener archivos de configuración de proveedores de WireGuard
+    Konfigurationsdateien von WireGuard-Dienstanbietern abrufen
   </span>
   
 
@@ -3168,7 +3168,7 @@
         
   
   <span class="md-ellipsis">
-    Reservar una IP fija para el cliente OpenVPN
+    Feste IP für OpenVPN-Client reservieren
   </span>
   
 
@@ -3188,7 +3188,7 @@
         
   
   <span class="md-ellipsis">
-    Permitir acceso a la WAN cuando el cliente VPN está habilitado
+    Zugriff auf WAN erlauben, wenn VPN-Client aktiviert ist
   </span>
   
 
@@ -3208,7 +3208,7 @@
         
   
   <span class="md-ellipsis">
-    Enrutar el DNS del cliente VPN al DNS ascendente del servidor
+    DNS des VPN-Clients zum Upstream-DNS des Servers leiten
   </span>
   
 
@@ -3228,7 +3228,7 @@
         
   
   <span class="md-ellipsis">
-    Actualizar los certificados del servidor OpenVPN
+    OpenVPN-Server-Zertifikate aktualisieren
   </span>
   
 
@@ -3282,7 +3282,7 @@
             
   
   <span class="md-ellipsis">
-    Celular
+    Mobilfunk
   </span>
   
 
@@ -3292,7 +3292,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
-            Celular
+            Mobilfunk
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3306,7 +3306,7 @@
         
   
   <span class="md-ellipsis">
-    Reenvío de SMS
+    SMS-Weiterleitung
   </span>
   
 
@@ -3326,7 +3326,7 @@
         
   
   <span class="md-ellipsis">
-    Obtener registros del módulo
+    Modulprotokolle abrufen
   </span>
   
 
@@ -3346,7 +3346,7 @@
         
   
   <span class="md-ellipsis">
-    Actualizar módulo Quectel
+    Quectel-Modul aktualisieren
   </span>
   
 
@@ -3366,7 +3366,7 @@
         
   
   <span class="md-ellipsis">
-    Comprobar el estado de la agregación de portadoras
+    Status der Carrier Aggregation prüfen
   </span>
   
 
@@ -3386,7 +3386,7 @@
         
   
   <span class="md-ellipsis">
-    Configurar Spitz AX para vehículos recreativos
+    Spitz AX für ein Wohnmobil einrichten
   </span>
   
 
@@ -3406,7 +3406,7 @@
         
   
   <span class="md-ellipsis">
-    Instalar o cambiar antenas externas
+    Externe Antennen installieren oder austauschen
   </span>
   
 
@@ -3478,7 +3478,7 @@
         
   
   <span class="md-ellipsis">
-    Usar tarjeta física eSIM con routers GL.iNet
+    eSIM-Physikkarte mit GL.iNet-Routern verwenden
   </span>
   
 
@@ -3498,7 +3498,7 @@
         
   
   <span class="md-ellipsis">
-    Usar tarjeta física eSIM con dispositivos Android
+    eSIM-Physikkarte mit Android-Geräten verwenden
   </span>
   
 
@@ -3518,7 +3518,7 @@
         
   
   <span class="md-ellipsis">
-    Cómo usar SIMPoYo uFi
+    SIMPoYo uFi verwenden
   </span>
   
 
@@ -3588,7 +3588,7 @@
         
   
   <span class="md-ellipsis">
-    Sitio a sitio
+    Site-to-Site
   </span>
   
 
@@ -3608,7 +3608,7 @@
         
   
   <span class="md-ellipsis">
-    Acceder a LuCI mediante GoodCloud
+    Über GoodCloud auf LuCI zugreifen
   </span>
   
 
@@ -3660,7 +3660,7 @@
             
   
   <span class="md-ellipsis">
-    Red
+    Network
   </span>
   
 
@@ -3670,7 +3670,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
-            Red
+            Network
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3684,7 +3684,7 @@
         
   
   <span class="md-ellipsis">
-    Conectarse a una red EAP
+    Verbindung mit EAP-Netzwerk
   </span>
   
 
@@ -3704,7 +3704,7 @@
         
   
   <span class="md-ellipsis">
-    Configurar una red de invitados
+    Gastnetzwerk einrichten
   </span>
   
 
@@ -3724,7 +3724,7 @@
         
   
   <span class="md-ellipsis">
-    Configurar drop-in gateway
+    Drop-in Gateway einrichten
   </span>
   
 
@@ -3744,7 +3744,7 @@
         
   
   <span class="md-ellipsis">
-    Configurar el reenvío de puertos en el router principal
+    Portweiterleitung auf dem Hauptrouter einrichten
   </span>
   
 
@@ -3764,7 +3764,7 @@
         
   
   <span class="md-ellipsis">
-    Configurar acceso WAN dual por cable
+    Dualen kabelgebundenen WAN-Zugang konfigurieren
   </span>
   
 
@@ -3830,7 +3830,7 @@
             
   
   <span class="md-ellipsis">
-    Otros
+    Weitere Themen
   </span>
   
 
@@ -3840,7 +3840,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
-            Otros
+            Weitere Themen
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3854,7 +3854,7 @@
         
   
   <span class="md-ellipsis">
-    Bloquear dispositivos cliente
+    Client-Geräte blockieren
   </span>
   
 
@@ -3874,7 +3874,7 @@
         
   
   <span class="md-ellipsis">
-    Configurar manualmente una IP estática en los dispositivos cliente
+    Statische IP auf Client-Geräten manuell konfigurieren
   </span>
   
 
@@ -3894,7 +3894,7 @@
         
   
   <span class="md-ellipsis">
-    Comprobar si tienes una IP pública
+    Prüfen, ob eine öffentliche IP vorhanden ist
   </span>
   
 
@@ -3914,7 +3914,7 @@
         
   
   <span class="md-ellipsis">
-    Actualizar o degradar tu router
+    Router aktualisieren oder downgraden
   </span>
   
 
@@ -3934,7 +3934,7 @@
         
   
   <span class="md-ellipsis">
-    Iniciar sesión por SSH en el router
+    Per SSH am Router anmelden
   </span>
   
 
@@ -3954,7 +3954,7 @@
         
   
   <span class="md-ellipsis">
-    Usar WinSCP para acceder a archivos compartidos
+    Mit WinSCP auf Freigabedateien zugreifen
   </span>
   
 
@@ -3974,7 +3974,7 @@
         
   
   <span class="md-ellipsis">
-    Usar WinSCP para modificar archivos
+    Mit WinSCP Dateien ändern
   </span>
   
 
@@ -3994,7 +3994,7 @@
         
   
   <span class="md-ellipsis">
-    Activar o recargar tarjetas SIM de T-Mobile
+    T-Mobile-SIM-Karten aktivieren oder aufladen
   </span>
   
 
@@ -4014,7 +4014,7 @@
         
   
   <span class="md-ellipsis">
-    Cambiar el tipo de NAT para juegos
+    NAT-Typ beim Gaming ändern
   </span>
   
 
@@ -4034,7 +4034,7 @@
         
   
   <span class="md-ellipsis">
-    Obtener el registro de la app móvil
+    Protokoll der mobilen App abrufen
   </span>
   
 
@@ -4054,7 +4054,7 @@
         
   
   <span class="md-ellipsis">
-    Configurar reglas de filtrado de dominios e IP para VPN
+    Domain- und IP-Filterregeln für VPN konfigurieren
   </span>
   
 
@@ -4074,7 +4074,7 @@
         
   
   <span class="md-ellipsis">
-    Soporte técnico mediante GoodCloud
+    Technischer Support über GoodCloud
   </span>
   
 
@@ -4150,7 +4150,7 @@
               
   
   <span class="md-ellipsis">
-    Guía de la interfaz
+    Oberflächenleitfaden
   </span>
   
 
@@ -4166,7 +4166,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Guía de la interfaz
+            Oberflächenleitfaden
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4210,7 +4210,7 @@
             
   
   <span class="md-ellipsis">
-    Conexión a Internet
+    Internetverbindung
   </span>
   
 
@@ -4220,7 +4220,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
-            Conexión a Internet
+            Internetverbindung
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4274,7 +4274,7 @@
         
   
   <span class="md-ellipsis">
-    Repetidor
+    Repeater
   </span>
   
 
@@ -4314,7 +4314,7 @@
         
   
   <span class="md-ellipsis">
-    Celular
+    Cellular
   </span>
   
 
@@ -4354,7 +4354,7 @@
         
   
   <span class="md-ellipsis">
-    WAN dual por Ethernet
+    Dual-Ethernet WAN
   </span>
   
 
@@ -4398,7 +4398,7 @@
             
   
   <span class="md-ellipsis">
-    Inalámbrico
+    WLAN
   </span>
   
 
@@ -4408,7 +4408,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
-            Inalámbrico
+            WLAN
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4422,7 +4422,7 @@
         
   
   <span class="md-ellipsis">
-    Inalámbrico
+    WLAN
   </span>
   
 
@@ -4466,7 +4466,7 @@
             
   
   <span class="md-ellipsis">
-    Clientes
+    Clients
   </span>
   
 
@@ -4476,7 +4476,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
-            Clientes
+            Clients
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4490,7 +4490,7 @@
         
   
   <span class="md-ellipsis">
-    Clientes
+    Clients
   </span>
   
 
@@ -4536,7 +4536,7 @@
             
   
   <span class="md-ellipsis">
-    Servicios en la nube
+    Cloud-Dienste
   </span>
   
 
@@ -4546,7 +4546,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
-            Servicios en la nube
+            Cloud-Dienste
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4658,7 +4658,7 @@
         
   
   <span class="md-ellipsis">
-    Panel de VPN
+    VPN Dashboard
   </span>
   
 
@@ -4678,7 +4678,7 @@
         
   
   <span class="md-ellipsis">
-    Cliente OpenVPN
+    OpenVPN-Client
   </span>
   
 
@@ -4698,7 +4698,7 @@
         
   
   <span class="md-ellipsis">
-    Servidor OpenVPN
+    OpenVPN-Server
   </span>
   
 
@@ -4718,7 +4718,7 @@
         
   
   <span class="md-ellipsis">
-    Cliente WireGuard
+    WireGuard-Client
   </span>
   
 
@@ -4738,7 +4738,7 @@
         
   
   <span class="md-ellipsis">
-    Servidor WireGuard
+    WireGuard-Server
   </span>
   
 
@@ -4816,7 +4816,7 @@
             
   
   <span class="md-ellipsis">
-    Aplicaciones
+    Anwendungen
   </span>
   
 
@@ -4826,7 +4826,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
-            Aplicaciones
+            Anwendungen
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4840,7 +4840,7 @@
         
   
   <span class="md-ellipsis">
-    Complementos
+    Plug-ins
   </span>
   
 
@@ -4860,7 +4860,7 @@
         
   
   <span class="md-ellipsis">
-    DNS dinámico
+    Dynamisches DNS
   </span>
   
 
@@ -4880,7 +4880,7 @@
         
   
   <span class="md-ellipsis">
-    Almacenamiento en red
+    Netzwerkspeicher
   </span>
   
 
@@ -4920,7 +4920,7 @@
         
   
   <span class="md-ellipsis">
-    Control parental
+    Parental Control
   </span>
   
 
@@ -4980,7 +4980,7 @@
         
   
   <span class="md-ellipsis">
-    Gestión de eSIM
+    eSIM-Verwaltung
   </span>
   
 
@@ -5052,7 +5052,7 @@
             
   
   <span class="md-ellipsis">
-    Red
+    Network
   </span>
   
 
@@ -5062,7 +5062,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
-            Red
+            Network
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5096,7 +5096,7 @@
         
   
   <span class="md-ellipsis">
-    Reenvio de puertos
+    Port Forwarding
   </span>
   
 
@@ -5156,7 +5156,7 @@
         
   
   <span class="md-ellipsis">
-    Red de invitados
+    Gastnetzwerk
   </span>
   
 
@@ -5196,7 +5196,7 @@
         
   
   <span class="md-ellipsis">
-    Puerto Ethernet
+    Ethernet-Port
   </span>
   
 
@@ -5216,7 +5216,7 @@
         
   
   <span class="md-ellipsis">
-    Modo de red
+    Netzwerkmodus
   </span>
   
 
@@ -5256,7 +5256,7 @@
         
   
   <span class="md-ellipsis">
-    Dirección MAC
+    MAC-Adresse
   </span>
   
 
@@ -5316,7 +5316,7 @@
         
   
   <span class="md-ellipsis">
-    Aceleración de hardware
+    Hardwarebeschleunigung
   </span>
   
 
@@ -5336,7 +5336,7 @@
         
   
   <span class="md-ellipsis">
-    Aceleración de red
+    Netzwerkbeschleunigung
   </span>
   
 
@@ -5356,7 +5356,7 @@
         
   
   <span class="md-ellipsis">
-    Configuración de NAT
+    NAT-Einstellungen
   </span>
   
 
@@ -5408,7 +5408,7 @@
             
   
   <span class="md-ellipsis">
-    Control de flujo
+    Verkehrssteuerung
   </span>
   
 
@@ -5418,7 +5418,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
-            Control de flujo
+            Verkehrssteuerung
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5432,7 +5432,7 @@
         
   
   <span class="md-ellipsis">
-    Licencia DPI
+    DPI-Lizenz
   </span>
   
 
@@ -5452,7 +5452,7 @@
         
   
   <span class="md-ellipsis">
-    Estadísticas de datos
+    Datenstatistiken
   </span>
   
 
@@ -5472,7 +5472,7 @@
         
   
   <span class="md-ellipsis">
-    Filtro de contenido
+    Inhaltsfilter
   </span>
   
 
@@ -5582,7 +5582,7 @@
             
   
   <span class="md-ellipsis">
-    Sistema
+    System
   </span>
   
 
@@ -5592,7 +5592,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_10">
             <span class="md-nav__icon md-icon"></span>
-            Sistema
+            System
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5606,7 +5606,7 @@
         
   
   <span class="md-ellipsis">
-    Información general
+    Übersicht
   </span>
   
 
@@ -5626,7 +5626,7 @@
         
   
   <span class="md-ellipsis">
-    Actualización
+    Upgrade
   </span>
   
 
@@ -5646,7 +5646,7 @@
         
   
   <span class="md-ellipsis">
-    Tareas programadas
+    Geplante Aufgaben
   </span>
   
 
@@ -5666,7 +5666,7 @@
         
   
   <span class="md-ellipsis">
-    Contraseña de administrador
+    Admin-Passwort
   </span>
   
 
@@ -5686,7 +5686,7 @@
         
   
   <span class="md-ellipsis">
-    Gestión de pantalla
+    Display-Verwaltung
   </span>
   
 
@@ -5706,7 +5706,7 @@
         
   
   <span class="md-ellipsis">
-    USB y alimentación
+    USB & Stromversorgung
   </span>
   
 
@@ -5726,7 +5726,7 @@
         
   
   <span class="md-ellipsis">
-    Zona horaria
+    Zeitzone
   </span>
   
 
@@ -5746,7 +5746,7 @@
         
   
   <span class="md-ellipsis">
-    Configuración del botón de alternancia
+    Einstellungen für Umschalttaste
   </span>
   
 
@@ -5766,7 +5766,7 @@
         
   
   <span class="md-ellipsis">
-    Registro
+    Protokoll
   </span>
   
 
@@ -5786,7 +5786,7 @@
         
   
   <span class="md-ellipsis">
-    Seguridad
+    Sicherheit
   </span>
   
 
@@ -5806,7 +5806,7 @@
         
   
   <span class="md-ellipsis">
-    Restablecer firmware
+    Firmware zurücksetzen
   </span>
   
 
@@ -5826,7 +5826,7 @@
         
   
   <span class="md-ellipsis">
-    Configuración avanzada
+    Erweiterte Einstellungen
   </span>
   
 
@@ -5846,7 +5846,7 @@
         
   
   <span class="md-ellipsis">
-    Idioma
+    Sprache
   </span>
   
 
@@ -5866,7 +5866,7 @@
         
   
   <span class="md-ellipsis">
-    Ayuda
+    Hilfe
   </span>
   
 
@@ -5930,7 +5930,7 @@
               
   
   <span class="md-ellipsis">
-    Biblioteca de videos
+    Videobibliothek
   </span>
   
 
@@ -5946,7 +5946,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Biblioteca de videos
+            Videobibliothek
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5962,7 +5962,7 @@
         
   
   <span class="md-ellipsis">
-    Conoce nuestros nuevos productos
+    Unsere neuen Produkte kennenlernen
   </span>
   
 
@@ -5982,7 +5982,7 @@
         
   
   <span class="md-ellipsis">
-    Unboxing y configuración inicial
+    Unboxing & Ersteinrichtung
   </span>
   
 
@@ -6002,7 +6002,7 @@
         
   
   <span class="md-ellipsis">
-    Tutoriales
+    Tutorials
   </span>
   
 
@@ -6052,7 +6052,7 @@
               
   
   <span class="md-ellipsis">
-    Comunidad
+    Community
   </span>
   
 
@@ -6063,7 +6063,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Comunidad
+            Community
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6089,7 +6089,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
   
   
   
@@ -6118,34 +6118,38 @@
   
 
   <!-- Markdown content -->
-  <h1 id="como-conectarse-a-la-ip-dedicada-de-surfshark-en-routers-glinet">Cómo conectarse a la IP dedicada de Surfshark en routers GL.iNet<a class="headerlink" href="#como-conectarse-a-la-ip-dedicada-de-surfshark-en-routers-glinet" title="Permanent link">&para;</a></h1>
-<p>Este artículo presenta los pasos para configurar la IP dedicada de Surfshark.</p>
-<p>Aquí usamos GL-AXT1800 como ejemplo.</p>
+  <h1 id="so-verbinden-sie-nordvpn-mit-einer-dedizierten-ip-auf-glinet-routern">So verbinden Sie NordVPN mit einer dedizierten IP auf GL.iNet-Routern<a class="headerlink" href="#so-verbinden-sie-nordvpn-mit-einer-dedizierten-ip-auf-glinet-routern" title="Permanent link">&para;</a></h1>
+<p>Dieser Artikel beschreibt die Schritte zum Einrichten einer NordVPN-Verbindung mit dedizierter IP auf GL.iNet-Routern.</p>
+<p>Als Beispiel verwenden wir den GL-AXT1800.</p>
 <ol>
-<li>Inicie sesión en su cuenta de Surfshark y seleccione <strong>Dedicated IP</strong>.</li>
+<li>
+<p>Melden Sie sich in Ihrem Nord-Konto an und prüfen Sie die Details der dedizierten IP. Wie unten gezeigt, lautet die zugewiesene IP <strong>193.32.211.142</strong> und der Server ist <strong>United Kingdom #1625</strong>.</p>
+<p><img alt="nordvpn dedicated ip info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/dedicated_ip_info.png" /></p>
+</li>
+<li>
+<p>Gehen Sie zu <a href="https://nordvpn.com/ovpn/">https://nordvpn.com/ovpn/</a> und suchen Sie die Konfigurationsdatei für <strong>United Kingdom #1625</strong>. Laden Sie die UDP- oder TCP-Konfigurationsdatei herunter.</p>
+<p><img alt="download nordvpn dedicated ip info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/download_dedicated_ip_config.png" /></p>
+</li>
+<li>
+<p>Kehren Sie zur Seite Ihres Nord-Kontos zurück, gehen Sie zu <strong>Manual Setup</strong> und klicken Sie auf <strong>Set up NordVPN Manually</strong>, um Ihre Service-Zugangsdaten zu erhalten.</p>
+<p><img alt="nordvpn manual setup" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/nordvpn_manual_setup.png" /></p>
+<p><img alt="nordvpn manual setup service credential" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/nordvpn_manual_setup_service_credential.png" /></p>
+</li>
+<li>
+<p>Melden Sie sich am webbasierten Admin Panel Ihres Routers an und gehen Sie zu <strong>VPN</strong> &gt; <strong>OpenVPN Client</strong>. Erstellen Sie eine neue Gruppe, um die in Schritt 2 heruntergeladene Konfigurationsdatei hochzuladen. Geben Sie anschließend die in Schritt 3 erhaltenen Service-Zugangsdaten ein.</p>
+<p><img alt="set up nordvpn on glinet router" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/set_up_nordvpn_on_glinet_router.png" /></p>
+<p>Es wurde 1 gültige Konfigurationsdatei erkannt. Bitte geben Sie Ihren Benutzernamen und Ihr Passwort ein. Wenn diese Konfigurationen unterschiedliche Passwörter verwenden, müssen Sie das jeweilige Passwort für jede Konfigurationsdatei eingeben.</p>
+</li>
+<li>
+<p>Klicken Sie rechts auf das Symbol mit den drei Punkten, um die Verbindung herzustellen. Alternativ können Sie auch zum <strong>VPN Dashboard</strong> gehen, die Konfigurationsdatei auswählen und auf <strong>Apply</strong> klicken, um die Verbindung aufzubauen.</p>
+</li>
+<li>
+<p>Prüfen Sie nach dem Verbindungsaufbau Ihre öffentliche IP <a href="https://whatismyipaddress.com/">hier</a> und bestätigen Sie, dass sie mit Ihrer dedizierten IP von NordVPN übereinstimmt.</p>
+<p><img alt="check ip after connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_nordvpn_dedicated_ip/check_ip_after_connected.png" /></p>
+</li>
 </ol>
-<p><img alt="manualdip" calss="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/openvpn_client/manualdip.jpg" /></p>
-<ol>
-<li>En la sección <strong>Dedicated IP</strong>, haga clic en <strong>Settings</strong>.</li>
-</ol>
-<p><img alt="setting" calss="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_surfshark_dip/setting.jpg" /></p>
-<ol>
-<li><strong>Seleccione un protocolo, WireGuard u OpenVPN, y descargue</strong> los archivos de configuración para la conexión manual.
-   <img alt="protocol" calss="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/openvpn_client/protocol.jpg" />
-   La página de descarga para la configuración de WireGuard se muestra a continuación.</li>
-</ol>
-<p><img alt="loadwg" calss="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_surfshark_dip/loadwg.jpg" />
-   La página de descarga para la configuración de OpenVPN se muestra a continuación.</p>
-<p><img alt="loadovpn" calss="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/openvpn_client/loadovpn.jpg" />
-   Copie las <strong>credenciales</strong> para utilizarlas más adelante.</p>
-<ol>
-<li>Consulte los enlaces siguientes para cargar los archivos de configuración en el router GL.iNet.</li>
-</ol>
-<p>Introduzca las credenciales si se le solicitan.
-   - <a href="https://docs.gl-inet.com/router/en/4/interface_guide/wireguard_client/#set-up-other-providersvia-configuration-files">Upload WireGuard Configuration</a>
-   - <a href="https://docs.gl-inet.com/router/en/4/interface_guide/openvpn_client/#set-up-openvpn-client">Upload OpenVPN Configuration</a></p>
 <hr />
-<p>¿Todavía tiene preguntas? Visite nuestro <a href="https://forum.gl-inet.com" target="_blank">Foro de la comunidad</a> o <a href="https://www.gl-inet.com/contacts/" target="_blank">contáctenos</a>.</p>
+<p>Haben Sie noch Fragen? Besuchen Sie unser <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> oder <a href="https://www.gl-inet.com/contacts/" target="_blank">kontaktieren Sie uns</a>.</p>
 
   <!-- Last update of source file -->
   
@@ -6172,10 +6176,10 @@
           <div class="pswp__top-bar">
             <!--  Controls are self-explanatory. Order can be changed. -->
             <div class="pswp__counter"></div>
-            <button class="pswp__button pswp__button--close" title="Cerrar (Esc)"></button>
-            <!-- <button class="pswp__button pswp__button--share" title="Compartir"></button> -->
-            <button class="pswp__button pswp__button--fs" title="Alternar pantalla completa"></button>
-            <button class="pswp__button pswp__button--zoom" title="Acercar/alejar"></button>
+            <button class="pswp__button pswp__button--close" title="Schließen (Esc)"></button>
+            <!-- <button class="pswp__button pswp__button--share" title="Teilen"></button> -->
+            <button class="pswp__button pswp__button--fs" title="Vollbild umschalten"></button>
+            <button class="pswp__button pswp__button--zoom" title="Vergrößern/Verkleinern"></button>
             <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
             <!-- element will get class pswp__preloader--active when preloader is running -->
             <div class="pswp__preloader">
@@ -6191,10 +6195,10 @@
             <div class="pswp__share-tooltip"></div> 
           </div>
 
-          <button class="pswp__button pswp__button--arrow--left" title="Anterior (flecha izquierda)">
+          <button class="pswp__button pswp__button--arrow--left" title="Zurück (Pfeil links)">
           </button>
 
-          <button class="pswp__button pswp__button--arrow--right" title="Siguiente (flecha derecha)">
+          <button class="pswp__button pswp__button--arrow--right" title="Weiter (Pfeil rechts)">
           </button>
 
           <div class="pswp__caption">
@@ -6213,7 +6217,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-  Volver al principio
+  Zurück zum Seitenanfang
 </button>
         
       </main>
@@ -6327,7 +6331,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>

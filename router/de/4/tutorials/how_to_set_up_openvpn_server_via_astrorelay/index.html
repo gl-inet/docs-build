@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.gl-inet.com/router/de/4/tutorials/how_to_set_up_openvpn_server_via_astrorelay/">
       
       
-        <link rel="prev" href="../how_to_connect_to_the_dedicated_ip_by_surfshark_on_glinet_routers/">
+        <link rel="prev" href="../how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/">
       
       
         <link rel="next" href="../how_to_set_up_wireguard_server_via_astrorelay/">
@@ -2914,11 +2914,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_the_dedicated_ip_by_nordvpn_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_connect_to_nordvpn_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Verbindung mit der dedizierten IP von NordVPN
+    NordVPN mit einer dedizierten IP verbinden
   </span>
   
 
@@ -2934,11 +2934,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_the_dedicated_ip_by_surfshark_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Verbindung mit der dedizierten IP von Surfshark
+    Surfshark mit einer dedizierten IP verbinden
   </span>
   
 
@@ -6119,33 +6119,59 @@
 
   <!-- Markdown content -->
   <h1 id="so-richten-sie-einen-openvpn-server-uber-astrorelay-ein">So richten Sie einen OpenVPN-Server über AstroRelay ein<a class="headerlink" href="#so-richten-sie-einen-openvpn-server-uber-astrorelay-ein" title="Permanent link">&para;</a></h1>
-<p>Szenario: Sie möchten auf Ihrem GL.iNet-Router zu Hause oder im Büro einen OpenVPN-Server einrichten, um per Fernzugriff auf Ihren lokalen Dienst zuzugreifen, aber Ihr Internetanbieter stellt keine öffentliche IP-Adresse bereit.</p>
-<p><a href="https://www.astrorelay.com" target="_blank">AstroRelay</a> stellt einen sicheren Reverse-Proxy-Tunnel bereit, über den Sie sicher auf Ressourcen hinter NAT und Firewalls zugreifen können.</p>
+<p>Diese Anleitung beschreibt die Schritte zum Einrichten eines OpenVPN-Servers über AstroRelay auf einem GL.iNet-Router. Sie eignet sich besonders für Benutzer, die aus der Ferne auf lokale Dienste zu Hause oder im Büro zugreifen möchten, aber von ihrem Internetanbieter keine öffentliche IP-Adresse erhalten.</p>
+<p><a href="https://www.astrorelay.com" target="_blank">AstroRelay</a> bietet einen sicheren Reverse-Proxy-Tunnel, über den Sie sicher auf Ressourcen hinter NAT und Firewalls zugreifen können.</p>
 <ol>
 <li>
-<p>Folgen Sie der Anleitung <a href="../../interface_guide/openvpn_server/">hier</a>, um einen OpenVPN-Server einzurichten, auch wenn Sie keine öffentliche IP-Adresse haben. Aktivieren Sie dabei bitte <strong>Allow Access Local Network</strong>.</p>
+<p>Folgen Sie <a href="../../interface_guide/openvpn_server/">dieser Anleitung</a>, um einen OpenVPN-Server auf Ihrem GL.iNet-Router einzurichten, auch wenn Sie keine öffentliche IP-Adresse haben.</p>
 <p><img alt="set up openvpnd server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/start_ovpn_server4x.jpg" /></p>
-<p>Exportieren Sie anschließend eine OpenVPN-Konfiguration. Die folgende Abbildung zeigt ein Beispiel.</p>
+<p>Exportieren Sie anschließend die OpenVPN-Konfiguration. Unten sehen Sie eine Beispielkonfiguration.</p>
 <p><img alt="openvpn config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnpastelink.jpg" /></p>
 </li>
 <li>
-<p>Registrieren Sie ein AstroRelay-Konto und folgen Sie diesem <a href="https://www.astrorelay.com/tutorial.html" target="_blank">Tutorial</a>, um die Ersteinrichtung abzuschließen.</p>
+<p>(Optional) Wenn Sie aus der Ferne auf das LAN des VPN-Servers zugreifen möchten, aktivieren Sie <strong>Allow Remote Access LAN</strong>. Andernfalls überspringen Sie diesen Schritt.</p>
+<details>
+<summary>Für Firmware v4.7 und früher</summary>
+<ol>
+<li>Klicken Sie in der linken Seitenleiste auf <strong>VPN</strong> &gt; <strong>VPN Dashboard</strong>.</li>
+<li>Klicken Sie auf das Optionssymbol.</li>
+<li>Aktivieren Sie den Schalter für <strong>Remote Access LAN</strong>.</li>
+<li>
+<p>Klicken Sie auf <strong>Apply</strong>.</p>
+<p><img alt="remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/toggle-enable-remote-access-lan.png" /></p>
+</li>
+</ol>
+</details>
+<details>
+<summary>Für Firmware v4.8 und neuer</summary>
+<ol>
+<li>Klicken Sie in der linken Seitenleiste auf <strong>VPN</strong> &gt; <strong>OpenVPN Server</strong>.</li>
+<li>Klicken Sie oben rechts auf <strong>Options</strong>.</li>
+<li>Aktivieren Sie den Schalter für <strong>Allow Remote Access the LAN Subnet</strong>.</li>
+<li>
+<p>Klicken Sie auf <strong>Apply</strong>.</p>
+<p><img alt="remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/enable-remote-access-lan-4.8.png" /></p>
+</li>
+</ol>
+</details>
+</li>
+<li>
+<p>Registrieren Sie ein AstroRelay-Konto und folgen Sie dieser <a href="https://www.astrorelay.com/tutorial.html" target="_blank">Anleitung</a>, um die Ersteinrichtung abzuschließen.</p>
 <p>Wählen Sie beim Hinzufügen einer neuen Domain den Server aus, der Ihrem Router am nächsten ist.</p>
 <p><img alt="astrorelay add a new domain" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astrorelay_add_a_new_domain.png" /></p>
-<p>Geben Sie beim Hinzufügen eines neuen Links die <strong>LAN-IP-Adresse</strong> Ihres Routers in das Feld <strong>Destination Host IP</strong> ein. Geben Sie <strong>1194</strong> in das Feld <strong>Destination Port</strong> ein.</p>
+<p>Wenn Sie einen neuen Link hinzufügen, tragen Sie die <strong>LAN-IP-Adresse</strong> Ihres Routers in das Feld <strong>Destination Host IP</strong> ein und <strong>1194</strong> in das Feld <strong>Destination Port</strong>.</p>
 <p><img alt="link for openvpn server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnaddlink.jpg" /></p>
 <p>Anschließend erhalten Sie einen Link wie <strong>testforx3000.arlab1.cc:37202</strong>. Klicken Sie darauf, um ihn zu kopieren.</p>
 <p><img alt="astrorelay link" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpncopylink.jpg" /></p>
 </li>
 <li>
-<p>Öffnen Sie die OpenVPN-Konfiguration und ersetzen Sie die Daten nach <strong>Remote</strong> durch den Link aus dem vorherigen Schritt. Im folgenden Beispiel ersetzen wir „42.200.00.00 1194“ durch den Link „testforx3000.arlab1.cc:37202“.</p>
-<p>Ersetzen Sie danach den Doppelpunkt ":" durch ein Leerzeichen, also z. B. „testforx3000.arlab1.cc 37202“.</p>
+<p>Öffnen Sie die OpenVPN-Konfigurationsdatei und ersetzen Sie den Wert nach <strong>Remote</strong> durch den Link aus dem vorherigen Schritt. Im folgenden Beispiel wird „42.200.00.00 1194“ durch „testforx3000.arlab1.cc:37202“ ersetzt. Ersetzen Sie danach den Doppelpunkt ":" durch ein Leerzeichen und übernehmen Sie die Änderung.</p>
 <p><img alt="openvpn config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnpastelink.jpg" /></p>
 <p><img alt="replace link" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnconfig.jpg" /></p>
-<p>Danach können Sie die geänderte Konfigurationsdatei in einer OpenVPN-Client-App verwenden.</p>
 </li>
 <li>
-<p>Wenn Sie nicht zu Hause oder im Büro sind, können Sie die geänderte Konfigurationsdatei in die OpenVPN-Client-App hochladen, um auf Ihren lokalen Dienst zu Hause oder im Büro zuzugreifen, als wären Sie vor Ort.</p>
+<p>Installieren Sie die <a href="https://openvpn.net/client/" target="_blank">OpenVPN Connect App</a> auf dem Gerät, das Sie als OpenVPN-Client verwenden möchten. Laden Sie dann die geänderte Konfigurationsdatei in die App hoch und starten Sie die Verbindung. Alternativ können Sie die Datei auch auf einen anderen GL.iNet-Router hochladen und ihn als OpenVPN-Client einrichten.</p>
+<p>Nach erfolgreicher Verbindung können Sie aus der Ferne auf Ihre lokalen Dienste zu Hause oder im Büro zugreifen.</p>
 <p><img alt="openvpn up" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnup.jpg" /></p>
 </li>
 </ol>
