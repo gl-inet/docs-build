@@ -141,7 +141,7 @@
         
           <li class="md-select__item">
             <a href="/router/jp/4/" hreflang="ja" class="md-select__link">
-              Japanese
+              日本語
             </a>
           </li>
         
@@ -6296,24 +6296,22 @@
 <p>キャプティブポータル付きのパブリックホットスポットにルーターを接続する場合、以下の機能を有効にすると接続成功率をへ上させることができます。</p>
 <p><img alt="repeater settings for public hotspot" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/repeater_settings_for_public_hotspot.png" /></p>
 <ul>
-<li>
-<p><strong>パブリックホットスポットのログインモードをから動有効にする</strong></p>
+<li><strong>パブリックホットスポットのログインモードをから動有効にする</strong></li>
+</ul>
 <p>この機能はv4.6で降で利用可能です</p>
 <p>このオプションが有効な場合、このルーターはホットスポットには接続されているがインターネットには接続されていないとき、自動的にパブリックホットスポットのログインモードに入ります。<strong>このモードでは、いくつかのサービスが一時停止され、DNSモードは自動的に切り替わります</strong>。これにより、ネットワークアクティビティがホットスポットプロバイダー（例：ホテルやショッピングセンター）に漏れる可能性があります。</p>
 <p>このオプションが有効になっていない場合でも、ルーターはホットスポットでキャプティブポータルを検出し正常にログインできない場合に、このモードに入るように促します。</p>
-<p><img alt="login mode for public hotspots" class="glboxshadow" src="https://匿名.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/login_mode_for_public_hotspots.png" /></p>
-</li>
-<li>
-<p><strong>カモフラージュを有効にする</strong></p>
-<p>有効にすると、ルーターは管理パネルにアクセスするために使用するクライアントデバイスのMACアドレスを模倣することで、そのMACアドレスを伪装します。</p>
-</li>
-<li>
-<p><strong>MACモード</strong></p>
-<p>ルーターがパブリックホットスポットへの接続に使用するMACを選択できます。</p>
+<p><img alt="login mode for public hotspots" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/login_mode_for_public_hotspots.png" /></p>
 <ul>
-<li>
-<p><strong>工場</strong>: デバイスに割り当てられた元のMACアドレスを使用します。</p>
-</li>
+<li><strong>カモフラージュを有効にする</strong></li>
+</ul>
+<p>有効にすると、ルーターは管理パネルにアクセスするために使用するクライアントデバイスのMACアドレスを模倣することで、そのMACアドレスを伪装します。</p>
+<ul>
+<li><strong>MACモード</strong></li>
+</ul>
+<p>ルーターがパブリックホットスポットへの接続に使用するMACを選択できます。
+  - <strong>工場</strong>: デバイスに割り当てられた元のMACアドレスを使用します。</p>
+<ul>
 <li>
 <p><strong>クローン</strong>: 接続のためにクライアントデバイスのMACアドレスをクローンします。希望のMACがリストに存在しない場合、クローンしたいアドレスを手動で入力します。</p>
 <p>注意: 多くの 最新 デバイスはWi-Fiネットワークに接続るときにランダム化されたMACアドレス（しばしばプライベートWi-Fiアドレスまたはランダムハードウェアアドレスと呼ばれる）を使用します。このため、ここに表示されるMACアドレスがデバイスの実際の物理MACと一致しない場合があります。</p>
@@ -6323,10 +6321,8 @@
 </li>
 </ul>
 <p>ネットワーク設定を保存のとき、MACモード（クローン/ランダム化されたMACアドレスを含む）は 保存する特定のSSIDに紐付けられます。各SSIDの設定はいつでも手動で変更できます。</p>
-</li>
-<li>
-<p><strong>MACをから動アップデート</strong>: このオプションが有効な場合、MACは自動的にアップデートできます。</p>
-</li>
+<ul>
+<li><strong>MACをから動アップデート</strong>: このオプションが有効な場合、MACは自動的にアップデートできます。</li>
 </ul>
 <h2 id="_3">詳細設定<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>ネットワークに参加するとき、いくつかの追加オプションがあります。</p>
@@ -6340,8 +6336,10 @@
 </li>
 <li>
 <p><strong>手動で静のIPを設定</strong>: 有効にすると、ルーターのリピーター接続に対してIPv4アドレス、ネットマスク、ゲートウェイ、DNSサーバーを手動で設定でき、これらの設定自動的に取なければならないするのではなくなります。</p>
-<p><img alt="set static ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/manually_set_static_ip.png" /></p>
 </li>
+</ul>
+<p><img alt="set static ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/manually_set_static_ip.png" /></p>
+<ul>
 <li>
 <p><strong>TTL</strong>: TTL（Time To Live）はパケットがネットワークで生存できる最大時間を設定し、運用商の要件に従って入力されます。デフォルトでは、ルーターは着信クライアントデバイスのTTLを1減衰させて転送します。伪装する必要がある場合は、ここで固定値を設定できます。TTLはIPv4のみ有効です。</p>
 </li>
@@ -6358,9 +6356,7 @@
 <p>** firmware v4.8の場合**、リピーターオプションページは以下のようになります。</p>
 <p><img alt="v4.8 repeater options 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/4.8/repeater_options_1.png" /></p>
 <ul>
-<li>
-<p><strong>彼のネットワークへの切り替えを許可</strong>:</p>
-<ul>
+<li><strong>彼のネットワークへの切り替えを許可</strong>:</li>
 <li>
 <p>切り替えなしモード: 切り替えなしモードが有効な場合、現にのWi-Fiが切断されても彼の保存されたネットワークには自動的に接続しません。</p>
 </li>
@@ -6370,13 +6366,11 @@
 <li>
 <p>ネットワークなしから動切り替え: ネットワークなしから動切り替えモードが有効な場合、ルーターは非リピーターモードで正常にネットワーク化されている間は自動的にネットワークをスキャンせず、ルーターがネットワークがないときにのみ彼の保存されたネットワークへのから動切り替えを試みます。これにより通信パケットの損失を避けることができます。</p>
 </li>
-</ul>
-</li>
 <li>
 <p><strong>バンド選択</strong>: 3つのオプションから選択できます：から動、5 GHz、2.4 GHz。</p>
-<p>バンドを手動で選択すると、ルーターは彼のバンドを使用しているWi-Fiをスキャンまたは接続しません。</p>
 </li>
 </ul>
+<p>バンドを手動で選択すると、ルーターは彼のバンドを使用しているWi-Fiをスキャンまたは接続しません。</p>
 <p>** firmware v4.7で前の場合**、リピーターオプションページは以下のようになります。</p>
 <p><img alt="repeater options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/repeater_options.png" /></p>
 <ul>
@@ -6403,12 +6397,10 @@
 <ul>
 <li>なし：パスワードが不要であることを意味します。</li>
 <li>WPA/WPA2/WPA3：一般のでほとんどすべてのWi-Fiネットワークでサポートされています。</li>
-<li>
-<p>WPA/WPA2/WPA3 Enterprise：認証にExtensible Authentication Protocol（EAP）が必要です。接続するには有効なユーザー名とパスワードが必要です（通例、ビジネスまたはキャンパスネットワークで使用）。</p>
+<li>WPA/WPA2/WPA3 Enterprise：認証にExtensible Authentication Protocol（EAP）が必要です。接続するには有効なユーザー名とパスワードが必要です（通例、ビジネスまたはキャンパスネットワークで使用）。</li>
+</ul>
 <p><img alt="join other network, eap" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_repeater/join_other_network_eap.jpg" /></p>
 <p>EAPネットワークのリピーティングの詳細なガイドについては、<a href="../../tutorials/eap/" target="_blank">こちら</a>をクリックしてください。</p>
-</li>
-</ul>
 <h2 id="_7">再接続<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>次の場合、ルーターは定期のにWi-Fiへの再接続を試みます。必要に応じて手動でこれを無効にできます。SSID/パスワードエラーの場合は、既知のネットワークからネットワークを削除して解決してください。</p>
 <ol>
