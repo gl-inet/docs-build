@@ -1542,47 +1542,52 @@
 
 <h1 id="gl-s10-flash-guide">GL-S10 Flash Guide<a class="headerlink" href="#gl-s10-flash-guide" title="Permanent link">&para;</a></h1>
 <h2 id="download-the-flash-tool">Download the flash tool<a class="headerlink" href="#download-the-flash-tool" title="Permanent link">&para;</a></h2>
-<p>You can download the latest <a href="https://www.espressif.com/en/support/download/other-tools">flash tool</a> from the official website.</p>
+<p>You can download the latest flash tool from the official website <a href="https://www.espressif.com/en/support/download/other-tools">here</a>.</p>
 <p><img alt="s10_flash_guide_flash_download_tools" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_flash_download_tools.png" /></p>
 <h2 id="connecting-device">Connecting device<a class="headerlink" href="#connecting-device" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Prepare a USB-TTL tool, here we take ai-thinker USB-T1(CP2102) as example. <a href="https://docs.ai-thinker.com/_media/tools/serial_driver_windos.7z">CP2102 driver link(<strong>windows</strong>)</a></li>
-</ol>
+<li>
+<p>Prepare a USB-TTL tool. Here we take ai-thinker USB-T1(CP2102) as an example. <a href="https://docs.ai-thinker.com/_media/tools/serial_driver_windos.7z">CP2102 driver link(<strong>windows</strong>)</a></p>
 <p><img alt="s10_flash_guide_usb" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_usb.png" /></p>
-<ol>
-<li>The distribution of flashing pins on the GL-S10 PCB is as follows.<img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_pcb_1.png" alt="011" style="zoom: 80%;" /></li>
-<li>Connect GL-S10 to computer via USB-TTL.</li>
-</ol>
+</li>
+<li>
+<p>The distribution of flashing pins on the GL-S10 PCB is as follows.<img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_pcb_1.png" alt="011" style="zoom: 80%;" /></p>
+</li>
+<li>
+<p>Connect GL-S10 to a computer via USB-TTL.</p>
 <p><img alt="s10_flash_guide_usb_ttl" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_usb_ttl.png" /></p>
-<p>There are two kinds of s10 flashing way of connection :</p>
+<p>There are two kinds of connection ways for flashing GL-S10:</p>
 <ul>
-<li>Complete connection</li>
-</ul>
+<li>
+<p>Complete connection</p>
 <p>Use usb-ttl to connect all the pins shown above, then directly using the flash_download_tool.</p>
-<ul>
-<li>Simple connection</li>
-</ul>
+</li>
+<li>
+<p>Simple connection</p>
 <p>Use sub-ttl to connect <em>TX, Rx, GND</em>,  and holding the download button to start the download mode, then using the flash_download_tool.</p>
-<p>Specific steps as shown below :</p>
+</li>
+</ul>
+<p>Specific steps are shown in the image below.</p>
 <p><img src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_pcb_2.png" alt="011" style="zoom: 80%;" /></p>
+</li>
+</ol>
 <h2 id="flash-firmware">Flash firmware<a class="headerlink" href="#flash-firmware" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Extract flash_download_tool and execute flash_download_tool.exe.</li>
-</ol>
+<li>
+<p>Extract flash_download_tool and execute <strong>flash_download_tool.exe</strong>.</p>
 <p><img alt="s10_flash_guide_program" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_program.png" /></p>
-<ol>
-<li>Select ESP32 and click OK.</li>
-</ol>
+</li>
+<li>
+<p>Select ESP32 and click OK.</p>
 <p><img alt="s10_flash_guide_chip" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_chip.png" /></p>
-<ol>
-<li>
-<p>Flash bin files</p>
 </li>
 <li>
-<p>A. Multiple bin files flash</p>
-</li>
-</ol>
-<p>There are typically 5 types of bin, and each one has an appropriate flash start address.</p>
+<p>Flash bin files.</p>
+<ul>
+<li>
+<p>A. Multiple bin files</p>
+<p>There are typically four types of bin files, each with a corresponding flash start address. Click <a href="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/S10-V3.selection.zip">here</a> to download the Bootloader, Partition, and OTA bin files.</p>
+<p>For device firmware, please download it from the <a href="https://dl.gl-inet.com/iot" target="_blank">IoT Firmware Center</a>.</p>
 <table>
 <thead>
 <tr>
@@ -1615,12 +1620,18 @@
 </tbody>
 </table>
 <p><img alt="s10_flash_guide_multi_bin" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_multi_bin.png" /></p>
-<ul>
-<li>B. Merge bin files flash</li>
-</ul>
+</li>
+<li>
+<p>B. Merge bin files</p>
 <p>The address is 0x0000, as the folowing picture:</p>
 <p><img alt="s10_flash_guide_combine_bin" src="https://static.gl-inet.com/docs/iot/en/ble_proxy/gl-s10/user_manual/s10_flash_image/s10_flash_guide_combine_bin.png" /></p>
+</li>
+</ul>
+</li>
+<li>
 <p>Finally, re-plug the power to make it work.</p>
+</li>
+</ol>
 
 
 
@@ -1648,7 +1659,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024 GL Technologies & Microuter Technologies
+      Copyright &copy; 2026 GL Technologies & Microuter Technologies
     </div>
   
   
