@@ -5539,6 +5539,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    QoS
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -5548,6 +5559,46 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modeles-pris-en-charge" class="md-nav__link">
+    Modèles pris en charge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-rapide" class="md-nav__link">
+    Configuration rapide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personnaliser-la-priorite-des-applications" class="md-nav__link">
+    Personnaliser la priorité des applications
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -6148,6 +6199,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modeles-pris-en-charge" class="md-nav__link">
+    Modèles pris en charge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-rapide" class="md-nav__link">
+    Configuration rapide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personnaliser-la-priorite-des-applications" class="md-nav__link">
+    Personnaliser la priorité des applications
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6171,21 +6251,32 @@
 
 <!-- Markdown content -->
 <h1 id="qos-quality-of-service">QoS (Quality of Service)<a class="headerlink" href="#qos-quality-of-service" title="Permanent link">&para;</a></h1>
-<p>QoS (Quality of Service) optimise l'allocation de bande passante en priorisant les activités critiques (par ex. appels vidéo, jeux) lors de la congestion du réseau, ce qui réduit la latence et améliore les performances globales du réseau. </p>
-<p><strong>Note</strong> : </p>
-<ol>
-<li>
-<p>Cette fonctionnalité est actuellement disponible uniquement sur <strong>GL-MT5000 (Brume 3)</strong>.</p>
-</li>
-<li>
-<p>Cette fonctionnalité affecte le trafic qui traverse le routeur lorsqu'il agit comme passerelle (y compris le trafic des clients locaux et le trafic du VPN Client), mais pas le trafic entrant lorsque le routeur agit comme VPN Server.</p>
-</li>
-</ol>
-<hr />
-<p>Dans le panneau d'administration web, accédez à <strong>FLOW CONTROL</strong> &gt; <strong>QoS</strong>. </p>
-<p>Définissez d'abord vos vitesses maximales d'envoi et de téléchargement (plage de saisie : 1 - 10000) pour l'ordonnancement du trafic. Faites-les correspondre à votre bande passante Internet réelle pour obtenir les meilleurs résultats.</p>
-<p>Définissez ensuite les priorités des différentes applications, et le routeur allouera la bande passante en conséquence.</p>
+<p>La QoS (Quality of Service) optimise l’allocation de la bande passante en donnant la priorité aux activités critiques (par ex. appels vidéo, jeux en ligne) lors de la congestion du réseau, ce qui réduit la latence et améliore les performances globales du réseau.</p>
+<p><strong>Remarque</strong> : cette fonctionnalité affecte le trafic qui traverse le routeur lorsqu’il agit comme passerelle (y compris le trafic des clients locaux et du client VPN), mais pas le trafic entrant lorsque le routeur agit comme serveur VPN.</p>
+<h2 id="modeles-pris-en-charge">Modèles pris en charge<a class="headerlink" href="#modeles-pris-en-charge" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Modèles pris en charge</p>
+<ul>
+<li>GL-BE10000 (Slate 7 Pro)</li>
+<li>GL-MT5000 (Brume 3)</li>
+</ul>
+</div>
+<h2 id="configuration-rapide">Configuration rapide<a class="headerlink" href="#configuration-rapide" title="Permanent link">&para;</a></h2>
+<p>Dans la partie gauche du panneau d’administration web, accédez à <strong>FLOW CONTROL</strong> -&gt; <strong>QoS</strong>.</p>
+<p>Activez l’interrupteur pour activer la QoS ; la page s’affichera comme ci-dessous.</p>
 <p><img alt="qos" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/qos/qos.png" /></p>
+<p>Définissez ensuite vos vitesses maximales d’envoi et de téléchargement (plage de saisie : 1 - 10000) pour l’ordonnancement du trafic. Faites-les correspondre à votre bande passante Internet réelle pour obtenir les meilleurs résultats.</p>
+<p><img alt="qos speed" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/qos/up_down_speed.png" /></p>
+<p><strong>Remarque</strong> : les valeurs saisies dans le champ sont en <strong>Mbps</strong> (mégabits par seconde). L’équivalent en <strong>MB/s</strong> (mégaoctets par seconde) s’affiche à titre indicatif.</p>
+<p>Définissez ensuite les priorités pour les différentes applications. Le routeur allouera la bande passante en conséquence.</p>
+<p><img alt="app priority" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/qos/app_priority.png" /></p>
+<h2 id="personnaliser-la-priorite-des-applications">Personnaliser la priorité des applications<a class="headerlink" href="#personnaliser-la-priorite-des-applications" title="Permanent link">&para;</a></h2>
+<p>Pour personnaliser la priorité des applications, sélectionnez <strong>Customize</strong> puis cliquez sur <strong>Pre-Set up</strong>.</p>
+<p><img alt="customize priority1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/qos/customize_priority1.png" /></p>
+<p>Dans la fenêtre contextuelle, toutes les catégories sont définies par défaut sur <strong>Medium Priority</strong>.</p>
+<p><img alt="customize priority2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/qos/customize_priority2.png" /></p>
+<p>Faites glisser les catégories pour ajuster leur priorité selon vos besoins, puis cliquez sur <strong>Confirm</strong>.</p>
+<p><img alt="customize priority3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/qos/customize_priority3.png" /></p>
 <hr />
 <p>Vous avez encore des questions ? Consultez notre <a href="https://forum.gl-inet.com" target="_blank">forum communautaire</a> ou <a href="https://www.gl-inet.com/contacts/" target="_blank">contactez-nous</a>.</p>
 

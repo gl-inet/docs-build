@@ -5559,6 +5559,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SQM
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -5568,6 +5579,39 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modeles-pris-en-charge" class="md-nav__link">
+    Modèles pris en charge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-rapide" class="md-nav__link">
+    Configuration rapide
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -6148,6 +6192,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modeles-pris-en-charge" class="md-nav__link">
+    Modèles pris en charge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-rapide" class="md-nav__link">
+    Configuration rapide
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6175,26 +6241,33 @@
 <p><strong>Remarque</strong> :</p>
 <ol>
 <li>
-<p>Cette fonctionnalité est actuellement disponible uniquement sur <strong>GL-MT5000 (Brume 3)</strong>.</p>
+<p>Cette fonctionnalité affecte le trafic qui traverse le routeur lorsqu’il agit comme passerelle (y compris le trafic des clients locaux et du client VPN), mais pas le trafic entrant lorsque le routeur agit comme serveur VPN.</p>
 </li>
 <li>
-<p>Elle affecte le trafic qui traverse le routeur lorsqu'il agit comme passerelle (y compris le trafic des clients locaux et le trafic du client VPN), mais pas le trafic entrant lorsque le routeur agit comme serveur VPN.</p>
-</li>
-<li>
-<p>Comme le SQM consomme des ressources, il convient surtout aux réseaux à faible bande passante ou congestionnés. Son activation sur des connexions très rapides peut réduire le débit maximal.</p>
+<p>Comme le SQM consomme beaucoup de ressources, il convient surtout aux réseaux à faible bande passante ou congestionnés. Son activation sur des connexions très rapides peut réduire le débit maximal.</p>
 </li>
 </ol>
-<hr />
-<p>Dans la partie gauche du panneau d'administration web, accédez à <strong>FLOW CONTROL</strong> -&gt; <strong>SQM</strong>.</p>
-<p>Définissez d'abord vos vitesses maximales d'envoi et de téléchargement (plage de saisie : 1 à 10000) pour l'ordonnancement du trafic. Faites-les correspondre à votre bande passante réelle pour obtenir les meilleurs résultats.</p>
+<h2 id="modeles-pris-en-charge">Modèles pris en charge<a class="headerlink" href="#modeles-pris-en-charge" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Modèles pris en charge</p>
+<ul>
+<li>GL-BE10000 (Slate 7 Pro)</li>
+<li>GL-MT5000 (Brume 3)</li>
+</ul>
+</div>
+<h2 id="configuration-rapide">Configuration rapide<a class="headerlink" href="#configuration-rapide" title="Permanent link">&para;</a></h2>
+<p>Dans la partie gauche du panneau d’administration web, accédez à <strong>FLOW CONTROL</strong> -&gt; <strong>SQM</strong>.</p>
+<p>Activez l’interrupteur pour activer le SQM, puis définissez vos vitesses maximales d’envoi et de téléchargement (plage de saisie : 1 - 10000) pour l’ordonnancement du trafic. Faites-les correspondre à votre bande passante Internet réelle pour obtenir les meilleurs résultats.</p>
 <p><img alt="sqm" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/sqm/sqm.png" /></p>
+<p><strong>Remarque</strong> : les valeurs saisies dans le champ sont en <strong>Mbps</strong> (mégabits par seconde). L’équivalent en <strong>MB/s</strong> (mégaoctets par seconde) s’affiche à titre indicatif.</p>
+<p><img alt="up down speed" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/sqm/up_down_speed.jpg" /></p>
 <p>Pour <strong>Queue Rule</strong>, deux options sont disponibles :</p>
 <ul>
 <li>
-<p><strong>cake</strong> : façonnage intelligent et automatique du trafic avec un excellent contrôle global de la latence (recommandé).</p>
+<p><strong>cake</strong> : mise en forme intelligente et automatique du trafic avec un excellent contrôle global de la latence (recommandé).</p>
 </li>
 <li>
-<p><strong>fq_codel</strong> : file d'attente équitable simple et efficace avec une réduction de latence de base.</p>
+<p><strong>fq_codel</strong> : file d’attente équitable simple et efficace avec une réduction de latence de base.</p>
 </li>
 </ul>
 <hr />

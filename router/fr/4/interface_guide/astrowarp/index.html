@@ -4664,6 +4664,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#modeles-pris-en-charge" class="md-nav__link">
+    Modèles pris en charge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration-rapide" class="md-nav__link">
     Configuration rapide
   </a>
@@ -6206,6 +6213,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#modeles-pris-en-charge" class="md-nav__link">
+    Modèles pris en charge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration-rapide" class="md-nav__link">
     Configuration rapide
   </a>
@@ -6251,21 +6265,59 @@
 
 <!-- Markdown content -->
 <h1 id="astrowarp">AstroWarp<a class="headerlink" href="#astrowarp" title="Permanent link">&para;</a></h1>
-<p><strong>Note</strong> : Ce guide présente la nouvelle version d’AstroWarp, actuellement disponible sur <strong>Flint 3 (GL-BE9300)</strong> et <strong>Slate 7 (GL-BE3600)</strong> avec les firmwares v4.8.4 et v4.8.3 respectivement.</p>
-<p>Pour les autres modèles, veuillez consulter <a href="https://docs.astrowarp.net/" target="_blank">ce lien</a> pour plus d’informations.</p>
+<p><strong>Remarque</strong> : ce guide présente la nouvelle version d’AstroWarp, intégrée au panneau d’administration web des routeurs GL.iNet.</p>
+<p>Pour la documentation de l’ancienne version d’AstroWarp, veuillez consulter <a href="https://docs.astrowarp.net/" target="_blank">ce lien</a>.</p>
 <hr />
 <p>AstroWarp est une fonctionnalité réseau avancée intégrée aux routeurs GL.iNet. Elle permet un accès à distance fluide à votre réseau domestique sans inscription ni connexion. En utilisant le protocole AmneziaWG avec obfuscation de trafic intégrée, elle maintient une connexion stable et sécurisée, ce qui en fait une solution idéale pour un accès à distance fiable, où que vous soyez.</p>
 <p>Les utilisateurs peuvent configurer un réseau AstroWarp directement depuis le panneau d’administration du routeur GL.iNet. Il suffit d’appairer vos routeurs à l’aide d’un code d’accès pour connecter en toute sécurité votre routeur de voyage à votre réseau domestique en quelques secondes.</p>
-<p><strong>Note:</strong> </p>
+<p><strong>Remarque</strong> :</p>
 <ol>
-<li>Il n’est pas recommandé d’utiliser AstroWarp en même temps que l’une des fonctionnalités suivantes, car cela peut provoquer des conflits de routage : GoodCloud Site to Site, ZeroTier, Tailscale, Tor.</li>
+<li>Il n’est pas recommandé d’utiliser AstroWarp en même temps que les fonctionnalités suivantes, car cela peut provoquer des conflits de routage : GoodCloud Site to Site, ZeroTier, Tailscale, Tor.</li>
 <li>Lorsque AstroWarp est activé, la fonction <strong>Network Mode</strong> ne peut pas être utilisée.</li>
 </ol>
+<h2 id="modeles-pris-en-charge">Modèles pris en charge<a class="headerlink" href="#modeles-pris-en-charge" title="Permanent link">&para;</a></h2>
+<details>
+<summary>Modèles pris en charge</summary>
+<ul>
+<li>GL-BE9300 (Flint 3), version v4.8.4</li>
+<li>GL-BE3600 (Slate 7), version v4.8.3</li>
+<li>GL-MT6000 (Flint 2), bêta v4.8.4</li>
+<li>GL-X3000 (Spitz AX), bêta v4.8.4</li>
+<li>GL-XE3000 (Puli AX), bêta v4.8.4</li>
+<li>GL-AX1800 (Flint), bêta v4.8.4</li>
+<li>GL-AXT1800 (Slate AX), bêta v4.8.3</li>
+<li>GL-MT3000 (Beryl AX), bêta v4.8.2</li>
+</ul>
+</details>
+<details>
+<summary>Modèles non pris en charge</summary>
+<ul>
+<li>GL-E5800 (Mudi 7)</li>
+<li>GL-MT5000 (Brume 3)</li>
+<li>GL-MT3600BE (Beryl 7)</li>
+<li>GL-BE6500 (Flint 3e)</li>
+<li>GL-X2000 (Spitz Plus)</li>
+<li>GL-B3000 (Marble)</li>
+<li>GL-MT2500/GL-MT2500A (Brume 2)</li>
+<li>GL-A1300 (Slate Plus)</li>
+<li>GL-SFT1200 (Opal)</li>
+<li>GL-MT1300 (Beryl)</li>
+<li>GL-E750/E750V2 (Mudi)</li>
+<li>GL-X750/GL-X750V2 (Spitz)</li>
+<li>GL-AR750S (Slate)</li>
+<li>GL-XE300 (Puli)</li>
+<li>GL-MT300N-V2 (Mango)</li>
+<li>GL-AR300M Series (Shadow)</li>
+<li>GL-B1300 (Convexa-B)</li>
+<li>GL-AP1300 (Cirrus)</li>
+<li>GL-X300B (Collie)</li>
+</ul>
+</details>
 <h2 id="configuration-rapide">Configuration rapide<a class="headerlink" href="#configuration-rapide" title="Permanent link">&para;</a></h2>
 <p>Dans l’exemple suivant, nous utiliserons <strong>Flint 3 (GL-BE9300)</strong> et <strong>Slate 7 (GL-BE3600)</strong> pour configurer un réseau AstroWarp.</p>
 <p>Flint 3 jouera le rôle de routeur domestique, tandis que Slate 7 fera office de routeur de voyage qui renvoie le trafic réseau vers Flint 3 pour l’accès à Internet.</p>
 <p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astrowarp/aw_topology.png" /></p>
-<p><strong>Note</strong> : Chaque routeur GL.iNet inclut <strong>10 GB de données gratuites par mois</strong> pour le réseau AstroWarp. Les appareils d’un réseau AstroWarp utilisent les données du routeur domestique pour accéder à Internet. Vous pouvez passer au forfait AstroWarp+ pour obtenir des données illimitées si nécessaire.</p>
+<p><strong>Remarque</strong> : chaque routeur GL.iNet inclut <strong>10 GB de données gratuites par mois</strong> pour le réseau AstroWarp. Les appareils d’un réseau AstroWarp utilisent les données du routeur domestique pour accéder à Internet. Vous pouvez passer au forfait AstroWarp+ pour obtenir des données illimitées si nécessaire.</p>
 <ol>
 <li>
 <p>Configurez Flint 3 pour l’accès à Internet.</p>
@@ -6283,7 +6335,7 @@
 <li>
 <p>Configurez Slate 7 pour l’accès à Internet.</p>
 <p>Connectez-vous au panneau d’administration web de Slate 7, puis ouvrez la page <strong>INTERNET</strong>. Connectez-le à Internet à l’aide de l’une des méthodes de connexion prises en charge : Ethernet, Repeater, Tethering et Cellular.</p>
-<p>Comme indiqué ci-dessous, le routeur de voyage Slate 7 est connecté au point d’accès personnel d’un iPhone 15 Pro (situé à Shenzhen, utilisant le réseau China Unicom Guangdong Province).</p>
+<p>Comme indiqué ci-dessous, le routeur de voyage Slate 7 est connecté au point d’accès personnel d’un iPhone 15 Pro (situé à Shenzhen et utilisant le réseau China Unicom Guangdong Province).</p>
 <p><img alt="travel internet" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astrowarp/travel_internet.png" /></p>
 </li>
 <li>

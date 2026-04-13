@@ -5438,7 +5438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dpi_license/" class="md-nav__link">
+      <a href="../dpi_license.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6120,30 +6120,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tunnel-details" class="md-nav__link">
-    トンネル詳細
+  <a href="#_1" class="md-nav__link">
+    利用シナリオ
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vpn-policy" class="md-nav__link">
-    VPNポリシー
-  </a>
-  
-    <nav class="md-nav" aria-label="VPNポリシー">
+    <nav class="md-nav" aria-label="利用シナリオ">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    クイックセットアップ
+  <a href="#1" class="md-nav__link">
+    シナリオ 1
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    利用シナリオ
+  <a href="#2" class="md-nav__link">
+    シナリオ 2
   </a>
   
 </li>
@@ -6155,7 +6148,7 @@
       
         <li class="md-nav__item">
   <a href="#all-other-traffic" class="md-nav__link">
-    その他のすべてのトラフィック
+    All Other Traffic
   </a>
   
 </li>
@@ -6190,57 +6183,49 @@
 
 
 <h1 id="vpn-dashboard-firmware-v49">VPN Dashboard (Firmware v4.9)<a class="headerlink" href="#vpn-dashboard-firmware-v49" title="Permanent link">&para;</a></h1>
-<p><strong>注意</strong>: このガイドはファームウェア v4.9 を基準にしています。以前のバージョンについては <a href="../vpn_dashboard/">こちら</a> を参照してください。</p>
+<p><strong>Note</strong>: このガイドはファームウェア v4.9 を基準にしています。以前のバージョンについては <a href="../vpn_dashboard/">こちら</a> を参照してください。</p>
 <hr />
-<p>Web管理パネルの左側で、<strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> に移動します。</p>
-<p>VPN Dashboard では、ルーティングルール、接続中のサーバー、トラフィック統計、クライアント仮想IP、接続ログなどのVPN接続情報を確認できるほか、VPNキルスイッチ、IPマスカレーディング、MTU などの詳細設定も行えます。</p>
+<p>Web Admin Panel の左側で、<strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> に移動します。</p>
+<p>VPN Dashboard では、ルーティングルール、接続中のサーバー、トラフィック統計、クライアント仮想 IP、接続ログなどの VPN 接続情報を確認できるほか、VPN Kill Switch、IP Masquerading、MTU などの詳細設定も行えます。</p>
 <p>ファームウェア v4.8 と比較して、v4.9 の VPN Dashboard には次の改善があります。</p>
 <ol>
 <li>
-<p><strong>1つのトンネルグループ内で複数のプロファイルを選択し、優先度を設定できます。</strong> トンネルは、優先度順に各プロファイルで接続を試み、接続が確立されるまで順に切り替えます。</p>
+<p><strong>1 つのトンネルグループ内で複数のプロファイルを選択し、優先度を設定できます。</strong> トンネルは、優先度順に各プロファイルで接続を試み、接続が確立されるまで順に切り替えます。</p>
 </li>
 <li>
-<p><strong>各トンネルグループは独立して動作し、グループ間ではフェイルオーバーしません。</strong> 1つのトンネル内のすべてのプロファイルで接続に失敗した場合、システムは Tunnel Kill Switch と All Other Traffic トンネルの状態に基づいて、ローカルWANへ切り替えるかどうかを判断します。</p>
+<p><strong>各トンネルグループは独立して動作し、グループ間ではフェイルオーバーしません。</strong> 1 つのトンネル内のすべてのプロファイルで接続に失敗した場合、システムは Tunnel Kill Switch と All Other Traffic トンネルの状態に基づいて、ローカル WAN へ切り替えるかどうかを判断します。</p>
 </li>
 </ol>
 <h2 id="getting-started">はじめに<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>このページを初めて開いたとき、まだトンネルが作成されていない場合は、以下のような画面が表示されます。<strong>Add VPN Tunnel</strong> をクリックして開始します。</p>
 <p><img alt="getting started" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/getting_started.png" /></p>
-<p><strong>VPNプロバイダーを選択</strong> します。ここに表示されるVPNプロバイダーは、GL.iNet ルーターの Web管理パネルに統合されています。有効なサブスクリプションがあれば、認証情報を入力するだけでログインし、VPN接続用の設定ファイルを取得できます。</p>
-<p><img alt="select vpn provider" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/select_vpn_client.png" /></p>
-<p>他のVPNプロバイダーを利用している場合や、独自のVPN設定をアップロードしたい場合は、<strong>VPN Client Profile</strong> に移動して手動で設定してください。</p>
-<p>ここでは <strong>Hide.me</strong> を例に説明します。Hide.me の認証情報でログインします。</p>
-<p><img alt="hide.me login" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/vpn_login.png" /></p>
-<p><strong>VPNサーバーを選択</strong> します。ここで選択したサーバーが、このVPNトンネル経由で接続する先になります。公開IPアドレスは、選択したサーバーの所在地からアクセスしているように見えます。<strong>Apply</strong> をクリックします。</p>
-<p><img alt="select server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/select_vpn_server.png" /></p>
-<p>自動的に接続が開始されます。<strong>Done</strong> をクリックします。</p>
-<p><img alt="successful networking" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/successful_networking.png" /></p>
-<p>VPN Dashboard に移動すると、VPN Tunnel 1 が有効になり、接続済みであることを確認できます。</p>
-<p><img alt="tunnel 1 global policy" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/tunnel1_global_policy.png" /></p>
-<p><strong>この例では、このルーターに接続されているすべてのクライアントが、このVPNトンネル経由でインターネットにアクセスします。</strong></p>
-<p>VPNポリシーを設定する場合は、<a href="#vpn-policy">VPNポリシー</a> を参照してください。</p>
-<p><strong>All Other Traffic</strong> は、VPN Dashboard の下部に表示される、あらかじめ有効なトンネルです。詳細は <a href="#all-other-traffic">こちら</a> を参照してください。</p>
-<h2 id="tunnel-details">トンネル詳細<a class="headerlink" href="#tunnel-details" title="Permanent link">&para;</a></h2>
-<p>VPN Dashboard では、各VPNトンネルが下図のように表示されます。ルーティングルール、接続中のサーバー、トラフィック統計、サーバーアドレス、待受ポート、クライアント仮想IP、接続ログなどの詳細な情報を確認できます。トンネルグループ上部では、VPNトンネルの有効化・無効化やトンネル設定の変更も行えます。</p>
-<p><img alt="tunnel details" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/tunnel_details.png" /></p>
-<h2 id="vpn-policy">VPNポリシー<a class="headerlink" href="#vpn-policy" title="Permanent link">&para;</a></h2>
-<p>VPNポリシーでは、ネットワークトラフィックをVPNトンネル経由でどのようにルーティングするかを定義します。どのトラフィックをVPN経由でトラフィック宛先へ送るか、どのトラフィックをローカルWAN経由で直接インターネットへ出すかを決定します。</p>
-<p>これにより、すべてのクライアントまたは特定のデバイスについて、指定したWebサイトやインターネット全体へのアクセスをVPN接続経由にでき、柔軟で安全なネットワーク管理を実現できます。</p>
-<h3 id="_1">クイックセットアップ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>VPN Dashboard で <strong>Add New Tunnel</strong> をクリックするか、既存のVPNトンネルの中央部分をクリックします。</p>
-<p><img alt="add new tunnel" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/add_new_tunnel.png" /></p>
-<p>その後、セットアップウィザードに従って、VPNプロファイル、トラフィック送信元、トラフィック宛先を選択し、VPNポリシーを設定します。</p>
+<p><strong>VPN Client Profile</strong> ページに移動し、VPN プロバイダーを選択してログインします。</p>
+<p>ここに表示される VPN プロバイダーは、GL.iNet ルーターの Web Admin Panel に統合されています。有効なサブスクリプションがあれば、認証情報を入力するだけでログインし、VPN 接続用の設定ファイルを取得できます。</p>
+<p><img alt="select vpn provider" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/vpn_client_profile.png" /></p>
+<p>他の VPN プロバイダーを利用している場合や、独自の VPN 設定をアップロードしたい場合は、<strong>Add Manually</strong> をクリックして設定ファイルをアップロードしてください。</p>
+<p>ここでは <strong>PureVPN</strong> を例に説明します。PureVPN をクリックし、有効な認証情報でログインします。</p>
+<p><img alt="PureVPN1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/purevpn1.png" /></p>
+<p><img alt="PureVPN2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/purevpn2.png" /></p>
+<p>VPN プロファイルの一覧が表示されます。VPN サービスプロバイダーによっては、一覧が表示される前に VPN プロトコルや希望するサーバー / 都市を選択する必要がある場合があります。</p>
+<p>続いて、下部の <strong>Go to Dashboard</strong> をクリックします。VPN Dashboard に移動し、VPN トンネルの追加と VPN ポリシーの設定を行います。</p>
+<p><img alt="PureVPN3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/purevpn3.png" /></p>
+<details>
+<summary>VPN ポリシーとは？</summary>
+<p>VPN ポリシーは、ネットワークトラフィックを VPN トンネル経由でどのようにルーティングするかを定義します。どのトラフィックを VPN 経由で宛先へ送るか、どのトラフィックをローカル WAN 経由で直接インターネットへ出すかを決定します。</p>
+<p>これにより、すべてのクライアントまたは特定のデバイスについて、指定した Web サイトやインターネット全体へのアクセスを VPN 接続経由にでき、柔軟で安全なネットワーク管理を実現できます。</p>
+</details>
+<p>VPN Dashboard では、セットアップウィザードに従って VPN ポリシーを設定します。VPN プロファイル、クライアント送信元、トラフィック宛先を順に選択してください。</p>
 <ol>
 <li>
-<p><strong>VPNプロファイルを選択します。</strong></p>
-<p>統合VPNサービスの認証情報でログインしているか、設定ファイルをアップロードしている場合、利用可能なプロファイルがここに表示されます。まだ何もない場合は、<strong>VPN Client Profile</strong> に移動し、認証情報でログインするか設定ファイルを手動でアップロードしてください。</p>
-<p><a href="https://hide.me/en/?friend=glinet" target="_blank">Hide.me</a> を例にします。サービス認証情報でログインすると、VPNプロファイルの一覧が表示されます。1つまたは複数のプロファイルを選択し、必要に応じて右側で優先度を調整してください。</p>
+<p><strong>VPN プロファイルを選択します。</strong></p>
+<p>統合 VPN サービスの認証情報でログインしているか、設定ファイルをアップロードしている場合、利用可能なプロファイルがここに表示されます。まだ何もない場合は、<strong>VPN Client Profile</strong> に移動し、認証情報でログインするか設定ファイルを手動でアップロードしてください。</p>
+<p>ここでは <a href="https://billing.purevpn.com/aff.php?aff=35535" target="_blank">PureVPN</a> を例にします。1 つまたは複数のプロファイルを選択し、必要に応じて右側で優先度を調整します。</p>
 <p><img alt="select profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/select_profile.png" /></p>
-<p><strong>注意</strong>: 複数のプロファイルを選択した場合、トンネルは優先度順に各プロファイルで接続を試み、接続が確立されるまで順に切り替えます。1つのトンネル内のすべてのプロファイルで接続に失敗した場合、システムは Tunnel Kill Switch と <a href="#all-other-traffic">All Other Traffic</a> トンネルの状態に基づいて、ローカルWANへ切り替えるかどうかを判断します。</p>
+<p><strong>Note</strong>: 複数のプロファイルを選択した場合、トンネルは優先度順に各プロファイルで接続を試み、接続が確立されるまで順に切り替えます。1 つのトンネル内のすべてのプロファイルで接続に失敗した場合、システムは Tunnel Kill Switch と <a href="#all-other-traffic">All Other Traffic</a> の状態に基づいて、ローカル WAN へ切り替えるかどうかを判断します。</p>
 </li>
 <li>
 <p><strong>クライアント送信元を選択します。</strong></p>
-<p>選択肢は4つあります。</p>
+<p>選択肢は 4 つあります。</p>
 <ul>
 <li>
 <p><strong>All Clients</strong>: 選択すると、すべてのデバイスからのトラフィックがこのルールに一致します。
@@ -6251,180 +6236,187 @@
 <img alt="specified connection types" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/specified_connection.png" /></p>
 </li>
 <li>
-<p><strong>Specified Devices</strong>: 選択すると、指定したデバイス（MACアドレスで識別）からのトラフィックがこのルールに一致します。
-<img alt="specified devices" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/specified_devices.png" /></p>
+<p><strong>Specified Devices</strong>: 選択すると、指定したデバイス（MAC アドレスで識別）からのトラフィックがこのルールに一致します。
+<img alt="specified devices" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/specified_device.png" /></p>
 </li>
 <li>
-<p><strong>Exclude Specified Devices</strong>: 選択すると、指定したデバイス（MACアドレスで識別）からのトラフィックはこのルールに一致しません。
-<img alt="exclude specified devices" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/exclude_specified_devices.png" /></p>
+<p><strong>Exclude Specified Devices</strong>: 選択すると、指定したデバイス（MAC アドレスで識別）からのトラフィックはこのルールに一致しません。
+<img alt="exclude specified devices" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/exclude_specified_device.png" /></p>
 </li>
 </ul>
 </li>
 <li>
 <p><strong>トラフィック宛先を選択します。</strong></p>
-<p>選択肢は3つあります。</p>
+<p>選択肢は 3 つあります。</p>
 <ul>
 <li>
 <p><strong>All Targets</strong>: 選択すると、このルールに一致するトラフィックはすべての宛先へルーティングされます。
 <img alt="all targets" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/all_targets.png" /></p>
 </li>
 <li>
-<p><strong>Specified Domain / IP List</strong>: 選択すると、このルールに一致するトラフィックは指定したドメインまたはIPアドレスへルーティングされます。内容は手動で入力する必要があります。
+<p><strong>Specified Domain / IP List</strong>: 選択すると、このルールに一致するトラフィックは指定したドメインまたは IP アドレスへルーティングされます。内容は手動で入力する必要があります。
 <img alt="specified domain ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/specified_domain_ip.png" /></p>
 </li>
 <li>
-<p><strong>Exclude specified Domain / IP List</strong>: 選択すると、このルールに一致するトラフィックは、指定したドメインまたはIPアドレスへルーティングされません。内容は手動で入力する必要があります。
+<p><strong>Exclude specified Domain / IP List</strong>: 選択すると、このルールに一致するトラフィックは、指定したドメインまたは IP アドレスへルーティングされません。内容は手動で入力する必要があります。
 <img alt="exclude specified domain ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/exclude_specified_domain_ip.png" /></p>
 </li>
 </ul>
 </li>
 </ol>
-<h3 id="_2">利用シナリオ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>参考として、以下に2つのシナリオを手順付きで示します。</p>
-<p><strong>シナリオ 1</strong></p>
+<h2 id="_1">利用シナリオ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>参考として、以下に 2 つのシナリオを手順付きで示します。</p>
+<h3 id="1">シナリオ 1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p><strong>目的:</strong></p>
 <ol>
 <li>
-<p>このルーターに接続された特定のデバイスだけがVPN経由でインターネットへアクセスし、それ以外のデバイスはローカルWAN経由でアクセスするようにします。</p>
+<p>このルーターに接続された特定のデバイスだけが VPN 経由でインターネットへアクセスし、それ以外のデバイスはローカル WAN 経由でアクセスするようにします。</p>
 </li>
 <li>
-<p>選択したデバイスはVPN接続のみを使用する必要があります。VPNが予期せず切断された場合、DNSリークやIP追跡を防ぐため、それらのデバイスのインターネットアクセスはブロックされます。</p>
+<p>選択したデバイスは VPN 接続のみを使用する必要があります。VPN が予期せず切断された場合、DNS リークや IP 追跡を防ぐため、それらのデバイスのインターネットアクセスはブロックされます。</p>
 </li>
 </ol>
-<p><strong>以下の手順でVPNポリシーを設定してください。</strong></p>
+<p><strong>以下の手順で VPN ポリシーを設定してください。</strong></p>
 <ol>
 <li>
-<p>VPNプロファイルを選択します。</p>
-<p>統合VPNサービスの認証情報でログインしているか、設定ファイルをアップロードしている場合、利用可能なプロファイルがここに表示されます。まだ何もない場合は、<strong>VPN Client Profile</strong> に移動し、認証情報でログインするか設定ファイルを手動でアップロードしてください。</p>
-<p><a href="https://hide.me/en/?friend=glinet" target="_blank">Hide.me</a> を例にします。サービス認証情報でログインすると、VPNプロファイルの一覧が表示されます。</p>
-<p><img alt="select profile1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case1_profile1.png" /></p>
-<p>1つまたは複数のプロファイルを選択し、必要に応じて右側で優先度を調整します。</p>
-<p><img alt="select profile2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case1_profile2.png" /></p>
-<p><strong>注意</strong>: 複数のプロファイルを選択した場合、トンネルは優先度順に各プロファイルで接続を試み、接続が確立されるまで順に切り替えます。1つのトンネル内のすべてのプロファイルで接続に失敗した場合、システムは Tunnel Kill Switch と <a href="#all-other-traffic">All Other Traffic</a> トンネルの状態に基づいて、ローカルWANへ切り替えるかどうかを判断します。</p>
+<p>VPN プロファイルを選択します。</p>
+<p>統合 VPN サービスの認証情報でログインしているか、設定ファイルをアップロードしている場合、利用可能なプロファイルがここに表示されます。まだ何もない場合は、<strong>VPN Client Profile</strong> に移動し、認証情報でログインするか設定ファイルを手動でアップロードしてください。</p>
+<p>ここでは <a href="https://billing.purevpn.com/aff.php?aff=35535" target="_blank">PureVPN</a> を例にします。1 つまたは複数のプロファイルを選択し、必要に応じて右側で優先度を調整します。</p>
+<p><img alt="scenario 1 select profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/1_profiles.png" /></p>
+<p><strong>Note</strong>: 複数のプロファイルを選択した場合、トンネルは優先度順に各プロファイルで接続を試み、接続が確立されるまで順に切り替えます。1 つのトンネル内のすべてのプロファイルで接続に失敗した場合、システムは Tunnel Kill Switch と <a href="#all-other-traffic">All Other Traffic</a> の状態に基づいて、ローカル WAN へ切り替えるかどうかを判断します。</p>
 </li>
 <li>
-<p>クライアント送信元として <strong>Specified Devices</strong> を選択し、VPNを使用するデバイスを選んで <strong>Apply</strong> をクリックします。</p>
-<p><img alt="select source" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case1_source.png" /></p>
+<p>クライアント送信元を選択します。</p>
+<p><strong>Specified Devices</strong> タブをクリックし、VPN を使用するデバイスを選択して <strong>Apply</strong> をクリックします。</p>
+<p><img alt="scenario 1 select source" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/1_specified_devices.png" /></p>
 </li>
 <li>
-<p>トラフィック宛先として <strong>All Targets</strong> を選択し、<strong>Apply</strong> をクリックします。</p>
-<p><img alt="select target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case1_target.png" /></p>
+<p>トラフィック宛先を選択します。</p>
+<p><strong>All Targets</strong> タブをクリックして宛先に設定し、<strong>Apply</strong> をクリックします。</p>
+<p><img alt="scenario 1 select target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case1_target.png" /></p>
 </li>
 <li>
-<p>VPN Dashboard に戻ると、VPNトンネルが追加されています。</p>
-<p><img alt="policy apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case1_apply.jpg" /></p>
+<p>VPN Dashboard に移動すると、VPN トンネルが追加されています。</p>
+<p><img alt="scenario 1 dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/1_dashboard.png" /></p>
 </li>
 <li>
-<p>このトンネルの <strong>Kill Switch</strong> が有効になっていることを確認してください。VPNが予期せず切断された場合、このトンネルに一致するトラフィックのインターネットアクセスは、DNSリークやIP追跡を防ぐためにブロックされます。</p>
-<p><img alt="kill switch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case1_killswitch1.png" /></p>
-<p><img alt="kill switch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case1_killswitch2.png" /></p>
+<p>このトンネルの <strong>Kill Switch</strong> が有効になっていることを確認してください。VPN が予期せず切断された場合、このトンネルに一致するトラフィックのインターネットアクセスは、DNS リークや IP 追跡を防ぐためにブロックされます。</p>
+<p><img alt="scenario 1 kill switch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/1_killswitch1.png" /></p>
+<p><img alt="scenario 1 kill switch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/1_killswitch2.png" /></p>
 </li>
 <li>
-<p><strong>All Other Traffic</strong> が有効で、モードが <strong>Allow Non-VPN Traffic</strong> になっていることを確認してください。これにより、上記のVPNトンネルに一致しないトラフィックでもローカルWAN経由でインターネットへアクセスできます。</p>
-<p><img alt="all other traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case1_all_other_traffic.png" /></p>
+<p><strong>Allow Non-VPN Traffic</strong> が有効になっていることを確認してください。これはデフォルトで有効で、VPN トンネルに一致しないトラフィックでもローカル WAN 経由でインターネットへアクセスできるようにするための設定です。</p>
+<p><img alt="scenario 1 allow non-vpn traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/1_allow_nonvpn.png" /></p>
 </li>
 <li>
-<p>スイッチを切り替えて、このトンネルを有効にします。</p>
-<p><img alt="start connection" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case1_start.png" /></p>
+<p>中央のボタンをクリックして、このトンネルを有効にします。</p>
+<p><img alt="scenario 1 connect" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/1_connect.png" /></p>
 </li>
 <li>
-<p>接続が完了すると、VPNポリシー、トラフィック統計、サーバーアドレス、待受ポート、仮想IPアドレスなどのVPN接続情報が表示されます。</p>
-<p><img alt="connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case1_connected.png" /></p>
-<p>これで、指定した2台のデバイスだけがVPN経由でインターネットへアクセスします。VPNが予期せず切断された場合、それらのデバイスのインターネットアクセスはDNSリークやIP追跡を防ぐためにブロックされます。それ以外のデバイスはローカルWAN経由でインターネットへアクセスします。</p>
+<p>接続が完了すると、VPN ポリシー、トラフィック統計、サーバーアドレス、待受ポート、仮想 IP アドレスなどの VPN 接続情報が表示されます。</p>
+<p><img alt="scenario 1 connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/1_connected.png" /></p>
+<p>これで、指定した 2 台のデバイスだけが VPN 経由でインターネットへアクセスします。VPN が予期せず切断された場合、それらのデバイスのインターネットアクセスは DNS リークや IP 追跡を防ぐためにブロックされます。それ以外のデバイスはローカル WAN 経由でインターネットへアクセスします。</p>
 </li>
 </ol>
-<p><strong>シナリオ 2</strong></p>
+<h3 id="2">シナリオ 2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p><strong>目的:</strong></p>
 <ol>
 <li>
 <p>すべてのデバイスは、特定のソーシャルメディアおよびストリーミングサービスのドメインにアクセスするときは <strong>VPN Tunnel 1</strong> を使用し、それ以外のすべてのインターネットアクセスには <strong>VPN Tunnel 2</strong> を使用します。</p>
 </li>
 <li>
-<p>VPNトンネルが予期せず切断された場合、DNSリークやIP追跡を防ぐため、すべてのデバイスのインターネットアクセスはブロックされます。</p>
+<p>VPN トンネルが予期せず切断された場合、DNS リークや IP 追跡を防ぐため、すべてのデバイスのインターネットアクセスはブロックされます。</p>
 </li>
 </ol>
-<p><strong>以下の手順でVPNポリシーを設定してください。</strong></p>
+<p><strong>以下の手順で VPN ポリシーを設定してください。</strong></p>
 <ol>
 <li>
-<p>Tunnel 1 用のVPNプロファイルを選択します。</p>
-<p>統合VPNサービスの認証情報でログインしているか、設定ファイルをアップロードしている場合、利用可能なプロファイルがここに表示されます。まだ何もない場合は、<strong>VPN Client Profile</strong> に移動し、認証情報でログインするか設定ファイルを手動でアップロードしてください。</p>
-<p><a href="https://hide.me/en/?friend=glinet" target="_blank">Hide.me</a> を例にします。サービス認証情報でログインすると、VPNプロファイルの一覧が表示されます。</p>
-<p><img alt="hide.me profile1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_hideme1.png" /></p>
-<p>1つまたは複数のプロファイルを選択し、必要に応じて右側で優先度を調整します。</p>
-<p><img alt="hide.me profile2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_hideme2.png" /></p>
-<p><strong>注意</strong>: 複数のプロファイルを選択した場合、トンネルは優先度順に各プロファイルで接続を試み、接続が確立されるまで順に切り替えます。1つのトンネル内のすべてのプロファイルで接続に失敗した場合、システムは Tunnel Kill Switch と <a href="#all-other-traffic">All Other Traffic</a> トンネルの状態に基づいて、ローカルWANへ切り替えるかどうかを判断します。</p>
+<p>Tunnel 1 用の VPN プロファイルを選択します。</p>
+<p>ここでは <a href="https://billing.purevpn.com/aff.php?aff=35535" target="_blank">PureVPN</a> を例にします。1 つまたは複数のプロファイルを選択し、必要に応じて右側で優先度を調整します。</p>
+<p><img alt="scenario 2 select profile1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_profiles1.png" /></p>
+<p><strong>Note</strong>: 複数のプロファイルを選択した場合、トンネルは優先度順に各プロファイルで接続を試み、接続が確立されるまで順に切り替えます。1 つのトンネル内のすべてのプロファイルで接続に失敗した場合、システムは Tunnel Kill Switch と <a href="#all-other-traffic">All Other Traffic</a> の状態に基づいて、ローカル WAN へ切り替えるかどうかを判断します。</p>
 </li>
 <li>
-<p>Tunnel 1 のクライアント送信元として <strong>All Clients</strong> を選択し、<strong>Apply</strong> をクリックします。</p>
-<p><img alt="select source" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_source.png" /></p>
+<p>クライアント送信元を選択します。</p>
+<p><strong>All Clients</strong> タブをクリックし、Tunnel 1 の client source に設定して <strong>Apply</strong> をクリックします。</p>
+<p><img alt="scenario 2 select source1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_source.png" /></p>
 </li>
 <li>
-<p>Tunnel 1 のトラフィック宛先として <strong>Specified Domain / IP List</strong> を選択します。下図のように、一般的なソーシャルメディアおよびストリーミングサービスのドメインを入力して <strong>Apply</strong> をクリックします。</p>
-<p><img alt="select target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_target1.png" /></p>
+<p>トラフィック宛先を選択します。</p>
+<p><strong>Specified Domain / IP List</strong> タブをクリックし、以下のように一般的なソーシャルメディアおよびストリーミングサービスのドメインを入力して <strong>Apply</strong> をクリックします。</p>
+<p><img alt="scenario 2 select target1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_specified_targets.png" /></p>
 </li>
 <li>
-<p>VPN Dashboard に戻ると、Tunnel 1 が追加されています。</p>
-<p><img alt="tunnel 1 apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_tunnel1_apply.png" /></p>
+<p>VPN Dashboard に移動すると、Tunnel 1 が追加されています。</p>
+<p><img alt="scenario 2 tunnel 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_tunnel1.png" /></p>
 </li>
 <li>
-<p>Tunnel 1 の <strong>Kill Switch</strong> が有効になっていることを確認してください。VPNが予期せず切断された場合、このトンネルに一致するトラフィックのインターネットアクセスは、DNSリークやIP追跡を防ぐためにブロックされます。</p>
-<p><img alt="tunnel 1 kill switch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_tunnel1_killswitch1.png" /></p>
-<p><img alt="tunnel 1 kill switch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_tunnel1_killswitch2.png" /></p>
+<p>Tunnel 1 の <strong>Kill Switch</strong> が有効になっていることを確認してください。VPN が予期せず切断された場合、このトンネルに一致するトラフィックのインターネットアクセスは、DNS リークや IP 追跡を防ぐためにブロックされます。</p>
+<p><img alt="tunnel 1 kill switch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_killswitch1.png" /></p>
+<p><img alt="tunnel 1 kill switch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_killswitch2.png" /></p>
 </li>
 <li>
 <p><strong>Add New Tunnel</strong> をクリックして Tunnel 2 を追加します。</p>
-<p><img alt="add new tunnel" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_add_tunnel2.png" /></p>
+<p><img alt="scenario 2 add tunnel" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_add_tunnel.png" /></p>
 </li>
 <li>
-<p>Tunnel 2 用のVPNプロファイルを選択します。</p>
-<p>統合VPNサービスの認証情報でログインしているか、設定ファイルをアップロードしている場合、利用可能なプロファイルがここに表示されます。まだ何もない場合は、<strong>VPN Client Profile</strong> に移動し、認証情報でログインするか設定ファイルを手動でアップロードしてください。</p>
-<p><a href="https://billing.purevpn.com/aff.php?aff=35535" target="_blank">PureVPN</a> を例にします。サービス認証情報でログインすると、VPNプロファイルの一覧が表示されます。</p>
-<p><img alt="purevpn profile1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_purevpn1.png" /></p>
-<p>1つまたは複数のプロファイルを選択し、必要に応じて右側で優先度を調整します。</p>
-<p><img alt="purevpn profile2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_purevpn2.png" /></p>
-<p><strong>注意</strong>: 複数のプロファイルを選択した場合、トンネルは優先度順に各プロファイルで接続を試み、接続が確立されるまで順に切り替えます。1つのトンネル内のすべてのプロファイルで接続に失敗した場合、システムは Tunnel Kill Switch と <a href="#all-other-traffic">All Other Traffic</a> トンネルの状態に基づいて、ローカルWANへ切り替えるかどうかを判断します。</p>
+<p>Tunnel 2 用の VPN プロファイルを選択します。</p>
+<p>ここでも <a href="https://billing.purevpn.com/aff.php?aff=35535" target="_blank">PureVPN</a> を例にします。1 つまたは複数のプロファイルを選択し、必要に応じて右側で優先度を調整します。</p>
+<p><img alt="scenario 2 select profile2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_profiles2.png" /></p>
+<p><strong>Note</strong>: 複数のプロファイルを選択した場合、トンネルは優先度順に各プロファイルで接続を試み、接続が確立されるまで順に切り替えます。1 つのトンネル内のすべてのプロファイルで接続に失敗した場合、システムは Tunnel Kill Switch と <a href="#all-other-traffic">All Other Traffic</a> の状態に基づいて、ローカル WAN へ切り替えるかどうかを判断します。</p>
 </li>
 <li>
-<p>Tunnel 2 のクライアント送信元として <strong>All Clients</strong> を選択し、<strong>Apply</strong> をクリックします。</p>
-<p><img alt="select source" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_source.png" /></p>
+<p>クライアント送信元を選択します。</p>
+<p><strong>All Clients</strong> タブをクリックし、Tunnel 2 の client source に設定して <strong>Apply</strong> をクリックします。</p>
+<p><img alt="scenario 2 select source2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_all_clients.png" /></p>
 </li>
 <li>
-<p>Tunnel 2 のトラフィック宛先として <strong>All Targets</strong> を選択し、<strong>Apply</strong> をクリックします。</p>
-<p><img alt="select target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_target2.png" /></p>
+<p>トラフィック宛先を選択します。</p>
+<p><strong>All Targets</strong> タブをクリックし、Tunnel 2 の宛先に設定して <strong>Apply</strong> をクリックします。</p>
+<p><img alt="scenario 2 select target2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_all_targets.png" /></p>
 </li>
 <li>
-<p>VPN Dashboard に戻ると、Tunnel 2 が追加されています。</p>
-<p><img alt="tunnel 2 apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_tunnel2_apply.png" /></p>
+<p>VPN Dashboard に移動すると、Tunnel 2 が追加されています。</p>
+<p><img alt="scenario 2 tunnel 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_tunnel2.png" /></p>
 </li>
 <li>
-<p>Tunnel 2 の <strong>Kill Switch</strong> が有効になっていることを確認してください。VPNが予期せず切断された場合、このトンネルに一致するトラフィックのインターネットアクセスは、DNSリークやIP追跡を防ぐためにブロックされます。</p>
-<p><img alt="tunnel 2 kill switch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_tunnel2_killswitch1.png" /></p>
-<p><img alt="tunnel 2 kill switch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_tunnel2_killswitch2.png" /></p>
+<p>Tunnel 2 の <strong>Kill Switch</strong> が有効になっていることを確認してください。VPN が予期せず切断された場合、このトンネルに一致するトラフィックのインターネットアクセスは、DNS リークや IP 追跡を防ぐためにブロックされます。</p>
+<p><img alt="tunnel 2 kill switch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_killswitch3.png" /></p>
+<p><img alt="tunnel 2 kill switch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_killswitch4.png" /></p>
 </li>
 <li>
-<p><strong>All Other Traffic</strong> を無効にし、モードが <strong>Enhanced Kill Switch</strong> になっていることを確認してください。これにより、すべてのトラフィックがVPN経由でのみインターネットへアクセスするようになります。</p>
-<p><img alt="all other traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_all_other_traffic.png" /></p>
+<p>右上の歯車アイコンをクリックし、<strong>Enhanced Kill Switch</strong> を有効にします。これにより、すべてのトラフィックが VPN 経由でのみインターネットへアクセスするようになります。</p>
+<p><img alt="enhanced killswitch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_enhanced_killswitch1.png" /></p>
+<p><img alt="enhanced killswitch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_enhanced_killswitch2.png" /></p>
 </li>
 <li>
-<p>スイッチを切り替えて、Tunnel 1 と Tunnel 2 を有効にします。</p>
-<p><img alt="start connection" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_start.png" /></p>
+<p>中央のボタンをクリックして、Tunnel 1 と Tunnel 2 を有効にします。</p>
+<p><img alt="scenario 2 connect" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_connect.png" /></p>
 </li>
 <li>
-<p>接続が完了すると、VPNポリシー、トラフィック統計、サーバーアドレス、待受ポート、仮想IPアドレスなどのVPN接続情報が表示されます。</p>
-<p><img alt="connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_connected.png" /></p>
-<p>これで、指定したドメインへアクセスするときはすべてのデバイスが <strong>VPN Tunnel 1</strong> を使用し、それ以外のインターネットアクセスには <strong>VPN Tunnel 2</strong> を使用します。VPNトンネルが予期せず切断された場合、すべてのデバイスのインターネットアクセスはDNSリークやIP追跡を防ぐためにブロックされます。</p>
+<p>接続が完了すると、VPN ポリシー、トラフィック統計、サーバーアドレス、待受ポート、仮想 IP アドレスなどの VPN 接続情報が表示されます。</p>
+<p><img alt="scenario 2 connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_connected.png" /></p>
+<p>これで、指定したドメインへアクセスするときはすべてのデバイスが <strong>VPN Tunnel 1</strong> を使用し、それ以外のインターネットアクセスには <strong>VPN Tunnel 2</strong> を使用します。VPN トンネルが予期せず切断された場合、すべてのデバイスのインターネットアクセスは DNS リークや IP 追跡を防ぐためにブロックされます。</p>
 </li>
 </ol>
-<h2 id="all-other-traffic">その他のすべてのトラフィック<a class="headerlink" href="#all-other-traffic" title="Permanent link">&para;</a></h2>
-<p>このオプションは、上記のVPNトンネルグループのいずれにも一致しないトラフィックがインターネットへアクセスできるかどうかを制御します。VPN経由でルーティングされないトラフィックでも通常どおりインターネットへアクセスできるよう、デフォルトで有効になっています。</p>
-<p>有効な場合、一致しないトラフィックも引き続きインターネットへアクセスできます。</p>
-<p><img alt="all other traffic on" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/all_other_traffic_on.png" /></p>
-<p>無効な場合、VPN経由でルーティングされたトラフィックだけがインターネットへアクセスできます。非VPNトラフィックと、VPN接続からフェイルオーバーしたトラフィックはすべてブロックされます。この設定は、各VPNトンネルの個別の Kill Switch を上書きしません。</p>
-<p><img alt="all other traffic off" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/all_other_traffic_off.png" /></p>
+<h2 id="all-other-traffic">All Other Traffic<a class="headerlink" href="#all-other-traffic" title="Permanent link">&para;</a></h2>
+<p>右上の歯車アイコンをクリックすると、VPN トンネルに一致しないトラフィックの扱いを設定できます。</p>
+<p><img alt="all other traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/all_other_traffic.png" /></p>
+<p>このポリシーは、どの VPN トンネルグループにも一致しないトラフィックがインターネットへアクセスできるかどうかを制御します。選択肢は <strong>Allow Non-VPN Traffic</strong> と <strong>Enhanced Kill Switch</strong> の 2 つです。</p>
+<ul>
+<li>
+<p><strong>Allow Non-VPN Traffic</strong>: 非 VPN トラフィックでも通常どおりインターネットへアクセスできるよう、デフォルトで有効になっています。</p>
+<p><img alt="allow non-vpn traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/allow_non-vpn_traffic.png" /></p>
+</li>
+<li>
+<p><strong>Enhanced Kill Switch</strong>: すべてのデバイスに対して、インターネットアクセスを VPN 経由に限定します。VPN トンネルに一致しないトラフィックはすべてブロックされます。このグローバル設定は、各 VPN トンネルに設定された個別の Kill Switch を上書きしません。</p>
+<p><img alt="enhanced killswitch" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/enhanced_killswitch.png" /></p>
+</li>
+</ul>
 <h2 id="tunnel-priority">トンネル優先度<a class="headerlink" href="#tunnel-priority" title="Permanent link">&para;</a></h2>
-<p>トンネル優先度を調整するには、トンネルグループの歯車アイコンをクリックし、<strong>Sort</strong> を選択します。</p>
+<p>トンネル優先度を調整するには、トンネルグループの歯車アイコンをクリックし、<strong>Priority</strong> を選択します。</p>
 <p><img alt="priority1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/priority1.png" /></p>
-<p>右側の三本線アイコンをクリックしたままドラッグしてトンネルの順序を変更し、<strong>Apply</strong> をクリックします。</p>
+<p>右側の三本線アイコンをドラッグしてトンネルの順序を変更し、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="priority2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/priority2.png" /></p>
 <p><strong>複数のトンネルが有効な場合、ルーターは次のルールに従ってトラフィックをルーティングします。</strong></p>
 <ol>
@@ -6438,44 +6430,48 @@
 <p>各トンネルグループ内では複数のプロファイルを選択でき、トンネル内フェイルオーバーを有効にできます。トンネルグループ内で最優先のプロファイルが停止した場合、トンネルは自動的に次順位のプロファイルで接続を試みます。</p>
 </li>
 <li>
-<p>VPNトンネルが予期せず切断された場合、このトンネルの <strong>Kill Switch</strong> が有効かどうかに応じて、トラフィックを All Other Traffic トンネルへフェイルオーバーするかどうかが決まります。</p>
+<p>VPN トンネルが予期せず切断された場合、このトンネルの <strong>Kill Switch</strong> が有効かどうかに応じて、トラフィックを All Other Traffic トンネルへフェイルオーバーするかどうかが決まります。</p>
 <ul>
 <li>Kill Switch が有効な場合、トラフィックはブロックされ、All Other Traffic トンネルへはフェイルオーバーしません。</li>
 <li>Kill Switch が無効な場合、トラフィックは All Other Traffic トンネルへフェイルオーバーします。</li>
 </ul>
 </li>
 <li>
-<p><strong>All Other Traffic</strong> トンネルはデフォルトで有効になっており、VPNトンネルに一致しないトラフィックでもインターネットへアクセスできるようになっています。</p>
+<p><strong>All Other Traffic</strong> では、VPN トンネルに一致しないトラフィックがインターネットへアクセスできるかどうかを、モードによって制御します。</p>
 <ul>
-<li>有効な場合、一致しないトラフィックやフェイルオーバートラフィックはローカルWAN経由でルーティングされます。</li>
-<li>無効な場合、キルスイッチが強化され、IPリークを防ぐため通常のインターネットアクセスがブロックされます。</li>
+<li>
+<p><strong>Allow Non-VPN Traffic</strong>: デフォルトで有効で、VPN トンネルに一致しないトラフィックでもローカル WAN 経由でインターネットへアクセスできます。</p>
+</li>
+<li>
+<p><strong>Enhanced Kill Switch</strong>: すべてのデバイスに対して、インターネットアクセスを VPN 経由に限定します。VPN トンネルに一致しないトラフィックはすべてブロックされます。このグローバル設定は、各 VPN トンネルに設定された個別の Kill Switch を上書きしません。つまり、Kill Switch をさらに強化し、通常のインターネットアクセスもブロックすることで IP リークを防ぎます。</p>
+</li>
 </ul>
 </li>
 </ol>
 <h2 id="tunnel-options">トンネルオプション<a class="headerlink" href="#tunnel-options" title="Permanent link">&para;</a></h2>
-<p>各VPNトンネルでは、VPNキルスイッチ、IPマスカレーディング、MTU などの詳細設定を行えます。</p>
+<p>各 VPN トンネルでは、VPN Kill Switch、IP Masquerading、MTU などの詳細設定を行えます。</p>
 <p>トンネルグループの歯車アイコンをクリックし、<strong>Options</strong> を選択します。</p>
 <p><img alt="tunnel options1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/tunnel_options1.png" /></p>
 <p><img alt="tunnel options2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/tunnel_options2.png" /></p>
 <ul>
 <li>
-<p><strong>Kill Switch</strong>: 有効にすると、このVPNトンネルに一致するトラフィックは、VPN接続が予期せず切断された場合にブロックされます。無効にすると、そのトラフィックは <strong>All Other Traffic</strong> トンネルへフェイルオーバーします。</p>
+<p><strong>Kill Switch</strong>: 有効にすると、この VPN トンネルに一致するトラフィックは、VPN 接続が予期せず切断された場合にブロックされます。無効にすると、そのトラフィックは <strong>All Other Traffic</strong> トンネルへフェイルオーバーします。</p>
 </li>
 <li>
-<p><strong>Services from GL.iNet Use VPN</strong>: 有効にすると、GoodCloud、DDNS、rtty の各サービスはVPNトンネル経由でパケットを送信します。これらのサービスは通常デバイスの実IPアドレスを必要とするため、このオプションはデフォルトで無効です。</p>
+<p><strong>Services from GL.iNet Use VPN</strong>: 有効にすると、GoodCloud、DDNS、rtty の各サービスは VPN トンネル経由でパケットを送信します。これらのサービスは通常デバイスの実 IP アドレスを必要とするため、このオプションはデフォルトで無効です。</p>
 </li>
 <li>
-<p><strong>Allow Remote Access to the LAN Subnet</strong>: 有効にすると、VPN経由でこのルーターおよびLAN内デバイスにリモートアクセスできます。VPNサーバー側で、そのLANサブネットへの戻りルートが通知されている必要があります。</p>
+<p><strong>Allow Remote Access to the LAN Subnet</strong>: 有効にすると、VPN 経由でこのルーターおよび LAN 内デバイスにリモートアクセスできます。VPN サーバー側で、その LAN サブネットへの戻りルートが通知されている必要があります。</p>
 </li>
 <li>
-<p><strong>IP Masquerading</strong>: 有効にすると、LANクライアントの送信元IPアドレスはルーターのVPNトンネルIPに書き換えられます。リモートピアがLANサブネットを認識している Site-to-Site 構成の場合にのみ無効にしてください。</p>
+<p><strong>IP Masquerading</strong>: 有効にすると、LAN クライアントの送信元 IP アドレスはルーターの VPN トンネル IP に書き換えられます。リモートピアが LAN サブネットを認識している Site-to-Site 構成の場合にのみ無効にしてください。</p>
 </li>
 <li>
-<p><strong>MTU</strong>: ここで設定したMTU値は、設定ファイル内のMTU設定を上書きします。</p>
+<p><strong>MTU</strong>: ここで設定した MTU 値は、設定ファイル内の MTU 設定を上書きします。</p>
 </li>
 </ul>
 <hr />
-<p>まだご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> をご利用いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a> からお問い合わせください。</p>
+<p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> をご利用いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a> からお問い合わせください。</p>
 
 
 

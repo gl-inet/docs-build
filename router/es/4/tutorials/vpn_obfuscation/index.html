@@ -3655,7 +3655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_use_simpoyo_ufi/" class="md-nav__link">
+      <a href="../how_to_use_simpoyo_ufi.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5569,7 +5569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/dpi_license/" class="md-nav__link">
+      <a href="../../interface_guide/dpi_license.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6447,8 +6447,9 @@
 <p>La conexión VPN ya está completa. Todos los dispositivos del Beryl AX acceden ahora a Internet a través de la puerta de enlace del Brume 3, lo que habilita una conexión VPN ofuscada.</p>
 <h3 id="escenario-2-usar-un-solo-router-glinet">Escenario 2. Usar un solo router GL.iNet<a class="headerlink" href="#escenario-2-usar-un-solo-router-glinet" title="Permanent link">&para;</a></h3>
 <p>Este escenario usa un único router GL.iNet, <strong>Brume 3 (GL-MT5000)</strong>, como cliente VPN para conectarse a un servidor AmneziaVPN.</p>
-<p>No es necesario configurar su propio servidor. Puede establecer una conexión VPN ofuscada directamente usando los servidores oficiales de AmneziaVPN, se requiere una suscripción Amnezia Premium.</p>
+<p>En este caso, no necesita desplegar su propio servidor. Solo tiene que descargar un archivo de configuración AmneziaWG desde el <a href="https://amnezia.org/" target="_blank">sitio web oficial de Amnezia</a> o desde cualquier proveedor VPN que integre AmneziaWG y, a continuación, subir ese archivo a su router GL.iNet. Después podrá establecer una conexión VPN con la ofuscación habilitada.</p>
 <h4 id="descargar-la-configuracion">Descargar la configuración<a class="headerlink" href="#descargar-la-configuracion" title="Permanent link">&para;</a></h4>
+<p><u>Opción 1</u>: Descargue una configuración desde Amnezia Official (requiere suscripción Premium).</p>
 <ol>
 <li>Inicie sesión en el <a href="https://cp.amnezia.org/en/login" target="_blank">Amnezia Premium Dashboard</a> con su Subscription Key.</li>
 </ol>
@@ -6457,6 +6458,22 @@
 <li>En el panel de Amnezia, vaya a <strong>Connection Assets</strong> -&gt; <strong>Configuration Files</strong>, seleccione un país y descargue un archivo de configuración en su equipo local para usarlo después.</li>
 </ol>
 <p><img alt="amnezia config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_obfuscation/amnezia_config.png" /></p>
+<p><u>Opción 2</u>: Descargue una configuración desde otro proveedor VPN que integre AmneziaWG.</p>
+<p>Tomemos StarVPN como ejemplo.</p>
+<ol>
+<li>
+<p>Vaya a los <a href="https://www.starvpn.com/#pricing" target="_blank">planes de precios</a> de StarVPN y elija el plan VPN que mejor se adapte a sus necesidades. Puede registrar una cuenta StarVPN durante la compra o directamente <a href="https://www.starvpn.com/dashboard/register.php" target="_blank">aquí</a>.</p>
+</li>
+<li>
+<p>Inicie sesión en el <a href="https://www.starvpn.com/dashboard" target="_blank">Dashboard de StarVPN</a>, localice <strong>VPN Configuration</strong> y haga clic en <strong>AmneziaWG Config</strong> para descargar el archivo de configuración.</p>
+<p><img alt="starvpn amneziawg config download" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_obfuscation/awg_starvpn.png" /></p>
+</li>
+<li>
+<p>La configuración puede contener una dirección IPv6. Para evitar problemas de compatibilidad y conectividad, abra el archivo <code>.conf</code> y elimine la dirección IPv6, como se muestra a continuación.</p>
+<p><img alt="starvpn remove ipv6" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_obfuscation/awg_remove_ipv6.png" /></p>
+<p>Después, siga los pasos siguientes para configurar el cliente VPN.</p>
+</li>
+</ol>
 <h4 id="configurar-el-cliente-vpn_1">Configurar el cliente VPN<a class="headerlink" href="#configurar-el-cliente-vpn_1" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Inicie sesión en el panel de administración web del Brume 3.</li>

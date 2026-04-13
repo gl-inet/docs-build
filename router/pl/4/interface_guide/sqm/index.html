@@ -5470,7 +5470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dpi_license/" class="md-nav__link">
+      <a href="../dpi_license.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5559,6 +5559,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SQM
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -5568,6 +5579,39 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Spis treści
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#obsugiwane-modele" class="md-nav__link">
+    Obsługiwane modele
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szybka-konfiguracja" class="md-nav__link">
+    Szybka konfiguracja
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -6148,6 +6192,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Spis treści
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#obsugiwane-modele" class="md-nav__link">
+    Obsługiwane modele
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szybka-konfiguracja" class="md-nav__link">
+    Szybka konfiguracja
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6171,30 +6237,37 @@
 
   <!-- Markdown content -->
   <h1 id="sqm-smart-queue-management">SQM (Smart Queue Management)<a class="headerlink" href="#sqm-smart-queue-management" title="Permanent link">&para;</a></h1>
-<p>SQM (Smart Queue Management) inteligentnie zarządza ruchem sieciowym routera, minimalizując opóźnienia i efekt „bufferbloat", zapewniając płynniejsze działanie gier i połączeń głosowych.</p>
+<p>SQM (Smart Queue Management) inteligentnie zarządza ruchem sieciowym routera, aby zminimalizować opóźnienia i efekt „bufferbloat”, zapewniając płynniejsze granie i rozmowy głosowe.</p>
 <p><strong>Uwaga</strong>:</p>
 <ol>
 <li>
-<p>Ta funkcja jest obecnie dostępna wyłącznie na <strong>GL-MT5000 (Brume 3)</strong>.</p>
+<p>Ta funkcja wpływa na ruch przechodzący przez router działający jako brama (w tym ruch lokalnych klientów i ruch klienta VPN), ale nie na ruch przychodzący, gdy router działa jako serwer VPN.</p>
 </li>
 <li>
-<p>Funkcja ta wpływa na ruch przechodzący przez router działający jako brama (w tym ruch lokalnych klientów oraz ruch klientów VPN), ale nie na ruch przychodzący, gdy router działa jako serwer VPN.</p>
-</li>
-<li>
-<p>Ponieważ SQM wymaga dużych zasobów, najlepiej sprawdza się w sieciach o niskiej przepustowości lub dużym obciążeniu. Włączenie go na szybkich łączach może obniżyć maksymalną przepustowość.</p>
+<p>Ponieważ SQM wymaga sporych zasobów, najlepiej sprawdza się w sieciach o niskiej przepustowości lub dużym obciążeniu. Włączenie go na szybkich łączach może obniżyć maksymalną przepustowość.</p>
 </li>
 </ol>
-<hr />
-<p>W lewym panelu bocznym panelu administracyjnego przejdź do <strong>FLOW CONTROL</strong> &gt; <strong>SQM</strong>. </p>
-<p>Najpierw ustaw maksymalne prędkości przesyłania i pobierania (zakres: 1–10000) na potrzeby planowania ruchu. Dopasuj je do rzeczywistej przepustowości łącza internetowego, aby uzyskać najlepsze wyniki.</p>
+<h2 id="obsugiwane-modele">Obsługiwane modele<a class="headerlink" href="#obsugiwane-modele" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Obsługiwane modele</p>
+<ul>
+<li>GL-BE10000 (Slate 7 Pro)</li>
+<li>GL-MT5000 (Brume 3)</li>
+</ul>
+</div>
+<h2 id="szybka-konfiguracja">Szybka konfiguracja<a class="headerlink" href="#szybka-konfiguracja" title="Permanent link">&para;</a></h2>
+<p>W lewym panelu webowego panelu administracyjnego przejdź do <strong>FLOW CONTROL</strong> -&gt; <strong>SQM</strong>.</p>
+<p>Włącz przełącznik, aby aktywować SQM, a następnie ustaw maksymalną prędkość wysyłania i pobierania (zakres wejściowy: 1–10000) na potrzeby planowania ruchu. Aby uzyskać najlepsze wyniki, dopasuj je do rzeczywistej przepustowości łącza internetowego.</p>
 <p><img alt="sqm" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/sqm/sqm.png" /></p>
-<p>Dla reguły kolejkowania (Queue Rule) dostępne są dwie opcje:</p>
+<p><strong>Uwaga</strong>: Wartości wprowadzone w polu wejściowym są podawane w <strong>Mbps</strong> (megabitach na sekundę). Dla ułatwienia wyświetlana jest także równowartość w <strong>MB/s</strong> (megabajtach na sekundę).</p>
+<p><img alt="up down speed" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/sqm/up_down_speed.jpg" /></p>
+<p>Dla <strong>Queue Rule</strong> dostępne są dwie opcje:</p>
 <ul>
 <li>
-<p><strong>cake</strong>: Inteligentne, automatyczne kształtowanie ruchu z doskonałą kontrolą opóźnień (zalecane).</p>
+<p><strong>cake</strong>: inteligentne, automatyczne kształtowanie ruchu z bardzo dobrą kontrolą opóźnień (zalecane).</p>
 </li>
 <li>
-<p><strong>fq_codel</strong>: Proste, wydajne kolejkowanie uczciwe z podstawową redukcją opóźnień.</p>
+<p><strong>fq_codel</strong>: proste i wydajne sprawiedliwe kolejkowanie z podstawową redukcją opóźnień.</p>
 </li>
 </ul>
 <hr />

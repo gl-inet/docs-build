@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.gl-inet.com/router/pl/4/interface_guide/data_statistics/">
       
       
-        <link rel="prev" href="../dpi_license/">
+        <link rel="prev" href="../nat_settings/">
       
       
         <link rel="next" href="../content_filter/">
@@ -5470,7 +5470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dpi_license/" class="md-nav__link">
+      <a href="../dpi_license.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5536,6 +5536,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#obsugiwane-modele" class="md-nav__link">
+    Obsługiwane modele
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#szybka-konfiguracja" class="md-nav__link">
     Szybka konfiguracja
   </a>
@@ -5545,6 +5552,20 @@
         <li class="md-nav__item">
   <a href="#zasady-przechowywania-danych" class="md-nav__link">
     Zasady przechowywania danych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmiana-zakresu-czasu" class="md-nav__link">
+    Zmiana zakresu czasu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czyszczenie-statystyk" class="md-nav__link">
+    Czyszczenie statystyk
   </a>
   
 </li>
@@ -6199,6 +6220,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#obsugiwane-modele" class="md-nav__link">
+    Obsługiwane modele
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#szybka-konfiguracja" class="md-nav__link">
     Szybka konfiguracja
   </a>
@@ -6208,6 +6236,20 @@
         <li class="md-nav__item">
   <a href="#zasady-przechowywania-danych" class="md-nav__link">
     Zasady przechowywania danych
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmiana-zakresu-czasu" class="md-nav__link">
+    Zmiana zakresu czasu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#czyszczenie-statystyk" class="md-nav__link">
+    Czyszczenie statystyk
   </a>
   
 </li>
@@ -6237,43 +6279,64 @@
 
   <!-- Markdown content -->
   <h1 id="statystyki-danych">Statystyki danych<a class="headerlink" href="#statystyki-danych" title="Permanent link">&para;</a></h1>
-<p>Statystyki danych udostępniają inteligentny panel analizy ruchu, który kategoryzuje i wizualizuje użycie sieci według aplikacji. Pomaga to monitorować ruch w czasie rzeczywistym i historyczny, zapewniając lepszą widoczność i kontrolę nad siecią.</p>
-<p><strong>Uwaga</strong>:</p>
-<ol>
-<li>
-<p>Ta funkcja jest obecnie dostępna tylko na <strong>GL-MT5000 (Brume 3)</strong>.</p>
-</li>
-<li>
-<p>Ta funkcja nie działa z Network Acceleration. Jej włączenie automatycznie wyłączy Network Acceleration, aby zapewnić prawidłowe działanie.</p>
-</li>
-</ol>
-<hr />
+<p>Statystyki danych udostępniają intuicyjny panel ruchu, który identyfikuje wykorzystanie sieci według aplikacji i protokołu. Umożliwiają przegląd trendów historycznych z 1 godziny, 1 dnia i 7 dni, pokazują rankingi wykorzystania, monitorują ruch dla poszczególnych urządzeń i pozwalają jednym kliknięciem blokować niechciane aplikacje.</p>
+<p><strong>Uwaga</strong>: Ta funkcja nie działa z Network Acceleration. Jej włączenie automatycznie wyłączy Network Acceleration, aby zapewnić prawidłowe działanie.</p>
+<h2 id="obsugiwane-modele">Obsługiwane modele<a class="headerlink" href="#obsugiwane-modele" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Obsługiwane modele</p>
+<ul>
+<li>GL-BE10000 (Slate 7 Pro)</li>
+<li>GL-MT5000 (Brume 3)</li>
+</ul>
+</div>
 <h2 id="szybka-konfiguracja">Szybka konfiguracja<a class="headerlink" href="#szybka-konfiguracja" title="Permanent link">&para;</a></h2>
-<p>Po lewej stronie panelu administracyjnego WWW przejdź do <strong>FLOW CONTROL</strong> &gt; <strong>Data Statistics</strong>.</p>
+<p>W lewym panelu webowego panelu administracyjnego przejdź do <strong>FLOW CONTROL</strong> -&gt; <strong>Data Statistics</strong>.</p>
 <p>Włącz przełącznik w prawym górnym rogu, aby wyświetlić <strong>Application Total Data</strong>.</p>
-<p><img alt="data statistics" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/data_statistics/data-statistics.png" /></p>
+<p><img alt="data statistics" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/data_statistics/data_stat.png" /></p>
+<p>Ta strona składa się z dwóch części:</p>
 <ul>
 <li>
-<p><strong>Top 10 Apps by Bandwidth Usage</strong>: Ta sekcja przedstawia wykres trendu w czasie (np. z ostatniego dnia), pokazujący zużycie pasma przez 10 najważniejszych aplikacji w wybranym okresie.</p>
-<p>W razie potrzeby przełącz oś czasu między Past Hour, Past Day i Past Week.</p>
+<p><strong>Top 10 Apps by Bandwidth Usage</strong>: wyświetla wykres trendów w czasie (np. z ostatniego dnia), pokazujący zużycie pasma przez 10 aplikacji o największym użyciu w wybranym okresie.</p>
+<p>Najedź kursorem na wykres, aby sprawdzić zużycie danych przez 10 aplikacji o największym wykorzystaniu pasma w określonym momencie.</p>
+<p><img alt="top10 apps chart" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/data_statistics/top10_apps_chart.png" /></p>
 </li>
 <li>
-<p><strong>App Traffic Statistics</strong>: Ta sekcja wyświetla szczegółowe statystyki ruchu dla każdej aplikacji, w tym dane Download, Upload i Total Bandwidth.</p>
-<p>W razie potrzeby wyszukaj konkretne aplikacje za pomocą paska wyszukiwania.</p>
+<p><strong>App Traffic Statistics</strong>: wyświetla szczegółowe statystyki ruchu dla każdej aplikacji, w tym Download, Upload i Total Bandwidth. W razie potrzeby wyszukaj konkretne aplikacje za pomocą paska wyszukiwania.</p>
+<p>Kliknij strzałkę sortowania obok nagłówka kolumny, aby posortować listę rosnąco lub malejąco.</p>
+<p><img alt="app traffic stat" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/data_statistics/app_traffic_stat1.png" /></p>
 </li>
 </ul>
 <h2 id="zasady-przechowywania-danych">Zasady przechowywania danych<a class="headerlink" href="#zasady-przechowywania-danych" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Statystyki ruchu są zapisywane w RAM co 15 sekund i w pamięci flash co 1 godzinę. Częstych zapisów do pamięci flash unika się, aby chronić jej żywotność.</p>
+<p>Statystyki ruchu są zapisywane do pamięci RAM co 15 sekund i do pamięci flash co 1 godzinę. Częste zapisy do pamięci flash są ograniczane, aby chronić jej żywotność.</p>
 </li>
 <li>
-<p>Miękki restart nie powoduje utraty danych. Przed ponownym uruchomieniem system najpierw zapisuje dane z RAM do pamięci flash.</p>
+<p>Miękki restart nie powoduje utraty danych. System najpierw zapisuje dane z RAM do pamięci flash, a dopiero potem uruchamia się ponownie.</p>
 </li>
 <li>
 <p>Twardy restart (odłączenie i ponowne podłączenie zasilania) lub aktualizacja firmware z zachowaniem ustawień mogą spowodować utratę danych z maksymalnie ostatniej godziny.</p>
 </li>
 </ol>
+<h2 id="zmiana-zakresu-czasu">Zmiana zakresu czasu<a class="headerlink" href="#zmiana-zakresu-czasu" title="Permanent link">&para;</a></h2>
+<p>W razie potrzeby możesz przełączać zakres czasu między <strong>Past hour</strong>, <strong>Past day</strong> i <strong>Past week</strong>.</p>
+<p><img alt="select time range" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/data_statistics/select_time_range.jpg" /></p>
+<p>Wybrany zakres czasu wpływa na sposób prezentacji danych:</p>
+<ul>
+<li>
+<p><strong>Dla bliższego podglądu (np. Past Hour)</strong>: wykres pokazuje bardziej szczegółowe, bieżące wahania. Szczyty są wyższe, a spadki wyraźniejsze, dzięki czemu łatwo zauważyć nagłe skoki zużycia pasma.</p>
+<p><img alt="past hour" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/data_statistics/past_hour.png" /></p>
+</li>
+<li>
+<p><strong>Dla szerszego przeglądu (np. Past Day lub Past Week)</strong>: wykres kondensuje dane na dłuższej osi czasu. Krzywe stają się gładsze i pokazują ogólny trend ruchu zamiast każdej drobnej zmiany.</p>
+<p><img alt="past day" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/data_statistics/past_day.png" /></p>
+</li>
+</ul>
+<h2 id="czyszczenie-statystyk">Czyszczenie statystyk<a class="headerlink" href="#czyszczenie-statystyk" title="Permanent link">&para;</a></h2>
+<p>Kliknij ikonę miotły w lewym górnym rogu, aby w razie potrzeby wyczyścić statystyki.</p>
+<p><img alt="clear data" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/data_statistics/clear_data1.png" /></p>
+<p>Po wyczyszczeniu strona zaktualizuje się, jak pokazano poniżej. Rozpoczęcie ładowania nowych statystyk może potrwać chwilę.</p>
+<p><img alt="clear data" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/data_statistics/clear_data2.png" /></p>
 <hr />
 <p>Nadal masz pytania? Odwiedź nasze <a href="https://forum.gl-inet.com" target="_blank">Forum społeczności</a> lub <a href="https://www.gl-inet.com/contacts/" target="_blank">skontaktuj się z nami</a>.</p>
 

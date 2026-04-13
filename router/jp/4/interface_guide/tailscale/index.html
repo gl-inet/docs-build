@@ -5523,7 +5523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dpi_license/" class="md-nav__link">
+      <a href="../dpi_license.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6248,9 +6248,9 @@
 
 
 <h1 id="tailscale">Tailscale<a class="headerlink" href="#tailscale" title="Permanent link">&para;</a></h1>
-<p>Tailscale は、所有しているデバイスやアプリケーションに世界中のどこからでも、安全かつ簡単にアクセスできるようにするVPNサービスです。詳細については、<a href="https://tailscale.com/">Tailscale official website</a> を参照してください。</p>
+<p>Tailscale は、所有しているデバイスやアプリケーションに世界中のどこからでも、安全かつ簡単にアクセスできるようにするVPNサービスです。詳細については、<a href="https://tailscale.com/">Tailscale公式サイト</a> を参照してください。</p>
 <p>ファームウェア v4.2 以降で利用できる GL.iNetルーターのTailscale機能を使うと、ルーターをTailscaleの仮想ネットワークに参加させることができます。接続後は、ルーター本体だけでなく、WAN側およびLAN側のリソースにもリモートアクセスできます。</p>
-<p><strong>Note</strong>:</p>
+<p><strong>注</strong>:</p>
 <ol>
 <li>
 <p>Tailscale は WireGuard をベースとしているため、ルーティング競合を引き起こす可能性があります。OpenVPN Client、WireGuard Client、GoodCloud Site to Site、ZeroTier、AstroWarp と同時に使用することは推奨されません。</p>
@@ -6264,7 +6264,7 @@
 </ol>
 <h2 id="_1">対応モデル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <details>
-<summary>Supported Models</summary>
+<summary>対応モデル</summary>
 <ul>
 <li>GL-E5800 (Mudi 7)</li>
 <li>GL-MT5000 (Brume 3)</li>
@@ -6285,7 +6285,7 @@
 </ul>
 </details>
 <details>
-<summary>Unsupported Models</summary>
+<summary>非対応モデル</summary>
 <ul>
 <li>GL-SFT1200 (Opal)</li>
 <li>GL-MT1300 (Beryl)</li>
@@ -6312,7 +6312,7 @@
 </li>
 <li>
 <p>GL.iNetルーターでTailscaleを有効にします。</p>
-<p>ルーターのWeb Admin Panelにログインし、<strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> に移動します。</p>
+<p>ルーターのWeb管理画面にログインし、<strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> に移動します。</p>
 <p><img alt="glinet tailscale disabled" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_disabled.png" /></p>
 <p>Tailscale を有効にして、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="glinet enable tailscale" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/enable_tailscale.png" /></p>
@@ -6340,7 +6340,7 @@
 <p><img alt="ssh" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/ssh.png" /></p>
 </li>
 <li>
-<p>Web Admin Panel にアクセスする</p>
+<p>Web管理画面にアクセスする</p>
 <p><img alt="web admin panel" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/web_admin_panel.png" /></p>
 </li>
 </ul>
@@ -6353,7 +6353,7 @@
 <p>操作手順は次のとおりです。</p>
 <ol>
 <li>
-<p>ルーターのWeb Admin Panelにログインし、<strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> に移動します。</p>
+<p>ルーターのWeb管理画面にログインし、<strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> に移動します。</p>
 <p><strong>Allow Remote Access WAN</strong> を有効にして、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="enable allow remote access wan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/enable_allow_remote_access_wan.png" /></p>
 </li>
@@ -6378,7 +6378,7 @@
 <p>操作手順は次のとおりです。</p>
 <ol>
 <li>
-<p>ルーターのWeb Admin Panelにログインし、<strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> に移動します。</p>
+<p>ルーターのWeb管理画面にログインし、<strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> に移動します。</p>
 <p><strong>Allow Remote Access LAN</strong> を有効にして、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="enable remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/enable_allow_remote_access_lan.png" /></p>
 </li>
@@ -6402,7 +6402,7 @@
 <p><img alt="exitnode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/custom_exit_nodes/exitnode.jpg" /></p>
 <p>すべてのトラフィックを Exit Node 経由にすると、実質的にデフォルトルート（0.0.0.0/0, ::/0）を利用することになり、通常のVPN接続と似た動作になります。</p>
 <p>要するに、Exit node は Tailnet 上のデバイスからの外向きインターネットトラフィックをルーティングする役割を持ち、事実上VPN Serverのように動作します。Exit node に接続すると、Tailscale以外のインターネットトラフィックはその設置場所から送信されているように見えるため、地域制限のあるコンテンツへのアクセスやオンラインプライバシーの強化に役立ちます。このトラフィック転送を担当するデバイスが "exit node" です。</p>
-<p><strong>Note</strong>: ルーターのDNSサーバーがローカルネットワーク内でのみ到達可能なプライベートIPアドレスを使用している場合、exit node 使用時にインターネット接続を失うことがあります。この場合はルーターにログインし、<strong>NETWORK</strong> -&gt; <strong>DNS</strong> に移動して、8.8.8.8 などのパブリックDNSサーバーを手動で設定してください。</p>
+<p><strong>注</strong>: ルーターのDNSサーバーがローカルネットワーク内でのみ到達可能なプライベートIPアドレスを使用している場合、Exit Node 使用時にインターネット接続を失うことがあります。この場合はルーターにログインし、<strong>NETWORK</strong> -&gt; <strong>DNS</strong> に移動して、8.8.8.8 などのパブリックDNSサーバーを手動で設定してください。</p>
 <hr />
 <p>以下の例では、GL.iNetルーター <strong>GL-MT2500</strong> と <strong>Leo-Desktop</strong> が同じ Tailnet 上にあります。Leo-Desktop を Exit Node として設定する手順は以下のとおりです。</p>
 <ol>
@@ -6425,14 +6425,14 @@
 <p><img alt="tailscale use as exit node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/custom_exit_nodes/tailscale_use_as_exit_node.png" /></p>
 </li>
 <li>
-<p>GL-MT2500 の Web Admin Panel にログインし、<strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> に移動して <strong>Custom Exit Nodes</strong> を有効にします。更新ボタンをクリックし、ドロップダウンメニューから Leo-Desktop のIPアドレスを選択して、<strong>Apply</strong> をクリックします。</p>
+<p>GL-MT2500 の Web管理画面 にログインし、<strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> に移動して <strong>Custom Exit Nodes</strong> を有効にします。更新ボタンをクリックし、ドロップダウンメニューから Leo-Desktop のIPアドレスを選択して、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="glinet tailscale, custom exit node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/custom_exit_nodes/custom_exit_node.png" /></p>
 <p>その後、ルーターに接続されたデバイスは Exit Node 経由でインターネットへアクセスするようになり、すべてのインターネットトラフィックが Exit Node の場所から送信されているように見えます。</p>
 </li>
 </ol>
-<p>References: <a href="https://tailscale.com/kb/1103/exit-nodes/" target="_blank">Exit Nodes (route all traffic)</a></p>
+<p>参考情報: <a href="https://tailscale.com/kb/1103/exit-nodes/" target="_blank">Exit Nodes (route all traffic)</a></p>
 <hr />
-<p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
+<p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a> をご覧いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> までご連絡ください。</p>
 
 
 

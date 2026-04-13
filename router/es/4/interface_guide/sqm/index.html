@@ -3530,7 +3530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_use_simpoyo_ufi/" class="md-nav__link">
+      <a href="../../tutorials/how_to_use_simpoyo_ufi.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5448,7 +5448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dpi_license/" class="md-nav__link">
+      <a href="../dpi_license.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5537,6 +5537,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SQM
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -5546,6 +5557,39 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modelos-compatibles" class="md-nav__link">
+    Modelos compatibles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-rapida" class="md-nav__link">
+    Configuración rápida
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -6126,6 +6170,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modelos-compatibles" class="md-nav__link">
+    Modelos compatibles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-rapida" class="md-nav__link">
+    Configuración rápida
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6153,30 +6219,37 @@
 <p><strong>Nota</strong>:</p>
 <ol>
 <li>
-<p>Esta función actualmente solo está disponible en <strong>GL-MT5000 (Brume 3)</strong>.</p>
-</li>
-<li>
-<p>Esta función afecta al tráfico que pasa por el router cuando actúa como puerta de enlace, incluido el tráfico de clientes locales y el tráfico del cliente VPN, pero no al tráfico entrante cuando el router actúa como servidor VPN.</p>
+<p>Esta función afecta al tráfico que pasa por el router cuando actúa como puerta de enlace, incluido el tráfico de los clientes locales y el del cliente VPN, pero no al tráfico entrante cuando el router actúa como servidor VPN.</p>
 </li>
 <li>
 <p>Como SQM consume bastantes recursos, funciona mejor en redes con poco ancho de banda o congestionadas. Habilitarlo en conexiones de alta velocidad puede reducir el rendimiento máximo.</p>
 </li>
 </ol>
-<hr />
-<p>En el lado izquierdo del panel de administración web, vaya a <strong>FLOW CONTROL</strong> &gt; &gt; <strong>SQM</strong>.</p>
-<p>Primero, establezca sus velocidades máximas de carga y descarga para la programación del tráfico, con un rango de entrada de 1 a 10000. Ajústelas al ancho de banda real de su conexión a Internet para obtener los mejores resultados.</p>
+<h2 id="modelos-compatibles">Modelos compatibles<a class="headerlink" href="#modelos-compatibles" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Modelos compatibles</p>
+<ul>
+<li>GL-BE10000 (Slate 7 Pro)</li>
+<li>GL-MT5000 (Brume 3)</li>
+</ul>
+</div>
+<h2 id="configuracion-rapida">Configuración rápida<a class="headerlink" href="#configuracion-rapida" title="Permanent link">&para;</a></h2>
+<p>En el lado izquierdo del panel de administración web, vaya a <strong>FLOW CONTROL</strong> -&gt; <strong>SQM</strong>.</p>
+<p>Active el interruptor para habilitar SQM y defina las velocidades máximas de subida y bajada (rango de entrada: 1 - 10000) para la programación del tráfico. Ajústelas al ancho de banda real de su conexión a Internet para obtener los mejores resultados.</p>
 <p><img alt="sqm" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/sqm/sqm.png" /></p>
-<p>Para Queue Rule, hay dos opciones disponibles:</p>
+<p><strong>Nota</strong>: Los valores introducidos en el campo están en <strong>Mbps</strong> (megabits por segundo). El valor equivalente en <strong>MB/s</strong> (megabytes por segundo) se muestra como referencia.</p>
+<p><img alt="up down speed" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/sqm/up_down_speed.jpg" /></p>
+<p>Para <strong>Queue Rule</strong>, hay dos opciones disponibles:</p>
 <ul>
 <li>
-<p><strong>cake</strong>: Modelado de tráfico inteligente y automático con un mejor control global de la latencia, recomendado.</p>
+<p><strong>cake</strong>: modelado de tráfico inteligente y automático con un mejor control global de la latencia (recomendado).</p>
 </li>
 <li>
-<p><strong>fq_codel</strong>: Encolado justo simple y eficiente con reducción básica de la latencia.</p>
+<p><strong>fq_codel</strong>: encolado justo simple y eficiente con reducción básica de la latencia.</p>
 </li>
 </ul>
 <hr />
-<p>¿Todavía tiene preguntas? Visite nuestro <a href="https://forum.gl-inet.com" target="_blank">foro de la comunidad</a> o <a href="https://www.gl-inet.com/contacts/" target="_blank">contáctenos</a>.</p>
+<p>¿Todavía tiene preguntas? Visite nuestro <a href="https://forum.gl-inet.com" target="_blank">Foro de la comunidad</a> o <a href="https://www.gl-inet.com/contacts/" target="_blank">contáctenos</a>.</p>
 
   <!-- Last update of source file -->
   
