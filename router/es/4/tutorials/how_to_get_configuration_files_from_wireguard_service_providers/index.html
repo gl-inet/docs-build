@@ -140,8 +140,38 @@
           </li>
         
           <li class="md-select__item">
+            <a href="/router/de/4/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/router/es/4/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/router/fr/4/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/router/it/4/" hreflang="it" class="md-select__link">
+              Italiano
+            </a>
+          </li>
+        
+          <li class="md-select__item">
             <a href="/router/jp/4/" hreflang="ja" class="md-select__link">
-              Japanese
+              日本語
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/router/pl/4/" hreflang="pl" class="md-select__link">
+              Polski
             </a>
           </li>
         
@@ -2914,11 +2944,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_the_dedicated_ip_by_nordvpn_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_connect_to_nordvpn_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Conectarse a la IP dedicada de NordVPN
+    Conectarse a NordVPN con una IP dedicada
   </span>
   
 
@@ -2934,11 +2964,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_the_dedicated_ip_by_surfshark_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Conectarse a la IP dedicada de Surfshark
+    Conectarse a Surfshark con una IP dedicada
   </span>
   
 
@@ -3402,7 +3432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_change_x3000_and_xe3000_antennas/" class="md-nav__link">
+      <a href="../how_to_install_or_change_antennas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3514,7 +3544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_use_simpoyo_ufi/" class="md-nav__link">
+      <a href="../how_to_use_simpoyo_ufi.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5428,7 +5458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/dpi_license/" class="md-nav__link">
+      <a href="../../interface_guide/dpi_license.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6335,17 +6365,26 @@ Luego siga [esta guía](../interface_guide/wireguard_client.md#set-up-wireguard-
 
 2. **Descargue la configuración Wireguard**
 
-    Inicie sesión en el [dashboard](https://www.starvpn.com/dashboard){target="_blank"} del área de miembros de StarVPN. Haga clic en Wireguard Config para descargar el archivo de configuración. Cada slot contiene un archivo de configuración WireGuard único.
+    Inicie sesión en el [dashboard](https://www.starvpn.com/dashboard){target="_blank"} del área de miembros de StarVPN. Haga clic en **Wireguard Config** para descargar el archivo de configuración. Cada slot contendrá un archivo de configuración WireGuard único.
 
-    ![starvpn download wireguard config](https://static.gl-inet.com/docs/router/en/3/tutorials/wireguard_client/starvpn/download-config_edited.jpg){class="glboxshadow"}
+    ![starvpn wireguard config download](https://static.gl-inet.com/docs/router/en/3/tutorials/wireguard_client/starvpn/wgconfigdl.png){class="glboxshadow"}
 
-3. La configuración puede contener contenido IPv6. Como los routers GL.iNet no ofrecen un soporte suficientemente bueno para IPv6, elimine ese contenido.
+    **Consejo**: Si desea usar las técnicas de ofuscación de AmneziaWG, haga clic en **AmneziaWG Config** para descargar el archivo de configuración. Cada slot contendrá un archivo de configuración AmneziaWG único.
 
-    ![startvpn wireguard configuration remove ipv6 content](https://static.gl-inet.com/docs/router/en/3/tutorials/wireguard_client/starvpn/starvpn_wireguard_configuration_remove_ipv6.jpg){class="glboxshadow"}
+    ![starvpn amneziawg config download](https://static.gl-inet.com/docs/router/en/3/tutorials/wireguard_client/starvpn/amneziawgdl.png){class="glboxshadow"}
 
-4. Luego siga [esta guía](../interface_guide/wireguard_client.md#set-up-wireguard-client-manually-for-other-providers) para continuar.
+3. **Edite el archivo de configuración (opcional)**
 
-[Refer link](https://www.starvpn.com/wireguard-setup-on-gl-inet-router/){target="_blank"}
+    La configuración puede contener una dirección IPv6. Para evitar problemas de compatibilidad y conectividad, abra el archivo `.conf` y elimine la dirección IPv6, como se muestra a continuación.
+
+    ![startvpn wireguard configuration remove ipv6 content](https://static.gl-inet.com/docs/router/en/3/tutorials/wireguard_client/starvpn/remove_ipv6.jpg){class="glboxshadow"}
+
+4. A continuación, siga [esta guía](../interface_guide/wireguard_client.md#set-up-wireguard-client-manually-for-other-providers) para subir el archivo de configuración a su router GL.iNet.
+
+Referencias:
+
+- [WireGuard VPN Setup with StarVPN on GL.iNet Router](https://www.starvpn.com/wireguard-setup-on-gl-inet-router/){target="_blank"}
+- [AmneziaWG VPN Setup with StarVPN](https://www.starvpn.com/amnezia-vpn-setup-with-starvpn){target="_blank"}
 </code></pre>
 <p>??? "StrongVPN" ### StrongVPN</p>
 <pre><code>[Official Website](https://strongvpn.com/?tr_aid=5ac44bd241ca7){target="_blank"}

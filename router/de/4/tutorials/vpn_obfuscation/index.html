@@ -18,7 +18,7 @@
         <link rel="prev" href="../build_your_own_wireguard_home_server_with_two_glinet_routers/">
       
       
-        <link rel="next" href="../how_to_connect_to_the_dedicated_ip_by_nordvpn_on_glinet_routers/">
+        <link rel="next" href="../how_to_connect_to_nordvpn_with_dedicated_ip_on_glinet_routers/">
       
       
       <link rel="icon" href="https://static.gl-inet.com/docs/router/common/favicon.png">
@@ -134,14 +134,44 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
+            <a href="/router/de/4/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
             <a href="/router/en/4/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
+            <a href="/router/es/4/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/router/fr/4/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/router/it/4/" hreflang="it" class="md-select__link">
+              Italiano
+            </a>
+          </li>
+        
+          <li class="md-select__item">
             <a href="/router/jp/4/" hreflang="ja" class="md-select__link">
-              Japanese
+              日本語
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/router/pl/4/" hreflang="pl" class="md-select__link">
+              Polski
             </a>
           </li>
         
@@ -3035,11 +3065,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_the_dedicated_ip_by_nordvpn_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_connect_to_nordvpn_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Verbindung mit der dedizierten IP von NordVPN
+    NordVPN mit einer dedizierten IP verbinden
   </span>
   
 
@@ -3055,11 +3085,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_the_dedicated_ip_by_surfshark_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Verbindung mit der dedizierten IP von Surfshark
+    Surfshark mit einer dedizierten IP verbinden
   </span>
   
 
@@ -3513,7 +3543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_change_x3000_and_xe3000_antennas/" class="md-nav__link">
+      <a href="../how_to_install_or_change_antennas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6425,8 +6455,9 @@
 </ol>
 <h3 id="szenario-2-verwendung-eines-einzelnen-glinet-routers">Szenario 2. Verwendung eines einzelnen GL.iNet-Routers<a class="headerlink" href="#szenario-2-verwendung-eines-einzelnen-glinet-routers" title="Permanent link">&para;</a></h3>
 <p>In diesem Szenario wird ein einzelner GL.iNet-Router <strong>Brume 3 (GL-MT5000)</strong> als VPN-Client verwendet, um sich mit einem AmneziaVPN-Server zu verbinden.</p>
-<p>Sie müssen keinen eigenen Server einrichten. Stattdessen können Sie direkt über die offiziellen AmneziaVPN-Server eine VPN-Verschleierungsverbindung herstellen (Amnezia Premium-Abonnement erforderlich).</p>
+<p>In diesem Fall müssen Sie keinen eigenen Server einrichten. Laden Sie einfach eine AmneziaWG-Konfigurationsdatei von der <a href="https://amnezia.org/" target="_blank">offiziellen Amnezia-Website</a> oder von einem VPN-Dienstanbieter herunter, der AmneziaWG integriert, und laden Sie die Datei dann auf Ihren GL.iNet-Router hoch. Danach können Sie eine VPN-Verbindung mit aktivierter Verschleierung herstellen.</p>
 <h4 id="konfiguration-herunterladen">Konfiguration herunterladen<a class="headerlink" href="#konfiguration-herunterladen" title="Permanent link">&para;</a></h4>
+<p><u>Option 1</u>: Laden Sie eine Konfiguration von Amnezia Official herunter (Premium-Abonnement erforderlich).</p>
 <ol>
 <li>
 <p>Melden Sie sich mit Ihrem Subscription Key beim <a href="https://cp.amnezia.org/en/login" target="_blank">Amnezia Premium Dashboard</a> an.</p>
@@ -6435,6 +6466,22 @@
 <li>
 <p>Wechseln Sie im Amnezia Dashboard zu <strong>Connection Assets</strong> -&gt; <strong>Configuration Files</strong>, wählen Sie ein Land aus und laden Sie eine Konfigurationsdatei lokal herunter, damit Sie sie später verwenden können.</p>
 <p><img alt="amnezia config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_obfuscation/amnezia_config.png" /></p>
+</li>
+</ol>
+<p><u>Option 2</u>: Laden Sie eine Konfiguration von einem anderen VPN-Anbieter herunter, der AmneziaWG integriert.</p>
+<p>Nehmen Sie StarVPN als Beispiel.</p>
+<ol>
+<li>
+<p>Rufen Sie die Optionen des <a href="https://www.starvpn.com/#pricing" target="_blank">Tarifplans</a> von StarVPN auf und wählen Sie einen VPN-Tarif, der zu Ihren Anforderungen passt. Sie können sich beim Checkout oder direkt <a href="https://www.starvpn.com/dashboard/register.php" target="_blank">hier</a> für ein StarVPN-Konto registrieren.</p>
+</li>
+<li>
+<p>Melden Sie sich im <a href="https://www.starvpn.com/dashboard" target="_blank">StarVPN Dashboard</a> an, suchen Sie <strong>VPN Configuration</strong> und klicken Sie auf <strong>AmneziaWG Config</strong>, um die Konfigurationsdatei herunterzuladen.</p>
+<p><img alt="starvpn amneziawg config download" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_obfuscation/awg_starvpn.png" /></p>
+</li>
+<li>
+<p>Die Konfiguration kann eine IPv6-Adresse enthalten. Um Kompatibilitäts- und Verbindungsprobleme zu vermeiden, öffnen Sie die <code>.conf</code>-Datei und entfernen Sie die IPv6-Adresse wie unten gezeigt.</p>
+<p><img alt="starvpn remove ipv6" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_obfuscation/awg_remove_ipv6.png" /></p>
+<p>Folgen Sie anschließend den nachstehenden Schritten, um den VPN-Client einzurichten.</p>
 </li>
 </ol>
 <h4 id="vpn-client-einrichten_1">VPN-Client einrichten<a class="headerlink" href="#vpn-client-einrichten_1" title="Permanent link">&para;</a></h4>
@@ -6464,9 +6511,9 @@
 <p><img alt="client amnezia connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_obfuscation/client_amnezia_connected.png" /></p>
 <p>Wechseln Sie zum <strong>VPN Dashboard</strong>. Dort sehen Sie, dass der Brume 3 mit einem AmneziaVPN-Server verbunden ist.</p>
 <p><img alt="client amnezia dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_obfuscation/client_dashboard_amnezia.png" /></p>
-<p>Die VPN-Verbindung ist damit abgeschlossen. Alle Geräte am Brume 3 greifen jetzt über den AmneziaVPN-Server auf das Internet zu, wodurch eine VPN-Verschleierungsverbindung ermöglicht wird.</p>
 </li>
 </ol>
+<p>Die VPN-Verbindung ist damit abgeschlossen. Alle Geräte am Brume 3 greifen jetzt über den AmneziaVPN-Server auf das Internet zu, wodurch eine VPN-Verschleierungsverbindung ermöglicht wird.</p>
 <hr />
 <p>Haben Sie noch Fragen? Besuchen Sie unser <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> oder <a href="https://www.gl-inet.com/contacts/" target="_blank">kontaktieren Sie uns</a>.</p>
 
