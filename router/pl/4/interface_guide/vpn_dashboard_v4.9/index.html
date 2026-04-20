@@ -589,6 +589,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -630,6 +634,26 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_guide/gl-be10000/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GL-BE10000 (Slate 7 Pro)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -4686,7 +4710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpn_dashboard/" class="md-nav__link">
+      <a href="../vpn_dashboard_v4.8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5460,11 +5484,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../dpi_license.md" class="md-nav__link">
+      <a href="../dpi_engine/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Licencja DPI
+    DPI Engine
   </span>
   
 
@@ -6139,6 +6163,33 @@
     Pierwsze kroki
   </a>
   
+    <nav class="md-nav" aria-label="Pierwsze kroki">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#przeslij-profil-vpn" class="md-nav__link">
+    Prześlij profil VPN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skonfiguruj-polityke-vpn" class="md-nav__link">
+    Skonfiguruj politykę VPN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kill-switch" class="md-nav__link">
+    Kill Switch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -6214,8 +6265,6 @@
 
   <!-- Markdown content -->
   <h1 id="vpn-dashboard-firmware-v49">VPN Dashboard (Firmware v4.9)<a class="headerlink" href="#vpn-dashboard-firmware-v49" title="Permanent link">&para;</a></h1>
-<p><strong>Uwaga</strong>: Ten przewodnik dotyczy firmware v4.9. W przypadku wcześniejszych wersji zapoznaj się z dokumentacją <a href="../vpn_dashboard/">tutaj</a>.</p>
-<hr />
 <p>W lewym panelu webowego panelu administracyjnego przejdź do <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>.</p>
 <p>VPN Dashboard wyświetla szczegóły połączenia VPN, takie jak reguły routingu, połączony serwer, statystyki ruchu, wirtualny adres IP klienta i dziennik połączeń, a także umożliwia konfigurację zaawansowanych ustawień, takich jak VPN Kill Switch, IP Masquerading i MTU.</p>
 <p>W porównaniu z firmware v4.8 wersja v4.9 wprowadza następujące ulepszenia w VPN Dashboard:</p>
@@ -6224,10 +6273,11 @@
 <p><strong>Umożliwia wybór wielu profili w grupie tunelu i ustawienie ich priorytetu</strong>. Tunel będzie próbował połączyć się przy użyciu kolejnych profili zgodnie z kolejnością priorytetów, aż połączenie zostanie nawiązane.</p>
 </li>
 <li>
-<p><strong>Każda grupa tuneli działa niezależnie i nie wykonuje przełączenia awaryjnego między grupami</strong>. Jeśli wszystkie profile w pojedynczym tunelu nie połączą się, system zdecyduje, czy przełączyć ruch na lokalny WAN, na podstawie stanu Tunnel Kill Switch i tunelu <strong>All Other Traffic</strong>.</p>
+<p><strong>Każda grupa tuneli działa niezależnie i nie wykonuje przełączenia awaryjnego między grupami</strong>. Jeśli wszystkie profile w pojedynczym tunelu nie połączą się, system zdecyduje, czy przełączyć ruch na lokalny WAN, na podstawie stanu funkcji <strong>Kill Switch</strong> dla tego tunelu i tunelu <strong>All Other Traffic</strong>.</p>
 </li>
 </ol>
 <h2 id="getting-started">Pierwsze kroki<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h3 id="przeslij-profil-vpn">Prześlij profil VPN<a class="headerlink" href="#przeslij-profil-vpn" title="Permanent link">&para;</a></h3>
 <p>Przy pierwszym wejściu na tę stronę, jeśli nie utworzono jeszcze żadnych tuneli, strona będzie wyglądać jak poniżej. Kliknij <strong>Add VPN Tunnel</strong>, aby rozpocząć.</p>
 <p><img alt="getting started" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/getting_started.png" /></p>
 <p>Zostaniesz przeniesiony na stronę <strong>VPN Client Profile</strong>. Wybierz dostawcę VPN i zaloguj się.</p>
@@ -6240,11 +6290,12 @@
 <p>Otrzymasz listę profili VPN. W przypadku niektórych dostawców usług VPN przed wyświetleniem listy profili może być konieczne wybranie protokołu VPN lub preferowanych serwerów/miast.</p>
 <p>Następnie kliknij <strong>Go to Dashboard</strong> na dole strony. Zostaniesz przeniesiony do VPN Dashboard, aby dodać tunel VPN i skonfigurować politykę VPN.</p>
 <p><img alt="PureVPN3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/purevpn3.png" /></p>
-<details>
-<summary>Czym jest polityka VPN?</summary>
+<h3 id="skonfiguruj-polityke-vpn">Skonfiguruj politykę VPN<a class="headerlink" href="#skonfiguruj-polityke-vpn" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Czym jest polityka VPN?</p>
 <p>Polityka VPN określa, w jaki sposób ruch sieciowy jest kierowany przez tunele VPN — czyli który ruch trafia do określonych celów przez VPN, a który uzyskuje bezpośredni dostęp do Internetu przez lokalny WAN.</p>
 <p>Umożliwia to wszystkim klientom lub wybranym urządzeniom dostęp do wskazanych stron internetowych albo do całego Internetu przez połączenie VPN, zapewniając elastyczne i bezpieczne zarządzanie siecią.</p>
-</details>
+</div>
 <p>Na stronie VPN Dashboard postępuj zgodnie z kreatorem konfiguracji, aby ustawić politykę VPN, w tym wybrać profil VPN, źródło ruchu i cel ruchu.</p>
 <ol>
 <li>
@@ -6252,7 +6303,7 @@
 <p>Jeśli wcześniej zalogowano się przy użyciu danych dowolnej zintegrowanej usługi VPN lub przesłano plik konfiguracyjny, dostępne profile zostaną wyświetlone tutaj. W przeciwnym razie przejdź do <strong>VPN Client Profile</strong>, aby zalogować się przy użyciu danych logowania lub ręcznie przesłać plik konfiguracyjny.</p>
 <p>Weźmy jako przykład <a href="https://billing.purevpn.com/aff.php?aff=35535" target="_blank">PureVPN</a>. Wybierz jeden albo kilka profili i w razie potrzeby dostosuj ich priorytet po prawej stronie.</p>
 <p><img alt="select profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/select_profile.png" /></p>
-<p><strong>Uwaga</strong>: Gdy wybrano wiele profili, tunel będzie próbował połączyć się przy użyciu kolejnych profili zgodnie z kolejnością priorytetów, aż połączenie zostanie nawiązane. Jeśli wszystkie profile w jednym tunelu nie połączą się, system zdecyduje, czy przełączyć ruch na lokalny WAN, na podstawie stanu Tunnel Kill Switch i polityki <a href="#all-other-traffic">All Other Traffic</a>.</p>
+<p><strong>Uwaga</strong>: Gdy wybrano wiele profili, tunel będzie próbował połączyć się przy użyciu kolejnych profili zgodnie z kolejnością priorytetów, aż połączenie zostanie nawiązane. Jeśli wszystkie profile w jednym tunelu nie połączą się, system zdecyduje, czy przełączyć ruch na lokalny WAN, na podstawie stanu funkcji <strong>Kill Switch</strong> dla tego tunelu i polityki <a href="#all-other-traffic">All Other Traffic</a>.</p>
 </li>
 <li>
 <p><strong>Wybierz źródło ruchu klienta.</strong></p>
@@ -6295,6 +6346,21 @@
 </ul>
 </li>
 </ol>
+<h3 id="kill-switch">Kill Switch<a class="headerlink" href="#kill-switch" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Czym jest Kill Switch?</p>
+<p>Kill Switch to funkcja zabezpieczająca połączenia VPN. Gdy połączenie VPN niespodziewanie się zerwie, automatycznie odcina dostęp do Internetu w sieci lokalnej, aby zapobiec ujawnieniu prawdziwego adresu IP i danych online oraz zapewnić ciągłą prywatność i bezpieczeństwo. Jest to szczególnie przydatne podczas korzystania z sieci publicznych, przetwarzania wrażliwych danych lub ukrywania rzeczywistego adresu IP.</p>
+<p>Gdy funkcja jest włączona, blokuje ruch klientów próbujący ominąć tunel VPN, skutecznie zapobiegając wyciekom VPN spowodowanym problemami z konfiguracją DNS, nieoczekiwanym rozłączeniem, bezpośrednimi żądaniami do adresów IP i podobnymi sytuacjami.</p>
+</div>
+<p>Od firmware v4.8 routery GL.iNet obsługują konfigurację funkcji Kill Switch dla każdego pojedynczego tunelu VPN, a także dla globalnego połączenia VPN.</p>
+<ul>
+<li>
+<p>Aby skonfigurować Kill Switch dla poszczególnych tuneli VPN, przejdź <a href="#tunnel-options">tutaj</a>.</p>
+</li>
+<li>
+<p>Aby skonfigurować Kill Switch dla globalnego połączenia VPN (czyli Enhanced Kill Switch), przejdź <a href="#all-other-traffic">tutaj</a>.</p>
+</li>
+</ul>
 <h2 id="scenariusze-uzycia">Scenariusze użycia<a class="headerlink" href="#scenariusze-uzycia" title="Permanent link">&para;</a></h2>
 <p>Poniżej znajdziesz dwa scenariusze z instrukcjami krok po kroku.</p>
 <h3 id="scenariusz-1">Scenariusz 1<a class="headerlink" href="#scenariusz-1" title="Permanent link">&para;</a></h3>
@@ -6314,7 +6380,7 @@
 <p>Jeśli zalogowano się przy użyciu danych dowolnej zintegrowanej usługi VPN lub przesłano plik konfiguracyjny, dostępne profile zostaną wyświetlone tutaj. W przeciwnym razie przejdź do <strong>VPN Client Profile</strong>, aby zalogować się przy użyciu danych logowania lub ręcznie przesłać plik konfiguracyjny.</p>
 <p>Weźmy jako przykład <a href="https://billing.purevpn.com/aff.php?aff=35535" target="_blank">PureVPN</a>. Wybierz jeden albo kilka profili i w razie potrzeby dostosuj ich priorytet po prawej stronie.</p>
 <p><img alt="scenario 1 select profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/1_profiles.png" /></p>
-<p><strong>Uwaga</strong>: Gdy wybrano wiele profili, tunel będzie próbował połączyć się przy użyciu kolejnych profili zgodnie z kolejnością priorytetów, aż połączenie zostanie nawiązane. Jeśli wszystkie profile w jednym tunelu nie połączą się, system zdecyduje, czy przełączyć ruch na lokalny WAN, na podstawie stanu Tunnel Kill Switch i polityki <a href="#all-other-traffic">All Other Traffic</a>.</p>
+<p><strong>Uwaga</strong>: Gdy wybrano wiele profili, tunel będzie próbował połączyć się przy użyciu kolejnych profili zgodnie z kolejnością priorytetów, aż połączenie zostanie nawiązane. Jeśli wszystkie profile w jednym tunelu nie połączą się, system zdecyduje, czy przełączyć ruch na lokalny WAN, na podstawie stanu funkcji <strong>Kill Switch</strong> dla tego tunelu i polityki <a href="#all-other-traffic">All Other Traffic</a>.</p>
 </li>
 <li>
 <p>Wybierz źródło ruchu klienta.</p>
@@ -6324,7 +6390,7 @@
 <li>
 <p>Wybierz cel ruchu.</p>
 <p>Kliknij kartę <strong>All Targets</strong>, ustaw ją jako cel ruchu, a następnie kliknij <strong>Apply</strong>.</p>
-<p><img alt="scenario 1 select target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case1_target.png" /></p>
+<p><img alt="scenario 1 select target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/1_all_targets.png" /></p>
 </li>
 <li>
 <p>Zostaniesz przeniesiony do VPN Dashboard, gdzie zostanie dodany tunel VPN.</p>
@@ -6365,12 +6431,12 @@
 <p>Wybierz profil VPN dla Tunnel 1.</p>
 <p>Weźmy jako przykład <a href="https://billing.purevpn.com/aff.php?aff=35535" target="_blank">PureVPN</a>. Wybierz jeden albo kilka profili i w razie potrzeby dostosuj ich priorytet po prawej stronie.</p>
 <p><img alt="scenario 2 select profile1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_profiles1.png" /></p>
-<p><strong>Uwaga</strong>: Gdy wybrano wiele profili, tunel będzie próbował połączyć się przy użyciu kolejnych profili zgodnie z kolejnością priorytetów, aż połączenie zostanie nawiązane. Jeśli wszystkie profile w jednym tunelu nie połączą się, system zdecyduje, czy przełączyć ruch na lokalny WAN, na podstawie stanu Tunnel Kill Switch i polityki <a href="#all-other-traffic">All Other Traffic</a>.</p>
+<p><strong>Uwaga</strong>: Gdy wybrano wiele profili, tunel będzie próbował połączyć się przy użyciu kolejnych profili zgodnie z kolejnością priorytetów, aż połączenie zostanie nawiązane. Jeśli wszystkie profile w jednym tunelu nie połączą się, system zdecyduje, czy przełączyć ruch na lokalny WAN, na podstawie stanu funkcji <strong>Kill Switch</strong> dla tego tunelu i polityki <a href="#all-other-traffic">All Other Traffic</a>.</p>
 </li>
 <li>
 <p>Wybierz źródło ruchu klienta.</p>
 <p>Kliknij kartę <strong>All Clients</strong>, ustaw ją jako źródło ruchu dla Tunnel 1, a następnie kliknij <strong>Apply</strong>.</p>
-<p><img alt="scenario 2 select source1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/case2_source.png" /></p>
+<p><img alt="scenario 2 select source1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_all_clients.png" /></p>
 </li>
 <li>
 <p>Wybierz cel ruchu.</p>
@@ -6394,7 +6460,7 @@
 <p>Wybierz profil VPN dla Tunnel 2.</p>
 <p>Weźmy jako przykład <a href="https://billing.purevpn.com/aff.php?aff=35535" target="_blank">PureVPN</a>. Wybierz jeden albo kilka profili i w razie potrzeby dostosuj ich priorytet po prawej stronie.</p>
 <p><img alt="scenario 2 select profile2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_profiles2.png" /></p>
-<p><strong>Uwaga</strong>: Gdy wybrano wiele profili, tunel będzie próbował połączyć się przy użyciu kolejnych profili zgodnie z kolejnością priorytetów, aż połączenie zostanie nawiązane. Jeśli wszystkie profile w jednym tunelu nie połączą się, system zdecyduje, czy przełączyć ruch na lokalny WAN, na podstawie stanu Tunnel Kill Switch i polityki <a href="#all-other-traffic">All Other Traffic</a>.</p>
+<p><strong>Uwaga</strong>: Gdy wybrano wiele profili, tunel będzie próbował połączyć się przy użyciu kolejnych profili zgodnie z kolejnością priorytetów, aż połączenie zostanie nawiązane. Jeśli wszystkie profile w jednym tunelu nie połączą się, system zdecyduje, czy przełączyć ruch na lokalny WAN, na podstawie stanu funkcji <strong>Kill Switch</strong> dla tego tunelu i polityki <a href="#all-other-traffic">All Other Traffic</a>.</p>
 </li>
 <li>
 <p>Wybierz źródło ruchu klienta.</p>
