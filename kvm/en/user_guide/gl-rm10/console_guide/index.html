@@ -3363,17 +3363,33 @@
 <p><strong>Mode</strong>: Switch between Normal and Smart mode. Smart mode balances latency and video quality for a better experience, especially in weak networks.</p>
 </li>
 <li>
-<p><strong>Quality</strong>: Adjust the video quality to low/medium/high/ultra-high according to your network and resolution requirements.</p>
+<p><strong>Quality</strong>: Adjust the video quality to low/medium/high/ultra-high/Lossless according to your network environment and resolution requirements.</p>
 </li>
 <li>
-<p><strong>Transfer</strong>: Switch the video transmission method between WebRTC H.264 and Direct H.264. Note that the Direct H.264 has no sound.</p>
+<p><strong>Transfer</strong>: Switch the video transmission method between WebRTC, WebRTC (FEC), and Direct. Note that the Direct transfer has no sound.</p>
+<div class="admonition note">
+<p class="admonition-title">What's the difference between WebRTC, WebRTC (FEC) and Direct?</p>
+<ul>
+<li>
+<p>WebRTC: Balances smooth video and stable audio for real-time remote control.</p>
+</li>
+<li>
+<p>WebRTC (FEC): Adds forward error correction to improve connection stability under poor or unstable network conditions. When selected, it automatically repairs lost data packets by transmitting a small amount of redundant data, reducing screen flickering and lag.</p>
+</li>
+<li>
+<p>Direct: Provides the lowest latency and lossless video quality, but does not support audio transmission.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>Orientation</strong>: Adjust the console's rotation angle to 0°/90°/180°/270°.</p>
 </li>
 <li>
-<p><strong>EDID</strong>: Extended Display Identification Data (EDID) automatically matches the display's optimal parameters.</p>
-<p>The default configuration is suitable for most scenarios and usually does not need to be modified. Click <a href="../../../faq/how_to_set_edid_for_glkvm/" target="_blank">here</a> for details.</p>
+<p><strong>EDID</strong>: Extended Display Identification Data (EDID) automatically matches the optimal display parameters. The default EDID is suitable for most scenarios and generally does not need to be modified. Click <a href="../../../faq/how_to_set_edid_for_glkvm/" target="_blank">here</a> for details. If the EDID has been changed but the screen does not update, try restarting the controlled device.</p>
+</li>
+<li>
+<p><strong>View</strong>: This feature controls whether the screen follows the browser window when resizing. Three options are available: Adaptive, Best Picture Quality, and Original Pixel.</p>
 </li>
 </ul>
 <h3 id="remote-device-settings">Remote Device Settings<a class="headerlink" href="#remote-device-settings" title="Permanent link">&para;</a></h3>
@@ -3390,8 +3406,14 @@
 <p><strong>Keyboard</strong>: Turn on or off the keyboard of the controlled device.</p>
 </li>
 <li>
+<p><strong>Bad Link Mode</strong>: i.e. Release keys immediately. Each key press is sent as a single quick press-and-release action, preventing stuck keys or unintended repeated input during remote control.</p>
+</li>
+<li>
 <p><strong>Show Virtual Keyboard</strong>: Show and use the virtual keyboard on the console.</p>
 <p><img alt="show virtual keyboard" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/console/settings-virtual-keyboard.png" /></p>
+</li>
+<li>
+<p><strong>Swap Command and Ctrl for MacOS</strong>: This feature swaps the Cmd and Ctrl keys to ensure keyboard compatibility across different operating systems.</p>
 </li>
 <li>
 <p><strong>Mouse</strong>: Turn on or off the mouse of the controlled device.</p>
@@ -3410,7 +3432,18 @@
 <p>Four direction modes are available: Standard, Vertical Invert, Horizontal Invert, and Both Invert.  </p>
 </li>
 <li>
-<p><strong>Mouse Mode</strong>: Including Absolute Mode and Relative Mode.</p>
+<p><strong>Mouse Mode</strong>: Allows switching between Relative Mouse and Absolute Mouse to ensure smooth and accurate cursor control in different remote control scenarios.</p>
+<div class="admonition note">
+<p class="admonition-title">What's the difference between Absolute Mode and Relative Mode?</p>
+<ul>
+<li>
+<p>Relative Mouse: The mouse position is calculated based on movement rather than a fixed screen coordinate. It works like a PC mouse in games and is compatible with most systems, but may not align perfectly with the local cursor.</p>
+</li>
+<li>
+<p>Absolute Mouse: The mouse position corresponds to exact screen coordinates. The remote cursor directly follows the local cursor smoothly and accurately, making it more suitable for desktop control and precise operation.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>Relative Sensitivity</strong>: It is available when the Mouse Mode is Relative.</p>
@@ -3421,16 +3454,16 @@
 <p><img alt="settings-system" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/console/settings-system.png" /></p>
 <ul>
 <li>
-<p><strong>Device Identity</strong>: Customize or modify the KVM's identity recognized by the controlled device. Note that the EDID and device identification will remain synchronized; changing one of them will make the other one automatically updated to ensure correct recognition.</p>
+<p><strong>Device Identity</strong>: Customize or modify the KVM's identity recognized by the controlled device. Note that EDID and device identification remain synchronized. Changing either one will automatically update the other to ensure correct device recognition.</p>
 </li>
 <li>
 <p><strong>Language</strong>: Set the console's language to Chinese or English.</p>
 </li>
 <li>
-<p><strong>Color Mode</strong>: Customize the theme color to dark and light mode.</p>
+<p><strong>Color Mode</strong>: Customize the theme color to Light or Dark mode.</p>
 </li>
 <li>
-<p><strong>Time Zone</strong>: Customize the time zone of the KVM console.</p>
+<p><strong>Time Zone</strong>: Customize the time zone of the KVM console. </p>
 </li>
 <li>
 <p><strong>Reset KVM</strong>: Factory reset your KVM with just one click.</p>
@@ -3439,21 +3472,21 @@
 <h3 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h3>
 <p>You can check Comet Pro's network details, e.g., Hostname and IP address.</p>
 <p><img alt="settings-network" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/console/settings-network.png" /></p>
-<p>As shown above, Comet Pro connects to an upstream network device via an Ethernet cable and Wi-Fi simultaneously.</p>
-<p>You can modify the ethernet settings (e.g., assign a static IP) or wireless settings (e.g., switch networks) as needed.</p>
 <ul>
 <li>
-<p>Ethernet Settings</p>
-<p>When Comet Pro connects to an upstream device via an Ethernet cable, if the connection protocol is <strong>DHCP</strong>, it will be dynamically assigned an IP address. </p>
+<p><strong>Hostname</strong>: You can modify the device hostname directly on the console. This feature has been available since firmware v1.7.0.</p>
+</li>
+<li>
+<p><strong>Ethernet</strong>: When Comet Pro connects to an upstream network device via an Ethernet cable, its Ethernet IP address will be displayed here. You can click the IP address or the right arrow to view the ethernet details.</p>
+<p>When the protocol is DHCP, the page displays as follows.</p>
 <p><img alt="ethernet dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/console/ethernet-dhcp.png" /></p>
 <p>If you want to set a static IP address, switch the protocol to <strong>Static</strong> and enter the required network parameters (e.g., IP address, netmask, gateway) accordingly.</p>
 <p><img alt="ethernet static" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/console/ethernet-static.png" /></p>
 </li>
 <li>
-<p>Wireless Settings</p>
-<p>When Comet Pro connects to a Wi-Fi network, you can view the SSID, the assigned IP address, gateway, and its MAC address.</p>
+<p><strong>Wireless</strong>: When Comet Pro connects to a Wi-Fi network, its Wi-Fi IP address will be displayed here. You can click the IP address or the right arrow to view the Wi-Fi details, including the SSID, assigned IP address, gateway, and the MAC address your Comet Pro uses to connect to.</p>
 <p><img alt="wifi config" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/console/wifi-config.png" /></p>
-<p>If you want to connect it to another Wi-Fi network, click <strong>Switch Wi-Fi</strong> and select the network from available Wi-Fi networks.</p>
+<p>To connect Comet Pro to a different Wi‑Fi network, click <strong>Switch Wi-Fi</strong> and select a network from the list of available Wi‑Fi networks.</p>
 <p><img alt="join wifi" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/console/join-wifi-network.png" /></p>
 </li>
 </ul>
@@ -3467,10 +3500,10 @@
 </ul>
 <p><img alt="toolbox" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/console/toolbox-general.png" /></p>
 <h3 id="clipboard">Clipboard<a class="headerlink" href="#clipboard" title="Permanent link">&para;</a></h3>
-<p>The clipboard allows you to easily paste text from the controlling device to the controlled device, without the need to transfer files.</p>
+<p>The clipboard allows you to easily paste text from the controlling device to the controlled device without file transfer, making it highly convenient for copying and pasting long text.</p>
 <p><img alt="toolbox-clipboard" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/console/toolbox-clipboard.png" /></p>
 <h3 id="shortcut">Shortcut<a class="headerlink" href="#shortcut" title="Permanent link">&para;</a></h3>
-<p>The shortcut let you perform actions faster without using the mouse, helping you work more efficiently and save time on daily tasks. You can find some common shortcuts here.</p>
+<p>The shortcut let you perform actions faster without using the virtual keyboard, helping you work more efficiently and save time on daily tasks. You can find some common shortcuts here.</p>
 <p><img alt="toolbox-shortcut1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/console/toolbox-shortcut1.png" /></p>
 <p>Click <strong>Modify</strong> to adjust the shortcuts options as needed.</p>
 <p><img alt="toolbox-shortcut2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/console/toolbox-shortcut2.png" />  </p>
@@ -3520,7 +3553,7 @@
 <h3 id="atx-power">ATX Power<a class="headerlink" href="#atx-power" title="Permanent link">&para;</a></h3>
 <p>The ATX Board is installed in the computer case to achieve remote control of the device's power on/off/reboot.</p>
 <p>It works according to the settings configured on the console.</p>
-<p><img alt="accessories atxpower" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/control_panel/accessories-atx.png" /></p>
+<p><img alt="accessories atxpower" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/console/accessories-atx.png" /></p>
 <ul>
 <li>
 <p><strong>Power (Short Press)</strong>: Used for regular power-on or system wake-up.</p>
