@@ -2406,6 +2406,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#limitations-of-device-identity-customization" class="md-nav__link">
+    Limitations of Device Identity Customization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-change-device-identity" class="md-nav__link">
     How to change device identity
   </a>
@@ -3029,6 +3036,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#limitations-of-device-identity-customization" class="md-nav__link">
+    Limitations of Device Identity Customization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-change-device-identity" class="md-nav__link">
     How to change device identity
   </a>
@@ -3097,6 +3111,13 @@
 <summary>Scenario 3: Resolving unresponsive mouse/keyboard control on the controlled device</summary>
 <p>If you fail to control the mouse and keyboard on the controlled device through KVM, try modifying the KVM's device identity to avoid compatibility issues, enabling smooth signal transmission between the KVM and the controlled device.</p>
 </details>
+<h2 id="limitations-of-device-identity-customization">Limitations of Device Identity Customization<a class="headerlink" href="#limitations-of-device-identity-customization" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Behavioral Detection Software May Still Identify KVM</p>
+<p>Regardless of how you customize the USB device identity, the USB <strong>structure</strong> of the virtualized devices (keyboard, mouse, microphone, camera, etc.) may still appear suspicious to behavioral detection software.</p>
+<p>The fundamental issue is that all these virtualized peripherals belong to a <strong>single composite USB device</strong>. While a composite device containing only a keyboard and mouse is relatively common — many wireless keyboard/mouse receivers (such as Logitech Unifying) present a similar structure — a single composite USB device that simultaneously includes <strong>keyboard, mouse, and microphone</strong> is extremely rare in practice. </p>
+<p>Therefore, changing the device identity alone <strong>may not be sufficient</strong> to evade detection by advanced monitoring or behavioral analysis software.</p>
+</div>
 <h2 id="how-to-change-device-identity">How to change device identity<a class="headerlink" href="#how-to-change-device-identity" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
