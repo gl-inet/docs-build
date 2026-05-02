@@ -6298,7 +6298,13 @@
   <!-- Markdown content -->
   <h1 id="qos-quality-of-service">QoS (Quality of Service)<a class="headerlink" href="#qos-quality-of-service" title="Permanent link">&para;</a></h1>
 <p>QoS (Quality of Service) optymalizuje przydział przepustowości, nadając priorytet krytycznym działaniom (np. wideorozmowom, grom) podczas przeciążenia sieci, co zmniejsza opóźnienia i poprawia ogólną wydajność sieci.</p>
-<p><strong>Uwaga</strong>: Ta funkcja wpływa na ruch przechodzący przez router działający jako brama (w tym ruch lokalnych klientów i ruch klienta VPN), ale nie na ruch przychodzący, gdy router działa jako serwer VPN.</p>
+<p><strong>Uwaga</strong>:</p>
+<ol>
+<li>Ta funkcja wpływa na ruch przechodzący przez router działający jako brama (w tym ruch lokalnych klientów i ruch klienta VPN), ale nie na ruch przychodzący, gdy router działa jako serwer VPN.</li>
+<li>QoS nie działa, gdy router pracuje w trybie Drop-in Gateway.</li>
+<li>QoS i SQM nie mogą być włączone jednocześnie.</li>
+<li>QoS nie współpracuje z funkcją Network Acceleration. Włączenie QoS automatycznie wyłączy Network Acceleration, aby zapewnić stabilną wydajność.</li>
+</ol>
 <h2 id="obsugiwane-modele">Obsługiwane modele<a class="headerlink" href="#obsugiwane-modele" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Obsługiwane modele</p>
