@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.gl-inet.com/router/pl/4/interface_guide/qos/">
       
       
-        <link rel="prev" href="../content_filter/">
+        <link rel="prev" href="../parental_control/">
       
       
         <link rel="next" href="../sqm/">
@@ -4702,8 +4702,6 @@
       
         
       
-        
-      
     
     
     
@@ -4834,26 +4832,6 @@
 
               
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tor/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4869,6 +4847,8 @@
   
     
     
+      
+        
       
         
       
@@ -5047,6 +5027,26 @@
   
   <span class="md-ellipsis">
     Tailscale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tor
   </span>
   
 
@@ -5480,6 +5480,8 @@
       
         
       
+        
+      
     
     
     
@@ -5561,6 +5563,26 @@
   
   <span class="md-ellipsis">
     Filtr tresci
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parental_control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kontrola rodzicielska
   </span>
   
 
@@ -6300,7 +6322,7 @@
 <p>QoS (Quality of Service) optymalizuje przydział przepustowości, nadając priorytet krytycznym działaniom (np. wideorozmowom, grom) podczas przeciążenia sieci, co zmniejsza opóźnienia i poprawia ogólną wydajność sieci.</p>
 <p><strong>Uwaga</strong>:</p>
 <ol>
-<li>Ta funkcja wpływa na ruch przechodzący przez router działający jako brama (w tym ruch lokalnych klientów i ruch klienta VPN), ale nie na ruch przychodzący, gdy router działa jako serwer VPN.</li>
+<li>Ta funkcja wpływa tylko na ruch przechodzący przez router, gdy działa on jako brama, w tym ruch lokalnych klientów i ruch klienta VPN. Nie dotyczy ruchu przychodzącego, gdy router działa jako serwer VPN.</li>
 <li>QoS nie działa, gdy router pracuje w trybie Drop-in Gateway.</li>
 <li>QoS i SQM nie mogą być włączone jednocześnie.</li>
 <li>QoS nie współpracuje z funkcją Network Acceleration. Włączenie QoS automatycznie wyłączy Network Acceleration, aby zapewnić stabilną wydajność.</li>
@@ -6311,7 +6333,12 @@
 <ul>
 <li>GL-BE10000 (Slate 7 Pro)</li>
 <li>GL-MT5000 (Brume 3)</li>
+<li>※GL-BE9300 (Flint 3)</li>
+<li>※GL-BE3600 (Slate 7)</li>
+<li>※GL-MT6000 (Flint 2)</li>
+<li>※GL-MT3000 (Beryl AX)</li>
 </ul>
+<p>Uwaga: modele oznaczone symbolem ※ obsługują QoS od firmware v4.9.</p>
 </div>
 <h2 id="szybka-konfiguracja">Szybka konfiguracja<a class="headerlink" href="#szybka-konfiguracja" title="Permanent link">&para;</a></h2>
 <p>W lewym panelu webowego panelu administracyjnego przejdź do <strong>FLOW CONTROL</strong> -&gt; <strong>QoS</strong>.</p>

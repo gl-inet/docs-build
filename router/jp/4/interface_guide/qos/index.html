@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.gl-inet.com/router/jp/4/interface_guide/qos/">
       
       
-        <link rel="prev" href="../content_filter/">
+        <link rel="prev" href="../parental_control/">
       
       
         <link rel="next" href="../sqm/">
@@ -4706,8 +4706,6 @@
       
         
       
-        
-      
     
     
     
@@ -4878,26 +4876,6 @@
 
               
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tor/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4913,6 +4891,8 @@
   
     
     
+      
+        
       
         
       
@@ -5091,6 +5071,26 @@
   
   <span class="md-ellipsis">
     Tailscale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tor
   </span>
   
 
@@ -5524,6 +5524,8 @@
       
         
       
+        
+      
     
     
     
@@ -5605,6 +5607,26 @@
   
   <span class="md-ellipsis">
     コンテンツフィルター
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parental_control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ペアレンタルコントロール
   </span>
   
 
@@ -6335,7 +6357,7 @@
 <p>QoS（Quality of Service）は、ネットワーク混雑時に重要なアクティビティ（ビデオ通話、ゲームなど）を優先して帯域幅配分を最適化し、遅延を抑えながら全体的なネットワーク性能を向上させます。</p>
 <p><strong>Note</strong>:</p>
 <ol>
-<li>この機能は、ルーターがゲートウェイとして処理するトラフィック（ローカルクライアントのトラフィックと VPN Client のトラフィックを含む）に影響しますが、ルーターが VPN Server として動作しているときの受信トラフィックには影響しません。</li>
+<li>この機能は、ルーターがゲートウェイとして動作しているときに通過するトラフィックにのみ影響します。これにはローカルクライアントのトラフィックと VPN Client のトラフィックが含まれます。ルーターが VPN Server として動作しているときの受信トラフィックには適用されません。</li>
 <li>QoS は、ルーターが Drop-in Gateway モードのときは動作しません。</li>
 <li>QoS と SQM を同時に有効にすることはできません。</li>
 <li>QoS は <strong>Network Acceleration</strong> と併用できません。有効にすると、安定したパフォーマンスを確保するため <strong>Network Acceleration</strong> は自動的に無効になります。</li>
@@ -6346,7 +6368,12 @@
 <ul>
 <li>GL-BE10000 (Slate 7 Pro)</li>
 <li>GL-MT5000 (Brume 3)</li>
+<li>※GL-BE9300 (Flint 3)</li>
+<li>※GL-BE3600 (Slate 7)</li>
+<li>※GL-MT6000 (Flint 2)</li>
+<li>※GL-MT3000 (Beryl AX)</li>
 </ul>
+<p>※ が付いたモデルは、ファームウェア v4.9 以降で QoS をサポートします。</p>
 </div>
 <h2 id="_2">クイックセットアップ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>Web Admin Panel の左側で、<strong>FLOW CONTROL</strong> -&gt; <strong>QoS</strong> に移動します。</p>
