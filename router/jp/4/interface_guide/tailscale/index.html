@@ -1432,6 +1432,8 @@
       
         
       
+        
+      
     
     
     
@@ -1493,6 +1495,26 @@
   
   <span class="md-ellipsis">
     ブラウザの警告について
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/internet_connection_troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    インターネット接続のトラブルシューティングFAQ
   </span>
   
 
@@ -6483,13 +6505,13 @@
 <h2 id="wan">WAN からのリモートアクセスを許可する<a class="headerlink" href="#wan" title="Permanent link">&para;</a></h2>
 <p>このオプションを有効にすると、デバイスのWAN側にあるリソースへTailscale仮想ネットワーク経由でアクセスできます。</p>
 <p>たとえば、下図の構成でこの機能を有効にすると、<code>leo-phone</code> から <code>GL-AXT1800</code> のIPアドレス（<code>192.168.29.1</code>）へアクセスできます。これは、GL-AXT1800 が <code>GL-MT2500</code> の上位デバイスであり、後者が leo-phone と同じTailscaleネットワークに接続されているためです。</p>
-<p><img alt="tailscale, remote access wan topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_access_wan_topology.png" /></p>
+<p><img alt="remote access wan topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_access_wan_topology.png" /></p>
 <p>操作手順は次のとおりです。</p>
 <ol>
 <li>
 <p>ルーターのWeb管理画面にログインし、<strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> に移動します。</p>
 <p><strong>Allow Remote Access WAN</strong> を有効にして、<strong>Apply</strong> をクリックします。</p>
-<p><img alt="enable allow remote access wan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/enable_allow_remote_access_wan.png" /></p>
+<p><img alt="enable remote access wan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/enable_allow_remote_access_wan.png" /></p>
 </li>
 <li>
 <p>Tailscale Admin console を開くと、GL-MT2500 にサブネットがあることを示すアラートが表示されます。</p>
@@ -6498,17 +6520,17 @@
 </li>
 <li>
 <p>サブネットルートを有効にします。</p>
-<p><img alt="tailcale, enable subnet route" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_enable_subnet_routes.png" /></p>
+<p><img alt="tailcale enable subnet route" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_enable_subnet_routes.png" /></p>
 </li>
 <li>
 <p>これで、他のデバイスから <code>GL-AXT1800</code> のIPアドレス（<code>192.168.29.1</code>）へアクセスできます。実際には、<code>192.168.29.0/24</code> サブネット内のすべてのデバイスへアクセスできます。</p>
-<p><img alt="tailscale, access axt1800" class="glboxshadow gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_access_axt1800.jpg" /></p>
+<p><img alt="tailscale access axt1800" class="glboxshadow gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_access_axt1800.jpg" /></p>
 </li>
 </ol>
 <h2 id="lan">LAN へのリモートアクセスを許可する<a class="headerlink" href="#lan" title="Permanent link">&para;</a></h2>
 <p>このオプションを有効にすると、デバイスのLAN側にあるリソースへTailscale仮想ネットワーク経由でアクセスできます。</p>
 <p>たとえば、下図の構成でこの機能を有効にすると、<code>leo-phone</code> から <code>Ubuntu</code> のIPアドレス（<code>192.168.8.110</code>）を使ってSSH接続できます。これは、<code>Ubuntu</code> が <code>GL-MT2500</code> の下位デバイスであり、後者が leo-phone と同じTailscaleネットワークに接続されているためです。</p>
-<p><img alt="tailscale, remote access lan topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_access_lan_topology.png" /></p>
+<p><img alt="remote access lan topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_access_lan_topology.png" /></p>
 <p>操作手順は次のとおりです。</p>
 <ol>
 <li>
@@ -6523,11 +6545,11 @@
 </li>
 <li>
 <p>サブネットルートを有効にします。</p>
-<p><img alt="tailscale, enable subnet route" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_enable_subnet_routes_lan.png" /></p>
+<p><img alt="tailscale enable subnet route" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_enable_subnet_routes_lan.png" /></p>
 </li>
 <li>
 <p>これで、他のデバイスから <code>Ubuntu</code> のIPアドレス（<code>192.168.8.110</code>）へ ping やSSH接続ができます。実際には、<code>192.168.8.0/24</code> サブネット内のすべてのデバイスへアクセスできます。</p>
-<p><img alt="tailscale, access ubuntu" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_access_ubuntu.png" /></p>
+<p><img alt="tailscale access ubuntu" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_access_ubuntu.png" /></p>
 </li>
 </ol>
 <h2 id="exit-node">カスタム Exit Node<a class="headerlink" href="#exit-node" title="Permanent link">&para;</a></h2>
@@ -6545,23 +6567,29 @@
 <p>Tailscale Admin console で、GL-MT2500 の右側にある三点アイコンをクリックし、<strong>Edit route settings</strong> を選択します。</p>
 <p><img alt="tailscale edit route settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_subnet_alert_wan.png" /></p>
 <p>ポップアップウィンドウでサブネットルートを有効にします。</p>
-<p><img alt="tailcale, enable subnet route" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_enable_subnet_routes.png" /></p>
+<p><img alt="tailcale enable subnet route" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/tailscale_enable_subnet_routes.png" /></p>
 </li>
 <li>
 <p>Exit node として使いたいデバイス（この例では Leo-Desktop）で <strong>Run exit node</strong> を選択します。以下は Windows OS での例です。</p>
-<p><img alt="tailscale windows, run exit node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/custom_exit_nodes/tailscale_run_exit_node.png" /></p>
+<p><img alt="tailscale windows run exit node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/custom_exit_nodes/tailscale_run_exit_node.png" /></p>
 <p>次に <strong>Yes</strong> をクリックします。</p>
-<p><img alt="tailscale windows, run exit ndoe alert" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/custom_exit_nodes/tailscale_run_exit_node_alert.png" /></p>
+<p><img alt="tailscale windows run exit ndoe" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/custom_exit_nodes/tailscale_run_exit_node_alert.png" /></p>
 </li>
 <li>
 <p>Tailscale Admin console で、Leo-Desktop を Exit node として設定します。</p>
-<p><img alt="tailscale exit node alert" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/custom_exit_nodes/tailscale_exit_node_alert.png" /></p>
+<p><img alt="tailscale edit route settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/custom_exit_nodes/tailscale_exit_node_alert.png" /></p>
 <p><img alt="tailscale use as exit node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/custom_exit_nodes/tailscale_use_as_exit_node.png" /></p>
 </li>
 <li>
 <p>GL-MT2500 の Web管理画面 にログインし、<strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> に移動して <strong>Custom Exit Nodes</strong> を有効にします。更新ボタンをクリックし、ドロップダウンメニューから Leo-Desktop のIPアドレスを選択して、<strong>Apply</strong> をクリックします。</p>
-<p><img alt="glinet tailscale, custom exit node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/custom_exit_nodes/custom_exit_node.png" /></p>
+<p><img alt="glinet tailscale custom exit node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/custom_exit_nodes/custom_exit_node.png" /></p>
 <p>その後、ルーターに接続されたデバイスは Exit Node 経由でインターネットへアクセスするようになり、すべてのインターネットトラフィックが Exit Node の場所から送信されているように見えます。</p>
+</li>
+<li>
+<p><strong>トラブルシューティング</strong>: Custom Exit Nodes を有効にした後、GL.iNet ルーターに接続されたデバイスがインターネットへアクセスできない場合は、Tailscale Admin console でルーターのサブネットルートが有効になっているか確認してください。</p>
+<p>以下のような案内が、ルーターの Web 管理画面に表示される場合があります。</p>
+<p><img alt="exit node troubleshooting" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tailscale/custom_exit_nodes/troubleshooting.jpg" /></p>
+<p>この場合は、上記 <strong>手順1</strong> を参照し、Tailscale Admin console でルーターのサブネットルートを有効にしてください。</p>
 </li>
 </ol>
 <p>参考情報: <a href="https://tailscale.com/kb/1103/exit-nodes/" target="_blank">Exit Nodes (route all traffic)</a></p>

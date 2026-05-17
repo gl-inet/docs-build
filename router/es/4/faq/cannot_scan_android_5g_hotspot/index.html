@@ -1434,6 +1434,8 @@
       
         
       
+        
+      
     
     
     
@@ -1495,6 +1497,26 @@
   
   <span class="md-ellipsis">
     Advertencia del navegador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internet_connection_troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preguntas frecuentes sobre la solución de problemas de conexión a Internet
   </span>
   
 
@@ -1759,17 +1781,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    No se puede detectar el hotspot 5G de Android
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1779,46 +1790,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#paso-1-inicie-sesion-en-luci" class="md-nav__link">
-    Paso 1. Inicie sesión en LuCI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paso-2-edite-la-configuracion-de-wi-fi" class="md-nav__link">
-    Paso 2. Edite la configuración de Wi-Fi
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paso-3-seleccione-us-como-codigo-de-pais" class="md-nav__link">
-    Paso 3. Seleccione US como código de país
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -6289,35 +6260,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#paso-1-inicie-sesion-en-luci" class="md-nav__link">
-    Paso 1. Inicie sesión en LuCI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paso-2-edite-la-configuracion-de-wi-fi" class="md-nav__link">
-    Paso 2. Edite la configuración de Wi-Fi
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paso-3-seleccione-us-como-codigo-de-pais" class="md-nav__link">
-    Paso 3. Seleccione US como código de país
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -6342,21 +6284,29 @@
   <!-- Markdown content -->
   <h1 id="no-se-detecta-el-hotspot-5g-de-android">No se detecta el hotspot 5G de Android<a class="headerlink" href="#no-se-detecta-el-hotspot-5g-de-android" title="Permanent link">&para;</a></h1>
 <p>Conectar el router GL.iNet como repetidor al hotspot 5G de un teléfono Android es una de las formas habituales de acceder a Internet.</p>
-<p>Sin embargo, si no puede detectar el hotspot 5G de su teléfono Android, el problema puede estar relacionado con el código de país de Wi-Fi.</p>
+<p>Sin embargo, si no puede detectar el hotspot 5G de su teléfono Android, el problema puede estar relacionado con el canal Wi-Fi.</p>
 <p>Algunos teléfonos Android configuran su hotspot 5G en un canal de EE. UU. de forma predeterminada. Si su router GL.iNet no se compró originalmente en EE. UU., es posible que experimente este problema.</p>
-<p>Puede cambiar el código de país del Wi-Fi de su router GL.iNet en la página LuCI siguiendo los pasos que se indican a continuación.</p>
-<h2 id="paso-1-inicie-sesion-en-luci">Paso 1. Inicie sesión en LuCI<a class="headerlink" href="#paso-1-inicie-sesion-en-luci" title="Permanent link">&para;</a></h2>
-<p>Inicie sesión en su router GL.iNet y, en la barra lateral izquierda, elija <strong>SYSTEM -&gt; Advanced Settings -&gt; Go to LuCI</strong>. Inicie sesión en LuCI con la misma contraseña de administrador.</p>
-<h2 id="paso-2-edite-la-configuracion-de-wi-fi">Paso 2. Edite la configuración de Wi-Fi<a class="headerlink" href="#paso-2-edite-la-configuracion-de-wi-fi" title="Permanent link">&para;</a></h2>
-<p>Vaya a <strong>Network -&gt; Wireless</strong>, seleccione el Wi-Fi de 5 GHz y edítelo. Si está usando un GL-MT3000, vaya a <strong>Network -&gt; MTK Wi-Fi</strong>.</p>
+<p>Puede modificar el código de país del Wi-Fi de su router GL.iNet en la interfaz LuCI siguiendo los pasos que se indican a continuación.</p>
+<ol>
+<li>
+<p>Inicie sesión en su router GL.iNet y vaya a <strong>SYSTEM</strong> -&gt; <strong>Advanced Settings</strong> -&gt; <strong>Go to LuCI</strong>. Inicie sesión en LuCI con la misma contraseña de administrador.</p>
+</li>
+<li>
+<p>Edite la configuración de Wi-Fi.</p>
+<p>Vaya a <strong>Network</strong> -&gt; <strong>Wireless</strong>, localice el Wi-Fi de 5 GHz y haga clic en <strong>Edit</strong> a la derecha.</p>
 <p><img alt="5gwifi" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/5ghotspot/5gwifi.jpg" /></p>
-<p><img alt="mtkwifi" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/5ghotspot/mtkwifi.jpg" /></p>
-<h2 id="paso-3-seleccione-us-como-codigo-de-pais">Paso 3. Seleccione US como código de país<a class="headerlink" href="#paso-3-seleccione-us-como-codigo-de-pais" title="Permanent link">&para;</a></h2>
-<p>En <strong>Device Configuration -&gt; Advanced Settings</strong>, seleccione US (United States) como código de país para su Wi-Fi de 5 GHz.</p>
+</li>
+<li>
+<p>Seleccione US como código de país.</p>
+<p>En la página Wireless, haga clic en la pestaña <strong>Advanced Settings</strong> dentro de <strong>Device Configuration</strong>. Seleccione US (United States) como código de país para su Wi-Fi de 5 GHz.</p>
 <p><img alt="5gus" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/5ghotspot/5gus.jpg" /></p>
+</li>
+<li>
 <p>Haga clic en <strong>Save &amp; Apply</strong> antes de salir.</p>
 <p><img alt="saveapply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/5ghotspot/saveapply.jpg" /></p>
 <p>Después, intente detectar de nuevo el hotspot 5G de su teléfono Android.</p>
+</li>
+</ol>
 <hr />
 <p>¿Todavía tiene preguntas? Visite nuestro <a href="https://forum.gl-inet.com" target="_blank">foro de la comunidad</a> o <a href="https://www.gl-inet.com/contacts/" target="_blank">contáctenos</a>.</p>
 

@@ -1432,6 +1432,8 @@
       
         
       
+        
+      
     
     
     
@@ -1493,6 +1495,26 @@
   
   <span class="md-ellipsis">
     ブラウザの警告について
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/internet_connection_troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    インターネット接続のトラブルシューティングFAQ
   </span>
   
 
@@ -4829,6 +4851,19 @@
     グローバルモード
   </a>
   
+    <nav class="md-nav" aria-label="グローバルモード">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-tunnel-options" class="md-nav__link">
+    トンネルオプション
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -6391,6 +6426,19 @@
     グローバルモード
   </a>
   
+    <nav class="md-nav" aria-label="グローバルモード">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-tunnel-options" class="md-nav__link">
+    トンネルオプション
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -6489,6 +6537,28 @@
 <p>統一的なネットワークセキュリティを確保したい場合や、地域限定コンテンツへアクセスしたい場合など、すべてのクライアントトラフィックを1台のVPNサーバー経由でルーティングする用途に適しています。</p>
 <p>次の例では、ルーターは WireGuard プロトコルを使ってオーストラリアのサーバーへ接続しています。接続されたクライアントのすべてのトラフィックは、このVPNトンネル経由でルーティングされます。</p>
 <p><img alt="connected global mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/connected-global-mode.png" /></p>
+<h4 id="global-tunnel-options">トンネルオプション<a class="headerlink" href="#global-tunnel-options" title="Permanent link">&para;</a></h4>
+<p>このVPNトンネルでは、VPNキルスイッチ、IPマスカレーディング、MTU などの詳細設定を構成できます。</p>
+<p>右上の歯車アイコンをクリックします。</p>
+<p><img alt="global mode options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/global_mode_options1.png" /></p>
+<p><img alt="global mode options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/global_mode_options2.png" /></p>
+<ul>
+<li>
+<p><strong>Kill Switch</strong>: 有効にすると、このVPNトンネルを経由するすべてのトラフィックは、VPN接続が失敗したときに自動的にブロックされます。無効にすると、トラフィックはローカルWANへフォールバックし、VPNトンネルを通らずにインターネットへアクセスします。</p>
+</li>
+<li>
+<p><strong>Services from GL.iNet Use VPN</strong>: 有効にすると、GoodCloud、DDNS、rtty の各サービスはVPNトンネル経由でパケットを送信します。これらのサービスは通常デバイスの実IPアドレスを必要とするため、このオプションはデフォルトで無効です。</p>
+</li>
+<li>
+<p><strong>Allow Remote Access the LAN Subnet</strong>: 有効にすると、VPN経由でこのルーターおよびそのLANデバイスへリモートアクセスできるようになります。VPNサーバー側では、このルーターのLANサブネットへのルートを通知している必要があります。</p>
+</li>
+<li>
+<p><strong>IP Masquerading</strong>: 有効にすると、LAN クライアントの送信元IPアドレスはルーターのVPNトンネルIPに書き換えられます。リモートピアがLANサブネットを認識しているサイトツーサイト構成の場合にのみ無効にしてください。</p>
+</li>
+<li>
+<p><strong>MTU</strong>: Maximum Transmission Unit の略です。ここで設定したトンネルの MTU 値は、設定ファイルで定義された値を上書きします。</p>
+</li>
+</ul>
 <h3 id="policy-mode">ポリシーモード<a class="headerlink" href="#policy-mode" title="Permanent link">&para;</a></h3>
 <p>このモードでは、ルーターは複数のVPNサーバーに接続でき、クライアントやトラフィック宛先ごとにルーティングルールをカスタマイズできます。</p>
 <p>複数のVPNサーバーを使って異なるトラフィックを異なる宛先へ振り分けるような、柔軟なトラフィック管理が必要な用途に適しています。</p>
@@ -6667,9 +6737,7 @@
 <p><img alt="tunnel options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/tunnel_options_1.png" /></p>
 <p><img alt="tunnel options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/tunnel_options_2.png" /></p>
 <ul>
-<li>
-<p><strong>Kill Switch</strong>: 有効にすると、このVPNトンネルに一致するトラフィックは、VPN接続が予期せず切断された場合にブロックされます。無効にすると、そのトラフィックは次順位のトンネルまたはローカルWANへフェイルオーバーします。</p>
-</li>
+<li><strong>Kill Switch</strong>: 有効にすると、このVPNトンネルを経由するすべてのトラフィックは、VPN接続が失敗すると自動的にブロックされます。無効にすると、トラフィックは次順位のトンネルまたはローカルWANへフェイルオーバーします。</li>
 <li>
 <p><strong>Services from GL.iNet Use VPN</strong>: 有効にすると、GoodCloud、DDNS、rtty の各サービスはVPNトンネル経由でパケットを送信します。これらのサービスは通常デバイスの実IPアドレスを必要とするため、このオプションはデフォルトで無効です。</p>
 </li>
@@ -6680,7 +6748,7 @@
 <p><strong>IP Masquerading</strong>: 有効にすると、LANクライアントの送信元IPアドレスはルーターのVPNトンネルIPに書き換えられます。リモートピアがLANサブネットを認識している Site-to-Site 構成の場合にのみ無効にしてください。</p>
 </li>
 <li>
-<p><strong>MTU</strong>: ここで設定したMTU値は、設定ファイル内のMTU設定を上書きします。</p>
+<p><strong>MTU</strong>: Maximum Transmission Unit の略です。ここで設定したトンネルの MTU 値は、設定ファイルで定義された値を上書きします。</p>
 </li>
 </ul>
 <hr />

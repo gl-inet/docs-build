@@ -1432,6 +1432,8 @@
       
         
       
+        
+      
     
     
     
@@ -1493,6 +1495,26 @@
   
   <span class="md-ellipsis">
     Advertencia del navegador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/internet_connection_troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preguntas frecuentes sobre la solución de problemas de conexión a Internet
   </span>
   
 
@@ -4807,6 +4829,19 @@
     Modo global
   </a>
   
+    <nav class="md-nav" aria-label="Modo global">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tunnel-options" class="md-nav__link">
+    Tunnel Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -6369,6 +6404,19 @@
     Modo global
   </a>
   
+    <nav class="md-nav" aria-label="Modo global">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tunnel-options" class="md-nav__link">
+    Tunnel Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -6477,6 +6525,28 @@
 <p>Es ideal para escenarios en los que todo el tráfico de los clientes debe enrutarse a través de un único servidor VPN, como una seguridad de red unificada o el acceso a contenido específico por región.</p>
 <p>En el ejemplo siguiente, el router se conecta a un servidor australiano mediante el protocolo WireGuard. Todo el tráfico de los clientes conectados se enrutará a través de este túnel VPN.</p>
 <p><img alt="connected global mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/connected-global-mode.png" /></p>
+<h4 id="tunnel-options">Tunnel Options<a class="headerlink" href="#tunnel-options" title="Permanent link">&para;</a></h4>
+<p>Puede configurar ajustes avanzados para su túnel VPN, como el Kill Switch de VPN, el enmascaramiento de IP y el MTU.</p>
+<p>Haga clic en el icono de engranaje de la esquina superior derecha.</p>
+<p><img alt="global mode options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/global_mode_options1.png" /></p>
+<p><img alt="global mode options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/global_mode_options2.png" /></p>
+<ul>
+<li>
+<p><strong>Kill Switch</strong>: Si está habilitado, cualquier tráfico enrutado a través de este túnel VPN se bloqueará automáticamente cuando falle la conexión VPN. Si está deshabilitado, el tráfico volverá a la WAN local y accederá a Internet sin pasar por el túnel VPN.</p>
+</li>
+<li>
+<p><strong>Services from GL.iNet Use VPN</strong>: Si está habilitado, los servicios GoodCloud, DDNS y rtty transmitirán paquetes a través de los túneles VPN. Esta opción está deshabilitada de forma predeterminada, ya que estos servicios normalmente requieren la dirección IP real del dispositivo para funcionar correctamente.</p>
+</li>
+<li>
+<p><strong>Allow Remote Access the LAN Subnet</strong>: Si está habilitado, se permitirá el acceso remoto a este router y a sus dispositivos LAN a través de la VPN. El servidor VPN debe anunciar una ruta hacia la subred LAN de este router.</p>
+</li>
+<li>
+<p><strong>IP Masquerading</strong>: Si está habilitado, las direcciones IP de origen de los clientes LAN se reescribirán con la IP del túnel VPN del router. Deshabilite esta opción solo en configuraciones site-to-site donde el par remoto conozca sus subredes LAN.</p>
+</li>
+<li>
+<p><strong>MTU</strong>: Abreviatura de Maximum Transmission Unit. El valor MTU que establezca para el túnel sobrescribirá el valor definido en el archivo de configuración.</p>
+</li>
+</ul>
 <p><a id="policy-mode"></a></p>
 <h3 id="modo-de-politicas">Modo de políticas<a class="headerlink" href="#modo-de-politicas" title="Permanent link">&para;</a></h3>
 <p>En este modo, el router puede conectarse a varios servidores VPN y usted puede personalizar reglas de enrutamiento para distintos clientes o destinos del tráfico.</p>
@@ -6632,19 +6702,19 @@
 <p><img alt="tunnel options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/tunnel_options_2.png" /></p>
 <ul>
 <li>
-<p><strong>Kill Switch</strong>: Si está habilitado, el tráfico que coincida con este túnel VPN se bloqueará si la conexión VPN falla de forma inesperada. Si está deshabilitado, ese tráfico hará conmutación por error hacia el siguiente túnel por prioridad o hacia la WAN local.</p>
+<p><strong>Kill Switch</strong>: Si está habilitado, cualquier tráfico enrutado a través de este túnel VPN se bloqueará automáticamente si falla la conexión VPN. Si está deshabilitado, el tráfico hará conmutación por error hacia el siguiente túnel por prioridad o hacia la WAN local.</p>
 </li>
 <li>
 <p><strong>Services from GL.iNet Use VPN</strong>: Si está habilitado, los servicios GoodCloud, DDNS y rtty transmitirán paquetes a través de los túneles VPN. Esta opción está deshabilitada de forma predeterminada, ya que estos servicios normalmente requieren la dirección IP real del dispositivo para funcionar correctamente.</p>
 </li>
 <li>
-<p><strong>Allow Remote Access the LAN Subnet</strong>: Si está habilitado, se permitirá el acceso remoto a este router y a sus dispositivos LAN a través de la VPN. Requiere que el servidor VPN anuncie una ruta de retorno hacia su subred LAN.</p>
+<p><strong>Allow Remote Access the LAN Subnet</strong>: Si está habilitado, se permitirá el acceso remoto a este router y a sus dispositivos LAN a través de la VPN. El servidor VPN debe anunciar una ruta hacia la subred LAN de este router.</p>
 </li>
 <li>
 <p><strong>IP Masquerading</strong>: Si está habilitado, las direcciones IP de origen de los clientes LAN se reescribirán con la IP del túnel VPN del router. Deshabilite esta opción solo en configuraciones site-to-site donde el par remoto conozca sus subredes LAN.</p>
 </li>
 <li>
-<p><strong>MTU</strong>: El valor MTU que establezca para el túnel sobrescribirá los ajustes MTU del archivo de configuración.</p>
+<p><strong>MTU</strong>: Abreviatura de Maximum Transmission Unit. El valor MTU que establezca para el túnel sobrescribirá el valor definido en el archivo de configuración.</p>
 </li>
 </ul>
 <hr />

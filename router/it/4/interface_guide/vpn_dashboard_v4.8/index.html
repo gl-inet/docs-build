@@ -1432,6 +1432,8 @@
       
         
       
+        
+      
     
     
     
@@ -1493,6 +1495,26 @@
   
   <span class="md-ellipsis">
     Avviso del browser
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/internet_connection_troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ sulla risoluzione dei problemi di connessione Internet
   </span>
   
 
@@ -4829,6 +4851,19 @@
     Global Mode
   </a>
   
+    <nav class="md-nav" aria-label="Global Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tunnel-options" class="md-nav__link">
+    Tunnel Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4868,7 +4903,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tunnel-options" class="md-nav__link">
+  <a href="#tunnel-options_1" class="md-nav__link">
     Tunnel Options
   </a>
   
@@ -6391,6 +6426,19 @@
     Global Mode
   </a>
   
+    <nav class="md-nav" aria-label="Global Mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tunnel-options" class="md-nav__link">
+    Tunnel Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -6430,7 +6478,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tunnel-options" class="md-nav__link">
+  <a href="#tunnel-options_1" class="md-nav__link">
     Tunnel Options
   </a>
   
@@ -6498,6 +6546,28 @@
 <p>E' ideale per gli scenari in cui tutto il traffico dei client deve passare attraverso un singolo server VPN, ad esempio per sicurezza di rete unificata o accesso a contenuti specifici per regione.</p>
 <p>Nell'esempio seguente, il router si connette a un server australiano usando il protocollo WireGuard. Tutto il traffico dei client connessi verra' instradato attraverso questo tunnel VPN.</p>
 <p><img alt="connected global mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/connected-global-mode.png" /></p>
+<h4 id="tunnel-options">Tunnel Options<a class="headerlink" href="#tunnel-options" title="Permanent link">&para;</a></h4>
+<p>Puoi configurare impostazioni avanzate per il tunnel VPN, come VPN Kill Switch, IP Masquerading e MTU.</p>
+<p>Fai clic sull'icona dell'ingranaggio nell'angolo in alto a destra.</p>
+<p><img alt="global mode options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/global_mode_options1.png" /></p>
+<p><img alt="global mode options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/global_mode_options2.png" /></p>
+<ul>
+<li>
+<p><strong>Kill Switch</strong>: se abilitato, tutto il traffico instradato attraverso questo tunnel VPN verra' bloccato automaticamente se la connessione VPN fallisce. Se disabilitato, il traffico tornera' alla WAN locale e accedera' a Internet senza passare attraverso il tunnel VPN.</p>
+</li>
+<li>
+<p><strong>Services from GL.iNet Use VPN</strong>: se abilitato, i servizi GoodCloud, DDNS e rtty trasmetteranno i pacchetti attraverso i tunnel VPN. Questa opzione e' disabilitata per impostazione predefinita, poiche' questi servizi di norma richiedono il reale indirizzo IP del dispositivo per funzionare correttamente.</p>
+</li>
+<li>
+<p><strong>Allow Remote Access the LAN Subnet</strong>: se abilitato, sara' consentito l'accesso remoto a questo router e ai suoi dispositivi LAN tramite VPN. Il server VPN deve pubblicizzare una route verso la subnet LAN di questo router.</p>
+</li>
+<li>
+<p><strong>IP Masquerading</strong>: se abilitato, gli indirizzi IP sorgente dei client LAN verranno riscritti con l'IP del tunnel VPN del router. Disabilita questa opzione solo per configurazioni Site-to-Site in cui il peer remoto conosce le tue subnet LAN.</p>
+</li>
+<li>
+<p><strong>MTU</strong>: abbreviazione di Maximum Transmission Unit. Il valore MTU impostato per il tunnel sovrascrivera' il valore definito nel file di configurazione.</p>
+</li>
+</ul>
 <h3 id="policy-mode">Policy Mode<a class="headerlink" href="#policy-mode" title="Permanent link">&para;</a></h3>
 <p>In questa modalita', il router puo' connettersi a piu' server VPN e puoi personalizzare le regole di instradamento per diversi client o destinazioni del traffico.</p>
 <p>E' adatta ai casi d'uso che richiedono una gestione flessibile del traffico, ad esempio instradare traffici diversi verso destinazioni diverse attraverso piu' server VPN.</p>
@@ -6670,20 +6740,26 @@
 </ul>
 </li>
 </ol>
-<h4 id="tunnel-options">Tunnel Options<a class="headerlink" href="#tunnel-options" title="Permanent link">&para;</a></h4>
+<h4 id="tunnel-options_1">Tunnel Options<a class="headerlink" href="#tunnel-options_1" title="Permanent link">&para;</a></h4>
 <p>Puoi configurare impostazioni avanzate per ciascun tunnel VPN, come VPN Kill Switch, IP Masquerading e MTU.</p>
 <p>Fai clic sull'icona dell'ingranaggio accanto al nome del tunnel e seleziona <strong>Options</strong>.</p>
 <p><img alt="tunnel options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/tunnel_options_1.png" /></p>
 <p><img alt="tunnel options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.8/tunnel_options_2.png" /></p>
 <ul>
 <li>
-<p><strong>Kill Switch</strong>: se abilitato, il traffico che corrisponde a questo tunnel VPN verra' bloccato se la connessione VPN fallisce inaspettatamente. Se disabilitato, tale traffico effettuera' failover verso il tunnel successivo in priorita' o verso la WAN locale.</p>
+<p><strong>Kill Switch</strong>: se abilitato, tutto il traffico instradato attraverso questo tunnel VPN verra' bloccato automaticamente se la connessione VPN fallisce. Se disabilitato, il traffico effettuera' failover verso il tunnel successivo in priorita' oppure verso la WAN locale.</p>
 </li>
 <li>
 <p><strong>Services from GL.iNet Use VPN</strong>: se abilitato, i servizi GoodCloud, DDNS e rtty trasmetteranno i pacchetti attraverso i tunnel VPN. Questa opzione e' disabilitata per impostazione predefinita, poiche' questi servizi di norma richiedono il reale indirizzo IP del dispositivo per funzionare correttamente.</p>
 </li>
 <li>
-<p><strong>Allow Remote Access the LAN Subnet</strong>: se abilitato, sara' consentito l'accesso remoto a questo router e ai suoi dispositivi LAN tramite la VPN. Richiede che il server VPN pubblichi una route di ritorno verso la propria subnet LAN.</p>
+<p><strong>Allow Remote Access the LAN Subnet</strong>: se abilitato, sara' consentito l'accesso remoto a questo router e ai suoi dispositivi LAN tramite VPN. Il server VPN deve pubblicizzare una route verso la subnet LAN di questo router.</p>
+</li>
+<li>
+<p><strong>IP Masquerading</strong>: se abilitato, gli indirizzi IP sorgente dei client LAN verranno riscritti con l'IP del tunnel VPN del router. Disabilita questa opzione solo per configurazioni Site-to-Site in cui il peer remoto conosce le tue subnet LAN.</p>
+</li>
+<li>
+<p><strong>MTU</strong>: abbreviazione di Maximum Transmission Unit. Il valore MTU impostato per il tunnel sovrascrivera' il valore definito nel file di configurazione.</p>
 </li>
 </ul>
 <hr />
