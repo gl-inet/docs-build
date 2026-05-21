@@ -1412,8 +1412,6 @@
       
         
       
-        
-      
     
     
     
@@ -1515,26 +1513,6 @@
   
   <span class="md-ellipsis">
     Delete Cloud account
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../firmware_outdated/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Upgrade Firmware
   </span>
   
 
@@ -3206,8 +3184,7 @@
   <h1 id="using-u-boot-to-unbrick-your-kvm">Using U-Boot to unbrick your KVM<a class="headerlink" href="#using-u-boot-to-unbrick-your-kvm" title="Permanent link">&para;</a></h1>
 <p>If you bricked your KVM due to some DIY projects or flashing a wrong firmware, your KVM may not be able to power up properly. In this case, you can re-install the firmware by using U-Boot failsafe.</p>
 <h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
-<p>Please prepare a computer with an Ethernet port. </p>
-<p>If your computer does not have Ethernet port, prepare an additional USB Ethernet Adapter. </p>
+<p>Please prepare a computer or laptop with an Ethernet port. If your computer does not have an ethernet port, an additional USB-Ethernet adapter is required.</p>
 <h2 id="unbrick-steps">Unbrick steps<a class="headerlink" href="#unbrick-steps" title="Permanent link">&para;</a></h2>
 <p>To avoid unbrick failure, please follow the steps below strictly.</p>
 <ol>
@@ -3218,8 +3195,10 @@
 <p>Remove the power of KVM. Connect your computer to the Ethernet port of the KVM.</p>
 </li>
 <li>
-<p>Press and hold the Reset button firmly, and power on the KVM <strong>at the same time</strong>.</p>
-<p>Then you will see the LED flashing in a regular pattern several times. Release the button <strong>after</strong> the flash sequence changes.</p>
+<p>Press and hold the Reset button firmly, <strong>at the same time power on your KVM</strong>.</p>
+<p>Wait for the LED to flash in a regular sequence several times. Release the Reset button <strong>after</strong> the flashing pattern changes.</p>
+<div class="admonition note">
+<p class="admonition-title">LED Flashing Patterns by Device Model</p>
 <ul>
 <li>
 <p><strong>Comet (GL-RM1)</strong>: When holding the Reset button, the blue LED will flash 5 times. Release the Reset button after the 5 flashes, and the blue LED will remain solid.</p>
@@ -3228,9 +3207,13 @@
 <p><strong>Comet PoE (GL-RM1PE)</strong>: When holding the Reset button, the blue LED will flash 5 times. Release the Reset button after the 5 flashes, and the blue LED will remain solid.</p>
 </li>
 <li>
-<p><strong>Comet Pro (GL-RM10)</strong>: Hold the Reset button for about 5 seconds, during which power on the KVM at the same time, then release the button. It will enter the U-Boot mode.</p>
+<p><strong>Comet Pro (GL-RM10)</strong>: Hold the Reset button for about 5 seconds, during which power on your KVM at the same time, then release the button. It will enter the U-Boot mode.</p>
+</li>
+<li>
+<p><strong>Comet 5G (GL-RM10RC)</strong>: Hold the Reset button for about 5 seconds, during which power on your KVM at the same time, then release the button. It will enter the U-Boot mode.</p>
 </li>
 </ul>
+</div>
 </li>
 <li>
 <p>Manually set the IP address of your computer to <strong>192.168.1.2</strong>. Please check the step-by-step guide for different operating systems below.</p>
@@ -3322,18 +3305,18 @@
 <p><strong>Note:</strong> The U-Boot Web UI above may not be exactly the same as what you see, because the U-Boot version is different for different production dates. For security reasons, we currently do not provide separate U-Boot upgrades. If an update is necessary, we will integrate it into the new firmware.</p>
 </li>
 <li>
-<p>Click <strong>Choose file</strong> button to find the firmware file. Then click <strong>Update firmware</strong> button.</p>
+<p>Click <strong>Choose file</strong> and select the firmware file. Then click <strong>Update firmware</strong> button.</p>
 </li>
 <li>
 <p>Wait for about 3 minutes. <strong>Do NOT power off your KVM when updating.</strong> </p>
 <p>The KVM is ready when its LED is <strong>flashing white</strong>.</p>
 </li>
 <li>
-<p>Revert the computer IP setting you did in step 4.</p>
+<p>Revert the computer IP settings you did in step 4.</p>
 </li>
 <li>
-<p>Unplug the Ethernet cable between your computer and the KVM, then connect your KVM to a network source (e.g. a router or a network switch) via this Ethernet cable. For Comet Pro (GL-RM10), you can also connect it to the Wi-Fi.</p>
-<p>Wait for about 1 minute to allow the KVM to obtain Internet access. Then connect your computer to the network source, and you will be able to access the KVM via <code>glkvm.local</code> again.</p>
+<p>Unplug the Ethernet cable between your computer and the KVM, then connect your KVM to a network source (e.g. a router or a network switch) via this Ethernet cable or Wi-Fi.</p>
+<p>Wait for about 1 minute to allow the KVM to obtain Internet access. You will then be able to access your KVM again.</p>
 <p><strong>Note:</strong> Configuration settings are typically retained. However, they will be reverted to default if a configuration error caused the system failure that required recovery.</p>
 </li>
 </ol>
