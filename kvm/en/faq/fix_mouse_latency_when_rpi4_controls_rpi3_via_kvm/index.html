@@ -12,13 +12,13 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/kvm/en/faq/speaker_microphone_settings_cannot_be_retained/">
+        <link rel="canonical" href="https://docs.gl-inet.com/kvm/en/faq/fix_mouse_latency_when_rpi4_controls_rpi3_via_kvm/">
       
       
-        <link rel="prev" href="../no_audio_from_the_controlled_device/">
+        <link rel="prev" href="../difference_between_absolute_and_relative_mouse/">
       
       
-        <link rel="next" href="../../tutorials/">
+        <link rel="next" href="../no_audio_from_the_controlled_device/">
       
       
       <link rel="icon" href="../../images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>The speaker and microphone settings cannot be retained - GL.iNet KVM Docs</title>
+        <title>Mouse latency when RPi4 controls RPi3 via KVM - GL.iNet KVM Docs</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#why-cant-i-keep-my-speaker-and-microphone-settings" class="md-skip">
+        <a href="#how-to-fix-mouse-latency-when-rpi4-controls-rpi3-via-kvm" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The speaker and microphone settings cannot be retained
+              Mouse latency when RPi4 controls RPi3 via KVM
             
           </span>
         </div>
@@ -1872,6 +1872,8 @@
                 
   
   
+    
+  
   
     
     
@@ -1892,12 +1894,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" checked>
         
           
           <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
@@ -1911,7 +1913,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             Keyboard & Mouse Issues
@@ -2022,9 +2024,18 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../fix_mouse_latency_when_rpi4_controls_rpi3_via_kvm/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2033,6 +2044,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -2050,8 +2062,6 @@
                 
   
   
-    
-  
   
     
     
@@ -2064,12 +2074,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
         
           
           <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
@@ -2083,7 +2093,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_9">
             <span class="md-nav__icon md-icon"></span>
             Audio Issues
@@ -2114,18 +2124,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../speaker_microphone_settings_cannot_be_retained/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2134,7 +2135,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -3093,13 +3093,9 @@
   
 
   <!-- Markdown content -->
-  <h1 id="why-cant-i-keep-my-speaker-and-microphone-settings">Why can't I keep my speaker and microphone settings?<a class="headerlink" href="#why-cant-i-keep-my-speaker-and-microphone-settings" title="Permanent link">&para;</a></h1>
-<p>You may notice that if you enable Speaker or Microphone on the KVM console (from Settings -&gt; Remote Device Settings), these settings won't be retained when you restart, re-login to KVM or refresh the webpage (in local access). </p>
-<p>Instead, the Speaker will be automatically disabled, and the Microphone, though it still shows as enabled after you restart the device or refresh the webpage, will be muted.</p>
-<p><img alt="speaker mic settings" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/speaker_microphone_settings_cannot_be_retained/speaker_microphone_settings.png" /></p>
-<p>This is because, due to browser security policies, the Speaker and Microphone are disabled/muted by default every time you restart, re-login to KVM or refresh the webpage (in local access). You can enable them manually if required. </p>
-<p>Authorization is required when enabling the Microphone for the first time, as shown below.</p>
-<p><img alt="browser" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/speaker_microphone_settings_cannot_be_retained/google-browser.jpg" /></p>
+  <h1 id="how-to-fix-mouse-latency-when-rpi4-controls-rpi3-via-kvm">How to fix mouse latency when RPi4 controls RPi3 via KVM?<a class="headerlink" href="#how-to-fix-mouse-latency-when-rpi4-controls-rpi3-via-kvm" title="Permanent link">&para;</a></h1>
+<p>Mouse lag may appear when operating RPi3 remotely from RPi4 over KVM, usually lasting several seconds.</p>
+<p>To resolve the issue, add <code>usbhid.mousepoll=0</code> to the boot parameter line in <code>/boot/cmdline.txt</code> or <code>/boot/firmware/cmdline.txt</code> on the controlled RPi3, then restart the device.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
