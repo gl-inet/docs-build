@@ -1460,8 +1460,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#can-i-use-an-ssl-certificate-in-the-kvm" class="md-nav__link">
-    Can I use an SSL certificate in the KVM?
+  <a href="#can-i-use-my-own-certificate" class="md-nav__link">
+    Can I use my own certificate?
   </a>
   
 </li>
@@ -3187,8 +3187,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#can-i-use-an-ssl-certificate-in-the-kvm" class="md-nav__link">
-    Can I use an SSL certificate in the KVM?
+  <a href="#can-i-use-my-own-certificate" class="md-nav__link">
+    Can I use my own certificate?
   </a>
   
 </li>
@@ -3222,7 +3222,7 @@
 <p><img alt="privacy error" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/privacy_error_1.png" /></p>
 <p>This is a standard security warning that browsers issue when they detect a website lacking an SSL/TLS certificate, as HTTPS connections rely on certificates to verify server identity and encrypt data.</p>
 <h2 id="why-do-i-get-this-warning">Why do I get this warning?<a class="headerlink" href="#why-do-i-get-this-warning" title="Permanent link">&para;</a></h2>
-<p>In the example above, <strong>192.168.8.11</strong> is the KVM's local IP address dynamically assigned by the upper router via DHCP. </p>
+<p>In the example above, <strong>192.168.8.11</strong> is the KVM local IP address dynamically assigned by the upper router via DHCP. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If the gateway of your router that your GL.iNet KVM is connected to is "192.168.x.1" (where x is typically 0, 1, or 8 in private networks), the local IP of your KVM should be "192.168.x.y" (where y is a valid host address in the subnet).</p>
@@ -3231,23 +3231,24 @@
 <p>However, browsers usually do not distinguish between local console and normal public websites; they treat all IP addresses as websites and expect HTTPS connections to be secured by SSL/TLS certificates.</p>
 <p>A genuinely secure website uses an SSL/TLS certificate, so when browsers access a local console (which does not have a certificate), they trigger a security alert due to the missing certificate.</p>
 <h2 id="what-can-i-do-with-this-alert">What can I do with this alert?<a class="headerlink" href="#what-can-i-do-with-this-alert" title="Permanent link">&para;</a></h2>
-<p>Please click <strong>Advanced</strong> and <strong>Continue to "192.168.8.11"</strong>.</p>
+<p>Click <strong>Advanced</strong> and <strong>Continue to "192.168.8.11"</strong>.</p>
 <p><img alt="Continue to 192.168.8.11" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/privacy_error_2.jpg" /></p>
-<p>Then you will be re-directed to the GL.iNet KVM console.</p>
+<p>Then you will be redirected to the GL.iNet KVM console.</p>
 <p><img alt="local access to kvm admin" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/local_access.png" /></p>
-<h2 id="can-i-use-an-ssl-certificate-in-the-kvm">Can I use an SSL certificate in the KVM?<a class="headerlink" href="#can-i-use-an-ssl-certificate-in-the-kvm" title="Permanent link">&para;</a></h2>
-<p>Yes, you can use your SSL certificate in the GL.iNet KVM.</p>
-<p>Firstly, please apply for an SSL cert or use a self-signed SSL cert. </p>
-<p>Secondly, access KVM's terminal or use WinSCP (recommended) to modify files on your KVM. The automatically generated certificate and key are storaged in this path: <code>/etc/kvmd/nginx/ssl</code> (which has been changed to <code>/etc/kvmd/user/ssl</code> since firmware v1.4.0). </p>
-<p>Please replace them with the new SSL certificate and key.</p>
-<p><strong>Note</strong>: </p>
+<h2 id="can-i-use-my-own-certificate">Can I use my own certificate?<a class="headerlink" href="#can-i-use-my-own-certificate" title="Permanent link">&para;</a></h2>
+<p>Yes. You may install and use your own SSL/TLS certificate on the KVM. Follow the steps below.</p>
 <ol>
 <li>
-<p>Prior to firmware v1.4.0, the KVM certificate is automatically regenerated after each firmware upgrade, and uploaded SSL certificates are not backed up.</p>
-<p>If necessary, please re-upload the SSL certificate to replace the auto-generated one after a firmware upgrade.</p>
+<p>Apply for an SSL/TLS certificate or use a self-signed one.</p>
 </li>
 <li>
-<p>Starting from firmware v1.4.0, firmware upgrades will not cause the KVM certificate to be regenerated, unless the firmware is manually reset.</p>
+<p>Log in to your KVM console. Click the shield icon in the upper right corner to go to <strong>Security</strong> -&gt; <strong>TLS Certificate</strong>.</p>
+<p><img alt="custom cert 1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/custom_cert1.png" /></p>
+<p>In the pop-up window, select <strong>Custom Certificate</strong>, then upload your certificate file and private key. This feature has been available since firmware v1.8.0.</p>
+<p><img alt="custom cert 2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/custom_cert2.png" /></p>
+<p>Alternatively, you can edit configuration files on the KVM via SSH terminal or WinSCP. The auto-generated certificate and key are stored in the following path:</p>
+<p><code>/etc/kvmd/user/ssl</code></p>
+<p>Replace them with your new SSL certificate and private key.</p>
 </li>
 </ol>
 <hr />
