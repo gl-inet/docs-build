@@ -6467,16 +6467,55 @@
   <h1 id="conectar-routers-glinet-a-una-red-eap">Conectar routers GL.iNet a una red EAP<a class="headerlink" href="#conectar-routers-glinet-a-una-red-eap" title="Permanent link">&para;</a></h1>
 <p>Algunos routers GL.iNet admiten la conexión a redes Wi-Fi EAP, Extensible Authentication Protocol.</p>
 <p>EAP es un marco de autenticación utilizado habitualmente con <strong>autenticación 802.1X</strong> para redes <strong>WPA2‑Enterprise / WPA3‑Enterprise</strong>. Un ejemplo típico es <strong>eduroam</strong>, un servicio global de itinerancia Wi-Fi para educación e investigación que se basa en 802.1X y EAP.</p>
-<p>Esta guía presenta dos formas de conectar routers GL.iNet a una red Wi-Fi EAP: mediante el Admin Panel y mediante LuCI.</p>
+<p>Esta guía presenta dos formas de conectar routers GL.iNet a una red Wi-Fi EAP: mediante el panel de administración web de GL.iNet y mediante LuCI.</p>
 <h2 id="modelos-compatibles">Modelos compatibles<a class="headerlink" href="#modelos-compatibles" title="Permanent link">&para;</a></h2>
-<p>??? "Modelos compatibles" - GL-MT3600BE (Beryl 7) - GL-E5800 (Mudi 7) - GL-BE6500 (Flint 3e) - GL-BE9300 (Flint 3) - GL-BE3600 (Slate 7) - GL-X2000 (Spitz Plus) - GL-B3000 (Marble) - GL-AX1800 (Flint) - GL-AXT1800 (Slate AX) - GL-A1300 (Slate Plus) - GL-XE300 (Puli) - GL-E750/GL-E750V2 (Mudi) - GL-X750/GL-X750V2 (Spitz) - GL-AR750S (Slate) - GL-AR750 (Creta) - GL-AR300M Series (Shadow) - GL-B1300 (Convexa-B) - GL-AP1300 (Cirrus) - GL-X300B (Collie) - ※GL-MT6000 (Flint 2) - ※GL-MT3000 (Beryl AX) - ※GL-SFT1200 (Opal)</p>
-<pre><code>**Nota:**
-
-1. GL-MT6000 (Flint 2) y GL-MT3000 (Beryl AX) no admiten la conexión a redes EAP con el firmware predeterminado instalado, pero GL.iNet proporciona firmware nativo OpenWrt 24 para estos modelos, que puede instalarse para habilitar la conexión a redes EAP. Busque el modelo en el [Download Center](https://dl.gl-inet.com/){target="_blank"} y vaya a la pestaña OPENWRT 24 para obtener más detalles.
-
-2. GL-SFT1200 (Opal) admite la conexión a redes EAP con firmware v4.8.
-</code></pre>
-<p>??? "Modelos no compatibles" - GL-MT5000 (Brume 3) - GL-X3000 (Spitz AX) - GL-XE3000 (Puli AX) - GL-MT2500/GL-MT2500A (Brume 2) - GL-MT1300 (Beryl) - GL-MT300N-V2 (Mango)</p>
+<details>
+<summary>Modelos compatibles</summary>
+<ul>
+<li>GL-MT3600BE (Beryl 7)</li>
+<li>GL-E5800 (Mudi 7)</li>
+<li>GL-BE6500 (Flint 3e)</li>
+<li>GL-BE9300 (Flint 3)</li>
+<li>GL-BE3600 (Slate 7)</li>
+<li>GL-X2000 (Spitz Plus)</li>
+<li>GL-B3000 (Marble)</li>
+<li>GL-AX1800 (Flint)</li>
+<li>GL-AXT1800 (Slate AX)</li>
+<li>GL-A1300 (Slate Plus)</li>
+<li>GL-XE300 (Puli)</li>
+<li>GL-E750/GL-E750V2 (Mudi)</li>
+<li>GL-X750/GL-X750V2 (Spitz)</li>
+<li>GL-AR750S (Slate)</li>
+<li>GL-AR750 (Creta)</li>
+<li>GL-AR300M Series (Shadow)</li>
+<li>GL-B1300 (Convexa-B)</li>
+<li>GL-AP1300 (Cirrus)</li>
+<li>GL-X300B (Collie)</li>
+<li>※GL-MT6000 (Flint 2)</li>
+<li>※GL-MT3000 (Beryl AX)</li>
+<li>※GL-SFT1200 (Opal)</li>
+</ul>
+<p><strong>Nota:</strong></p>
+<ol>
+<li>
+<p>GL-MT6000 (Flint 2) y GL-MT3000 (Beryl AX) no admiten la conexión a redes EAP con el firmware predeterminado instalado, pero GL.iNet proporciona firmware nativo OpenWrt 24 para estos modelos, que puede instalarse para habilitar la conexión a redes EAP. Busque el modelo en el <a href="https://dl.gl-inet.com/" target="_blank">Download Center</a> y vaya a la pestaña OPENWRT 24 para obtener más detalles.</p>
+</li>
+<li>
+<p>GL-SFT1200 (Opal) admite la conexión a redes EAP con firmware v4.8.</p>
+</li>
+</ol>
+</details>
+<details>
+<summary>Modelos no compatibles</summary>
+<ul>
+<li>GL-MT5000 (Brume 3)</li>
+<li>GL-X3000 (Spitz AX)</li>
+<li>GL-XE3000 (Puli AX)</li>
+<li>GL-MT2500/GL-MT2500A (Brume 2)</li>
+<li>GL-MT1300 (Beryl)</li>
+<li>GL-MT300N-V2 (Mango)</li>
+</ul>
+</details>
 <h2 id="conectar-mediante-el-panel-de-administracion-web">Conectar mediante el panel de administración web<a class="headerlink" href="#conectar-mediante-el-panel-de-administracion-web" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Inicie sesión en el panel de administración web, vaya a <strong>INTERNET</strong> -&gt; <strong>Repeater</strong> y haga clic en <strong>Connect</strong>.</li>
@@ -6501,6 +6540,9 @@
 <h2 id="conectar-mediante-luci">Conectar mediante LuCI<a class="headerlink" href="#conectar-mediante-luci" title="Permanent link">&para;</a></h2>
 <p>El panel de administración web de GL.iNet solo admite un número limitado de tipos EAP.</p>
 <p>Si la red EAP de destino no puede conectarse mediante el panel de administración web, intente conectarse mediante la interfaz LuCI.</p>
+<blockquote>
+<p>Nota: Los siguientes pasos son solo de referencia; consulte la página LuCI real de su dispositivo.</p>
+</blockquote>
 <ol>
 <li>Inicie sesión en el panel de administración web y vaya a <strong>SYSTEM</strong> -&gt; <strong>Advanced Settings</strong>. Instale LuCI y haga clic en <strong>Go to LuCI</strong>.</li>
 </ol>
