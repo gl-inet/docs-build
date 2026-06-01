@@ -4237,6 +4237,8 @@
       
         
       
+        
+      
     
     
     
@@ -5818,6 +5820,140 @@
                 
   
   
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_10" id="__nav_5_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Securite
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_10">
+            <span class="md-nav__icon md-icon"></span>
+            Securite
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../port_forwarding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redirection de port
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ACL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin_access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acces administrateur
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nat_settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mode NAT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -5861,10 +5997,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" checked>
         
           
-          <label class="md-nav__link" for="__nav_5_10" id="__nav_5_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -5875,8 +6011,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_10_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_11">
             <span class="md-nav__icon md-icon"></span>
             Systeme
           </label>
@@ -6610,6 +6746,9 @@
 </li>
 </ul>
 <h3 id="luci">LuCI<a class="headerlink" href="#luci" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Remarque : installez LuCI dans <strong>Advanced Settings</strong> avant de configurer le contrôle d'accès correspondant.</p>
+</blockquote>
 <ul>
 <li>
 <p><strong>HTTP Port</strong> : 8080 par défaut, pour l'accès HTTP non chiffré à l'interface LuCI.</p>
@@ -6986,8 +7125,25 @@
 <p><img alt="add_ip_address_1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/add_ip_address_1.png" /></p>
 <p><img alt="add_ip_address_2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/add_ip_address_2.png" /></p>
 <h2 id="ports-ouverts-sur-le-routeur">Ports ouverts sur le routeur<a class="headerlink" href="#ports-ouverts-sur-le-routeur" title="Permanent link">&para;</a></h2>
-<p>Cette section affiche les ports actuellement ouverts sur le routeur et vous permet d'en ouvrir ou fermer selon vos besoins.</p>
-<p><img alt="open_ports" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/open_ports.png" /></p>
+<p>Les services du routeur, comme le Web et le FTP, nécessitent que leurs ports respectifs soient ouverts sur le routeur pour être accessibles publiquement.</p>
+<p>Pour ouvrir un port, cliquez sur <strong>Add</strong>.</p>
+<p><img alt="open Ports on router" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/open_ports_on_router.png" /></p>
+<p><img alt="open Ports on router" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/security/add_new_open_port.png" /></p>
+<ul>
+<li>
+<p><strong>Protocol:</strong> Sélectionnez un protocole parmi <code>TCP/UDP</code>, <code>TCP</code> et <code>UDP</code>.</p>
+</li>
+<li>
+<p><strong>Port:</strong> Saisissez le numéro du port que vous voulez ouvrir.</p>
+</li>
+<li>
+<p><strong>Description:</strong> Ajoutez une description à cette règle (facultatif).</p>
+</li>
+<li>
+<p><strong>Enable:</strong> Activez ou désactivez cette règle.</p>
+</li>
+</ul>
+<hr />
 <hr />
 <p>Vous avez encore des questions ? Consultez notre <a href="https://forum.gl-inet.com" target="_blank">forum communautaire</a> ou <a href="https://www.gl-inet.com/contacts/" target="_blank">contactez-nous</a>.</p>
 
