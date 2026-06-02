@@ -18,7 +18,7 @@
         <link rel="prev" href="../remote_access_via_tailscale/">
       
       
-        <link rel="next" href="../debrick/">
+        <link rel="next" href="../remote_access_via_netbird/">
       
       
       <link rel="icon" href="../../images/favicon.png">
@@ -1260,6 +1260,8 @@
       
         
       
+        
+      
     
     
     
@@ -1381,6 +1383,26 @@
   
   <span class="md-ellipsis">
     Remote access via ZeroTier
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote_access_via_netbird/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remote access via NetBird
   </span>
   
 
@@ -2648,6 +2670,8 @@
       
         
       
+        
+      
     
     
     
@@ -2750,15 +2774,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enable-zerotier-in-local-access" class="md-nav__link">
-    Enable ZeroTier in local access
+  <a href="#enable-zerotier" class="md-nav__link">
+    Enable ZeroTier
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bind-kvm-to-zerotier-network" class="md-nav__link">
-    Bind KVM to ZeroTier network
+  <a href="#bind-kvm-to-zerotier" class="md-nav__link">
+    Bind KVM to ZeroTier
   </a>
   
 </li>
@@ -2781,6 +2805,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote_access_via_netbird/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to access the KVM remotely via NetBird
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3180,15 +3224,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enable-zerotier-in-local-access" class="md-nav__link">
-    Enable ZeroTier in local access
+  <a href="#enable-zerotier" class="md-nav__link">
+    Enable ZeroTier
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bind-kvm-to-zerotier-network" class="md-nav__link">
-    Bind KVM to ZeroTier network
+  <a href="#bind-kvm-to-zerotier" class="md-nav__link">
+    Bind KVM to ZeroTier
   </a>
   
 </li>
@@ -3232,17 +3276,19 @@
 
   <!-- Markdown content -->
   <h1 id="how-to-access-the-kvm-remotely-via-zerotier">How to access the KVM remotely via ZeroTier?<a class="headerlink" href="#how-to-access-the-kvm-remotely-via-zerotier" title="Permanent link">&para;</a></h1>
-<p><strong>Note</strong>: Please upgrade your KVM firmware to v1.8.0 before using this feature.</p>
-<p>GL.iNet KVM integrates ZeroTier, allowing you to bind it to the ZeroTier network for remote access — no need to install the GLKVM app or use the cloud service. This is particularly useful when your controlling device does not run Windows, macOS, Android, or iOS (and thus cannot install the GLKVM app), or when you do not want to use the GLKVM app or cloud service.</p>
-<p>Follow these steps to access your GL.iNet KVM and the controlled device remotely via ZeroTier.</p>
-<h2 id="enable-zerotier-in-local-access">Enable ZeroTier in local access<a class="headerlink" href="#enable-zerotier-in-local-access" title="Permanent link">&para;</a></h2>
-<p><strong>Before you begin, please connect your KVM and the controlling device to the same local network.</strong></p>
-<p>Then access the KVM console locally using its domain name or IP address. This guide uses the local IP address as an example.</p>
+<blockquote>
+<p>Note: Please upgrade your KVM firmware to v1.8.0 before using this feature.</p>
+</blockquote>
+<p>GL.iNet KVM integrates ZeroTier, allowing you to bind it to the ZeroTier network for remote access — no need to install the GLKVM app or use the cloud service. </p>
+<p>Follow these steps to remotely access your GL.iNet KVM via ZeroTier.</p>
+<h2 id="enable-zerotier">Enable ZeroTier<a class="headerlink" href="#enable-zerotier" title="Permanent link">&para;</a></h2>
+<p><strong>Before you begin, connect your KVM and the controlling device to the same local network.</strong></p>
 <ol>
 <li>
 <p>Open a browser on the controlling device. Chrome or Edge is recommended for better compatibility.</p>
 </li>
 <li>
+<p>Log in to your KVM console locally using its domain or IP address. Here we use the local IP address as an example.</p>
 <p>Enter the KVM's <strong>LAN IP address</strong> (found on the touchscreen or in your router) in the address bar. You will be directed to the GLKVM login page. Enter your admin password.</p>
 <p><img alt="local access via ip" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_zerotier/1_local_access.png" /></p>
 </li>
@@ -3252,7 +3298,7 @@
 <p><img alt="enable zerotier" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_zerotier/2_enable_zerotier.png" /></p>
 </li>
 </ol>
-<h2 id="bind-kvm-to-zerotier-network">Bind KVM to ZeroTier network<a class="headerlink" href="#bind-kvm-to-zerotier-network" title="Permanent link">&para;</a></h2>
+<h2 id="bind-kvm-to-zerotier">Bind KVM to ZeroTier<a class="headerlink" href="#bind-kvm-to-zerotier" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>When signing in to <a href="https://my.zerotier.com/" target="_blank">ZeroTier</a> for the first time, you may be required to select ZeroTier Central.</p>
@@ -3291,14 +3337,17 @@
 </li>
 </ol>
 <h2 id="bind-the-controlling-device">Bind the controlling device<a class="headerlink" href="#bind-the-controlling-device" title="Permanent link">&para;</a></h2>
-<p>Install ZeroTier on your controlling device from <a href="https://www.zerotier.com/download/" target="_blank">here</a>, and join it to the same ZeroTier network. </p>
-<p>The following example shows how to bind a Windows laptop (as the controlling device) to the ZeroTier network.</p>
+<p>The example below demonstrates how to bind a Windows laptop (as the controlling device) to the ZeroTier network.</p>
 <ol>
 <li>
-<p>Run ZeroTier on the controlling device. ZeroTier does not display a separate window/UI on the desktop; it only resides as an icon in the system tray (bottom-right corner). All operations are performed via the right-click menu.</p>
-<p>Right click the ZeroTier icon, and click <strong>Join New Network</strong>. In the pop-up window, enter the same <strong>Network ID</strong> to join this PC to the same ZeroTier network.</p>
+<p>Install ZeroTier on your laptop from <a href="https://www.zerotier.com/download/" target="_blank">here</a>. </p>
+</li>
+<li>
+<p>Run ZeroTier on the laptop and add it to the same ZeroTier network. </p>
+<p>Note that ZeroTier does not display a separate window/UI on the desktop; it only resides as an icon in the system tray (bottom-right corner). All operations are performed via the right-click menu.</p>
+<p>Right click the ZeroTier icon, and click <strong>Join New Network</strong>. In the pop-up window, enter the same <strong>Network ID</strong> to add this PC to the same ZeroTier network.</p>
 <p><img alt="join network" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_zerotier/11_pc_join_network.jpg" /></p>
-<p>Then go to ZeroTier Central, locate the Pending device and authorize it.</p>
+<p>Then go to ZeroTier Central, fine the Pending device and authorize it.</p>
 <p><img alt="authorize" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_zerotier/12_authorize.png" /></p>
 </li>
 <li>
@@ -3306,19 +3355,20 @@
 <p><img alt="authorized" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_zerotier/13_authorized.png" /></p>
 </li>
 <li>
-<p>Now your KVM and the controlling device are both added into the same ZeroTier network. You can tell by their Network ID, as shown below.</p>
+<p>Now your KVM and the laptop are both added into the same ZeroTier network. You can tell by their Network ID, as shown below.</p>
 <p><img alt="same zt network" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_zerotier/14_same_zt_network.png" /></p>
 </li>
 </ol>
 <h2 id="remote-access-via-zerotier">Remote access via ZeroTier<a class="headerlink" href="#remote-access-via-zerotier" title="Permanent link">&para;</a></h2>
-<p>The following example shows how to access the KVM console remotely using a ZeroTier IP address.</p>
+<p>The example below demonstrates how to remotely access the KVM console via the ZeroTier IP address.</p>
 <ol>
 <li>
-<p>On your controlling device, sign in to ZeroTier Central with your account, locate your KVM device, and click its <strong>ZT IP</strong> to copy it.</p>
+<p>On your laptop, sign in to ZeroTier Central with your account, find your KVM device, and click its <strong>ZT IP</strong> to copy it.</p>
 <p><img alt="zerotier ip" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_zerotier/15_zerotier_ip.png" /></p>
 </li>
 <li>
-<p>Open a new tab, paste the KVM's ZeroTier IP and press Enter. You will be redirected to the GLKVM login page. Enter your admin password to log in. You can now access your GL.iNet KVM and the controlled device via the ZeroTier IP.</p>
+<p>Open a new browser tab, paste the copied ZeroTier IP into the address bar and hit Enter. You will be redirected to the GLKVM login page. </p>
+<p>Enter your admin password to log in. You can now access your GL.iNet KVM and the controlled device via the ZeroTier IP.</p>
 <p><img alt="remote access" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_zerotier/16_remote_access.png" /></p>
 <p><strong>Tip</strong>: A privacy error may appear when accessing this ZeroTier IP for the first time. Simply click <strong>Advanced</strong> -&gt; <strong>Proceed</strong> to continue. See <a href="../privacy_error_from_your_browser/" target="_blank">Privacy error from your browser</a> for details.</p>
 </li>
