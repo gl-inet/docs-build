@@ -6598,10 +6598,10 @@
   <!-- Markdown content -->
   <h1 id="profil-client-vpn">Profil client VPN<a class="headerlink" href="#profil-client-vpn" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>Ce guide s'applique au firmware v4.9 et aux versions ultérieures. </p>
+<p>Ce guide s'applique au firmware v4.9 et aux versions ultérieures.</p>
 </blockquote>
+<p>Sur la partie gauche du panneau d'administration web, accédez à <strong>VPN</strong> -&gt; <strong>VPN Client Profile</strong>.</p>
 <p>Depuis le firmware v4.9, <a href="../openvpn_client/">OpenVPN Client</a> et <a href="../wireguard_client/">WireGuard Client</a> ont été fusionnés dans une seule page <strong>VPN Client Profile</strong> pour une gestion plus fluide. La présentation a été légèrement ajustée, mais les fonctionnalités principales restent inchangées. Vous pouvez toujours consulter les guides séparés si nécessaire.</p>
-<p>Dans le panneau d'administration web, accédez à <strong>VPN</strong> -&gt; <strong>VPN Client Profile</strong>.</p>
 <p>Cette page vous permet de vous connecter à certains services VPN intégrés et de télécharger facilement leurs profils pour établir une connexion VPN, ou de téléverser manuellement vos fichiers de configuration exportés depuis le site web d'un autre fournisseur VPN. Vous pouvez changer de protocole VPN dans l'angle supérieur droit si nécessaire.</p>
 <h2 id="wireguard">WireGuard<a class="headerlink" href="#wireguard" title="Permanent link">&para;</a></h2>
 <p>WireGuard® est un VPN moderne, léger et haute performance, conçu avec une cryptographie de pointe. Il offre une vitesse, une simplicité et une efficacité supérieures à IPsec, tout en surpassant nettement OpenVPN.</p>
@@ -6618,10 +6618,10 @@
 <li>Windscribe</li>
 </ul>
 <p><img alt="wireguard" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_client_profile/wg.png" /></p>
-<p>Si vous êtes abonné à un autre fournisseur de services WireGuard, téléchargez un fichier de configuration depuis son site web, puis cliquez sur <strong>Add Manually</strong> pour l'importer dans votre routeur et établir la connexion VPN. Si vous ne savez pas comment télécharger les fichiers de configuration, reportez-vous <a href="../../tutorials/how_to_get_configuration_files_from_wireguard_service_providers/">ici</a> ou contactez leur assistance. </p>
+<p>Si vous êtes abonné à un autre fournisseur de services WireGuard, téléchargez un fichier de configuration depuis son site web, puis cliquez sur <strong>Add Manually</strong> pour l'importer dans votre routeur et établir la connexion VPN. Si vous ne savez pas comment télécharger les fichiers de configuration, reportez-vous <a href="../../tutorials/how_to_get_configuration_files_from_wireguard_service_providers/">ici</a> ou contactez leur assistance.</p>
 <p><img alt="wireguard add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_client_profile/wg_manual.png" /></p>
 <hr />
-<p>Prenons <a href="https://www.azirevpn.com/aff/9x7wisg4" target="_blank">AzireVPN</a> comme exemple. </p>
+<p>Prenons <a href="https://www.azirevpn.com/aff/9x7wisg4" target="_blank">AzireVPN</a> comme exemple.</p>
 <ol>
 <li>
 <p>Cliquez sur <strong>AzireVPN</strong>.</p>
@@ -6643,9 +6643,20 @@
 <p><img alt="azirevpn3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_client_profile/azirevpn3.png" /></p>
 </li>
 <li>
-<p>Une fois connecté, un point vert apparaîtra à côté du fichier de configuration. </p>
+<p>Une fois connecté, un point vert apparaîtra à côté du fichier de configuration.</p>
 <p><img alt="azirevpn4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_client_profile/azirevpn4.png" /></p>
 <p>La connexion VPN est alors activée, et tous les clients connectés à ce routeur devraient utiliser le VPN pour accéder à Internet de manière sécurisée.</p>
+</li>
+<li>
+<p>(Facultatif) Si vous souhaitez que le système coupe automatiquement tout accès Internet pour votre réseau local en cas d'échec inattendu de la connexion VPN, empêchant ainsi l'exposition de votre véritable adresse IP et de vos données en ligne, et garantissant une confidentialité et une sécurité continues, accédez à <strong>VPN Dashboard</strong> pour activer le <strong>Kill Switch</strong>.</p>
+<ul>
+<li>
+<p>Pour configurer le Kill Switch pour chaque tunnel VPN individuel, référez-vous à <a href="../vpn_dashboard_v4.9/#tunnel-options">cette section</a>.</p>
+</li>
+<li>
+<p>Pour configurer le Kill Switch pour la connexion VPN globale (c'est-à-dire le Kill Switch amélioré), référez-vous à <a href="../vpn_dashboard_v4.9/#all-other-traffic">cette section</a>.</p>
+</li>
+</ul>
 </li>
 </ol>
 </div>
@@ -6667,7 +6678,7 @@
 <p>OpenVPN est un protocole VPN open source qui utilise des techniques de réseau privé virtuel pour établir des connexions sécurisées site à site ou point à point.</p>
 <p>Les routeurs GL.iNet offrent une prise en charge OpenVPN intégrée pour <a href="https://go.nordvpn.net/aff_c?offer_id=15&amp;aff_id=12016&amp;url_id=902" target="_blank">NordVPN</a>. Si vous disposez d'un abonnement actif, saisissez simplement vos identifiants de service sur la page <strong>VPN Client Profile</strong> pour terminer rapidement la configuration.</p>
 <p><img alt="ovpn" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_client_profile/ovpn.png" /></p>
-<p>Si vous êtes abonné à un autre fournisseur de services OpenVPN, téléchargez un fichier de configuration depuis son site web, puis cliquez sur <strong>Add Manually</strong> pour l'importer dans votre routeur et établir la connexion VPN. Si vous ne savez pas comment télécharger les fichiers de configuration, reportez-vous <a href="../openvpn_client/#get-configuration-files-from-openvpn-service-providers">ici</a> ou contactez leur assistance. </p>
+<p>Si vous êtes abonné à un autre fournisseur de services OpenVPN, téléchargez un fichier de configuration depuis son site web, puis cliquez sur <strong>Add Manually</strong> pour l'importer dans votre routeur et établir la connexion VPN. Si vous ne savez pas comment télécharger les fichiers de configuration, reportez-vous <a href="../openvpn_client/#get-configuration-files-from-openvpn-service-providers-get-configuration-files-from-openvpn-service-providers">ici</a> ou contactez leur assistance.</p>
 <p><img alt="ovpn add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_client_profile/ovpn_manual.png" /></p>
 <hr />
 <p>Articles connexes</p>

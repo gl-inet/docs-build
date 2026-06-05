@@ -6649,15 +6649,16 @@
 
   <!-- Markdown content -->
   <h1 id="port-forwarding">Port Forwarding<a class="headerlink" href="#port-forwarding" title="Permanent link">&para;</a></h1>
-<p>Cette page est disponible depuis le firmware v4.6. Pour les versions antérieures, veuillez consulter <a href="../firewall/">Firewall</a>.</p>
-<hr />
-<p>Dans le panneau d'administration web, accédez à <strong>NETWORK</strong> -&gt; <strong>Port Forwarding</strong>. Avec le firmware v4.9, allez dans <strong>SECURITY</strong> -&gt; <strong>Port Forwarding</strong>.</p>
-<p>Cette page vous permet de définir des règles de pare-feu, notamment <strong>DMZ</strong> et <strong>Port Forwarding</strong>.</p>
-<p>Remarque : si vous devez ouvrir des ports sur votre routeur, allez dans <strong>SYSTEM</strong> -&gt; <strong>Security</strong> ou dans <strong>SECURITY</strong> -&gt; <strong>Admin Access</strong>.</p>
+<blockquote>
+<p>Ce guide s’applique aux firmwares v4.6 et versions ultérieures. Pour les versions antérieures, veuillez consulter <a href="../firewall/">Firewall</a>.</p>
+</blockquote>
+<p>Sur le panneau d’administration web, sur la gauche, allez dans <strong>NETWORK</strong> -&gt; <strong>Port Forwarding</strong> ou <strong>SECURITY</strong> -&gt; <strong>Port Forwarding</strong> (pour les firmwares v4.9 et versions ultérieures).</p>
+<p>Cette page vous permet de configurer des règles de pare-feu, notamment la DMZ et la redirection de port.</p>
+<p>Remarque : pour ouvrir les ports du routeur, allez dans SYSTEM -&gt; <a href="../security/">Security</a> ou SECURITY -&gt; <a href="../admin_access/">Admin Access</a> (pour les firmwares v4.9 et versions ultérieures).</p>
 <h2 id="dmz">DMZ<a class="headerlink" href="#dmz" title="Permanent link">&para;</a></h2>
-<p>La DMZ permet d'exposer un ordinateur à Internet ; tous les paquets entrants seront alors redirigés vers cet ordinateur.</p>
-<p>Activez <strong>Enable DMZ</strong>. Sélectionnez l'adresse IP interne de votre appareil hôte, qui recevra tous les paquets entrants.</p>
-<p>Vous pouvez définir la priorité de la DMZ. Si la priorité de la DMZ est supérieure à celle des règles de redirection de port, toutes les règles de redirection de port seront invalidées. Sinon, les requêtes seront transférées vers l'appareil hôte DMZ uniquement si le port consulté ne possède aucune règle de redirection de port correspondante.</p>
+<p>La DMZ permet d’exposer un ordinateur à Internet ; tous les paquets entrants seront alors redirigés vers cet ordinateur.</p>
+<p>Basculez <strong>Enable DMZ</strong>. Sélectionnez l’adresse IP interne de votre appareil hôte, qui recevra tous les paquets entrants.</p>
+<p>Vous pouvez définir la priorité de la DMZ. Si la priorité de la DMZ est supérieure à celle des règles de redirection de port, toutes les règles de redirection de port seront invalidées. Sinon, les requêtes seront transférées vers l’appareil hôte DMZ uniquement si le port consulté ne possède aucune règle de redirection de port correspondante.</p>
 <p><img alt="dmz" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/port_forwarding/dmz.png" /></p>
 <h2 id="port-forwarding_1">Port Forwarding<a class="headerlink" href="#port-forwarding_1" title="Permanent link">&para;</a></h2>
 <p>Le <strong>Port Forwarding</strong> permet aux ordinateurs distants de se connecter à un ordinateur local ou à un serveur situé derrière le pare-feu du routeur sur le LAN (par exemple des serveurs web, des serveurs FTP, etc.).</p>
@@ -6673,16 +6674,16 @@
 <p><strong>External Zone:</strong> Les options disponibles pour la zone externe sont <code>WAN</code>, <code>WireGuard Client</code>, <code>WireGuard Server</code>, <code>OpenVPN Client</code>, <code>OpenVPN Server</code>, <code>LAN</code> et <code>Guest</code>.</p>
 </li>
 <li>
-<p><strong>External Port:</strong> Numéro des ports externes. Vous pouvez saisir ici un numéro de port précis. La plage de ports va de 1 à 65535. Vous pouvez définir un seul port ou une plage de ports en reliant le premier et le dernier numéro de port avec le symbole <code>-</code>, par exemple <code>501-510</code>.</p>
+<p><strong>External Port:</strong> Numéros des ports externes. Vous pouvez saisir ici un numéro de port précis. La plage de ports va de 1 à 65535. Vous pouvez définir un seul port ou une plage de ports en reliant le premier et le dernier numéro de port avec le symbole <code>-</code>, par exemple <code>501-510</code>.</p>
 </li>
 <li>
 <p><strong>Internal Zone:</strong> Les options disponibles pour la zone interne sont <code>LAN</code>, <code>Guest</code>, <code>WireGuard Client</code>, <code>WireGuard Server</code>, <code>OpenVPN Client</code>, <code>OpenVPN Server</code> et <code>WAN</code>.</p>
 </li>
 <li>
-<p><strong>Internal IP:</strong> Adresse IP attribuée par le routeur à l'appareil qui doit être accessible à distance. Si vous définissez un seul port dans <strong>External Port</strong>, vous devez définir ici ce même port. Si vous définissez une plage de ports dans <strong>External Port</strong>, vous devez définir ici la plage correspondante.</p>
+<p><strong>Internal IP:</strong> Adresse IP attribuée par le routeur à l’appareil qui doit être accessible à distance. Si vous définissez un seul port dans <strong>External Port</strong>, vous devez définir ici ce même port. Si vous définissez une plage de ports dans <strong>External Port</strong>, vous devez définir ici la plage correspondante.</p>
 </li>
 <li>
-<p><strong>Internal Port:</strong> Numéro du port interne de l'appareil. Vous pouvez saisir un numéro de port précis. Laissez ce champ vide s'il est identique au port externe.</p>
+<p><strong>Internal Port:</strong> Numéro du port interne de l’appareil. Vous pouvez saisir un numéro de port précis. Laissez ce champ vide s’il est identique au port externe.</p>
 </li>
 <li>
 <p><strong>Description:</strong> Définissez un nom personnalisé ou ajoutez une description pour cette règle (facultatif).</p>
