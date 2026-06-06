@@ -6617,6 +6617,7 @@
 <p>AmneziaWG übernimmt die architektonische Einfachheit und hohe Leistung der Originalimplementierung, beseitigt jedoch die erkennbaren Netzwerksignaturen, die WireGuard für Deep Packet Inspection (DPI)-Systeme leicht nachweisbar machen.</p>
 <h2 id="amneziawg-v20">AmneziaWG V2.0<a class="headerlink" href="#amneziawg-v20" title="Permanent link">&para;</a></h2>
 <p>Im Vergleich zu AmneziaWG v1.0 bietet v2.0 eine stärkere Verschleierung, indem neue Parameter (<strong>S3~S4</strong>) hinzugefügt und dynamische Header für Pakettypen verwendet werden (<strong>H1~H4</strong> als Bereiche statt als feste Werte). Darüber hinaus unterstützt AmneziaWG 2.0 die Parameter <strong>I1~I5</strong>, die vor jedem Handshake formatierte UDP-Pakete senden, um AmneziaWG-Datenverkehr als gewöhnlichen Nicht-VPN-Datenverkehr zu tarnen. So lässt sich Deep Packet Inspection wirksam umgehen und die Konnektivität in eingeschränkten Netzwerken verbessern.</p>
+<p><img alt="parameters" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/amneziawg_obfuscation_parameters/parameters222.png" /></p>
 <p>Diese Erweiterungen erschweren die Erkennung des VPN-Datenverkehrs und bewahren gleichzeitig die hohe Geschwindigkeit und geringe Latenz von WireGuard.</p>
 <p>So erkennen Sie die AmneziaWG-Version:</p>
 <ul>
@@ -6685,7 +6686,7 @@
 </tr>
 <tr>
 <td>I1~I5</td>
-<td>Signaturpakete zur Protokollimitierung</td>
+<td>Signaturpakete zur Protokollnachahmung</td>
 <td>beliebiger Hex-Blob</td>
 <td>N/A</td>
 </tr>

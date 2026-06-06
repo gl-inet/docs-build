@@ -2416,7 +2416,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parameter-overview" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     パラメーター概要
   </a>
   
@@ -6580,7 +6580,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parameter-overview" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     パラメーター概要
   </a>
   
@@ -6617,6 +6617,7 @@
 <p>AmneziaWG は、元の実装の設計のシンプルさと高い性能を引き継ぎつつ、WireGuard が Deep Packet Inspection（DPI）システムに容易に検出される原因となる識別可能なネットワークシグネチャを取り除いています。</p>
 <h2 id="amneziawg-v20">AmneziaWG V2.0<a class="headerlink" href="#amneziawg-v20" title="Permanent link">&para;</a></h2>
 <p>AmneziaWG v1.0 と比べて、v2.0 は新しいパラメーター（<strong>S3~S4</strong>）を追加し、パケット種別のヘッダーに動的ヘッダー（<strong>H1~H4</strong> を固定値ではなく範囲として使用）を採用することで、より強力な難読化を実現しています。さらに、AmneziaWG 2.0 は <strong>I1~I5</strong> パラメーターに対応しており、各ハンドシェイクの前に整形済みの UDP パケットを送信することで、AmneziaWG のトラフィックを通常の非 VPN トラフィックに見せかけます。これにより、ディープパケットインスペクションを効果的に回避し、制限されたネットワークでの接続性を向上させます。</p>
+<p><img alt="parameters" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/amneziawg_obfuscation_parameters/parameters222.png" /></p>
 <p>これらの強化により、VPN トラフィックは検出されにくくなりながらも、WireGuard の高速性と低遅延を維持できます。</p>
 <p>AmneziaWG のバージョンの見分け方は次のとおりです。</p>
 <ul>
@@ -6624,7 +6625,7 @@
 <li><strong>V2.0</strong>: <strong>S3~S4</strong> パラメーターを含み、<strong>H1~H4</strong> は数値範囲として定義され、<strong>I1~I5</strong> パラメーターをサポートします。</li>
 </ul>
 <p><strong>注意</strong>: I1-I5 パラメーターは自動生成されません。ユーザーは VPN 設定ファイルに追加行として手動で記述し、AmneziaWG のトラフィックを QUIC や WebRTC などの一般的なプロトコルのように見せることができます。</p>
-<h2 id="parameter-overview">パラメーター概要<a class="headerlink" href="#parameter-overview" title="Permanent link">&para;</a></h2>
+<h2 id="_1">パラメーター概要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -6645,13 +6646,13 @@
 <td>Jmin</td>
 <td>ランダムなジャンクパケットの最小サイズ（バイト）。ジャンクパケットサイズを定義するために Jmax と組み合わせて設定する必要があります</td>
 <td>0 ≤ Jmin &lt; Jmax &lt; 1280</td>
-<td>0 ≤ Jmin &lt; Jmax &lt; 1280</td>
+<td>0 &lt;= jmin &lt; jmax &lt; 1280</td>
 </tr>
 <tr>
 <td>Jmax</td>
 <td>ランダムなジャンクパケットの最大サイズ</td>
 <td>0 ≤ Jmin &lt; Jmax &lt; 1280</td>
-<td>0 ≤ Jmin &lt; Jmax &lt; 1280</td>
+<td>0≤ Jmin &lt; Jmax &lt; 1280</td>
 </tr>
 <tr>
 <td>S1</td>
