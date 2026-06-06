@@ -6625,18 +6625,19 @@
 
   <!-- Markdown content -->
   <h1 id="conectar-routers-glinet-a-una-red-eap">Conectar routers GL.iNet a una red EAP<a class="headerlink" href="#conectar-routers-glinet-a-una-red-eap" title="Permanent link">&para;</a></h1>
-<p>Algunos routers GL.iNet admiten la conexión a redes Wi-Fi EAP, Extensible Authentication Protocol.</p>
-<p>EAP es un marco de autenticación utilizado habitualmente con <strong>autenticación 802.1X</strong> para redes <strong>WPA2‑Enterprise / WPA3‑Enterprise</strong>. Un ejemplo típico es <strong>eduroam</strong>, un servicio global de itinerancia Wi-Fi para educación e investigación que se basa en 802.1X y EAP.</p>
-<p>Esta guía presenta dos formas de conectar routers GL.iNet a una red Wi-Fi EAP: mediante el panel de administración web de GL.iNet y mediante LuCI.</p>
+<p>Algunos routers GL.iNet admiten la conexión a redes Wi-Fi EAP (Extensible Authentication Protocol).</p>
+<p>EAP es un marco de autenticación utilizado habitualmente con <strong>autenticación 802.1X</strong> para redes <strong>WPA2‑Enterprise / WPA3‑Enterprise</strong>. Un ejemplo típico es <strong>eduroam</strong>, un servicio global de itinerancia Wi‑Fi para educación e investigación que se basa en 802.1X y EAP.</p>
+<p>Esta guía presenta dos formas de conectar routers GL.iNet a una red Wi‑Fi EAP: mediante el panel de administración web de GL.iNet y mediante LuCI.</p>
 <h2 id="modelos-compatibles">Modelos compatibles<a class="headerlink" href="#modelos-compatibles" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Modelos compatibles</summary>
 <ul>
-<li>GL-MT3600BE (Beryl 7)</li>
+<li><u>GL-BE10000 (Slate 7 Pro)</u><sup>1</sup></li>
+<li><u>GL-MT3600BE (Beryl 7)</u><sup>1</sup></li>
 <li>GL-E5800 (Mudi 7)</li>
 <li>GL-BE6500 (Flint 3e)</li>
 <li>GL-BE9300 (Flint 3)</li>
-<li>GL-BE3600 (Slate 7)</li>
+<li><u>GL-BE3600 (Slate 7)</u><sup>1</sup></li>
 <li>GL-X2000 (Spitz Plus)</li>
 <li>GL-B3000 (Marble)</li>
 <li>GL-AX1800 (Flint)</li>
@@ -6651,17 +6652,21 @@
 <li>GL-B1300 (Convexa-B)</li>
 <li>GL-AP1300 (Cirrus)</li>
 <li>GL-X300B (Collie)</li>
-<li>※GL-MT6000 (Flint 2)</li>
-<li>※GL-MT3000 (Beryl AX)</li>
-<li>※GL-SFT1200 (Opal)</li>
+<li><u>GL-MT6000 (Flint 2)</u><sup>2</sup></li>
+<li><u>GL-MT3000 (Beryl AX)</u><sup>2</sup></li>
+<li><u>GL-SFT1200 (Opal)</u><sup>3</sup></li>
 </ul>
-<p><strong>Nota:</strong></p>
+<hr />
+<p><strong>Nota al pie:</strong></p>
 <ol>
 <li>
-<p>GL-MT6000 (Flint 2) y GL-MT3000 (Beryl AX) no admiten la conexión a redes EAP con el firmware predeterminado instalado, pero GL.iNet proporciona firmware nativo OpenWrt 24 para estos modelos, que puede instalarse para habilitar la conexión a redes EAP. Busque el modelo en el <a href="https://dl.gl-inet.com/" target="_blank">Download Center</a> y vaya a la pestaña OPENWRT 24 para obtener más detalles.</p>
+<p>Al conectarse a redes WPA/WPA2/WPA3-Enterprise, GL-BE10000 (Slate 7 Pro), GL-MT3600BE (Beryl 7) y GL-BE3600 (Slate 7) solo admiten redes autenticadas con PEAP. Otros métodos EAP (EAP-TLS, EAP-TTLS, EAP-MD5, etc.) no son compatibles.</p>
 </li>
 <li>
-<p>GL-SFT1200 (Opal) admite la conexión a redes EAP con firmware v4.8.</p>
+<p>GL-MT6000 (Flint 2) y GL-MT3000 (Beryl AX) no admiten la conexión a redes EAP con el firmware predeterminado. Sin embargo, GL.iNet proporciona firmware nativo OpenWrt 24 para estos modelos, que añade compatibilidad con EAP. Busque el modelo en el <a href="https://dl.gl-inet.com/" target="_blank">Download Center</a> y consulte la pestaña OPENWRT 24 para obtener más detalles.</p>
+</li>
+<li>
+<p>GL-SFT1200 (Opal) admite la conexión a redes EAP a partir de la versión de firmware v4.8.</p>
 </li>
 </ol>
 </details>
@@ -6704,7 +6709,7 @@
 <p>Nota: Los siguientes pasos son solo de referencia; consulte la página LuCI real de su dispositivo.</p>
 </blockquote>
 <ol>
-<li>Inicie sesión en el panel de administración web y vaya a <strong>SYSTEM</strong> -&gt; <strong>Advanced Settings</strong>. Instale LuCI y haga clic en <strong>Go to LuCI</strong>.</li>
+<li>Inicie sesión en el panel de administración web, vaya a <strong>SYSTEM</strong> -&gt; <strong>Advanced Settings</strong>. Instale LuCI y haga clic en <strong>Go to LuCI</strong>.</li>
 </ol>
 <p><img alt="gotoluci" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/gotoluci.png" /></p>
 <ol>
@@ -6720,20 +6725,20 @@
 </ol>
 <p><img alt="join network" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/luci_join_network.png" /></p>
 <h2 id="solucion-de-problemas">Solución de problemas<a class="headerlink" href="#solucion-de-problemas" title="Permanent link">&para;</a></h2>
-<p>Si la red EAP de destino requiere parámetros adicionales, como el tipo EAP, por ejemplo PEAP, TTLS, sufijo de dominio, identity, anonymous identity, etc., la conexión EAP mediante el panel de administración web puede fallar.</p>
+<p>Si la red EAP de destino requiere parámetros adicionales, como el tipo EAP (por ejemplo, PEAP, TTLS), sufijo de dominio, identity, anonymous identity, etc., la conexión EAP mediante el panel de administración web puede fallar.</p>
 <p><img alt="connection failed" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/connection_failed.png" /></p>
 <p>Siga los pasos siguientes para conectar su router GL.iNet a redes EAP que requieren configuración avanzada mediante la interfaz LuCI.</p>
 <ol>
 <li>
 <p>Obtenga la configuración.</p>
 <p>Obtenga con antelación los parámetros de configuración de la red EAP de destino. Por ejemplo:
-- EAP Type, por ejemplo PEAP, TTLS o TLS
-- Sufijo de dominio de autenticación, por ejemplo @company.com
-- Identity, normalmente el nombre de usuario completo
-- Anonymous Identity, opcional
-- Tipo de autenticación interna, por ejemplo MSCHAPv2 o PAP
-- Certificado CA, si es necesario, prepare un archivo en formato .crt</p>
-<p>Este es un ejemplo de la red Wi-Fi Xfinity Mobile como referencia.</p>
+- Tipo EAP (por ejemplo, PEAP, TTLS, TLS)
+- Sufijo de dominio de autenticación (por ejemplo, @company.com)
+- Identity (normalmente el nombre de usuario completo)
+- Anonymous Identity (opcional)
+- Tipo de autenticación interna (por ejemplo, MSCHAPv2, PAP)
+- Certificado CA (si es necesario, prepare un archivo en formato .crt)</p>
+<p>Este es un ejemplo de la red Wi‑Fi Xfinity Mobile como referencia.</p>
 <p><img alt="xfinity wifi configs" class="glboxshadow gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/xfinity_mobile_config.png" /></p>
 </li>
 <li>
@@ -6747,7 +6752,7 @@
 <p>Configure el repetidor en LuCI.</p>
 <p>En la interfaz LuCI, vaya a Network -&gt; Wireless.</p>
 <p><img alt="xfinity wifi configs" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/wireless.png" /></p>
-<p>Haga clic en el botón <strong>Scan</strong> en la sección 5G o 2.4G para buscar redes Wi-Fi disponibles.</p>
+<p>Haga clic en el botón <strong>Scan</strong> en la sección 5G o 2.4G para buscar redes Wi‑Fi disponibles.</p>
 <p><img alt="wireless scan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/wireless_scan.png" /></p>
 <p>Busque la red EAP de destino en los resultados del escaneo y haga clic en <strong>Join Network</strong>.</p>
 <p><img alt="scan results" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/scan_results.png" /></p>
@@ -6776,7 +6781,7 @@
 <summary>Comprobar la conexión en la WebGUI</summary>
 <p>Una vez que el router se conecte correctamente a la red EAP de destino, se iluminará un icono de repetidor en la WebGUI, como se muestra a continuación.</p>
 <p><img alt="connected status" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/connected_status.png" /></p>
-<p><strong>Nota</strong>: Como la configuración de LuCI no se sincroniza con la de la WebGUI, los detalles de la interfaz del repetidor, por ejemplo IP conectada, gateway, etc., no aparecerán en la WebGUI.</p>
+<p><strong>Nota</strong>: Como la configuración de LuCI no se sincroniza con la de la WebGUI, los detalles de la interfaz del repetidor (por ejemplo, IP conectada, gateway, etc.) no aparecerán en la WebGUI.</p>
 <p>Como se muestra en la imagen, la sección del repetidor en la parte inferior está en blanco. Sin embargo, el router ya se ha conectado a la red EAP de destino como repetidor, porque el icono del repetidor en la parte superior está iluminado.</p>
 </details>
 <details>
