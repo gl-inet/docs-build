@@ -6555,26 +6555,26 @@
   <h1 id="how-to-make-adguard-home-dns-bypass-the-vpn-tunnel">How to make AdGuard Home DNS bypass the VPN tunnel<a class="headerlink" href="#how-to-make-adguard-home-dns-bypass-the-vpn-tunnel" title="Permanent link">&para;</a></h1>
 <p>Normally, VPN and AdGuard Home can run simultaneously on GL.iNet routers. No problems arise when AdGuard Home is not set to handle DNS requests.</p>
 <p>However, if you configure AdGuard Home to manage all DNS traffic and forward queries to <strong>public upstream DNS servers</strong>, enabling VPN will trigger DNS resolution failures.</p>
-<p><img alt="adguardhome" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/adguard_dns_failure/adguardhome.png" width="660" />
+<p><img alt="adguardhome" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/make_adguard_home_dns_bypass_vpn/adguardhome.jpg" />
 <br><small>(AdGuard Home enabled and handles DNS requests)</small></p>
-<p><img alt="adguard dns" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/adguard_dns_failure/adguard_dns.png" width="600" />
-<br><small>(AdGuard Home DNS settings)</small></p>
+<p><img alt="adguard dns" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/make_adguard_home_dns_bypass_vpn/upstream_dns.png" />
+<br><small>(AdGuard Home upstream DNS settings)</small></p>
 <p>By default, all outbound traffic is routed through the VPN tunnel. This forces AdGuard Home's upstream DNS traffic onto the VPN, which cannot reach your public upstream DNS servers. As a result, all connected clients will fail to resolve domain names.</p>
 <p>To keep AdGuard Home functional while VPN is active, you can add a static route in LuCI to forward upstream DNS traffic to the regular WAN gateway and bypass the VPN tunnel. Follow the steps below.</p>
 <ol>
 <li>
 <p>Log in to your router's web Admin Panel and go to <strong>SYSTEM</strong> -&gt; <strong>Advanced Settings</strong> -&gt;<strong> Go to LuCI</strong>.</p>
-<p><img alt="luci login 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/adguard_dns_failure/luci_login1.png" /></p>
+<p><img alt="luci login 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/make_adguard_home_dns_bypass_vpn/luci1.png" /></p>
 <p>Log in with the same admin password.</p>
-<p><img alt="luci login 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/adguard_dns_failure/luci_login2.png" /></p>
+<p><img alt="luci login 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/make_adguard_home_dns_bypass_vpn/luci2.png" /></p>
 </li>
 <li>
 <p>In the LuCI, navigate to <strong>Network</strong> -&gt; <strong>Routing</strong>, then click <strong>Add</strong>.</p>
-<p><img alt="routing 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/adguard_dns_failure/routing1.png" /></p>
+<p><img alt="routing 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/make_adguard_home_dns_bypass_vpn/routing1.png" /></p>
 </li>
 <li>
 <p>Create a new static route for your upstream DNS addresses.</p>
-<p><img alt="routing 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/adguard_dns_failure/routing2.jpg" /></p>
+<p><img alt="routing 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/make_adguard_home_dns_bypass_vpn/routing2.png" /></p>
 <ul>
 <li>
 <p>Interface: Select the physical WAN interface <strong>wan</strong>.</p>
@@ -6595,6 +6595,14 @@
 </li>
 <li>
 <p>Save and apply the settings. AdGuard Home will then resume normal DNS resolution.</p>
+</li>
+<li>
+<p>Test upstream DNS servers.</p>
+<p>You can verify your upstream DNS servers directly in the AdGuard Home interface.</p>
+<p>On your router's web Admin Panel, go to <strong>APPLICATIONS</strong> -&gt; <strong>AdGuard Home</strong>, then click <strong>Settings Page</strong> to open the AdGuard Home dashboard.</p>
+<p><img alt="adguard settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/make_adguard_home_dns_bypass_vpn/adguard_settings.png" /></p>
+<p>On the AdGuard Home dashboard, go to <strong>Settings</strong> -&gt; <strong>DNS settings</strong> -&gt; <strong>Upstream DNS servers</strong> and click <strong>Test upstreams</strong>. Results will appear on the right.</p>
+<p><img alt="test upstreams" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/make_adguard_home_dns_bypass_vpn/test_upstreams.png" /></p>
 </li>
 </ol>
 <hr />
