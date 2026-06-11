@@ -6939,7 +6939,7 @@
 <p>Il est recommandé d'utiliser un routeur ou une passerelle de sécurité plus performant, avec suffisamment de mémoire (par exemple GL-MT2500, GL-MT5000), et d'installer si nécessaire des outils supplémentaires de transfert et de contrôle du trafic.</p>
 <h2 id="topologie-reseau">Topologie réseau<a class="headerlink" href="#topologie-reseau" title="Permanent link">&para;</a></h2>
 <p>Drop-in Gateway fonctionne comme un système réseau intermédiaire : le trafic des appareils clients est redirigé vers le routeur GL.iNet pour y être traité, puis renvoyé via le routeur principal. Ce fonctionnement permet non seulement de conserver les paramètres réseau existants (par exemple le SSID et le mot de passe) afin d'assurer une connectivité ininterrompue pour tous les appareils connectés, mais aussi de gérer le trafic réseau de tous les appareils clients ou de certains d'entre eux selon les besoins.</p>
-<p><img alt="drop-in gateway mode typology" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/drop-in_gateway_mode_topology.svg" /></p>
+<p><img alt="drop-in gateway mode typology" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/drop-in_gateway_mode_topology.svg" /></p>
 <p>Le schéma ci-dessus comporte deux types de lignes : des lignes grises et des lignes vertes marquées de trois flèches, chacune portant un numéro correspondant.</p>
 <ol>
 <li>
@@ -6970,7 +6970,7 @@
 </li>
 <li>
 <p>Connectez-vous au panneau d'administration web de votre routeur GL.iNet, activez Drop-in Gateway, puis le système générera automatiquement les paramètres de configuration correspondants.</p>
-<p><img alt="drop-in gateway generated settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/drop-in_gateway_all_device_enabled.png" /></p>
+<p><img alt="drop-in gateway generated settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/drop-in_gateway_all_device_enabled.png" /></p>
 <ul>
 <li>
 <p><strong>IP Address</strong> correspond à l'adresse IP WAN de votre routeur GL.iNet, attribuée dynamiquement par le routeur principal. Cette adresse IP WAN peut être consultée dans la section Ethernet de la page <a href="../internet_ethernet/">INTERNET</a>. </p>
@@ -6988,28 +6988,28 @@
 <summary>GL.iNet</summary>
 <p>Si votre routeur principal est un GL.iNet et qu'il exécute le firmware v4.2 ou supérieur, suivez les étapes ci-dessous.</p>
 <p>Connectez-vous au panneau d'administration web -&gt; NETWORK -&gt; LAN -&gt; DHCP Server -&gt; Advanced</p>
-<p><img alt="glinet lan advanced" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/glinet/lan_advanced.png" /></p>
+<p><img alt="glinet lan advanced" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/glinet/lan_advanced.png" /></p>
 <p>Renseignez <strong>DHCP Gateway</strong> avec l'<strong>IP Address</strong> obtenue à l'étape 2, par exemple <code>192.168.1.23</code>, puis cliquez sur <strong>Apply</strong>.</p>
-<p><img alt="glinet lan, dhcp gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/glinet/tips_dhcp_gateway.png" /></p>
-<p><img alt="glinet lan, dhcp gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/glinet/lan_dhcp_gateway.png" /></p>
+<p><img alt="glinet lan, dhcp gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/glinet/tips_dhcp_gateway.png" /></p>
+<p><img alt="glinet lan, dhcp gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/glinet/lan_dhcp_gateway.png" /></p>
 </details>
 <details>
 <summary>TP-Link</summary>
 <p>Si votre routeur principal est un TP-Link, suivez les étapes ci-dessous (exemple basé sur un TP-LINK Archer C3150).</p>
 <p>Connectez-vous à la page d'administration TP-Link, accédez à <strong>Advanced</strong> -&gt; <strong>Network</strong> -&gt; <strong>DHCP Server</strong>, puis désactivez <strong>DHCP</strong>.</p>
-<p><img alt="tplink admin, disable dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/tplink/tplink_disable_dhcp_1.png" /></p>
+<p><img alt="tplink admin, disable dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/tplink/tplink_disable_dhcp_1.png" /></p>
 <p>Cliquez ensuite sur <strong>Save</strong>.</p>
-<p><img alt="tplink admin, disable dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/tplink/tplink_disable_dhcp_2.png" /></p>
+<p><img alt="tplink admin, disable dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/tplink/tplink_disable_dhcp_2.png" /></p>
 </details>
 <details>
 <summary>Linksys</summary>
 <p>Si votre routeur principal est un Linksys, suivez les étapes ci-dessous (exemple basé sur un Linksys WHW01).</p>
 <p>Connectez-vous à la page d'administration Linksys, puis accédez à <strong>Router Settings</strong> -&gt; <strong>Connectivity</strong>.</p>
-<p><img alt="linksys admin, connectivity" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/linksys/linksys_connectivity.png" /></p>
+<p><img alt="linksys admin, connectivity" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/linksys/linksys_connectivity.png" /></p>
 <p>Cliquez sur l'onglet <strong>Local Network</strong>, désactivez <strong>DHCP Server</strong>, puis cliquez sur <strong>OK</strong>.</p>
-<p><img alt="linksys admin, local network, disable dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/linksys/linksys_disable_dhcp.png" /></p>
+<p><img alt="linksys admin, local network, disable dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/linksys/linksys_disable_dhcp.png" /></p>
 <p>Un avertissement s'affiche. Cliquez sur <strong>OK</strong>.</p>
-<p><img alt="linksys admin, apply changes" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/linksys/linksys_apply_changes.png" /></p>
+<p><img alt="linksys admin, apply changes" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/linksys/linksys_apply_changes.png" /></p>
 </details>
 <details>
 <summary>Autres</summary>
@@ -7027,7 +7027,7 @@
 </li>
 <li>
 <p>Connectez-vous au panneau d'administration web de votre routeur GL.iNet, activez Drop-in Gateway, puis le système générera automatiquement les paramètres de configuration correspondants.</p>
-<p><img alt="drop-in gateway generated settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/drop-in_gateway_some_device_enabled.png" /></p>
+<p><img alt="drop-in gateway generated settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/drop-in_gateway_some_device_enabled.png" /></p>
 <ul>
 <li>
 <p><strong>IP Address</strong> correspond à l'adresse IP WAN de votre routeur GL.iNet, attribuée dynamiquement par le routeur principal. Cette adresse IP WAN peut être consultée dans la section Ethernet de la page <a href="../internet_ethernet/">INTERNET</a>. </p>
@@ -7053,18 +7053,18 @@
 </li>
 <li>
 <p>Cliquez sur l'onglet <strong>Ethernet</strong>.</p>
-<p><img alt="windows 11 ethernet" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/windows/windwos11_ethernet.png" /></p>
+<p><img alt="windows 11 ethernet" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/windows/windwos11_ethernet.png" /></p>
 </li>
 <li>
 <p>Repérez l'adresse IP de ce PC. Dans la section "IP assignment", cliquez sur le bouton <strong>Edit</strong>.</p>
-<p><img alt="windows 11 ethernet edit" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/windows/windwos11_ethernet_ip_assignment_edit.png" /></p>
+<p><img alt="windows 11 ethernet edit" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/windows/windwos11_ethernet_ip_assignment_edit.png" /></p>
 </li>
 <li>
 <p>Sélectionnez l'option <strong>Manual</strong>. Activez ensuite le bouton <strong>IPv4</strong>.</p>
 </li>
 <li>
 <p>Définissez <strong>IP address</strong> sur l'adresse IP relevée à l'étape 4, <strong>Subnet mask</strong> sur <code>255.255.255.0</code>, et <strong>Gateway</strong> ainsi que <strong>Preferred DNS</strong> sur l'adresse IP affichée sur la page Drop-in Gateway.</p>
-<p><img alt="windows 11 ethernet edit" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/windows/windwos11_ethernet_edit_ip_settings.png" /></p>
+<p><img alt="windows 11 ethernet edit" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/windows/windwos11_ethernet_edit_ip_settings.png" /></p>
 </li>
 <li>
 <p>Cliquez sur le bouton <strong>Save</strong>.</p>
@@ -7077,28 +7077,28 @@
 <ol>
 <li>
 <p>Ouvrez <strong>Settings</strong>, puis appuyez sur <strong>Connections</strong>.</p>
-<p><img alt="settings connections" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/settings_connections.jpg" /></p>
+<p><img alt="settings connections" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/android/settings_connections.jpg" /></p>
 </li>
 <li>
 <p>Appuyez sur <strong>Wi-Fi</strong>.</p>
-<p><img alt="connection wifi" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/connections_wifi.jpg" /></p>
+<p><img alt="connection wifi" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/android/connections_wifi.jpg" /></p>
 </li>
 <li>
 <p>Appuyez sur l'icône en forme d'engrenage du SSID actuel.</p>
-<p><img alt="wifi setting" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/wifi_cog.jpg" /></p>
+<p><img alt="wifi setting" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/android/wifi_cog.jpg" /></p>
 </li>
 <li>
 <p>Appuyez sur <strong>View more</strong>.</p>
-<p><img alt="wifi settings, view more" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/wifi_view_more.jpg" /></p>
+<p><img alt="wifi settings, view more" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/android/wifi_view_more.jpg" /></p>
 </li>
 <li>
 <p>Appuyez sur <strong>IP settings</strong>, puis choisissez <strong>Static</strong>.</p>
-<p><img alt="ip settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/wifi_ip_settings.jpg" /></p>
-<p><img alt="IP settings, static" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/ip_settings_static.jpg" /></p>
+<p><img alt="ip settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/android/wifi_ip_settings.jpg" /></p>
+<p><img alt="IP settings, static" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/android/ip_settings_static.jpg" /></p>
 </li>
 <li>
 <p>Définissez <strong>Gateway</strong> et <strong>DNS 1</strong> sur l'adresse IP affichée sur la page Drop-in Gateway, puis cliquez sur <strong>Save</strong>.</p>
-<p><img alt="set gateway and dns ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/android/set_gateway.jpg" /></p>
+<p><img alt="set gateway and dns ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/android/set_gateway.jpg" /></p>
 </li>
 </ol>
 </details>
@@ -7108,24 +7108,24 @@
 <ol>
 <li>
 <p>Ouvrez <strong>Settings</strong>, puis appuyez sur <strong>Wi-Fi</strong>.</p>
-<p><img alt="settings wifi" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/iphone/setting_wifi.jpg" /></p>
+<p><img alt="settings wifi" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/iphone/setting_wifi.jpg" /></p>
 </li>
 <li>
 <p>Appuyez sur le SSID.</p>
-<p><img alt="settings wifi" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/iphone/wifi_list.jpg" /></p>
+<p><img alt="settings wifi" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/iphone/wifi_list.jpg" /></p>
 </li>
 <li>
 <p>Faites défiler la page jusqu'à voir <strong>Configure IP</strong> sur <strong>Automatic</strong>. Notez <strong>IP Address</strong> et <strong>Subnet Mask</strong> pour l'étape suivante.</p>
-<p><img alt="wifi ipv4" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/iphone/ipv4.jpg" /></p>
+<p><img alt="wifi ipv4" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/iphone/ipv4.jpg" /></p>
 </li>
 <li>
 <p>Remplacez <strong>Configure IP</strong> par <strong>Manual</strong>, définissez <strong>IP Address</strong> et <strong>Subnet Mask</strong> avec les mêmes valeurs que celles relevées à l'étape précédente, puis définissez <strong>Router</strong> sur l'adresse IP affichée sur la page Drop-in Gateway. Cliquez ensuite sur <strong>Save</strong>.</p>
-<p><img alt="wifi ipv4 manual" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/iphone/set_ipv4.jpg" /></p>
+<p><img alt="wifi ipv4 manual" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/iphone/set_ipv4.jpg" /></p>
 </li>
 <li>
 <p>Appuyez sur <strong>Configure DNS</strong> et remplacez-le par <strong>Manual</strong>. Appuyez sur <strong>Add Server</strong>, définissez l'adresse IP du serveur DNS sur celle affichée sur la page Drop-in Gateway, puis cliquez sur <strong>Save</strong>.</p>
-<p><img alt="wifi dns" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/iphone/dns.jpg" /></p>
-<p><img alt="wifi set dns" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/drop-in_gateway/iphone/set_dns.jpg" /></p>
+<p><img alt="wifi dns" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/iphone/dns.jpg" /></p>
+<p><img alt="wifi set dns" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/drop-in_gateway/iphone/set_dns.jpg" /></p>
 </li>
 </ol>
 </details>
