@@ -6986,7 +6986,7 @@
 <p>Ce tutoriel explique comment accéder, depuis un client et à l’aide de noms de domaine, aux appareils du domicile (tels qu’un NAS, une caméra IP, etc.) situés sur le LAN du serveur OpenVPN.</p>
 <h2 id="topologie">Topologie<a class="headerlink" href="#topologie" title="Permanent link">&para;</a></h2>
 <p>Comme illustré ci-dessous, vous pouvez accéder depuis un PC situé sur le LAN du client à des appareils tels qu’un NAS ou une caméra IP sur le LAN du serveur OpenVPN en utilisant leurs noms de domaine respectifs.</p>
-<p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/topology_be9300_be3600.png" /></p>
+<p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/topology_be9300_be3600.png" /></p>
 <h2 id="etapes-de-configuration">Étapes de configuration<a class="headerlink" href="#etapes-de-configuration" title="Permanent link">&para;</a></h2>
 <h3 id="1-modifier-les-hotes-sur-le-serveur-facultatif">1. Modifier les hôtes sur le serveur (facultatif)<a class="headerlink" href="#1-modifier-les-hotes-sur-le-serveur-facultatif" title="Permanent link">&para;</a></h3>
 <p>Cette étape s’applique lorsque votre serveur VPN ne peut pas résoudre correctement les noms de domaine locaux. Ignorez cette étape si vous n’êtes pas sûr.</p>
@@ -6996,43 +6996,43 @@
 <p><img alt="input ip domain" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/input_ip_domain.png" /></p>
 <h3 id="2-autoriser-lacces-a-distance-au-lan-sur-le-serveur">2. Autoriser l’accès à distance au LAN sur le serveur<a class="headerlink" href="#2-autoriser-lacces-a-distance-au-lan-sur-le-serveur" title="Permanent link">&para;</a></h3>
 <p>Dans le panneau d’administration web du serveur, accédez à <strong>VPN</strong> -&gt; <strong>OpenVPN Server</strong>. Cliquez sur <strong>Options</strong> dans l’angle supérieur droit.</p>
-<p><img alt="ovpnserver options 4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnserver_options.png" /></p>
+<p><img alt="ovpnserver options 4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/ovpnserver_options.png" /></p>
 <p>Activez <strong>Allow Remote Access the LAN Subnet</strong>, puis cliquez sur <strong>Apply</strong>.</p>
-<p><img alt="ovpnserver allow access lan 4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/allow_remote_access_lan.png" /></p>
+<p><img alt="ovpnserver allow access lan 4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/allow_remote_access_lan.png" /></p>
 <p>Une fois cette option activée, vous pouvez accéder à distance au routeur et aux appareils du LAN via le VPN.</p>
 <h3 id="3-exporter-la-configuration-vpn">3. Exporter la configuration VPN<a class="headerlink" href="#3-exporter-la-configuration-vpn" title="Permanent link">&para;</a></h3>
 <p>Dans le panneau d’administration du serveur, accédez à <strong>VPN</strong> -&gt; <strong>OpenVPN Server</strong> -&gt; onglet <strong>Configuration</strong>, puis cliquez sur <strong>Export Client Configuration</strong> en bas de la page. </p>
-<p><img alt="export config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/export1.png" /></p>
+<p><img alt="export config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/export1.png" /></p>
 <p>Dans la fenêtre contextuelle, cliquez sur <strong>Export</strong>. </p>
 <p><strong>Remarque</strong> : si l’adresse IP publique de votre serveur est dynamique et change de temps à autre, accédez d’abord à <strong>APPLICATIONS</strong> -&gt; <strong>Dynamic DNS</strong> pour activer <strong>DDNS</strong> avant d’exporter la configuration client.</p>
-<p><img alt="export config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/export2.png" /></p>
+<p><img alt="export config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/export2.png" /></p>
 <p>Vous obtiendrez ensuite un fichier <strong>.ovpn</strong>, comme illustré ci-dessous.</p>
-<p><img alt="downloads" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/download.png" /></p>
+<p><img alt="downloads" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/download.png" /></p>
 <p>Si votre routeur serveur exécute le firmware v4.8 ou une version ultérieure, il n’est pas nécessaire de modifier le fichier de configuration ; passez à l’étape suivante.</p>
 <p>Si votre routeur serveur exécute le firmware v4.7 ou une version antérieure, ouvrez ce fichier, ajoutez la ligne suivante pour définir le serveur DNS sur l’IP du tunnel de votre serveur OpenVPN, puis enregistrez vos modifications.</p>
 <p><code>dns server 1 address 10.8.0.1</code></p>
-<p><img alt="edit config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/edit_config.png" /></p>
+<p><img alt="edit config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/edit_config.png" /></p>
 <p>Astuce : le sous-réseau IPv4 du tunnel du serveur OpenVPN se trouve sous l’onglet <strong>Configuration</strong> de la page OpenVPN Server, comme illustré ci-dessous. Il varie selon la version du firmware. Vérifiez l’IP du tunnel de votre serveur OpenVPN.</p>
-<p><img alt="ovpnserver tunnel ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnserver_tunnel_ip.png" /></p>
+<p><img alt="ovpnserver tunnel ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/ovpnserver_tunnel_ip.png" /></p>
 <h3 id="4-activer-le-serveur-vpn">4. Activer le serveur VPN<a class="headerlink" href="#4-activer-le-serveur-vpn" title="Permanent link">&para;</a></h3>
 <p>Sur la page <strong>OpenVPN Server</strong>, cliquez sur le bouton <strong>Start</strong> dans l’angle supérieur droit pour démarrer le serveur.</p>
-<p><img alt="start server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnserver_start.png" /></p>
+<p><img alt="start server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/ovpnserver_start.png" /></p>
 <h3 id="5-importer-la-configuration-vpn">5. Importer la configuration VPN<a class="headerlink" href="#5-importer-la-configuration-vpn" title="Permanent link">&para;</a></h3>
 <p>Connectez-vous au panneau d’administration web de votre routeur client VPN, accédez à <strong>VPN</strong> -&gt; <strong>OpenVPN Client</strong>, puis cliquez sur <strong>Add Manually</strong>.</p>
-<p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnclient_upload1.png" /></p>
+<p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/ovpnclient_upload1.png" /></p>
 <p>Créez un nom pour ce groupe et importez le fichier de configuration.</p>
-<p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnclient_upload2.png" /></p>
+<p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/ovpnclient_upload2.png" /></p>
 <p>L’importation a réussi. Cliquez sur <strong>Apply</strong>. </p>
-<p><img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnclient_upload3.png" /></p>
+<p><img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/ovpnclient_upload3.png" /></p>
 <p>Le fichier de configuration s’affichera ensuite ici.</p>
-<p><img alt="applied" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnclient_upload4.png" /></p>
+<p><img alt="applied" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/ovpnclient_upload4.png" /></p>
 <h3 id="6-demarrer-la-connexion-du-client-vpn">6. Démarrer la connexion du client VPN<a class="headerlink" href="#6-demarrer-la-connexion-du-client-vpn" title="Permanent link">&para;</a></h3>
 <p>Cliquez sur l’icône à trois points pour lancer la connexion VPN. </p>
-<p><img alt="start client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnclient_start.png" /></p>
+<p><img alt="start client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/ovpnclient_start.png" /></p>
 <p>Lorsque le point gris devient vert, le client OpenVPN s’est connecté au serveur avec succès.</p>
-<p><img alt="ovpnclient connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ovpnclient_connected.png" /></p>
+<p><img alt="ovpnclient connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/ovpnclient_connected.png" /></p>
 <p>Vous pouvez maintenant accéder, depuis le PC situé sur le LAN du client, à vos appareils du domicile (tels qu’un NAS) sur le LAN du serveur en utilisant leurs noms de domaine.</p>
-<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_ovpnserver_lan_via_domain_names/ping_test.png" /></p>
+<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/how_to_access_ovpnserver_lan_via_domain_name/ping_test.png" /></p>
 <hr />
 <p>Vous avez encore des questions ? Visitez notre <a href="https://forum.gl-inet.com" target="_blank">forum communautaire</a> ou <a href="https://www.gl-inet.com/contacts/" target="_blank">contactez-nous</a>.</p>
 
