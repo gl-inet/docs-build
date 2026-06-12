@@ -7004,7 +7004,7 @@
 </ol>
 <h2 id="_2">トラブルシューティング<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>接続先の EAP ネットワークで、EAP type（PEAP、TTLS など）、domain suffix match、identity、anonymous identity などの追加パラメータが必要な場合、Web 管理画面からの EAP 接続は失敗することがあります。</p>
-<p><img alt="connection failed" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/connection_failed.png" /></p>
+<p><img alt="connection failed" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/connection_failed.png" /></p>
 <p>高度な設定が必要な EAP ネットワークに LuCI インターフェース経由で GL.iNet ルーターを接続するには、以下の手順に従ってください。</p>
 <ol>
 <li>
@@ -7019,40 +7019,40 @@
 <li>CA certificate（必要な場合は .crt 形式のファイルを準備）</li>
 </ul>
 <p>参考として、以下は Xfinity Mobile Wi-Fi の例です。</p>
-<p><img alt="xfinity wifi configs" class="glboxshadow gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/xfinity_mobile_config.png" /></p>
+<p><img alt="xfinity wifi configs" class="glboxshadow gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/xfinity_mobile_config.png" /></p>
 </li>
 <li>
 <p>LuCI にログインします。</p>
 <p>ルーターの Web 管理画面にログインします。ログイン後、以前に WebGUI から対象の EAP ネットワークへの接続を試して失敗している場合は、その接続を中止してください。</p>
-<p><img alt="abort connection" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/abort_connection.png" /></p>
+<p><img alt="abort connection" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/abort_connection.png" /></p>
 <p>その後、<strong>SYSTEM</strong> -&gt; <strong>Advanced Settings</strong> -&gt; <strong>Go to LuCI</strong> に移動します。同じ管理者パスワードで LuCI にログインしてください。</p>
-<p><img alt="luci login" class="glboxshadow gl-70-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/luci_login.jpg" /></p>
+<p><img alt="luci login" class="glboxshadow gl-70-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/luci_login.jpg" /></p>
 </li>
 <li>
 <p>LuCI で Repeater を設定します。</p>
 <p>LuCI インターフェースで Network -&gt; Wireless に移動します。</p>
-<p><img alt="xfinity wifi configs" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/wireless.png" /></p>
+<p><img alt="xfinity wifi configs" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/wireless.png" /></p>
 <p>5G または 2.4G セクションの <strong>Scan</strong> ボタンをクリックし、利用可能な Wi-Fi ネットワークを検索します。</p>
-<p><img alt="wireless scan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/wireless_scan.png" /></p>
+<p><img alt="wireless scan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/wireless_scan.png" /></p>
 <p>スキャン結果から対象の EAP ネットワークを見つけ、<strong>Join Network</strong> をクリックします。</p>
-<p><img alt="scan results" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/scan_results.png" /></p>
+<p><img alt="scan results" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/scan_results.png" /></p>
 <p>「Joining Network」ページで <strong>WPA passphrase</strong> を入力し、<strong>Submit</strong> ボタンをクリックします。</p>
-<p><img alt="joining network" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/joining_network.png" /></p>
+<p><img alt="joining network" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/joining_network.png" /></p>
 <p>Wireless Client の設定画面に移動します。</p>
 </li>
 <li>
 <p><strong>Interface Configuration</strong> -&gt; <strong>Wireless Security</strong> を探します。</p>
-<p><img alt="wireless security" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/wireless_security.jpg" /></p>
+<p><img alt="wireless security" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/wireless_security.jpg" /></p>
 <p>以下のように、対象の EAP ネットワークに合わせて正しい設定パラメータを選択または入力します。<strong>まだ Save はクリックしないでください</strong>。</p>
-<p><img alt="wireless security example" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/wireless_security_example.png" /></p>
+<p><img alt="wireless security example" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/wireless_security_example.png" /></p>
 </li>
 <li>
 <p><strong>Advanced Settings</strong> タブに切り替え、<strong>wlan0</strong> などのインターフェース名を指定します。その後、右下の <strong>Save</strong> をクリックします。</p>
-<p><img alt="advanced settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/advanced_settings.png" /></p>
+<p><img alt="advanced settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/advanced_settings.png" /></p>
 </li>
 <li>
 <p>Wireless ページに戻ると、保留中の変更が表示されます。右下の <strong>Save &amp; Apply</strong> ボタンをクリックします。</p>
-<p><img alt="save abd apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/save_apply.png" /></p>
+<p><img alt="save abd apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/save_apply.png" /></p>
 <p>これでルーターは対象の EAP ネットワークに正常に接続されます。</p>
 </li>
 <li>
@@ -7060,7 +7060,7 @@
 <details>
 <summary>WebGUI で接続を確認する</summary>
 <p>ルーターが対象の EAP ネットワークに正常に接続すると、以下のように WebGUI のリピーターアイコンが点灯します。</p>
-<p><img alt="connected status" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/connected_status.png" /></p>
+<p><img alt="connected status" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/connected_status.png" /></p>
 <p><strong>注意</strong>: LuCI の設定は WebGUI の設定と同期されないため、接続された IP、gateway など、リピーターインターフェースの詳細は WebGUI に表示されません。</p>
 <p>画像のように下部のリピーター欄が空欄でも、上部のリピーターアイコンが点灯していれば、ルーターはすでにリピーターとして対象の EAP ネットワークに接続しています。</p>
 </details>
@@ -7072,9 +7072,9 @@
 </li>
 <li>
 <p><strong>ifconfig</strong> と入力して Enter を押します。</p>
-<p><img alt="ifconfig" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/ifconfig.png" /></p>
+<p><img alt="ifconfig" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/ifconfig.png" /></p>
 <p><strong>wlan0</strong> インターフェースの状態を確認できます。</p>
-<p><img alt="ifconfig" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/connect_to_eap_network_with_advanced_settings/ifconfig_2.png" /></p>
+<p><img alt="ifconfig" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/eap/ifconfig_2.png" /></p>
 </li>
 </ol>
 </details>
