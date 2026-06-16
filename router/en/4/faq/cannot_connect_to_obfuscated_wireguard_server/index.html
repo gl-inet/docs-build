@@ -12,7 +12,7 @@
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/router/en/4/faq/cannot_connect_to_wireguard_server_with_obfuscation_enabled/">
+        <link rel="canonical" href="https://docs.gl-inet.com/router/en/4/faq/cannot_connect_to_obfuscated_wireguard_server/">
       
       
         <link rel="prev" href="../amneziawg_obfuscation/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Cannot connect to a WireGuard server with obfuscation - GL.iNet Router Docs 4</title>
+        <title>Cannot connect to an obfuscated WireGuard server - GL.iNet Router Docs 4</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cannot-connect-to-a-wireguard-server-with-obfuscation-enabled" class="md-skip">
+        <a href="#cannot-connect-to-an-obfuscated-wireguard-server" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cannot connect to a WireGuard server with obfuscation
+              Cannot connect to an obfuscated WireGuard server
             
           </span>
         </div>
@@ -2469,7 +2469,7 @@
         
   
   <span class="md-ellipsis">
-    Cannot connect to a WireGuard server with obfuscation
+    Cannot connect to an obfuscated WireGuard server
   </span>
   
 
@@ -6811,13 +6811,15 @@
   
 
   <!-- Markdown content -->
-  <h1 id="cannot-connect-to-a-wireguard-server-with-obfuscation-enabled">Cannot connect to a WireGuard server with obfuscation enabled<a class="headerlink" href="#cannot-connect-to-a-wireguard-server-with-obfuscation-enabled" title="Permanent link">&para;</a></h1>
-<p>VPN obfuscation is a technique that disguises VPN traffic to look like regular internet traffic. Currently, some advanced GL.iNet routers support the AmneziaWG protocol, allowing you to set up a WireGuard server with traffic obfuscation enabled.</p>
-<p>If you fail to establish a connection to a WireGuard server with obfuscation enabled, follow the steps below to identify to troubleshoot.</p>
+  <h1 id="cannot-connect-to-an-obfuscated-wireguard-server">Cannot connect to an obfuscated WireGuard server<a class="headerlink" href="#cannot-connect-to-an-obfuscated-wireguard-server" title="Permanent link">&para;</a></h1>
+<p>VPN obfuscation is a technique that disguises VPN traffic to look like regular internet traffic. Currently, some GL.iNet routers support the AmneziaWG protocol, allowing you to set up a WireGuard server with traffic obfuscation enabled.</p>
+<p>If you fail to establish a connection to an obfuscated WireGuard server, follow the steps below to troubleshoot.</p>
 <ol>
 <li>
-<p><strong>Ensure the VPN configuration file imported on your client device is the exact file exported from the GL.iNet WireGuard server.</strong></p>
-<p>A single WireGuard configuration file is uniquely bound to one client device and cannot be used simultaneously on multiple client devices. Using the same configuration across multiple clients will cause connection failures.</p>
+<p><strong>Ensure the WireGuard config file imported to your client is the exact file exported from your GL.iNet WireGuard server.</strong></p>
+<p>Each client requires an exclusive peer configuration file. Sharing one configuration across multiple clients will result in connection failures.</p>
+<p>If necessary, navigate to <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong> -&gt; <strong>Profiles</strong> to view your exported profiles.</p>
+<p><img alt="wg profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/cannot_connect_to_obfuscated_wgserver/wg_profiles.png" /></p>
 </li>
 <li>
 <p><strong>Match AmneziaWG protocol versions on your server and client.</strong></p>
@@ -6830,10 +6832,10 @@
 <p>Log in to your router's web Admin Panel.</p>
 </li>
 <li>
-<p>Navigate to <strong>VPN</strong> &gt; <strong>WireGuard Server</strong> &gt; <strong>Configuration</strong> and check the obfuscation parameters. If the configuration contains <strong>S3-S4</strong>, and <strong>H1–H4</strong> are variable ranges (rather than fixed values), this router is running AmneziaWG 2.0, as shown below. </p>
-<p><img alt="awg 2.0 web" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/cannot_connect_to_wgserver_with_obfuscation_enabled/awg_2.0_web.png" /></p>
+<p>Navigate to <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong> -&gt; <strong>Configuration</strong> and verify the obfuscation parameters. If the configuration includes <strong>S3-S4</strong> and <strong>H1–H4</strong> as variable ranges (instead of fixed values), your router is running AmneziaWG 2.0, as shown below.</p>
+<p><img alt="awg 2.0 web" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/cannot_connect_to_obfuscated_wgserver/awg_2.0_web.png" /></p>
 <p>Otherwise, it uses AmneziaWG 1.0, as shown below.</p>
-<p><img alt="awg 1.0 web" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/cannot_connect_to_wgserver_with_obfuscation_enabled/awg_1.0_web.png" /></p>
+<p><img alt="awg 1.0 web" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/cannot_connect_to_obfuscated_wgserver/awg_1.0_web.png" /></p>
 </li>
 </ol>
 </details>
@@ -6845,9 +6847,9 @@
 </li>
 <li>
 <p>Run <code>opkg list|grep awg</code> and check the suffix of the <strong>kmod-amneziawg</strong> package in the output. If marked with <strong>2.0</strong>, the router supports AmneziaWG 2.0, as shown below.</p>
-<p><img alt="awg 2.0 ssh" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/cannot_connect_to_wgserver_with_obfuscation_enabled/awg_2.0_ssh.png" /></p>
+<p><img alt="awg 2.0 ssh" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/cannot_connect_to_obfuscated_wgserver/awg_2.0_ssh.png" /></p>
 <p>Otherwise, it runs AmneziaWG 1.0, as shown below.</p>
-<p><img alt="awg 1.0 ssh" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/cannot_connect_to_wgserver_with_obfuscation_enabled/awg_1.0_ssh.png" /></p>
+<p><img alt="awg 1.0 ssh" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/cannot_connect_to_obfuscated_wgserver/awg_1.0_ssh.png" /></p>
 </li>
 </ol>
 </details>
