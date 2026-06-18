@@ -2053,7 +2053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/my_wireguard_server_is_not_working/" class="md-nav__link">
+      <a href="../../faq/wireguard_server_is_not_working/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2287,6 +2287,8 @@
       
         
       
+        
+      
     
     
     
@@ -2434,6 +2436,27 @@
   
   <span class="md-ellipsis">
     Parámetros de ofuscación de AmneziaWG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/cannot_connect_to_obfuscated_wireguard_server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    No se puede conectar a un servidor WireGuard ofuscado
   </span>
   
 
@@ -5436,6 +5459,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#run-exit-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Exit Node
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6892,6 +6924,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#run-exit-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Exit Node
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6977,7 +7018,10 @@
 </li>
 </ul>
 <h2 id="allow-remote-access-wan">Allow Remote Access WAN<a class="headerlink" href="#allow-remote-access-wan" title="Permanent link">&para;</a></h2>
-<p>Si esta opción está habilitada, se podrá acceder a los recursos del lado WAN del dispositivo a través de la red virtual de Tailscale.</p>
+<blockquote>
+<p>Esta función pasó a llamarse <strong>Advertise WAN Subnets</strong> en el firmware v4.9 y versiones posteriores.</p>
+</blockquote>
+<p>Si esta opción está habilitada, se podrá acceder a los recursos del lado WAN del dispositivo a través de la red virtual de Tailscale. Las rutas solo surtirán efecto después de aprobarse en la consola Tailscale Admin.</p>
 <p>Por ejemplo, como se muestra en la topología siguiente, si esta función está habilitada, puede acceder al <code>GL-AXT1800</code> mediante su dirección IP (<code>192.168.29.1</code>) desde <code>leo-phone</code>. Esto se debe a que el GL-AXT1800 es el dispositivo de nivel superior del <code>GL-MT2500</code>, y este último está conectado a la misma red Tailscale que leo-phone.</p>
 <p><img alt="remote access wan topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailscale_access_wan_topology.png" /></p>
 <p>Los pasos son los siguientes.</p>
@@ -7000,7 +7044,10 @@
 </ol>
 <p><img alt="tailscale access axt1800" class="glboxshadow gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailscale_access_axt1800.jpg" /></p>
 <h2 id="allow-remote-access-lan">Allow Remote Access LAN<a class="headerlink" href="#allow-remote-access-lan" title="Permanent link">&para;</a></h2>
-<p>Si esta opción está habilitada, se podrá acceder a los recursos del lado LAN del dispositivo a través de la red virtual de Tailscale.</p>
+<blockquote>
+<p>Esta función pasó a llamarse <strong>Advertise LAN Subnets</strong> en el firmware v4.9 y versiones posteriores.</p>
+</blockquote>
+<p>Si esta opción está habilitada, se podrá acceder a los recursos del lado LAN del dispositivo a través de la red virtual de Tailscale. Las rutas solo surtirán efecto después de aprobarse en la consola Tailscale Admin.</p>
 <p>Por ejemplo, como se muestra en la topología siguiente, si esta función está habilitada, puede iniciar sesión por SSH en <code>Ubuntu</code> mediante su dirección IP (<code>192.168.8.110</code>) desde <code>leo-phone</code>. Esto se debe a que <code>Ubuntu</code> es el dispositivo de nivel inferior del <code>GL-MT2500</code>, y este último está conectado a la misma red Tailscale que leo-phone.</p>
 <p><img alt="remote access lan topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailscale_access_lan_topology.png" /></p>
 <p>Los pasos son los siguientes.</p>
@@ -7060,6 +7107,72 @@
 <p>Puede aparecer un aviso correspondiente en el panel de administración web del router, como se muestra a continuación.</p>
 <p><img alt="exit node troubleshooting" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/custom_exit_nodes/troubleshooting.jpg" /></p>
 <p>Para resolverlo, habilite las rutas de subred del router en la consola Tailscale Admin, tal como se indica en el <strong>Paso 1</strong> anterior.</p>
+<h2 id="run-exit-node">Run Exit Node<a class="headerlink" href="#run-exit-node" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Esta función se introdujo en el firmware v4.9.</p>
+</blockquote>
+<p>Ejecutar un nodo de salida en el router permite que otros dispositivos del tailnet enruten todo su tráfico saliente de Internet a través de la IP pública de este router.</p>
+<p>En la topología siguiente, un portátil está en Boston y el router GL-BE9300 está en Hong Kong. Ambos se han añadido al mismo tailnet de Tailscale. Si configura el GL-BE9300 como nodo de salida, todo el tráfico saliente del portátil saldrá a Internet a través de este router de Hong Kong, y la IP pública externa del portátil se resolverá como una dirección IP de Hong Kong en lugar de una de Boston.</p>
+<p><img alt="topology run exit node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/topology.png" /></p>
+<p><em><strong>Consejo</strong>: Recomendamos deshabilitar la caducidad de la clave del nodo de salida para evitar interrupciones cuando expire la clave de autenticación.</em></p>
+<p>Siga estos pasos para configurar el GL-BE9300 como Exit Node.</p>
+<ol>
+<li>
+<p>Añada el GL-BE9300 y el portátil de viaje al mismo tailnet de Tailscale.</p>
+<p><img alt="tailnet" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/tailnet.png" /></p>
+</li>
+<li>
+<p>En el Web Admin Panel del GL-BE9300, habilite <strong>Run Exit Node</strong> y haga clic en <strong>Apply</strong>.</p>
+<p><img alt="run exit node1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/run_exit_node1.png" /></p>
+</li>
+<li>
+<p>En la consola Tailscale Admin aparecerá la etiqueta "Exit Node" bajo el GL-BE9300.</p>
+<p><img alt="run exit node2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/run_exit_node2.png" /></p>
+</li>
+<li>
+<p>Haga clic en el icono de tres puntos junto al GL-BE9300 y seleccione <strong>Edit route settings</strong>.</p>
+<p><img alt="run exit node3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/run_exit_node3.png" /></p>
+</li>
+<li>
+<p>Marque <strong>Use as exit node</strong> y haga clic en <strong>Save</strong>.</p>
+<p><img alt="run exit node4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/run_exit_node4.png" /></p>
+</li>
+<li>
+<p>Deshabilite la caducidad de la clave.</p>
+<p>Como función de seguridad, los usuarios deben volver a autenticarse periódicamente en cada uno de sus dispositivos. Para evitar interrupciones de conectividad cuando caduque la clave de autenticación del nodo de salida, recomendamos deshabilitar la caducidad de la clave para el nodo de salida. Haga clic <a href="https://tailscale.com/docs/features/access-control/key-expiry" target="_blank">aquí</a> para obtener más detalles sobre la caducidad de claves.</p>
+<p>Haga clic en el icono de tres puntos situado a la derecha del GL-BE9300 y seleccione <strong>Disable key expiry</strong>.</p>
+<p><img alt="disable key expiry1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/disable_key_expiry1.png" /></p>
+<p>Después aparecerá la etiqueta "Expiry disabled".</p>
+<p><img alt="disable key expiry2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/disable_key_expiry2.png" /></p>
+</li>
+<li>
+<p>Seleccione GL-BE9300 como nodo de salida para el portátil de viaje.</p>
+<p>Ejecute Tailscale en el portátil de viaje. El icono de Tailscale aparecerá en la bandeja del sistema, en la esquina inferior derecha.</p>
+<p>Haga clic con el botón derecho en el icono, haga clic en <strong>Exit nodes</strong> y seleccione <strong>gl-be9300</strong>.</p>
+<p><img alt="run exit node5" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/run_exit_node5.png" /></p>
+<p>A partir de ahora, todo el tráfico saliente de este portátil de viaje saldrá a Internet a través del GL-BE9300.</p>
+</li>
+<li>
+<p>Pruebe la conectividad.</p>
+<ol>
+<li>
+<p>En el portátil de viaje, abra un navegador web y visite <a href="https://ipcheck.ing/" target="_blank">ipcheck.ing</a> u otro sitio de consulta de IP. La página mostrará la dirección IP pública perteneciente al nodo de salida de Tailscale, confirmando que el portátil accede a Internet mediante ese nodo de salida, en este ejemplo el GL-BE9300 ubicado en Hong Kong.</p>
+<p><img alt="ip hk" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/ip_hk.png" /></p>
+</li>
+<li>
+<p>Pulse <code>Win+R</code>, escriba <code>cmd</code> para abrir el símbolo del sistema y ejecute <code>tracert google.com</code> para trazar las rutas del tráfico saliente. La salida del comando enumera todos los saltos de enrutamiento del tráfico de Internet. Si está configurado correctamente, el primer salto externo pasará por el nodo de salida, como se muestra a continuación.</p>
+<p><img alt="tracert" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/tracert.png" /></p>
+</li>
+<li>
+<p>Desconecte el nodo de salida para una prueba comparativa.</p>
+<p>Haga clic con el botón derecho en el icono de Tailscale en la bandeja del sistema, en la esquina inferior derecha, haga clic en <strong>Exit nodes</strong> y seleccione <strong>None</strong> para dejar de usar el nodo de salida.</p>
+<p><img alt="comparative test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/comparison_test.png" /></p>
+<p>Abra una nueva pestaña del navegador y visite <a href="https://ipcheck.ing/" target="_blank">ipcheck.ing</a> u otro servicio de consulta de IP. Ahora se mostrará la IP pública nativa del portátil, lo que demuestra que el dispositivo está usando la conexión local a Internet, Boston en este ejemplo.</p>
+<p><img alt="ip boston" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/ip_boston.png" /></p>
+</li>
+</ol>
+</li>
+</ol>
 <hr />
 <p>Referencias: <a href="https://tailscale.com/kb/1103/exit-nodes/" target="_blank">Exit Nodes (route all traffic)</a></p>
 <hr />

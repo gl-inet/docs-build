@@ -2053,7 +2053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/my_wireguard_server_is_not_working/" class="md-nav__link">
+      <a href="../../faq/wireguard_server_is_not_working/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2287,6 +2287,8 @@
       
         
       
+        
+      
     
     
     
@@ -2434,6 +2436,27 @@
   
   <span class="md-ellipsis">
     AmneziaWG難読化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/cannot_connect_to_obfuscated_wireguard_server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    難読化された WireGuard サーバーに接続できない
   </span>
   
 
@@ -5436,6 +5459,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#run-exit-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Exit Node
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6892,6 +6924,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#run-exit-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Exit Node
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7016,7 +7057,10 @@
 </li>
 </ol>
 <h2 id="wan">WAN からのリモートアクセスを許可する<a class="headerlink" href="#wan" title="Permanent link">&para;</a></h2>
-<p>このオプションを有効にすると、デバイスのWAN側にあるリソースへTailscale仮想ネットワーク経由でアクセスできます。</p>
+<blockquote>
+<p>この機能は firmware v4.9 以降で <strong>Advertise WAN Subnets</strong> に名称変更されました。</p>
+</blockquote>
+<p>このオプションを有効にすると、デバイスの WAN 側リソースへ Tailscale 仮想ネットワーク経由でアクセスできます。ルートは Tailscale Admin Console で承認された後に有効になります。</p>
 <p>たとえば、下図の構成でこの機能を有効にすると、<code>leo-phone</code> から <code>GL-AXT1800</code> のIPアドレス（<code>192.168.29.1</code>）へアクセスできます。これは、GL-AXT1800 が <code>GL-MT2500</code> の上位デバイスであり、後者が leo-phone と同じTailscaleネットワークに接続されているためです。</p>
 <p><img alt="remote access wan topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailscale_access_wan_topology.png" /></p>
 <p>操作手順は次のとおりです。</p>
@@ -7041,7 +7085,10 @@
 </li>
 </ol>
 <h2 id="lan">LAN へのリモートアクセスを許可する<a class="headerlink" href="#lan" title="Permanent link">&para;</a></h2>
-<p>このオプションを有効にすると、デバイスのLAN側にあるリソースへTailscale仮想ネットワーク経由でアクセスできます。</p>
+<blockquote>
+<p>この機能は firmware v4.9 以降で <strong>Advertise LAN Subnets</strong> に名称変更されました。</p>
+</blockquote>
+<p>このオプションを有効にすると、デバイスの LAN 側リソースへ Tailscale 仮想ネットワーク経由でアクセスできます。ルートは Tailscale Admin Console で承認された後に有効になります。</p>
 <p>たとえば、下図の構成でこの機能を有効にすると、<code>leo-phone</code> から <code>Ubuntu</code> のIPアドレス（<code>192.168.8.110</code>）を使ってSSH接続できます。これは、<code>Ubuntu</code> が <code>GL-MT2500</code> の下位デバイスであり、後者が leo-phone と同じTailscaleネットワークに接続されているためです。</p>
 <p><img alt="remote access lan topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailscale_access_lan_topology.png" /></p>
 <p>操作手順は次のとおりです。</p>
@@ -7105,6 +7152,73 @@
 <p>この場合は、上記 <strong>手順1</strong> を参照し、Tailscale Admin console でルーターのサブネットルートを有効にしてください。</p>
 </li>
 </ol>
+<h2 id="run-exit-node">Run Exit Node<a class="headerlink" href="#run-exit-node" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>この機能は firmware v4.9 で導入されました。</p>
+</blockquote>
+<p>ルーターで出口ノードを実行すると、tailnet 内の他のデバイスがすべての外向きインターネットトラフィックをこのルーターのパブリック IP 経由でルーティングできます。</p>
+<p>次のトポロジーでは、ノート PC は Boston にあり、GL-BE9300 ルーターは Hong Kong に設置されています。どちらも同じ Tailscale tailnet に追加されています。GL-BE9300 を出口ノードに設定すると、ノート PC のすべての外向きトラフィックは Hong Kong のこのルーター経由でインターネットへ出て、ノート PC の外部公開 IP は Boston の IP アドレスではなく Hong Kong の IP アドレスとして解決されます。</p>
+<p><img alt="topology run exit node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/topology.png" /></p>
+<p><em><strong>ヒント</strong>: 認証キーの期限切れによる接続中断を避けるため、出口ノードのキー有効期限を無効にすることを推奨します。</em></p>
+<p>GL-BE9300 を Exit Node として設定するには、以下の手順を行います。</p>
+<ol>
+<li>
+<p>GL-BE9300 とトラベル用ノート PC を同じ Tailscale tailnet に追加します。</p>
+<p><img alt="tailnet" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/tailnet.png" /></p>
+</li>
+<li>
+<p>GL-BE9300 の Web Admin Panel で <strong>Run Exit Node</strong> を有効にし、<strong>Apply</strong> をクリックします。</p>
+<p><img alt="run exit node1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/run_exit_node1.png" /></p>
+</li>
+<li>
+<p>Tailscale Admin Console で、GL-BE9300 の下に "Exit Node" タグが表示されます。</p>
+<p><img alt="run exit node2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/run_exit_node2.png" /></p>
+</li>
+<li>
+<p>GL-BE9300 の右側にある三点アイコンをクリックし、<strong>Edit route settings</strong> を選択します。</p>
+<p><img alt="run exit node3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/run_exit_node3.png" /></p>
+</li>
+<li>
+<p><strong>Use as exit node</strong> にチェックを入れ、<strong>Save</strong> をクリックします。</p>
+<p><img alt="run exit node4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/run_exit_node4.png" /></p>
+</li>
+<li>
+<p>キーの有効期限を無効にします。</p>
+<p>セキュリティ機能として、ユーザーは各デバイスで定期的に再認証する必要があります。出口ノードの認証キーが期限切れになったときの接続中断を避けるため、出口ノードのキー有効期限を無効にすることを推奨します。キー有効期限の詳細については、<a href="https://tailscale.com/docs/features/access-control/key-expiry" target="_blank">こちら</a> を参照してください。</p>
+<p>GL-BE9300 の右側にある三点アイコンをクリックし、<strong>Disable key expiry</strong> を選択します。</p>
+<p><img alt="disable key expiry1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/disable_key_expiry1.png" /></p>
+<p>その後、"Expiry disabled" タグが表示されます。</p>
+<p><img alt="disable key expiry2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/disable_key_expiry2.png" /></p>
+</li>
+<li>
+<p>トラベル用ノート PC の出口ノードとして GL-BE9300 を選択します。</p>
+<p>トラベル用ノート PC で Tailscale を実行します。Tailscale アイコンが右下のシステムトレイに表示されます。</p>
+<p>アイコンを右クリックし、<strong>Exit nodes</strong> をクリックして <strong>gl-be9300</strong> を選択します。</p>
+<p><img alt="run exit node5" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/run_exit_node5.png" /></p>
+<p>これで、このトラベル用ノート PC のすべての外向きトラフィックは GL-BE9300 経由でインターネットへ出ます。</p>
+</li>
+<li>
+<p>接続をテストします。</p>
+<ol>
+<li>
+<p>トラベル用ノート PC で Web ブラウザを開き、<a href="https://ipcheck.ing/" target="_blank">ipcheck.ing</a> または他の IP 確認サイトにアクセスします。ページには Tailscale 出口ノードの公開 IP アドレスが表示され、ノート PC が出口ノード経由でインターネットへアクセスしていることを確認できます。この例では Hong Kong にある GL-BE9300 です。</p>
+<p><img alt="ip hk" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/ip_hk.png" /></p>
+</li>
+<li>
+<p><code>Win+R</code> を押し、<code>cmd</code> と入力してコマンドプロンプトを起動し、<code>tracert google.com</code> を実行して外向きトラフィックの経路を確認します。コマンド出力にはインターネットトラフィックのすべてのルーティングホップが表示されます。正しく設定されていれば、最初の外部ホップは以下のように出口ノード経由になります。</p>
+<p><img alt="tracert" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/tracert.png" /></p>
+</li>
+<li>
+<p>比較テストのため、出口ノードを切断します。</p>
+<p>右下のシステムトレイにある Tailscale アイコンを右クリックし、<strong>Exit nodes</strong> をクリックして <strong>None</strong> を選択し、出口ノードの使用を停止します。</p>
+<p><img alt="comparative test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/comparison_test.png" /></p>
+<p>新しいブラウザタブを開き、<a href="https://ipcheck.ing/" target="_blank">ipcheck.ing</a> または任意の IP 確認サービスにアクセスします。今度はノート PC 本来の公開 IP アドレスが表示され、このデバイスがローカルのインターネット接続を使用していることが確認できます。この例では Boston です。</p>
+<p><img alt="ip boston" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node/ip_boston.png" /></p>
+</li>
+</ol>
+</li>
+</ol>
+<hr />
 <p>参考情報: <a href="https://tailscale.com/kb/1103/exit-nodes/" target="_blank">Exit Nodes (route all traffic)</a></p>
 <hr />
 <p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a> をご覧いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> までご連絡ください。</p>
