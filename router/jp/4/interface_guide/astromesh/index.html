@@ -6782,6 +6782,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="クイックセットアップ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main Router を設定する
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesh-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh Node を設定する
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ペアリング
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -6795,7 +6828,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       ノード情報を表示する
     </span>
@@ -6804,7 +6837,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mesh-node" class="md-nav__link">
+  <a href="#mesh-node_1" class="md-nav__link">
     <span class="md-ellipsis">
       Mesh Node を編集する
     </span>
@@ -6813,7 +6846,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mesh-node_1" class="md-nav__link">
+  <a href="#mesh-node_2" class="md-nav__link">
     <span class="md-ellipsis">
       Mesh Node にアクセスする
     </span>
@@ -6822,7 +6855,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       ノードをさらに追加する
     </span>
@@ -6872,15 +6905,16 @@
 <blockquote>
 <p>この機能は firmware v4.10 で導入されました。</p>
 </blockquote>
-<p>AstroMesh は、EasyMesh と AstroWarp を組み合わせた GL.iNet 独自のグローバル Mesh 技術です。単一のローカルネットワーク内でしか動作しない一般的な無線 Mesh システムとは異なり、AstroMesh は場所の制限をなくし、どこからでも自宅ネットワークへ接続できるようにします。</p>
+<p>AstroMesh は、EasyMesh をベースにした GL.iNet 独自のグローバル Mesh 技術です。単一のローカルネットワーク内でしか動作しない一般的な無線 Mesh システムとは異なり、AstroMesh は場所の制限をなくし、どこからでも自宅ネットワークへ接続できるようにします。</p>
 <p>自宅では、トラベルルーターが通常の Mesh Node として動作し、シームレスなローミングで家庭内 Wi-Fi のカバー範囲を拡張します。外出時には Astro Node モードへ自動的に切り替わり、クラウド経由で自宅 Wi-Fi 設定を同期します。これにより、自宅 LAN デバイスへリモートアクセスし、トラフィックを自宅ネットワーク出口経由でルーティングできます。複雑な設定なしで plug-and-play に利用できるため、自宅でも外出先でもシームレスなインターネット体験を提供します。</p>
 <h2 id="_1">クイックセットアップ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>この例では、Flint 3 (GL-BE9300) と Slate 7 (GL-BE3600) を使用して AstroMesh ネットワークを構築します。</p>
 <ul>
 <li><strong>Flint 3</strong>: Main Router としてインターネットに接続し、すべての Mesh Nodes を管理します。また、すべてのリモート Astro Nodes のネットワーク出口としても機能します。</li>
-<li><strong>Slate 7</strong>: Mesh Node として、EasyMesh により Main Router の Wi-Fi カバー範囲をローカルで拡張するか、AstroWarp により自宅ネットワークをリモート拠点へ拡張します。</li>
+<li><strong>Slate 7</strong>: Mesh Node として、Main Router の Wi-Fi カバー範囲をローカルで拡張するか、自宅ネットワークをリモート拠点へ拡張します。</li>
 </ul>
 <p>以下の手順でセットアップを完了します。</p>
+<h3 id="main-router">Main Router を設定する<a class="headerlink" href="#main-router" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Flint 3 の Web Admin Panel にログインし、<strong>INTERNET</strong> に移動します。Ethernet、Repeater、Tethering、Cellular のいずれかの対応接続方式でインターネットに接続します。</p>
@@ -6889,19 +6923,23 @@
 <p><strong>ASTROMESH</strong> に移動し、<strong>Main Router</strong> をクリックします。</p>
 <p><img alt="main node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/main_node.png" /></p>
 </li>
-<li>
-<p><strong>Wi-Fi Scan</strong> または <strong>Pairing Code</strong> でノードを追加します。</p>
+</ol>
+<h3 id="mesh-node">Mesh Node を設定する<a class="headerlink" href="#mesh-node" title="Permanent link">&para;</a></h3>
+<p>Slate 7 の Web Admin Panel にログインします。<strong>ASTROMESH</strong> に移動し、<strong>Mesh/Astro Node</strong> をクリックします。</p>
+<p><img alt="mesh node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/sub_node.png" /></p>
+<h3 id="_2">ペアリング<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><strong>Wi-Fi Scan</strong> または <strong>Pairing Code</strong> で Mesh Nodes を AstroMesh ネットワークに追加します。</p>
 <p><img alt="main add node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/main_add_nodes.png" /></p>
 <p>以下の該当する手順を参照してください。</p>
 <details class="note">
 <summary>Wi-Fi Scan</summary>
 <p>スキャン前に、次の点を確認してください。</p>
 <ol>
-<li>追加するルーターの電源が入っており、Main ルーターの近くにあること。</li>
-<li>追加するルーターで AstroMesh が有効で、<strong>Mesh Node</strong> モードで動作していること。</li>
+<li>Mesh Node の電源が入っており、Main ルーターの近くにあること。</li>
+<li>Mesh Node で AstroMesh が有効で、<strong>Mesh Node</strong> モードで動作していること。</li>
 </ol>
 <hr />
-<p><strong>Add nodes via Wi-Fi Scan</strong> をクリックします。</p>
+<p>Flint 3 の Web Admin Panel にログインし、<strong>ASTROMESH</strong> に移動します。<strong>Add nodes via Wi-Fi Scan</strong> をクリックします。</p>
 <p><img alt="add nodes wifi scan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/add_nodes_wifiscan.png" /></p>
 <p>ポップアップウィンドウで <strong>Scan</strong> をクリックします。</p>
 <p><img alt="wifi scan 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/wifi_scan1.png" /></p>
@@ -6915,27 +6953,22 @@
 </details>
 <details class="note">
 <summary>Pairing Code</summary>
-<p><strong>Add nodes via Pairing Code</strong> をクリックします。</p>
+<p>Flint 3 の Web Admin Panel にログインし、<strong>ASTROMESH</strong> に移動します。<strong>Add nodes via Pairing Code</strong> をクリックします。</p>
 <p><img alt="add nodes pairing code" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/add_nodes_pairing.png" /></p>
 <p>Main Router がペアリングコードを生成します。このコードをコピーします。</p>
 <p><img alt="pairing code mesh mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/pairing_code_mesh.png" /></p>
-<p>Slate 7 の Web Admin Panel にログインし、<strong>ASTROMESH</strong> に移動して <strong>Mesh/Astro Node</strong> をクリックします。</p>
-<p><img alt="mesh node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/sub_node.png" /></p>
-<p>コピーしたペアリングコードを入力し、<strong>Apply</strong> をクリックします。<em>ペアリングコードには有効期限があります。期限切れになる前に入力してください。</em></p>
+<p>Slate 7 の Web Admin Panel にログインし、<strong>ASTROMESH</strong> に移動します。コピーしたペアリングコードを入力し、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="enter pairing code" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/enter_pairing_code.png" /></p>
+<p><em><strong>注意</strong>: ペアリングコードには有効期限があります。期限切れになる前に入力してください。</em></p>
 <p>Mesh Node が Main Router への接続を開始します。<strong>Done</strong> をクリックします。</p>
 <p><img alt="mesh node pairing" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/mesh_pairing.png" /></p>
 <p><strong>注意</strong>: ノードが AstroMesh ネットワークに参加すると、元の IP アドレスではアクセスできなくなります。すべてのノードは Main Router の Admin Panel から管理できます。詳しくは <a href="#manage-mesh-nodes">Mesh Nodes を管理する</a> を参照してください。</p>
 </details>
-</li>
-<li>
 <p>ノードが AstroMesh に正常に追加されると、Main Router の Admin Panel に以下のようなトポロジーが表示されます。</p>
 <p><img alt="main topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/main_topology.png" /></p>
-</li>
-</ol>
 <h2 id="manage-mesh-nodes">Mesh Nodes を管理する<a class="headerlink" href="#manage-mesh-nodes" title="Permanent link">&para;</a></h2>
 <p>Mesh Nodes は Main Router の Admin Panel で管理します。</p>
-<h3 id="_2">ノード情報を表示する<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_3">ノード情報を表示する<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>Main Router の Admin Panel で <strong>ASTROMESH</strong> に移動し、AstroMesh トポロジー上の <strong>Main Router</strong> をクリックします。</p>
 <p><img alt="main node info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/main_node_info1.png" /></p>
 <p>モデル、IP アドレス、MAC アドレス、稼働時間、接続クライアントなど、Main Router の詳細を確認できます。</p>
@@ -6944,13 +6977,13 @@
 <p><img alt="mesh node info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/mesh_node_info1.png" /></p>
 <p>モデル、IP アドレス、MAC アドレス、ファームウェアバージョン、稼働時間、接続クライアントなど、Mesh Node の詳細を確認できます。</p>
 <p><img alt="mesh node info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/mesh_node_info2.png" /></p>
-<h3 id="mesh-node">Mesh Node を編集する<a class="headerlink" href="#mesh-node" title="Permanent link">&para;</a></h3>
+<h3 id="mesh-node_1">Mesh Node を編集する<a class="headerlink" href="#mesh-node_1" title="Permanent link">&para;</a></h3>
 <p>Main Router の Admin Panel で <strong>ASTROMESH</strong> に移動し、AstroMesh トポロジー上の <strong>Mesh Node</strong> をクリックします。</p>
 <p><img alt="mesh node info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/mesh_node_info1.png" /></p>
 <p>各 Mesh Node はデフォルトで "Node" に MAC アドレス末尾 4 桁を付けた名前になります。名前を変更するには編集アイコンをクリックします。</p>
 <p><img alt="edit node 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/edit_node1.png" /></p>
 <p><img alt="edit node 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/edit_node2.png" /></p>
-<h3 id="mesh-node_1">Mesh Node にアクセスする<a class="headerlink" href="#mesh-node_1" title="Permanent link">&para;</a></h3>
+<h3 id="mesh-node_2">Mesh Node にアクセスする<a class="headerlink" href="#mesh-node_2" title="Permanent link">&para;</a></h3>
 <p>Main Router の Admin Panel で <strong>ASTROMESH</strong> に移動し、AstroMesh トポロジー上の <strong>Mesh Node</strong> をクリックします。</p>
 <p><img alt="mesh node info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/mesh_node_info1.png" /></p>
 <p>右上の歯車アイコンをクリックし、<strong>Open Admin Panel</strong> を選択します。</p>
@@ -6959,7 +6992,7 @@
 <p><img alt="mesh admin login" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/mesh_node_admin.png" /></p>
 <p>ログイン後、<strong>ASTROMESH</strong> に移動して接続状態を確認します。</p>
 <p><img alt="mesh node status" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/mesh_node_status.png" /></p>
-<h3 id="_3">ノードをさらに追加する<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">ノードをさらに追加する<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>ノードをさらに追加するには、AstroMesh トポロジー右上の <strong>Add</strong> をクリックします。</p>
 <p><img alt="add more nodes" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/add_more_nodes.png" /></p>
 <h2 id="astro-nodes">Astro Nodes を管理する<a class="headerlink" href="#astro-nodes" title="Permanent link">&para;</a></h2>
@@ -6986,6 +7019,38 @@
 <p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a> をご覧いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> までご連絡ください。</p>
 
   <!-- Last update of source file -->
+  
+    
+      
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最終更新日">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年6月26日 14:37:50 UTC">2026年6月26日</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+    
   
 
   <!-- Root element of PhotoSwipe. Must have class pswp. -->

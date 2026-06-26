@@ -6782,6 +6782,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Configurazione rapida">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurare-il-main-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurare il Main Router
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurare-il-mesh-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurare il Mesh Node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      Associazione
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -6872,15 +6905,16 @@
 <blockquote>
 <p>Questa funzione è introdotta nel firmware v4.10.</p>
 </blockquote>
-<p>AstroMesh è la tecnologia mesh globale proprietaria di GL.iNet, che combina EasyMesh e AstroWarp. A differenza dei sistemi mesh wireless tradizionali che funzionano solo in una rete locale, AstroMesh elimina i limiti geografici e permette di collegarsi alla rete domestica ovunque.</p>
+<p>AstroMesh è la tecnologia mesh globale proprietaria di GL.iNet basata su EasyMesh. A differenza dei sistemi mesh wireless tradizionali che funzionano solo in una rete locale, AstroMesh elimina i limiti geografici e permette di collegarsi alla rete domestica ovunque.</p>
 <p>A casa, il router da viaggio agisce come un normale Mesh Node per estendere la copertura Wi-Fi con roaming fluido. Quando sei fuori, può passare automaticamente alla modalità Astro Node e sincronizzare tramite cloud le impostazioni Wi-Fi di casa, consentendo l’accesso remoto ai dispositivi LAN e instradando il traffico attraverso l’uscita della rete domestica. Plug-and-play e senza configurazioni complicate, AstroMesh offre un’esperienza Internet fluida sia a casa sia in viaggio.</p>
 <h2 id="configurazione-rapida">Configurazione rapida<a class="headerlink" href="#configurazione-rapida" title="Permanent link">&para;</a></h2>
 <p>In questo esempio utilizziamo Flint 3 (GL-BE9300) e Slate 7 (GL-BE3600) per creare una rete AstroMesh.</p>
 <ul>
 <li><strong>Flint 3</strong>: funge da Main Router, si connette a Internet e gestisce tutti i Mesh Nodes. Inoltre agisce come uscita di rete per tutti gli Astro Nodes remoti.</li>
-<li><strong>Slate 7</strong>: funziona come Mesh Node che estende localmente la copertura Wi-Fi del Main Router tramite EasyMesh oppure estende la rete domestica a siti remoti tramite AstroWarp.</li>
+<li><strong>Slate 7</strong>: funziona come Mesh Node che estende localmente la copertura Wi-Fi del Main Router oppure estende la rete domestica a siti remoti.</li>
 </ul>
 <p>Segui i passaggi seguenti per completare la configurazione.</p>
+<h3 id="configurare-il-main-router">Configurare il Main Router<a class="headerlink" href="#configurare-il-main-router" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Accedi al Web Admin Panel di Flint 3 e vai su <strong>INTERNET</strong>. Connettilo a Internet tramite uno dei tipi di connessione supportati: Ethernet, Repeater, Tethering o Cellular.</p>
@@ -6889,19 +6923,23 @@
 <p>Vai su <strong>ASTROMESH</strong> e fai clic su <strong>Main Router</strong>.</p>
 <p><img alt="main node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/main_node.png" /></p>
 </li>
-<li>
-<p>Aggiungi nodi tramite <strong>Wi-Fi Scan</strong> o <strong>Pairing Code</strong>.</p>
+</ol>
+<h3 id="configurare-il-mesh-node">Configurare il Mesh Node<a class="headerlink" href="#configurare-il-mesh-node" title="Permanent link">&para;</a></h3>
+<p>Accedi al Web Admin Panel di Slate 7. Vai su <strong>ASTROMESH</strong> e fai clic su <strong>Mesh/Astro Node</strong>.</p>
+<p><img alt="mesh node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/sub_node.png" /></p>
+<h3 id="associazione">Associazione<a class="headerlink" href="#associazione" title="Permanent link">&para;</a></h3>
+<p>Aggiungi Mesh Nodes alla rete AstroMesh tramite <strong>Wi-Fi Scan</strong> o <strong>Pairing Code</strong>.</p>
 <p><img alt="main add node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/main_add_nodes.png" /></p>
 <p>Consulta le istruzioni corrispondenti di seguito.</p>
 <details class="note">
 <summary>Wi-Fi Scan</summary>
 <p>Prima della scansione, assicurati che:</p>
 <ol>
-<li>Il router da aggiungere sia acceso e vicino al router principale.</li>
-<li>Il router da aggiungere abbia AstroMesh abilitato e funzioni in modalità <strong>Mesh Node</strong>.</li>
+<li>Il Mesh Node sia acceso e vicino al Main Router.</li>
+<li>Il Mesh Node abbia AstroMesh abilitato e funzioni in modalità <strong>Mesh Node</strong>.</li>
 </ol>
 <hr />
-<p>Fai clic su <strong>Add nodes via Wi-Fi Scan</strong>.</p>
+<p>Accedi al Web Admin Panel di Flint 3 e vai su <strong>ASTROMESH</strong>. Fai clic su <strong>Add nodes via Wi-Fi Scan</strong>.</p>
 <p><img alt="add nodes wifi scan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/add_nodes_wifiscan.png" /></p>
 <p>Nella finestra pop-up, fai clic su <strong>Scan</strong>.</p>
 <p><img alt="wifi scan 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/wifi_scan1.png" /></p>
@@ -6915,24 +6953,19 @@
 </details>
 <details class="note">
 <summary>Pairing Code</summary>
-<p>Fai clic su <strong>Add nodes via Pairing Code</strong>.</p>
+<p>Accedi al Web Admin Panel di Flint 3 e vai su <strong>ASTROMESH</strong>. Fai clic su <strong>Add nodes via Pairing Code</strong>.</p>
 <p><img alt="add nodes pairing code" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/add_nodes_pairing.png" /></p>
 <p>Il Main Router genererà un codice di associazione. Copia questo codice.</p>
 <p><img alt="pairing code mesh mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/pairing_code_mesh.png" /></p>
-<p>Accedi al Web Admin Panel di Slate 7, vai su <strong>ASTROMESH</strong> e fai clic su <strong>Mesh/Astro Node</strong>.</p>
-<p><img alt="mesh node" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/sub_node.png" /></p>
-<p>Inserisci il codice di associazione copiato e fai clic su <strong>Apply</strong>. <em>Il codice di associazione ha una validità limitata. Inseriscilo prima che scada.</em></p>
+<p>Accedi al Web Admin Panel di Slate 7 e vai su <strong>ASTROMESH</strong>. Inserisci il codice di associazione copiato e fai clic su <strong>Apply</strong>.</p>
 <p><img alt="enter pairing code" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/enter_pairing_code.png" /></p>
+<p><em><strong>Nota</strong>: il codice di associazione ha una validità limitata. Inseriscilo prima che scada.</em></p>
 <p>Il Mesh Node inizierà a connettersi al Main Router. Fai clic su <strong>Done</strong>.</p>
 <p><img alt="mesh node pairing" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/mesh_pairing.png" /></p>
 <p><strong>Nota</strong>: quando un nodo entra nella rete AstroMesh, non sarà più accessibile tramite il suo indirizzo IP originale. Tutti i nodi possono essere gestiti dal Admin Panel del Main Router. Consulta <a href="#manage-mesh-nodes">Gestire i Mesh Nodes</a> per i dettagli.</p>
 </details>
-</li>
-<li>
 <p>Dopo che i nodi sono stati aggiunti correttamente ad AstroMesh, nel Admin Panel del Main Router verrà visualizzata una topologia, come mostrato di seguito.</p>
 <p><img alt="main topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astromesh/main_topology.png" /></p>
-</li>
-</ol>
 <h2 id="manage-mesh-nodes">Gestire i Mesh Nodes<a class="headerlink" href="#manage-mesh-nodes" title="Permanent link">&para;</a></h2>
 <p>Gestisci i Mesh Nodes dal Admin Panel del Main Router.</p>
 <h3 id="visualizzare-le-informazioni-del-nodo">Visualizzare le informazioni del nodo<a class="headerlink" href="#visualizzare-le-informazioni-del-nodo" title="Permanent link">&para;</a></h3>
@@ -6986,6 +7019,38 @@
 <p>Hai ancora domande? Visita il nostro <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> o <a href="https://www.gl-inet.com/contacts/" target="_blank">contattaci</a>.</p>
 
   <!-- Last update of source file -->
+  
+    
+      
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ultimo aggiornamento">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="26 giugno 2026 14:37:50 UTC">26 giugno 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+    
   
 
   <!-- Root element of PhotoSwipe. Must have class pswp. -->
