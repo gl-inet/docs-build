@@ -6848,14 +6848,19 @@
 <p>Compared with AmneziaWG v1.0, v2.0 provides stronger obfuscation by adding new parameters (<strong>S3~S4</strong>) and using dynamic headers for packet types (<strong>H1~H4</strong> as ranges instead of fixed values). In addition, AmneziaWG 2.0 supports the <strong>I1~I5</strong> parameters, which send formatted UDP packets before each handshake to disguise AmneziaWG traffic as ordinary non‑VPN traffic, effectively bypassing deep packet inspection and enhancing connectivity in restricted networks. </p>
 <p><img alt="parameters" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/amneziawg_obfuscation_parameters/parameters.png" /></p>
 <p>These enhancements make VPN traffic more difficult to detect while preserving WireGuard's high speed and low latency.</p>
-<p>Here is how to identify the AmneziaWG version:</p>
+<div class="admonition tip">
+<p class="admonition-title">How to identify the AmneziaWG version?</p>
+<p><strong>V1.0</strong>: No S3-S4 parameters; H1-H4 are fixed single integers.</p>
+<p><strong>V2.0</strong>: It is V2.0 if any of the conditions below is met:</p>
 <ul>
-<li><strong>V1.0</strong>: No S3~S4 parameters; H1~H4 are single fixed integers.</li>
-<li><strong>V2.0</strong>: Includes <strong>S3~S4</strong> parameters; <strong>H1~H4</strong> are defined as numeric ranges; supports <strong>I1~I5</strong> parameters.</li>
+<li>Includes S3-S4 parameters</li>
+<li>H1-H4 are set as numeric ranges</li>
+<li>Includes customized I1-I5 parameters.</li>
 </ul>
 <blockquote>
-<p>Note: The parameters I1-I5 are not auto-generated. Users can manually add them as extra lines in the VPN configuration file to make AmneziaWG traffic look like other common protocols, such as QUIC or WebRTC.</p>
+<p>Note: I1-I5 are not auto-generated. Users can manually add them as extra lines in the configuration file to make AmneziaWG traffic look like other common protocols, such as QUIC or WebRTC.</p>
 </blockquote>
+</div>
 <h2 id="amneziawg-on-glinet-routers">AmneziaWG on GL.iNet routers<a class="headerlink" href="#amneziawg-on-glinet-routers" title="Permanent link">&para;</a></h2>
 <p>Currently, several GL.iNet routers (e.g., Brume 3, Flint 3, Flint 2, and Beryl AX) support the AmneziaWG protocol in select firmware versions. Full official support will be available in firmware ver.4.9 and gradually roll out to more models.</p>
 <p>To set up VPN obfuscation on GL.iNet routers, please refer to <a href="../../tutorials/vpn_obfuscation/">here</a>.</p>
@@ -6958,7 +6963,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 6, 2026 07:57:44 UTC">July 6, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 6, 2026 10:50:29 UTC">July 6, 2026</span>
   </span>
 
     

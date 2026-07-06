@@ -6724,15 +6724,29 @@
 <p>If you fail to establish a connection to an obfuscated WireGuard server, follow the steps below to troubleshoot.</p>
 <ol>
 <li>
-<p><strong>Ensure the WireGuard config file imported to your client is the exact file exported from your GL.iNet WireGuard server.</strong></p>
+<p><strong>Ensure the WireGuard configuration imported to each client is dedicated.</strong></p>
 <p>Each client requires an exclusive peer configuration file. Sharing one configuration across multiple clients will result in connection failures.</p>
 <p>If necessary, navigate to <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong> -&gt; <strong>Profiles</strong> to view your exported profiles.</p>
 <p><img alt="wg profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/cannot_connect_to_obfuscated_wgserver/wg_profiles.png" /></p>
 </li>
 <li>
-<p><strong>Match AmneziaWG protocol versions on your server and client.</strong></p>
-<p>AmneziaWG 1.0 and 2.0 are mutually incompatible. The server and client must run the same AmneziaWG protocol version to establish a valid connection. </p>
-<p>If your client device is a GL.iNet router, you may check the protocol version by the following two methods.</p>
+<p><strong>Ensure that the obfuscated parameters can be verified by the client.</strong></p>
+<p>The AmneziaWG protocol is backward compatible. If your WireGuard server only supports AmneziaWG v1.0, the configuration file will still pass verification when imported into a client supporting v2.0.</p>
+<p>However, if your configuration file includes obfuscation parameters of AmneziaWG v2.0, make sure your WireGuard client supports AmneziaWG v2.0. Otherwise, the parameter verification could fail.</p>
+<div class="admonition tip">
+<p class="admonition-title">How to identify the AmneziaWG version?</p>
+<p><strong>V1.0</strong>: No S3-S4 parameters; H1-H4 are fixed single integers.</p>
+<p><strong>V2.0</strong>: It is V2.0 if any of the conditions below is met:</p>
+<ul>
+<li>Includes S3-S4 parameters</li>
+<li>H1-H4 are set as numeric ranges</li>
+<li>Includes customized I1-I5 parameters.</li>
+</ul>
+<blockquote>
+<p>Note: I1-I5 are not auto-generated. Users can manually add them as extra lines in the configuration file to make AmneziaWG traffic look like other common protocols, such as QUIC or WebRTC.</p>
+</blockquote>
+</div>
+<p>If your WireGuard client is a GL.iNet router, check its AmneziaWG version by the following two methods.</p>
 <details class="note">
 <summary>Check via Router Web Admin Panel</summary>
 <ol>
@@ -6806,7 +6820,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 6, 2026 07:57:44 UTC">July 6, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 6, 2026 10:50:29 UTC">July 6, 2026</span>
   </span>
 
     
