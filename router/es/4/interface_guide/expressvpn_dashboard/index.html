@@ -1,24 +1,20 @@
 
 <!doctype html>
-<html lang="pl" class="no-js">
+<html lang="es" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Dokumentacja produkcji routerów GL.iNet">
+        <meta name="description" content="Documentación de productos de routers GL.iNet">
       
       
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/router/pl/4/tutorials/how_to_set_up_wireguard_server_via_astrorelay/">
+        <link rel="canonical" href="https://docs.gl-inet.com/router/es/4/interface_guide/expressvpn_dashboard/">
       
       
-        <link rel="prev" href="../how_to_set_up_openvpn_server_via_astrorelay/">
-      
-      
-        <link rel="next" href="../openvpn_server_access_client_lan_side/">
       
       
       <link rel="icon" href="https://static.gl-inet.com/docs/router/common/favicon.png">
@@ -26,7 +22,7 @@
     
     
       
-        <title>Skonfiguruj serwer WireGuard przez AstroRelay - Dokumentacja routerów GL.iNet 4</title>
+        <title>ExpressVPN Dashboard - Documentación de routers GL.iNet 4</title>
       
     
     
@@ -76,8 +72,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#jak-skonfigurowac-serwer-wireguard-przez-astrorelay" class="md-skip">
-          Przejdź do treści
+        <a href="#expressvpn-dashboard" class="md-skip">
+          Saltar a contenido
         </a>
       
     </div>
@@ -93,8 +89,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Nagłówek">
-    <a href="../.." title="Dokumentacja routerów GL.iNet 4" class="md-header__button md-logo" aria-label="Dokumentacja routerów GL.iNet 4" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Documentación de routers GL.iNet 4" class="md-header__button md-logo" aria-label="Documentación de routers GL.iNet 4" data-md-component="logo">
       
   <img src="https://static.gl-inet.com/docs/router/common/logo_white.svg" alt="logo">
 
@@ -107,13 +103,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Dokumentacja routerów GL.iNet 4
+            Documentación de routers GL.iNet 4
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Skonfiguruj serwer WireGuard przez AstroRelay
+              ExpressVPN Dashboard
             
           </span>
         </div>
@@ -127,7 +123,7 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Wybierz język">
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
     </button>
     <div class="md-select__inner">
@@ -189,16 +185,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Szukaj" placeholder="Szukaj" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Szukaj">
+      <nav class="md-search__options" aria-label="Buscar">
         
-        <button type="reset" class="md-search__icon md-icon" title="Wyczyść" aria-label="Wyczyść" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
@@ -209,7 +205,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Inicjowanie wyszukiwania
+            Inicializando búsqueda
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -220,7 +216,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/gl-inet/docs4.x" title="Przejdź do repozytorium" class="md-source" data-md-component="source">
+        <a href="https://github.com/gl-inet/docs4.x" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -241,7 +237,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Zakładki" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -255,7 +251,7 @@
   
     
   
-  Strona glowna
+  Inicio
 
       </a>
     </li>
@@ -274,7 +270,7 @@
   
     
   
-  Przewodnik uzytkownika
+  Guía del usuario
 
         </a>
       </li>
@@ -294,29 +290,7 @@
   
     
   
-  FAQ
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
-          
-  
-    
-  
-  Samouczki
+  Preguntas frecuentes
 
         </a>
       </li>
@@ -331,12 +305,32 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../interface_guide/" class="md-tabs__link">
+        <a href="../../tutorials/" class="md-tabs__link">
           
   
     
   
-  Przewodnik po interfejsie
+  Tutoriales
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Guía de la interfaz
 
         </a>
       </li>
@@ -356,7 +350,7 @@
   
     
   
-  Biblioteka wideo
+  Biblioteca de videos
 
         </a>
       </li>
@@ -376,7 +370,7 @@
   
     
   
-  Spolecznosc
+  Comunidad
 
         </a>
       </li>
@@ -404,18 +398,18 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Nawigacja" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Dokumentacja routerów GL.iNet 4" class="md-nav__button md-logo" aria-label="Dokumentacja routerów GL.iNet 4" data-md-component="logo">
+    <a href="../.." title="Documentación de routers GL.iNet 4" class="md-nav__button md-logo" aria-label="Documentación de routers GL.iNet 4" data-md-component="logo">
       
   <img src="https://static.gl-inet.com/docs/router/common/logo_white.svg" alt="logo">
 
     </a>
-    Dokumentacja routerów GL.iNet 4
+    Documentación de routers GL.iNet 4
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/gl-inet/docs4.x" title="Przejdź do repozytorium" class="md-source" data-md-component="source">
+      <a href="https://github.com/gl-inet/docs4.x" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -439,7 +433,7 @@
         
   
   <span class="md-ellipsis">
-    Strona glowna
+    Inicio
   </span>
   
 
@@ -626,7 +620,7 @@
               
   
   <span class="md-ellipsis">
-    Przewodnik uzytkownika
+    Guía del usuario
   </span>
   
 
@@ -642,7 +636,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Przewodnik uzytkownika
+            Guía del usuario
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1457,7 +1451,7 @@
               
   
   <span class="md-ellipsis">
-    FAQ
+    Preguntas frecuentes
   </span>
   
 
@@ -1473,7 +1467,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            FAQ
+            Preguntas frecuentes
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1539,7 +1533,7 @@
         
   
   <span class="md-ellipsis">
-    Pierwsza konfiguracja
+    Configuración inicial
   </span>
   
 
@@ -1560,7 +1554,7 @@
         
   
   <span class="md-ellipsis">
-    Ostrzezenie przegladarki
+    Advertencia del navegador
   </span>
   
 
@@ -1581,7 +1575,7 @@
         
   
   <span class="md-ellipsis">
-    FAQ rozwiazywania problemow z polaczeniem internetowym
+    Preguntas frecuentes sobre la solución de problemas de conexión a Internet
   </span>
   
 
@@ -1602,7 +1596,7 @@
         
   
   <span class="md-ellipsis">
-    Polacz z publicznym hotspotem z portalem uwierzytelniajacym
+    Conectarse a un hotspot público con portal cautivo
   </span>
   
 
@@ -1623,7 +1617,7 @@
         
   
   <span class="md-ellipsis">
-    Podlacz urzadzenie tylko z Ethernetem do Wi-Fi
+    Conectar un dispositivo solo Ethernet a la red Wi-Fi
   </span>
   
 
@@ -1670,7 +1664,7 @@
             
   
   <span class="md-ellipsis">
-    Powiadomienia o problemach
+    Avisos de problemas
   </span>
   
 
@@ -1680,7 +1674,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Powiadomienia o problemach
+            Avisos de problemas
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1695,7 +1689,7 @@
         
   
   <span class="md-ellipsis">
-    Powiadomienie o problemie dla GL-MT2500/GL-X3000/GL-XE3000
+    Aviso de problema para GL-MT2500/GL-X3000/GL-XE3000
   </span>
   
 
@@ -1716,7 +1710,7 @@
         
   
   <span class="md-ellipsis">
-    Powiadomienie o problemie i rozwiazania dla GL-X3000/GL-X2000, gdy nie dzialaja z kartami SIM EE
+    Aviso de problema y soluciones para GL-X3000/GL-X2000 cuando no funcionan con tarjetas SIM de EE
   </span>
   
 
@@ -1801,7 +1795,7 @@
             
   
   <span class="md-ellipsis">
-    Rozwiazywanie problemow
+    Solución de problemas
   </span>
   
 
@@ -1811,7 +1805,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            Rozwiazywanie problemow
+            Solución de problemas
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1826,7 +1820,7 @@
         
   
   <span class="md-ellipsis">
-    Brak dostepu do panelu administracyjnego WWW
+    No se puede acceder al panel de administración web
   </span>
   
 
@@ -1847,7 +1841,7 @@
         
   
   <span class="md-ellipsis">
-    Nie mozna wykryc hotspotu 5G Androida
+    No se puede detectar el hotspot 5G de Android
   </span>
   
 
@@ -1868,7 +1862,7 @@
         
   
   <span class="md-ellipsis">
-    Nie mozna wykryc hotspotu 5G iPhone'a
+    No se puede detectar el hotspot 5G del iPhone
   </span>
   
 
@@ -1889,7 +1883,7 @@
         
   
   <span class="md-ellipsis">
-    Udostepnianie internetu z iPhone'a nie powiodlo sie
+    Fallo del tethering del iPhone
   </span>
   
 
@@ -1910,7 +1904,7 @@
         
   
   <span class="md-ellipsis">
-    Przewodnik rozwiazywania problemow z siecia komorkowa
+    Guía de solución de problemas de red celular
   </span>
   
 
@@ -1931,7 +1925,7 @@
         
   
   <span class="md-ellipsis">
-    Instalacja profilu eSIM nie powiodla sie
+    Falla la instalación del perfil eSIM
   </span>
   
 
@@ -1952,7 +1946,7 @@
         
   
   <span class="md-ellipsis">
-    Brak Internetu po zastapieniu starego routera urzadzeniem GL.iNet
+    No hay Internet después de sustituir el router antiguo por uno de GL.iNet
   </span>
   
 
@@ -1973,7 +1967,7 @@
         
   
   <span class="md-ellipsis">
-    Modem USB nie dziala
+    El módem USB no funciona
   </span>
   
 
@@ -1994,7 +1988,7 @@
         
   
   <span class="md-ellipsis">
-    Napraw siec lub zresetuj
+    Reparar la red o restablecer
   </span>
   
 
@@ -2015,7 +2009,7 @@
         
   
   <span class="md-ellipsis">
-    Co zrobic, jesli router jest zablokowany
+    Qué hacer si el router queda inutilizado
   </span>
   
 
@@ -2036,7 +2030,7 @@
         
   
   <span class="md-ellipsis">
-    macOS nie moze zapisywac na udziale Samba
+    macOS no puede escribir en un recurso compartido Samba
   </span>
   
 
@@ -2057,7 +2051,7 @@
         
   
   <span class="md-ellipsis">
-    Serwer WireGuard nie dziala poprawnie
+    El servidor WireGuard no funciona correctamente
   </span>
   
 
@@ -2078,7 +2072,7 @@
         
   
   <span class="md-ellipsis">
-    Zatrzymano na "Installing" podczas aktualizacji firmware'u
+    Se queda en "Installing" durante la actualización del firmware
   </span>
   
 
@@ -2099,7 +2093,7 @@
         
   
   <span class="md-ellipsis">
-    Zatrzymano na "Reverting" podczas resetowania firmware'u
+    Se queda en "Reverting" durante el restablecimiento del firmware
   </span>
   
 
@@ -2120,7 +2114,7 @@
         
   
   <span class="md-ellipsis">
-    Zatrzymano na "Rebooting" podczas ponownego uruchamiania firmware'u
+    Se queda en "Rebooting" durante el reinicio del firmware
   </span>
   
 
@@ -2141,7 +2135,7 @@
         
   
   <span class="md-ellipsis">
-    Jak rozwiazac konflikt podsieci
+    Cómo resolver un conflicto de subred
   </span>
   
 
@@ -2162,7 +2156,7 @@
         
   
   <span class="md-ellipsis">
-    Dlaczego otrzymuje komunikat z testu DDNS
+    Por qué aparece un mensaje en la prueba de DDNS
   </span>
   
 
@@ -2183,7 +2177,7 @@
         
   
   <span class="md-ellipsis">
-    Dlaczego predkosc mojego VPN jest nizsza niz oczekiwano
+    Por qué la velocidad de mi VPN es más lenta de lo esperado
   </span>
   
 
@@ -2204,7 +2198,7 @@
         
   
   <span class="md-ellipsis">
-    Jaka jest pojemnosc urzadzen mojego routera
+    Cuál es la capacidad de dispositivos de mi router
   </span>
   
 
@@ -2225,7 +2219,7 @@
         
   
   <span class="md-ellipsis">
-    Jaki jest zasieg bezprzewodowy mojego routera
+    Cuál es la cobertura inalámbrica de mi router
   </span>
   
 
@@ -2246,7 +2240,7 @@
         
   
   <span class="md-ellipsis">
-    Zaktualizuj wersje U-Boot
+    Actualizar la versión de U-Boot
   </span>
   
 
@@ -2326,11 +2320,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/openvpn_client/" class="md-nav__link">
+      <a href="../openvpn_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Jak skonfigurowac OpenVPN
+    Cómo configurar OpenVPN
   </span>
   
 
@@ -2347,32 +2341,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/wireguard_client/" class="md-nav__link">
+      <a href="../wireguard_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Jak skonfigurowac WireGuard
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../faq/block_non_vpn_traffic/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Jak blokowac ruch poza VPN
+    Cómo configurar WireGuard
   </span>
   
 
@@ -2393,7 +2366,28 @@
         
   
   <span class="md-ellipsis">
-    Kill Switch VPN
+    Cómo bloquear el tráfico fuera de la VPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/block_non_vpn_traffic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kill Switch de VPN
   </span>
   
 
@@ -2414,7 +2408,7 @@
         
   
   <span class="md-ellipsis">
-    TCP czy UDP
+    TCP o UDP
   </span>
   
 
@@ -2435,7 +2429,7 @@
         
   
   <span class="md-ellipsis">
-    Zaciemnianie AmneziaWG
+    Parámetros de ofuscación de AmneziaWG
   </span>
   
 
@@ -2456,7 +2450,7 @@
         
   
   <span class="md-ellipsis">
-    Nie można połączyć się z maskowanym serwerem WireGuard
+    No se puede conectar a un servidor WireGuard ofuscado
   </span>
   
 
@@ -2477,7 +2471,7 @@
         
   
   <span class="md-ellipsis">
-    Czy musze skonfigurowac Ethernet WAN podczas korzystania z VPN
+    Tengo que configurar Ethernet WAN al usar VPN
   </span>
   
 
@@ -2524,7 +2518,7 @@
             
   
   <span class="md-ellipsis">
-    Aktualizacja
+    Actualización
   </span>
   
 
@@ -2534,7 +2528,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
-            Aktualizacja
+            Actualización
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2549,7 +2543,7 @@
         
   
   <span class="md-ellipsis">
-    Pobierz firmware
+    Descargar firmware
   </span>
   
 
@@ -2566,11 +2560,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_upgrade_downgrade_router/" class="md-nav__link">
+      <a href="../../tutorials/how_to_upgrade_downgrade_router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Recznie zaktualizuj lub cofnij wersje
+    Actualizar o degradar manualmente
   </span>
   
 
@@ -2596,8 +2590,6 @@
   
     
     
-      
-        
       
         
       
@@ -2639,7 +2631,7 @@
             
   
   <span class="md-ellipsis">
-    Inne
+    Otros
   </span>
   
 
@@ -2649,7 +2641,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
-            Inne
+            Otros
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2664,7 +2656,7 @@
         
   
   <span class="md-ellipsis">
-    Stan wskaznika LED
+    Estado del indicador LED
   </span>
   
 
@@ -2685,7 +2677,7 @@
         
   
   <span class="md-ellipsis">
-    Aplikacja mobilna GL.iNet
+    App móvil de GL.iNet
   </span>
   
 
@@ -2706,7 +2698,7 @@
         
   
   <span class="md-ellipsis">
-    Dodaj Brume 2 do aplikacji mobilnej
+    Añadir Brume 2 a la app móvil
   </span>
   
 
@@ -2727,7 +2719,7 @@
         
   
   <span class="md-ellipsis">
-    Zmien WAN na LAN
+    Cambiar WAN a LAN
   </span>
   
 
@@ -2748,7 +2740,7 @@
         
   
   <span class="md-ellipsis">
-    Uzyskaj dostep do GL.iNet i AdGuard Home przez HTTPS
+    Acceder a GL.iNet y AdGuard Home mediante HTTPS
   </span>
   
 
@@ -2769,7 +2761,7 @@
         
   
   <span class="md-ellipsis">
-    Polacz z antena Starlink
+    Conectarse a la antena Starlink
   </span>
   
 
@@ -2790,7 +2782,7 @@
         
   
   <span class="md-ellipsis">
-    Zdalna administracja WWW
+    Acceso remoto a Web Admin
   </span>
   
 
@@ -2807,32 +2799,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/remote_ssh_to_router/" class="md-nav__link">
+      <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zdalne SSH do routera
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../how_to_check_if_isp_assigns_you_a_public_ip_address/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Sprawdzanie publicznego IP
+    Comprobar IP pública
   </span>
   
 
@@ -2853,7 +2824,7 @@
         
   
   <span class="md-ellipsis">
-    Jak uruchomic Wi-Fi Calling na Opal
+    Hacer que Wi-Fi Calling funcione en Opal
   </span>
   
 
@@ -2874,7 +2845,7 @@
         
   
   <span class="md-ellipsis">
-    Znajdz wszystkie adresy MAC
+    Encontrar todas las direcciones MAC
   </span>
   
 
@@ -2895,7 +2866,7 @@
         
   
   <span class="md-ellipsis">
-    Znajdz informacje o urzadzeniu
+    Encontrar información del dispositivo
   </span>
   
 
@@ -2916,7 +2887,7 @@
         
   
   <span class="md-ellipsis">
-    Czym jest LuCI
+    Qué es LuCI
   </span>
   
 
@@ -2945,8 +2916,6 @@
       
   
   
-    
-  
   
   
     
@@ -2975,21 +2944,21 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../tutorials/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    Samouczki
+    Tutoriales
   </span>
   
 
@@ -3002,10 +2971,10 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Samouczki
+            Tutoriales
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3015,16 +2984,10 @@
                 
   
   
-    
   
   
-  
     
     
-      
-        
-      
-        
       
         
       
@@ -3068,12 +3031,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -3087,7 +3050,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             VPN
@@ -3101,11 +3064,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_set_up_openvpn_client/" class="md-nav__link">
+      <a href="../../tutorials/how_to_set_up_openvpn_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Skonfiguruj klienta OpenVPN
+    Configurar cliente OpenVPN
   </span>
   
 
@@ -3122,11 +3085,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_set_up_openvpn_server/" class="md-nav__link">
+      <a href="../../tutorials/how_to_set_up_openvpn_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Skonfiguruj serwer OpenVPN
+    Configurar servidor OpenVPN
   </span>
   
 
@@ -3143,11 +3106,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../build_your_own_wireguard_home_server_with_two_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/build_your_own_wireguard_home_server_with_two_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zbuduj wlasny domowy serwer WireGuard
+    Crear tu propio servidor doméstico WireGuard
   </span>
   
 
@@ -3164,11 +3127,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpn_obfuscation/" class="md-nav__link">
+      <a href="../../tutorials/vpn_obfuscation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Skonfiguruj zaciemnianie VPN
+    Configurar la ofuscación de VPN
   </span>
   
 
@@ -3185,11 +3148,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_nordvpn_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_connect_to_nordvpn_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Polacz z NordVPN przez dedykowany adres IP
+    Conectarse a NordVPN con una IP dedicada
   </span>
   
 
@@ -3206,11 +3169,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Polacz z Surfshark przez dedykowany adres IP
+    Conectarse a Surfshark con una IP dedicada
   </span>
   
 
@@ -3227,63 +3190,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_set_up_openvpn_server_via_astrorelay/" class="md-nav__link">
+      <a href="../../tutorials/openvpn_server_access_client_lan_side/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Skonfiguruj serwer OpenVPN przez AstroRelay
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Skonfiguruj serwer WireGuard przez AstroRelay
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../openvpn_server_access_client_lan_side/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Uzyskaj dostep do sieci LAN klienta OpenVPN z serwera
+    Acceder a la LAN del cliente OpenVPN desde el servidor
   </span>
   
 
@@ -3300,11 +3211,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../wireguard_server_access_to_client_lan_side/" class="md-nav__link">
+      <a href="../../tutorials/wireguard_server_access_to_client_lan_side/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Uzyskaj dostep do sieci LAN klienta WireGuard z serwera
+    Acceder a la LAN del cliente WireGuard desde el servidor
   </span>
   
 
@@ -3321,11 +3232,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_access_ovpnserver_lan_via_domain_name/" class="md-nav__link">
+      <a href="../../tutorials/how_to_access_ovpnserver_lan_via_domain_name/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Uzyskaj dostep do sieci LAN serwera OpenVPN z klienta przez nazwe domeny
+    Acceder a la LAN del servidor OpenVPN desde el cliente mediante nombre de dominio
   </span>
   
 
@@ -3342,11 +3253,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_access_wgserver_lan_via_domain_name/" class="md-nav__link">
+      <a href="../../tutorials/how_to_access_wgserver_lan_via_domain_name/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Uzyskaj dostep do sieci LAN serwera WireGuard z klienta przez nazwe domeny
+    Acceder a la LAN del servidor WireGuard desde el cliente mediante nombre de dominio
   </span>
   
 
@@ -3363,11 +3274,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_enable_openvpn_tap_s2s_mode_on_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_enable_openvpn_tap_s2s_mode_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Wlacz OpenVPN TAP-S2S
+    Activar OpenVPN TAP-S2S
   </span>
   
 
@@ -3384,11 +3295,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_use_vpn_cascading_on_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_use_vpn_cascading_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Wlacz kaskadowe polaczenie VPN
+    Activar VPN Cascading
   </span>
   
 
@@ -3405,11 +3316,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../../tutorials/use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Uzyj WireGuard do zabezpieczenia RDP spoza sieci
+    Usar WireGuard para proteger RDP desde fuera de la red
   </span>
   
 
@@ -3426,11 +3337,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_get_configuration_files_from_wireguard_service_providers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_get_configuration_files_from_wireguard_service_providers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Pobierz pliki konfiguracyjne od dostawcow uslug WireGuard
+    Obtener archivos de configuración de proveedores de WireGuard
   </span>
   
 
@@ -3447,11 +3358,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../reserve_fixed_IP_for_ovpn_client/" class="md-nav__link">
+      <a href="../../tutorials/reserve_fixed_IP_for_ovpn_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zarezerwuj staly adres IP dla klienta OpenVPN
+    Reservar una IP fija para el cliente OpenVPN
   </span>
   
 
@@ -3468,11 +3379,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_allow_access_to_wan_when_vpn_client_enabled/" class="md-nav__link">
+      <a href="../../tutorials/how_to_allow_access_to_wan_when_vpn_client_enabled/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zezwol na dostep do WAN, gdy klient VPN jest wlaczony
+    Permitir acceso a la WAN cuando el cliente VPN está habilitado
   </span>
   
 
@@ -3489,11 +3400,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../route_vpn_client_dns_to_server_upstream_dns/" class="md-nav__link">
+      <a href="../../tutorials/route_vpn_client_dns_to_server_upstream_dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Skieruj DNS klienta VPN do nadrzednego DNS serwera
+    Enrutar el DNS del cliente VPN al DNS ascendente del servidor
   </span>
   
 
@@ -3510,11 +3421,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_update_openvpn_server_certificates/" class="md-nav__link">
+      <a href="../../tutorials/how_to_update_openvpn_server_certificates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zaktualizuj certyfikaty serwera OpenVPN
+    Actualizar los certificados del servidor OpenVPN
   </span>
   
 
@@ -3531,11 +3442,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_make_adguard_home_dns_bypass_vpn/" class="md-nav__link">
+      <a href="../../tutorials/how_to_make_adguard_home_dns_bypass_vpn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Jak sprawić, by DNS AdGuard Home omijał VPN
+    Hacer que el DNS de AdGuard Home evite la VPN
   </span>
   
 
@@ -3561,6 +3472,8 @@
   
     
     
+      
+        
       
         
       
@@ -3590,7 +3503,7 @@
             
   
   <span class="md-ellipsis">
-    Komorkowe
+    Celular
   </span>
   
 
@@ -3600,7 +3513,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
-            Komorkowe
+            Celular
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3611,11 +3524,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../sms_forwarding/" class="md-nav__link">
+      <a href="../../tutorials/sms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Przekazywanie SMS
+    SMS
   </span>
   
 
@@ -3632,11 +3545,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../get_module_logs/" class="md-nav__link">
+      <a href="../../tutorials/sms_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Pobierz logi modulu
+    Reenvío de SMS
   </span>
   
 
@@ -3653,11 +3566,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../upgrade_quectel_module_software/" class="md-nav__link">
+      <a href="../../tutorials/get_module_logs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zaktualizuj modul Quectel
+    Obtener registros del módulo
   </span>
   
 
@@ -3674,11 +3587,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_check_carrier_aggregation/" class="md-nav__link">
+      <a href="../../tutorials/upgrade_quectel_module_software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Sprawdz stan agregacji nosnych
+    Actualizar módulo Quectel
   </span>
   
 
@@ -3695,11 +3608,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_set_up_and_use_spitz_ax_gl-x3000_in_your_recreational_vehicle/" class="md-nav__link">
+      <a href="../../tutorials/how_to_check_carrier_aggregation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Skonfiguruj Spitz AX do kampera
+    Comprobar el estado de la agregación de portadoras
   </span>
   
 
@@ -3716,11 +3629,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_install_or_change_antennas/" class="md-nav__link">
+      <a href="../../tutorials/how_to_set_up_and_use_spitz_ax_gl-x3000_in_your_recreational_vehicle/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zainstaluj lub wymien anteny zewnetrzne
+    Configurar Spitz AX para vehículos recreativos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/how_to_install_or_change_antennas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalar o cambiar antenas externas
   </span>
   
 
@@ -3788,11 +3722,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_use_esim_physical_card_with_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_use_esim_physical_card_with_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Uzyj fizycznej karty eSIM z routerami GL.iNet
+    Usar tarjeta física eSIM con routers GL.iNet
   </span>
   
 
@@ -3809,11 +3743,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_use_the_esim_physical_card_with_android_devices/" class="md-nav__link">
+      <a href="../../tutorials/how_to_use_the_esim_physical_card_with_android_devices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Uzyj fizycznej karty eSIM z urzadzeniami Android
+    Usar tarjeta física eSIM con dispositivos Android
   </span>
   
 
@@ -3881,11 +3815,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../goodcloud_site_to_site/" class="md-nav__link">
+      <a href="../../tutorials/goodcloud_site_to_site/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Połączenie site-to-site
+    Sitio a sitio
   </span>
   
 
@@ -3902,11 +3836,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_access_the_luci_interface_via_goodcloud/" class="md-nav__link">
+      <a href="../../tutorials/how_to_access_the_luci_interface_via_goodcloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Uzyskaj dostep do LuCI przez GoodCloud
+    Acceder a LuCI mediante GoodCloud
   </span>
   
 
@@ -3959,7 +3893,7 @@
             
   
   <span class="md-ellipsis">
-    Siec
+    Red
   </span>
   
 
@@ -3969,7 +3903,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
-            Siec
+            Red
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3980,11 +3914,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../eap/" class="md-nav__link">
+      <a href="../../tutorials/eap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Polacz z siecia EAP
+    Conectarse a una red EAP
   </span>
   
 
@@ -4001,11 +3935,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_set_up_a_guest_network/" class="md-nav__link">
+      <a href="../../tutorials/how_to_set_up_a_guest_network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Skonfiguruj siec goscinna
+    Configurar una red de invitados
   </span>
   
 
@@ -4022,11 +3956,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_set_up_drop_in_gateway/" class="md-nav__link">
+      <a href="../../tutorials/how_to_set_up_drop_in_gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Skonfiguruj brame drop-in
+    Configurar drop-in gateway
   </span>
   
 
@@ -4043,11 +3977,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_set_up_port_forwarding/" class="md-nav__link">
+      <a href="../../tutorials/how_to_set_up_port_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Skonfiguruj przekierowanie portow na glownym routerze
+    Configurar el reenvío de puertos en el router principal
   </span>
   
 
@@ -4064,11 +3998,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../configure_dual_ethernet_wan/" class="md-nav__link">
+      <a href="../../tutorials/configure_dual_ethernet_wan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Skonfiguruj podwojny przewodowy dostep WAN
+    Configurar acceso WAN dual por cable
   </span>
   
 
@@ -4135,7 +4069,7 @@
             
   
   <span class="md-ellipsis">
-    Inne
+    Otros
   </span>
   
 
@@ -4145,7 +4079,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
-            Inne
+            Otros
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4156,11 +4090,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_block_client_devices/" class="md-nav__link">
+      <a href="../../tutorials/how_to_block_client_devices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Blokuj urzadzenia klienckie
+    Bloquear dispositivos cliente
   </span>
   
 
@@ -4177,11 +4111,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../manually_configure_static_ip/" class="md-nav__link">
+      <a href="../../tutorials/manually_configure_static_ip/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Recznie skonfiguruj statyczny adres IP na urzadzeniach klienckich
+    Configurar manualmente una IP estática en los dispositivos cliente
   </span>
   
 
@@ -4198,11 +4132,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_check_if_isp_assigns_you_a_public_ip_address/" class="md-nav__link">
+      <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Sprawdz, czy masz publiczny adres IP
+    Comprobar si tienes una IP pública
   </span>
   
 
@@ -4219,11 +4153,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_upgrade_downgrade_router/" class="md-nav__link">
+      <a href="../../tutorials/how_to_upgrade_downgrade_router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zaktualizuj lub cofnij wersje routera
+    Actualizar o degradar tu router
   </span>
   
 
@@ -4240,11 +4174,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../ssh_log_in_to_the_router/" class="md-nav__link">
+      <a href="../../tutorials/ssh_log_in_to_the_router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zaloguj sie do routera przez SSH
+    Iniciar sesión por SSH en el router
   </span>
   
 
@@ -4261,11 +4195,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../winscp_share_file/" class="md-nav__link">
+      <a href="../../tutorials/winscp_share_file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Uzyj WinSCP, aby uzyskac dostep do plikow udostepnionych
+    Usar WinSCP para acceder a archivos compartidos
   </span>
   
 
@@ -4282,11 +4216,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_use_winscp_to_modify_files_on_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_use_winscp_to_modify_files_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Uzyj WinSCP, aby modyfikowac pliki
+    Usar WinSCP para modificar archivos
   </span>
   
 
@@ -4303,11 +4237,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_activate_top_up_sim_cards/" class="md-nav__link">
+      <a href="../../tutorials/how_to_activate_top_up_sim_cards/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Aktywuj lub doladuj karty SIM T-Mobile
+    Activar o recargar tarjetas SIM de T-Mobile
   </span>
   
 
@@ -4324,11 +4258,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_change_the_nat_type_on_gaming/" class="md-nav__link">
+      <a href="../../tutorials/how_to_change_the_nat_type_on_gaming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zmien typ NAT do gier
+    Cambiar el tipo de NAT para juegos
   </span>
   
 
@@ -4345,11 +4279,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_retrieve_the_mobile_app_log/" class="md-nav__link">
+      <a href="../../tutorials/how_to_retrieve_the_mobile_app_log/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Pobierz log aplikacji mobilnej
+    Obtener el registro de la app móvil
   </span>
   
 
@@ -4366,11 +4300,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_configure_domain_and_ip_filtering_rules_for_glinet_routers_via_an_online_text_file/" class="md-nav__link">
+      <a href="../../tutorials/how_to_configure_domain_and_ip_filtering_rules_for_glinet_routers_via_an_online_text_file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Skonfiguruj reguly filtrowania domen i IP
+    Configurar reglas de filtrado de dominios e IP
   </span>
   
 
@@ -4387,11 +4321,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../technical_support_via_goodcloud/" class="md-nav__link">
+      <a href="../../tutorials/technical_support_via_goodcloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Pomoc techniczna przez GoodCloud
+    Soporte técnico mediante GoodCloud
   </span>
   
 
@@ -4466,11 +4400,11 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../interface_guide/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    Przewodnik po interfejsie
+    Guía de la interfaz
   </span>
   
 
@@ -4486,7 +4420,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Przewodnik po interfejsie
+            Guía de la interfaz
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4500,8 +4434,6 @@
   
     
     
-      
-        
       
         
       
@@ -4531,7 +4463,7 @@
             
   
   <span class="md-ellipsis">
-    Polaczenie z Internetem
+    Conexión a Internet
   </span>
   
 
@@ -4541,7 +4473,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
-            Polaczenie z Internetem
+            Conexión a Internet
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4552,7 +4484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/internet/" class="md-nav__link">
+      <a href="../internet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4573,7 +4505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/internet_ethernet/" class="md-nav__link">
+      <a href="../internet_ethernet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4594,11 +4526,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/internet_repeater/" class="md-nav__link">
+      <a href="../internet_repeater/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tryb repeatera
+    Repetidor
   </span>
   
 
@@ -4615,11 +4547,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/internet_tethering/" class="md-nav__link">
+      <a href="../internet_tethering/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Udostepnianie internetu
+    Tethering
   </span>
   
 
@@ -4636,11 +4568,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/internet_cellular/" class="md-nav__link">
+      <a href="../internet_cellular/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Komorkowe
+    Celular
   </span>
   
 
@@ -4657,32 +4589,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/sms/" class="md-nav__link">
+      <a href="../dual-ethernet_wan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    SMS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../interface_guide/dual-ethernet_wan/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Podwojny przewodowy WAN
+    WAN dual por Ethernet
   </span>
   
 
@@ -4729,7 +4640,7 @@
             
   
   <span class="md-ellipsis">
-    Bezprzewodowe
+    Inalámbrico
   </span>
   
 
@@ -4739,7 +4650,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
-            Bezprzewodowe
+            Inalámbrico
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4750,11 +4661,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/wireless/" class="md-nav__link">
+      <a href="../wireless/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Bezprzewodowe
+    Inalámbrico
   </span>
   
 
@@ -4771,11 +4682,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/wireless_v4.9/" class="md-nav__link">
+      <a href="../wireless_v4.9/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Bezprzewodowe (v4.9)
+    Wireless (v4.9)
   </span>
   
 
@@ -4820,7 +4731,7 @@
             
   
   <span class="md-ellipsis">
-    Klienci
+    Clientes
   </span>
   
 
@@ -4830,7 +4741,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
-            Klienci
+            Clientes
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4841,11 +4752,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/clients/" class="md-nav__link">
+      <a href="../clients/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Klienci
+    Clientes
   </span>
   
 
@@ -4892,7 +4803,7 @@
             
   
   <span class="md-ellipsis">
-    Uslugi chmurowe
+    Servicios en la nube
   </span>
   
 
@@ -4902,7 +4813,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
-            Uslugi chmurowe
+            Servicios en la nube
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4913,7 +4824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/cloud/" class="md-nav__link">
+      <a href="../cloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4934,7 +4845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/astrowarp/" class="md-nav__link">
+      <a href="../astrowarp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5018,11 +4929,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_dashboard_v4.7/" class="md-nav__link">
+      <a href="../vpn_dashboard_v4.7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Panel VPN (v4.7)
+    VPN Dashboard (v4.7)
   </span>
   
 
@@ -5039,11 +4950,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_dashboard_v4.8/" class="md-nav__link">
+      <a href="../vpn_dashboard_v4.8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Panel VPN (v4.8)
+    VPN Dashboard (v4.8)
   </span>
   
 
@@ -5060,11 +4971,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_dashboard_v4.9/" class="md-nav__link">
+      <a href="../vpn_dashboard_v4.9/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Panel VPN (v4.9)
+    VPN Dashboard (v4.9)
   </span>
   
 
@@ -5081,11 +4992,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_client_profile/" class="md-nav__link">
+      <a href="../vpn_client_profile/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Profil klienta VPN
+    VPN Client Profile
   </span>
   
 
@@ -5102,11 +5013,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/openvpn_client/" class="md-nav__link">
+      <a href="../openvpn_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Klient OpenVPN
+    Cliente OpenVPN
   </span>
   
 
@@ -5123,11 +5034,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/openvpn_server/" class="md-nav__link">
+      <a href="../openvpn_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Serwer OpenVPN
+    Servidor OpenVPN
   </span>
   
 
@@ -5144,11 +5055,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/wireguard_client/" class="md-nav__link">
+      <a href="../wireguard_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Klient WireGuard
+    Cliente WireGuard
   </span>
   
 
@@ -5165,11 +5076,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/wireguard_server/" class="md-nav__link">
+      <a href="../wireguard_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Serwer WireGuard
+    Servidor WireGuard
   </span>
   
 
@@ -5232,7 +5143,7 @@
             
   
   <span class="md-ellipsis">
-    Aplikacje
+    Aplicaciones
   </span>
   
 
@@ -5242,7 +5153,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
-            Aplikacje
+            Aplicaciones
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5253,11 +5164,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/plugins/" class="md-nav__link">
+      <a href="../plugins/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Wtyczki
+    Complementos
   </span>
   
 
@@ -5274,11 +5185,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/ddns/" class="md-nav__link">
+      <a href="../ddns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Dynamiczny DNS
+    DNS dinámico
   </span>
   
 
@@ -5295,11 +5206,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/network_storage/" class="md-nav__link">
+      <a href="../network_storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Pamiec sieciowa
+    Almacenamiento en red
   </span>
   
 
@@ -5316,7 +5227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/adguardhome/" class="md-nav__link">
+      <a href="../adguardhome/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5337,11 +5248,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/parental_control/" class="md-nav__link">
+      <a href="../parental_control/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Kontrola rodzicielska
+    Control parental
   </span>
   
 
@@ -5358,7 +5269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/bark/" class="md-nav__link">
+      <a href="../bark/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5379,7 +5290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/tailscale/" class="md-nav__link">
+      <a href="../tailscale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5400,7 +5311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/zerotier/" class="md-nav__link">
+      <a href="../zerotier/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5421,7 +5332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/tor/" class="md-nav__link">
+      <a href="../tor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5442,11 +5353,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/esim_management/" class="md-nav__link">
+      <a href="../esim_management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zarzadzanie eSIM
+    Gestión de eSIM
   </span>
   
 
@@ -5521,7 +5432,7 @@
             
   
   <span class="md-ellipsis">
-    Siec
+    Red
   </span>
   
 
@@ -5531,7 +5442,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
-            Siec
+            Red
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5542,11 +5453,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/firewall/" class="md-nav__link">
+      <a href="../firewall/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zapora sieciowa
+    Firewall
   </span>
   
 
@@ -5563,11 +5474,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/port_forwarding/" class="md-nav__link">
+      <a href="../port_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Przekierowanie portow
+    Reenvío de puertos
   </span>
   
 
@@ -5584,7 +5495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/multi-wan/" class="md-nav__link">
+      <a href="../multi-wan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5605,7 +5516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/lan/" class="md-nav__link">
+      <a href="../lan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5626,11 +5537,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/guest_network/" class="md-nav__link">
+      <a href="../guest_network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Siec goscinna
+    Red de invitados
   </span>
   
 
@@ -5647,11 +5558,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/iot_network/" class="md-nav__link">
+      <a href="../iot_network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Siec IoT
+    IoT Network
   </span>
   
 
@@ -5668,7 +5579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/dns/" class="md-nav__link">
+      <a href="../dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5689,11 +5600,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/ethernet_port/" class="md-nav__link">
+      <a href="../ethernet_port/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Port Ethernet
+    Puerto Ethernet
   </span>
   
 
@@ -5710,11 +5621,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/network_mode/" class="md-nav__link">
+      <a href="../network_mode/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tryb sieci
+    Modo de red
   </span>
   
 
@@ -5731,7 +5642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/ipv6/" class="md-nav__link">
+      <a href="../ipv6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5752,11 +5663,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/mac_address/" class="md-nav__link">
+      <a href="../mac_address/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Adres MAC
+    Dirección MAC
   </span>
   
 
@@ -5773,11 +5684,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/drop-in_gateway/" class="md-nav__link">
+      <a href="../drop-in_gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Brama drop-in
+    Drop-in Gateway
   </span>
   
 
@@ -5794,7 +5705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/igmp_snooping/" class="md-nav__link">
+      <a href="../igmp_snooping/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5815,11 +5726,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/hardware_acceleration/" class="md-nav__link">
+      <a href="../hardware_acceleration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Akceleracja sprzetowa
+    Aceleración de hardware
   </span>
   
 
@@ -5836,11 +5747,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/network_acceleration/" class="md-nav__link">
+      <a href="../network_acceleration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Akceleracja sieciowa
+    Aceleración de red
   </span>
   
 
@@ -5857,11 +5768,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/nat_settings/" class="md-nav__link">
+      <a href="../nat_settings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Ustawienia NAT
+    Configuración de NAT
   </span>
   
 
@@ -5916,7 +5827,7 @@
             
   
   <span class="md-ellipsis">
-    Kontrola przeplywu
+    Control de flujo
   </span>
   
 
@@ -5926,7 +5837,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
-            Kontrola przeplywu
+            Control de flujo
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5937,7 +5848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/dpi_engine/" class="md-nav__link">
+      <a href="../dpi_engine/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5958,11 +5869,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/data_statistics/" class="md-nav__link">
+      <a href="../data_statistics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Statystyki danych
+    Estadísticas de datos
   </span>
   
 
@@ -5979,11 +5890,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/content_filter/" class="md-nav__link">
+      <a href="../content_filter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Filtr tresci
+    Filtro de contenido
   </span>
   
 
@@ -6000,7 +5911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/qos/" class="md-nav__link">
+      <a href="../qos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6021,7 +5932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/sqm/" class="md-nav__link">
+      <a href="../sqm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6042,11 +5953,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/parental_control_v4.9/" class="md-nav__link">
+      <a href="../parental_control_v4.9/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Kontrola rodzicielska (v4.9)
+    Control parental (v4.9)
   </span>
   
 
@@ -6097,7 +6008,7 @@
             
   
   <span class="md-ellipsis">
-    Bezpieczenstwo
+    Seguridad
   </span>
   
 
@@ -6107,7 +6018,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_10">
             <span class="md-nav__icon md-icon"></span>
-            Bezpieczenstwo
+            Seguridad
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6118,11 +6029,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/port_forwarding/" class="md-nav__link">
+      <a href="../port_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Przekierowanie portow
+    Port Forwarding
   </span>
   
 
@@ -6139,7 +6050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/acl/" class="md-nav__link">
+      <a href="../acl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6160,11 +6071,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/admin_access/" class="md-nav__link">
+      <a href="../admin_access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Dostep administratora
+    Acceso de administrador
   </span>
   
 
@@ -6181,11 +6092,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/nat_settings/" class="md-nav__link">
+      <a href="../nat_settings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tryb NAT
+    Modo NAT
   </span>
   
 
@@ -6256,7 +6167,7 @@
             
   
   <span class="md-ellipsis">
-    System
+    Sistema
   </span>
   
 
@@ -6266,7 +6177,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_11">
             <span class="md-nav__icon md-icon"></span>
-            System
+            Sistema
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6277,11 +6188,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/system_overview/" class="md-nav__link">
+      <a href="../system_overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Przeglad
+    Información general
   </span>
   
 
@@ -6298,11 +6209,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/upgrade/" class="md-nav__link">
+      <a href="../upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Aktualizacja
+    Actualización
   </span>
   
 
@@ -6319,11 +6230,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/scheduled_tasks/" class="md-nav__link">
+      <a href="../scheduled_tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zadania zaplanowane
+    Tareas programadas
   </span>
   
 
@@ -6340,11 +6251,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/admin_password/" class="md-nav__link">
+      <a href="../admin_password/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Haslo administratora
+    Contraseña de administrador
   </span>
   
 
@@ -6361,11 +6272,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/display_management/" class="md-nav__link">
+      <a href="../display_management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zarzadzanie wyswietlaczem
+    Gestión de pantalla
   </span>
   
 
@@ -6382,11 +6293,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/usb_power/" class="md-nav__link">
+      <a href="../usb_power/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    USB i zasilanie
+    USB y alimentación
   </span>
   
 
@@ -6403,11 +6314,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/time_zone/" class="md-nav__link">
+      <a href="../time_zone/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Strefa czasowa
+    Zona horaria
   </span>
   
 
@@ -6424,11 +6335,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/toggle_button_settings/" class="md-nav__link">
+      <a href="../toggle_button_settings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Ustawienia przycisku przelaczania
+    Configuración del botón de alternancia
   </span>
   
 
@@ -6445,11 +6356,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/log/" class="md-nav__link">
+      <a href="../log/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Dziennik
+    Registro
   </span>
   
 
@@ -6466,11 +6377,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/security/" class="md-nav__link">
+      <a href="../security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Bezpieczenstwo
+    Seguridad
   </span>
   
 
@@ -6487,11 +6398,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/reset_firmware/" class="md-nav__link">
+      <a href="../reset_firmware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Resetuj firmware
+    Restablecer firmware
   </span>
   
 
@@ -6508,11 +6419,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/advanced_settings/" class="md-nav__link">
+      <a href="../advanced_settings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Ustawienia zaawansowane
+    Configuración avanzada
   </span>
   
 
@@ -6529,11 +6440,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/ui_languages/" class="md-nav__link">
+      <a href="../ui_languages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Jezyk
+    Idioma
   </span>
   
 
@@ -6550,11 +6461,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/help/" class="md-nav__link">
+      <a href="../help/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Pomoc
+    Ayuda
   </span>
   
 
@@ -6619,7 +6530,7 @@
               
   
   <span class="md-ellipsis">
-    Biblioteka wideo
+    Biblioteca de videos
   </span>
   
 
@@ -6635,7 +6546,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Biblioteka wideo
+            Biblioteca de videos
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6652,7 +6563,7 @@
         
   
   <span class="md-ellipsis">
-    Poznaj nasze nowe produkty
+    Conoce nuestros nuevos productos
   </span>
   
 
@@ -6673,7 +6584,7 @@
         
   
   <span class="md-ellipsis">
-    Rozpakowanie i pierwsza konfiguracja
+    Unboxing y configuración inicial
   </span>
   
 
@@ -6694,7 +6605,7 @@
         
   
   <span class="md-ellipsis">
-    Samouczki
+    Tutoriales
   </span>
   
 
@@ -6745,7 +6656,7 @@
               
   
   <span class="md-ellipsis">
-    Spolecznosc
+    Comunidad
   </span>
   
 
@@ -6756,7 +6667,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Spolecznosc
+            Comunidad
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6782,12 +6693,98 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
   
   
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#primeros-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primeros pasos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primeros pasos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canjear-el-plan-expressvpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canjear el plan ExpressVPN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-un-tunel-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir un túnel VPN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencia-de-casos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referencia de casos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kill-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kill Switch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-other-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      All Other Traffic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opciones-del-tunel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opciones del túnel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prioridad-de-tuneles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prioridad de túneles
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -6811,55 +6808,309 @@
   
 
   <!-- Markdown content -->
-  <h1 id="jak-skonfigurowac-serwer-wireguard-przez-astrorelay">Jak skonfigurować serwer WireGuard przez AstroRelay?<a class="headerlink" href="#jak-skonfigurowac-serwer-wireguard-przez-astrorelay" title="Permanent link">&para;</a></h1>
-<p>Ten poradnik przedstawia kroki konfiguracji serwera WireGuard przez AstroRelay na routerze GL.iNet, co jest idealne dla użytkowników, którzy potrzebują zdalnego dostępu do swoich lokalnych usług domowych lub biurowych, ale nie posiadają publicznego adresu IP od swojego dostawcy usług internetowych.</p>
-<p><a href="https://www.astrorelay.com" target="_blank">AstroRelay</a> zapewnia bezpieczny tunel odwrotnego proxy, przez który można bezpiecznie uzyskać dostęp do zasobów znajdujących się za NAT i zaporami sieciowymi.</p>
+  <h1 id="expressvpn-dashboard">ExpressVPN Dashboard<a class="headerlink" href="#expressvpn-dashboard" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Note:</strong> Esta guía solo se aplica al router <strong>Fortify</strong> de marca conjunta GL.iNet x ExpressVPN.</p>
+</blockquote>
+<p><a href="https://www.expressvpn.com/" target="_blank">ExpressVPN</a> es uno de los principales servicios VPN premium del mundo, diseñado para proteger su privacidad en línea, proteger su conexión a Internet y desbloquear contenido global. Ofrece velocidades muy altas, cifrado robusto y acceso a servidores en más de 100 países. Tanto si desea ver contenido en streaming, navegar de forma privada o proteger sus datos en redes Wi-Fi públicas, ExpressVPN le ofrece una experiencia rápida y segura.</p>
+<p><strong>Fortify</strong> es un router de marca conjunta lanzado por GL.iNet y ExpressVPN. Cada unidad incluye una suscripción gratuita de un año a ExpressVPN. Los usuarios pueden canjear la suscripción y vincular sus cuentas directamente desde el panel de administración web del router. Una vez activada, todo el tráfico que pase por el router usará la red de alta velocidad y el cifrado robusto de ExpressVPN para proteger toda su conexión de red y su privacidad en línea.</p>
+<p>Esta guía explica cómo canjear el plan de 12 meses de ExpressVPN desde el panel de administración web del router. También cubre cómo personalizar las políticas VPN según sus escenarios de uso y requisitos, para ayudarle a disfrutar de una conectividad a Internet cifrada, segura y de alta velocidad.</p>
+<h2 id="primeros-pasos">Primeros pasos<a class="headerlink" href="#primeros-pasos" title="Permanent link">&para;</a></h2>
+<h3 id="canjear-el-plan-expressvpn">Canjear el plan ExpressVPN<a class="headerlink" href="#canjear-el-plan-expressvpn" title="Permanent link">&para;</a></h3>
+<p>Inicie sesión en el panel de administración web de Fortify y vaya a <strong>VPN</strong> -&gt; <strong>VPN Client Profile</strong>.</p>
+<p><img alt="vpn client profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/2-vpn_client_profile.png" /></p>
+<p>Lea y acepte <strong>Terms of Service</strong> y <strong>Privacy Policy</strong>, y luego haga clic en <strong>Get Started</strong>.</p>
+<p><img alt="get started" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/2-get_started.png" /></p>
+<p>Haga clic en <strong>Claim 12-Month Plan</strong>.</p>
+<p><img alt="claim 12-month plan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/2-claim_plan.png" /></p>
+<p>En la ventana emergente, introduzca su <strong>Order ID</strong>. Si compró este router en GL.iNet Store, también se requiere <strong>Order Email</strong>. A continuación, haga clic en <strong>Continue to ExpressVPN</strong>.</p>
+<p><img alt="claim 12-month plan amazon" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/3-amazon_order.png" /></p>
+<p><img alt="claim 12-month plan store" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/3-store_order_email.png" /></p>
+<p>Será redirigido al proceso de pago de ExpressVPN. A la derecha se habrá aplicado un código de canje para activar una suscripción de 12 meses sin coste adicional.</p>
+<p>Introduzca su dirección de correo electrónico en la parte superior y añada un método de pago para garantizar el acceso VPN sin interrupciones al finalizar el periodo inicial. Luego haga clic en <strong>Subscribe with Card</strong>.</p>
+<p><img alt="expressvpn checkout1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/4-expressvpn_checkout1.png" /></p>
+<p>Se enviará un <strong>Activation Link</strong> a su dirección de correo electrónico. Vaya a su bandeja de entrada y siga las instrucciones para activar su cuenta de ExpressVPN.</p>
+<p><img alt="expressvpn checkout2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/4-expressvpn_checkout2.png" /></p>
+<p>Haga clic en el enlace de activación del correo electrónico y cree su contraseña para activar la cuenta.</p>
+<p><img alt="create password" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/5-create_password(1).png" /></p>
+<p>Su cuenta se ha activado correctamente. Vuelva al panel de administración web de su router Fortify para añadir su túnel VPN.</p>
+<p><img alt="my account" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/7-my_account(1).png" /></p>
+<h3 id="anadir-un-tunel-vpn">Añadir un túnel VPN<a class="headerlink" href="#anadir-un-tunel-vpn" title="Permanent link">&para;</a></h3>
+<p>Siga los pasos siguientes para añadir su túnel VPN y configurar las políticas VPN. Consulte la <a href="#referencia-de-casos">Referencia de casos</a> si es necesario.</p>
 <ol>
 <li>
-<p>Postępuj zgodnie z <a href="../../interface_guide/wireguard_server/">tym przewodnikiem</a>, aby skonfigurować serwer WireGuard na routerze GL.iNet, nawet jeśli nie masz publicznego adresu IP. </p>
-<p><img alt="set up wireguard server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/start_wg_server4x.jpg" /></p>
-<p>Następnie kliknij <strong>Profiles</strong>, aby wyeksportować konfigurację WireGuard. Oto przykładowy plik konfiguracyjny.</p>
-<p><img alt="wireguard config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/wireguard_config.png" /></p>
+<p>Inicie sesión en el panel de administración web de Fortify y vaya a <strong>VPN</strong> -&gt; <strong>ExpressVPN Dashboard</strong>. Haga clic en <strong>Add VPN Tunnel</strong>.</p>
+<p><img alt="dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/dashboard_initial.png" /></p>
 </li>
 <li>
-<p>(Opcjonalnie) Jeśli potrzebujesz zdalnego dostępu do sieci LAN serwera VPN, włącz <strong>Allow Remote Access LAN</strong>. W przeciwnym razie pomiń ten krok.</p>
-<details>
-<summary>Dla firmware v4.7 i wcześniejszych</summary>
-<p>W panelu administratora serwera przejdź do <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; sekcja <strong>VPN Server</strong>. Kliknij ikonę koła zębatego po prawej stronie serwera WireGuard.</p>
-<p><img alt="server options 4.7" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/server_options_4.7.png" /></p>
-<p>Włącz <strong>Remote Access LAN</strong> i kliknij <strong>Apply</strong>.</p>
-<p><img alt="server allow access lan 4.7" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/server-allow-access-lan-4.7.png" /></p>
-<p><strong>Gdy włączone, ten router i urządzenia LAN mogą być dostępne zdalnie przez VPN.</strong></p>
-</details>
-<details>
-<summary>Dla firmware v4.8 i nowszych</summary>
-<p>W panelu administratora serwera przejdź do <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong>. Kliknij <strong>Options</strong> w prawym górnym rogu.</p>
-<p><img alt="server options 4.8" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/server_options_4.8.png" /></p>
-<p>Włącz <strong>Allow Remote Access the LAN Subnet</strong> i kliknij <strong>Apply</strong>.</p>
-<p><img alt="server allow access lan 4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/server-allow-access-lan-4.8.png" /></p>
-<p><strong>Gdy włączone, ten router i urządzenia LAN mogą być dostępne zdalnie przez VPN.</strong></p>
-</details>
+<p>Seleccione el perfil VPN y haga clic en <strong>Next</strong>.</p>
+<p>Obtendrá una lista de perfiles de ExpressVPN. Seleccione uno o varios perfiles y ajuste su prioridad a la derecha según sea necesario.</p>
+<p><img alt="select profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/select-profile.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cuando se seleccionan varios perfiles, el túnel intentará conectarse usando cada perfil en orden de prioridad hasta que se establezca correctamente una conexión. Si todos los perfiles de un mismo túnel no logran conectarse, el sistema determinará si cambia a la red local del router (WAN) según el estado del Kill Switch en la configuración de <a href="#opciones-del-tunel">Opciones del túnel</a> y <a href="#all-other-traffic">All Other Traffic</a>.</p>
+</div>
 </li>
 <li>
-<p>Załóż konto AstroRelay i postępuj zgodnie z tym <a href="https://www.astrorelay.com/tutorial.html" target="_blank">poradnikiem</a>, aby ukończyć początkową konfigurację.</p>
-<p>Podczas dodawania nowej domeny wybierz serwer najbliższy routerowi.</p>
-<p><img alt="astrorelay add a new domain" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/astrorelay_add_a_new_domain.png" /></p>
-<p>Podczas dodawania nowego linku wprowadź <strong>adres IP LAN</strong> routera w pole <strong>Destination Host IP</strong> i wprowadź <strong>51820</strong> w pole <strong>Destination Port</strong>.</p>
-<p><img alt="link for wireguard server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/astrorelay_wg_server.png" /></p>
-<p>Otrzymasz wtedy link, taki jak <strong>wg_server_test.arlab1.cc:33331</strong>. Kliknij go, aby skopiować link.</p>
-<p><img alt="astrorelay link" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/astrorelay_link.png" /></p>
+<p>Seleccione el origen del cliente y haga clic en <strong>Next</strong>.</p>
+<p>Hay cuatro opciones:</p>
+<ul>
+<li>
+<p><strong>All Clients</strong>: Si se selecciona, el tráfico de todos los dispositivos coincidirá con esta regla.
+<img alt="all clients" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/all-clients.png" /></p>
 </li>
 <li>
-<p>Otwórz plik konfiguracyjny WireGuard, zamień wartość po <strong>Endpoint</strong> na link uzyskany w poprzednim kroku i zastosuj zmiany.</p>
-<p><img alt="replace link in wireguard config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_wireguard_server_via_astrorelay/replace_endpoint_in_wireguard_config.png" /></p>
+<p><strong>Specified Connection Types</strong>: Si se selecciona, el tráfico de los tipos de conexión especificados (por ejemplo, subred LAN, Drop-in Gateway, red de invitados) coincidirá con esta regla.
+<img alt="specified connection types" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/specified-connection.png" /></p>
 </li>
 <li>
-<p>Zainstaluj <a href="https://www.wireguard.com/install/" target="_blank">aplikację WireGuard</a> na urządzeniu, którego chcesz użyć jako klient WireGuard. Następnie prześlij zmodyfikowany plik konfiguracyjny do aplikacji i uruchom połączenie. Alternatywnie prześlij go na inny router GL.iNet, aby skonfigurować go jako klienta WireGuard.</p>
-<p>Po połączeniu będziesz mógł zdalnie uzyskać dostęp do lokalnych usług domowych lub biurowych.</p>
+<p><strong>Specified Devices</strong>: Si se selecciona, el tráfico de los dispositivos especificados (identificados por dirección MAC) coincidirá con esta regla.
+<img alt="specified devices" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/specified-devices.png" /></p>
+</li>
+<li>
+<p><strong>Exclude Specified Devices</strong>: Si se selecciona, el tráfico de los dispositivos especificados (identificados por dirección MAC) no coincidirá con esta regla.
+<img alt="exclude specified devices" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/exclude-specified-devices.png" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Seleccione el destino y haga clic en <strong>Apply</strong>.</p>
+<p>Hay tres opciones:</p>
+<ul>
+<li>
+<p><strong>All Targets</strong>: Si se selecciona, el tráfico que coincida con esta regla se enrutará a todos los destinos.
+<img alt="all targets" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/all-targets.png" /></p>
+</li>
+<li>
+<p><strong>Specified Domain / IP List</strong>: Si se selecciona, el tráfico que coincida con esta regla se enrutará a los dominios o direcciones IP especificados. Debe introducirlos manualmente.
+<img alt="specified domain ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/specified-domain-ip.png" /></p>
+</li>
+<li>
+<p><strong>Exclude specified Domain / IP List</strong>: Si se selecciona, el tráfico que coincida con esta regla no se enrutará a los dominios o direcciones IP especificados. Debe introducirlos manualmente.
+<img alt="exclude specified domain ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/exclude-specified-domain-ip.png" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>El túnel VPN se ha añadido correctamente. Será dirigido al <strong>ExpressVPN Dashboard</strong>. Añada más túneles VPN si es necesario.</p>
+</li>
+</ol>
+<h3 id="referencia-de-casos">Referencia de casos<a class="headerlink" href="#referencia-de-casos" title="Permanent link">&para;</a></h3>
+<p>A continuación se ofrecen dos casos típicos de configuración con instrucciones paso a paso como referencia.</p>
+<p><strong>Caso 1</strong>: Enrutar solo dispositivos especificados a través de VPN.</p>
+<p><u>Requisitos</u>:</p>
+<ol>
+<li>
+<p>Solo dispositivos específicos conectados a este router acceden a Internet a través de la VPN. Todos los demás dispositivos acceden a Internet a través de la WAN local.</p>
+</li>
+<li>
+<p>Los dispositivos seleccionados deben usar únicamente la conexión VPN. Si la VPN se desconecta inesperadamente, el acceso a Internet de estos dispositivos se bloqueará para evitar fugas de DNS y seguimiento de IP.</p>
+</li>
+</ol>
+<p><u>Pasos de configuración</u>:</p>
+<ol>
+<li>
+<p>Seleccione el perfil VPN.</p>
+<p>Seleccione uno o varios perfiles, ajuste su prioridad a la derecha según sea necesario y haga clic en <strong>Next</strong>.</p>
+<p><img alt="case 1 select profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-select-profiles.png" /></p>
+</li>
+<li>
+<p>Seleccione el origen del cliente.</p>
+<p>Haga clic en la pestaña <strong>Specified Devices</strong>, seleccione los dispositivos que desea que usen la VPN y haga clic en <strong>Next</strong>.</p>
+<p><img alt="case 1 source" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-specified-devices.png" /></p>
+</li>
+<li>
+<p>Seleccione el destino.</p>
+<p>Haga clic en la pestaña <strong>All Targets</strong>, establézcala como destino del tráfico y haga clic en <strong>Apply</strong>.</p>
+<p><img alt="case 1 target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-all-targets.png" /></p>
+</li>
+<li>
+<p>Será dirigido al ExpressVPN Dashboard. Ahora se ha añadido correctamente un túnel VPN, como se muestra a continuación.</p>
+<p><img alt="case 1 dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-tunnel-apply.png" /></p>
+</li>
+<li>
+<p>Asegúrese de que el <strong>Kill Switch</strong> de este túnel esté activado. Si la VPN se desconecta inesperadamente, el acceso a Internet del tráfico que coincida con este túnel se bloqueará para evitar fugas de DNS y seguimiento de IP.</p>
+<p><img alt="case 1 kill switch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-killswitch1.png" /></p>
+<p><img alt="case 1 kill switch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-killswitch2.png" /></p>
+</li>
+<li>
+<p>Asegúrese de que <strong>Allow Non-VPN Traffic</strong> esté activado. Está activado de forma predeterminada para garantizar que el tráfico que no coincida con el túnel VPN pueda seguir accediendo a Internet a través de la red WAN local.</p>
+<p><img alt="case 1 allow non-vpn traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-allow-non-vpn.png" /></p>
+</li>
+<li>
+<p>Haga clic en el botón central para activar este túnel.</p>
+<p><img alt="case 1 connect" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-start-vpn.png" /></p>
+</li>
+<li>
+<p>Una vez conectado, la página mostrará los detalles de la conexión VPN, incluidos la política VPN, la IP virtual del cliente, la dirección del servidor, el puerto de escucha y las estadísticas de tráfico.</p>
+<p><img alt="case 1 connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-connected.png" /></p>
+<p>Ahora solo dos dispositivos especificados acceden a Internet a través de VPN. Si la VPN se desconecta inesperadamente, el acceso a Internet de estos dispositivos se bloqueará para evitar fugas de DNS y seguimiento de IP. Todos los demás dispositivos accederán a Internet a través de la red WAN local.</p>
+</li>
+</ol>
+<p><strong>Caso 2</strong>: Enrutar todos los dispositivos por VPN 1 para sitios web específicos y todo el tráfico de Internet restante por VPN 2.</p>
+<p><u>Requisitos</u>:</p>
+<ol>
+<li>
+<p>Todos los dispositivos usan VPN Tunnel 1 al acceder a sitios web de servicios específicos de redes sociales y streaming, y usan VPN Tunnel 2 para el resto del acceso a Internet.</p>
+</li>
+<li>
+<p>Si los túneles VPN se desconectan inesperadamente, el acceso a Internet de todos los dispositivos se bloqueará para evitar fugas de DNS y seguimiento de IP.</p>
+</li>
+</ol>
+<p><u>Pasos de configuración</u>:</p>
+<ol>
+<li>
+<p>Seleccione el perfil VPN para Tunnel 1.</p>
+<p>Seleccione uno o varios perfiles, ajuste su prioridad a la derecha según sea necesario y haga clic en <strong>Next</strong>.</p>
+<p><img alt="case 2 profile1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-select-profiles1.png" /></p>
+</li>
+<li>
+<p>Seleccione el origen del cliente.</p>
+<p>Haga clic en la pestaña <strong>All Clients</strong>, establézcala como origen del cliente para Tunnel 1 y haga clic en <strong>Next</strong>.</p>
+<p><img alt="case 2 source1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-all-clients.png" /></p>
+</li>
+<li>
+<p>Seleccione el destino.</p>
+<p>Haga clic en la pestaña <strong>Specified Domain / IP List</strong>, introduzca los dominios de servicios específicos de redes sociales y streaming como se muestra a continuación y haga clic en <strong>Apply</strong>.</p>
+<p><img alt="case 2 target1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-specified-domain.png" /></p>
+</li>
+<li>
+<p>Será dirigido al ExpressVPN Dashboard. Ahora VPN Tunnel 1 se ha añadido correctamente.</p>
+<p><img alt="case 2 tunnel 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-tunnel1.png" /></p>
+</li>
+<li>
+<p>Asegúrese de que el <strong>Kill Switch</strong> de Tunnel 1 esté activado. Si la VPN se desconecta inesperadamente, el acceso a Internet del tráfico que coincida con este túnel se bloqueará para evitar fugas de DNS y seguimiento de IP.</p>
+<p><img alt="kill switch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-killswitch1.png" /></p>
+<p><img alt="kill switch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-killswitch2.png" /></p>
+</li>
+<li>
+<p>Haga clic en <strong>Add New Tunnel</strong> para añadir Tunnel 2.</p>
+<p><img alt="case 2 add tunnel" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-add-tunnel2.png" /></p>
+</li>
+<li>
+<p>Seleccione el perfil VPN para Tunnel 2.</p>
+<p>Seleccione uno o varios perfiles, ajuste su prioridad a la derecha según sea necesario y haga clic en <strong>Next</strong>.</p>
+<p><img alt="case 2 profile2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-select-profiles2.png" /></p>
+</li>
+<li>
+<p>Seleccione el origen del cliente.</p>
+<p>Haga clic en la pestaña <strong>All Clients</strong>, establézcala como origen del cliente para Tunnel 2 y haga clic en <strong>Next</strong>.</p>
+<p><img alt="case 2 source2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-all-clients.png" /></p>
+</li>
+<li>
+<p>Seleccione el destino.</p>
+<p>Haga clic en la pestaña <strong>All Targets</strong>, establézcala como destino del tráfico para Tunnel 2 y haga clic en <strong>Apply</strong>.</p>
+<p><img alt="case 2 target2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-all-targets.png" /></p>
+</li>
+<li>
+<p>Será dirigido al VPN Dashboard. Ahora VPN Tunnel 2 se ha añadido correctamente.</p>
+<p><img alt="case 2 tunnel 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-tunnel2.png" /></p>
+</li>
+<li>
+<p>Asegúrese de que el <strong>Kill Switch</strong> de Tunnel 2 esté activado. Si la VPN se desconecta inesperadamente, el acceso a Internet del tráfico que coincida con este túnel se bloqueará para evitar fugas de DNS y seguimiento de IP.</p>
+<p><img alt="kill switch3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-killswitch3.png" /></p>
+<p><img alt="kill switch4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-killswitch4.png" /></p>
+</li>
+<li>
+<p>Haga clic en el icono de engranaje de la esquina superior derecha, active <strong>Enhanced Kill Switch</strong> y haga clic en <strong>Apply</strong>. Esto garantiza que todo el tráfico deba acceder a Internet a través de la VPN.</p>
+<p><img alt="enhanced killswitch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-enhanced-killswitch1.png" /></p>
+<p><img alt="enhanced killswitch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-enhanced-killswitch2.png" /></p>
+</li>
+<li>
+<p>Haga clic en el botón central para activar Tunnel 1 y Tunnel 2.</p>
+<p><img alt="case 2 connect" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-start-vpn.png" /></p>
+</li>
+<li>
+<p>Una vez conectado, la página mostrará los detalles de la conexión VPN, incluidos la política VPN, la IP virtual del cliente, la dirección del servidor, el puerto de escucha y las estadísticas de tráfico.</p>
+<p><img alt="case 2 connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-connected.png" /></p>
+<p>Ahora todos los dispositivos usarán <strong>VPN Tunnel 1</strong> al acceder a los dominios especificados y <strong>VPN Tunnel 2</strong> para el resto del acceso a Internet. Si los túneles VPN se desconectan inesperadamente, el acceso a Internet de todos los dispositivos se bloqueará para evitar fugas de DNS y seguimiento de IP.</p>
+</li>
+</ol>
+<h2 id="kill-switch">Kill Switch<a class="headerlink" href="#kill-switch" title="Permanent link">&para;</a></h2>
+<p>Kill Switch es una función de seguridad para conexiones VPN. Corta automáticamente todo el acceso a Internet de su red local si la conexión VPN se interrumpe inesperadamente, lo que evita que se expongan su dirección IP real y sus datos en línea, y ayuda a mantener la privacidad y la seguridad continuas. Esta función es especialmente útil para mantener un acceso a Internet seguro y anónimo, por ejemplo al usar redes públicas, procesar datos sensibles u ocultar su dirección IP real.</p>
+<p>Cuando está activado, bloquea cualquier tráfico de clientes que intente omitir el túnel VPN, lo que evita fugas VPN causadas por problemas de configuración DNS, desconexiones inesperadas, solicitudes IP directas y otros escenarios similares.</p>
+<p>Fortify admite la configuración de Kill Switch para la conexión VPN global y también para cada túnel VPN individual.</p>
+<ul>
+<li>
+<p>Para configurar Kill Switch para la conexión VPN global (es decir, Enhanced Kill Switch), consulte <a href="#all-other-traffic">All Other Traffic</a>.</p>
+</li>
+<li>
+<p>Para configurar Kill Switch para cada túnel VPN individual, consulte <a href="#opciones-del-tunel">Opciones del túnel</a>.</p>
+</li>
+</ul>
+<h2 id="all-other-traffic">All Other Traffic<a class="headerlink" href="#all-other-traffic" title="Permanent link">&para;</a></h2>
+<p>Haga clic en el icono de engranaje de la esquina superior derecha para configurar la política del tráfico que no coincida con ningún túnel VPN.</p>
+<p><img alt="all other traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/all_other_traffic.png" /></p>
+<p>Esta política controla si el tráfico que no coincide con ninguno de sus grupos de túneles VPN puede acceder a Internet. Hay dos opciones disponibles: <strong>Allow Non-VPN Traffic</strong> y <strong>Enhanced Kill Switch</strong>.</p>
+<ul>
+<li>
+<p><strong>Allow Non-VPN Traffic</strong>: Activado de forma predeterminada para garantizar el acceso normal a Internet del tráfico no VPN.</p>
+<p><img alt="allow non-vpn traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/allow_non-vpn_traffic.png" /></p>
+</li>
+<li>
+<p><strong>Enhanced Kill Switch</strong>: Obliga a todos los dispositivos a acceder a Internet a través de una VPN. Se bloqueará cualquier tráfico que no coincida con un túnel VPN. Esta configuración global no anula el Kill Switch configurado para túneles VPN individuales.</p>
+<p><img alt="enhanced killswitch" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/enhanced_killswitch.png" /></p>
+</li>
+</ul>
+<h2 id="opciones-del-tunel">Opciones del túnel<a class="headerlink" href="#opciones-del-tunel" title="Permanent link">&para;</a></h2>
+<p>Puede configurar ajustes avanzados para cada túnel VPN, como VPN Kill Switch, enmascaramiento de IP y MTU.</p>
+<p>Haga clic en el icono de engranaje de un grupo de túneles y seleccione <strong>Options</strong>.</p>
+<p><img alt="tunnel options1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/tunnel_options1.png" /></p>
+<p><img alt="tunnel options2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/tunnel_options2.png" /></p>
+<ul>
+<li>
+<p><strong>Kill Switch</strong>: Si está activado, el tráfico que coincida con este túnel VPN se bloqueará si la conexión VPN falla inesperadamente. Si está desactivado, dicho tráfico conmutará por error al túnel <strong>All Other Traffic</strong>.</p>
+</li>
+<li>
+<p><strong>Services from GL.iNet Use VPN</strong>: Si está activado, los servicios GoodCloud, DDNS y rtty transmitirán paquetes a través de túneles VPN. Esta opción está desactivada de forma predeterminada, ya que estos servicios normalmente requieren la dirección IP real del dispositivo para funcionar correctamente.</p>
+</li>
+<li>
+<p><strong>Allow Remote Access to the LAN Subnet</strong>: Si está activado, se permitirá el acceso remoto a este router y a sus dispositivos LAN a través de la VPN. Requiere que el servidor VPN anuncie una ruta de vuelta a su subred LAN.</p>
+</li>
+<li>
+<p><strong>IP Masquerading</strong>: Si está activado, las direcciones IP de origen de los clientes LAN se reescribirán como la IP del túnel VPN del router. Desactive esta opción solo para configuraciones site-to-site en las que el par remoto conoce sus subredes LAN.</p>
+</li>
+<li>
+<p><strong>MTU</strong>: El valor MTU que configure para el túnel sobrescribirá los ajustes MTU del archivo de configuración.</p>
+</li>
+</ul>
+<h2 id="prioridad-de-tuneles">Prioridad de túneles<a class="headerlink" href="#prioridad-de-tuneles" title="Permanent link">&para;</a></h2>
+<p>Para ajustar la prioridad de los túneles, haga clic en el icono de engranaje de un grupo de túneles y seleccione <strong>Priority</strong>.</p>
+<p><img alt="priority1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/priority1.png" /></p>
+<p>Haga clic y mantenga pulsado el icono de tres líneas de la derecha para reordenar los túneles y, a continuación, haga clic en <strong>Apply</strong>.</p>
+<p><img alt="priority2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/priority2.png" /></p>
+<p><strong>Cuando hay varios túneles activados, el router enruta el tráfico según las siguientes reglas</strong>:</p>
+<ol>
+<li>
+<p>El tráfico intentará primero coincidir con la regla del túnel de mayor prioridad. Si coincide, se enrutará a través de ese túnel; de lo contrario, probará el siguiente túnel en prioridad, y así sucesivamente.</p>
+</li>
+<li>
+<p>Cada grupo de túneles funciona de forma independiente. Una vez que el tráfico coincide con una regla de túnel, se enrutará a través de ese túnel y no conmutará por error entre grupos de túneles.</p>
+</li>
+<li>
+<p>Se pueden seleccionar varios perfiles dentro de cada grupo de túneles para habilitar la conmutación por error dentro del túnel. Cuando el perfil de mayor prioridad de un grupo de túneles deja de funcionar, el túnel se conectará automáticamente usando el perfil con la segunda prioridad más alta, y así sucesivamente.</p>
+</li>
+<li>
+<p>Si un túnel VPN se desconecta inesperadamente, el sistema determinará si conmuta por error el tráfico al túnel All Other Traffic según si el <strong>Kill Switch</strong> de este túnel está activado.</p>
+<ul>
+<li>Si Kill Switch está activado, el tráfico se bloqueará y no conmutará por error al túnel All Other Traffic.</li>
+<li>Si Kill Switch está desactivado, el tráfico conmutará por error al túnel All Other Traffic.</li>
+</ul>
+</li>
+<li>
+<p>En el túnel <strong>All Other Traffic</strong>, distintos modos determinan si el tráfico que no coincide con el túnel VPN puede acceder a Internet.</p>
+<ul>
+<li>
+<p><strong>Allow Non-VPN Traffic</strong>: Está activado de forma predeterminada para garantizar que el tráfico que no coincide con los túneles VPN pueda seguir accediendo a Internet mediante la WAN local.</p>
+</li>
+<li>
+<p><strong>Enhanced Kill Switch</strong>: Obliga a todos los dispositivos a acceder a Internet a través de una VPN. Se bloqueará cualquier tráfico que no coincida con un túnel VPN. Esta configuración global no anula el Kill Switch configurado para túneles VPN individuales. En resumen, refuerza Kill Switch y bloquea el acceso normal a Internet para evitar fugas de IP.</p>
+</li>
+</ul>
 </li>
 </ol>
 <hr />
-<p>Masz jeszcze pytania? Odwiedź nasze <a href="https://forum.gl-inet.com" target="_blank">Forum społeczności</a> lub <a href="https://www.gl-inet.com/contacts/" target="_blank">Skontaktuj się z nami</a>.</p>
+<p>¿Todavía tiene preguntas? Visite nuestro <a href="https://forum.gl-inet.com" target="_blank">foro de la comunidad</a> o <a href="https://www.gl-inet.com/contacts/" target="_blank">contáctenos</a>.</p>
 
   <!-- Last update of source file -->
   
@@ -6881,10 +7132,10 @@
     
       
   <span class="md-source-file__fact">
-    <span class="md-icon" title="Ostatnia aktualizacja">
+    <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 lipca 2026 13:40:07 UTC">1 lipca 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 de julio de 2026 02:48:43 UTC">6 de julio de 2026</span>
   </span>
 
     
@@ -6918,10 +7169,10 @@
           <div class="pswp__top-bar">
             <!--  Controls are self-explanatory. Order can be changed. -->
             <div class="pswp__counter"></div>
-            <button class="pswp__button pswp__button--close" title="Zamknij (Esc)"></button>
-            <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
-            <button class="pswp__button pswp__button--fs" title="Przełącz pełny ekran"></button>
-            <button class="pswp__button pswp__button--zoom" title="Powiększ/pomniejsz"></button>
+            <button class="pswp__button pswp__button--close" title="Cerrar (Esc)"></button>
+            <!-- <button class="pswp__button pswp__button--share" title="Compartir"></button> -->
+            <button class="pswp__button pswp__button--fs" title="Alternar pantalla completa"></button>
+            <button class="pswp__button pswp__button--zoom" title="Acercar/alejar"></button>
             <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
             <!-- element will get class pswp__preloader--active when preloader is running -->
             <div class="pswp__preloader">
@@ -6937,10 +7188,10 @@
             <div class="pswp__share-tooltip"></div> 
           </div>
 
-          <button class="pswp__button pswp__button--arrow--left" title="Poprzedni (lewa strzałka)">
+          <button class="pswp__button pswp__button--arrow--left" title="Anterior (flecha izquierda)">
           </button>
 
-          <button class="pswp__button pswp__button--arrow--right" title="Następny (prawa strzałka)">
+          <button class="pswp__button pswp__button--arrow--right" title="Siguiente (flecha derecha)">
           </button>
 
           <div class="pswp__caption">
@@ -6960,7 +7211,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-  Powrót do góry
+  Volver al principio
 </button>
         
       </main>
@@ -7074,7 +7325,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>

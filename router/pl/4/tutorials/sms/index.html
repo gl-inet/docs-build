@@ -1,24 +1,24 @@
 
 <!doctype html>
-<html lang="de" class="no-js">
+<html lang="pl" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Dokumentation für GL.iNet-Routerproduktionen">
+        <meta name="description" content="Dokumentacja produkcji routerów GL.iNet">
       
       
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/router/de/4/faq/remote_ssh_to_router/">
+        <link rel="canonical" href="https://docs.gl-inet.com/router/pl/4/tutorials/sms/">
       
       
-        <link rel="prev" href="../remote_access_web_admin_panel/">
+        <link rel="prev" href="../how_to_make_adguard_home_dns_bypass_vpn/">
       
       
-        <link rel="next" href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">
+        <link rel="next" href="../sms_forwarding/">
       
       
       <link rel="icon" href="https://static.gl-inet.com/docs/router/common/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Remote-SSH zum Router - GL.iNet Router-Dokumentation 4</title>
+        <title>SMS - Dokumentacja routerów GL.iNet 4</title>
       
     
     
@@ -76,8 +76,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#wie-greife-ich-per-ssh-aus-der-ferne-auf-das-terminal-eines-glinet-routers-zu" class="md-skip">
-          Zum Inhalt
+        <a href="#sms" class="md-skip">
+          Przejdź do treści
         </a>
       
     </div>
@@ -93,8 +93,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
-    <a href="../.." title="GL.iNet Router-Dokumentation 4" class="md-header__button md-logo" aria-label="GL.iNet Router-Dokumentation 4" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Nagłówek">
+    <a href="../.." title="Dokumentacja routerów GL.iNet 4" class="md-header__button md-logo" aria-label="Dokumentacja routerów GL.iNet 4" data-md-component="logo">
       
   <img src="https://static.gl-inet.com/docs/router/common/logo_white.svg" alt="logo">
 
@@ -107,13 +107,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            GL.iNet Router-Dokumentation 4
+            Dokumentacja routerów GL.iNet 4
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Remote-SSH zum Router
+              SMS
             
           </span>
         </div>
@@ -127,21 +127,21 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+    <button class="md-header__button md-icon" aria-label="Wybierz język">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="/router/de/4/" hreflang="de" class="md-select__link">
-              Deutsch
+            <a href="/router/en/4/" hreflang="en" class="md-select__link">
+              English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="/router/en/4/" hreflang="en" class="md-select__link">
-              English
+            <a href="/router/de/4/" hreflang="de" class="md-select__link">
+              Deutsch
             </a>
           </li>
         
@@ -189,16 +189,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Szukaj" placeholder="Szukaj" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Suche">
+      <nav class="md-search__options" aria-label="Szukaj">
         
-        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Wyczyść" aria-label="Wyczyść" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
@@ -209,7 +209,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Suche wird initialisiert
+            Inicjowanie wyszukiwania
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -220,7 +220,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/gl-inet/docs4.x" title="Zum Repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/gl-inet/docs4.x" title="Przejdź do repozytorium" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -241,7 +241,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Hauptnavigation" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Zakładki" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -255,7 +255,7 @@
   
     
   
-  Startseite
+  Strona glowna
 
       </a>
     </li>
@@ -274,7 +274,27 @@
   
     
   
-  Benutzerhandbuch
+  Przewodnik uzytkownika
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../faq/" class="md-tabs__link">
+          
+  
+    
+  
+  FAQ
 
         </a>
       </li>
@@ -296,27 +316,7 @@
   
     
   
-  FAQ
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../tutorials/" class="md-tabs__link">
-          
-  
-    
-  
-  Tutorials
+  Samouczki
 
         </a>
       </li>
@@ -336,7 +336,7 @@
   
     
   
-  Oberflächenleitfaden
+  Przewodnik po interfejsie
 
         </a>
       </li>
@@ -356,7 +356,7 @@
   
     
   
-  Videobibliothek
+  Biblioteka wideo
 
         </a>
       </li>
@@ -376,7 +376,7 @@
   
     
   
-  Community
+  Spolecznosc
 
         </a>
       </li>
@@ -404,18 +404,18 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Nawigacja" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="GL.iNet Router-Dokumentation 4" class="md-nav__button md-logo" aria-label="GL.iNet Router-Dokumentation 4" data-md-component="logo">
+    <a href="../.." title="Dokumentacja routerów GL.iNet 4" class="md-nav__button md-logo" aria-label="Dokumentacja routerów GL.iNet 4" data-md-component="logo">
       
   <img src="https://static.gl-inet.com/docs/router/common/logo_white.svg" alt="logo">
 
     </a>
-    GL.iNet Router-Dokumentation 4
+    Dokumentacja routerów GL.iNet 4
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/gl-inet/docs4.x" title="Zum Repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/gl-inet/docs4.x" title="Przejdź do repozytorium" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -439,7 +439,7 @@
         
   
   <span class="md-ellipsis">
-    Startseite
+    Strona glowna
   </span>
   
 
@@ -626,7 +626,7 @@
               
   
   <span class="md-ellipsis">
-    Benutzerhandbuch
+    Przewodnik uzytkownika
   </span>
   
 
@@ -642,7 +642,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Benutzerhandbuch
+            Przewodnik uzytkownika
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1415,8 +1415,6 @@
       
   
   
-    
-  
   
   
     
@@ -1445,17 +1443,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../faq/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1472,7 +1470,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             FAQ
@@ -1537,11 +1535,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../first_time_setup/" class="md-nav__link">
+      <a href="../../faq/first_time_setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Ersteinrichtung
+    Pierwsza konfiguracja
   </span>
   
 
@@ -1558,11 +1556,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../warning_from_your_browser_during_setup/" class="md-nav__link">
+      <a href="../../faq/warning_from_your_browser_during_setup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Warnung des Browsers
+    Ostrzezenie przegladarki
   </span>
   
 
@@ -1579,11 +1577,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../internet_connection_troubleshooting/" class="md-nav__link">
+      <a href="../../faq/internet_connection_troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    FAQ zur Fehlerbehebung bei der Internetverbindung
+    FAQ rozwiazywania problemow z polaczeniem internetowym
   </span>
   
 
@@ -1600,11 +1598,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../connect_to_a_hotspot_with_captive_portal/" class="md-nav__link">
+      <a href="../../faq/connect_to_a_hotspot_with_captive_portal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Verbindung mit öffentlichem Hotspot mit Captive Portal
+    Polacz z publicznym hotspotem z portalem uwierzytelniajacym
   </span>
   
 
@@ -1621,11 +1619,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../produce_a_wired_connection/" class="md-nav__link">
+      <a href="../../faq/produce_a_wired_connection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Ethernet-Gerät nur über Wi-Fi verbinden
+    Podlacz urzadzenie tylko z Ethernetem do Wi-Fi
   </span>
   
 
@@ -1672,7 +1670,7 @@
             
   
   <span class="md-ellipsis">
-    Problemhinweise
+    Powiadomienia o problemach
   </span>
   
 
@@ -1682,7 +1680,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Problemhinweise
+            Powiadomienia o problemach
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1693,11 +1691,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../problem_notification_for_mt2500_x3000_xe3000/" class="md-nav__link">
+      <a href="../../faq/problem_notification_for_mt2500_x3000_xe3000/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Problemhinweis für GL-MT2500/GL-X3000/GL-XE3000
+    Powiadomienie o problemie dla GL-MT2500/GL-X3000/GL-XE3000
   </span>
   
 
@@ -1714,11 +1712,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../problem_notification_and_solutions_for_x3000_x2000_failure_to_work_with_ee_sim_cards/" class="md-nav__link">
+      <a href="../../faq/problem_notification_and_solutions_for_x3000_x2000_failure_to_work_with_ee_sim_cards/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Problemhinweis und Lösungen für GL-X3000/GL-X2000 bei Problemen mit EE-SIM-Karten
+    Powiadomienie o problemie i rozwiazania dla GL-X3000/GL-X2000, gdy nie dzialaja z kartami SIM EE
   </span>
   
 
@@ -1803,7 +1801,7 @@
             
   
   <span class="md-ellipsis">
-    Fehlerbehebung
+    Rozwiazywanie problemow
   </span>
   
 
@@ -1813,7 +1811,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            Fehlerbehebung
+            Rozwiazywanie problemow
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1824,11 +1822,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../cannot_access_web_admin_panel/" class="md-nav__link">
+      <a href="../../faq/cannot_access_web_admin_panel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Kein Zugriff auf das webbasierte Admin Panel
+    Brak dostepu do panelu administracyjnego WWW
   </span>
   
 
@@ -1845,11 +1843,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../cannot_scan_android_5g_hotspot/" class="md-nav__link">
+      <a href="../../faq/cannot_scan_android_5g_hotspot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Android-5G-Hotspot kann nicht gescannt werden
+    Nie mozna wykryc hotspotu 5G Androida
   </span>
   
 
@@ -1866,11 +1864,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../cannot_scan_iphone_5g_hotspot/" class="md-nav__link">
+      <a href="../../faq/cannot_scan_iphone_5g_hotspot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    iPhone-5G-Hotspot kann nicht gescannt werden
+    Nie mozna wykryc hotspotu 5G iPhone'a
   </span>
   
 
@@ -1887,11 +1885,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../iphone_tethering_fail/" class="md-nav__link">
+      <a href="../../faq/iphone_tethering_fail/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    iPhone-Tethering fehlgeschlagen
+    Udostepnianie internetu z iPhone'a nie powiodlo sie
   </span>
   
 
@@ -1908,11 +1906,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../cellular_network_troubleshooting_guide/" class="md-nav__link">
+      <a href="../../faq/cellular_network_troubleshooting_guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Leitfaden zur Fehlerbehebung bei Mobilfunknetzen
+    Przewodnik rozwiazywania problemow z siecia komorkowa
   </span>
   
 
@@ -1929,11 +1927,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../esim_profile_installation_failed/" class="md-nav__link">
+      <a href="../../faq/esim_profile_installation_failed/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    eSIM-Profilinstallation fehlgeschlagen
+    Instalacja profilu eSIM nie powiodla sie
   </span>
   
 
@@ -1950,11 +1948,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../no_internet_after_replacing_the_old_router_with_glinet/" class="md-nav__link">
+      <a href="../../faq/no_internet_after_replacing_the_old_router_with_glinet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Kein Internet nach dem Ersetzen des alten Routers durch einen GL.iNet-Router
+    Brak Internetu po zastapieniu starego routera urzadzeniem GL.iNet
   </span>
   
 
@@ -1971,11 +1969,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../usb_modem_is_not_working_properly_on_gl_inet_router/" class="md-nav__link">
+      <a href="../../faq/usb_modem_is_not_working_properly_on_gl_inet_router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    USB-Modem funktioniert nicht
+    Modem USB nie dziala
   </span>
   
 
@@ -1992,11 +1990,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../repair_network_or_reset_firmware/" class="md-nav__link">
+      <a href="../../faq/repair_network_or_reset_firmware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Netzwerk reparieren oder zurücksetzen
+    Napraw siec lub zresetuj
   </span>
   
 
@@ -2013,11 +2011,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../debrick/" class="md-nav__link">
+      <a href="../../faq/debrick/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Was tun, wenn der Router beschädigt ist?
+    Co zrobic, jesli router jest zablokowany
   </span>
   
 
@@ -2034,11 +2032,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../macos_cannot_write_samba/" class="md-nav__link">
+      <a href="../../faq/macos_cannot_write_samba/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    macOS kann nicht auf eine Samba-Freigabe schreiben
+    macOS nie moze zapisywac na udziale Samba
   </span>
   
 
@@ -2055,11 +2053,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../wireguard_server_is_not_working/" class="md-nav__link">
+      <a href="../../faq/wireguard_server_is_not_working/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    WireGuard-Server funktioniert nicht ordnungsgemäß
+    Serwer WireGuard nie dziala poprawnie
   </span>
   
 
@@ -2076,11 +2074,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../stuck_on_installing_during_firmware_update/" class="md-nav__link">
+      <a href="../../faq/stuck_on_installing_during_firmware_update/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Hängt bei „Installing“ während des Firmware-Updates
+    Zatrzymano na "Installing" podczas aktualizacji firmware'u
   </span>
   
 
@@ -2097,11 +2095,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../stuck_on_reverting_during_firmware_reset/" class="md-nav__link">
+      <a href="../../faq/stuck_on_reverting_during_firmware_reset/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Hängt bei „Reverting“ während des Firmware-Resets
+    Zatrzymano na "Reverting" podczas resetowania firmware'u
   </span>
   
 
@@ -2118,11 +2116,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../stuck_on_rebooting_during_firmware_reboot/" class="md-nav__link">
+      <a href="../../faq/stuck_on_rebooting_during_firmware_reboot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Hängt bei „Rebooting“ während des Firmware-Neustarts
+    Zatrzymano na "Rebooting" podczas ponownego uruchamiania firmware'u
   </span>
   
 
@@ -2139,11 +2137,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_resolve_a_subnet_conflict/" class="md-nav__link">
+      <a href="../../faq/how_to_resolve_a_subnet_conflict/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Wie behebt man einen Subnetzkonflikt?
+    Jak rozwiazac konflikt podsieci
   </span>
   
 
@@ -2160,11 +2158,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../why_do_I_get_a_message_from_ddns_test/" class="md-nav__link">
+      <a href="../../faq/why_do_I_get_a_message_from_ddns_test/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Warum erscheint eine Meldung beim DDNS-Test?
+    Dlaczego otrzymuje komunikat z testu DDNS
   </span>
   
 
@@ -2181,11 +2179,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../why_is_my_vpn_speed_slow/" class="md-nav__link">
+      <a href="../../faq/why_is_my_vpn_speed_slow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Warum ist meine VPN-Geschwindigkeit langsamer als erwartet?
+    Dlaczego predkosc mojego VPN jest nizsza niz oczekiwano
   </span>
   
 
@@ -2202,11 +2200,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../what_is_the_device_capacity_of_my_router/" class="md-nav__link">
+      <a href="../../faq/what_is_the_device_capacity_of_my_router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Wie hoch ist die Gerätekapazität meines Routers?
+    Jaka jest pojemnosc urzadzen mojego routera
   </span>
   
 
@@ -2223,11 +2221,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../what_is_the_wireless_coverage_of_my_router/" class="md-nav__link">
+      <a href="../../faq/what_is_the_wireless_coverage_of_my_router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Wie groß ist die WLAN-Abdeckung meines Routers?
+    Jaki jest zasieg bezprzewodowy mojego routera
   </span>
   
 
@@ -2244,11 +2242,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../upgrade_uboot_version/" class="md-nav__link">
+      <a href="../../faq/upgrade_uboot_version/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    U-Boot-Version aktualisieren
+    Zaktualizuj wersje U-Boot
   </span>
   
 
@@ -2332,7 +2330,7 @@
         
   
   <span class="md-ellipsis">
-    OpenVPN einrichten
+    Jak skonfigurowac OpenVPN
   </span>
   
 
@@ -2353,7 +2351,7 @@
         
   
   <span class="md-ellipsis">
-    WireGuard einrichten
+    Jak skonfigurowac WireGuard
   </span>
   
 
@@ -2370,11 +2368,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../block_non_vpn_traffic/" class="md-nav__link">
+      <a href="../../faq/block_non_vpn_traffic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Nicht-VPN-Datenverkehr blockieren
+    Jak blokowac ruch poza VPN
   </span>
   
 
@@ -2391,11 +2389,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../block_non_vpn_traffic/" class="md-nav__link">
+      <a href="../../faq/block_non_vpn_traffic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    VPN Kill Switch
+    Kill Switch VPN
   </span>
   
 
@@ -2412,11 +2410,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../openvpn_tcp_udp/" class="md-nav__link">
+      <a href="../../faq/openvpn_tcp_udp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    TCP oder UDP
+    TCP czy UDP
   </span>
   
 
@@ -2433,11 +2431,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../amneziawg_obfuscation/" class="md-nav__link">
+      <a href="../../faq/amneziawg_obfuscation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    AmneziaWG-Verschleierung
+    Zaciemnianie AmneziaWG
   </span>
   
 
@@ -2454,11 +2452,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../cannot_connect_to_obfuscated_wireguard_server/" class="md-nav__link">
+      <a href="../../faq/cannot_connect_to_obfuscated_wireguard_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Keine Verbindung zu einem verschleierten WireGuard-Server möglich
+    Nie można połączyć się z maskowanym serwerem WireGuard
   </span>
   
 
@@ -2475,11 +2473,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../do_i_have_to_configure_ethernet_wan_when_using_vpn/" class="md-nav__link">
+      <a href="../../faq/do_i_have_to_configure_ethernet_wan_when_using_vpn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Muss ich Ethernet WAN bei Verwendung eines VPN konfigurieren?
+    Czy musze skonfigurowac Ethernet WAN podczas korzystania z VPN
   </span>
   
 
@@ -2526,7 +2524,7 @@
             
   
   <span class="md-ellipsis">
-    Upgrade
+    Aktualizacja
   </span>
   
 
@@ -2536,7 +2534,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
-            Upgrade
+            Aktualizacja
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2547,11 +2545,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_download_firmware/" class="md-nav__link">
+      <a href="../../faq/how_to_download_firmware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Firmware herunterladen
+    Pobierz firmware
   </span>
   
 
@@ -2568,11 +2566,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_upgrade_downgrade_router/" class="md-nav__link">
+      <a href="../how_to_upgrade_downgrade_router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Manuell aktualisieren oder downgraden
+    Recznie zaktualizuj lub cofnij wersje
   </span>
   
 
@@ -2594,14 +2592,10 @@
                 
   
   
-    
   
   
-  
     
     
-      
-        
       
         
       
@@ -2631,29 +2625,29 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
         
           
           <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Weitere Themen
+    Inne
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
-            Weitere Themen
+            Inne
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2664,11 +2658,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../led/" class="md-nav__link">
+      <a href="../../faq/led/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Status der LED-Anzeige
+    Stan wskaznika LED
   </span>
   
 
@@ -2685,11 +2679,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../mobile_app/" class="md-nav__link">
+      <a href="../../faq/mobile_app/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    GL.iNet App
+    Aplikacja mobilna GL.iNet
   </span>
   
 
@@ -2706,11 +2700,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_add_brume2_into_app/" class="md-nav__link">
+      <a href="../../faq/how_to_add_brume2_into_app/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Brume 2 zur mobilen App hinzufügen
+    Dodaj Brume 2 do aplikacji mobilnej
   </span>
   
 
@@ -2727,11 +2721,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../change_wan_to_lan/" class="md-nav__link">
+      <a href="../../faq/change_wan_to_lan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    WAN in LAN ändern
+    Zmien WAN na LAN
   </span>
   
 
@@ -2748,11 +2742,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../use_https_for_adh/" class="md-nav__link">
+      <a href="../../faq/use_https_for_adh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zugriff auf GL.iNet und AdGuard Home über HTTPS
+    Uzyskaj dostep do GL.iNet i AdGuard Home przez HTTPS
   </span>
   
 
@@ -2769,11 +2763,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../connect_glinetrouter_to_starlink/" class="md-nav__link">
+      <a href="../../faq/connect_glinetrouter_to_starlink/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Verbindung mit Starlink Dish
+    Polacz z antena Starlink
   </span>
   
 
@@ -2790,63 +2784,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../remote_access_web_admin_panel/" class="md-nav__link">
+      <a href="../../faq/remote_access_web_admin_panel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Remote Web Admin
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Remote-SSH zum Router
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Öffentliche IP prüfen
+    Zdalny dostęp do Web Admin
   </span>
   
 
@@ -2863,11 +2805,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_make_wifi_calling_work_on_opal/" class="md-nav__link">
+      <a href="../how_to_check_if_isp_assigns_you_a_public_ip_address/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Wi-Fi Calling auf Opal zum Laufen bringen
+    Sprawdzanie publicznego IP
   </span>
   
 
@@ -2884,11 +2826,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_can_i_know_the_lan_wifi_mac/" class="md-nav__link">
+      <a href="../../faq/how_to_make_wifi_calling_work_on_opal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Alle MAC-Adressen finden
+    Jak uruchomic Wi-Fi Calling na Opal
   </span>
   
 
@@ -2905,11 +2847,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../where_to_find_the_device_id_mac_sn/" class="md-nav__link">
+      <a href="../../faq/how_can_i_know_the_lan_wifi_mac/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Geräteinformationen finden
+    Znajdz wszystkie adresy MAC
   </span>
   
 
@@ -2926,11 +2868,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../what_is_luci/" class="md-nav__link">
+      <a href="../../faq/where_to_find_the_device_id_mac_sn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Was ist LuCI?
+    Znajdz informacje o urzadzeniu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/what_is_luci/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Czym jest LuCI
   </span>
   
 
@@ -2958,6 +2921,8 @@
       
       
   
+  
+    
   
   
   
@@ -2987,21 +2952,21 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    Tutorials
+    Samouczki
   </span>
   
 
@@ -3014,10 +2979,10 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Tutorials
+            Samouczki
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3031,10 +2996,6 @@
   
     
     
-      
-        
-      
-        
       
         
       
@@ -3111,11 +3072,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_set_up_openvpn_client/" class="md-nav__link">
+      <a href="../how_to_set_up_openvpn_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    OpenVPN-Client einrichten
+    Skonfiguruj klienta OpenVPN
   </span>
   
 
@@ -3132,11 +3093,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_set_up_openvpn_server/" class="md-nav__link">
+      <a href="../how_to_set_up_openvpn_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    OpenVPN-Server einrichten
+    Skonfiguruj serwer OpenVPN
   </span>
   
 
@@ -3153,11 +3114,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/build_your_own_wireguard_home_server_with_two_glinet_routers/" class="md-nav__link">
+      <a href="../build_your_own_wireguard_home_server_with_two_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Eigenen WireGuard-Heimserver aufbauen
+    Zbuduj wlasny domowy serwer WireGuard
   </span>
   
 
@@ -3174,11 +3135,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/vpn_obfuscation/" class="md-nav__link">
+      <a href="../vpn_obfuscation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    VPN-Obfuskation einrichten
+    Skonfiguruj zaciemnianie VPN
   </span>
   
 
@@ -3195,11 +3156,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_connect_to_nordvpn_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_connect_to_nordvpn_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    NordVPN mit einer dedizierten IP verbinden
+    Polacz z NordVPN przez dedykowany adres IP
   </span>
   
 
@@ -3216,11 +3177,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Surfshark mit einer dedizierten IP verbinden
+    Polacz z Surfshark przez dedykowany adres IP
   </span>
   
 
@@ -3237,11 +3198,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_set_up_openvpn_server_via_astrorelay/" class="md-nav__link">
+      <a href="../openvpn_server_access_client_lan_side/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    OpenVPN-Server über AstroRelay einrichten
+    Uzyskaj dostep do sieci LAN klienta OpenVPN z serwera
   </span>
   
 
@@ -3258,11 +3219,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_set_up_wireguard_server_via_astrorelay/" class="md-nav__link">
+      <a href="../wireguard_server_access_to_client_lan_side/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    WireGuard-Server über AstroRelay einrichten
+    Uzyskaj dostep do sieci LAN klienta WireGuard z serwera
   </span>
   
 
@@ -3279,11 +3240,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/openvpn_server_access_client_lan_side/" class="md-nav__link">
+      <a href="../how_to_access_ovpnserver_lan_via_domain_name/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Auf das OpenVPN-Client-LAN vom Server aus zugreifen
+    Uzyskaj dostep do sieci LAN serwera OpenVPN z klienta przez nazwe domeny
   </span>
   
 
@@ -3300,11 +3261,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/wireguard_server_access_to_client_lan_side/" class="md-nav__link">
+      <a href="../how_to_access_wgserver_lan_via_domain_name/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Auf das WireGuard-Client-LAN vom Server aus zugreifen
+    Uzyskaj dostep do sieci LAN serwera WireGuard z klienta przez nazwe domeny
   </span>
   
 
@@ -3321,11 +3282,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_access_ovpnserver_lan_via_domain_name/" class="md-nav__link">
+      <a href="../how_to_enable_openvpn_tap_s2s_mode_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Auf das OpenVPN-Server-LAN vom Client per Domainnamen zugreifen
+    Wlacz OpenVPN TAP-S2S
   </span>
   
 
@@ -3342,11 +3303,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_access_wgserver_lan_via_domain_name/" class="md-nav__link">
+      <a href="../how_to_use_vpn_cascading_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Auf das WireGuard-Server-LAN vom Client per Domainnamen zugreifen
+    Wlacz kaskadowe polaczenie VPN
   </span>
   
 
@@ -3363,11 +3324,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_enable_openvpn_tap_s2s_mode_on_glinet_routers/" class="md-nav__link">
+      <a href="../use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    OpenVPN TAP-S2S aktivieren
+    Uzyj WireGuard do zabezpieczenia RDP spoza sieci
   </span>
   
 
@@ -3384,11 +3345,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_use_vpn_cascading_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_get_configuration_files_from_wireguard_service_providers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    VPN-Cascading aktivieren
+    Pobierz pliki konfiguracyjne od dostawcow uslug WireGuard
   </span>
   
 
@@ -3405,11 +3366,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../reserve_fixed_IP_for_ovpn_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    WireGuard zum Schutz von RDP von außerhalb des Netzwerks verwenden
+    Zarezerwuj staly adres IP dla klienta OpenVPN
   </span>
   
 
@@ -3426,11 +3387,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_get_configuration_files_from_wireguard_service_providers/" class="md-nav__link">
+      <a href="../how_to_allow_access_to_wan_when_vpn_client_enabled/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Konfigurationsdateien von WireGuard-Dienstanbietern abrufen
+    Zezwol na dostep do WAN, gdy klient VPN jest wlaczony
   </span>
   
 
@@ -3447,11 +3408,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/reserve_fixed_IP_for_ovpn_client/" class="md-nav__link">
+      <a href="../route_vpn_client_dns_to_server_upstream_dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Feste IP für OpenVPN-Client reservieren
+    Skieruj DNS klienta VPN do nadrzednego DNS serwera
   </span>
   
 
@@ -3468,11 +3429,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_allow_access_to_wan_when_vpn_client_enabled/" class="md-nav__link">
+      <a href="../how_to_update_openvpn_server_certificates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zugriff auf WAN erlauben, wenn VPN-Client aktiviert ist
+    Zaktualizuj certyfikaty serwera OpenVPN
   </span>
   
 
@@ -3489,53 +3450,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/route_vpn_client_dns_to_server_upstream_dns/" class="md-nav__link">
+      <a href="../how_to_make_adguard_home_dns_bypass_vpn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    DNS des VPN-Clients zum Upstream-DNS des Servers leiten
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorials/how_to_update_openvpn_server_certificates/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    OpenVPN-Server-Zertifikate aktualisieren
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorials/how_to_make_adguard_home_dns_bypass_vpn/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AdGuard Home DNS am VPN vorbeileiten
+    Jak sprawić, by DNS AdGuard Home omijał VPN
   </span>
   
 
@@ -3557,8 +3476,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -3574,33 +3495,35 @@
       
         
       
+        
+      
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Mobilfunk
+    Komorkowe
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
-            Mobilfunk
+            Komorkowe
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3608,14 +3531,93 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../tutorials/sms_forwarding/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SMS
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    SMS-Weiterleitung
+    SMS
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Spis treści
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#obsugiwane-modele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obsługiwane modele
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szybka-konfiguracja" class="md-nav__link">
+    <span class="md-ellipsis">
+      Szybka konfiguracja
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sms_forwarding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Przekazywanie SMS
   </span>
   
 
@@ -3632,11 +3634,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/get_module_logs/" class="md-nav__link">
+      <a href="../get_module_logs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Modulprotokolle abrufen
+    Pobierz logi modulu
   </span>
   
 
@@ -3653,11 +3655,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/upgrade_quectel_module_software/" class="md-nav__link">
+      <a href="../upgrade_quectel_module_software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Quectel-Modul aktualisieren
+    Zaktualizuj modul Quectel
   </span>
   
 
@@ -3674,11 +3676,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_check_carrier_aggregation/" class="md-nav__link">
+      <a href="../how_to_check_carrier_aggregation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Status der Carrier Aggregation prüfen
+    Sprawdz stan agregacji nosnych
   </span>
   
 
@@ -3695,11 +3697,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_set_up_and_use_spitz_ax_gl-x3000_in_your_recreational_vehicle/" class="md-nav__link">
+      <a href="../how_to_set_up_and_use_spitz_ax_gl-x3000_in_your_recreational_vehicle/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Spitz AX für ein Wohnmobil einrichten
+    Skonfiguruj Spitz AX do kampera
   </span>
   
 
@@ -3716,11 +3718,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_install_or_change_antennas/" class="md-nav__link">
+      <a href="../how_to_install_or_change_antennas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Externe Antennen installieren oder austauschen
+    Zainstaluj lub wymien anteny zewnetrzne
   </span>
   
 
@@ -3788,11 +3790,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_use_esim_physical_card_with_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_use_esim_physical_card_with_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    eSIM-Physikkarte mit GL.iNet-Routern verwenden
+    Uzyj fizycznej karty eSIM z routerami GL.iNet
   </span>
   
 
@@ -3809,11 +3811,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_use_the_esim_physical_card_with_android_devices/" class="md-nav__link">
+      <a href="../how_to_use_the_esim_physical_card_with_android_devices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    eSIM-Physikkarte mit Android-Geräten verwenden
+    Uzyj fizycznej karty eSIM z urzadzeniami Android
   </span>
   
 
@@ -3881,11 +3883,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/goodcloud_site_to_site/" class="md-nav__link">
+      <a href="../goodcloud_site_to_site/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Site-to-Site
+    Połączenie site-to-site
   </span>
   
 
@@ -3902,11 +3904,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_access_the_luci_interface_via_goodcloud/" class="md-nav__link">
+      <a href="../how_to_access_the_luci_interface_via_goodcloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Über GoodCloud auf LuCI zugreifen
+    Uzyskaj dostep do LuCI przez GoodCloud
   </span>
   
 
@@ -3959,7 +3961,7 @@
             
   
   <span class="md-ellipsis">
-    Network
+    Siec
   </span>
   
 
@@ -3969,7 +3971,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
-            Network
+            Siec
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3980,11 +3982,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/eap/" class="md-nav__link">
+      <a href="../eap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Verbindung mit EAP-Netzwerk
+    Polacz z siecia EAP
   </span>
   
 
@@ -4001,11 +4003,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_set_up_a_guest_network/" class="md-nav__link">
+      <a href="../how_to_set_up_a_guest_network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Gastnetzwerk einrichten
+    Skonfiguruj siec goscinna
   </span>
   
 
@@ -4022,11 +4024,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_set_up_drop_in_gateway/" class="md-nav__link">
+      <a href="../how_to_set_up_drop_in_gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Drop-in Gateway einrichten
+    Skonfiguruj brame drop-in
   </span>
   
 
@@ -4043,11 +4045,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_set_up_port_forwarding/" class="md-nav__link">
+      <a href="../how_to_set_up_port_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Portweiterleitung auf dem Hauptrouter einrichten
+    Skonfiguruj przekierowanie portow na glownym routerze
   </span>
   
 
@@ -4064,11 +4066,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/configure_dual_ethernet_wan/" class="md-nav__link">
+      <a href="../configure_dual_ethernet_wan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Dualen kabelgebundenen WAN-Zugang konfigurieren
+    Skonfiguruj podwojny przewodowy dostep WAN
   </span>
   
 
@@ -4135,7 +4137,7 @@
             
   
   <span class="md-ellipsis">
-    Weitere Themen
+    Inne
   </span>
   
 
@@ -4145,7 +4147,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
-            Weitere Themen
+            Inne
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4156,11 +4158,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_block_client_devices/" class="md-nav__link">
+      <a href="../how_to_block_client_devices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Client-Geräte blockieren
+    Blokuj urzadzenia klienckie
   </span>
   
 
@@ -4177,11 +4179,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/manually_configure_static_ip/" class="md-nav__link">
+      <a href="../manually_configure_static_ip/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Statische IP auf Client-Geräten manuell konfigurieren
+    Recznie skonfiguruj statyczny adres IP na urzadzeniach klienckich
   </span>
   
 
@@ -4198,11 +4200,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/" class="md-nav__link">
+      <a href="../how_to_check_if_isp_assigns_you_a_public_ip_address/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Prüfen, ob eine öffentliche IP vorhanden ist
+    Sprawdz, czy masz publiczny adres IP
   </span>
   
 
@@ -4219,11 +4221,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_upgrade_downgrade_router/" class="md-nav__link">
+      <a href="../how_to_upgrade_downgrade_router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Router aktualisieren oder downgraden
+    Zaktualizuj lub cofnij wersje routera
   </span>
   
 
@@ -4240,11 +4242,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/ssh_log_in_to_the_router/" class="md-nav__link">
+      <a href="../ssh_log_in_to_the_router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Per SSH am Router anmelden
+    Zaloguj sie do routera przez SSH
   </span>
   
 
@@ -4261,11 +4263,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/winscp_share_file/" class="md-nav__link">
+      <a href="../winscp_share_file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Mit WinSCP auf Freigabedateien zugreifen
+    Uzyj WinSCP, aby uzyskac dostep do plikow udostepnionych
   </span>
   
 
@@ -4282,11 +4284,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_use_winscp_to_modify_files_on_glinet_routers/" class="md-nav__link">
+      <a href="../how_to_use_winscp_to_modify_files_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Mit WinSCP Dateien ändern
+    Uzyj WinSCP, aby modyfikowac pliki
   </span>
   
 
@@ -4303,11 +4305,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_activate_top_up_sim_cards/" class="md-nav__link">
+      <a href="../how_to_activate_top_up_sim_cards/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    T-Mobile-SIM-Karten aktivieren oder aufladen
+    Aktywuj lub doladuj karty SIM T-Mobile
   </span>
   
 
@@ -4324,11 +4326,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_change_the_nat_type_on_gaming/" class="md-nav__link">
+      <a href="../how_to_change_the_nat_type_on_gaming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    NAT-Typ beim Gaming ändern
+    Zmien typ NAT do gier
   </span>
   
 
@@ -4345,11 +4347,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_retrieve_the_mobile_app_log/" class="md-nav__link">
+      <a href="../how_to_retrieve_the_mobile_app_log/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Protokoll der mobilen App abrufen
+    Pobierz log aplikacji mobilnej
   </span>
   
 
@@ -4366,11 +4368,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/how_to_configure_domain_and_ip_filtering_rules_for_glinet_routers_via_an_online_text_file/" class="md-nav__link">
+      <a href="../how_to_configure_domain_and_ip_filtering_rules_for_glinet_routers_via_an_online_text_file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Domain- und IP-Filterregeln konfigurieren
+    Skonfiguruj reguly filtrowania domen i IP
   </span>
   
 
@@ -4387,11 +4389,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/technical_support_via_goodcloud/" class="md-nav__link">
+      <a href="../technical_support_via_goodcloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Technischer Support über GoodCloud
+    Pomoc techniczna przez GoodCloud
   </span>
   
 
@@ -4470,7 +4472,7 @@
               
   
   <span class="md-ellipsis">
-    Oberflächenleitfaden
+    Przewodnik po interfejsie
   </span>
   
 
@@ -4486,7 +4488,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Oberflächenleitfaden
+            Przewodnik po interfejsie
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4500,8 +4502,6 @@
   
     
     
-      
-        
       
         
       
@@ -4531,7 +4531,7 @@
             
   
   <span class="md-ellipsis">
-    Internetverbindung
+    Polaczenie z Internetem
   </span>
   
 
@@ -4541,7 +4541,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
-            Internetverbindung
+            Polaczenie z Internetem
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4598,7 +4598,7 @@
         
   
   <span class="md-ellipsis">
-    Repeater
+    Tryb repeatera
   </span>
   
 
@@ -4619,7 +4619,7 @@
         
   
   <span class="md-ellipsis">
-    Tethering
+    Udostepnianie internetu
   </span>
   
 
@@ -4640,28 +4640,7 @@
         
   
   <span class="md-ellipsis">
-    Cellular
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../interface_guide/sms/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SMS
+    Komorkowe
   </span>
   
 
@@ -4682,7 +4661,7 @@
         
   
   <span class="md-ellipsis">
-    Dual-Ethernet WAN
+    Podwojny przewodowy WAN
   </span>
   
 
@@ -4729,7 +4708,7 @@
             
   
   <span class="md-ellipsis">
-    WLAN
+    Bezprzewodowe
   </span>
   
 
@@ -4739,7 +4718,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
-            WLAN
+            Bezprzewodowe
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4754,7 +4733,7 @@
         
   
   <span class="md-ellipsis">
-    WLAN
+    Bezprzewodowe
   </span>
   
 
@@ -4775,7 +4754,7 @@
         
   
   <span class="md-ellipsis">
-    WLAN (v4.9)
+    Bezprzewodowe (v4.9)
   </span>
   
 
@@ -4820,7 +4799,7 @@
             
   
   <span class="md-ellipsis">
-    Clients
+    Klienci
   </span>
   
 
@@ -4830,7 +4809,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
-            Clients
+            Klienci
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4845,7 +4824,7 @@
         
   
   <span class="md-ellipsis">
-    Clients
+    Klienci
   </span>
   
 
@@ -4892,7 +4871,7 @@
             
   
   <span class="md-ellipsis">
-    Cloud-Dienste
+    Uslugi chmurowe
   </span>
   
 
@@ -4902,7 +4881,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
-            Cloud-Dienste
+            Uslugi chmurowe
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5022,7 +5001,7 @@
         
   
   <span class="md-ellipsis">
-    VPN Dashboard (v4.7)
+    Panel VPN (v4.7)
   </span>
   
 
@@ -5043,7 +5022,7 @@
         
   
   <span class="md-ellipsis">
-    VPN Dashboard (v4.8)
+    Panel VPN (v4.8)
   </span>
   
 
@@ -5064,7 +5043,7 @@
         
   
   <span class="md-ellipsis">
-    VPN Dashboard (v4.9)
+    Panel VPN (v4.9)
   </span>
   
 
@@ -5085,7 +5064,7 @@
         
   
   <span class="md-ellipsis">
-    VPN-Client-Profil
+    Profil klienta VPN
   </span>
   
 
@@ -5106,7 +5085,7 @@
         
   
   <span class="md-ellipsis">
-    OpenVPN-Client
+    Klient OpenVPN
   </span>
   
 
@@ -5127,7 +5106,7 @@
         
   
   <span class="md-ellipsis">
-    OpenVPN-Server
+    Serwer OpenVPN
   </span>
   
 
@@ -5148,7 +5127,7 @@
         
   
   <span class="md-ellipsis">
-    WireGuard-Client
+    Klient WireGuard
   </span>
   
 
@@ -5169,7 +5148,7 @@
         
   
   <span class="md-ellipsis">
-    WireGuard-Server
+    Serwer WireGuard
   </span>
   
 
@@ -5232,7 +5211,7 @@
             
   
   <span class="md-ellipsis">
-    Anwendungen
+    Aplikacje
   </span>
   
 
@@ -5242,7 +5221,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
-            Anwendungen
+            Aplikacje
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5257,7 +5236,7 @@
         
   
   <span class="md-ellipsis">
-    Plug-ins
+    Wtyczki
   </span>
   
 
@@ -5278,7 +5257,7 @@
         
   
   <span class="md-ellipsis">
-    Dynamisches DNS
+    Dynamiczny DNS
   </span>
   
 
@@ -5299,7 +5278,7 @@
         
   
   <span class="md-ellipsis">
-    Netzwerkspeicher
+    Pamiec sieciowa
   </span>
   
 
@@ -5341,7 +5320,7 @@
         
   
   <span class="md-ellipsis">
-    Kindersicherung
+    Kontrola rodzicielska
   </span>
   
 
@@ -5446,7 +5425,7 @@
         
   
   <span class="md-ellipsis">
-    eSIM-Verwaltung
+    Zarzadzanie eSIM
   </span>
   
 
@@ -5521,7 +5500,7 @@
             
   
   <span class="md-ellipsis">
-    Netzwerk
+    Siec
   </span>
   
 
@@ -5531,7 +5510,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
-            Netzwerk
+            Siec
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5546,7 +5525,7 @@
         
   
   <span class="md-ellipsis">
-    Firewall
+    Zapora sieciowa
   </span>
   
 
@@ -5567,7 +5546,7 @@
         
   
   <span class="md-ellipsis">
-    Portweiterleitung
+    Przekierowanie portow
   </span>
   
 
@@ -5630,7 +5609,7 @@
         
   
   <span class="md-ellipsis">
-    Gastnetzwerk
+    Siec goscinna
   </span>
   
 
@@ -5651,7 +5630,7 @@
         
   
   <span class="md-ellipsis">
-    IoT-Netzwerk
+    Siec IoT
   </span>
   
 
@@ -5693,7 +5672,7 @@
         
   
   <span class="md-ellipsis">
-    Ethernet-Port
+    Port Ethernet
   </span>
   
 
@@ -5714,7 +5693,7 @@
         
   
   <span class="md-ellipsis">
-    Netzwerkmodus
+    Tryb sieci
   </span>
   
 
@@ -5756,7 +5735,7 @@
         
   
   <span class="md-ellipsis">
-    MAC-Adresse
+    Adres MAC
   </span>
   
 
@@ -5777,7 +5756,7 @@
         
   
   <span class="md-ellipsis">
-    Drop-in Gateway
+    Brama drop-in
   </span>
   
 
@@ -5819,7 +5798,7 @@
         
   
   <span class="md-ellipsis">
-    Hardwarebeschleunigung
+    Akceleracja sprzetowa
   </span>
   
 
@@ -5840,7 +5819,7 @@
         
   
   <span class="md-ellipsis">
-    Netzwerkbeschleunigung
+    Akceleracja sieciowa
   </span>
   
 
@@ -5861,7 +5840,7 @@
         
   
   <span class="md-ellipsis">
-    NAT-Einstellungen
+    Ustawienia NAT
   </span>
   
 
@@ -5916,7 +5895,7 @@
             
   
   <span class="md-ellipsis">
-    Verkehrssteuerung
+    Kontrola przeplywu
   </span>
   
 
@@ -5926,7 +5905,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
-            Verkehrssteuerung
+            Kontrola przeplywu
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5941,7 +5920,7 @@
         
   
   <span class="md-ellipsis">
-    DPI-Engine
+    DPI Engine
   </span>
   
 
@@ -5962,7 +5941,7 @@
         
   
   <span class="md-ellipsis">
-    Datenstatistiken
+    Statystyki danych
   </span>
   
 
@@ -5983,7 +5962,7 @@
         
   
   <span class="md-ellipsis">
-    Inhaltsfilter
+    Filtr tresci
   </span>
   
 
@@ -6046,7 +6025,7 @@
         
   
   <span class="md-ellipsis">
-    Kindersicherung (v4.9)
+    Kontrola rodzicielska (v4.9)
   </span>
   
 
@@ -6097,7 +6076,7 @@
             
   
   <span class="md-ellipsis">
-    Sicherheit
+    Bezpieczenstwo
   </span>
   
 
@@ -6107,7 +6086,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_10">
             <span class="md-nav__icon md-icon"></span>
-            Sicherheit
+            Bezpieczenstwo
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6122,7 +6101,7 @@
         
   
   <span class="md-ellipsis">
-    Portweiterleitung
+    Przekierowanie portow
   </span>
   
 
@@ -6164,7 +6143,7 @@
         
   
   <span class="md-ellipsis">
-    Admin-Zugriff
+    Dostep administratora
   </span>
   
 
@@ -6185,7 +6164,7 @@
         
   
   <span class="md-ellipsis">
-    NAT-Modus
+    Tryb NAT
   </span>
   
 
@@ -6281,7 +6260,7 @@
         
   
   <span class="md-ellipsis">
-    Übersicht
+    Przeglad
   </span>
   
 
@@ -6302,7 +6281,7 @@
         
   
   <span class="md-ellipsis">
-    Upgrade
+    Aktualizacja
   </span>
   
 
@@ -6323,7 +6302,7 @@
         
   
   <span class="md-ellipsis">
-    Geplante Aufgaben
+    Zadania zaplanowane
   </span>
   
 
@@ -6344,7 +6323,7 @@
         
   
   <span class="md-ellipsis">
-    Admin-Passwort
+    Haslo administratora
   </span>
   
 
@@ -6365,7 +6344,7 @@
         
   
   <span class="md-ellipsis">
-    Display-Verwaltung
+    Zarzadzanie wyswietlaczem
   </span>
   
 
@@ -6386,7 +6365,7 @@
         
   
   <span class="md-ellipsis">
-    USB & Stromversorgung
+    USB i zasilanie
   </span>
   
 
@@ -6407,7 +6386,7 @@
         
   
   <span class="md-ellipsis">
-    Zeitzone
+    Strefa czasowa
   </span>
   
 
@@ -6428,7 +6407,7 @@
         
   
   <span class="md-ellipsis">
-    Einstellungen für Umschalttaste
+    Ustawienia przycisku przelaczania
   </span>
   
 
@@ -6449,7 +6428,7 @@
         
   
   <span class="md-ellipsis">
-    Protokoll
+    Dziennik
   </span>
   
 
@@ -6470,7 +6449,7 @@
         
   
   <span class="md-ellipsis">
-    Sicherheit
+    Bezpieczenstwo
   </span>
   
 
@@ -6491,7 +6470,7 @@
         
   
   <span class="md-ellipsis">
-    Firmware zurücksetzen
+    Resetuj firmware
   </span>
   
 
@@ -6512,7 +6491,7 @@
         
   
   <span class="md-ellipsis">
-    Erweiterte Einstellungen
+    Ustawienia zaawansowane
   </span>
   
 
@@ -6533,7 +6512,7 @@
         
   
   <span class="md-ellipsis">
-    Sprache
+    Jezyk
   </span>
   
 
@@ -6554,7 +6533,7 @@
         
   
   <span class="md-ellipsis">
-    Hilfe
+    Pomoc
   </span>
   
 
@@ -6619,7 +6598,7 @@
               
   
   <span class="md-ellipsis">
-    Videobibliothek
+    Biblioteka wideo
   </span>
   
 
@@ -6635,7 +6614,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Videobibliothek
+            Biblioteka wideo
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6652,7 +6631,7 @@
         
   
   <span class="md-ellipsis">
-    Unsere neuen Produkte kennenlernen
+    Poznaj nasze nowe produkty
   </span>
   
 
@@ -6673,7 +6652,7 @@
         
   
   <span class="md-ellipsis">
-    Unboxing & Ersteinrichtung
+    Rozpakowanie i pierwsza konfiguracja
   </span>
   
 
@@ -6694,7 +6673,7 @@
         
   
   <span class="md-ellipsis">
-    Tutorials
+    Samouczki
   </span>
   
 
@@ -6745,7 +6724,7 @@
               
   
   <span class="md-ellipsis">
-    Community
+    Spolecznosc
   </span>
   
 
@@ -6756,7 +6735,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Community
+            Spolecznosc
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6782,12 +6761,38 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+<nav class="md-nav md-nav--secondary" aria-label="Spis treści">
   
   
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Spis treści
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#obsugiwane-modele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obsługiwane modele
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szybka-konfiguracja" class="md-nav__link">
+    <span class="md-ellipsis">
+      Szybka konfiguracja
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -6811,15 +6816,88 @@
   
 
   <!-- Markdown content -->
-  <h1 id="wie-greife-ich-per-ssh-aus-der-ferne-auf-das-terminal-eines-glinet-routers-zu">Wie greife ich per SSH aus der Ferne auf das Terminal eines GL.iNet-Routers zu?<a class="headerlink" href="#wie-greife-ich-per-ssh-aus-der-ferne-auf-das-terminal-eines-glinet-routers-zu" title="Permanent link">&para;</a></h1>
+  <h1 id="sms">SMS<a class="headerlink" href="#sms" title="Permanent link">&para;</a></h1>
+<p>Routery komórkowe GL.iNet są wyposażone we wbudowany modem obsługujący wysyłanie i odbieranie wiadomości SMS po włożeniu karty SIM.</p>
+<p><strong>Uwaga</strong>: Ta funkcja działa wyłącznie na modelach GL.iNet 4G/5G z oryginalnym modułem 4G LTE/5G NR. Nie jest obsługiwana na innych modułach ani żadnych modułach USB.</p>
+<h2 id="obsugiwane-modele">Obsługiwane modele<a class="headerlink" href="#obsugiwane-modele" title="Permanent link">&para;</a></h2>
+<details>
+<summary>Obsługiwane modele</summary>
 <ul>
-<li><strong>Methode 1</strong>: Wenn das Netzwerk Ihres Routers eine <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">öffentliche IP-Adresse</a> hat, richten Sie bitte einen <a href="../../interface_guide/wireguard_server/">WireGuard Server</a> ein und verwenden Sie WireGuard, um per SSH auf den Router zuzugreifen. Wenn Sie keine öffentliche IP-Adresse haben, probieren Sie die anderen Methoden unten aus.</li>
-<li><strong>Methode 2</strong>: <a href="../../interface_guide/cloud/#setup">Binden Sie Ihr Gerät an GoodCloud</a>. Danach können Sie sich auf der <a href="https://www.goodcloud.xyz" target="_blank">GoodCloud-Website</a> anmelden und <a href="../../interface_guide/cloud/#remote-access-routers-terminal">per SSH aus der Ferne auf das Router-Terminal zugreifen</a>.</li>
-<li><strong>Methode 3</strong>: Wenn Sie eine SDWAN-Lösung verwenden möchten, empfehlen wir <a href="https://www.astrowarp.net" target="_blank">AstroWarp</a>.</li>
-<li><strong>Methode 4</strong>: Wenn Sie eine Reverse-Proxy-Lösung verwenden möchten, empfehlen wir <a href="https://www.astrorelay.com" target="_blank">AstroRelay</a>.</li>
+<li>GL-E5800 (Mudi 7)</li>
+<li>GL-X2000 (Spitz Plus)</li>
+<li>GL-X3000 (Spitz AX)</li>
+<li>GL-XE3000 (Puli AX)</li>
+<li>GL-E750/E750V2 (Mudi)</li>
+<li>GL-X750/GL-X750V2 (Spitz)</li>
+<li>GL-XE300 (Puli)</li>
+<li>GL-X300B (Collie)</li>
+</ul>
+</details>
+<details>
+<summary>Nieobsługiwane modele</summary>
+<ul>
+<li>GL-MT5000 (Brume 3)</li>
+<li>GL-MT3600BE (Beryl 7)</li>
+<li>GL-BE6500 (Flint 3e)</li>
+<li>GL-BE9300 (Flint 3)</li>
+<li>GL-BE3600 (Slate 7)</li>
+<li>GL-B3000 (Marble)</li>
+<li>GL-MT6000 (Flint2)</li>
+<li>GL-AX1800 (Flint)</li>
+<li>GL-MT2500/GL-MT2500A (Brume 2)</li>
+<li>GL-MT3000 (Beryl AX)</li>
+<li>GL-AXT1800 (Slate AX)</li>
+<li>GL-SFT1200 (Opal)</li>
+<li>GL-A1300 (Slate Plus)</li>
+<li>GL-MT1300 (Beryl)</li>
+<li>GL-AR750S (Slate)</li>
+<li>GL-MT300N-V2 (Mango)</li>
+<li>GL-AR300M Series (Shadow)</li>
+<li>GL-B1300 (Convexa-B)</li>
+<li>GL-AP1300 (Cirrus)</li>
+</ul>
+</details>
+<h2 id="szybka-konfiguracja">Szybka konfiguracja<a class="headerlink" href="#szybka-konfiguracja" title="Permanent link">&para;</a></h2>
+<p>Poniższy przykład dotyczy modelu GL-X3000 (Spitz AX).</p>
+<ol>
+<li>
+<p>Najpierw skonfiguruj router komórkowy, korzystając z <a href="../../interface_guide/internet_cellular/">tego linku</a>.</p>
+</li>
+<li>
+<p>Zaloguj się do panelu administracyjnego routera i przejdź do <strong>INTERNET</strong> -&gt; <strong>Cellular</strong>. Kliknij ikonę koperty w prawym górnym rogu.</p>
+<p><img alt="sms" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/sms/sms.png" /></p>
+</li>
+<li>
+<p>Zostaniesz przekierowany na stronę SMS, gdzie możesz przeglądać odebrane wiadomości lub tworzyć nowe.</p>
+<p><img alt="sms receive" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/sms/sms_receive.png" /></p>
+<p>Kliknij wiadomość, aby wyświetlić jej szczegóły.</p>
+<p><img alt="sms detail" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/sms/sms_detail.png" /></p>
+<p>Kliknij przycisk <strong>Send Message</strong> w prawym górnym rogu, aby napisać nową wiadomość.</p>
+<p><img alt="sms new message" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/sms/sms_new_message1.png" /></p>
+<p><img alt="sms new message" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/sms/sms_new_message2.png" /></p>
+<ul>
+<li>
+<p>Recepient</p>
+<p>Wybierz międzynarodowy numer kierunkowy i wpisz numer telefonu.</p>
+</li>
+<li>
+<p>From modem (SIM)</p>
+<p>Wybierz, z której karty SIM chcesz wysłać wiadomość.</p>
+</li>
+<li>
+<p>SMS Content</p>
+<p>Każda wiadomość SMS może zawierać maksymalnie 160 znaków.</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr />
+<p>Powiązane artykuły</p>
+<ul>
+<li><a href="../sms_forwarding/">Przekazywanie SMS</a></li>
 </ul>
 <hr />
-<p>Haben Sie noch Fragen? Besuchen Sie unser <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> oder <a href="https://www.gl-inet.com/contacts/" target="_blank">kontaktieren Sie uns</a>.</p>
+<p>Masz pytania? Odwiedź nasze <a href="https://forum.gl-inet.com" target="_blank">Forum społeczności</a> lub <a href="https://www.gl-inet.com/contacts/" target="_blank">Skontaktuj się z nami</a>.</p>
 
   <!-- Last update of source file -->
   
@@ -6841,10 +6919,10 @@
     
       
   <span class="md-source-file__fact">
-    <span class="md-icon" title="Letztes Update">
+    <span class="md-icon" title="Ostatnia aktualizacja">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1. Juli 2026 13:40:07 UTC">1. Juli 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 lipca 2026 02:48:43 UTC">6 lipca 2026</span>
   </span>
 
     
@@ -6878,10 +6956,10 @@
           <div class="pswp__top-bar">
             <!--  Controls are self-explanatory. Order can be changed. -->
             <div class="pswp__counter"></div>
-            <button class="pswp__button pswp__button--close" title="Schließen (Esc)"></button>
-            <!-- <button class="pswp__button pswp__button--share" title="Teilen"></button> -->
-            <button class="pswp__button pswp__button--fs" title="Vollbild umschalten"></button>
-            <button class="pswp__button pswp__button--zoom" title="Vergrößern/Verkleinern"></button>
+            <button class="pswp__button pswp__button--close" title="Zamknij (Esc)"></button>
+            <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+            <button class="pswp__button pswp__button--fs" title="Przełącz pełny ekran"></button>
+            <button class="pswp__button pswp__button--zoom" title="Powiększ/pomniejsz"></button>
             <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
             <!-- element will get class pswp__preloader--active when preloader is running -->
             <div class="pswp__preloader">
@@ -6897,10 +6975,10 @@
             <div class="pswp__share-tooltip"></div> 
           </div>
 
-          <button class="pswp__button pswp__button--arrow--left" title="Zurück (Pfeil links)">
+          <button class="pswp__button pswp__button--arrow--left" title="Poprzedni (lewa strzałka)">
           </button>
 
-          <button class="pswp__button pswp__button--arrow--right" title="Weiter (Pfeil rechts)">
+          <button class="pswp__button pswp__button--arrow--right" title="Następny (prawa strzałka)">
           </button>
 
           <div class="pswp__caption">
@@ -6920,7 +6998,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-  Zurück zum Seitenanfang
+  Powrót do góry
 </button>
         
       </main>
@@ -7034,7 +7112,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Skopiowano do schowka", "clipboard.copy": "Kopiuj do schowka", "search.result.more.one": "1 wi\u0119cej na tej stronie", "search.result.more.other": "# wi\u0119cej na tej stronie", "search.result.none": "Brak wynik\u00f3w wyszukiwania", "search.result.one": "Wyniki wyszukiwania: 1", "search.result.other": "Wyniki wyszukiwania: #", "search.result.placeholder": "Zacznij pisa\u0107, aby szuka\u0107", "search.result.term.missing": "Brak", "select.version": "Wybierz wersj\u0119"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>

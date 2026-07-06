@@ -1,24 +1,20 @@
 
 <!doctype html>
-<html lang="es" class="no-js">
+<html lang="ja" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentación de productos de routers GL.iNet">
+        <meta name="description" content="GL.iNet ルーター製品向けドキュメント">
       
       
         <meta name="author" content="GL.iNet">
       
       
-        <link rel="canonical" href="https://docs.gl-inet.com/router/es/4/tutorials/how_to_set_up_openvpn_server_via_astrorelay/">
+        <link rel="canonical" href="https://docs.gl-inet.com/router/jp/4/interface_guide/expressvpn_dashboard/">
       
       
-        <link rel="prev" href="../how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/">
-      
-      
-        <link rel="next" href="../how_to_set_up_wireguard_server_via_astrorelay/">
       
       
       <link rel="icon" href="https://static.gl-inet.com/docs/router/common/favicon.png">
@@ -26,7 +22,7 @@
     
     
       
-        <title>Configurar servidor OpenVPN mediante AstroRelay - Documentación de routers GL.iNet 4</title>
+        <title>ExpressVPN Dashboard - GL.iNet ルータードキュメント 4</title>
       
     
     
@@ -76,8 +72,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#como-configurar-un-servidor-openvpn-mediante-astrorelay" class="md-skip">
-          Saltar a contenido
+        <a href="#expressvpn-dashboard" class="md-skip">
+          コンテンツにスキップ
         </a>
       
     </div>
@@ -93,8 +89,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="../.." title="Documentación de routers GL.iNet 4" class="md-header__button md-logo" aria-label="Documentación de routers GL.iNet 4" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="GL.iNet ルータードキュメント 4" class="md-header__button md-logo" aria-label="GL.iNet ルータードキュメント 4" data-md-component="logo">
       
   <img src="https://static.gl-inet.com/docs/router/common/logo_white.svg" alt="logo">
 
@@ -107,13 +103,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Documentación de routers GL.iNet 4
+            GL.iNet ルータードキュメント 4
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Configurar servidor OpenVPN mediante AstroRelay
+              ExpressVPN Dashboard
             
           </span>
         </div>
@@ -127,7 +123,7 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+    <button class="md-header__button md-icon" aria-label="言語切り替え">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
     </button>
     <div class="md-select__inner">
@@ -189,16 +185,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Buscar">
+      <nav class="md-search__options" aria-label="検索">
         
-        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
@@ -209,7 +205,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Inicializando búsqueda
+            検索を初期化
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -220,7 +216,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/gl-inet/docs4.x" title="Ir al repositorio" class="md-source" data-md-component="source">
+        <a href="https://github.com/gl-inet/docs4.x" title="リポジトリへ" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -241,7 +237,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -255,7 +251,7 @@
   
     
   
-  Inicio
+  ホーム
 
       </a>
     </li>
@@ -274,7 +270,7 @@
   
     
   
-  Guía del usuario
+  ユーザーガイド
 
         </a>
       </li>
@@ -294,29 +290,7 @@
   
     
   
-  Preguntas frecuentes
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
-          
-  
-    
-  
-  Tutoriales
+  FAQ
 
         </a>
       </li>
@@ -331,12 +305,32 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../interface_guide/" class="md-tabs__link">
+        <a href="../../tutorials/" class="md-tabs__link">
           
   
     
   
-  Guía de la interfaz
+  チュートリアル
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  インターフェースガイド
 
         </a>
       </li>
@@ -356,7 +350,7 @@
   
     
   
-  Biblioteca de videos
+  ビデオライブラリ
 
         </a>
       </li>
@@ -376,7 +370,7 @@
   
     
   
-  Comunidad
+  コミュニティ
 
         </a>
       </li>
@@ -404,18 +398,18 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Documentación de routers GL.iNet 4" class="md-nav__button md-logo" aria-label="Documentación de routers GL.iNet 4" data-md-component="logo">
+    <a href="../.." title="GL.iNet ルータードキュメント 4" class="md-nav__button md-logo" aria-label="GL.iNet ルータードキュメント 4" data-md-component="logo">
       
   <img src="https://static.gl-inet.com/docs/router/common/logo_white.svg" alt="logo">
 
     </a>
-    Documentación de routers GL.iNet 4
+    GL.iNet ルータードキュメント 4
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/gl-inet/docs4.x" title="Ir al repositorio" class="md-source" data-md-component="source">
+      <a href="https://github.com/gl-inet/docs4.x" title="リポジトリへ" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -439,7 +433,7 @@
         
   
   <span class="md-ellipsis">
-    Inicio
+    ホーム
   </span>
   
 
@@ -626,7 +620,7 @@
               
   
   <span class="md-ellipsis">
-    Guía del usuario
+    ユーザーガイド
   </span>
   
 
@@ -642,7 +636,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Guía del usuario
+            ユーザーガイド
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1457,7 +1451,7 @@
               
   
   <span class="md-ellipsis">
-    Preguntas frecuentes
+    FAQ
   </span>
   
 
@@ -1473,7 +1467,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Preguntas frecuentes
+            FAQ
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1514,7 +1508,7 @@
             
   
   <span class="md-ellipsis">
-    Internet
+    インターネット
   </span>
   
 
@@ -1524,7 +1518,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
-            Internet
+            インターネット
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1539,7 +1533,7 @@
         
   
   <span class="md-ellipsis">
-    Configuración inicial
+    初回セットアップ
   </span>
   
 
@@ -1560,7 +1554,7 @@
         
   
   <span class="md-ellipsis">
-    Advertencia del navegador
+    ブラウザからの警告
   </span>
   
 
@@ -1581,7 +1575,7 @@
         
   
   <span class="md-ellipsis">
-    Preguntas frecuentes sobre la solución de problemas de conexión a Internet
+    インターネット接続のトラブルシューティングFAQ
   </span>
   
 
@@ -1602,7 +1596,7 @@
         
   
   <span class="md-ellipsis">
-    Conectarse a un hotspot público con portal cautivo
+    キャプティブポータルでホットスポットに接続する
   </span>
   
 
@@ -1623,7 +1617,7 @@
         
   
   <span class="md-ellipsis">
-    Conectar un dispositivo solo Ethernet a la red Wi-Fi
+    Ethernet専用デバイスをWi-Fiに接続する
   </span>
   
 
@@ -1670,7 +1664,7 @@
             
   
   <span class="md-ellipsis">
-    Avisos de problemas
+    問題通知
   </span>
   
 
@@ -1680,7 +1674,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Avisos de problemas
+            問題通知
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1695,7 +1689,7 @@
         
   
   <span class="md-ellipsis">
-    Aviso de problema para GL-MT2500/GL-X3000/GL-XE3000
+    GL-MT2500/GL-X3000/GL-XE3000 の問題通知
   </span>
   
 
@@ -1716,7 +1710,7 @@
         
   
   <span class="md-ellipsis">
-    Aviso de problema y soluciones para GL-X3000/GL-X2000 cuando no funcionan con tarjetas SIM de EE
+    GL-X3000/GL-X2000のEE SIMカード動作不能の通知と解決策
   </span>
   
 
@@ -1801,7 +1795,7 @@
             
   
   <span class="md-ellipsis">
-    Solución de problemas
+    トラブルシューティング
   </span>
   
 
@@ -1811,7 +1805,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
-            Solución de problemas
+            トラブルシューティング
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1826,7 +1820,7 @@
         
   
   <span class="md-ellipsis">
-    No se puede acceder al panel de administración web
+    ウェブ管理パネルにアクセスできません
   </span>
   
 
@@ -1847,7 +1841,7 @@
         
   
   <span class="md-ellipsis">
-    No se puede detectar el hotspot 5G de Android
+    Android 5G ホットスポットのスキャンができない
   </span>
   
 
@@ -1868,7 +1862,7 @@
         
   
   <span class="md-ellipsis">
-    No se puede detectar el hotspot 5G del iPhone
+    iPhone 5G ホットスポットのスキャンができない
   </span>
   
 
@@ -1889,7 +1883,7 @@
         
   
   <span class="md-ellipsis">
-    Fallo del tethering del iPhone
+    iPhone テザリング失敗
   </span>
   
 
@@ -1910,7 +1904,7 @@
         
   
   <span class="md-ellipsis">
-    Guía de solución de problemas de red celular
+    セルラーネットワークのトラブルシューティングガイド
   </span>
   
 
@@ -1931,7 +1925,7 @@
         
   
   <span class="md-ellipsis">
-    Falla la instalación del perfil eSIM
+    eSIMプロファイルのインストールに失敗する
   </span>
   
 
@@ -1952,7 +1946,7 @@
         
   
   <span class="md-ellipsis">
-    No hay Internet después de sustituir el router antiguo por uno de GL.iNet
+    古いルーターを GL.iNet に置き換えた後にインターネットがない
   </span>
   
 
@@ -1973,7 +1967,7 @@
         
   
   <span class="md-ellipsis">
-    El módem USB no funciona
+    USB モデムが正常に動作しない
   </span>
   
 
@@ -1994,7 +1988,7 @@
         
   
   <span class="md-ellipsis">
-    Reparar la red o restablecer
+    修復またはリセット
   </span>
   
 
@@ -2015,7 +2009,7 @@
         
   
   <span class="md-ellipsis">
-    Qué hacer si el router queda inutilizado
+    ルーターが文鎮化した場合の対処法
   </span>
   
 
@@ -2036,7 +2030,7 @@
         
   
   <span class="md-ellipsis">
-    macOS no puede escribir en un recurso compartido Samba
+    MacOSはSambaに書き込めない
   </span>
   
 
@@ -2057,7 +2051,7 @@
         
   
   <span class="md-ellipsis">
-    El servidor WireGuard no funciona correctamente
+    WireGuard サーバーが正常に動作しない
   </span>
   
 
@@ -2078,7 +2072,7 @@
         
   
   <span class="md-ellipsis">
-    Se queda en "Installing" durante la actualización del firmware
+    ファームウェア更新中に「インストール中」で止まる
   </span>
   
 
@@ -2099,7 +2093,7 @@
         
   
   <span class="md-ellipsis">
-    Se queda en "Reverting" durante el restablecimiento del firmware
+    ファームウェアリセット中に「元に戻しています」で止まる
   </span>
   
 
@@ -2120,7 +2114,7 @@
         
   
   <span class="md-ellipsis">
-    Se queda en "Rebooting" durante el reinicio del firmware
+    再起動中に「再起動中」で止まる
   </span>
   
 
@@ -2141,7 +2135,7 @@
         
   
   <span class="md-ellipsis">
-    Cómo resolver un conflicto de subred
+    サブネット競合の解決方法
   </span>
   
 
@@ -2162,7 +2156,7 @@
         
   
   <span class="md-ellipsis">
-    Por qué aparece un mensaje en la prueba de DDNS
+    DDNS テストのメッセージについて
   </span>
   
 
@@ -2183,7 +2177,7 @@
         
   
   <span class="md-ellipsis">
-    Por qué la velocidad de mi VPN es más lenta de lo esperado
+    VPN 速度が遅い理由
   </span>
   
 
@@ -2204,7 +2198,7 @@
         
   
   <span class="md-ellipsis">
-    Cuál es la capacidad de dispositivos de mi router
+    ルーターのデバイス容量について
   </span>
   
 
@@ -2225,7 +2219,7 @@
         
   
   <span class="md-ellipsis">
-    Cuál es la cobertura inalámbrica de mi router
+    ルーターの無線カバレッジについて
   </span>
   
 
@@ -2246,7 +2240,7 @@
         
   
   <span class="md-ellipsis">
-    Actualizar la versión de U-Boot
+    Uboot バージョンのアップグレード
   </span>
   
 
@@ -2326,11 +2320,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/openvpn_client/" class="md-nav__link">
+      <a href="../openvpn_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Cómo configurar OpenVPN
+    OpenVPN の設定方法
   </span>
   
 
@@ -2347,32 +2341,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/wireguard_client/" class="md-nav__link">
+      <a href="../wireguard_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Cómo configurar WireGuard
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../faq/block_non_vpn_traffic/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cómo bloquear el tráfico fuera de la VPN
+    WireGuard の設定方法
   </span>
   
 
@@ -2393,7 +2366,28 @@
         
   
   <span class="md-ellipsis">
-    Kill Switch de VPN
+    VPN 以外のトラフィックをブロックする
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/block_non_vpn_traffic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPN キルスイッチ
   </span>
   
 
@@ -2414,7 +2408,7 @@
         
   
   <span class="md-ellipsis">
-    TCP o UDP
+    TCP または UDP
   </span>
   
 
@@ -2435,7 +2429,7 @@
         
   
   <span class="md-ellipsis">
-    Parámetros de ofuscación de AmneziaWG
+    AmneziaWG難読化
   </span>
   
 
@@ -2456,7 +2450,7 @@
         
   
   <span class="md-ellipsis">
-    No se puede conectar a un servidor WireGuard ofuscado
+    難読化された WireGuard サーバーに接続できない
   </span>
   
 
@@ -2477,7 +2471,7 @@
         
   
   <span class="md-ellipsis">
-    Tengo que configurar Ethernet WAN al usar VPN
+    VPN 使用時に Ethernet WAN の設定が必要か
   </span>
   
 
@@ -2524,7 +2518,7 @@
             
   
   <span class="md-ellipsis">
-    Actualización
+    アップグレード
   </span>
   
 
@@ -2534,7 +2528,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
-            Actualización
+            アップグレード
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2549,7 +2543,7 @@
         
   
   <span class="md-ellipsis">
-    Descargar firmware
+    ファームウェアをダウンロード
   </span>
   
 
@@ -2566,11 +2560,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_upgrade_downgrade_router/" class="md-nav__link">
+      <a href="../../tutorials/how_to_upgrade_downgrade_router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Actualizar o degradar manualmente
+    手動でアップグレードまたはダウングレード
   </span>
   
 
@@ -2596,8 +2590,6 @@
   
     
     
-      
-        
       
         
       
@@ -2639,7 +2631,7 @@
             
   
   <span class="md-ellipsis">
-    Otros
+    その他
   </span>
   
 
@@ -2649,7 +2641,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
-            Otros
+            その他
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2664,7 +2656,7 @@
         
   
   <span class="md-ellipsis">
-    Estado del indicador LED
+    LED インジケーターの状態
   </span>
   
 
@@ -2685,7 +2677,7 @@
         
   
   <span class="md-ellipsis">
-    App móvil de GL.iNet
+    GL.iNet モバイルアプリ
   </span>
   
 
@@ -2706,7 +2698,7 @@
         
   
   <span class="md-ellipsis">
-    Añadir Brume 2 a la app móvil
+    Brume 2 をモバイルアプリに追加する
   </span>
   
 
@@ -2727,7 +2719,7 @@
         
   
   <span class="md-ellipsis">
-    Cambiar WAN a LAN
+    WAN を LAN に変更
   </span>
   
 
@@ -2748,7 +2740,7 @@
         
   
   <span class="md-ellipsis">
-    Acceder a GL.iNet y AdGuard Home mediante HTTPS
+    HTTPS で GL.iNet と AdGuard Home にアクセス
   </span>
   
 
@@ -2769,7 +2761,7 @@
         
   
   <span class="md-ellipsis">
-    Conectarse a la antena Starlink
+    Starlink への接続
   </span>
   
 
@@ -2790,7 +2782,7 @@
         
   
   <span class="md-ellipsis">
-    Administración web remota
+    Web Admin へのリモートアクセス
   </span>
   
 
@@ -2807,32 +2799,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/remote_ssh_to_router/" class="md-nav__link">
+      <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    SSH remoto al router
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../how_to_check_if_isp_assigns_you_a_public_ip_address/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Comprobar IP pública
+    パブリック IP 確認
   </span>
   
 
@@ -2853,7 +2824,7 @@
         
   
   <span class="md-ellipsis">
-    Hacer que Wi-Fi Calling funcione en Opal
+    Opal で Wi-Fi 通話を機能させる方法
   </span>
   
 
@@ -2874,7 +2845,7 @@
         
   
   <span class="md-ellipsis">
-    Encontrar todas las direcciones MAC
+    すべての MAC アドレスを確認する
   </span>
   
 
@@ -2895,7 +2866,7 @@
         
   
   <span class="md-ellipsis">
-    Encontrar información del dispositivo
+    デバイス情報を確認する
   </span>
   
 
@@ -2916,7 +2887,7 @@
         
   
   <span class="md-ellipsis">
-    Qué es LuCI
+    LuCI とは
   </span>
   
 
@@ -2945,8 +2916,6 @@
       
   
   
-    
-  
   
   
     
@@ -2975,21 +2944,21 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../tutorials/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    Tutoriales
+    チュートリアル
   </span>
   
 
@@ -3002,10 +2971,10 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Tutoriales
+            チュートリアル
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3015,16 +2984,10 @@
                 
   
   
-    
   
   
-  
     
     
-      
-        
-      
-        
       
         
       
@@ -3068,12 +3031,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -3087,7 +3050,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             VPN
@@ -3101,11 +3064,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_set_up_openvpn_client/" class="md-nav__link">
+      <a href="../../tutorials/how_to_set_up_openvpn_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configurar cliente OpenVPN
+    OpenVPN クライアントの設定
   </span>
   
 
@@ -3122,11 +3085,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_set_up_openvpn_server/" class="md-nav__link">
+      <a href="../../tutorials/how_to_set_up_openvpn_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configurar servidor OpenVPN
+    OpenVPN サーバーの設定
   </span>
   
 
@@ -3143,11 +3106,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../build_your_own_wireguard_home_server_with_two_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/build_your_own_wireguard_home_server_with_two_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Crear tu propio servidor doméstico WireGuard
+    WireGuard ホームサーバーを構築する
   </span>
   
 
@@ -3164,11 +3127,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpn_obfuscation/" class="md-nav__link">
+      <a href="../../tutorials/vpn_obfuscation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configurar la ofuscación de VPN
+    VPN 難読化の設定
   </span>
   
 
@@ -3185,11 +3148,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_nordvpn_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_connect_to_nordvpn_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Conectarse a NordVPN con una IP dedicada
+    NordVPN に Dedicated IP で接続する
   </span>
   
 
@@ -3206,63 +3169,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_connect_to_surfshark_with_dedicated_ip_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Conectarse a Surfshark con una IP dedicada
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Configurar servidor OpenVPN mediante AstroRelay
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../how_to_set_up_wireguard_server_via_astrorelay/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Configurar servidor WireGuard mediante AstroRelay
+    Surfshark に Dedicated IP で接続する
   </span>
   
 
@@ -3279,11 +3190,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../openvpn_server_access_client_lan_side/" class="md-nav__link">
+      <a href="../../tutorials/openvpn_server_access_client_lan_side/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Acceder a la LAN del cliente OpenVPN desde el servidor
+    サーバーから OpenVPN クライアント LAN にアクセスする
   </span>
   
 
@@ -3300,11 +3211,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../wireguard_server_access_to_client_lan_side/" class="md-nav__link">
+      <a href="../../tutorials/wireguard_server_access_to_client_lan_side/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Acceder a la LAN del cliente WireGuard desde el servidor
+    サーバーから WireGuard クライアント LAN にアクセスする
   </span>
   
 
@@ -3321,11 +3232,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_access_ovpnserver_lan_via_domain_name/" class="md-nav__link">
+      <a href="../../tutorials/how_to_access_ovpnserver_lan_via_domain_name/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Acceder a la LAN del servidor OpenVPN desde el cliente mediante nombre de dominio
+    ドメイン名で OpenVPN サーバー LAN にアクセスする
   </span>
   
 
@@ -3342,11 +3253,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_access_wgserver_lan_via_domain_name/" class="md-nav__link">
+      <a href="../../tutorials/how_to_access_wgserver_lan_via_domain_name/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Acceder a la LAN del servidor WireGuard desde el cliente mediante nombre de dominio
+    ドメイン名で WireGuard サーバー LAN にアクセスする
   </span>
   
 
@@ -3363,11 +3274,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_enable_openvpn_tap_s2s_mode_on_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_enable_openvpn_tap_s2s_mode_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Activar OpenVPN TAP-S2S
+    OpenVPN TAP-S2S を有効にする
   </span>
   
 
@@ -3384,11 +3295,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_use_vpn_cascading_on_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_use_vpn_cascading_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Activar VPN Cascading
+    VPN カスケードを有効にする
   </span>
   
 
@@ -3405,11 +3316,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../../tutorials/use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Usar WireGuard para proteger RDP desde fuera de la red
+    WireGuard で外部ネットワークからの RDP を保護する
   </span>
   
 
@@ -3426,11 +3337,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_get_configuration_files_from_wireguard_service_providers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_get_configuration_files_from_wireguard_service_providers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Obtener archivos de configuración de proveedores de WireGuard
+    WireGuard サービスプロバイダーから設定ファイルを取得する
   </span>
   
 
@@ -3447,11 +3358,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../reserve_fixed_IP_for_ovpn_client/" class="md-nav__link">
+      <a href="../../tutorials/reserve_fixed_IP_for_ovpn_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Reservar una IP fija para el cliente OpenVPN
+    OpenVPN クライアントに固定 IP を予約する
   </span>
   
 
@@ -3468,11 +3379,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_allow_access_to_wan_when_vpn_client_enabled/" class="md-nav__link">
+      <a href="../../tutorials/how_to_allow_access_to_wan_when_vpn_client_enabled/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Permitir acceso a la WAN cuando el cliente VPN está habilitado
+    VPN クライアント有効時に WAN アクセスを許可する
   </span>
   
 
@@ -3489,11 +3400,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../route_vpn_client_dns_to_server_upstream_dns/" class="md-nav__link">
+      <a href="../../tutorials/route_vpn_client_dns_to_server_upstream_dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Enrutar el DNS del cliente VPN al DNS ascendente del servidor
+    VPN クライアント DNS をサーバー上流 DNS にルーティングする
   </span>
   
 
@@ -3510,11 +3421,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_update_openvpn_server_certificates/" class="md-nav__link">
+      <a href="../../tutorials/how_to_update_openvpn_server_certificates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Actualizar los certificados del servidor OpenVPN
+    OpenVPN サーバー証明書を更新する
   </span>
   
 
@@ -3531,11 +3442,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_make_adguard_home_dns_bypass_vpn/" class="md-nav__link">
+      <a href="../../tutorials/how_to_make_adguard_home_dns_bypass_vpn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Hacer que el DNS de AdGuard Home evite la VPN
+    AdGuard Home DNS で VPN をバイパスする方法
   </span>
   
 
@@ -3561,6 +3472,8 @@
   
     
     
+      
+        
       
         
       
@@ -3590,7 +3503,7 @@
             
   
   <span class="md-ellipsis">
-    Celular
+    セルラー
   </span>
   
 
@@ -3600,7 +3513,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
-            Celular
+            セルラー
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3611,11 +3524,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../sms_forwarding/" class="md-nav__link">
+      <a href="../../tutorials/sms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Reenvío de SMS
+    SMS
   </span>
   
 
@@ -3632,11 +3545,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../get_module_logs/" class="md-nav__link">
+      <a href="../../tutorials/sms_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Obtener registros del módulo
+    SMS 転送
   </span>
   
 
@@ -3653,11 +3566,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../upgrade_quectel_module_software/" class="md-nav__link">
+      <a href="../../tutorials/get_module_logs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Actualizar módulo Quectel
+    モジュールログを取得する
   </span>
   
 
@@ -3674,11 +3587,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_check_carrier_aggregation/" class="md-nav__link">
+      <a href="../../tutorials/upgrade_quectel_module_software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Comprobar el estado de la agregación de portadoras
+    Quectel モジュールのアップグレード
   </span>
   
 
@@ -3695,11 +3608,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_set_up_and_use_spitz_ax_gl-x3000_in_your_recreational_vehicle/" class="md-nav__link">
+      <a href="../../tutorials/how_to_check_carrier_aggregation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configurar Spitz AX para vehículos recreativos
+    キャリアアグリゲーションの確認方法
   </span>
   
 
@@ -3716,11 +3629,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_install_or_change_antennas/" class="md-nav__link">
+      <a href="../../tutorials/how_to_set_up_and_use_spitz_ax_gl-x3000_in_your_recreational_vehicle/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Instalar o cambiar antenas externas
+    RV 用 Spitz AX の設定方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/how_to_install_or_change_antennas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    外部アンテナの取り付けまたは交換方法
   </span>
   
 
@@ -3788,11 +3722,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_use_esim_physical_card_with_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_use_esim_physical_card_with_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Usar tarjeta física eSIM con routers GL.iNet
+    GL.iNet ルーターで eSIM 物理カードを使用する
   </span>
   
 
@@ -3809,11 +3743,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_use_the_esim_physical_card_with_android_devices/" class="md-nav__link">
+      <a href="../../tutorials/how_to_use_the_esim_physical_card_with_android_devices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Usar tarjeta física eSIM con dispositivos Android
+    Android デバイスで eSIM 物理カードを使用する
   </span>
   
 
@@ -3881,11 +3815,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../goodcloud_site_to_site/" class="md-nav__link">
+      <a href="../../tutorials/goodcloud_site_to_site/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Sitio a sitio
+    Site to Site
   </span>
   
 
@@ -3902,11 +3836,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_access_the_luci_interface_via_goodcloud/" class="md-nav__link">
+      <a href="../../tutorials/how_to_access_the_luci_interface_via_goodcloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Acceder a LuCI mediante GoodCloud
+    GoodCloud 経由で LuCI にアクセスする
   </span>
   
 
@@ -3959,7 +3893,7 @@
             
   
   <span class="md-ellipsis">
-    Red
+    ネットワーク
   </span>
   
 
@@ -3969,7 +3903,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
-            Red
+            ネットワーク
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3980,11 +3914,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../eap/" class="md-nav__link">
+      <a href="../../tutorials/eap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Conectarse a una red EAP
+    EAP ネットワークへの接続
   </span>
   
 
@@ -4001,11 +3935,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_set_up_a_guest_network/" class="md-nav__link">
+      <a href="../../tutorials/how_to_set_up_a_guest_network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configurar una red de invitados
+    ゲストネットワークの設定方法
   </span>
   
 
@@ -4022,11 +3956,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_set_up_drop_in_gateway/" class="md-nav__link">
+      <a href="../../tutorials/how_to_set_up_drop_in_gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configurar drop-in gateway
+    ドロップインゲートウェイの設定方法
   </span>
   
 
@@ -4043,11 +3977,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_set_up_port_forwarding/" class="md-nav__link">
+      <a href="../../tutorials/how_to_set_up_port_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configurar el reenvío de puertos en el router principal
+    プライマリルーターでポート転送を設定する方法
   </span>
   
 
@@ -4064,11 +3998,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../configure_dual_ethernet_wan/" class="md-nav__link">
+      <a href="../../tutorials/configure_dual_ethernet_wan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configurar acceso WAN dual por cable
+    デュアル有線 WAN アクセスの設定
   </span>
   
 
@@ -4135,7 +4069,7 @@
             
   
   <span class="md-ellipsis">
-    Otros
+    その他
   </span>
   
 
@@ -4145,7 +4079,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
-            Otros
+            その他
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4156,11 +4090,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_block_client_devices/" class="md-nav__link">
+      <a href="../../tutorials/how_to_block_client_devices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Bloquear dispositivos cliente
+    クライアントデバイスをブロックする方法
   </span>
   
 
@@ -4177,11 +4111,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../manually_configure_static_ip/" class="md-nav__link">
+      <a href="../../tutorials/manually_configure_static_ip/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configurar manualmente una IP estática en los dispositivos cliente
+    クライアントデバイスに静的 IP を手動で設定する
   </span>
   
 
@@ -4198,11 +4132,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_check_if_isp_assigns_you_a_public_ip_address/" class="md-nav__link">
+      <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Comprobar si tienes una IP pública
+    パブリック IP を持っているかどうかを確認する
   </span>
   
 
@@ -4219,11 +4153,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_upgrade_downgrade_router/" class="md-nav__link">
+      <a href="../../tutorials/how_to_upgrade_downgrade_router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Actualizar o degradar tu router
+    ルーターをアップグレードまたはダウングレードする方法
   </span>
   
 
@@ -4240,11 +4174,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../ssh_log_in_to_the_router/" class="md-nav__link">
+      <a href="../../tutorials/ssh_log_in_to_the_router/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Iniciar sesión por SSH en el router
+    SSH でルーターにログインする
   </span>
   
 
@@ -4261,11 +4195,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../winscp_share_file/" class="md-nav__link">
+      <a href="../../tutorials/winscp_share_file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Usar WinSCP para acceder a archivos compartidos
+    WinSCP を使用して共有ファイルにアクセスする
   </span>
   
 
@@ -4282,11 +4216,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_use_winscp_to_modify_files_on_glinet_routers/" class="md-nav__link">
+      <a href="../../tutorials/how_to_use_winscp_to_modify_files_on_glinet_routers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Usar WinSCP para modificar archivos
+    WinSCP を使用してファイルを変更する
   </span>
   
 
@@ -4303,11 +4237,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_activate_top_up_sim_cards/" class="md-nav__link">
+      <a href="../../tutorials/how_to_activate_top_up_sim_cards/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Activar o recargar tarjetas SIM de T-Mobile
+    T-Mobile SIM カードを有効化またはチャージする
   </span>
   
 
@@ -4324,11 +4258,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_change_the_nat_type_on_gaming/" class="md-nav__link">
+      <a href="../../tutorials/how_to_change_the_nat_type_on_gaming/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Cambiar el tipo de NAT para juegos
+    ゲーミング NAT タイプを変更する
   </span>
   
 
@@ -4345,11 +4279,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_retrieve_the_mobile_app_log/" class="md-nav__link">
+      <a href="../../tutorials/how_to_retrieve_the_mobile_app_log/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Obtener el registro de la app móvil
+    モバイルアプリのログを取得する
   </span>
   
 
@@ -4366,11 +4300,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../how_to_configure_domain_and_ip_filtering_rules_for_glinet_routers_via_an_online_text_file/" class="md-nav__link">
+      <a href="../../tutorials/how_to_configure_domain_and_ip_filtering_rules_for_glinet_routers_via_an_online_text_file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configurar reglas de filtrado de dominios e IP
+    ドメインおよび IP フィルタリングルールの設定
   </span>
   
 
@@ -4387,11 +4321,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../technical_support_via_goodcloud/" class="md-nav__link">
+      <a href="../../tutorials/technical_support_via_goodcloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Soporte técnico mediante GoodCloud
+    GoodCloud 経由でテクニカルサポートを受ける
   </span>
   
 
@@ -4466,11 +4400,11 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../interface_guide/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    Guía de la interfaz
+    インターフェースガイド
   </span>
   
 
@@ -4486,7 +4420,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Guía de la interfaz
+            インターフェースガイド
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4500,8 +4434,6 @@
   
     
     
-      
-        
       
         
       
@@ -4531,7 +4463,7 @@
             
   
   <span class="md-ellipsis">
-    Conexión a Internet
+    インターネット接続
   </span>
   
 
@@ -4541,7 +4473,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
-            Conexión a Internet
+            インターネット接続
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4552,11 +4484,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/internet/" class="md-nav__link">
+      <a href="../internet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Internet
+    インターネット
   </span>
   
 
@@ -4573,11 +4505,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/internet_ethernet/" class="md-nav__link">
+      <a href="../internet_ethernet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Ethernet
+    イーサネット
   </span>
   
 
@@ -4594,11 +4526,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/internet_repeater/" class="md-nav__link">
+      <a href="../internet_repeater/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Repetidor
+    リピータ
   </span>
   
 
@@ -4615,11 +4547,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/internet_tethering/" class="md-nav__link">
+      <a href="../internet_tethering/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tethering
+    テザリング
   </span>
   
 
@@ -4636,11 +4568,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/internet_cellular/" class="md-nav__link">
+      <a href="../internet_cellular/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Celular
+    セルラー
   </span>
   
 
@@ -4657,32 +4589,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/sms/" class="md-nav__link">
+      <a href="../dual-ethernet_wan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    SMS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../interface_guide/dual-ethernet_wan/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    WAN dual por Ethernet
+    デュアルイーサネット WAN
   </span>
   
 
@@ -4729,7 +4640,7 @@
             
   
   <span class="md-ellipsis">
-    Inalámbrico
+    ワイヤレス
   </span>
   
 
@@ -4739,7 +4650,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
-            Inalámbrico
+            ワイヤレス
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4750,11 +4661,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/wireless/" class="md-nav__link">
+      <a href="../wireless/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Inalámbrico
+    ワイヤレス
   </span>
   
 
@@ -4771,11 +4682,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/wireless_v4.9/" class="md-nav__link">
+      <a href="../wireless_v4.9/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Wireless (v4.9)
+    ワイヤレス（v4.9）
   </span>
   
 
@@ -4820,7 +4731,7 @@
             
   
   <span class="md-ellipsis">
-    Clientes
+    クライアント
   </span>
   
 
@@ -4830,7 +4741,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
-            Clientes
+            クライアント
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4841,11 +4752,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/clients/" class="md-nav__link">
+      <a href="../clients/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Clientes
+    クライアント
   </span>
   
 
@@ -4892,7 +4803,7 @@
             
   
   <span class="md-ellipsis">
-    Servicios en la nube
+    クラウドサービス
   </span>
   
 
@@ -4902,7 +4813,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
-            Servicios en la nube
+            クラウドサービス
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4913,7 +4824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/cloud/" class="md-nav__link">
+      <a href="../cloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4934,7 +4845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/astrowarp/" class="md-nav__link">
+      <a href="../astrowarp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5018,11 +4929,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_dashboard_v4.7/" class="md-nav__link">
+      <a href="../vpn_dashboard_v4.7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    VPN Dashboard (v4.7)
+    VPN ダッシュボード (v4.7)
   </span>
   
 
@@ -5039,11 +4950,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_dashboard_v4.8/" class="md-nav__link">
+      <a href="../vpn_dashboard_v4.8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    VPN Dashboard (v4.8)
+    VPN ダッシュボード (v4.8)
   </span>
   
 
@@ -5060,11 +4971,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_dashboard_v4.9/" class="md-nav__link">
+      <a href="../vpn_dashboard_v4.9/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    VPN Dashboard (v4.9)
+    VPN ダッシュボード (v4.9)
   </span>
   
 
@@ -5081,11 +4992,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_client_profile/" class="md-nav__link">
+      <a href="../vpn_client_profile/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    VPN Client Profile
+    VPN クライアントプロフィール
   </span>
   
 
@@ -5102,11 +5013,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/openvpn_client/" class="md-nav__link">
+      <a href="../openvpn_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Cliente OpenVPN
+    OpenVPN クライアント
   </span>
   
 
@@ -5123,11 +5034,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/openvpn_server/" class="md-nav__link">
+      <a href="../openvpn_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Servidor OpenVPN
+    OpenVPN サーバー
   </span>
   
 
@@ -5144,11 +5055,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/wireguard_client/" class="md-nav__link">
+      <a href="../wireguard_client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Cliente WireGuard
+    WireGuard クライアント
   </span>
   
 
@@ -5165,11 +5076,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/wireguard_server/" class="md-nav__link">
+      <a href="../wireguard_server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Servidor WireGuard
+    WireGuard サーバー
   </span>
   
 
@@ -5232,7 +5143,7 @@
             
   
   <span class="md-ellipsis">
-    Aplicaciones
+    アプリケーション
   </span>
   
 
@@ -5242,7 +5153,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
-            Aplicaciones
+            アプリケーション
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5253,11 +5164,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/plugins/" class="md-nav__link">
+      <a href="../plugins/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Complementos
+    プラグイン
   </span>
   
 
@@ -5274,11 +5185,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/ddns/" class="md-nav__link">
+      <a href="../ddns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    DNS dinámico
+    ダイナミック DNS
   </span>
   
 
@@ -5295,11 +5206,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/network_storage/" class="md-nav__link">
+      <a href="../network_storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Almacenamiento en red
+    ネットワークストレージ
   </span>
   
 
@@ -5316,7 +5227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/adguardhome/" class="md-nav__link">
+      <a href="../adguardhome/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5337,11 +5248,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/parental_control/" class="md-nav__link">
+      <a href="../parental_control/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Control parental
+    ペアレンタルコントロール
   </span>
   
 
@@ -5358,7 +5269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/bark/" class="md-nav__link">
+      <a href="../bark/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5379,7 +5290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/tailscale/" class="md-nav__link">
+      <a href="../tailscale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5400,7 +5311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/zerotier/" class="md-nav__link">
+      <a href="../zerotier/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5421,7 +5332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/tor/" class="md-nav__link">
+      <a href="../tor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5442,11 +5353,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/esim_management/" class="md-nav__link">
+      <a href="../esim_management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Gestión de eSIM
+    eSIM 管理
   </span>
   
 
@@ -5521,7 +5432,7 @@
             
   
   <span class="md-ellipsis">
-    Red
+    ネットワーク
   </span>
   
 
@@ -5531,7 +5442,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
-            Red
+            ネットワーク
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5542,11 +5453,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/firewall/" class="md-nav__link">
+      <a href="../firewall/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Firewall
+    ファイアウォール
   </span>
   
 
@@ -5563,11 +5474,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/port_forwarding/" class="md-nav__link">
+      <a href="../port_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Reenvío de puertos
+    ポート転送
   </span>
   
 
@@ -5584,11 +5495,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/multi-wan/" class="md-nav__link">
+      <a href="../multi-wan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Multi-WAN
+    マルチ WAN
   </span>
   
 
@@ -5605,7 +5516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/lan/" class="md-nav__link">
+      <a href="../lan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5626,11 +5537,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/guest_network/" class="md-nav__link">
+      <a href="../guest_network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Red de invitados
+    ゲストネットワーク
   </span>
   
 
@@ -5647,11 +5558,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/iot_network/" class="md-nav__link">
+      <a href="../iot_network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    IoT Network
+    IoT ネットワーク
   </span>
   
 
@@ -5668,7 +5579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/dns/" class="md-nav__link">
+      <a href="../dns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5689,11 +5600,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/ethernet_port/" class="md-nav__link">
+      <a href="../ethernet_port/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Puerto Ethernet
+    Ethernet ポート
   </span>
   
 
@@ -5710,11 +5621,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/network_mode/" class="md-nav__link">
+      <a href="../network_mode/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Modo de red
+    ネットワークモード
   </span>
   
 
@@ -5731,7 +5642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/ipv6/" class="md-nav__link">
+      <a href="../ipv6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5752,11 +5663,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/mac_address/" class="md-nav__link">
+      <a href="../mac_address/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Dirección MAC
+    MAC アドレス
   </span>
   
 
@@ -5773,11 +5684,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/drop-in_gateway/" class="md-nav__link">
+      <a href="../drop-in_gateway/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Drop-in Gateway
+    ドロップインゲートウェイ
   </span>
   
 
@@ -5794,11 +5705,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/igmp_snooping/" class="md-nav__link">
+      <a href="../igmp_snooping/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    IGMP Snooping
+    IGMP スヌーピング
   </span>
   
 
@@ -5815,11 +5726,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/hardware_acceleration/" class="md-nav__link">
+      <a href="../hardware_acceleration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Aceleración de hardware
+    ハードウェアアクセラレーション
   </span>
   
 
@@ -5836,11 +5747,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/network_acceleration/" class="md-nav__link">
+      <a href="../network_acceleration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Aceleración de red
+    ネットワークアクセラレーション
   </span>
   
 
@@ -5857,11 +5768,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/nat_settings/" class="md-nav__link">
+      <a href="../nat_settings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configuración de NAT
+    NAT 設定
   </span>
   
 
@@ -5916,7 +5827,7 @@
             
   
   <span class="md-ellipsis">
-    Control de flujo
+    フロー制御
   </span>
   
 
@@ -5926,7 +5837,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
-            Control de flujo
+            フロー制御
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5937,11 +5848,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/dpi_engine/" class="md-nav__link">
+      <a href="../dpi_engine/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    DPI Engine
+    DPI エンジン
   </span>
   
 
@@ -5958,11 +5869,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/data_statistics/" class="md-nav__link">
+      <a href="../data_statistics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Estadísticas de datos
+    データ統計
   </span>
   
 
@@ -5979,11 +5890,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/content_filter/" class="md-nav__link">
+      <a href="../content_filter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Filtro de contenido
+    コンテンツフィルター
   </span>
   
 
@@ -6000,7 +5911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/qos/" class="md-nav__link">
+      <a href="../qos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6021,7 +5932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/sqm/" class="md-nav__link">
+      <a href="../sqm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6042,11 +5953,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/parental_control_v4.9/" class="md-nav__link">
+      <a href="../parental_control_v4.9/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Control parental (v4.9)
+    ペアレンタルコントロール（v4.9）
   </span>
   
 
@@ -6097,7 +6008,7 @@
             
   
   <span class="md-ellipsis">
-    Seguridad
+    セキュリティ
   </span>
   
 
@@ -6107,7 +6018,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_10">
             <span class="md-nav__icon md-icon"></span>
-            Seguridad
+            セキュリティ
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6118,11 +6029,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/port_forwarding/" class="md-nav__link">
+      <a href="../port_forwarding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Port Forwarding
+    ポートフォワーディング
   </span>
   
 
@@ -6139,7 +6050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/acl/" class="md-nav__link">
+      <a href="../acl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -6160,11 +6071,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/admin_access/" class="md-nav__link">
+      <a href="../admin_access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Acceso de administrador
+    管理者アクセス
   </span>
   
 
@@ -6181,11 +6092,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/nat_settings/" class="md-nav__link">
+      <a href="../nat_settings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Modo NAT
+    NATモード
   </span>
   
 
@@ -6256,7 +6167,7 @@
             
   
   <span class="md-ellipsis">
-    Sistema
+    システム
   </span>
   
 
@@ -6266,7 +6177,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_11">
             <span class="md-nav__icon md-icon"></span>
-            Sistema
+            システム
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6277,11 +6188,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/system_overview/" class="md-nav__link">
+      <a href="../system_overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Información general
+    概要
   </span>
   
 
@@ -6298,11 +6209,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/upgrade/" class="md-nav__link">
+      <a href="../upgrade/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Actualización
+    アップグレード
   </span>
   
 
@@ -6319,11 +6230,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/scheduled_tasks/" class="md-nav__link">
+      <a href="../scheduled_tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tareas programadas
+    スケジュールされたタスク
   </span>
   
 
@@ -6340,11 +6251,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/admin_password/" class="md-nav__link">
+      <a href="../admin_password/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Contraseña de administrador
+    管理者パスワード
   </span>
   
 
@@ -6361,11 +6272,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/display_management/" class="md-nav__link">
+      <a href="../display_management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Gestión de pantalla
+    ディスプレイ管理
   </span>
   
 
@@ -6382,11 +6293,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/usb_power/" class="md-nav__link">
+      <a href="../usb_power/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    USB y alimentación
+    USB & 電源
   </span>
   
 
@@ -6403,11 +6314,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/time_zone/" class="md-nav__link">
+      <a href="../time_zone/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Zona horaria
+    タイムゾーン
   </span>
   
 
@@ -6424,11 +6335,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/toggle_button_settings/" class="md-nav__link">
+      <a href="../toggle_button_settings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configuración del botón de alternancia
+    トグルボタン設定
   </span>
   
 
@@ -6445,11 +6356,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/log/" class="md-nav__link">
+      <a href="../log/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Registro
+    ログ
   </span>
   
 
@@ -6466,11 +6377,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/security/" class="md-nav__link">
+      <a href="../security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Seguridad
+    セキュリティ
   </span>
   
 
@@ -6487,11 +6398,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/reset_firmware/" class="md-nav__link">
+      <a href="../reset_firmware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Restablecer firmware
+    ファームウェアのリセット
   </span>
   
 
@@ -6508,11 +6419,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/advanced_settings/" class="md-nav__link">
+      <a href="../advanced_settings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Configuración avanzada
+    詳細設定
   </span>
   
 
@@ -6529,11 +6440,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/ui_languages/" class="md-nav__link">
+      <a href="../ui_languages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Idioma
+    言語
   </span>
   
 
@@ -6550,11 +6461,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/help/" class="md-nav__link">
+      <a href="../help/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Ayuda
+    ヘルプ
   </span>
   
 
@@ -6619,7 +6530,7 @@
               
   
   <span class="md-ellipsis">
-    Biblioteca de videos
+    ビデオライブラリ
   </span>
   
 
@@ -6635,7 +6546,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Biblioteca de videos
+            ビデオライブラリ
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6652,7 +6563,7 @@
         
   
   <span class="md-ellipsis">
-    Conoce nuestros nuevos productos
+    新製品をご紹介します
   </span>
   
 
@@ -6673,7 +6584,7 @@
         
   
   <span class="md-ellipsis">
-    Unboxing y configuración inicial
+    開梱と初回セットアップ
   </span>
   
 
@@ -6694,7 +6605,7 @@
         
   
   <span class="md-ellipsis">
-    Tutoriales
+    チュートリアル
   </span>
   
 
@@ -6745,7 +6656,7 @@
               
   
   <span class="md-ellipsis">
-    Comunidad
+    コミュニティ
   </span>
   
 
@@ -6756,7 +6667,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Comunidad
+            コミュニティ
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6782,12 +6693,98 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+<nav class="md-nav md-nav--secondary" aria-label="目次">
   
   
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      はじめに
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="はじめに">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expressvpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      ExpressVPNプランを引き換える
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPNトンネルを追加する
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      ケースリファレンス
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kill-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kill Switch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-other-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      All Other Traffic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tunnel-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      トンネルオプション
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      トンネル優先順位
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -6811,53 +6808,309 @@
   
 
   <!-- Markdown content -->
-  <h1 id="como-configurar-un-servidor-openvpn-mediante-astrorelay">¿Cómo configurar un servidor OpenVPN mediante AstroRelay?<a class="headerlink" href="#como-configurar-un-servidor-openvpn-mediante-astrorelay" title="Permanent link">&para;</a></h1>
-<p>Este tutorial presenta los pasos para configurar un servidor OpenVPN mediante AstroRelay en un router GL.iNet. Es ideal para quienes necesitan acceder de forma remota a servicios locales de su casa u oficina, pero no disponen de una dirección IP pública proporcionada por su ISP.</p>
-<p><a href="https://www.astrorelay.com" target="_blank">AstroRelay</a> proporciona un túnel seguro de proxy inverso, mediante el cual puede acceder de forma segura a recursos situados detrás de NAT y firewalls.</p>
+  <h1 id="expressvpn-dashboard">ExpressVPN Dashboard<a class="headerlink" href="#expressvpn-dashboard" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Note:</strong> このガイドは、GL.iNet x ExpressVPN共同ブランドルーター <strong>Fortify</strong> にのみ適用されます。</p>
+</blockquote>
+<p><a href="https://www.expressvpn.com/" target="_blank">ExpressVPN</a>は、オンラインプライバシーの保護、インターネット接続の安全性向上、グローバルコンテンツへのアクセスを目的とした、世界有数のプレミアムVPNサービスです。高速通信、強力な暗号化、100か国以上のサーバーへのアクセスを提供します。ストリーミング、プライベートなブラウジング、公共Wi-Fiでのデータ保護など、ExpressVPNは高速で安全な利用体験を提供します。</p>
+<p><strong>Fortify</strong>は、GL.iNetとExpressVPNが共同でリリースした共同ブランドルーターです。各製品には、1年間のExpressVPN無料サブスクリプションが付属しています。ユーザーはルーターのWeb管理パネルから直接サブスクリプションを引き換え、アカウントを紐付けることができます。アクティベーション後、ルーターを通過するすべてのトラフィックはExpressVPNの高速ネットワークと強力な暗号化を利用し、ネットワーク接続全体とオンラインプライバシーを保護します。</p>
+<p>このガイドでは、ルーターのWeb管理パネル内で12か月のExpressVPNプランを引き換える手順を説明します。また、利用シーンや要件に応じてVPNポリシーをカスタマイズし、暗号化された安全で高速なインターネット接続を利用する方法も説明します。</p>
+<h2 id="_1">はじめに<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="expressvpn">ExpressVPNプランを引き換える<a class="headerlink" href="#expressvpn" title="Permanent link">&para;</a></h3>
+<p>FortifyのWeb管理パネルにログインし、<strong>VPN</strong> -&gt; <strong>VPN Client Profile</strong>に移動します。</p>
+<p><img alt="vpn client profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/2-vpn_client_profile.png" /></p>
+<p><strong>Terms of Service</strong>と<strong>Privacy Policy</strong>を読み、同意してから<strong>Get Started</strong>をクリックします。</p>
+<p><img alt="get started" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/2-get_started.png" /></p>
+<p><strong>Claim 12-Month Plan</strong>をクリックします。</p>
+<p><img alt="claim 12-month plan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/2-claim_plan.png" /></p>
+<p>ポップアップウィンドウで<strong>Order ID</strong>を入力します。このルーターをGL.iNet Storeで購入した場合は、<strong>Order Email</strong>も必要です。その後、<strong>Continue to ExpressVPN</strong>をクリックします。</p>
+<p><img alt="claim 12-month plan amazon" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/3-amazon_order.png" /></p>
+<p><img alt="claim 12-month plan store" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/3-store_order_email.png" /></p>
+<p>ExpressVPN Checkoutにリダイレクトされます。右側に引き換えコードが適用され、追加料金なしで12か月のサブスクリプションが有効になります。</p>
+<p>上部にメールアドレスを入力し、初回期間終了後もVPNアクセスを継続できるよう支払い方法を追加します。その後、<strong>Subscribe with Card</strong>をクリックします。</p>
+<p><img alt="expressvpn checkout1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/4-expressvpn_checkout1.png" /></p>
+<p><strong>Activation Link</strong>がメールアドレスに送信されます。受信トレイを開き、手順に従ってExpressVPNアカウントを有効化します。</p>
+<p><img alt="expressvpn checkout2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/4-expressvpn_checkout2.png" /></p>
+<p>メール内のアクティベーションリンクをクリックし、パスワードを作成してアカウントを有効化します。</p>
+<p><img alt="create password" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/5-create_password(1).png" /></p>
+<p>アカウントが正常に有効化されました。FortifyルーターのWeb管理パネルに戻り、VPNトンネルを追加してください。</p>
+<p><img alt="my account" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/7-my_account(1).png" /></p>
+<h3 id="vpn">VPNトンネルを追加する<a class="headerlink" href="#vpn" title="Permanent link">&para;</a></h3>
+<p>以下の手順に従ってVPNトンネルを追加し、VPNポリシーを設定します。必要に応じて<a href="#case-reference">ケースリファレンス</a>を参照してください。</p>
 <ol>
-<li>Siga <a href="../../interface_guide/openvpn_server/">esta guía</a> para configurar un servidor OpenVPN en su router GL.iNet, aunque no tenga una dirección IP pública.</li>
+<li>
+<p>FortifyのWeb管理パネルにログインし、<strong>VPN</strong> -&gt; <strong>ExpressVPN Dashboard</strong>に移動します。<strong>Add VPN Tunnel</strong>をクリックします。</p>
+<p><img alt="dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/dashboard_initial.png" /></p>
+</li>
+<li>
+<p>VPNプロファイルを選択し、<strong>Next</strong>をクリックします。</p>
+<p>ExpressVPNプロファイルの一覧が表示されます。1つまたは複数のプロファイルを選択し、必要に応じて右側で優先順位を調整します。</p>
+<p><img alt="select profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/select-profile.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>複数のプロファイルを選択した場合、トンネルは接続が確立されるまで優先順位に従って各プロファイルで接続を試みます。1つのトンネル内のすべてのプロファイルが接続に失敗した場合、システムは<a href="#tunnel-options">トンネルオプション</a>と<a href="#all-other-traffic">All Other Traffic</a>設定のKill Switchの状態に基づいて、ルーターのローカルネットワーク（WAN）へ切り替えるかどうかを判断します。</p>
+</div>
+</li>
+<li>
+<p>クライアント送信元を選択し、<strong>Next</strong>をクリックします。</p>
+<p>4つのオプションがあります。</p>
+<ul>
+<li>
+<p><strong>All Clients</strong>: 選択すると、すべてのデバイスからのトラフィックがこのルールに一致します。
+<img alt="all clients" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/all-clients.png" /></p>
+</li>
+<li>
+<p><strong>Specified Connection Types</strong>: 選択すると、指定した接続タイプ（LANサブネット、Drop-in Gateway、ゲストネットワークなど）からのトラフィックがこのルールに一致します。
+<img alt="specified connection types" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/specified-connection.png" /></p>
+</li>
+<li>
+<p><strong>Specified Devices</strong>: 選択すると、指定したデバイス（MACアドレスで識別）からのトラフィックがこのルールに一致します。
+<img alt="specified devices" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/specified-devices.png" /></p>
+</li>
+<li>
+<p><strong>Exclude Specified Devices</strong>: 選択すると、指定したデバイス（MACアドレスで識別）からのトラフィックはこのルールに一致しません。
+<img alt="exclude specified devices" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/exclude-specified-devices.png" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>宛先を選択し、<strong>Apply</strong>をクリックします。</p>
+<p>3つのオプションがあります。</p>
+<ul>
+<li>
+<p><strong>All Targets</strong>: 選択すると、このルールに一致するトラフィックはすべての宛先へルーティングされます。
+<img alt="all targets" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/all-targets.png" /></p>
+</li>
+<li>
+<p><strong>Specified Domain / IP List</strong>: 選択すると、このルールに一致するトラフィックは指定したドメインまたはIPアドレスへルーティングされます。手動で入力する必要があります。
+<img alt="specified domain ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/specified-domain-ip.png" /></p>
+</li>
+<li>
+<p><strong>Exclude specified Domain / IP List</strong>: 選択すると、このルールに一致するトラフィックは指定したドメインまたはIPアドレスへルーティングされません。手動で入力する必要があります。
+<img alt="exclude specified domain ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/exclude-specified-domain-ip.png" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>VPNトンネルが正常に追加されました。<strong>ExpressVPN Dashboard</strong>に移動します。必要に応じてVPNトンネルを追加してください。</p>
+</li>
 </ol>
-<p><img alt="set up openvpnd server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/start_ovpn_server4x.jpg" /></p>
-<p>Después exporte la configuración de OpenVPN. A continuación se muestra un archivo de configuración de ejemplo.</p>
-<p><img alt="openvpn config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnpastelink.jpg" /></p>
+<h3 id="case-reference">ケースリファレンス<a class="headerlink" href="#case-reference" title="Permanent link">&para;</a></h3>
+<p>参考として、2つの代表的な設定ケースと手順を示します。</p>
+<p><strong>ケース1</strong>: 指定したデバイスのみをVPN経由でルーティングする。</p>
+<p><u>要件</u>:</p>
 <ol>
-<li>(Opcional) Si necesita acceder de forma remota a la LAN del servidor VPN, habilite <strong>Allow Remote Access LAN</strong>. De lo contrario, omita este paso.</li>
+<li>
+<p>このルーターに接続された特定のデバイスのみがVPN経由でインターネットにアクセスします。他のすべてのデバイスはローカルWAN経由でインターネットにアクセスします。</p>
+</li>
+<li>
+<p>選択したデバイスはVPN接続のみを使用する必要があります。VPNが予期せず切断された場合、DNSリークとIPトラッキングを防ぐため、これらのデバイスのインターネットアクセスはブロックされます。</p>
+</li>
 </ol>
-<p>??? "Para firmware v4.7 y anteriores"
-   1. En la barra lateral izquierda, haga clic en <strong>VPN</strong> &gt; <strong>VPN Dashboard</strong>.
-   2. Haga clic en el icono de opciones.
-   3. Active el interruptor de <strong>Remote Access LAN</strong>.
-   4. Haga clic en <strong>Apply</strong>.</p>
-<pre><code>  ![remote access lan](https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/toggle-enable-remote-access-lan.png){class="glboxshadow"}
-</code></pre>
-<p>??? "Para firmware v4.8 y posteriores"
-   1. En la barra lateral izquierda, haga clic en <strong>VPN</strong> &gt; <strong>OpenVPN Server</strong>.
-   2. Haga clic en <strong>Options</strong> en la parte superior derecha.
-   3. Active el interruptor de <strong>Allow Remote Access the LAN Subnet</strong>.
-   4. Haga clic en <strong>Apply</strong>.</p>
-<pre><code>  ![remote access lan](https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/enable-remote-access-lan-4.8.png){class="glboxshadow"}
-</code></pre>
+<p><u>設定手順</u>:</p>
 <ol>
-<li>Registre una cuenta en AstroRelay y siga este <a href="https://www.astrorelay.com/tutorial.html" target="_blank">tutorial</a> para completar la configuración inicial.</li>
+<li>
+<p>VPNプロファイルを選択します。</p>
+<p>1つまたは複数のプロファイルを選択し、必要に応じて右側で優先順位を調整してから、<strong>Next</strong>をクリックします。</p>
+<p><img alt="case 1 select profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-select-profiles.png" /></p>
+</li>
+<li>
+<p>クライアント送信元を選択します。</p>
+<p><strong>Specified Devices</strong>タブをクリックし、VPNを使用するデバイスを選択してから<strong>Next</strong>をクリックします。</p>
+<p><img alt="case 1 source" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-specified-devices.png" /></p>
+</li>
+<li>
+<p>宛先を選択します。</p>
+<p><strong>All Targets</strong>タブをクリックし、トラフィック宛先として設定してから<strong>Apply</strong>をクリックします。</p>
+<p><img alt="case 1 target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-all-targets.png" /></p>
+</li>
+<li>
+<p>ExpressVPN Dashboardに移動します。以下のようにVPNトンネルが正常に追加されました。</p>
+<p><img alt="case 1 dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-tunnel-apply.png" /></p>
+</li>
+<li>
+<p>このトンネルの<strong>Kill Switch</strong>が有効になっていることを確認します。VPNが予期せず切断された場合、このトンネルに一致するトラフィックのインターネットアクセスは、DNSリークとIPトラッキングを防ぐためにブロックされます。</p>
+<p><img alt="case 1 kill switch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-killswitch1.png" /></p>
+<p><img alt="case 1 kill switch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-killswitch2.png" /></p>
+</li>
+<li>
+<p><strong>Allow Non-VPN Traffic</strong>が有効になっていることを確認します。これはデフォルトで有効になっており、VPNトンネルに一致しないトラフィックがローカルWANネットワーク経由で引き続きインターネットにアクセスできるようにします。</p>
+<p><img alt="case 1 allow non-vpn traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-allow-non-vpn.png" /></p>
+</li>
+<li>
+<p>中央のボタンをクリックして、このトンネルを有効化します。</p>
+<p><img alt="case 1 connect" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-start-vpn.png" /></p>
+</li>
+<li>
+<p>接続後、ページにはVPN接続の詳細（VPNポリシー、クライアント仮想IP、サーバーアドレス、待受ポート、トラフィック統計など）が表示されます。</p>
+<p><img alt="case 1 connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case1-connected.png" /></p>
+<p>これで、指定した2台のデバイスのみがVPN経由でインターネットにアクセスします。VPNが予期せず切断された場合、DNSリークとIPトラッキングを防ぐため、これらのデバイスのインターネットアクセスはブロックされます。他のすべてのデバイスはローカルWANネットワーク経由でインターネットにアクセスします。</p>
+</li>
 </ol>
-<p>Al añadir un nuevo dominio, elija el servidor más cercano a su router.</p>
-<p><img alt="astrorelay add a new domain" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astrorelay_add_a_new_domain.png" /></p>
-<p>Al añadir un nuevo enlace, introduzca la <strong>dirección IP LAN</strong> de su router en el campo <strong>Destination Host IP</strong> e introduzca <strong>1194</strong> en el campo <strong>Destination Port</strong>.</p>
-<p><img alt="link for openvpn server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnaddlink.jpg" /></p>
-<p>A continuación obtendrá un enlace, por ejemplo <strong>testforx3000.arlab1.cc:37202</strong>. Haga clic en él para copiarlo.</p>
-<p><img alt="astrorelay link" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpncopylink.jpg" /></p>
+<p><strong>ケース2</strong>: 特定のWebサイトへのアクセスはすべてのデバイスでVPN 1を使用し、残りのインターネットトラフィックはVPN 2を使用する。</p>
+<p><u>要件</u>:</p>
 <ol>
-<li>Abra el archivo de configuración de OpenVPN y reemplace el valor que aparece después de <strong>Remote</strong> por el enlace obtenido en el paso anterior. En el ejemplo de abajo, "42.200.00.00 1194" se sustituye por "testforx3000.arlab1.cc:37202". Después sustituya los dos puntos ":" por un espacio y aplique el cambio.</li>
+<li>
+<p>すべてのデバイスは、特定のSNSおよびストリーミングサービスのWebサイトへアクセスするときにVPN Tunnel 1を使用し、その他すべてのインターネットアクセスにはVPN Tunnel 2を使用します。</p>
+</li>
+<li>
+<p>VPNトンネルが予期せず切断された場合、DNSリークとIPトラッキングを防ぐため、すべてのデバイスのインターネットアクセスはブロックされます。</p>
+</li>
 </ol>
-<p><img alt="openvpn config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnpastelink.jpg" /></p>
-<p><img alt="replace link" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnconfig.jpg" /></p>
+<p><u>設定手順</u>:</p>
 <ol>
-<li>Instale la <a href="https://openvpn.net/client/" target="_blank">aplicación OpenVPN Connect</a> en el dispositivo que quiera usar como cliente OpenVPN. Después cargue el archivo de configuración modificado en la aplicación e inicie la conexión. Como alternativa, también puede subirlo a otro router GL.iNet para configurarlo como cliente OpenVPN.</li>
+<li>
+<p>Tunnel 1のVPNプロファイルを選択します。</p>
+<p>1つまたは複数のプロファイルを選択し、必要に応じて右側で優先順位を調整してから、<strong>Next</strong>をクリックします。</p>
+<p><img alt="case 2 profile1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-select-profiles1.png" /></p>
+</li>
+<li>
+<p>クライアント送信元を選択します。</p>
+<p><strong>All Clients</strong>タブをクリックし、Tunnel 1のクライアント送信元として設定してから<strong>Next</strong>をクリックします。</p>
+<p><img alt="case 2 source1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-all-clients.png" /></p>
+</li>
+<li>
+<p>宛先を選択します。</p>
+<p><strong>Specified Domain / IP List</strong>タブをクリックし、以下のように特定のSNSおよびストリーミングサービスのドメインを入力してから、<strong>Apply</strong>をクリックします。</p>
+<p><img alt="case 2 target1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-specified-domain.png" /></p>
+</li>
+<li>
+<p>ExpressVPN Dashboardに移動します。VPN Tunnel 1が正常に追加されました。</p>
+<p><img alt="case 2 tunnel 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-tunnel1.png" /></p>
+</li>
+<li>
+<p>Tunnel 1の<strong>Kill Switch</strong>が有効になっていることを確認します。VPNが予期せず切断された場合、このトンネルに一致するトラフィックのインターネットアクセスは、DNSリークとIPトラッキングを防ぐためにブロックされます。</p>
+<p><img alt="kill switch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-killswitch1.png" /></p>
+<p><img alt="kill switch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-killswitch2.png" /></p>
+</li>
+<li>
+<p><strong>Add New Tunnel</strong>をクリックしてTunnel 2を追加します。</p>
+<p><img alt="case 2 add tunnel" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-add-tunnel2.png" /></p>
+</li>
+<li>
+<p>Tunnel 2のVPNプロファイルを選択します。</p>
+<p>1つまたは複数のプロファイルを選択し、必要に応じて右側で優先順位を調整してから、<strong>Next</strong>をクリックします。</p>
+<p><img alt="case 2 profile2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-select-profiles2.png" /></p>
+</li>
+<li>
+<p>クライアント送信元を選択します。</p>
+<p><strong>All Clients</strong>タブをクリックし、Tunnel 2のクライアント送信元として設定してから<strong>Next</strong>をクリックします。</p>
+<p><img alt="case 2 source2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-all-clients.png" /></p>
+</li>
+<li>
+<p>宛先を選択します。</p>
+<p><strong>All Targets</strong>タブをクリックし、Tunnel 2のトラフィック宛先として設定してから<strong>Apply</strong>をクリックします。</p>
+<p><img alt="case 2 target2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-all-targets.png" /></p>
+</li>
+<li>
+<p>VPN Dashboardに移動します。VPN Tunnel 2が正常に追加されました。</p>
+<p><img alt="case 2 tunnel 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-tunnel2.png" /></p>
+</li>
+<li>
+<p>Tunnel 2の<strong>Kill Switch</strong>が有効になっていることを確認します。VPNが予期せず切断された場合、このトンネルに一致するトラフィックのインターネットアクセスは、DNSリークとIPトラッキングを防ぐためにブロックされます。</p>
+<p><img alt="kill switch3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-killswitch3.png" /></p>
+<p><img alt="kill switch4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-killswitch4.png" /></p>
+</li>
+<li>
+<p>右上の歯車アイコンをクリックし、<strong>Enhanced Kill Switch</strong>を有効にして<strong>Apply</strong>をクリックします。これにより、すべてのトラフィックがVPN経由でインターネットにアクセスする必要があります。</p>
+<p><img alt="enhanced killswitch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-enhanced-killswitch1.png" /></p>
+<p><img alt="enhanced killswitch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-enhanced-killswitch2.png" /></p>
+</li>
+<li>
+<p>中央のボタンをクリックしてTunnel 1とTunnel 2を有効化します。</p>
+<p><img alt="case 2 connect" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-start-vpn.png" /></p>
+</li>
+<li>
+<p>接続後、ページにはVPN接続の詳細（VPNポリシー、クライアント仮想IP、サーバーアドレス、待受ポート、トラフィック統計など）が表示されます。</p>
+<p><img alt="case 2 connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/case2-connected.png" /></p>
+<p>これで、すべてのデバイスは指定したドメインへアクセスするときに<strong>VPN Tunnel 1</strong>を使用し、その他すべてのインターネットアクセスには<strong>VPN Tunnel 2</strong>を使用します。VPNトンネルが予期せず切断された場合、DNSリークとIPトラッキングを防ぐため、すべてのデバイスのインターネットアクセスはブロックされます。</p>
+</li>
 </ol>
-<p>Una vez conectado, podrá acceder de forma remota a sus servicios locales de casa u oficina.</p>
-<p><img alt="openvpn up" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/set_up_openvpn_server_via_astrorelay/astroovpnup.jpg" /></p>
+<h2 id="kill-switch">Kill Switch<a class="headerlink" href="#kill-switch" title="Permanent link">&para;</a></h2>
+<p>Kill SwitchはVPN接続のセキュリティ機能です。VPN接続が予期せず切断された場合、ローカルネットワークのすべてのインターネットアクセスを自動的に遮断し、実際のIPアドレスやオンラインデータの露出を防ぎ、継続的なプライバシーとセキュリティを確保します。この機能は、公共ネットワークの利用、機密データの処理、実際のIPアドレスの非表示など、安全で匿名性の高いインターネットアクセスを維持する場合に特に役立ちます。</p>
+<p>有効にすると、VPNトンネルを迂回しようとするクライアントトラフィックをブロックし、DNS設定の問題、予期しない切断、直接IPリクエストなどによって発生するVPNリークを防ぎます。</p>
+<p>Fortifyは、グローバルVPN接続と個別のVPNトンネルの両方でKill Switch設定をサポートしています。</p>
+<ul>
+<li>
+<p>グローバルVPN接続（Enhanced Kill Switch）のKill Switchを設定するには、<a href="#all-other-traffic">All Other Traffic</a>を参照してください。</p>
+</li>
+<li>
+<p>個別のVPNトンネルごとにKill Switchを設定するには、<a href="#tunnel-options">トンネルオプション</a>を参照してください。</p>
+</li>
+</ul>
+<h2 id="all-other-traffic">All Other Traffic<a class="headerlink" href="#all-other-traffic" title="Permanent link">&para;</a></h2>
+<p>右上の歯車アイコンをクリックして、VPNトンネルに一致しないトラフィックのポリシーを設定します。</p>
+<p><img alt="all other traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/all_other_traffic.png" /></p>
+<p>このポリシーは、VPNトンネルグループのいずれにも一致しないトラフィックがインターネットにアクセスできるかどうかを制御します。利用可能なオプションは<strong>Allow Non-VPN Traffic</strong>と<strong>Enhanced Kill Switch</strong>の2つです。</p>
+<ul>
+<li>
+<p><strong>Allow Non-VPN Traffic</strong>: 非VPNトラフィックの通常のインターネットアクセスを確保するため、デフォルトで有効になっています。</p>
+<p><img alt="allow non-vpn traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/allow_non-vpn_traffic.png" /></p>
+</li>
+<li>
+<p><strong>Enhanced Kill Switch</strong>: すべてのデバイスにVPN経由でのインターネットアクセスを強制します。VPNトンネルに一致しないトラフィックはブロックされます。このグローバル設定は、個別のVPNトンネルに設定されたKill Switchを上書きしません。</p>
+<p><img alt="enhanced killswitch" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/enhanced_killswitch.png" /></p>
+</li>
+</ul>
+<h2 id="tunnel-options">トンネルオプション<a class="headerlink" href="#tunnel-options" title="Permanent link">&para;</a></h2>
+<p>各VPNトンネルに対して、VPN Kill Switch、IPマスカレーディング、MTUなどの詳細設定を構成できます。</p>
+<p>トンネルグループ内の歯車アイコンをクリックし、<strong>Options</strong>を選択します。</p>
+<p><img alt="tunnel options1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/tunnel_options1.png" /></p>
+<p><img alt="tunnel options2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/tunnel_options2.png" /></p>
+<ul>
+<li>
+<p><strong>Kill Switch</strong>: 有効にすると、VPN接続が予期せず失敗した場合、このVPNトンネルに一致するトラフィックはブロックされます。無効にすると、そのトラフィックは<strong>All Other Traffic</strong>トンネルへフェイルオーバーします。</p>
+</li>
+<li>
+<p><strong>Services from GL.iNet Use VPN</strong>: 有効にすると、GoodCloud、DDNS、rttyサービスはVPNトンネル経由でパケットを送信します。このオプションはデフォルトで無効です。これらのサービスは通常、正常に動作するためにデバイスの実IPアドレスを必要とするためです。</p>
+</li>
+<li>
+<p><strong>Allow Remote Access to the LAN Subnet</strong>: 有効にすると、VPN経由でこのルーターおよびLANデバイスへのリモートアクセスが許可されます。VPNサーバーが自身のLANサブネットへの戻りルートを広告する必要があります。</p>
+</li>
+<li>
+<p><strong>IP Masquerading</strong>: 有効にすると、LANクライアントの送信元IPアドレスはルーターのVPNトンネルIPに書き換えられます。リモートピアがLANサブネットを認識しているサイトツーサイト構成の場合のみ無効にしてください。</p>
+</li>
+<li>
+<p><strong>MTU</strong>: トンネルに設定したMTU値は、設定ファイル内のMTU設定を上書きします。</p>
+</li>
+</ul>
+<h2 id="_2">トンネル優先順位<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>トンネルの優先順位を調整するには、トンネルグループ内の歯車アイコンをクリックし、<strong>Priority</strong>を選択します。</p>
+<p><img alt="priority1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/priority1.png" /></p>
+<p>右側の三本線アイコンをクリックしたままドラッグしてトンネルの順序を変更し、<strong>Apply</strong>をクリックします。</p>
+<p><img alt="priority2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/expressvpn_dashboard/priority2.png" /></p>
+<p><strong>複数のトンネルが有効な場合、ルーターは次のルールに従ってトラフィックをルーティングします</strong>:</p>
+<ol>
+<li>
+<p>トラフィックはまず、最も優先順位の高いトンネルルールとの一致を試みます。一致した場合はそのトンネル経由でルーティングされ、一致しない場合は次の優先順位のトンネルを試し、以降同様に処理します。</p>
+</li>
+<li>
+<p>各トンネルグループは独立して動作します。トラフィックがトンネルルールに一致すると、そのトンネル経由でルーティングされ、トンネルグループ間でフェイルオーバーしません。</p>
+</li>
+<li>
+<p>各トンネルグループ内で複数のプロファイルを選択すると、トンネル内フェイルオーバーを有効にできます。トンネルグループ内で最も優先順位の高いプロファイルがダウンした場合、トンネルは次に優先順位の高いプロファイルを使用して自動的に接続します。</p>
+</li>
+<li>
+<p>VPNトンネルが予期せず切断された場合、システムはこのトンネルの<strong>Kill Switch</strong>が有効かどうかに基づいて、トラフィックをAll Other Trafficトンネルへフェイルオーバーするかどうかを判断します。</p>
+<ul>
+<li>Kill Switchが有効な場合、トラフィックはブロックされ、All Other Trafficトンネルへフェイルオーバーしません。</li>
+<li>Kill Switchが無効な場合、トラフィックはAll Other Trafficトンネルへフェイルオーバーします。</li>
+</ul>
+</li>
+<li>
+<p><strong>All Other Traffic</strong>トンネルでは、VPNトンネルに一致しないトラフィックがインターネットにアクセスできるかどうかを、モードによって決定します。</p>
+<ul>
+<li>
+<p><strong>Allow Non-VPN Traffic</strong>: VPNトンネルに一致しないトラフィックがローカルWAN経由で引き続きインターネットにアクセスできるよう、デフォルトで有効になっています。</p>
+</li>
+<li>
+<p><strong>Enhanced Kill Switch</strong>: すべてのデバイスにVPN経由でのインターネットアクセスを強制します。VPNトンネルに一致しないトラフィックはブロックされます。このグローバル設定は、個別のVPNトンネルに設定されたKill Switchを上書きしません。つまり、Kill Switchを強化し、通常のインターネットアクセスをブロックしてIPリークを防ぎます。</p>
+</li>
+</ul>
+</li>
+</ol>
 <hr />
-<p>¿Todavía tiene preguntas? Visite nuestro <a href="https://forum.gl-inet.com" target="_blank">Foro de la comunidad</a> o <a href="https://www.gl-inet.com/contacts/" target="_blank">contáctenos</a>.</p>
+<p>まだご質問はありますか？<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>または<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a>をご覧ください。</p>
 
   <!-- Last update of source file -->
   
@@ -6879,10 +7132,10 @@
     
       
   <span class="md-source-file__fact">
-    <span class="md-icon" title="Última actualización">
+    <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 de julio de 2026 13:40:07 UTC">1 de julio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年7月6日 02:48:43 UTC">2026年7月6日</span>
   </span>
 
     
@@ -6916,10 +7169,10 @@
           <div class="pswp__top-bar">
             <!--  Controls are self-explanatory. Order can be changed. -->
             <div class="pswp__counter"></div>
-            <button class="pswp__button pswp__button--close" title="Cerrar (Esc)"></button>
-            <!-- <button class="pswp__button pswp__button--share" title="Compartir"></button> -->
-            <button class="pswp__button pswp__button--fs" title="Alternar pantalla completa"></button>
-            <button class="pswp__button pswp__button--zoom" title="Acercar/alejar"></button>
+            <button class="pswp__button pswp__button--close" title="閉じる (Esc)"></button>
+            <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+            <button class="pswp__button pswp__button--fs" title="全画面表示の切り替え"></button>
+            <button class="pswp__button pswp__button--zoom" title="ズームイン／アウト"></button>
             <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
             <!-- element will get class pswp__preloader--active when preloader is running -->
             <div class="pswp__preloader">
@@ -6935,10 +7188,10 @@
             <div class="pswp__share-tooltip"></div> 
           </div>
 
-          <button class="pswp__button pswp__button--arrow--left" title="Anterior (flecha izquierda)">
+          <button class="pswp__button pswp__button--arrow--left" title="前へ (左矢印)">
           </button>
 
-          <button class="pswp__button pswp__button--arrow--right" title="Siguiente (flecha derecha)">
+          <button class="pswp__button pswp__button--arrow--right" title="次へ (右矢印)">
           </button>
 
           <div class="pswp__caption">
@@ -6958,7 +7211,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-  Volver al principio
+  ページトップへ戻る
 </button>
         
       </main>
@@ -7072,7 +7325,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
