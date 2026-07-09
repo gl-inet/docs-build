@@ -3645,21 +3645,25 @@
 <p>Please check if your controlled device is compatible with standard monitors, and if it has compatibility issues with a specific monitor.</p>
 </li>
 <li>
-<p><strong>Resolution Negotiation Issue</strong></p>
+<p><strong>Resolution Issue</strong></p>
 <p>When GLKVM is connected to certain operating systems (e.g., Proxmox VE Hypervisor), it may fail to negotiate the available display resolution correctly, resulting in display issues. This can be resolved by manually adjusting the resolution on the controlled device.</p>
-<p>Here is a guide on how to modify the system resolution for your reference.</p>
-<p>Proxmox VE Hypervisor:
-1. Open the PVE terminal and enter the command below to edit file /etc/default/grub.</p>
-<p><code>nano /etc/default/grub</code></p>
+<p>Here is a guide on how to modify the system resolution on Proxmox VE Hypervisor for your reference.</p>
 <ol>
-<li>Add the following line.</li>
-</ol>
-<p><code>GRUB_CMDLINE_LINUX_DEFAULT="quiet gfxpayload=text nomodeset"</code></p>
-<ol>
-<li>Uncomment the line <code>GRUB_GFXMODE</code> by removing the <code>#</code> and set the desired resolution, such as <code>1024x768</code>. </li>
-</ol>
-<p><code>GRUB_GFXMODE=1024x768</code></p>
-<ol>
+<li>
+<p>Open the PVE terminal and enter the command below to edit file <code>/etc/default/grub</code>.</p>
+<div class="highlight"><pre><span></span><code>nano /etc/default/grub
+</code></pre></div>
+</li>
+<li>
+<p>Add the following line.</p>
+<div class="highlight"><pre><span></span><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet gfxpayload=text nomodeset
+</code></pre></div>
+</li>
+<li>
+<p>Uncomment the line <code>GRUB_GFXMODE</code> by removing the <code>#</code> and set the desired resolution, such as <code>1024x768</code>. </p>
+<div class="highlight"><pre><span></span><code>GRUB_GFXMODE=1024x768
+</code></pre></div>
+</li>
 <li>
 <p>Press <code>Ctrl + O</code> and hit Enter to save the configuration.</p>
 </li>
@@ -3668,9 +3672,10 @@
 </li>
 <li>
 <p>Enter the command below to apply the configuration.</p>
+<div class="highlight"><pre><span></span><code>update-grub
+</code></pre></div>
 </li>
 </ol>
-<p><code>update-grub</code></p>
 </li>
 </ol>
 <hr />
