@@ -4465,8 +4465,6 @@
       
         
       
-        
-      
     
     
     
@@ -4593,27 +4591,6 @@
   
   <span class="md-ellipsis">
     Cellular
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../interface_guide/dual-ethernet_wan/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dual-Ethernet WAN
   </span>
   
 
@@ -4908,10 +4885,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -4949,53 +4922,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_dashboard_v4.7/" class="md-nav__link">
+      <a href="../../interface_guide/vpn_dashboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    VPN Dashboard (v4.7)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_dashboard_v4.8/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    VPN Dashboard (v4.8)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_dashboard_v4.9/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    VPN Dashboard (v4.9)
+    VPN Dashboard
   </span>
   
 
@@ -6761,15 +6692,29 @@
 <p>Wenn keine Verbindung zu einem verschleierten WireGuard-Server hergestellt werden kann, führen Sie die folgenden Schritte zur Fehlerbehebung aus.</p>
 <ol>
 <li>
-<p><strong>Stellen Sie sicher, dass die in den Client importierte WireGuard-Konfigurationsdatei exakt die Datei ist, die von Ihrem GL.iNet WireGuard-Server exportiert wurde.</strong></p>
+<p><strong>Stellen Sie sicher, dass die in jeden Client importierte WireGuard-Konfiguration dediziert ist.</strong></p>
 <p>Jeder Client benötigt eine eigene Peer-Konfigurationsdatei. Wenn mehrere Clients dieselbe Konfiguration verwenden, schlägt die Verbindung fehl.</p>
 <p>Falls erforderlich, gehen Sie zu <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong> -&gt; <strong>Profiles</strong>, um Ihre exportierten Profile anzuzeigen.</p>
 <p><img alt="wg profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/cannot_connect_to_obfuscated_wgserver/wg_profiles.png" /></p>
 </li>
 <li>
-<p><strong>Gleichen Sie die AmneziaWG-Protokollversionen auf Server und Client ab.</strong></p>
-<p>AmneziaWG 1.0 und 2.0 sind nicht miteinander kompatibel. Server und Client müssen dieselbe AmneziaWG-Protokollversion verwenden, um eine gültige Verbindung herzustellen.</p>
-<p>Wenn Ihr Client-Gerät ein GL.iNet-Router ist, können Sie die Protokollversion mit den folgenden zwei Methoden prüfen.</p>
+<p><strong>Stellen Sie sicher, dass die verschleierten Parameter vom Client verifiziert werden können.</strong></p>
+<p>Das AmneziaWG-Protokoll ist abwärtskompatibel. Wenn Ihr WireGuard-Server nur AmneziaWG v1.0 unterstützt, besteht die Konfigurationsdatei beim Import in einen Client mit v2.0-Unterstützung trotzdem die Verifizierung.</p>
+<p>Wenn Ihre Konfigurationsdatei jedoch Verschleierungsparameter von AmneziaWG v2.0 enthält, stellen Sie sicher, dass Ihr WireGuard-Client AmneziaWG v2.0 unterstützt. Andernfalls kann die Parameterverifizierung fehlschlagen.</p>
+<div class="admonition tip">
+<p class="admonition-title">Wie erkennt man die AmneziaWG-Version?</p>
+<p><strong>V1.0</strong>: Keine S3-S4-Parameter; H1-H4 sind feste einzelne Ganzzahlen.</p>
+<p><strong>V2.0</strong>: Es handelt sich um V2.0, wenn eine der folgenden Bedingungen erfüllt ist:</p>
+<ul>
+<li>Enthält S3-S4-Parameter</li>
+<li>H1-H4 sind als Zahlenbereiche festgelegt</li>
+<li>Enthält angepasste I1-I5-Parameter.</li>
+</ul>
+<blockquote>
+<p>Hinweis: I1-I5 werden nicht automatisch generiert. Benutzer können sie manuell als zusätzliche Zeilen in der Konfigurationsdatei ergänzen, damit AmneziaWG-Datenverkehr wie andere gängige Protokolle wie QUIC oder WebRTC aussieht.</p>
+</blockquote>
+</div>
+<p>Wenn Ihr WireGuard-Client ein GL.iNet-Router ist, prüfen Sie dessen AmneziaWG-Version mit den folgenden zwei Methoden.</p>
 <details class="note">
 <summary>Über das Router Web Admin Panel prüfen</summary>
 <ol>
@@ -6843,7 +6788,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18. Juni 2026 12:33:23 UTC">18. Juni 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11. Juli 2026 08:51:50 UTC">11. Juli 2026</span>
   </span>
 
     
@@ -6908,6 +6853,11 @@
         </div>
     </div>
 </div>
+  <!-- Page feedback -->
+  
+
+
+
 
               </article>
             </div>

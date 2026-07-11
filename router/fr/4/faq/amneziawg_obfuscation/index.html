@@ -4531,8 +4531,6 @@
       
         
       
-        
-      
     
     
     
@@ -4659,27 +4657,6 @@
   
   <span class="md-ellipsis">
     Cellulaire
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../interface_guide/dual-ethernet_wan/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    WAN Ethernet double
   </span>
   
 
@@ -4974,10 +4951,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -5015,53 +4988,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_dashboard_v4.7/" class="md-nav__link">
+      <a href="../../interface_guide/vpn_dashboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tableau de bord VPN (v4.7)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_dashboard_v4.8/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tableau de bord VPN (v4.8)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../interface_guide/vpn_dashboard_v4.9/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tableau de bord VPN (v4.9)
+    Tableau de bord VPN
   </span>
   
 
@@ -6881,14 +6812,19 @@
 <p>Par rapport à AmneziaWG v1.0, la version v2.0 offre une obfuscation plus poussée en ajoutant de nouveaux paramètres (<strong>S3~S4</strong>) et en utilisant des en-têtes dynamiques pour les types de paquets (<strong>H1~H4</strong> sous forme de plages au lieu de valeurs fixes). En outre, AmneziaWG 2.0 prend en charge les paramètres <strong>I1~I5</strong>, qui envoient des paquets UDP formatés avant chaque négociation initiale afin de faire passer le trafic AmneziaWG pour un trafic ordinaire non VPN, ce qui permet de contourner efficacement l’inspection approfondie des paquets et d’améliorer la connectivité dans les réseaux restreints.</p>
 <p><img alt="parameters" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/amneziawg_obfuscation_parameters/parameters.png" /></p>
 <p>Ces améliorations rendent le trafic VPN plus difficile à détecter tout en conservant la vitesse élevée et la faible latence de WireGuard.</p>
-<p>Voici comment identifier la version d’AmneziaWG :</p>
+<div class="admonition tip">
+<p class="admonition-title">Comment identifier la version d’AmneziaWG ?</p>
+<p><strong>V1.0</strong> : pas de paramètres S3-S4 ; H1-H4 sont des entiers fixes uniques.</p>
+<p><strong>V2.0</strong> : il s’agit de la version V2.0 si l’une des conditions ci-dessous est remplie :</p>
 <ul>
-<li><strong>V1.0</strong> : pas de paramètres S3~S4 ; H1~H4 sont des entiers fixes uniques.</li>
-<li><strong>V2.0</strong> : inclut les paramètres <strong>S3~S4</strong> ; <strong>H1~H4</strong> sont définis comme des plages numériques ; prend en charge les paramètres <strong>I1~I5</strong>.</li>
+<li>Inclut des paramètres S3-S4</li>
+<li>H1-H4 sont définis comme des plages numériques</li>
+<li>Inclut des paramètres I1-I5 personnalisés.</li>
 </ul>
 <blockquote>
-<p>Remarque : Les paramètres I1-I5 ne sont pas générés automatiquement. Les utilisateurs peuvent les ajouter manuellement comme lignes supplémentaires dans le fichier de configuration VPN afin que le trafic AmneziaWG ressemble à d’autres protocoles courants, tels que QUIC ou WebRTC.</p>
+<p>Remarque : I1-I5 ne sont pas générés automatiquement. Les utilisateurs peuvent les ajouter manuellement comme lignes supplémentaires dans le fichier de configuration afin que le trafic AmneziaWG ressemble à d’autres protocoles courants, tels que QUIC ou WebRTC.</p>
 </blockquote>
+</div>
 <h2 id="amneziawg-sur-les-routeurs-glinet">AmneziaWG sur les routeurs GL.iNet<a class="headerlink" href="#amneziawg-sur-les-routeurs-glinet" title="Permanent link">&para;</a></h2>
 <p>Actuellement, plusieurs routeurs GL.iNet (par exemple, Brume 3, Flint 3, Flint 2 et Beryl AX) prennent en charge le protocole AmneziaWG dans certaines versions de firmware. La prise en charge officielle complète sera disponible dans le firmware version 4.9 et se déploiera progressivement sur d’autres modèles.</p>
 <p>Pour configurer l’obfuscation VPN sur les routeurs GL.iNet, veuillez vous référer à <a href="../../tutorials/vpn_obfuscation/">cet article</a>.</p>
@@ -6991,7 +6927,7 @@
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="18 juin 2026 12:33:23 UTC">18 juin 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 juillet 2026 08:51:50 UTC">11 juillet 2026</span>
   </span>
 
     
@@ -7056,6 +6992,11 @@
         </div>
     </div>
 </div>
+  <!-- Page feedback -->
+  
+
+
+
 
               </article>
             </div>
