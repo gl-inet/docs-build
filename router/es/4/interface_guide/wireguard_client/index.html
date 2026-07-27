@@ -607,6 +607,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -851,6 +855,27 @@
   
   <span class="md-ellipsis">
     GL-MT6000 (Flint 2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_guide/gl-mt6000-fortify/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GL-MT6000 (Fortify)
   </span>
   
 
@@ -5171,6 +5196,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#set-up-x-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurar X-VPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-up-wireguard-client-manually-for-other-providers" class="md-nav__link">
     <span class="md-ellipsis">
       Configurar el cliente WireGuard manualmente (para otros proveedores)
@@ -6939,6 +6973,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#set-up-x-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurar X-VPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-up-wireguard-client-manually-for-other-providers" class="md-nav__link">
     <span class="md-ellipsis">
       Configurar el cliente WireGuard manualmente (para otros proveedores)
@@ -7009,6 +7052,7 @@
 <li><a href="#set-up-purevpn">Configurar PureVPN</a></li>
 <li><a href="#set-up-surfshark">Configurar Surfshark</a></li>
 <li><a href="#set-up-windscribe">Configurar Windscribe</a></li>
+<li><a href="#set-up-x-vpn">Configurar X-VPN</a></li>
 </ul>
 <p>Si está suscrito a otro proveedor de servicios WireGuard, descargue un archivo de configuración desde su sitio web y luego súbalo al router para la conexión VPN.</p>
 <ul>
@@ -7362,6 +7406,66 @@
 </ol>
 <p>Puede hacer clic en <strong>Delete All</strong> para eliminar todos los archivos de configuración con un solo clic y elegir si desea eliminar también las claves privada y pública.</p>
 <p><img alt="windscribe delete" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_windscribe/windscribe10.png" /></p>
+<h2 id="set-up-x-vpn">Configurar X-VPN<a class="headerlink" href="#set-up-x-vpn" title="Permanent link">&para;</a></h2>
+<p><a href="https://xvpn.io/" target="_blank">Sitio web oficial</a></p>
+<p><strong>Note</strong>: X-VPN está integrado en los routers GL.iNet a partir del firmware v4.11.</p>
+<ol>
+<li>
+<p>Primero, obtenga el token de X-VPN en el sitio web oficial.</p>
+<p>Haga clic <a href="https://xvpn.io/login" target="_blank">aquí</a> para iniciar sesión en su cuenta web de X-VPN.</p>
+<p><img alt="xvpn login" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn1.png" /></p>
+<p>Después de iniciar sesión, haga clic en <strong>Settings</strong> en el menú izquierdo. Busque <strong>Login Token</strong> y haga clic en <strong>Generate</strong>.</p>
+<p><img alt="xvpn settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn2.png" /></p>
+<p>La página generará un token válido durante 15 minutos. Copie el token para usarlo más tarde.</p>
+<p><img alt="xvpn generate token" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn3.png" /></p>
+</li>
+<li>
+<p>Inicie sesión en el panel de administración web de su router GL.iNet y vaya a <strong>VPN</strong> -&gt; <strong>VPN Client Profile</strong>. Haga clic en <strong>X-VPN</strong>.</p>
+<p><img alt="xvpn enter token" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn4.png" /></p>
+<p>Introduzca el token y haga clic en <strong>Save and Continue</strong>.</p>
+<p><img alt="xvpn enter token" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn5.png" /></p>
+</li>
+<li>
+<p>Seleccione los servidores a los que desea conectarse y haga clic en <strong>Apply</strong>.</p>
+<p><img alt="xvpn select servers" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn6.png" /></p>
+<p>A continuación, verá una lista de archivos de configuración correspondientes a los servidores seleccionados.</p>
+<p><img alt="xvpn config files" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn7.png" /></p>
+</li>
+<li>
+<p>Inicie una conexión.</p>
+<p>Seleccione su servidor preferido y haga clic en el icono de tres puntos de la derecha para iniciar una conexión.</p>
+<p><img alt="xvpn start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn8.png" /></p>
+<p>Una vez conectado, aparecerá un punto verde junto al archivo de configuración.</p>
+<p><img alt="xvpn connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn9.png" /></p>
+<p>También puede consultar los detalles de la conexión VPN, crear y administrar túneles VPN y políticas en el <strong>VPN Dashboard</strong>.</p>
+</li>
+<li>
+<p>Actualice los servidores.</p>
+<p>Puede hacer clic en <strong>Update Servers</strong> para obtener la lista más reciente de servidores disponibles y evitar fallos de conexión causados por mantenimiento o cierre de servidores.</p>
+<p><img alt="xvpn update servers" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn10.png" /></p>
+</li>
+<li>
+<p>Renovar.</p>
+<p>Si hace clic en <strong>Go Renew</strong>, se le redirigirá al sitio web oficial para renovar la suscripción.</p>
+<p><img alt="xvpn renew" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn11.png" /></p>
+</li>
+<li>
+<p>Elimine configuraciones.</p>
+<p>Haga clic en el icono de engranaje de la derecha y seleccione <strong>Delete Configurations</strong> para eliminar archivos de configuración específicos o todos ellos con un solo clic.</p>
+<p><img alt="xvpn delete" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn12.png" /></p>
+</li>
+<li>
+<p>Modifique la información de autenticación.</p>
+<p>Haga clic en el icono de engranaje de la derecha y seleccione <strong>Modify Authentication Information</strong> para editar el token de inicio de sesión si es necesario.</p>
+<p><img alt="xvpn edit credential" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn13.png" /></p>
+<p><img alt="xvpn edit credential" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn14.png" width="600" /></p>
+</li>
+<li>
+<p>Cierre sesión.</p>
+<p>Haga clic en el icono de engranaje de la derecha y seleccione <strong>Logout</strong> para cerrar sesión si es necesario. Se eliminarán la credencial de la cuenta, la clave pública asociada, la clave privada y los archivos de configuración guardados en el router. Proceda con precaución.</p>
+<p><img alt="xvpn logout" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn15.png" /></p>
+</li>
+</ol>
 <h2 id="set-up-wireguard-client-manually-for-other-providers">Configurar el cliente WireGuard manualmente (para otros proveedores)<a class="headerlink" href="#set-up-wireguard-client-manually-for-other-providers" title="Permanent link">&para;</a></h2>
 <p>Si utiliza otro proveedor de servicios WireGuard, puede descargar los archivos de configuración de WireGuard y seguir los pasos a continuación para configurar el cliente WireGuard. Si no sabe cómo descargar los archivos de configuración, consulte <a href="../../tutorials/how_to_get_configuration_files_from_wireguard_service_providers/">esta guía</a> o contacte con el soporte del proveedor.</p>
 <p>En el panel de administración web, vaya a <strong>VPN</strong> -&gt; <strong>WireGuard Client</strong>.</p>
@@ -7443,7 +7547,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 de junio de 2026 02:09:53 UTC">11 de junio de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 de julio de 2026 08:19:49 UTC">27 de julio de 2026</span>
   </span>
 
     

@@ -607,6 +607,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -851,6 +855,27 @@
   
   <span class="md-ellipsis">
     GL-MT6000 (Flint 2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_guide/gl-mt6000-fortify/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GL-MT6000 (Fortify)
   </span>
   
 
@@ -5171,6 +5196,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#set-up-x-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja X-VPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-up-wireguard-client-manually-for-other-providers" class="md-nav__link">
     <span class="md-ellipsis">
       Ręczna konfiguracja klienta WireGuard (dla innych dostawców)
@@ -6939,6 +6973,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#set-up-x-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfiguracja X-VPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-up-wireguard-client-manually-for-other-providers" class="md-nav__link">
     <span class="md-ellipsis">
       Ręczna konfiguracja klienta WireGuard (dla innych dostawców)
@@ -7009,6 +7052,7 @@
 <li><a href="#set-up-purevpn">Konfiguracja PureVPN</a></li>
 <li><a href="#set-up-surfshark">Konfiguracja Surfshark</a></li>
 <li><a href="#set-up-windscribe">Konfiguracja Windscribe</a></li>
+<li><a href="#set-up-x-vpn">Konfiguracja X-VPN</a></li>
 </ul>
 <p>Jeśli korzystasz z innego dostawcy usług WireGuard, pobierz plik konfiguracyjny z jego strony internetowej, a następnie prześlij go do routera, aby nawiązać połączenie VPN.</p>
 <ul>
@@ -7380,6 +7424,66 @@
 <p><img alt="windscribe delete" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_windscribe/windscribe10.png" /></p>
 </li>
 </ol>
+<h2 id="set-up-x-vpn">Konfiguracja X-VPN<a class="headerlink" href="#set-up-x-vpn" title="Permanent link">&para;</a></h2>
+<p><a href="https://xvpn.io/" target="_blank">Oficjalna strona</a></p>
+<p><strong>Note</strong>: X-VPN jest zintegrowany z routerami GL.iNet od firmware v4.11.</p>
+<ol>
+<li>
+<p>Najpierw uzyskaj token X-VPN na oficjalnej stronie.</p>
+<p>Kliknij <a href="https://xvpn.io/login" target="_blank">tutaj</a>, aby zalogować się do konta webowego X-VPN.</p>
+<p><img alt="xvpn login" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn1.png" /></p>
+<p>Po zalogowaniu kliknij <strong>Settings</strong> w lewym menu. Znajdź <strong>Login Token</strong> i kliknij <strong>Generate</strong>.</p>
+<p><img alt="xvpn settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn2.png" /></p>
+<p>Strona wygeneruje token ważny przez 15 minut. Skopiuj token do późniejszego użycia.</p>
+<p><img alt="xvpn generate token" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn3.png" /></p>
+</li>
+<li>
+<p>Zaloguj się do panelu administracyjnego WWW routera GL.iNet i przejdź do <strong>VPN</strong> -&gt; <strong>VPN Client Profile</strong>. Kliknij <strong>X-VPN</strong>.</p>
+<p><img alt="xvpn enter token" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn4.png" /></p>
+<p>Wprowadź token i kliknij <strong>Save and Continue</strong>.</p>
+<p><img alt="xvpn enter token" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn5.png" /></p>
+</li>
+<li>
+<p>Wybierz serwery, z którymi chcesz się połączyć, i kliknij <strong>Apply</strong>.</p>
+<p><img alt="xvpn select servers" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn6.png" /></p>
+<p>Następnie pojawi się lista plików konfiguracyjnych odpowiadających wybranym serwerom.</p>
+<p><img alt="xvpn config files" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn7.png" /></p>
+</li>
+<li>
+<p>Uruchom połączenie.</p>
+<p>Wybierz preferowany serwer i kliknij ikonę trzech kropek po prawej stronie, aby uruchomić połączenie.</p>
+<p><img alt="xvpn start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn8.png" /></p>
+<p>Po połączeniu obok pliku konfiguracyjnego pojawi się zielona kropka.</p>
+<p><img alt="xvpn connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn9.png" /></p>
+<p>Szczegóły połączenia VPN można także sprawdzić w <strong>VPN Dashboard</strong>, gdzie można tworzyć i zarządzać tunelami VPN oraz politykami.</p>
+</li>
+<li>
+<p>Zaktualizuj serwery.</p>
+<p>Kliknij <strong>Update Servers</strong>, aby pobrać najnowszą dostępną listę serwerów i uniknąć problemów z połączeniem spowodowanych konserwacją lub wyłączeniem serwerów.</p>
+<p><img alt="xvpn update servers" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn10.png" /></p>
+</li>
+<li>
+<p>Odnów.</p>
+<p>Po kliknięciu <strong>Go Renew</strong> nastąpi przekierowanie na oficjalną stronę w celu odnowienia subskrypcji.</p>
+<p><img alt="xvpn renew" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn11.png" /></p>
+</li>
+<li>
+<p>Usuń konfiguracje.</p>
+<p>Kliknij ikonę koła zębatego po prawej stronie i wybierz <strong>Delete Configurations</strong>, aby jednym kliknięciem usunąć wybrane lub wszystkie pliki konfiguracyjne.</p>
+<p><img alt="xvpn delete" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn12.png" /></p>
+</li>
+<li>
+<p>Zmień informacje uwierzytelniania.</p>
+<p>Kliknij ikonę koła zębatego po prawej stronie i wybierz <strong>Modify Authentication Information</strong>, aby w razie potrzeby edytować token logowania.</p>
+<p><img alt="xvpn edit credential" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn13.png" /></p>
+<p><img alt="xvpn edit credential" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn14.png" width="600" /></p>
+</li>
+<li>
+<p>Wyloguj się.</p>
+<p>Kliknij ikonę koła zębatego po prawej stronie i wybierz <strong>Logout</strong>, aby w razie potrzeby się wylogować. Spowoduje to usunięcie z routera danych konta, powiązanego klucza publicznego, klucza prywatnego oraz plików konfiguracyjnych. Zachowaj ostrożność.</p>
+<p><img alt="xvpn logout" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn15.png" /></p>
+</li>
+</ol>
 <h2 id="set-up-wireguard-client-manually-for-other-providers">Ręczna konfiguracja klienta WireGuard (dla innych dostawców)<a class="headerlink" href="#set-up-wireguard-client-manually-for-other-providers" title="Permanent link">&para;</a></h2>
 <p>Jeśli korzystasz z innego dostawcy usług WireGuard, pobierz plik konfiguracyjny z jego strony internetowej, a następnie wykonaj poniższe kroki, aby skonfigurować klienta WireGuard. Jeśli nie wiesz, jak pobrać pliki konfiguracyjne, zapoznaj się z <a href="../../tutorials/how_to_get_configuration_files_from_wireguard_service_providers/">tym przewodnikiem</a> lub skontaktuj się z pomocą techniczną dostawcy.</p>
 <p>W panelu administracyjnym przejdź do <strong>VPN</strong> -&gt; <strong>WireGuard Client</strong>.</p>
@@ -7458,7 +7562,7 @@
     <span class="md-icon" title="Ostatnia aktualizacja">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 czerwca 2026 04:38:53 UTC">9 czerwca 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 lipca 2026 08:19:49 UTC">27 lipca 2026</span>
   </span>
 
     

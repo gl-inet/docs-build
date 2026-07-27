@@ -607,6 +607,10 @@
           
         
       
+        
+          
+        
+      
     
     
     
@@ -851,6 +855,27 @@
   
   <span class="md-ellipsis">
     GL-MT6000 (Flint 2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user_guide/gl-mt6000-fortify/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GL-MT6000 (Fortify)
   </span>
   
 
@@ -5171,6 +5196,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#set-up-x-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurare X-VPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-up-wireguard-client-manually-for-other-providers" class="md-nav__link">
     <span class="md-ellipsis">
       Configurare manualmente WireGuard Client (per altri provider)
@@ -6939,6 +6973,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#set-up-x-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurare X-VPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-up-wireguard-client-manually-for-other-providers" class="md-nav__link">
     <span class="md-ellipsis">
       Configurare manualmente WireGuard Client (per altri provider)
@@ -7009,6 +7052,7 @@
 <li><a href="#set-up-purevpn">Configurare PureVPN</a></li>
 <li><a href="#set-up-surfshark">Configurare Surfshark</a></li>
 <li><a href="#set-up-windscribe">Configurare Windscribe</a></li>
+<li><a href="#set-up-x-vpn">Configurare X-VPN</a></li>
 </ul>
 <p>Se usi un altro provider di servizi WireGuard, scarica un file di configurazione dal suo sito web e poi caricalo sul router per la connessione VPN.</p>
 <ul>
@@ -7380,6 +7424,66 @@
 <p><img alt="windscribe delete" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_windscribe/windscribe10.png" /></p>
 </li>
 </ol>
+<h2 id="set-up-x-vpn">Configurare X-VPN<a class="headerlink" href="#set-up-x-vpn" title="Permanent link">&para;</a></h2>
+<p><a href="https://xvpn.io/" target="_blank">Sito ufficiale</a></p>
+<p><strong>Note</strong>: X-VPN e' integrato nei router GL.iNet a partire dal firmware v4.11.</p>
+<ol>
+<li>
+<p>Per prima cosa, ottieni il token X-VPN dal sito ufficiale.</p>
+<p>Fai clic <a href="https://xvpn.io/login" target="_blank">qui</a> per accedere al tuo account web X-VPN.</p>
+<p><img alt="xvpn login" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn1.png" /></p>
+<p>Dopo l'accesso, fai clic su <strong>Settings</strong> nel menu a sinistra. Trova <strong>Login Token</strong> e fai clic su <strong>Generate</strong>.</p>
+<p><img alt="xvpn settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn2.png" /></p>
+<p>La pagina genera un token valido per 15 minuti. Copia il token per usarlo in seguito.</p>
+<p><img alt="xvpn generate token" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn3.png" /></p>
+</li>
+<li>
+<p>Accedi al pannello di amministrazione web del router GL.iNet e vai su <strong>VPN</strong> -&gt; <strong>VPN Client Profile</strong>. Fai clic su <strong>X-VPN</strong>.</p>
+<p><img alt="xvpn enter token" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn4.png" /></p>
+<p>Inserisci il token e fai clic su <strong>Save and Continue</strong>.</p>
+<p><img alt="xvpn enter token" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn5.png" /></p>
+</li>
+<li>
+<p>Seleziona i server a cui vuoi connetterti e fai clic su <strong>Apply</strong>.</p>
+<p><img alt="xvpn select servers" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn6.png" /></p>
+<p>Verrà visualizzato l'elenco dei file di configurazione corrispondenti ai server selezionati.</p>
+<p><img alt="xvpn config files" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn7.png" /></p>
+</li>
+<li>
+<p>Avvia una connessione.</p>
+<p>Seleziona il server preferito e fai clic sull'icona con tre punti a destra per avviare una connessione.</p>
+<p><img alt="xvpn start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn8.png" /></p>
+<p>Una volta connesso, accanto al file di configurazione comparirà un punto verde.</p>
+<p><img alt="xvpn connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn9.png" /></p>
+<p>Puoi anche controllare i dettagli della connessione VPN, creare e gestire tunnel VPN e criteri nella <strong>VPN Dashboard</strong>.</p>
+</li>
+<li>
+<p>Aggiorna i server.</p>
+<p>Puoi fare clic su <strong>Update Servers</strong> per ottenere l'elenco più recente dei server disponibili ed evitare errori di connessione causati da manutenzione o arresto dei server.</p>
+<p><img alt="xvpn update servers" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn10.png" /></p>
+</li>
+<li>
+<p>Rinnova.</p>
+<p>Facendo clic su <strong>Go Renew</strong>, verrai reindirizzato al sito ufficiale per rinnovare l'abbonamento.</p>
+<p><img alt="xvpn renew" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn11.png" /></p>
+</li>
+<li>
+<p>Elimina le configurazioni.</p>
+<p>Fai clic sull'icona a forma di ingranaggio a destra e seleziona <strong>Delete Configurations</strong> per eliminare file di configurazione specifici o tutti i file con un solo clic.</p>
+<p><img alt="xvpn delete" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn12.png" /></p>
+</li>
+<li>
+<p>Modifica le informazioni di autenticazione.</p>
+<p>Fai clic sull'icona a forma di ingranaggio a destra e seleziona <strong>Modify Authentication Information</strong> per modificare il token di accesso se necessario.</p>
+<p><img alt="xvpn edit credential" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn13.png" /></p>
+<p><img alt="xvpn edit credential" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn14.png" width="600" /></p>
+</li>
+<li>
+<p>Esci.</p>
+<p>Fai clic sull'icona a forma di ingranaggio a destra e seleziona <strong>Logout</strong> per uscire, se necessario. Verranno eliminati le credenziali dell'account, la chiave pubblica associata, la chiave privata e i file di configurazione memorizzati sul router. Procedi con cautela.</p>
+<p><img alt="xvpn logout" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_client/set_up_xvpn/xvpn15.png" /></p>
+</li>
+</ol>
 <h2 id="set-up-wireguard-client-manually-for-other-providers">Configurare manualmente WireGuard Client (per altri provider)<a class="headerlink" href="#set-up-wireguard-client-manually-for-other-providers" title="Permanent link">&para;</a></h2>
 <p>Se usi un altro provider di servizi WireGuard, scarica un file di configurazione dal suo sito web, quindi segui i passaggi seguenti per configurare WireGuard Client. Se non sai come scaricare i file di configurazione, fai riferimento a <a href="../../tutorials/how_to_get_configuration_files_from_wireguard_service_providers/">questa guida</a> oppure contatta il relativo supporto.</p>
 <p>Nel pannello di amministrazione web, vai su <strong>VPN</strong> -&gt; <strong>WireGuard Client</strong>.</p>
@@ -7427,7 +7531,7 @@
 <p>L'app mobile integra alcuni provider di servizi WireGuard, come AzireVPN, Mullvad VPN, OVPN, StrongVPN e PIA VPN. Puoi configurare facilmente un client WireGuard inserendo le credenziali di accesso del servizio WireGuard a cui sei abbonato.</p>
 <p>Installa l'app e segui le istruzioni mostrate sullo schermo per completare la configurazione in base alle tue esigenze.</p>
 <h2 id="configurare-wireguard-server-su-router-glinet">Configurare WireGuard Server su router GL.iNet<a class="headerlink" href="#configurare-wireguard-server-su-router-glinet" title="Permanent link">&para;</a></h2>
-<p>Non vuoi abbonarti a servizi VPN di terze parti? Puoi acquistare due router GL.iNet: impostarne uno come WireGuard server e l'altro come WireGuard server.</p>
+<p>Non vuoi abbonarti a servizi VPN di terze parti? Puoi acquistare due router GL.iNet: impostarne uno come server WireGuard e l'altro come client WireGuard.</p>
 <p>Questo scenario e' particolarmente adatto quando il tuo ISP domestico fornisce un IP pubblico e vuoi collegarti alla rete di casa tramite VPN quando sei fuori casa, per garantire sicurezza e accesso alle risorse della rete interna. In questo modo elimini costi e complicazioni dovuti ad abbonamenti continui a servizi VPN commerciali.</p>
 <p>Per la configurazione di WireGuard server, consulta <a href="../wireguard_server/">qui</a>.</p>
 <hr />
@@ -7458,7 +7562,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 giugno 2026 04:38:53 UTC">9 giugno 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 luglio 2026 08:30:48 UTC">27 luglio 2026</span>
   </span>
 
     
