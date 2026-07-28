@@ -3677,13 +3677,19 @@
 <p>This is a brief Q&amp;A collection for GL.iNet KVM, designed to provide quick answers to some common basic questions.</p>
 <h2 id="basic-information">Basic Information<a class="headerlink" href="#basic-information" title="Permanent link">&para;</a></h2>
 <p><strong>Q1. What devices can GL.iNet KVM control?</strong></p>
-<p>A1. GL.iNet KVM can be used to control any device that uses HDMI output and USB input, such as laptops, desktops, Raspberry Pi, mini hosts, etc.</p>
+<p>A1. GL.iNet KVM can control any device that uses HDMI output and USB input, such as laptops, desktops, Raspberry Pi, mini hosts, etc.</p>
+<p>In addition, Comet Q (GL-RMQ1) can control any device whose USB‑C port supports DisplayPort Alt Mode for video output; no HDMI port is required. This includes, but is not limited to, certain iPhones, iPads, Android phones, MacBooks, Mac minis, and most modern Windows laptops. Click <a href="../../user_guide/gl-rmq1/product_overview/#compatibility">here</a> for details.</p>
 <hr />
 <p><strong>Q2. Do I need to install any software to use GL.iNet KVM?</strong></p>
 <p>A2. No software is required to be installed on the controlled device, and it can be Windows, macOS, ChromeOS, Linux, etc.</p>
 <p>As to the controlling device, whether a software needs to be installed on it depends on the way you want to access the KVM.</p>
 <details>
-<summary>Local Access</summary>
+<summary>Local Control</summary>
+<p><strong>Note</strong>: This control method is only available on Comet X (GL-RM4PE). For other models, please refer to the other two methods below.</p>
+<p>Comet X features an HDMI OUT port and two extra USB ports, ideal for local troubleshooting, configuration and OS installation. Simply connect your monitor, mouse and keyboard for plug-and-play local hardware control. Click <a href="../../user_guide/gl-rm4pe/quick_setup_guide/#local-control">here</a> for details.</p>
+</details>
+<details>
+<summary>LAN Access</summary>
 <p>If you want to access KVM over the same local area network (LAN), no software needs to be installed on the controlling device.</p>
 <p>Simply open a browser on the controlling device, enter either the KVM's IP address or <code>glkvm.local</code> in the address bar to access KVM locally.</p>
 <p>Click <a href="../local_access_via_browser/" target="_blank">here</a> for details.</p>
@@ -3725,14 +3731,19 @@
 </details>
 <hr />
 <p><strong>Q3. How do I access GL.iNet KVM?</strong></p>
-<p>A3. You can access GL.iNet KVM either locally or remotely via six different methods:</p>
+<p>A3. Generally, you can access GL.iNet KVM either locally or remotely through different ways:</p>
 <ul>
-<li><a href="../local_access_via_browser/" target="_blank">Local access via web browser</a></li>
+<li><a href="../local_access_via_browser/" target="_blank">LAN access via web browser</a></li>
 <li><a href="../remote_access_via_cloud/" target="_blank">Remote access via Cloud service</a></li>
 <li><a href="../remote_access_via_glkvm_app/" target="_blank">Remote access via GLKVM app</a></li>
 <li><a href="../remote_access_via_tailscale/" target="_blank">Remote access via Tailscale</a></li>
 <li><a href="../remote_access_via_zerotier/" target="_blank">Remote access via ZeroTier</a></li>
 <li><a href="../remote_access_via_netbird/" target="_blank">Remote access via NetBird</a></li>
+</ul>
+<p>Besides, some GL.iNet KVM models support Nearby Control or Local Control, allowing you to access them on site without connecting to any other router. </p>
+<ul>
+<li><a href="../../user_guide/gl-rm10rc/quick_setup_guide/#nearby-control" target="_blank">Nearby Control (for Comet 5G only)</a></li>
+<li><a href="../../user_guide/gl-rm4pe/quick_setup_guide/#local-control" target="_blank">Local Control (for Comet X only)</a></li>
 </ul>
 <hr />
 <p><strong>Q4. Do I need to open ports (exposed to WAN) for GL.iNet KVM to achieve remote access?</strong></p>
@@ -3747,11 +3758,16 @@
 <p><strong>Q7. Can Comet (GL-RM1) connect to wireless network?</strong></p>
 <p>A7. No. Comet (GL-RM1) does not support wireless network connection.</p>
 <p>It needs to be connected to a network device (e.g., a router) via an Ethernet cable for Internet access.</p>
-<p>If you prefer a KVM that supports Wi-Fi, you may consider <a href="https://www.gl-inet.com/products/gl-rm10/" target="_blank">Comet Pro (GL-RM10)</a> or <a href="https://www.gl-inet.com/products/gl-rm10rc/" target="_blank">Comet 5G (GL-RM10RC)</a>.</p>
+<p>If you prefer a KVM that supports Wi-Fi, you may consider the following models:</p>
+<ul>
+<li><a href="https://www.gl-inet.com/products/gl-rm10/" target="_blank">Comet Pro (GL-RM10)</a></li>
+<li><a href="https://www.gl-inet.com/products/gl-rm10rc/" target="_blank">Comet 5G (GL-RM10RC)</a></li>
+<li><a href="https://www.gl-inet.com/products/gl-rmq1/" target="_blank">Comet Q (GL-RMQ1)</a></li>
+</ul>
 <hr />
 <h2 id="power-control">Power Control<a class="headerlink" href="#power-control" title="Permanent link">&para;</a></h2>
-<p><strong>Q1. Can GL.iNet KVM control a computer's power on and off?</strong></p>
-<p>A1. Yes. You can control the target device's power on and off remotely via the methods below:</p>
+<p><strong>Q1. Can a GL.iNet KVM remotely power the target device on and off?</strong></p>
+<p>A1. Except for Comet Q (GL-RMQ1), all GL.iNet KVMs allow you to remotely power the target device on and off via the methods below:</p>
 <ul>
 <li>
 <p>Wake-on-LAN (Built-in software service)</p>
@@ -3768,9 +3784,10 @@
 <p>A2. Please refer to <a href="../../user_guide/gl-atx-board/" target="_blank">ATX Board User Guide</a>.</p>
 <hr />
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Below are FAQs for a few features. See the corresponding <a href="../../user_guide/">user guide</a> for complete details.</p>
-</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Below are FAQs for several common features. Please refer to the corresponding <a href="../../user_guide/">user guide</a> for full feature details.</p>
+</div>
 <p><strong>Q1. Do I have to use KVM Cloud Service?</strong></p>
 <p>A1. No. The Cloud Service is optional. </p>
 <p>If you don't rely on the cloud for remote access, you can use third-party overlay networking tools, such as Tailscale, ZeroTier and NetBird.</p>
