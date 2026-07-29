@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-access-kvm-remotely-via-cloud" class="md-skip">
+        <a href="#so-greifen-sie-per-cloud-remote-auf-kvm-zu" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -119,6 +119,32 @@
       </div>
     </div>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/kvm/de/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/kvm/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -1688,23 +1714,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bind-your-kvm-to-the-cloud" class="md-nav__link">
-    Bind your KVM to the Cloud
+  <a href="#kvm-an-die-cloud-binden" class="md-nav__link">
+    KVM an die Cloud binden
   </a>
   
-    <nav class="md-nav" aria-label="Bind your KVM to the Cloud">
+    <nav class="md-nav" aria-label="KVM an die Cloud binden">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#regular-binding" class="md-nav__link">
-    Regular Binding
+  <a href="#regulare-bindung" class="md-nav__link">
+    Reguläre Bindung
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dynamic-code-binding" class="md-nav__link">
-    Dynamic Code Binding
+  <a href="#bindung-per-dynamischem-code" class="md-nav__link">
+    Bindung per dynamischem Code
   </a>
   
 </li>
@@ -1715,8 +1741,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#remote-access-via-cloud" class="md-nav__link">
-    Remote access via Cloud
+  <a href="#fernzugriff-uber-die-cloud" class="md-nav__link">
+    Fernzugriff über die Cloud
   </a>
   
 </li>
@@ -3642,23 +3668,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bind-your-kvm-to-the-cloud" class="md-nav__link">
-    Bind your KVM to the Cloud
+  <a href="#kvm-an-die-cloud-binden" class="md-nav__link">
+    KVM an die Cloud binden
   </a>
   
-    <nav class="md-nav" aria-label="Bind your KVM to the Cloud">
+    <nav class="md-nav" aria-label="KVM an die Cloud binden">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#regular-binding" class="md-nav__link">
-    Regular Binding
+  <a href="#regulare-bindung" class="md-nav__link">
+    Reguläre Bindung
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dynamic-code-binding" class="md-nav__link">
-    Dynamic Code Binding
+  <a href="#bindung-per-dynamischem-code" class="md-nav__link">
+    Bindung per dynamischem Code
   </a>
   
 </li>
@@ -3669,8 +3695,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#remote-access-via-cloud" class="md-nav__link">
-    Remote access via Cloud
+  <a href="#fernzugriff-uber-die-cloud" class="md-nav__link">
+    Fernzugriff über die Cloud
   </a>
   
 </li>
@@ -3699,80 +3725,80 @@
   
 
   <!-- Markdown content -->
-  <h1 id="how-to-access-kvm-remotely-via-cloud">How to access KVM remotely via Cloud<a class="headerlink" href="#how-to-access-kvm-remotely-via-cloud" title="Permanent link">&para;</a></h1>
-<p>Before you begin, please ensure:</p>
+  <h1 id="so-greifen-sie-per-cloud-remote-auf-kvm-zu">So greifen Sie per Cloud remote auf KVM zu<a class="headerlink" href="#so-greifen-sie-per-cloud-remote-auf-kvm-zu" title="Permanent link">&para;</a></h1>
+<p>Bevor Sie beginnen, stellen Sie bitte sicher:</p>
 <ul>
 <li>
-<p>The controlled device is connected to the KVM correctly.</p>
+<p>Das gesteuerte Gerät ist korrekt mit dem KVM verbunden.</p>
 </li>
 <li>
-<p>The KVM is connected to a stable network.</p>
+<p>Das KVM ist mit einem stabilen Netzwerk verbunden.</p>
 </li>
 <li>
-<p>You can access the KVM locally, as binding device to the Cloud must be done within the local network.</p>
+<p>Sie können lokal auf das KVM zugreifen, da das Binden des Geräts an die Cloud innerhalb des lokalen Netzwerks erfolgen muss.</p>
 </li>
 </ul>
-<p>Follow the steps below to access your KVM and the controlled device remotely via Cloud service.</p>
-<h2 id="bind-your-kvm-to-the-cloud">Bind your KVM to the Cloud<a class="headerlink" href="#bind-your-kvm-to-the-cloud" title="Permanent link">&para;</a></h2>
-<p>There are two ways to bind your KVM to the Cloud: Regular Binding or Dynamic Code Binding.</p>
+<p>Führen Sie die folgenden Schritte aus, um über den Cloud-Dienst remote auf Ihr KVM und das gesteuerte Gerät zuzugreifen.</p>
+<h2 id="kvm-an-die-cloud-binden">KVM an die Cloud binden<a class="headerlink" href="#kvm-an-die-cloud-binden" title="Permanent link">&para;</a></h2>
+<p>Es gibt zwei Möglichkeiten, Ihr KVM an die Cloud zu binden: reguläre Bindung oder Bindung per dynamischem Code.</p>
 <ul>
 <li>
-<p><strong>Regular Binding</strong>: Click "Bind To KVMCloud" on the KVM console, then you will be redirected to the binding page with the token. Log in to your cloud account, and confirm the device information to complete the binding.</p>
+<p><strong>Reguläre Bindung</strong>: Klicken Sie in der KVM-Konsole auf "Bind To KVMCloud". Danach werden Sie zur Bindungsseite mit dem Token weitergeleitet. Melden Sie sich bei Ihrem Cloud-Konto an und bestätigen Sie die Geräteinformationen, um das Binden abzuschließen.</p>
 </li>
 <li>
-<p><strong>Dynamic Code Binding</strong>: Click "Bind With Code" on the KVM console, then it will generate an 8-digit dynamic code randomly for device binding. Log in to your cloud account, and enter the code to complete the binding.</p>
+<p><strong>Bindung per dynamischem Code</strong>: Klicken Sie in der KVM-Konsole auf "Bind With Code". Danach wird zufällig ein 8-stelliger dynamischer Code für das Binden des Geräts erzeugt. Melden Sie sich bei Ihrem Cloud-Konto an und geben Sie den Code ein, um das Binden abzuschließen.</p>
 </li>
 </ul>
-<h3 id="regular-binding">Regular Binding<a class="headerlink" href="#regular-binding" title="Permanent link">&para;</a></h3>
-<p>Log in to your KVM locally via IP address or domain, and navigate to <strong>Cloud Service</strong> in the upper right corner. Click <strong>Bind To Cloud</strong>.</p>
+<h3 id="regulare-bindung">Reguläre Bindung<a class="headerlink" href="#regulare-bindung" title="Permanent link">&para;</a></h3>
+<p>Melden Sie sich lokal per IP-Adresse oder Domain bei Ihrem KVM an und navigieren Sie oben rechts zu <strong>Cloud Service</strong>. Klicken Sie auf <strong>Bind To Cloud</strong>.</p>
 <p><img alt="bind to cloud" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_cloud/bind_to_cloud.png" /></p>
-<p>You will be re-directed to a login page. Input your glinet account and click <strong>Log In</strong>.</p>
+<p>Sie werden zu einer Anmeldeseite weitergeleitet. Geben Sie Ihr glinet-Konto ein und klicken Sie auf <strong>Log In</strong>.</p>
 <p><img alt="bind device login" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_cloud/bind_device_1.png" /></p>
-<p>Confirm your device info, and click <strong>Bind</strong>.</p>
+<p>Bestätigen Sie die Geräteinformationen und klicken Sie auf <strong>Bind</strong>.</p>
 <p><img alt="bind device confirm" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_cloud/bind_device_2.png" /></p>
-<p>Wait a second and your device will be bound to your account successfully. Click <strong>Done</strong>.</p>
+<p>Warten Sie kurz, bis Ihr Gerät erfolgreich an Ihr Konto gebunden wurde. Klicken Sie dann auf <strong>Done</strong>.</p>
 <p><img alt="bind device success" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_cloud/bind_device_3.png" /></p>
-<h3 id="dynamic-code-binding">Dynamic Code Binding<a class="headerlink" href="#dynamic-code-binding" title="Permanent link">&para;</a></h3>
-<p>Note: Please upgrade your KVM firmware to version 1.7 before using this feature.</p>
+<h3 id="bindung-per-dynamischem-code">Bindung per dynamischem Code<a class="headerlink" href="#bindung-per-dynamischem-code" title="Permanent link">&para;</a></h3>
+<p>Hinweis: Bitte aktualisieren Sie die Firmware Ihres KVM auf Version 1.7, bevor Sie diese Funktion verwenden.</p>
 <ol>
 <li>
-<p>Log in to your GL.iNet KVM locally using domain or IP address. Click <a href="../local_access_via_browser/">here</a> for details. </p>
+<p>Melden Sie sich lokal per Domain oder IP-Adresse bei Ihrem GL.iNet KVM an. Details finden Sie <a href="../local_access_via_browser/">hier</a>.</p>
 </li>
 <li>
-<p>After login, navigate to <strong>Cloud Service</strong> in the upper-right corner, and click <strong>Bind With Code</strong>.</p>
+<p>Navigieren Sie nach der Anmeldung oben rechts zu <strong>Cloud Service</strong> und klicken Sie auf <strong>Bind With Code</strong>.</p>
 <p><img alt="bind with code 1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/bind_to_cloud_via_code/bind_with_code_1.png" /></p>
 </li>
 <li>
-<p>It will generate an 8-digit dynamic code randomly for device binding, valid for 60 seconds. Click the code to copy it.</p>
+<p>Es wird zufällig ein 8-stelliger dynamischer Code für das Binden des Geräts erzeugt, der 60 Sekunden gültig ist. Klicken Sie auf den Code, um ihn zu kopieren.</p>
 <p><img alt="bind with code 2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/bind_to_cloud_via_code/bind_with_code_2.png" /></p>
 </li>
 <li>
-<p>Visit <a href="https://glkvm.com/" target="_blank">https://glkvm.com/</a> and log in with your glinet cloud account. </p>
+<p>Öffnen Sie <a href="https://glkvm.com/" target="_blank">https://glkvm.com/</a> und melden Sie sich mit Ihrem glinet-Cloud-Konto an.</p>
 <p><img alt="bind with code 3" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/bind_to_cloud_via_code/bind_with_code_3.png" /></p>
 </li>
 <li>
-<p>After logging in, the page displays as follows.</p>
+<p>Nach der Anmeldung wird die Seite wie folgt angezeigt.</p>
 <p><img alt="bind with code 4" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/bind_to_cloud_via_code/bind_with_code_4.png" /></p>
-<p>Click <strong>Add Device</strong> and select <strong>Bind with Code</strong>.</p>
+<p>Klicken Sie auf <strong>Add Device</strong> und wählen Sie <strong>Bind with Code</strong>.</p>
 <p><img alt="bind with code 5" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/bind_to_cloud_via_code/bind_with_code_5.png" /></p>
 </li>
 <li>
-<p>In the pop-up window, enter the 8-digit dynamic code, and click <strong>Bind</strong>.</p>
+<p>Geben Sie im Popup-Fenster den 8-stelligen dynamischen Code ein und klicken Sie auf <strong>Bind</strong>.</p>
 <p><img alt="bind with code 6" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/bind_to_cloud_via_code/bind_with_code_6.png" /></p>
-<p><strong>Note</strong>: The dynamic code is valid within 60 seconds. If the dynamic code expires, go back to the KVM console and click <strong>Regenerate Code</strong> to get a new one.</p>
+<p><strong>Hinweis</strong>: Der dynamische Code ist 60 Sekunden gültig. Wenn der dynamische Code abläuft, kehren Sie zur KVM-Konsole zurück und klicken Sie auf <strong>Regenerate Code</strong>, um einen neuen Code zu erhalten.</p>
 <p><img alt="regenerate code" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/bind_to_cloud_via_code/regenerate_code.png" /></p>
-<p>The device will then be successfully bound to your cloud account.</p>
+<p>Anschließend wird das Gerät erfolgreich an Ihr Cloud-Konto gebunden.</p>
 </li>
 </ol>
-<h2 id="remote-access-via-cloud">Remote access via Cloud<a class="headerlink" href="#remote-access-via-cloud" title="Permanent link">&para;</a></h2>
-<p>Open a browser (take Google Chrome as an example), and enter <code>glkvm.com</code> in the address bar. You will see a login page. Use your glinet account to log in.</p>
+<h2 id="fernzugriff-uber-die-cloud">Fernzugriff über die Cloud<a class="headerlink" href="#fernzugriff-uber-die-cloud" title="Permanent link">&para;</a></h2>
+<p>Öffnen Sie einen Browser (hier Google Chrome als Beispiel) und geben Sie <code>glkvm.com</code> in die Adressleiste ein. Sie sehen eine Anmeldeseite. Melden Sie sich mit Ihrem glinet-Konto an.</p>
 <p><img alt="remote access login" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_cloud/remote_access_1.png" /></p>
-<p>After login, you will see the devices bound to your account. Click on the device you want to remotely access.</p>
+<p>Nach der Anmeldung sehen Sie die Geräte, die an Ihr Konto gebunden sind. Klicken Sie auf das Gerät, auf das Sie remote zugreifen möchten.</p>
 <p><img alt="remote access select device" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_cloud/remote_access_2.jpg" /></p>
-<p>It will redirect to a new webpage with the domain <code>glkvm.xyz</code>, <code>glkvm.site</code>, or <code>glkvm.top</code> (randomly assigned). These domains are secure and provided by GL.iNet.</p>
-<p>Enter your admin password to log in.</p>
+<p>Sie werden auf eine neue Webseite mit der Domain <code>glkvm.xyz</code>, <code>glkvm.site</code> oder <code>glkvm.top</code> weitergeleitet (zufällig zugewiesen). Diese Domains sind sicher und werden von GL.iNet bereitgestellt.</p>
+<p>Geben Sie Ihr Admin-Passwort ein, um sich anzumelden.</p>
 <p><img alt="remote access admin" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_cloud/remote_access_3.png" /></p>
-<p>You can now access the KVM and the controlled device remotely via Cloud.</p>
+<p>Sie können nun remote über die Cloud auf das KVM und das gesteuerte Gerät zugreifen.</p>
 <p><img alt="remote access success" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_cloud/remote_access_4.png" /></p>
 <hr />
 <p>Noch Fragen? Besuchen Sie unser <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> oder <a href="https://www.gl-inet.com/contacts/" target="_blank">kontaktieren Sie uns</a>.</p>
@@ -3802,10 +3828,10 @@
           <div class="pswp__top-bar">
             <!--  Controls are self-explanatory. Order can be changed. -->
             <div class="pswp__counter"></div>
-            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--close" title="Schliessen (Esc)"></button>
             <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
-            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <button class="pswp__button pswp__button--fs" title="Vollbild umschalten"></button>
+            <button class="pswp__button pswp__button--zoom" title="Ein-/Auszoomen"></button>
             <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
             <!-- element will get class pswp__preloader--active when preloader is running -->
             <div class="pswp__preloader">
@@ -3821,10 +3847,10 @@
             <div class="pswp__share-tooltip"></div> 
           </div>
 
-          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          <button class="pswp__button pswp__button--arrow--left" title="Zurueck (Pfeil links)">
           </button>
 
-          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          <button class="pswp__button pswp__button--arrow--right" title="Weiter (Pfeil rechts)">
           </button>
 
           <div class="pswp__caption">

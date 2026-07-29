@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-unbrick-kvm-via-rkdevtool" class="md-skip">
+        <a href="#kvm-mit-rkdevtool-debricken" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -119,6 +119,32 @@
       </div>
     </div>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/kvm/de/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/kvm/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -3232,15 +3258,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#preparation" class="md-nav__link">
-    Preparation
+  <a href="#vorbereitung" class="md-nav__link">
+    Vorbereitung
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#unbrick-steps" class="md-nav__link">
-    Unbrick steps
+  <a href="#debricking-schritte" class="md-nav__link">
+    Debricking-Schritte
   </a>
   
 </li>
@@ -3622,15 +3648,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#preparation" class="md-nav__link">
-    Preparation
+  <a href="#vorbereitung" class="md-nav__link">
+    Vorbereitung
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#unbrick-steps" class="md-nav__link">
-    Unbrick steps
+  <a href="#debricking-schritte" class="md-nav__link">
+    Debricking-Schritte
   </a>
   
 </li>
@@ -3659,60 +3685,60 @@
   
 
   <!-- Markdown content -->
-  <h1 id="how-to-unbrick-kvm-via-rkdevtool">How to unbrick KVM via RKDevTool<a class="headerlink" href="#how-to-unbrick-kvm-via-rkdevtool" title="Permanent link">&para;</a></h1>
-<p>This tutorial will introduce how to unbrick GL.iNet KVM using the RKDevTool. It applies to scenarios where the KVM is bricked and cannot be recovered via regular firmware updates or U-Boot failsafe mode.</p>
-<h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
-<p>Please prepare the following tools for unbricking.</p>
+  <h1 id="kvm-mit-rkdevtool-debricken">KVM mit RKDevTool debricken<a class="headerlink" href="#kvm-mit-rkdevtool-debricken" title="Permanent link">&para;</a></h1>
+<p>In diesem Tutorial erfahren Sie, wie Sie ein GL.iNet KVM mit RKDevTool debricken. Es gilt fuer Faelle, in denen das KVM nicht mehr startet und weder ueber regulaere Firmware-Updates noch ueber den U-Boot-Failsafe-Modus wiederhergestellt werden kann.</p>
+<h2 id="vorbereitung">Vorbereitung<a class="headerlink" href="#vorbereitung" title="Permanent link">&para;</a></h2>
+<p>Bereiten Sie die folgenden Werkzeuge fuer das Debricking vor.</p>
 <ul>
-<li>A Windows computer</li>
-<li>A USB data cable</li>
-<li>A power adapter (for the KVM device)</li>
+<li>Einen Windows-Computer</li>
+<li>Ein USB-Datenkabel</li>
+<li>Ein Netzteil fuer das KVM-Geraet</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Do NOT disconnect the USB cable or power off KVM during the unbricking process, as this may damage the device.</p>
-<p>It is recommended to back up important data before starting the unbricking process.</p>
+<p>Trennen Sie waehrend des Debricking-Vorgangs NICHT das USB-Kabel und schalten Sie das KVM nicht aus. Andernfalls kann das Geraet beschaedigt werden.</p>
+<p>Es wird empfohlen, wichtige Daten zu sichern, bevor Sie mit dem Debricking beginnen.</p>
 </div>
-<h2 id="unbrick-steps">Unbrick steps<a class="headerlink" href="#unbrick-steps" title="Permanent link">&para;</a></h2>
-<p>To avoid unbrick failure, please follow the steps in order. </p>
+<h2 id="debricking-schritte">Debricking-Schritte<a class="headerlink" href="#debricking-schritte" title="Permanent link">&para;</a></h2>
+<p>Um Fehler beim Debricking zu vermeiden, fuehren Sie die Schritte bitte der Reihe nach aus.</p>
 <ol>
 <li>
-<p>Power off your KVM device.</p>
+<p>Schalten Sie Ihr KVM-Geraet aus.</p>
 </li>
 <li>
-<p>Download the latest firmware of your KVM device from <a href="https://dl.gl-inet.com/kvm" target="_blank">here</a> to your computer.</p>
+<p>Laden Sie die neueste Firmware fuer Ihr KVM-Geraet <a href="https://dl.gl-inet.com/kvm" target="_blank">hier</a> auf Ihren Computer herunter.</p>
 </li>
 <li>
-<p>Download the driver package from <a href="https://static.gl-inet.com/docs/kvm/tutorials/debrick_via_rkdriver/DriverAssitant_v5.11.zip">here</a> to your computer, and extract it to any directory.</p>
+<p>Laden Sie das Treiberpaket <a href="https://static.gl-inet.com/docs/kvm/tutorials/debrick_via_rkdriver/DriverAssitant_v5.11.zip">hier</a> auf Ihren Computer herunter und entpacken Sie es in ein beliebiges Verzeichnis.</p>
 </li>
 <li>
-<p>Double click the .exe file to complete the driver installation program.</p>
+<p>Doppelklicken Sie auf die .exe-Datei, um die Treiberinstallation abzuschliessen.</p>
 <p><img alt="install driver" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/debrick_via_rkdriver/install_driver_1.png" /></p>
 <p><img alt="install driver" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/debrick_via_rkdriver/install_driver_2.png" /></p>
 </li>
 <li>
-<p>Download the <strong>RKDevTool</strong> from <a href="https://static.gl-inet.com/docs/kvm/tutorials/debrick_via_rkdriver/RKDevTool_Release_v3.37.zip">here</a> to your computer, and extract it to an easily accessible directory.</p>
+<p>Laden Sie das <strong>RKDevTool</strong> <a href="https://static.gl-inet.com/docs/kvm/tutorials/debrick_via_rkdriver/RKDevTool_Release_v3.37.zip">hier</a> auf Ihren Computer herunter und entpacken Sie es in ein leicht zugaengliches Verzeichnis.</p>
 </li>
 <li>
-<p>Double click the .exe file to run the flashing tool on your computer.</p>
+<p>Doppelklicken Sie auf die .exe-Datei, um das Flash-Tool auf Ihrem Computer zu starten.</p>
 <p><img alt="run rkdevtool" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/debrick_via_rkdriver/run_rkdevtool_1.png" /></p>
 <p><img alt="run rkdevtool" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/debrick_via_rkdriver/run_rkdevtool_2.png" /></p>
 </li>
 <li>
-<p>Connect the KVM's Type-C OTG port to the computer's USB port via a USB data cable.</p>
-<p>Take Comet (GL-RM1) as an example. The Type-C OTG port is shown below.</p>
+<p>Verbinden Sie den Type-C-OTG-Port des KVM ueber ein USB-Datenkabel mit dem USB-Port des Computers.</p>
+<p>Im folgenden Beispiel wird Comet (GL-RM1) verwendet. Der Type-C-OTG-Port ist unten dargestellt.</p>
 <p><img alt="connect usb cable" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/kvm/tutorials/debrick_via_rkdriver/otg-port-rm1.png" /></p>
 </li>
 <li>
-<p>Hold the RESET button for <strong>10 seconds</strong> while plugging the power cable into KVM. Then release the button. Your KVM device will enter the Loader mode.</p>
+<p>Halten Sie die RESET-Taste <strong>10 Sekunden</strong> lang gedrueckt, waehrend Sie das Stromkabel an das KVM anschliessen. Lassen Sie die Taste danach los. Ihr KVM-Geraet wechselt in den Loader-Modus.</p>
 <p><img alt="reset button" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/debrick_via_rkdriver/reset_button_rm1.jpg" width="433" /></p>
 </li>
 <li>
-<p>Turn to the RKDevTool panel, go to <strong>Upgrade Firmware</strong> -&gt; <strong>Firmware</strong>, select the firmware downloaded in step 2 to upload.</p>
+<p>Wechseln Sie im RKDevTool zum Bereich <strong>Upgrade Firmware</strong> -&gt; <strong>Firmware</strong> und waehlen Sie die in Schritt 2 heruntergeladene Firmware zum Hochladen aus.</p>
 <p><img alt="select firmware" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/debrick_via_rkdriver/select_firmware.png" /></p>
-<p>Then turn to the <strong>Upgrade</strong> tab next to the Firmware tab, it will display "Found Loader Device" and start flashing the firmware.</p>
+<p>Wechseln Sie anschliessend zum Tab <strong>Upgrade</strong> neben dem Firmware-Tab. Dort wird "Found Loader Device" angezeigt und das Tool beginnt mit dem Flashen der Firmware.</p>
 <p><img alt="rkdevtool panel" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/debrick_via_rkdriver/rkdevtool_panel.jpg" /></p>
-<p>The KVM device will automatically restart once the upgrade is complete.</p>
+<p>Das KVM-Geraet startet automatisch neu, sobald das Upgrade abgeschlossen ist.</p>
 </li>
 </ol>
 <hr />
@@ -3743,10 +3769,10 @@
           <div class="pswp__top-bar">
             <!--  Controls are self-explanatory. Order can be changed. -->
             <div class="pswp__counter"></div>
-            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--close" title="Schliessen (Esc)"></button>
             <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
-            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <button class="pswp__button pswp__button--fs" title="Vollbild umschalten"></button>
+            <button class="pswp__button pswp__button--zoom" title="Ein-/Auszoomen"></button>
             <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
             <!-- element will get class pswp__preloader--active when preloader is running -->
             <div class="pswp__preloader">
@@ -3762,10 +3788,10 @@
             <div class="pswp__share-tooltip"></div> 
           </div>
 
-          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          <button class="pswp__button pswp__button--arrow--left" title="Zurueck (Pfeil links)">
           </button>
 
-          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          <button class="pswp__button pswp__button--arrow--right" title="Weiter (Pfeil rechts)">
           </button>
 
           <div class="pswp__caption">

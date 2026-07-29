@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-access-kvm-remotely-via-netbird" class="md-skip">
+        <a href="#so-greifen-sie-uber-netbird-remote-auf-kvm-zu" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -119,6 +119,32 @@
       </div>
     </div>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/kvm/de/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/kvm/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -3136,22 +3162,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bind-kvm-to-netbird" class="md-nav__link">
-    Bind KVM to NetBird
+  <a href="#kvm-an-netbird-binden" class="md-nav__link">
+    KVM an NetBird binden
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bind-the-controlling-device" class="md-nav__link">
-    Bind the controlling device
+  <a href="#steuerndes-gerat-binden" class="md-nav__link">
+    Steuerndes Gerät binden
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#remote-access-via-netbird" class="md-nav__link">
-    Remote access via NetBird
+  <a href="#fernzugriff-uber-netbird" class="md-nav__link">
+    Fernzugriff über NetBird
   </a>
   
 </li>
@@ -3629,22 +3655,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bind-kvm-to-netbird" class="md-nav__link">
-    Bind KVM to NetBird
+  <a href="#kvm-an-netbird-binden" class="md-nav__link">
+    KVM an NetBird binden
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bind-the-controlling-device" class="md-nav__link">
-    Bind the controlling device
+  <a href="#steuerndes-gerat-binden" class="md-nav__link">
+    Steuerndes Gerät binden
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#remote-access-via-netbird" class="md-nav__link">
-    Remote access via NetBird
+  <a href="#fernzugriff-uber-netbird" class="md-nav__link">
+    Fernzugriff über NetBird
   </a>
   
 </li>
@@ -3673,74 +3699,74 @@
   
 
   <!-- Markdown content -->
-  <h1 id="how-to-access-kvm-remotely-via-netbird">How to access KVM remotely via NetBird<a class="headerlink" href="#how-to-access-kvm-remotely-via-netbird" title="Permanent link">&para;</a></h1>
+  <h1 id="so-greifen-sie-uber-netbird-remote-auf-kvm-zu">So greifen Sie über NetBird remote auf KVM zu<a class="headerlink" href="#so-greifen-sie-uber-netbird-remote-auf-kvm-zu" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>Note: Please upgrade your KVM firmware to v1.9.0 before using this feature.</p>
+<p>Hinweis: Bitte aktualisieren Sie die Firmware Ihres KVM auf v1.9.0, bevor Sie diese Funktion verwenden.</p>
 </blockquote>
-<p><a href="https://netbird.io/" target="_blank">NetBird</a> is an open-source zero trust networking platform that lets you build secure private networks for home and business use. As a WireGuard®-based overlay network, NetBird enables secure access to your devices anytime and anywhere.</p>
-<p>GL.iNet KVM integrates NetBird, allowing you to bind it to the NetBird virtual network for remote access — no need to install the GLKVM app or use the cloud service. </p>
-<p>Follow these steps to remotely access your GL.iNet KVM via NetBird.</p>
-<h2 id="bind-kvm-to-netbird">Bind KVM to NetBird<a class="headerlink" href="#bind-kvm-to-netbird" title="Permanent link">&para;</a></h2>
-<p><strong>Before you begin, connect your KVM and the controlling device to the same local network.</strong></p>
+<p><a href="https://netbird.io/" target="_blank">NetBird</a> ist eine Open-Source-Zero-Trust-Netzwerkplattform, mit der Sie sichere private Netzwerke für den privaten und geschäftlichen Einsatz erstellen können. Als WireGuard®-basiertes Overlay-Netzwerk ermöglicht NetBird jederzeit und überall sicheren Zugriff auf Ihre Geräte.</p>
+<p>GL.iNet KVM integriert NetBird, sodass Sie es für den Fernzugriff an das virtuelle NetBird-Netzwerk binden können. Die GLKVM App muss dafür nicht installiert und der Cloud-Dienst nicht verwendet werden.</p>
+<p>Führen Sie die folgenden Schritte aus, um über NetBird remote auf Ihr GL.iNet KVM zuzugreifen.</p>
+<h2 id="kvm-an-netbird-binden">KVM an NetBird binden<a class="headerlink" href="#kvm-an-netbird-binden" title="Permanent link">&para;</a></h2>
+<p><strong>Bevor Sie beginnen, verbinden Sie Ihr KVM und das steuernde Gerät mit demselben lokalen Netzwerk.</strong></p>
 <ol>
 <li>
-<p>Log in to your KVM console locally using its domain or IP address, then go to <strong>Apps Center</strong> -&gt; <strong>NetBird</strong>. Enable NetBird and click <strong>Bind Device</strong>. </p>
+<p>Melden Sie sich lokal per Domain oder IP-Adresse bei Ihrer KVM-Konsole an und gehen Sie anschließend zu <strong>Apps Center</strong> -&gt; <strong>NetBird</strong>. Aktivieren Sie NetBird und klicken Sie auf <strong>Bind Device</strong>.</p>
 <p><img alt="bind device" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_netbird/1-bind-device.png" /></p>
 </li>
 <li>
-<p>You will be redirected to the device confirmation page. Click <strong>Confirm</strong>.</p>
+<p>Sie werden zur Bestätigungsseite für das Gerät weitergeleitet. Klicken Sie auf <strong>Confirm</strong>.</p>
 <p><img alt="confirm device" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_netbird/2-confirm.png" /></p>
 </li>
 <li>
-<p>Sign in to your NetBird account. If you don't have an account, sign up first.</p>
+<p>Melden Sie sich bei Ihrem NetBird-Konto an. Wenn Sie noch kein Konto haben, registrieren Sie zunächst eines.</p>
 <p><img alt="netbird sign in" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_netbird/3-signin.png" /></p>
 </li>
 <li>
-<p>After signing in, the KVM device will be automatically bound to your account.</p>
+<p>Nach der Anmeldung wird das KVM-Gerät automatisch an Ihr Konto gebunden.</p>
 <p><img alt="kvm connected" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_netbird/4-connected.png" /></p>
-<p>On the NetBird dashboard, you can also see your KVM listed on the <strong>Peers</strong> page.</p>
+<p>Im NetBird-Dashboard sehen Sie Ihr KVM außerdem auf der Seite <strong>Peers</strong>.</p>
 <p><img alt="netbird dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_netbird/5-dashboard.png" /></p>
 </li>
 </ol>
-<h2 id="bind-the-controlling-device">Bind the controlling device<a class="headerlink" href="#bind-the-controlling-device" title="Permanent link">&para;</a></h2>
-<p>The example below demonstrates how to bind a Windows laptop (as the controlling device) to the NetBird network.</p>
+<h2 id="steuerndes-gerat-binden">Steuerndes Gerät binden<a class="headerlink" href="#steuerndes-gerat-binden" title="Permanent link">&para;</a></h2>
+<p>Das folgende Beispiel zeigt, wie ein Windows-Laptop als steuerndes Gerät an das NetBird-Netzwerk gebunden wird.</p>
 <ol>
 <li>
-<p>Install NetBird on your laptop from <a href="https://app.netbird.io/install" target="_blank">here</a>. </p>
+<p>Installieren Sie NetBird auf Ihrem Laptop über <a href="https://app.netbird.io/install" target="_blank">diesen Link</a>.</p>
 <p><img alt="install netbird" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_netbird/6-install.png" /></p>
 </li>
 <li>
-<p>Run NetBird on the laptop and add it to the same NetBird network. </p>
-<p>NetBird does not display a separate window/UI on the desktop; it only resides as an icon in the system tray (bottom-right corner). All operations are performed via the right-click menu.</p>
-<p>Right click the NetBird icon, and click <strong>Connect</strong>. </p>
+<p>Führen Sie NetBird auf dem Laptop aus und fügen Sie ihn demselben NetBird-Netzwerk hinzu.</p>
+<p>NetBird zeigt auf dem Desktop kein eigenes Fenster und keine separate Oberfläche an. Es befindet sich nur als Symbol im Infobereich (unten rechts). Alle Vorgänge werden über das Kontextmenü ausgeführt.</p>
+<p>Klicken Sie mit der rechten Maustaste auf das NetBird-Symbol und klicken Sie auf <strong>Connect</strong>.</p>
 <p><img alt="pc connect" class="glboxshadow gl-50-desktop" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_netbird/7-pc-connect.png" /></p>
 </li>
 <li>
-<p>In the pop-up window, click <strong>Accept</strong> to authorize.</p>
+<p>Klicken Sie im Popup-Fenster auf <strong>Accept</strong>, um zu autorisieren.</p>
 <p><img alt="authorize" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_netbird/8-authorize.png" /></p>
-<p>Your laptop will be automatically bound to your account and added to the same NetBird network.</p>
+<p>Ihr Laptop wird automatisch an Ihr Konto gebunden und demselben NetBird-Netzwerk hinzugefügt.</p>
 <p><img alt="pc connected" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_netbird/9-login-success.png" /></p>
 </li>
 <li>
-<p>On the NetBird dashboard, there are two devices on the <strong>Peers</strong> page: your KVM and the controlling laptop.</p>
+<p>Im NetBird-Dashboard werden auf der Seite <strong>Peers</strong> zwei Geräte angezeigt: Ihr KVM und der steuernde Laptop.</p>
 <p><img alt="netbird dashboard" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_netbird/10-dashboard.png" /></p>
 </li>
 </ol>
-<h2 id="remote-access-via-netbird">Remote access via NetBird<a class="headerlink" href="#remote-access-via-netbird" title="Permanent link">&para;</a></h2>
-<p>The example below demonstrates how to remotely access the KVM console via the NetBird virtual IP address.</p>
+<h2 id="fernzugriff-uber-netbird">Fernzugriff über NetBird<a class="headerlink" href="#fernzugriff-uber-netbird" title="Permanent link">&para;</a></h2>
+<p>Das folgende Beispiel zeigt, wie Sie über die virtuelle NetBird-IP-Adresse remote auf die KVM-Konsole zugreifen.</p>
 <ol>
 <li>
-<p>On your laptop, sign in to the NetBird dashboard and navigate to <strong>Peers</strong>. </p>
-<p>Find your KVM device and click its <strong>NetBird IP</strong> (<code>100.100.141.229</code> in this example) to copy the virtual IP.</p>
+<p>Melden Sie sich auf Ihrem Laptop beim NetBird-Dashboard an und navigieren Sie zu <strong>Peers</strong>.</p>
+<p>Suchen Sie Ihr KVM-Gerät und klicken Sie auf dessen <strong>NetBird IP</strong> (<code>100.100.141.229</code> in diesem Beispiel), um die virtuelle IP zu kopieren.</p>
 <p><img alt="kvm netbird ip" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_netbird/11-kvm-netbird-ip.png" /></p>
-<p>Hover your cursor over the IP address to view more details, such as Public IP, domain and region.</p>
+<p>Bewegen Sie den Mauszeiger über die IP-Adresse, um weitere Details wie Public IP, Domain und Region anzuzeigen.</p>
 </li>
 <li>
-<p>Open a new browser tab, paste the copied NetBird IP into the address bar and hit Enter. You will be redirected to the GLKVM login page. </p>
+<p>Öffnen Sie einen neuen Browser-Tab, fügen Sie die kopierte NetBird-IP in die Adressleiste ein und drücken Sie die Eingabetaste. Sie werden zur GLKVM-Anmeldeseite weitergeleitet.</p>
 <p><img alt="remote access login" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_netbird/12-ip-login.png" /></p>
-<p>Enter your admin password to log in. You can now access your GL.iNet KVM and the controlled device via the NetBird IP.</p>
+<p>Geben Sie Ihr Admin-Passwort ein, um sich anzumelden. Sie können nun über die NetBird-IP auf Ihr GL.iNet KVM und das gesteuerte Gerät zugreifen.</p>
 <p><img alt="remote access success" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_via_netbird/12-ip-access.png" /></p>
-<p><strong>Tip</strong>: A privacy error may appear when accessing this NetBird IP for the first time. Simply click <strong>Advanced</strong> -&gt; <strong>Proceed</strong> to continue. See <a href="../privacy_error_from_your_browser/" target="_blank">Privacy error from your browser</a> for details.</p>
+<p><strong>Tipp</strong>: Beim ersten Zugriff auf diese NetBird-IP kann eine Datenschutzwarnung angezeigt werden. Klicken Sie einfach auf <strong>Advanced</strong> -&gt; <strong>Proceed</strong>, um fortzufahren. Details finden Sie unter <a href="../privacy_error_from_your_browser/" target="_blank">Datenschutzwarnung im Browser</a>.</p>
 </li>
 </ol>
 <hr />
@@ -3771,10 +3797,10 @@
           <div class="pswp__top-bar">
             <!--  Controls are self-explanatory. Order can be changed. -->
             <div class="pswp__counter"></div>
-            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--close" title="Schliessen (Esc)"></button>
             <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
-            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <button class="pswp__button pswp__button--fs" title="Vollbild umschalten"></button>
+            <button class="pswp__button pswp__button--zoom" title="Ein-/Auszoomen"></button>
             <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
             <!-- element will get class pswp__preloader--active when preloader is running -->
             <div class="pswp__preloader">
@@ -3790,10 +3816,10 @@
             <div class="pswp__share-tooltip"></div> 
           </div>
 
-          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          <button class="pswp__button pswp__button--arrow--left" title="Zurueck (Pfeil links)">
           </button>
 
-          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          <button class="pswp__button pswp__button--arrow--right" title="Weiter (Pfeil rechts)">
           </button>
 
           <div class="pswp__caption">

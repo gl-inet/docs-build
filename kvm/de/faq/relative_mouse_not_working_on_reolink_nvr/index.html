@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-should-i-do-if-relative-mouse-mode-doesnt-work-on-reolink-nvr" class="md-skip">
+        <a href="#was-tun-wenn-der-relative-mausmodus-auf-reolink-nvr-nicht-funktioniert" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -119,6 +119,32 @@
       </div>
     </div>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/kvm/de/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/kvm/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -3593,32 +3619,32 @@
   
 
   <!-- Markdown content -->
-  <h1 id="what-should-i-do-if-relative-mouse-mode-doesnt-work-on-reolink-nvr">What should I do if relative mouse mode doesn't work on Reolink NVR<a class="headerlink" href="#what-should-i-do-if-relative-mouse-mode-doesnt-work-on-reolink-nvr" title="Permanent link">&para;</a></h1>
-<p>When using GL.iNet KVM to control Reolink NVR (especially models do not support dual mice) or certain vintage computers (such as those without USB interfaces), the relative mouse mode may not work. Common issues include complete failure of the mode, or trackable mouse movement but unresponsive clicks.</p>
-<p>This problem mainly comes from a compatibility issue between the KVM's mouse simulation and the limited capabilities of devices like Reolink NVR:</p>
+  <h1 id="was-tun-wenn-der-relative-mausmodus-auf-reolink-nvr-nicht-funktioniert">Was tun, wenn der relative Mausmodus auf Reolink NVR nicht funktioniert<a class="headerlink" href="#was-tun-wenn-der-relative-mausmodus-auf-reolink-nvr-nicht-funktioniert" title="Permanent link">&para;</a></h1>
+<p>Wenn Sie GL.iNet KVM zur Steuerung eines Reolink NVR verwenden (insbesondere bei Modellen, die keine zwei Mäuse unterstützen) oder bestimmte ältere Computer steuern (z. B. Geräte ohne USB-Schnittstellen), funktioniert der relative Mausmodus möglicherweise nicht. Häufige Probleme sind ein vollständiger Ausfall des Modus oder verfolgbare Mausbewegungen bei nicht reagierenden Klicks.</p>
+<p>Dieses Problem entsteht hauptsächlich durch eine Kompatibilitätseinschränkung zwischen der Maussimulation des KVM und den begrenzten Fähigkeiten von Geräten wie Reolink NVR:</p>
 <ul>
 <li>
-<p><strong>Before firmware v1.4.0</strong>: The KVM was designed to simulate only one mouse. Switching between relative and absolute modes requires you to restart the KVM, but this worked fine with most vintage or specialized devices.</p>
+<p><strong>Vor Firmware v1.4.0</strong>: Das KVM war darauf ausgelegt, nur eine Maus zu simulieren. Beim Wechsel zwischen relativem und absolutem Modus musste das KVM neu gestartet werden, funktionierte aber mit den meisten älteren oder spezialisierten Geräten gut.</p>
 </li>
 <li>
-<p><strong>After firmware v1.4.0</strong>: To enable seamless mode switching without restart, the default logic was updated to simulate two mice simultaneously (one for relative mode, the other for absolute mode). However, Reolink NVR and some vintage computers lack support for dual mice, causing two common issues:</p>
+<p><strong>Nach Firmware v1.4.0</strong>: Um einen nahtlosen Moduswechsel ohne Neustart zu ermöglichen, wurde die Standardlogik so geändert, dass zwei Mäuse gleichzeitig simuliert werden (eine für den relativen Modus, die andere für den absoluten Modus). Reolink NVR und einige ältere Computer unterstützen jedoch keine zwei Mäuse. Dadurch treten zwei typische Probleme auf:</p>
 <ul>
-<li>Relative mouse mode doesn’t work at all;</li>
-<li>Mouse still tracks, but clicking does not respond.</li>
+<li>Der relative Mausmodus funktioniert überhaupt nicht;</li>
+<li>die Mausbewegung wird weiterhin verfolgt, Klicks reagieren jedoch nicht.</li>
 </ul>
 </li>
 </ul>
-<p>To resolve the issue, you can force relative mouse mode in the terminal. Follow these steps:</p>
+<p>Um das Problem zu beheben, können Sie den relativen Mausmodus im Terminal erzwingen. Führen Sie die folgenden Schritte aus:</p>
 <ol>
 <li>
-<p>Access the KVM Console, and navigate to <strong>Toolbox</strong> -&gt; <strong>Terminal</strong>. Click <strong>Access</strong> to enter the KVM terminal.</p>
+<p>Rufen Sie die KVM-Konsole auf und navigieren Sie zu <strong>Toolbox</strong> -&gt; <strong>Terminal</strong>. Klicken Sie auf <strong>Access</strong>, um das KVM-Terminal zu öffnen.</p>
 </li>
 <li>
-<p>Open the configuration file with the following command:</p>
+<p>Öffnen Sie die Konfigurationsdatei mit folgendem Befehl:</p>
 <p><code>vi /etc/kvmd/override.yaml</code></p>
 </li>
 <li>
-<p>Execute the following command to force relative mouse mode:</p>
+<p>Führen Sie die folgende Konfiguration aus, um den relativen Mausmodus zu erzwingen:</p>
 <div class="highlight"><pre><span></span><code>kvmd:
     hid:
         mouse:
@@ -3626,20 +3652,20 @@
 </code></pre></div>
 </li>
 <li>
-<p>Save the file and exit the editor.</p>
+<p>Speichern Sie die Datei und verlassen Sie den Editor.</p>
 </li>
 <li>
-<p>Restart the KVM device to apply the changes.</p>
+<p>Starten Sie das KVM-Gerät neu, damit die Änderungen wirksam werden.</p>
 </li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol>
 <li>
-<p>If the above method does not work, try rolling back your KVM firmware to a version before v1.4 (if available), which supports single mouse emulation and is compatible with older devices.</p>
+<p>Wenn die oben genannte Methode nicht funktioniert, versuchen Sie, die KVM-Firmware auf eine Version vor v1.4 zurückzusetzen (falls verfügbar). Diese unterstützt Ein-Maus-Emulation und ist mit älteren Geräten kompatibel.</p>
 </li>
 <li>
-<p>The standalone GLKVM app for Mac OS does not support relative mouse mode due to browser kernel limitations (lack of requestPointerLock API support). Use the web console instead.</p>
+<p>Die eigenständige GLKVM App für Mac OS unterstützt den relativen Mausmodus aufgrund von Einschränkungen des Browser-Kernels nicht (fehlende Unterstützung für die requestPointerLock API). Verwenden Sie stattdessen die Webkonsole.</p>
 </li>
 </ol>
 </div>
@@ -3671,10 +3697,10 @@
           <div class="pswp__top-bar">
             <!--  Controls are self-explanatory. Order can be changed. -->
             <div class="pswp__counter"></div>
-            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--close" title="Schliessen (Esc)"></button>
             <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
-            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <button class="pswp__button pswp__button--fs" title="Vollbild umschalten"></button>
+            <button class="pswp__button pswp__button--zoom" title="Ein-/Auszoomen"></button>
             <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
             <!-- element will get class pswp__preloader--active when preloader is running -->
             <div class="pswp__preloader">
@@ -3690,10 +3716,10 @@
             <div class="pswp__share-tooltip"></div> 
           </div>
 
-          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          <button class="pswp__button pswp__button--arrow--left" title="Zurueck (Pfeil links)">
           </button>
 
-          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          <button class="pswp__button pswp__button--arrow--right" title="Weiter (Pfeil rechts)">
           </button>
 
           <div class="pswp__caption">

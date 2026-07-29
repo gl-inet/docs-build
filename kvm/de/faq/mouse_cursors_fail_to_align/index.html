@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-should-i-do-if-mouse-cursors-fail-to-align" class="md-skip">
+        <a href="#was-tun-wenn-die-mauszeiger-nicht-deckungsgleich-sind" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -119,6 +119,32 @@
       </div>
     </div>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/kvm/de/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/kvm/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -3593,65 +3619,65 @@
   
 
   <!-- Markdown content -->
-  <h1 id="what-should-i-do-if-mouse-cursors-fail-to-align">What should I do if mouse cursors fail to align<a class="headerlink" href="#what-should-i-do-if-mouse-cursors-fail-to-align" title="Permanent link">&para;</a></h1>
-<p>If the mouse cursor on the controlling device fails to align with the one on the controlled device, follow the troubleshooting steps below.</p>
+  <h1 id="was-tun-wenn-die-mauszeiger-nicht-deckungsgleich-sind">Was tun, wenn die Mauszeiger nicht deckungsgleich sind<a class="headerlink" href="#was-tun-wenn-die-mauszeiger-nicht-deckungsgleich-sind" title="Permanent link">&para;</a></h1>
+<p>Wenn der Mauszeiger auf dem steuernden Gerät nicht mit dem Mauszeiger auf dem gesteuerten Gerät übereinstimmt, führen Sie die folgenden Schritte zur Fehlerbehebung aus.</p>
 <p><img alt="cursor misalignment" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/cursor_misalignment/mouse_cursor.png" /></p>
 <ol>
 <li>
-<p><strong>Confirm whether the issue occurs when the mouse is moving or idle.</strong> </p>
-<p><u>Case 1</u>. If cursors align correctly when the mouse is idle but go out of sync during movement, check the network on both ends and ensure stable connectivity.</p>
-<p>In addition, you can hide the local cursor so that only the remote cursor shows on the control screen, preventing cursor misalignment issues.</p>
-<p>On the KVM console, navigate to <strong>Settings</strong> -&gt; <strong>Remote Device Settings</strong> -&gt; <strong>Show Local Cursor</strong> and disable it.</p>
+<p><strong>Prüfen Sie, ob das Problem während der Mausbewegung oder im Ruhezustand auftritt.</strong></p>
+<p><u>Fall 1</u>. Wenn die Zeiger im Ruhezustand korrekt übereinstimmen, während der Bewegung aber auseinanderlaufen, prüfen Sie das Netzwerk auf beiden Seiten und stellen Sie eine stabile Verbindung sicher.</p>
+<p>Zusätzlich können Sie den lokalen Zeiger ausblenden, sodass auf dem Steuerungsbildschirm nur der Remote-Zeiger angezeigt wird. Dadurch lassen sich Probleme mit versetzten Mauszeigern vermeiden.</p>
+<p>Navigieren Sie in der KVM-Konsole zu <strong>Settings</strong> -&gt; <strong>Remote Device Settings</strong> -&gt; <strong>Show Local Cursor</strong> und deaktivieren Sie diese Option.</p>
 <p><img alt="hide local cursor" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/cursor_misalignment/hide_local_cursor.jpg" /></p>
-<p><u>Case 2</u>. If cursors fail to align even when the mouse is idle, re-select your device type on the KVM console (for Comet Q / GL-RMQ1 only). </p>
+<p><u>Fall 2</u>. Wenn die Zeiger selbst im Ruhezustand nicht übereinstimmen, wählen Sie in der KVM-Konsole den Gerätetyp erneut aus (nur für Comet Q / GL-RMQ1).</p>
 <p><img alt="device type" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/cursor_misalignment/device_type.png" /></p>
-<p>If the problem persists, proceed to the next step.</p>
+<p>Wenn das Problem weiterhin besteht, fahren Sie mit dem nächsten Schritt fort.</p>
 </li>
 <li>
-<p><strong>If the controlled device is a laptop, this is likely caused by incorrect display resolution.</strong> </p>
-<p>Confirm the laptop's screen aspect ratio, then you can either adjust the resolution on the controlled laptop or modify the EDID setting for your KVM device.</p>
+<p><strong>Wenn das gesteuerte Gerät ein Laptop ist, liegt die Ursache wahrscheinlich in einer falschen Bildschirmauflösung.</strong></p>
+<p>Prüfen Sie das Seitenverhältnis des Laptop-Bildschirms. Anschließend können Sie entweder die Auflösung auf dem gesteuerten Laptop anpassen oder die EDID-Einstellung Ihres KVM-Geräts ändern.</p>
 <details class="note">
-<summary>Adjust resolution on the controlled laptop</summary>
-<p><strong>For macOS</strong>:</p>
+<summary>Auflösung auf dem gesteuerten Laptop anpassen</summary>
+<p><strong>Für macOS</strong>:</p>
 <ol>
 <li>
-<p>Go to <strong>Settings</strong> -&gt; <strong>Displays</strong> -&gt; <strong>Optimize for</strong>.</p>
+<p>Gehen Sie zu <strong>Settings</strong> -&gt; <strong>Displays</strong> -&gt; <strong>Optimize for</strong>.</p>
 <p><img alt="mac displays" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/cursor_misalignment/macos1.png" width="582" /></p>
 </li>
 <li>
-<p>Change it to <strong>GLKVM</strong>.</p>
+<p>Ändern Sie die Einstellung auf <strong>GLKVM</strong>.</p>
 <p><img alt="select glkvm" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/cursor_misalignment/macos2.png" width="582" /></p>
 </li>
 <li>
-<p>Choose the corresponding resolution, then check if the mouse cursor can be overlapped.</p>
+<p>Wählen Sie die passende Auflösung aus und prüfen Sie anschließend, ob die Mauszeiger übereinanderliegen.</p>
 <p><img alt="resolution" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/cursor_misalignment/macos3.png" /></p>
 </li>
 </ol>
-<p><strong>For Windows</strong>:</p>
+<p><strong>Für Windows</strong>:</p>
 <ol>
 <li>
-<p>Go to <strong>Settings</strong> -&gt; <strong>System</strong> -&gt; <strong>Displays</strong>.</p>
+<p>Gehen Sie zu <strong>Settings</strong> -&gt; <strong>System</strong> -&gt; <strong>Displays</strong>.</p>
 <p><img alt="windows display" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/cursor_misalignment/windows1.png" /></p>
 </li>
 <li>
-<p>Scroll down to find <strong>Display resolution</strong> and click the box on the right.</p>
+<p>Scrollen Sie nach unten zu <strong>Display resolution</strong> und klicken Sie auf das Feld rechts.</p>
 <p><img alt="display resolution" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/cursor_misalignment/windows2.png" /></p>
 </li>
 <li>
-<p>Select the appropriate display resolution, then click <strong>Keep changes</strong> in the pop-up window to apply it.</p>
+<p>Wählen Sie die passende Bildschirmauflösung aus und klicken Sie im Popup-Fenster auf <strong>Keep changes</strong>, um sie zu übernehmen.</p>
 <p><img alt="display resolution" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/cursor_misalignment/windows3.png" /></p>
 <p><img alt="display resolution" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/cursor_misalignment/windows4.png" /></p>
 </li>
 </ol>
 </details>
 <details class="note">
-<summary>Modify EDID setting for your KVM device</summary>
-<p>EDID, short for Extended Display Identification Data, automatically matches the optimal display parameters. The default EDID is suitable for most scenarios and generally does not need to be modified. See <a href="../../tutorials/how_to_set_edid_for_glkvm/" target="_blank">here</a> for details. </p>
-<p>If the EDID has been changed but the screen does not update, try restarting the controlled device.</p>
+<summary>EDID-Einstellung Ihres KVM-Geräts ändern</summary>
+<p>EDID steht für Extended Display Identification Data und gleicht automatisch die optimalen Anzeigeparameter ab. Die Standard-EDID ist für die meisten Szenarien geeignet und muss normalerweise nicht geändert werden. Details finden Sie <a href="../../tutorials/how_to_set_edid_for_glkvm/" target="_blank">hier</a>.</p>
+<p>Wenn die EDID geändert wurde, der Bildschirm aber nicht aktualisiert wird, versuchen Sie, das gesteuerte Gerät neu zu starten.</p>
 </details>
 </li>
 <li>
-<p><strong>If the controlled device is not a laptop (e.g. desktop PC connected to an external monitor)</strong>, confirm its primary display aspect ratio, then switch the EDID for your KVM accordingly. See <a href="../../tutorials/how_to_set_edid_for_glkvm/" target="_blank">here</a> for details. </p>
+<p><strong>Wenn das gesteuerte Gerät kein Laptop ist (z. B. ein Desktop-PC mit externem Monitor)</strong>, prüfen Sie das Seitenverhältnis der Hauptanzeige und stellen Sie anschließend die EDID Ihres KVM entsprechend um. Details finden Sie <a href="../../tutorials/how_to_set_edid_for_glkvm/" target="_blank">hier</a>.</p>
 </li>
 </ol>
 <hr />
@@ -3682,10 +3708,10 @@
           <div class="pswp__top-bar">
             <!--  Controls are self-explanatory. Order can be changed. -->
             <div class="pswp__counter"></div>
-            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--close" title="Schliessen (Esc)"></button>
             <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
-            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <button class="pswp__button pswp__button--fs" title="Vollbild umschalten"></button>
+            <button class="pswp__button pswp__button--zoom" title="Ein-/Auszoomen"></button>
             <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
             <!-- element will get class pswp__preloader--active when preloader is running -->
             <div class="pswp__preloader">
@@ -3701,10 +3727,10 @@
             <div class="pswp__share-tooltip"></div> 
           </div>
 
-          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          <button class="pswp__button pswp__button--arrow--left" title="Zurueck (Pfeil links)">
           </button>
 
-          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          <button class="pswp__button pswp__button--arrow--right" title="Weiter (Pfeil rechts)">
           </button>
 
           <div class="pswp__caption">
