@@ -4368,6 +4368,23 @@
 </ul>
 <p>In summary, the cellular connection serves as a robust backup network option when Ethernet or Wi-Fi connections are unavailable.</p>
 </li>
+<li>
+<p><strong>WAN Network Detection and Failover</strong></p>
+<ol>
+<li>
+<p>The system uses ping‑based detection, sending probes to all interfaces every <strong>3 seconds</strong> and evaluating failover conditions every <strong>9 seconds</strong>.  </p>
+</li>
+<li>
+<p>If all ping tests to the higher‑priority interface fail within a <strong>9 second</strong> period while the lower‑priority interface remains reachable, a failover is triggered after that period. No failover occurs if all interfaces are unreachable.  </p>
+</li>
+<li>
+<p>Interfaces marked offline continue to receive background ping probes.  </p>
+</li>
+<li>
+<p>Recovery: If the higher‑priority interface becomes ping‑reachable within <strong>9 seconds</strong>, the system switches back to it after that period.</p>
+</li>
+</ol>
+</li>
 </ul>
 <h2 id="toolbox">Toolbox<a class="headerlink" href="#toolbox" title="Permanent link">&para;</a></h2>
 <p>On the console, navigate to <strong>Toolbox</strong>. The toolbox page includes four sections: </p>
