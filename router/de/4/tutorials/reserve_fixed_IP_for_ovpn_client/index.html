@@ -6741,27 +6741,27 @@
 <li>
 <p>Melden Sie sich am webbasierten Admin Panel Ihres OpenVPN-Servers an und navigieren Sie in der linken Seitenleiste zu <strong>VPN</strong> -&gt; <strong>OpenVPN Server</strong>.</p>
 <p>Notieren Sie sich auf der Registerkarte <strong>Configuration</strong> das <strong>IPv4-Subnetz</strong> (z. B. 10.8.0.0/24 wie im folgenden Bild) und stellen Sie den Authentication Mode auf <strong>Username and Password Only</strong> um.</p>
-<p><img alt="ovpn configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/ovpn_server_config.png" /></p>
+<p><img alt="ovpn configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/reserve_fixed_ip_for_ovpn_client/ovpn_server_config.png" /></p>
 </li>
 <li>
 <p>Wechseln Sie zur Registerkarte <strong>Users</strong> und erstellen Sie einen Benutzernamen sowie ein Passwort, wie unten gezeigt.</p>
-<p><img alt="ovpn users" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/ovpn_server_users.png" /></p>
+<p><img alt="ovpn users" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/reserve_fixed_ip_for_ovpn_client/ovpn_server_users.png" /></p>
 </li>
 <li>
 <p>Melden Sie sich per SSH am Router an und führen Sie den folgenden Befehl aus, um die Konfigurationsskriptdatei des OpenVPN-Servers zu öffnen:</p>
 <p><code>vi /lib/netifd/proto/openserver.sh</code></p>
 <p>Prüfen Sie in der geöffneten Datei, ob die Zeile "<em>client-config-dir /etc/openvpn/ccd</em>" im Skript vorhanden ist.</p>
-<p><img alt="check config line" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/check_config_line.png" /></p>
+<p><img alt="check config line" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/reserve_fixed_ip_for_ovpn_client/check_config_line.png" /></p>
 <p>Falls nicht, fügen Sie sie manuell hinzu, speichern Sie die Datei und schließen Sie sie.</p>
 </li>
 <li>
 <p>Wechseln Sie nach <code>/etc/openvpn/</code> und erstellen Sie einen Ordner namens <code>ccd</code> mit <code>mkdir ccd</code>.</p>
-<p><img alt="add ccd folder" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/add_ccd_folder.png" /></p>
+<p><img alt="add ccd folder" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/reserve_fixed_ip_for_ovpn_client/add_ccd_folder.png" /></p>
 </li>
 <li>
 <p>Erstellen Sie eine Datei mit dem Namen <code>GLsupport</code>, tragen Sie <code>ifconfig-push 10.8.0.10 255.255.255.0</code> ein und speichern bzw. schließen Sie die Datei.</p>
 <p>Prüfen Sie den Inhalt mit <code>cat GLsupport</code>.</p>
-<p><img alt="ifconfig-push" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/ifconfig-push.png" /></p>
+<p><img alt="ifconfig-push" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/reserve_fixed_ip_for_ovpn_client/ifconfig-push.png" /></p>
 <ul>
 <li>
 <p>Wenn Sie <code>GLsupport</code> verwenden, um sich mit Ihrem OpenVPN-Server zu verbinden, wird diesem Benutzer <code>GLsupport</code> die feste IP <code>10.8.0.10</code> zugewiesen.</p>
@@ -6776,9 +6776,9 @@
 <li>
 <p>Testen Sie abschließend mit Ihrem OVPN-Client und prüfen Sie, ob die virtuelle Client-IP (IPv4) die reservierte Adresse ist.</p>
 <p>Wenn Ihr OpenVPN-Client zum Beispiel ein GL.iNet-Router ist, können Sie sich am webbasierten Admin Panel des OpenVPN-Client-Routers anmelden und zum VPN Dashboard navigieren, um die virtuelle Client-IP (IPv4) zu prüfen.</p>
-<p><img alt="ovpn client test v4.7" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/ovpn_client_test_4.7.png" />
+<p><img alt="ovpn client test v4.7" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/reserve_fixed_ip_for_ovpn_client/ovpn_client_test_4.7.png" />
 <small>(VPN Dashboard in Firmware v4.7 und früher)</small></p>
-<p><img alt="ovpn client test v4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/ovpn_client_test_4.8.png" />
+<p><img alt="ovpn client test v4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/reserve_fixed_ip_for_ovpn_client/ovpn_client_test_4.8.png" />
 <small>(VPN Dashboard in Firmware v4.8)</small></p>
 </li>
 </ol>
@@ -6808,7 +6808,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19. März 2026 09:51:08 UTC">19. März 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="3. August 2026 06:39:17 UTC">3. August 2026</span>
   </span>
 
     

@@ -6849,30 +6849,30 @@
 <p>Dieses Tutorial beschreibt die Schritte, mit denen Sie von der OpenVPN-Serverseite aus auf das LAN-Subnetz eines OpenVPN-Clients (z. B. NAS, IP-Kamera usw.) zugreifen.</p>
 <h2 id="topologie">Topologie<a class="headerlink" href="#topologie" title="Permanent link">&para;</a></h2>
 <p>Wie unten dargestellt, ist der GL-AXT1800 ein OpenVPN-Server und der GL-MT2500 ein damit verbundener OpenVPN-Client. Sie können von der Serverseite aus auf die Geräte im LAN des GL-MT2500 zugreifen (z. B. NAS oder GL-MT3000 als Unterrouter).</p>
-<p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ovpnlantop.jpg" /></p>
+<p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/openvpn_server-access_client_lan_side/ovpnlantop.jpg" /></p>
 <h2 id="1-routing-regel-auf-dem-server-hinzufugen">1. Routing-Regel auf dem Server hinzufügen<a class="headerlink" href="#1-routing-regel-auf-dem-server-hinzufugen" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Für Firmware v4.7 und früher</summary>
 <p>Melden Sie sich am webbasierten Admin Panel <u>Ihres OpenVPN-Servers</u> an und gehen Sie zu <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Server</strong>.</p>
 <p>Klicken Sie rechts auf das Routing-Symbol, um die Routing-Regeln zu öffnen.</p>
-<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-1.jpg" /></p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-1.jpg" /></p>
 <p>Klicken Sie im Pop-up-Fenster rechts auf <strong>Add Route Rule</strong> und geben Sie das Subnetz ein, auf das Sie zugreifen möchten.</p>
-<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-2.png" /></p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-2.png" /></p>
 <p>Das LAN-Subnetz des OpenVPN-Clients GL-MT2500 ist zum Beispiel <strong>192.168.48.0/24</strong>, daher ist die Target Address <strong>192.168.48.0/24</strong>.</p>
 <p>Gateway ist die Client-IP, die Ihr OpenVPN-Server für diesen OpenVPN-Client erzeugt hat. Hier setzen wir das Gateway auf <strong>10.8.0.1</strong> und klicken anschließend auf <strong>Apply</strong>.</p>
-<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-3.jpg" /></p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/openvpn_server-access_client_lan_side/4.7-ovpn-route-rule-3.jpg" /></p>
 <p>Hinweis: Wenn Sie mehrere OpenVPN-Clients haben, deren LAN-Subnetze erreichbar sein sollen, lesen Sie bitte <a href="../reserve_fixed_IP_for_ovpn_client/">diesen Artikel</a>, um vor dem Setzen der Routing-Regeln für jeden OpenVPN-Client eine feste Client-IP zu reservieren.</p>
 </details>
 <details>
 <summary>Für Firmware v4.8 und höher</summary>
 <p>Melden Sie sich am webbasierten Admin Panel <u>Ihres OpenVPN-Servers</u> an und gehen Sie zu <strong>VPN</strong> -&gt; <strong>OpenVPN Server</strong>.</p>
 <p>Klicken Sie auf die Registerkarte <strong>Route Rules</strong> und anschließend rechts auf <strong>Add Route Rule</strong>.</p>
-<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-1.png" /></p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-1.png" /></p>
 <p>Geben Sie im Pop-up-Fenster das Subnetz ein, auf das Sie zugreifen möchten.</p>
-<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-2.png" /></p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-2.png" /></p>
 <p>Das LAN-Subnetz des OpenVPN-Clients GL-MT2500 ist zum Beispiel <strong>192.168.48.0/24</strong>, daher ist die Target Address <strong>192.168.48.0/24</strong>.</p>
 <p>Gateway ist die Client-IP, die Ihr OpenVPN-Server für diesen OpenVPN-Client erzeugt hat. Hier setzen wir das Gateway auf <strong>10.8.0.2</strong> und klicken anschließend auf <strong>Apply</strong>.</p>
-<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-3.jpg" /></p>
+<p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-3.jpg" /></p>
 <p>Hinweis: Wenn Sie mehrere OpenVPN-Clients haben, deren LAN-Subnetze erreichbar sein sollen, lesen Sie bitte <a href="../reserve_fixed_IP_for_ovpn_client/">diesen Artikel</a>, um vor dem Setzen der Routing-Regeln für jeden OpenVPN-Client eine feste Client-IP zu reservieren.</p>
 </details>
 <h2 id="2-fernzugriff-auf-das-client-lan-erlauben">2. Fernzugriff auf das Client-LAN erlauben<a class="headerlink" href="#2-fernzugriff-auf-das-client-lan-erlauben" title="Permanent link">&para;</a></h2>
@@ -6880,23 +6880,23 @@
 <summary>Für Firmware v4.7 und früher</summary>
 <p>Melden Sie sich am webbasierten Admin Panel <u>Ihres OpenVPN-Clients</u> an und gehen Sie zu <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Client</strong>.</p>
 <p>Klicken Sie auf das Zahnradsymbol, um die Client-Optionen zu öffnen.</p>
-<p><img alt="ovpnclient options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-client-options.png" /></p>
+<p><img alt="ovpnclient options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/openvpn_server-access_client_lan_side/4.7-client-options.png" /></p>
 <p>Aktivieren Sie im Pop-up-Fenster <strong>Remote Access LAN</strong> und klicken Sie anschließend auf <strong>Apply</strong>.</p>
-<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.7-allow-remote-access-lan.jpg" /></p>
+<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/openvpn_server-access_client_lan_side/4.7-allow-remote-access-lan.jpg" /></p>
 </details>
 <details>
 <summary>Für Firmware v4.8 und höher</summary>
 <p>Melden Sie sich am webbasierten Admin Panel <u>Ihres OpenVPN-Clients</u> an und gehen Sie zu <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>.</p>
 <p>Klicken Sie oben links an Ihrem VPN-Tunnel auf das Zahnradsymbol, um die Tunnel-Optionen zu öffnen.</p>
-<p><img alt="ovpnclient options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-client-tunnel-options.png" /></p>
+<p><img alt="ovpnclient options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/openvpn_server-access_client_lan_side/4.8-client-tunnel-options.png" /></p>
 <p>Aktivieren Sie im Pop-up-Fenster <strong>Allow Remote Access the LAN Subnet</strong> und klicken Sie anschließend auf <strong>Apply</strong>.</p>
-<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-allow-remote-access-lan.png" /></p>
+<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/openvpn_server-access_client_lan_side/4.8-allow-remote-access-lan.png" /></p>
 </details>
 <h2 id="3-verbindung-testen">3. Verbindung testen<a class="headerlink" href="#3-verbindung-testen" title="Permanent link">&para;</a></h2>
 <p>Hier sehen Sie ein Beispiel für den Zugriff auf den GL-MT3000 (ein Gerät im LAN des OpenVPN-Clients) mit der IP <strong>192.168.48.211</strong>.</p>
 <p>Pingen Sie auf einem Gerät, das mit Ihrem OpenVPN-Server verbunden ist, die IP-Adresse des GL-MT3000 <strong>192.168.48.211</strong> an. Dies ist die IP-Adresse, die der OpenVPN-Client (GL-MT2500) dem GL-MT3000 in seinem LAN zuweist.</p>
 <p>Wenn der Ping erfolgreich ist, sind die Einstellungen korrekt. Sie können dann über deren IP-Adressen auf alle weiteren Geräte im LAN-Subnetz des OpenVPN-Clients zugreifen.</p>
-<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ping-test.jpg" /></p>
+<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/openvpn_server-access_client_lan_side/ping-test.jpg" /></p>
 <hr />
 <p>Haben Sie noch Fragen? Besuchen Sie unser <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> oder <a href="https://www.gl-inet.com/contacts/" target="_blank">kontaktieren Sie uns</a>.</p>
 
@@ -6923,7 +6923,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19. März 2026 09:51:08 UTC">19. März 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="3. August 2026 06:39:17 UTC">3. August 2026</span>
   </span>
 
     

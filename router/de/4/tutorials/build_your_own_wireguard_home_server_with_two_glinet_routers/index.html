@@ -7050,7 +7050,7 @@
 <h3 id="prufen-ob-sie-eine-offentliche-ip-haben">Prüfen, ob Sie eine öffentliche IP haben<a class="headerlink" href="#prufen-ob-sie-eine-offentliche-ip-haben" title="Permanent link">&para;</a></h3>
 <p>Stellen Sie zunächst sicher, dass der GL-MT6000 auf seiner WAN-Seite eine öffentliche IP-Adresse hat, damit er weltweit erreichbar ist. Andernfalls kann Ihr Reiserouter während der Reise keine VPN-Verbindung mit ihm aufbauen.</p>
 <p>Um zu prüfen, ob Sie eine öffentliche IP-Adresse haben, öffnen Sie bitte einen Webbrowser und geben Sie <a href="https://whatismyipaddress.com/" target="_blank">what is my ip</a> in die Adresszeile ein.</p>
-<p><img alt="whatismyip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/whatismyip.jpg" /></p>
+<p><img alt="whatismyip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/whatismyip.jpg" /></p>
 <p>Dort wird Ihre öffentliche IP-Adresse angezeigt. Wenn sie mit der WAN-IP übereinstimmt, die Ihr ISP dem GL-MT6000 zuweist, verfügen Sie über eine öffentliche IP-Adresse.</p>
 <p>Wenn Sie keine öffentliche IP-Adresse haben, finden Sie hier einige mögliche Lösungen.</p>
 <ol>
@@ -7072,10 +7072,10 @@
 <p>Wählen Sie in der linken Seitenleiste INTERNET. Prüfen Sie dort die Topologie und die Verbindungsdetails:</p>
 <p>Bei einer direkten Ethernet-Verbindung sehen Sie einen Abschnitt mit dem Namen „Ethernet“ samt Details wie Protokoll, IP-Adresse, Gateway usw.</p>
 <p>Im folgenden Bild ist die markierte IP Address die WAN-IP, die der ISP diesem GL.iNet-Router zuweist.</p>
-<p><img alt="mt6000-home" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/mt6000_home.png" /></p>
+<p><img alt="mt6000-home" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/mt6000_home.png" /></p>
 <p>Diese WAN-IP ist eine öffentliche IP-Adresse. Daher hat dieser GL.iNet-Router als Hauptrouter eine öffentliche IP und <strong>es ist keine Portweiterleitung erforderlich</strong>.</p>
 <p>Sie müssen diesen GL.iNet-Router lediglich als WireGuard-Server einrichten und einen Reiserouter als WireGuard-Client damit verbinden. Dann wird zwischen beiden ein VPN-Tunnel aufgebaut.</p>
-<p><img alt="topologywg" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/topologywg.jpg" /></p>
+<p><img alt="topologywg" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/topologywg.jpg" /></p>
 </li>
 </ol>
 </details>
@@ -7083,10 +7083,10 @@
 <summary>GL.iNet als Unterrouter</summary>
 <p>Richten Sie auf Ihrem Hauptrouter eine <strong>Port Forwarding</strong>-Regel für den GL.iNet-Router ein, wenn dieser sich hinter NAT befindet.</p>
 <p>Topologie</p>
-<p><img alt="togologywgtp" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/topologywgtp.jpg" /></p>
+<p><img alt="togologywgtp" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/topologywgtp.jpg" /></p>
 <p>Beispiel: Ein TP-Link-Router als Hauptrouter zu Hause.</p>
 <p>Verbinden Sie sich mit dem Wi-Fi oder LAN Ihres Heimrouters. Melden Sie sich dann am webbasierten Admin Panel an und prüfen Sie die WAN-IP-Adresse, die er von Ihrem ISP erhält. Im folgenden Bild sehen Sie, dass Ihre öffentliche IP <strong>42.200.00.00</strong> ist.</p>
-<p><img alt="tp_home" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/tp_home.png" /></p>
+<p><img alt="tp_home" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/tp_home.png" /></p>
 <p><strong>Bevor Sie die Portweiterleitung einrichten, empfehlen wir, auf Ihrem Hauptrouter eine IP-Adresse für den GL.iNet-Router zu reservieren, damit diesem eine feste IP zugewiesen wird.</strong> Andernfalls kann der Hauptrouter dem GL.iNet-Router nach einem Neustart eine andere IP zuweisen, wodurch die Portweiterleitungsregel ungültig wird.</p>
 <p>Richten Sie anschließend die Portweiterleitung auf Ihrem Hauptrouter für den GL.iNet-Router ein.</p>
 <ol>
@@ -7103,7 +7103,7 @@
 <p>Protocol: Sie können „All“ oder „UDP“ oder „TCP/UDP“ wählen.</p>
 </li>
 </ol>
-<p><img alt="tp_port1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/tp_port1.jpg" /></p>
+<p><img alt="tp_port1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/tp_port1.jpg" /></p>
 <p><strong>Weitere Beispiele für <a href="../how_to_set_up_port_forwarding/">Port Forward</a></strong></p>
 </details>
 <h2 id="wireguard-server-einrichten">WireGuard-Server einrichten<a class="headerlink" href="#wireguard-server-einrichten" title="Permanent link">&para;</a></h2>
@@ -7111,49 +7111,49 @@
 <p>Aktivieren Sie die DDNS-Funktion, wenn Sie keine statische öffentliche IP, sondern nur eine dynamische öffentliche IP haben.</p>
 <p>Melden Sie sich am webbasierten Admin Panel des GL-MT6000 an und gehen Sie zu <strong>APPLICATIONS</strong> -&gt; <strong>Dynamic DNS</strong>. Aktivieren Sie den Schalter für <strong>Enable DDNS</strong>.</p>
 <p>Aktivieren Sie das Kontrollkästchen für <strong>Terms of Service &amp; Privacy Policy</strong> und klicken Sie auf <strong>Apply</strong>.</p>
-<p><img alt="ddnsapply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/enable_ddns.jpg" /></p>
+<p><img alt="ddnsapply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/enable_ddns.jpg" /></p>
 <p>Gehen Sie dann zu <strong>WireGuard Server</strong> -&gt; Registerkarte Configuration, stellen Sie sicher, dass der Listening-Port 51820 ist, und klicken Sie auf <strong>Apply</strong>.</p>
-<p><img alt="wgserver" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgserver-apply.png" /></p>
+<p><img alt="wgserver" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/wgserver-apply.png" /></p>
 <h3 id="konfiguration-erzeugen">Konfiguration erzeugen<a class="headerlink" href="#konfiguration-erzeugen" title="Permanent link">&para;</a></h3>
 <p>Klicken Sie auf derselben Seite auf die Registerkarte <strong>Profiles</strong> neben Configuration und dann auf <strong>Add</strong> (im folgenden Bild mit 1 markiert).</p>
 <p>Dadurch wird automatisch eine Client-Konfiguration erzeugt. Klicken Sie auf das <strong>Weiterleitungs-Symbol</strong> (mit 2 markiert).</p>
 <p>Aktivieren Sie im Pop-up-Fenster per Schieberegler die DDNS-Domain (mit 3 markiert; dies ist optional und nur bei dynamischer öffentlicher IP erforderlich).</p>
-<p><img alt="wgservergen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgconfiggen.jpg" /></p>
+<p><img alt="wgservergen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/wgconfiggen.jpg" /></p>
 <p>Anschließend können Sie den QR-Code mit der WireGuard-<a href="https://www.wireguard.com/install/">Mobil-App</a> scannen, um den Server zu testen. Details finden Sie <a href="../../interface_guide/wireguard_server/#check-if-wireguard-server-is-working-properly">hier</a>.</p>
 <p>Alternativ können Sie eine Konfiguration im Textformat für die VPN-Client-Verbindung exportieren.</p>
 <p>Wechseln Sie von der QR-Code-Ansicht zur Textansicht, indem Sie auf die Registerkarte <strong>Configuration File</strong> klicken.</p>
 <p>Kopieren Sie den Text für den Client oder klicken Sie auf Download und speichern Sie die Datei zur späteren Verwendung.</p>
-<p><img alt="configload" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/configload.jpg" /></p>
+<p><img alt="configload" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/configload.jpg" /></p>
 <h2 id="wireguard-client-einrichten">WireGuard-Client einrichten<a class="headerlink" href="#wireguard-client-einrichten" title="Permanent link">&para;</a></h2>
 <h3 id="lan-ip-andern">LAN-IP ändern<a class="headerlink" href="#lan-ip-andern" title="Permanent link">&para;</a></h3>
 <p>Da in diesem Tutorial GL-MT6000 und GL-MT3000 verwendet werden und beide standardmäßig die LAN-IP <strong>192.168.8.1</strong> haben, müssen wir eine davon auf eine andere LAN-IP ändern, um Konflikte zu vermeiden.</p>
 <p>Hier sind die Schritte zum Ändern der LAN-IP des GL-MT3000 (des WireGuard-Clients).</p>
 <p>Melden Sie sich am webbasierten Admin Panel des GL-MT3000 an und gehen Sie in der linken Seitenleiste zu <strong>NETWORK</strong> -&gt; <strong>LAN</strong>, um die LAN-IP zu ändern. Zum Beispiel können Sie die LAN-IP von der Standardadresse <code>192.168.8.1</code> auf <code>192.168.10.1</code> ändern.</p>
-<p><img alt="change lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/change_lan_ip.png" /></p>
+<p><img alt="change lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/change_lan_ip.png" /></p>
 <p>Weitere Informationen zur LAN-Schnittstelle finden Sie <a href="../../interface_guide/lan/">hier</a>.</p>
 <h3 id="konfiguration-hinzufugen">Konfiguration hinzufügen<a class="headerlink" href="#konfiguration-hinzufugen" title="Permanent link">&para;</a></h3>
 <p>Gehen Sie im webbasierten Admin Panel des GL-MT3000 zu <strong>VPN</strong> -&gt; <strong>WireGuard Client</strong> und klicken Sie auf <strong>Add Manually</strong>.</p>
-<p><img alt="addwgclient1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/addwgclient-1.png" /></p>
+<p><img alt="addwgclient1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/addwgclient-1.png" /></p>
 <p>Erstellen Sie links eine Gruppe und vergeben Sie einen Namen. Wählen Sie dann die hochzuladende Konfigurationsdatei aus oder ziehen Sie sie in das Upload-Feld auf der rechten Seite.</p>
-<p><img alt="addwgclient2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/addwgclient-2.png" /></p>
+<p><img alt="addwgclient2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/addwgclient-2.png" /></p>
 <p>Sobald die Datei die Prüfung bestanden hat, klicken Sie auf <strong>Apply</strong>.</p>
-<p><img alt="addwgclient3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/addwgclient-3.png" /></p>
+<p><img alt="addwgclient3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/addwgclient-3.png" /></p>
 <p>Sie können auch auf <strong>Manually Add Configuration</strong> klicken, den Konfigurationstext einfügen und dann auf <strong>Apply</strong> klicken.</p>
-<p><img alt="addwgclient4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/addwgclient-4.png" /></p>
-<p><img alt="addwgclient5" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/addwgclient-5.jpg" /></p>
+<p><img alt="addwgclient4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/addwgclient-4.png" /></p>
+<p><img alt="addwgclient5" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/addwgclient-5.jpg" /></p>
 <p>Die Konfigurationsdatei wird auf der Seite WireGuard Client angezeigt, sobald sie erfolgreich hochgeladen wurde.</p>
-<p><img alt="addwgclient6" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/addwgclient-6.png" /></p>
+<p><img alt="addwgclient6" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/addwgclient-6.png" /></p>
 <h3 id="verbindung-starten">Verbindung starten<a class="headerlink" href="#verbindung-starten" title="Permanent link">&para;</a></h3>
 <p>Klicken Sie auf das Drei-Punkte-Symbol und dann auf <strong>Start</strong>.</p>
-<p><img alt="wgstart" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgclientstart.png" /></p>
+<p><img alt="wgstart" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/wgclientstart.png" /></p>
 <p>Warten Sie einige Minuten. Sobald die Verbindung erfolgreich hergestellt ist, leuchtet ein grüner Punkt auf.</p>
-<p><img alt="wgconnected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgclient_connected.png" /></p>
+<p><img alt="wgconnected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/wgclient_connected.png" /></p>
 <p>Wechseln Sie zum <strong>VPN Dashboard</strong>. Dort sehen Sie, dass Ihr Client sich mit Ihrer öffentlichen Heim-IP-Adresse mit dem Server verbindet. Die Seite kann je nach Firmware-Version leicht abweichen.</p>
-<p><img alt="clientup" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgclientup.jpg" /></p>
+<p><img alt="clientup" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/wgclientup.jpg" /></p>
 <p>Melden Sie sich erneut am webbasierten Admin Panel des GL-MT6000 (dem WireGuard-Server) an und gehen Sie zu <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong> (oder zu <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>, wenn Sie Firmware v4.7 oder älter verwenden). Dort sehen Sie ebenfalls den Verbindungsstatus, der anzeigt, dass der Client verbunden ist.</p>
-<p><img alt="servercon" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgservercon-4.8.png" />
+<p><img alt="servercon" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/wgservercon-4.8.png" />
 <small>(WireGuard-Server-Seite in FW v4.8)</small></p>
-<p><img alt="servercon" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgservercon-4.7.jpg" />
+<p><img alt="servercon" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/build_your_own_wireguard_server/wgservercon-4.7.jpg" />
 <small>(VPN-Dashboard-Seite in FW v4.7 und früher)</small></p>
 <h2 id="vorbereitung-fur-spatere-vpn-fehlerbehebung-aus-der-ferne">Vorbereitung für spätere VPN-Fehlerbehebung aus der Ferne<a class="headerlink" href="#vorbereitung-fur-spatere-vpn-fehlerbehebung-aus-der-ferne" title="Permanent link">&para;</a></h2>
 <p>Für den Fall unvorhergesehener Probleme während der Reise sollten Sie beide Router vorab mit Ihrem GoodCloud-Konto verknüpfen, damit eine VPN-Fehlerbehebung aus der Ferne möglich ist.</p>
@@ -7189,7 +7189,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="25. Mai 2026 01:02:11 UTC">25. Mai 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="3. August 2026 06:39:17 UTC">3. August 2026</span>
   </span>
 
     

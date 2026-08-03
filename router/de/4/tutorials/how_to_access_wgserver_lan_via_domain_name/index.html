@@ -6933,59 +6933,59 @@
 <p>Dieses Tutorial erklärt, wie Sie vom Client aus per Domainnamen auf Heimgeräte (z. B. NAS, IP-Kamera usw.) im LAN des WireGuard-Servers zugreifen.</p>
 <h2 id="topologie">Topologie<a class="headerlink" href="#topologie" title="Permanent link">&para;</a></h2>
 <p>Wie unten dargestellt, können Sie von einem PC im LAN des Clients aus per jeweiligem Domainnamen auf Geräte wie NAS oder IP-Kamera im LAN des WireGuard-Servers zugreifen.</p>
-<p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/topology_be9300_be3600.png" /></p>
+<p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/topology_be9300_be3600.png" /></p>
 <h2 id="einrichtungsschritte">Einrichtungsschritte<a class="headerlink" href="#einrichtungsschritte" title="Permanent link">&para;</a></h2>
 <h3 id="1-hosts-auf-dem-server-bearbeiten-optional">1. Hosts auf dem Server bearbeiten (optional)<a class="headerlink" href="#1-hosts-auf-dem-server-bearbeiten-optional" title="Permanent link">&para;</a></h3>
 <p>Dieser Schritt gilt, wenn Ihr VPN-Server lokale Domainnamen nicht korrekt auflösen kann. Wenn Sie sich nicht sicher sind, überspringen Sie diesen Schritt.</p>
 <p>Melden Sie sich am webbasierten Admin Panel Ihres VPN-Server-Routers an und navigieren Sie zu <strong>NETWORK</strong> -&gt; <strong>DNS</strong> -&gt; <strong>Edit Hosts</strong>.</p>
-<p><img alt="edit hosts" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/edit_hosts.png" /></p>
+<p><img alt="edit hosts" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/edit_hosts.png" /></p>
 <p>Geben Sie die IP-Adresse und den Domainnamen der Heimgeräte ein, auf die Sie zugreifen möchten, und klicken Sie anschließend auf <strong>Apply</strong>.</p>
-<p><img alt="input ip domain" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/input_ip_domain.png" /></p>
+<p><img alt="input ip domain" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/input_ip_domain.png" /></p>
 <h3 id="2-fernzugriff-auf-das-lan-auf-dem-server-erlauben">2. Fernzugriff auf das LAN auf dem Server erlauben<a class="headerlink" href="#2-fernzugriff-auf-das-lan-auf-dem-server-erlauben" title="Permanent link">&para;</a></h3>
 <details>
 <summary>Für Server-Router mit Firmware v4.8</summary>
 <p>Navigieren Sie im webbasierten Admin Panel des Servers zu <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong>. Klicken Sie oben rechts auf <strong>Options</strong>.</p>
-<p><img alt="server options 4.8" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/server_options_4.8.png" /></p>
+<p><img alt="server options 4.8" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/server_options_4.8.png" /></p>
 <p>Aktivieren Sie <strong>Allow Remote Access the LAN Subnet</strong> und klicken Sie auf <strong>Apply</strong>.</p>
-<p><img alt="server allow access lan 4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/server-allow-access-lan-4.8.png" /></p>
+<p><img alt="server allow access lan 4.8" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/server-allow-access-lan-4.8.png" /></p>
 <p><strong>Wenn diese Option aktiviert ist, kann per VPN aus der Ferne auf diesen Router und die LAN-Geräte zugegriffen werden.</strong></p>
 </details>
 <details>
 <summary>Für Server-Router mit Firmware v4.7 und früher</summary>
 <p>Navigieren Sie im webbasierten Admin Panel des Servers zu <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; Abschnitt <strong>VPN Server</strong>. Klicken Sie auf der rechten Seite des WireGuard-Servers auf das Zahnradsymbol.</p>
-<p><img alt="server options 4.7" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/server_options_4.7.png" /></p>
+<p><img alt="server options 4.7" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/server_options_4.7.png" /></p>
 <p>Aktivieren Sie <strong>Remote Access LAN</strong> und klicken Sie auf <strong>Apply</strong>.</p>
-<p><img alt="server allow access lan 4.7" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/server-allow-access-lan-4.7.png" /></p>
+<p><img alt="server allow access lan 4.7" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/server-allow-access-lan-4.7.png" /></p>
 <p><strong>Wenn diese Option aktiviert ist, kann per VPN aus der Ferne auf diesen Router und die LAN-Geräte zugegriffen werden.</strong></p>
 </details>
 <h3 id="3-vpn-konfiguration-exportieren">3. VPN-Konfiguration exportieren<a class="headerlink" href="#3-vpn-konfiguration-exportieren" title="Permanent link">&para;</a></h3>
 <p>Navigieren Sie im Admin Panel des Servers zu <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong> -&gt; Registerkarte <strong>Profiles</strong> und klicken Sie auf <strong>Add</strong>, um ein Konfigurationsprofil zu exportieren.</p>
-<p><img alt="export config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/export_config.png" /></p>
+<p><img alt="export config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/export_config.png" /></p>
 <p>Anschließend erhalten Sie eine <strong>.conf</strong>-Datei, wie unten gezeigt.</p>
-<p><img alt="downloads" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/downloads.png" /></p>
+<p><img alt="downloads" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/downloads.png" /></p>
 <p>Öffnen Sie diese Datei. Stellen Sie sicher, dass das DNS-Feld in der Datei auf die Tunnel-IP des Servers verweist, die wie unten gezeigt auf der Registerkarte <strong>Configuration</strong> der Seite WireGuard Server angezeigt wird. Löschen Sie außerdem gegebenenfalls <code>64.6.64.6</code> aus dem DNS-Feld, um Fehler bei der DNS-Auflösung zu vermeiden.</p>
-<p><img alt="dns field" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/dns_field.png" /></p>
-<p><img alt="wg tunnel ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/wg_tunnel_ip.png" /></p>
+<p><img alt="dns field" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/dns_field.png" /></p>
+<p><img alt="wg tunnel ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/wg_tunnel_ip.png" /></p>
 <p><strong>Hinweis</strong>: Die Tunnel-IP des WireGuard-Servers unterscheidet sich je nach Firmware-Version. Prüfen Sie bitte die Tunnel-IP Ihres Servers.</p>
 <h3 id="4-vpn-server-aktivieren">4. VPN-Server aktivieren<a class="headerlink" href="#4-vpn-server-aktivieren" title="Permanent link">&para;</a></h3>
 <p>Klicken Sie auf der Seite <strong>WireGuard Server</strong> oben rechts auf die Schaltfläche <strong>Start</strong>, um den Server zu starten.</p>
-<p><img alt="start server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/start_server.png" /></p>
+<p><img alt="start server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/start_server.png" /></p>
 <h3 id="5-vpn-konfiguration-hochladen">5. VPN-Konfiguration hochladen<a class="headerlink" href="#5-vpn-konfiguration-hochladen" title="Permanent link">&para;</a></h3>
 <p>Melden Sie sich am webbasierten Admin Panel Ihres VPN-Client-Routers an, navigieren Sie zu <strong>VPN</strong> -&gt; <strong>WireGuard Client</strong> und klicken Sie dann auf <strong>Add Manually</strong>.</p>
-<p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/wgclient_add_manually.png" /></p>
+<p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/wgclient_add_manually.png" /></p>
 <p>Erstellen Sie einen Namen für diese Gruppe und laden Sie die Konfigurationsdatei hoch.</p>
-<p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/wgclient_add_manually-2.png" /></p>
+<p><img alt="add manually" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/wgclient_add_manually-2.png" /></p>
 <p>Der Upload war erfolgreich. Klicken Sie auf <strong>Apply</strong>.</p>
-<p><img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/wgclient_add_apply.png" /></p>
+<p><img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/wgclient_add_apply.png" /></p>
 <p>Die Konfigurationsdatei wird nun hier aufgelistet.</p>
-<p><img alt="applied" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/wgclient_add_applied.png" /></p>
+<p><img alt="applied" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/wgclient_add_applied.png" /></p>
 <h3 id="6-vpn-client-verbindung-starten">6. VPN-Client-Verbindung starten<a class="headerlink" href="#6-vpn-client-verbindung-starten" title="Permanent link">&para;</a></h3>
 <p>Klicken Sie auf das Drei-Punkte-Symbol, um die VPN-Verbindung zu starten.</p>
-<p><img alt="start client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/start_client.png" /></p>
+<p><img alt="start client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/start_client.png" /></p>
 <p>Wenn der graue Punkt grün wird, hat sich der WireGuard-Client erfolgreich mit dem Server verbunden.</p>
-<p><img alt="wgclient connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/wg_client_connected.png" /></p>
+<p><img alt="wgclient connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/wg_client_connected.png" /></p>
 <p>Jetzt können Sie von einem PC im LAN des Clients per Domainnamen auf Ihre Heimgeräte (z. B. NAS) im LAN des Servers zugreifen.</p>
-<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/access_server_lan_via_domain_names/ping_nas.png" /></p>
+<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/access_server_lan_via_domain_names/ping_nas.png" /></p>
 <hr />
 <p>Haben Sie noch Fragen? Besuchen Sie unser <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> oder <a href="https://www.gl-inet.com/contacts/" target="_blank">kontaktieren Sie uns</a>.</p>
 
@@ -7012,7 +7012,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19. März 2026 09:51:08 UTC">19. März 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="3. August 2026 06:39:17 UTC">3. August 2026</span>
   </span>
 
     

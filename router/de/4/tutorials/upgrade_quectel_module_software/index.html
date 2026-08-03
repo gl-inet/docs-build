@@ -6894,7 +6894,7 @@
 </li>
 <li>
 <p>Melden Sie sich im Web-Admin-Panel Ihres Routers an, gehen Sie zu <strong>SYSTEM</strong> -&gt; <strong>Upgrade</strong> -&gt; <strong>Module Local Upgrade</strong> und laden Sie die Modul-Firmware (im <code>.zip</code>-Format) hoch.</p>
-<p><img alt="Lokales Modul-Upgrade" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/upgrade_quectel_module_software/modem_local_upgrade.png" /></p>
+<p><img alt="Lokales Modul-Upgrade" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/upgrade_quectel_module_software/modem_local_upgrade.png" /></p>
 </li>
 </ol>
 <p><strong>Methode 2. Upgrade per SSH</strong></p>
@@ -6907,24 +6907,24 @@
 <p>Geben Sie den folgenden Befehl ein, um die Modul-Firmware herunterzuladen.</p>
 <div class="highlight"><pre><span></span><code>wget https://fw.gl-inet.com/download/RM520GL-modem_firmware/RM520NGLAAR03A03M4G_01.201.01.201.zip -P /
 </code></pre></div>
-<p><img alt="Modul-Firmware herunterladen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/upgrade_quectel_module_software/x3000_xe3000/download_firmware.png" /></p>
+<p><img alt="Modul-Firmware herunterladen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/upgrade_quectel_module_software/x3000_xe3000/download_firmware.png" /></p>
 </li>
 <li>
 <p>Geben Sie den folgenden Befehl ein, um die Modul-Firmware zu entpacken.</p>
 <div class="highlight"><pre><span></span><code>unzip /RM520NGLAAR03A03M4G_01.201.01.201.zip -d /RM520NGLAAR03A03M4G_01.201.01.201
 </code></pre></div>
-<p><img alt="Modul-Firmware entpacken" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/upgrade_quectel_module_software/x3000_xe3000/unzip_firmware.png" /></p>
+<p><img alt="Modul-Firmware entpacken" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/upgrade_quectel_module_software/x3000_xe3000/unzip_firmware.png" /></p>
 </li>
 <li>
 <p>Aktualisieren Sie die Modul-Firmware mit dem Befehl <code>QFirehose</code>, wie unten gezeigt.</p>
 <p><strong>Hinweis</strong>: Ersetzen Sie bitte "/RM520NGLAAR03A03M4G_01.201.01201" durch den tatsächlichen Ordnerpfad der Modul-Firmware.</p>
 <div class="highlight"><pre><span></span><code>QFirehose-mtk7981a-sha256-c0b944 -f /RM520NGLAAR03A03M4G_01.201.01.201
 </code></pre></div>
-<p><img alt="Upgrade über QFirehose" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/upgrade_quectel_module_software/x3000_xe3000/upgrade_via_qfirehose.png" /></p>
+<p><img alt="Upgrade über QFirehose" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/upgrade_quectel_module_software/x3000_xe3000/upgrade_via_qfirehose.png" /></p>
 </li>
 <li>
 <p>Warten Sie einige Minuten. Nach Abschluss des Upgrades zeigt das System "Upgrade module successfully" an.</p>
-<p><img alt="Upgrade erfolgreich" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/upgrade_quectel_module_software/x3000_xe3000/upgrade_success.png" /></p>
+<p><img alt="Upgrade erfolgreich" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/upgrade_quectel_module_software/x3000_xe3000/upgrade_success.png" /></p>
 </li>
 <li>
 <p>Starten Sie Ihren Router neu und melden Sie sich anschließend erneut per SSH am Router an.</p>
@@ -6933,7 +6933,7 @@
 <p>Führen Sie den folgenden Befehl aus, um zusätzlich zu prüfen, ob das Modul-Upgrade erfolgreich war.</p>
 <div class="highlight"><pre><span></span><code>gl_modem -B 0001:01:00.0 AT AT+QGMR
 </code></pre></div>
-<p><img alt="Version prüfen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/upgrade_quectel_module_software/x3000_xe3000/check_module_version.png" /></p>
+<p><img alt="Version prüfen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/upgrade_quectel_module_software/x3000_xe3000/check_module_version.png" /></p>
 </li>
 </ol>
 <h3 id="fur-gl-mifigl-xe300gl-x750gl-e750">Für GL-MiFi/GL-XE300/GL-X750/GL-E750<a class="headerlink" href="#fur-gl-mifigl-xe300gl-x750gl-e750" title="Permanent link">&para;</a></h3>
@@ -6947,11 +6947,11 @@
 </li>
 <li>
 <p>Geben Sie den Befehl <code>df - h</code> ein, um den Einhängepfad des USB-Sticks zu prüfen, und notieren Sie sich den Pfad.</p>
-<p><img alt="Einhängepfad prüfen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/upgrade_quectel_module_software/other_model/check_mounting_path.png" /></p>
+<p><img alt="Einhängepfad prüfen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/upgrade_quectel_module_software/other_model/check_mounting_path.png" /></p>
 </li>
 <li>
 <p>Geben Sie den Befehl <code>ls -l</code> ein, um den Ordner der Modul-Firmware zu prüfen.</p>
-<p><img alt="Firmware-Ordner prüfen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/upgrade_quectel_module_software/other_model/check_firmware_folder.png" /></p>
+<p><img alt="Firmware-Ordner prüfen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/upgrade_quectel_module_software/other_model/check_firmware_folder.png" /></p>
 </li>
 <li>
 <p>Geben Sie den folgenden Befehl ein, um <code>QFirehose</code> vom GL.iNet-Server abzurufen.</p>
@@ -6960,18 +6960,18 @@
 <p>Gewähren Sie der Datei anschließend Ausführungsrechte.</p>
 <div class="highlight"><pre><span></span><code>chmod 775 /usr/bin/QFirehose-ar9531
 </code></pre></div>
-<p><img alt="QFirehose abrufen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/upgrade_quectel_module_software/other_model/obtain_qfirehose.jpg" /></p>
+<p><img alt="QFirehose abrufen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/upgrade_quectel_module_software/other_model/obtain_qfirehose.jpg" /></p>
 </li>
 <li>
 <p>Aktualisieren Sie die Modul-Firmware mit dem Befehl <code>QFirehose</code>, wie unten gezeigt.</p>
 <p><strong>Hinweis</strong>: Ersetzen Sie bitte "/mnt/sdb1/EM060KGLAAR01A12M2GA" durch den tatsächlichen Ordnerpfad der Modul-Firmware.</p>
 <div class="highlight"><pre><span></span><code>/usr/bin/QFirehose-ar9531 -f /mnt/sdb1/EM060KGLAAR01A12M2GA
 </code></pre></div>
-<p><img alt="Upgrade über QFirehose" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/upgrade_quectel_module_software/other_model/upgrade_via_qfirehose.png" /></p>
+<p><img alt="Upgrade über QFirehose" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/upgrade_quectel_module_software/other_model/upgrade_via_qfirehose.png" /></p>
 </li>
 <li>
 <p>Warten Sie einige Minuten. Nach Abschluss des Upgrades zeigt das System "Upgrade module successfully" an.</p>
-<p><img alt="Upgrade erfolgreich" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/upgrade_quectel_module_software/other_model/upgrade_success.png" /></p>
+<p><img alt="Upgrade erfolgreich" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/upgrade_quectel_module_software/other_model/upgrade_success.png" /></p>
 </li>
 <li>
 <p>Starten Sie Ihren Router neu und melden Sie sich anschließend erneut per SSH an Ihrem Router an.</p>
@@ -6980,7 +6980,7 @@
 <p>Führen Sie den folgenden Befehl aus, um zusätzlich zu prüfen, ob das Modul-Upgrade erfolgreich war.</p>
 <p><div class="highlight"><pre><span></span><code>gl_modem AT AT+QGMR
 </code></pre></div>
-<img alt="Modulversion prüfen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/upgrade_quectel_module_software/other_model/check_module_version.png" /></p>
+<img alt="Modulversion prüfen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/upgrade_quectel_module_software/other_model/check_module_version.png" /></p>
 </li>
 </ol>
 <h2 id="download-urls-fur-quectel-modul-firmware">Download-URLs für Quectel-Modul-Firmware<a class="headerlink" href="#download-urls-fur-quectel-modul-firmware" title="Permanent link">&para;</a></h2>
@@ -7014,7 +7014,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11. Juni 2026 09:55:13 UTC">11. Juni 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="3. August 2026 06:39:17 UTC">3. August 2026</span>
   </span>
 
     

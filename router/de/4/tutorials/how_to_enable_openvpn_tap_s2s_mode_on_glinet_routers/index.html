@@ -6832,44 +6832,30 @@
 <p>Nach dem Aktivieren des TAP-S2S-Modus kann das OpenVPN-Client-Gerät per Fernzugriff auf das OpenVPN-Server-Gerät zugreifen, und das OpenVPN-Server-Gerät kann ebenfalls per Fernzugriff auf das OpenVPN-Client-Gerät zugreifen. Der Nachteil dabei ist jedoch, dass die vom OpenVPN-Client selbst festgelegten VPN-Regeln nach dem Aktivieren des TAP-S2S-Modus nicht mehr wirksam sind.</p>
 <h2 id="tap-s2s-vs-tun-modus">TAP-S2S- vs. TUN-Modus<a class="headerlink" href="#tap-s2s-vs-tun-modus" title="Permanent link">&para;</a></h2>
 <p>Netzwerktopologie</p>
-<p><img alt="tap_s2s_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tap_s2s_topology.png" /></p>
-<p><img alt="tun_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tun_topology.png" /></p>
+<p><img alt="tap_s2s_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/tap_s2s_vs_tun/tap_s2s_topology.png" /></p>
+<p><img alt="tun_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/tap_s2s_vs_tun/tun_topology.png" /></p>
 <p>TAP-S2S- und TUN-Modus verwenden dieselbe physische Verbindungsmethode, unterscheiden sich jedoch in ihrer logischen Verbindung. Die Unterschiede sind wie folgt:</p>
 <ol>
-<li>
-<p>Wenn Geräte auf der LAN-Seite des GL-X3000 auf das Verwaltungs-Backend des GL-MT6000 zugreifen, verwendet der TAP-S2S-Modus keine virtuelle Client-IP, der TUN-Modus jedoch schon.</p>
-</li>
-<li>
-<p>Wenn Geräte auf der LAN-Seite des GL-X3000 auf das Verwaltungs-Backend des GL-X3000 zugreifen, verwendet der TAP-S2S-Modus eine virtuelle Client-IP, der TUN-Modus jedoch nicht.</p>
-</li>
-<li>
-<p>Wenn ein Gerät auf der LAN-Seite des GL-X3000 die IP-Adresse eines Geräts auf der LAN-Seite des GL-MT6000 kennt, ist im TAP-S2S-Modus ein direkter Fernzugriff möglich. Im TUN-Modus ist dies ohne zusätzliche Einstellungen nicht direkt möglich.</p>
-</li>
-<li>
-<p>Im TAP-S2S-Modus muss der GL-X3000 über den GL-MT6000 auf das Internet zugreifen, während der GL-X3000 im TUN-Modus direkt auf das Internet zugreifen kann. Daher sind im TAP-S2S-Modus die auf dem GL-X3000 festgelegten VPN-Regeln nicht wirksam und es müssen die VPN-Regeln des GL-MT6000 befolgt werden.</p>
-</li>
+<li>Wenn Geräte auf der LAN-Seite des GL-X3000 auf das Verwaltungs-Backend des GL-MT6000 zugreifen, verwendet der TAP-S2S-Modus keine virtuelle Client-IP, der TUN-Modus jedoch schon.</li>
+<li>Wenn Geräte auf der LAN-Seite des GL-X3000 auf das Verwaltungs-Backend des GL-X3000 zugreifen, verwendet der TAP-S2S-Modus eine virtuelle Client-IP, der TUN-Modus jedoch nicht.</li>
+<li>Wenn ein Gerät auf der LAN-Seite des GL-X3000 die IP-Adresse eines Geräts auf der LAN-Seite des GL-MT6000 kennt, ist im TAP-S2S-Modus ein direkter Fernzugriff möglich. Im TUN-Modus ist dies ohne zusätzliche Einstellungen nicht direkt möglich.</li>
+<li>Im TAP-S2S-Modus muss der GL-X3000 über den GL-MT6000 auf das Internet zugreifen, während der GL-X3000 im TUN-Modus direkt auf das Internet zugreifen kann. Daher sind im TAP-S2S-Modus die auf dem GL-X3000 festgelegten VPN-Regeln nicht wirksam und es müssen die VPN-Regeln des GL-MT6000 befolgt werden.</li>
 </ol>
 <h2 id="anleitung">Anleitung<a class="headerlink" href="#anleitung" title="Permanent link">&para;</a></h2>
 <p>Verwenden Sie zunächst einen Router mit öffentlicher IP-Adresse (angenommen GL-MT6000), um den <strong>OpenVPN Server</strong> zu öffnen, setzen Sie den Gerätemodus auf <strong>TAP-S2S</strong>, klicken Sie auf <strong>Apply</strong> und anschließend auf <strong>Export Client Configuration</strong>.</p>
-<p><img alt="tutorials_select_mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tutorials_select_mode.png" /></p>
-<p><img alt="tutorials_export" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tutorials_export.png" /></p>
+<p><img alt="tutorials_select_mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/tap_s2s_vs_tun/tutorials_select_mode.png" /></p>
+<p><img alt="tutorials_export" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/tap_s2s_vs_tun/tutorials_export.png" /></p>
 <p>Verwenden Sie außerdem einen Router mit öffentlicher IP-Adresse (angenommen GL-X3000), öffnen Sie den OpenVPN-Client, importieren Sie die in den obigen Schritten heruntergeladene Konfigurationsdatei, klicken Sie auf <strong>Apply</strong> und aktivieren Sie anschließend die Funktion.</p>
-<p><img alt="tutorials_select_file" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tutorials_select_file.png" /></p>
-<p><img alt="tutorials_start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tutorials_start.png" /></p>
+<p><img alt="tutorials_select_file" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/tap_s2s_vs_tun/tutorials_select_file.png" /></p>
+<p><img alt="tutorials_start" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/tap_s2s_vs_tun/tutorials_start.png" /></p>
 <p>Anschließend ändert sich die IP-Adresse des Routers GL-X3000. Sie können sich im Verwaltungs-Dashboard des GL-MT6000 anmelden, <strong>Clients</strong> öffnen und dort die neue IP-Adresse des GL-X3000 finden.</p>
-<p><img alt="tutorials_new_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/tap_s2s_vs_tun/tutorials_new_IP_address.png" /></p>
+<p><img alt="tutorials_new_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/tap_s2s_vs_tun/tutorials_new_IP_address.png" /></p>
 <p>Wenn der GL-MT6000 die Netzwerkverbindung verliert oder den OpenVPN-Server ausschaltet oder wenn der GL-X3000 den OpenVPN-Client ausschaltet, wird die IP-Adresse des GL-X3000 wiederhergestellt.</p>
 <p>Wichtige Hinweise:</p>
 <ul>
-<li>
-<p>Beide Geräte müssen auf Version v4.5 aktualisiert werden, andernfalls können sie keine Verbindung herstellen.</p>
-</li>
-<li>
-<p>TAP-S2S funktioniert nur mit dem Global Proxy Mode; bei aktiviertem OpenVPN wird dies automatisch angepasst.</p>
-</li>
-<li>
-<p>Nach dem Aktivieren dieser Funktion können die folgenden Funktionen nicht verwendet werden: VPN-Server, AdGuard Home, Kindersicherung, ZeroTier, Tailscale, Tor, Firewall, Multi-WAN, LAN, DNS, Network Mode, IPv6, MAC Address, Drop-in Gateway, IGMP Snooping usw.</p>
-</li>
+<li>Beide Geräte müssen auf Version v4.5 aktualisiert werden, andernfalls können sie keine Verbindung herstellen.</li>
+<li>TAP-S2S funktioniert nur mit dem Global Proxy Mode; bei aktiviertem OpenVPN wird dies automatisch angepasst.</li>
+<li>Nach dem Aktivieren dieser Funktion können die folgenden Funktionen nicht verwendet werden: VPN-Server, AdGuard Home, Kindersicherung, ZeroTier, Tailscale, Tor, Firewall, Multi-WAN, LAN, DNS, Network Mode, IPv6, MAC Address, Drop-in Gateway, IGMP Snooping usw.</li>
 </ul>
 <hr />
 <p>Haben Sie noch Fragen? Besuchen Sie unser <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> oder <a href="https://www.gl-inet.com/contacts/" target="_blank">kontaktieren Sie uns</a>.</p>
@@ -6897,7 +6883,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19. März 2026 09:51:08 UTC">19. März 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="3. August 2026 06:39:17 UTC">3. August 2026</span>
   </span>
 
     

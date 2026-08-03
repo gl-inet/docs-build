@@ -6812,12 +6812,12 @@
   <h1 id="wie-erlaubt-man-den-zugriff-auf-das-wan-wenn-der-vpn-client-aktiviert-ist">Wie erlaubt man den Zugriff auf das WAN, wenn der VPN-Client aktiviert ist?<a class="headerlink" href="#wie-erlaubt-man-den-zugriff-auf-das-wan-wenn-der-vpn-client-aktiviert-ist" title="Permanent link">&para;</a></h1>
 <p>Wenn auf GL.iNet-Routern der VPN-Client aktiviert ist, können LAN-Geräte im standardmäßigen Global Mode nicht auf lokale WAN-Geräte oder -Dienste zugreifen. Der Grund ist, dass der gesamte Datenverkehr aus dem LAN über den VPN-Tunnel statt über das vorgelagerte Netzwerk (WAN) geleitet wird, um DNS-Lecks zu vermeiden.</p>
 <p>Dieses Tutorial beschreibt die Schritte, mit denen lokale WAN-Dienste (z. B. Drucker, NAS usw.) für die LAN-Geräte des VPN-Clients erreichbar werden.</p>
-<p><img alt="allow access wan diagram" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/allow_access_wan_diagram.jpg" /></p>
+<p><img alt="allow access wan diagram" class="glboxshadow gl-90-desktop" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/allow_access_wan_diagram.jpg" /></p>
 <h2 id="fur-firmware-v47-und-fruher">Für Firmware v4.7 und früher<a class="headerlink" href="#fur-firmware-v47-und-fruher" title="Permanent link">&para;</a></h2>
 <p>Melden Sie sich am webbasierten Admin Panel Ihres VPN-Clients an und gehen Sie zu <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Client</strong>. Klicken Sie oben rechts auf <strong>Global Options</strong>.</p>
-<p><img alt="global options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/4.7-global-options.png" /></p>
+<p><img alt="global options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/4.7-global-options.png" /></p>
 <p>Aktivieren Sie <strong>Allow Access WAN</strong> und klicken Sie auf <strong>Apply</strong>.</p>
-<p><img alt="allow access" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/4.7-allow-access-wan.png" /></p>
+<p><img alt="allow access" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/4.7-allow-access-wan.png" /></p>
 <p>Wenn diese Option aktiviert ist, können Client-Geräte auch bei aktiver VPN-Verbindung weiterhin auf WAN-Dienste im vorgelagerten Subnetz zugreifen, z. B. auf Drucker, NAS usw.</p>
 <h2 id="fur-firmware-v48-und-hoher">Für Firmware v4.8 und höher<a class="headerlink" href="#fur-firmware-v48-und-hoher" title="Permanent link">&para;</a></h2>
 <p>Die Option <strong>Allow Access WAN</strong> wurde in Firmware v4.8 aus dem VPN Dashboard entfernt. Der Zugriff auf das lokale WAN lässt sich jedoch weiterhin über eine VPN-Richtlinie umsetzen.</p>
@@ -6826,47 +6826,47 @@
 <li>
 <p>Melden Sie sich am webbasierten Admin Panel Ihres VPN-Clients an und gehen Sie zu <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>.</p>
 <p>Klicken Sie oben rechts auf den Modus.</p>
-<p><img alt="switch mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/switch-mode-1.png" /></p>
+<p><img alt="switch mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/switch-mode-1.png" /></p>
 <p>Wechseln Sie zu <strong>Policy Mode</strong> und klicken Sie auf <strong>Apply</strong>.</p>
-<p><img alt="switch mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/switch-mode-2.png" /></p>
+<p><img alt="switch mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/switch-mode-2.png" /></p>
 <p>Die Seite wird aktualisiert und anschließend wie unten dargestellt angezeigt.</p>
-<p><img alt="policy mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/primary-tunnel.png" /></p>
+<p><img alt="policy mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/primary-tunnel.png" /></p>
 </li>
 <li>
 <p>Klicken Sie auf das mittlere Feld, um das Tunnel-Ziel festzulegen.</p>
-<p><img alt="tunnel target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/select-target.png" /></p>
+<p><img alt="tunnel target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/select-target.png" /></p>
 <p>Wählen Sie <strong>Exclude Speficied Domain / IP</strong>, geben Sie das WAN-Subnetz Ihres Routers ein und klicken Sie dann auf <strong>Apply</strong>.</p>
 <p>Dadurch wird sichergestellt, dass der gesamte Datenverkehr zum WAN-Subnetz über das lokale WAN und nicht über den VPN-Tunnel geleitet wird.</p>
-<p><img alt="exclude target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/exclude-target.png" /></p>
+<p><img alt="exclude target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/exclude-target.png" /></p>
 <p>Hier verwenden wir das Subnetz <code>192.168.0.1/24</code> als Beispiel. Geben Sie dieses Subnetz ein und übernehmen Sie die Einstellung; der VPN-Tunnel wird dann wie unten dargestellt angezeigt.</p>
-<p><img alt="exclude target apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/target-apply.png" /></p>
+<p><img alt="exclude target apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/target-apply.png" /></p>
 <details>
 <summary>Wie erkenne ich das WAN-Subnetz meines GL.iNet-Routers?</summary>
 <p>Das WAN-Subnetz eines GL.iNet-Routers finden Sie normalerweise auf der Seite INTERNET. Es wird durch das vorgelagerte Gerät bestimmt, mit dem die WAN-Schnittstelle des Routers verbunden ist (z. B. ein ISP-Modem oder ein Upstream-Gateway).</p>
 <p>Wenn Ihr Router beispielsweise als sekundärer Router arbeitet (sein WAN-Port also mit einem anderen lokalen Netzwerk verbunden ist, etwa mit einem ISP-Modem oder dem LAN-Port eines Hauptrouters) und seine WAN-IP <code>192.168.1.165</code>, das Gateway <code>192.168.1.1</code> und die Subnetzmaske <code>255.255.255.0</code> lautet, dann ist das zugehörige WAN-Subnetz <code>192.168.1.0/24</code>. Das ist zugleich das LAN-Subnetz des vorgelagerten Geräts.</p>
-<p><img alt="check wan subnet" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/local-wan-details.png" /></p>
+<p><img alt="check wan subnet" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/local-wan-details.png" /></p>
 <p><strong>Hinweis</strong>: Die Präfixlänge von <code>192.168.1.0/24</code> ist <code>24</code> und entspricht der Subnetzmaske <code>255.255.255.0</code>. Wenn die WAN-Subnetzmaske Ihres Routers nicht <code>255.255.255.0</code> ist, lautet die Präfixlänge Ihres WAN-Subnetzes nicht <code>/24</code>. Ermitteln Sie das WAN-Subnetz daher bitte anhand der tatsächlichen WAN-Konfiguration.</p>
 </details>
 </li>
 <li>
 <p>Klicken Sie auf das rechte Feld, um die Tunnel-Aktion festzulegen (also ob das VPN verwendet wird oder nicht).</p>
-<p><img alt="exclude target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/select-config-1.png" /></p>
+<p><img alt="exclude target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/select-config-1.png" /></p>
 <p>Wählen Sie <strong>Use VPN</strong> und anschließend eine VPN-Konfigurationsdatei aus. Klicken Sie dann auf <strong>Apply</strong>.</p>
 <p>Wenn noch keine Konfiguration verfügbar ist, laden Sie zuerst eine hoch, um Ihren Router als VPN-Client einzurichten. Kehren Sie dann auf diese Seite zurück, wählen Sie Use VPN und eine VPN-Konfigurationsdatei aus und klicken Sie auf Apply.</p>
-<p><img alt="exclude target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/select-config-2.jpg" /></p>
+<p><img alt="exclude target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/select-config-2.jpg" /></p>
 </li>
 <li>
 <p>Schalten Sie den Schalter oben rechts ein, um diesen VPN-Tunnel zu aktivieren. Die Verbindung wird daraufhin aufgebaut.</p>
-<p><img alt="enable vpn" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/enable_vpn.png" /></p>
+<p><img alt="enable vpn" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/enable_vpn.png" /></p>
 <p>Warten Sie einige Minuten. Sobald die Verbindung erfolgreich hergestellt wurde, wird die Anzeige grün.</p>
-<p><img alt="vpn connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/vpn_connected.png" /></p>
+<p><img alt="vpn connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/vpn_connected.png" /></p>
 <p>Prüfen Sie Ihre öffentliche IP, um die VPN-Verbindung zu testen. Öffnen Sie dazu zum Beispiel einen Browser und rufen Sie <a href="https://whatismyipaddress.com/" target="_blank">whatismyip</a> auf. Dort werden Ihre öffentliche IP-Adresse und Ihr Standort angezeigt, wie unten dargestellt.</p>
-<p><img alt="vpn test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/ipcheck.png" /></p>
+<p><img alt="vpn test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/ipcheck.png" /></p>
 </li>
 <li>
 <p>Greifen Sie auf Geräte oder Dienste im WAN-Subnetz zu und prüfen Sie, ob der Zugriff erfolgreich ist.</p>
 <p>Sie können die Erreichbarkeit mit dem Befehl <code>ping</code> testen.</p>
-<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/ping-test.png" /></p>
+<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/ping-test.png" /></p>
 </li>
 </ol>
 <hr />
@@ -6895,7 +6895,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11. Juli 2026 08:51:50 UTC">11. Juli 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="3. August 2026 06:39:17 UTC">3. August 2026</span>
   </span>
 
     

@@ -6947,11 +6947,11 @@
 <p>GL.iNet-Router unterstützen bis zu 5 virtuelle Netzwerkschnittstellen, wobei die genaue Anzahl je nach Modell variieren kann. Beispielsweise verfügt der GL-MT6000 über <strong>Ethernet 1</strong>, <strong>Ethernet 2</strong>, <strong>Repeater</strong>, <strong>Tethering</strong> und <strong>Cellular</strong>, die jeweils unterschiedliche Netzwerkfunktionen in softwaredefinierten Konfigurationen übernehmen.</p>
 <p>Die Router verwenden den Befehl <strong>ping</strong> oder <strong>httping</strong> (nur für v4.3 und älter), um den Status der Verbindung zur Ziel-IP zu überwachen und festzustellen, ob die Schnittstelle verfügbar ist.</p>
 <p>Wenn die Schnittstelle verfügbar ist, wird links ein grüner Punkt angezeigt, andernfalls ein grauer.</p>
-<p><img alt="interface status track 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/multi-wan/interface_status_track_1.jpg" /></p>
+<p><img alt="interface status track 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/interface_guide/multi-wan/interface_status_track_1.jpg" /></p>
 <h3 id="einstellungen-fur-die-statusuberwachung">Einstellungen für die Statusüberwachung<a class="headerlink" href="#einstellungen-fur-die-statusuberwachung" title="Permanent link">&para;</a></h3>
 <p>Klicken Sie auf das Zahnradsymbol, um die Einstellungen für die Statusüberwachung jeder Netzwerkschnittstelle aufzurufen.</p>
 <p>Dies ist beispielsweise die Einstellung für die Statusüberwachung der Ethernet-Schnittstelle; für andere Schnittstellen gilt dasselbe.</p>
-<p><img alt="interface status track 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/multi-wan/interface_status_track_2.png" /></p>
+<p><img alt="interface status track 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/interface_guide/multi-wan/interface_status_track_2.png" /></p>
 <ul>
 <li>
 <p><strong>Enable Interface Status Track</strong>: Diese Option ist standardmäßig aktiviert. Sie können die Schnittstellen-Statusüberwachung deaktivieren. In diesem Fall bestimmt der Router den Schnittstellenstatus anhand des physischen Status, z. B. ob das Netzwerkkabel eingesteckt ist oder nicht.</p>
@@ -6974,7 +6974,7 @@
 </div>
 <h3 id="sensitivity-options">Sensitivity Options<a class="headerlink" href="#sensitivity-options" title="Permanent link">&para;</a></h3>
 <p>Diese Funktion ist seit v4.5 verfügbar.</p>
-<p><img alt="Sensitivity Options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/multi-wan/sensitivity_options.jpg" /></p>
+<p><img alt="Sensitivity Options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/interface_guide/multi-wan/sensitivity_options.jpg" /></p>
 <p>Diese Empfindlichkeit bestimmt das Zeitintervall für die Erkennung des Internetstatus.</p>
 <ul>
 <li>Wenn das Netzwerk stabil ist und Sie z. B. Videos oder Livestreams ansehen oder Spiele spielen, empfiehlt sich eine hohe Empfindlichkeit, damit bei einer Netzwerkunterbrechung schnell umgeschaltet wird.</li>
@@ -6985,7 +6985,7 @@
 <p>Es gibt zwei Methoden: <strong>Failover</strong> und <strong>Load Balance</strong>. Wenn Multi-WAN-Verbindungen vorhanden sind, ist Failover standardmäßig aktiviert.</p>
 <p><strong>Failover</strong> und <strong>Load Balance</strong> schließen sich gegenseitig aus; Sie können immer nur eine davon verwenden.</p>
 <h3 id="failover">Failover<a class="headerlink" href="#failover" title="Permanent link">&para;</a></h3>
-<p><img alt="multi-wan failover" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/multi-wan/failover.png" /></p>
+<p><img alt="multi-wan failover" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/interface_guide/multi-wan/failover.png" /></p>
 <p>Sie können die Priorität jeder Schnittstelle festlegen. Fällt die aktuell verwendete Schnittstelle aus, schaltet der Router automatisch auf die andere verfügbare Schnittstelle mit der höchsten Priorität um.</p>
 <p>Wenn der Router beispielsweise mit zwei Arten des Internetzugangs eingerichtet wurde, <strong>Ethernet</strong> und <strong>Repeater</strong>, und Ethernet die Priorität 1 sowie Repeater die Priorität 2 hat, ist Ethernet höher priorisiert als Repeater. Der Router verwendet dann Ethernet für den Internetzugang. Wenn Sie das Ethernet-Kabel abziehen, wird die Ethernet-Schnittstelle nicht mehr verfügbar sein, und der Router schaltet automatisch auf die Repeater-Schnittstelle um, um auf das Internet zuzugreifen.</p>
 <p>Sobald die Ethernet-Verbindung wiederhergestellt ist, schaltet der Router automatisch zurück auf Ethernet für den Internetzugang, da diese Schnittstelle die höhere Priorität hat.</p>
@@ -6995,7 +6995,7 @@
 <p>Wenn der Router beispielsweise gleichzeitig mit vier Netzwerken verbunden ist (Ethernet, Repeater, Tethering und Cellular) und alle vier Netzwerkschnittstellen für den Internetzugang verfügbar sind, bedeutet das Aktivieren von Load Balance mit der Einstellung 1:1:1:1, dass die vier Netzwerkschnittstellen die Netzwerkbandbreite gleichmäßig verteilen. Das System weist neue Verbindungen anhand des festgelegten Lastverhältnisses 1:1:1:1 zu.</p>
 <p>Sie können das Lastverhältnis auch individuell anpassen. Wenn die Ethernet-Bandbreite 200 Mbit/s beträgt, die Repeater-Wi-Fi-Bandbreite 100 Mbit/s und weder Tethering noch Cellular aktiv sind, können Sie das Lastverhältnis auf 2 für Ethernet, 1 für Repeater und 0 für Tethering/Cellular setzen. Das System verteilt neue Verbindungen dann anhand des konfigurierten Verhältnisses 2:1 auf diese Schnittstellen. Das bedeutet, dass die Ethernet-Schnittstelle ungefähr doppelt so viele Verbindungen verarbeitet wie die Repeater-Schnittstelle. Im Vergleich zum Failover-Modus wird die Gesamteffizienz des Datendurchsatzes so verbessert, indem die Last auf verfügbare Schnittstellen verteilt wird.</p>
 <p><strong>Hinweis:</strong> Bereits bestehende Verbindungen oder laufender Datenverkehr entsprechen nicht zwingend exakt dem Lastverhältnis. Über einen längeren Nutzungszeitraum nähert sich die Verteilung diesem Verhältnis an.</p>
-<p><img alt="multi-wan load balance" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/multi-wan/load_balance.png" /></p>
+<p><img alt="multi-wan load balance" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/interface_guide/multi-wan/load_balance.png" /></p>
 <h2 id="anwendungsszenarien">Anwendungsszenarien<a class="headerlink" href="#anwendungsszenarien" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -7031,7 +7031,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11. Juli 2026 08:51:50 UTC">11. Juli 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="3. August 2026 06:39:17 UTC">3. August 2026</span>
   </span>
 
     

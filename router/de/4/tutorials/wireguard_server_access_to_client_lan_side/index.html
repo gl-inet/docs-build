@@ -6849,55 +6849,55 @@
 <p>Dieses Tutorial beschreibt die Schritte, mit denen Sie von der WireGuard-Serverseite aus auf das LAN-Subnetz eines WireGuard-Clients (z. B. IP-Kamera, NAS usw.) zugreifen.</p>
 <h2 id="topologie">Topologie<a class="headerlink" href="#topologie" title="Permanent link">&para;</a></h2>
 <p>Wie unten dargestellt, ist der GL-MT2500 ein WireGuard-Server und der GL-AXT1800 ein damit verbundener WireGuard-Client. Sie können von der Serverseite aus auf die Geräte im LAN des GL-AXT1800 zugreifen (z. B. IP-Kamera oder NAS).</p>
-<p><img alt="Topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/Topology.jpg" /></p>
+<p><img alt="Topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/Topology.jpg" /></p>
 <h2 id="1-routing-regel-auf-dem-server-hinzufugen">1. Routing-Regel auf dem Server hinzufügen<a class="headerlink" href="#1-routing-regel-auf-dem-server-hinzufugen" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Für Firmware v4.7 und früher</summary>
 <p>Melden Sie sich am webbasierten Admin Panel <u>Ihres WireGuard-Servers</u> an und gehen Sie zu <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Server</strong>.</p>
 <p>Klicken Sie rechts auf das Routing-Symbol, um die Routing-Regeln zu öffnen.</p>
-<p><img alt="add route rule 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-route-rule-1.jpg" /></p>
+<p><img alt="add route rule 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-route-rule-1.jpg" /></p>
 <p>Klicken Sie oben rechts auf <strong>Add Route Rule</strong> und geben Sie das Subnetz ein, auf das Sie zugreifen möchten.</p>
-<p><img alt="add route rule 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-route-rule-2.png" /></p>
+<p><img alt="add route rule 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-route-rule-2.png" /></p>
 <p>Das LAN-Subnetz des WireGuard-Clients GL-AXT1800 ist zum Beispiel <strong>192.168.8.0/24</strong>, daher ist die Target Address <strong>192.168.8.0/24</strong>.</p>
 <p>Gateway ist die Client-IP, die Ihr WireGuard-Server für diesen WireGuard-Client erzeugt hat. Sie finden sie unter der Registerkarte <strong>Profiles</strong> auf der Seite <strong>WireGuard Server</strong>. Wie unten gezeigt, lautet die Client-IP für den WireGuard-Client GL-AXT1800 <strong>10.0.0.4</strong>.</p>
-<p><img alt="client ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-client-ip.png" /></p>
+<p><img alt="client ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-client-ip.png" /></p>
 <p>Setzen Sie Gateway daher auf <strong>10.0.0.4</strong> und Scope auf <strong>global</strong> und klicken Sie anschließend auf <strong>Apply</strong>.</p>
-<p><img alt="add route rule 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-route-rule-3.jpg" /></p>
+<p><img alt="add route rule 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-route-rule-3.jpg" /></p>
 </details>
 <details>
 <summary>Für Firmware v4.8 und höher</summary>
 <p>Melden Sie sich am webbasierten Admin Panel <u>Ihres WireGuard-Servers</u> an und gehen Sie zu <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong>.</p>
 <p>Klicken Sie auf die Registerkarte <strong>Route Rules</strong> und anschließend rechts auf <strong>Add Route Rule</strong>.</p>
-<p><img alt="add route rule 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-1.png" /></p>
+<p><img alt="add route rule 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-1.png" /></p>
 <p>Geben Sie im Pop-up-Fenster das Subnetz ein, auf das Sie zugreifen möchten.</p>
-<p><img alt="add route rule 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-2.png" /></p>
+<p><img alt="add route rule 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-2.png" /></p>
 <p>Das LAN-Subnetz des WireGuard-Clients GL-AXT1800 ist zum Beispiel <strong>192.168.8.0/24</strong>, daher ist die Target Address <strong>192.168.8.0/24</strong>.</p>
 <p>Gateway ist die Client-IP, die Ihr WireGuard-Server für diesen WireGuard-Client erzeugt hat. Sie finden sie unter der Registerkarte <strong>Profiles</strong> auf derselben Seite. Wie unten gezeigt, lautet die Client-IP für den WireGuard-Client GL-AXT1800 <strong>10.1.0.2</strong>.</p>
-<p><img alt="client ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-client-ip.png" /></p>
+<p><img alt="client ip" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-client-ip.png" /></p>
 <p>Setzen Sie Gateway daher auf <strong>10.1.0.2</strong> und klicken Sie anschließend auf <strong>Apply</strong>.</p>
-<p><img alt="add route rule 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-3.png" /></p>
+<p><img alt="add route rule 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-3.png" /></p>
 </details>
 <h2 id="2-fernzugriff-auf-das-client-lan-erlauben">2. Fernzugriff auf das Client-LAN erlauben<a class="headerlink" href="#2-fernzugriff-auf-das-client-lan-erlauben" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Für Firmware v4.7 und früher</summary>
 <p>Melden Sie sich am webbasierten Admin Panel <u>Ihres WireGuard-Clients</u> an und gehen Sie zu <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Client</strong>.</p>
 <p>Klicken Sie rechts neben WireGuard auf das Zahnradsymbol.</p>
-<p><img alt="wgclient options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-wgclient-options.png" /></p>
+<p><img alt="wgclient options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-wgclient-options.png" /></p>
 <p>Aktivieren Sie im Pop-up-Fenster <strong>Remote Access LAN</strong> und klicken Sie anschließend auf <strong>Apply</strong>.</p>
-<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-allow-remote-access-lan.png" /></p>
+<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/4.7-allow-remote-access-lan.png" /></p>
 </details>
 <details>
 <summary>Für Firmware v4.8 und höher</summary>
 <p>Melden Sie sich am webbasierten Admin Panel <u>Ihres WireGuard-Clients</u> an und gehen Sie zu <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>.</p>
 <p>Klicken Sie oben links an Ihrem VPN-Tunnel auf das Zahnradsymbol, um die Tunnel-Optionen zu öffnen.</p>
-<p><img alt="tunnel options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-tunnel-options.png" /></p>
+<p><img alt="tunnel options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-tunnel-options.png" /></p>
 <p>Aktivieren Sie im Pop-up-Fenster <strong>Allow Remote Access the LAN Subnet</strong> und klicken Sie anschließend auf <strong>Apply</strong>.</p>
-<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-allow-remote-access-lan.png" /></p>
+<p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-allow-remote-access-lan.png" /></p>
 </details>
 <h2 id="3-verbindung-testen">3. Verbindung testen<a class="headerlink" href="#3-verbindung-testen" title="Permanent link">&para;</a></h2>
 <p>Prüfen Sie, ob Sie von der Serverseite aus auf die LAN-Geräte Ihres WireGuard-Clients zugreifen können.</p>
 <p>Sie können die Verbindung mit <code>ping</code> testen. Pingen Sie zum Beispiel auf einem Gerät, das mit dem WireGuard-Server (GL-MT2500) verbunden ist, die IP-Adresse eines Geräts im LAN Ihres WireGuard-Clients (GL-AXT1800) an und prüfen Sie, ob der Ping erfolgreich ist.</p>
-<p><img alt="ping" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/ping.jpg" /></p>
+<p><img alt="ping" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/wiregaurd_server_access_client_lan_side/ping.jpg" /></p>
 <hr />
 <p>Haben Sie noch Fragen? Besuchen Sie unser <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> oder <a href="https://www.gl-inet.com/contacts/" target="_blank">kontaktieren Sie uns</a>.</p>
 
@@ -6924,7 +6924,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19. März 2026 09:51:08 UTC">19. März 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="3. August 2026 06:39:17 UTC">3. August 2026</span>
   </span>
 
     
