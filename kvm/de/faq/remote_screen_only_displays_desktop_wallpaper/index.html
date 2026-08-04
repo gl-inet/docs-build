@@ -3621,17 +3621,57 @@
   <!-- Markdown content -->
   <h1 id="was-tun-wenn-der-remote-bildschirm-nur-das-desktop-hintergrundbild-anzeigt">Was tun, wenn der Remote-Bildschirm nur das Desktop-Hintergrundbild anzeigt<a class="headerlink" href="#was-tun-wenn-der-remote-bildschirm-nur-das-desktop-hintergrundbild-anzeigt" title="Permanent link">&para;</a></h1>
 <p>Wenn Sie beim Zugriff auf das gesteuerte Gerät über KVM nur das Desktop-Hintergrundbild sehen und keine Bedienung reagiert, verwendet Ihr gesteuertes Gerät wahrscheinlich mehrere Monitore im Modus <strong>Extend Displays</strong>.</p>
+<p>Um das Problem zu beheben, muss der Anzeigemodus des gesteuerten Geräts auf <strong>Duplicate display</strong> (Windows) oder <strong>Mirror display</strong> (macOS) umgestellt werden.</p>
+<p>Wählen Sie die passende Lösung für Ihr Betriebssystem aus.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">macos</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Beispiel mit Windows 10. Wenn <strong>Extend these displays</strong> aktiviert ist, folgen Sie den Schritten unten, um zu <strong>Duplicate display</strong> zu wechseln.</p>
 <p><img alt="extend display" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/can_only_see_desktop_wallpaper_when_using_glkvm/extend_displays.jpg" /></p>
-<p>Um das Problem zu beheben, schalten Sie den Anzeigemodus des gesteuerten Geräts auf <strong>Duplicate display</strong> um.</p>
-<p>Beispiel mit Windows 10.</p>
+<ol>
+<li>
 <p>Gehen Sie auf dem gesteuerten Gerät zu <strong>Settings</strong> -&gt; <strong>System</strong> -&gt; <strong>Display</strong>.</p>
 <p><img alt="win10 system settings" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/can_only_see_desktop_wallpaper_when_using_glkvm/win10_system_settings.png" /></p>
+</li>
+<li>
 <p>Scrollen Sie auf der Seite Display nach unten zu <strong>Multiple displays</strong>.</p>
+</li>
+<li>
 <p>Wechseln Sie von Extend Displays zu <strong>Duplicate display</strong>.</p>
 <p><img alt="duplicate display" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/can_only_see_desktop_wallpaper_when_using_glkvm/duplicate_displays.jpg" /></p>
+</li>
+<li>
 <p>Klicken Sie auf <strong>Keep changes</strong>.</p>
 <p><img alt="keep changes" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/can_only_see_desktop_wallpaper_when_using_glkvm/keep_changes.png" /></p>
+</li>
+</ol>
 <p>Prüfen Sie anschließend, ob Sie normal auf das gesteuerte Gerät zugreifen können.</p>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>
+<p>Klicken Sie oben links auf dem Bildschirm auf das Apple-Menü und wählen Sie <strong>System Settings</strong>.</p>
+</li>
+<li>
+<p>Scrollen Sie in der Seitenleiste nach unten und wählen Sie <strong>Displays</strong>.</p>
+<p><img alt="mac system settings" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/can_only_see_desktop_wallpaper_when_using_glkvm/mac-system-settings.png" /></p>
+</li>
+<li>
+<p>Klicken Sie in der Layout-Ansicht auf <strong>External display</strong>. Dort sehen Sie den MacBook-Bildschirm und alle verbundenen Monitore.</p>
+</li>
+<li>
+<p>Klicken Sie auf das Dropdown-Menü <strong>Use as</strong> und wählen Sie <strong>Mirror mode</strong>, in der Regel Mirror for Built-in Display.</p>
+<p><img alt="mac mirror display" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/can_only_see_desktop_wallpaper_when_using_glkvm/mac-mirror-display.png" /></p>
+</li>
+</ol>
+<p>Nach der Einrichtung sind der vollständige Desktop und alle Anwendungsfenster auf dem gesteuerten Gerät per Fernzugriff erreichbar.</p>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Diese Lösung gilt nur für Anzeigeprobleme, die durch den Modus Extend display verursacht werden. Wenn das Problem nach dem Aktivieren der Spiegelung weiterhin besteht, stellen Sie sicher, dass auf Ihrem Gerät die lokale Benutzeranmeldung abgeschlossen ist und es nicht am System-Anmeldebildschirm hängt.</p>
+</div>
 <hr />
 <p>Noch Fragen? Besuchen Sie unser <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> oder <a href="https://www.gl-inet.com/contacts/" target="_blank">kontaktieren Sie uns</a>.</p>
 
