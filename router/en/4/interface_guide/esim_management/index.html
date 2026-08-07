@@ -6996,77 +6996,42 @@
 <p>This page allows you to check eSIM physical card status and manage eSIM profiles. It consists of two parts: <strong>Current eSIM Status</strong> and <strong>eSIM Profile List</strong>.</p>
 <p><img alt="esim detected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/esim_management/esim_detected.png" /></p>
 <h2 id="supported-models">Supported Models<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Router Model</th>
-<th style="text-align: center;">Support</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">GL-X2000 (Spitz Plus)</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-X3000 (Spitz AX)</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-XE3000 (Puli AX)</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-E750V2 (Mudi V2)</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-E750 (Mudi)</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-XE300 (Puli)</td>
-<td style="text-align: center;">※</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-X750 (Spitz)</td>
-<td style="text-align: center;">※</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-X300B (Collie)</td>
-<td style="text-align: center;">※</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-E750V2 vSIM</td>
-<td style="text-align: center;">X</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-E5800 (Mudi 7)</td>
-<td style="text-align: center;">X</td>
-</tr>
-</tbody>
-</table>
-<p><strong>For models marked with ※</strong>:</p>
+<div class="admonition note">
+<p class="admonition-title">Supported Models</p>
+<ul>
+<li>GL-X2000 (Spitz Plus)</li>
+<li>GL-X3000 (Spitz AX)</li>
+<li>GL-XE3000 (Puli AX)</li>
+<li>GL-E750V2 (Mudi V2)</li>
+<li>※ GL-E750 (Mudi)</li>
+<li>※ GL-XE300 (Puli)</li>
+<li>※ GL-X750 (Spitz)</li>
+<li>※ GL-X300B (Collie)</li>
+</ul>
+<p><strong>Note</strong>:</p>
 <ol>
 <li>
-<p>The current stable firmware does not support eSIM. To use the eSIM function, you need to install the eSIM-supported firmware. <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a> for more instructions.</p>
+<p>For <strong>Models marked with ※</strong>, the module you use determines whether they can work with the eSIM physical card.</p>
+<ul>
+<li>
+<p>If using <strong>EC25-AF</strong>, <strong>EC25-E</strong>, or <strong>EG25-G</strong> module, please install the eSIM-supported firmware before using them with eSIM physical card. <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a> for more instructions.</p>
 </li>
 <li>
-<p>For the ※ models with EP06-A module, eSIM is not supported because the Qualcomm software lacks the required AT command support.</p>
+<p>If using <strong>EP06-E</strong> module, please refer to <a href="https://forum.gl-inet.com/t/upgrade-ep06-e-firmware-to-support-esim/48907" target="_blank">this link</a> to upgrade the module's firmware first, then install the eSIM-supported firmware.</p>
 </li>
 <li>
-<p>For GL-E750 (Mudi) and the ※ models with EP06-E module, please refer to this <a href="https://forum.gl-inet.com/t/upgrade-ep06-e-firmware-to-support-esim/48907" target="_blank">link</a> to upgrade the module's firmware first, then install the eSIM-supported firmware to enable eSIM functionality.</p>
+<p>If using <strong>EP06-A</strong> module, they do not support eSIM physical card because the Qualcomm software lacks the required AT command support.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>GL-E750V2 <u>vSIM</u></strong> does not support eSIM physical card.</p>
+</li>
+<li>
+<p><strong>GL-E5800 (Mudi 7)</strong> comes with a built-in eSIM. Therefore, the eSIM physical card will be recognized as a regular SIM card without eSIM functionality on Mudi 7.</p>
 </li>
 </ol>
-<p><strong>For models marked with X</strong>:</p>
-<ol>
-<li>
-<p>GL-E750V2 vSIM does not support eSIM physical card.</p>
-</li>
-<li>
-<p>GL-E5800 (Mudi 7) comes with a built-in eSIM. Therefore, the eSIM physical card will be recognized as a regular SIM card without eSIM functionality on Mudi 7.</p>
-</li>
-</ol>
+</div>
 <h2 id="current-esim-status">Current eSIM Status<a class="headerlink" href="#current-esim-status" title="Permanent link">&para;</a></h2>
 <p>This section displays basic information and details about the currently active eSIM profile.</p>
 <p><img alt="esim status" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/esim_management/esim_status.png" /></p>
@@ -7193,7 +7158,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 6, 2026 07:01:34 UTC">August 6, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 7, 2026 07:20:05 UTC">August 7, 2026</span>
   </span>
 
     
