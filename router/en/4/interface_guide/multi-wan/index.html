@@ -1568,6 +1568,8 @@
       
         
       
+        
+      
     
     
     
@@ -1694,6 +1696,27 @@
   
   <span class="md-ellipsis">
     Connect Ethernet-only device to Wi-Fi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/connecting_10g_sfp_plus_port_on_flint4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connecting 10G SFP+ port on Flint 4
   </span>
   
 
@@ -5356,13 +5379,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multi-wan-method" class="md-nav__link">
+  <a href="#multi-wan-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Multi-WAN Method
+      Multi-WAN Mode
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Multi-WAN Method">
+    <nav class="md-nav" aria-label="Multi-WAN Mode">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -7007,13 +7030,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multi-wan-method" class="md-nav__link">
+  <a href="#multi-wan-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Multi-WAN Method
+      Multi-WAN Mode
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Multi-WAN Method">
+    <nav class="md-nav" aria-label="Multi-WAN Mode">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -7130,27 +7153,27 @@
 <li>If the network is unstable and downloading cached files, users are recommended to use low sensitivity to prevent constant network switching and discovering unsuccessful connections.</li>
 </ul>
 <p><strong>Tips</strong>: Switching to high sensitivity may lead to network disconnection, please adjust it with caution.</p>
-<h2 id="multi-wan-method">Multi-WAN Method<a class="headerlink" href="#multi-wan-method" title="Permanent link">&para;</a></h2>
-<p>There are two methods: <strong>Failover</strong> and <strong>Load Balance</strong>. Failover is enabled by default when there are multi-wan connections.</p>
-<p><strong>Failover</strong> and <strong>Load Balance</strong> are mutually exclusive and you can only use one of them.</p>
+<h2 id="multi-wan-mode">Multi-WAN Mode<a class="headerlink" href="#multi-wan-mode" title="Permanent link">&para;</a></h2>
+<p>There are two modes for Multi-WAN: <strong>Failover</strong> and <strong>Load Balance</strong>. They are mutually exclusive and you can only use one of them.</p>
 <h3 id="failover">Failover<a class="headerlink" href="#failover" title="Permanent link">&para;</a></h3>
+<p>Failover is the default mode when there are multi-wan connections. If the active link fails, the router will automatically switch to another network interface for Internet access.</p>
 <p><img alt="multi-wan failover" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/multi-wan/failover.png" /></p>
-<p>You can set the priority of each interface, when the interface being used fails, the router will automatically switch to another available highest priority interface.</p>
-<p>For example, if the router has been set up with two types of Internet access, <strong>Ethernet</strong> and <strong>Repeater</strong>, and the priority of Ethernet is 1, the priority of Repeater is 2, the priority of Ethernet is higher than Repeater, so the router will use the Ethernet to access Internet. If you unpluged the ethernet cable, the Ethernet interface will become unavailable, then the router will automatically switch to Repeater interface to access Internet.</p>
-<p>Once the Ethernet connection is restored, the router will automatically switch back to the Ethernet to access Internet as it has higher priority.</p>
+<p>You can set the priority of each interface: when the currently used interface fails, the router switches to the next available interface with the highest priority. Once a higher-priority connection is restored, the router will automatically switch back to it.</p>
 <h3 id="load-balance">Load Balance<a class="headerlink" href="#load-balance" title="Permanent link">&para;</a></h3>
-<p><strong>Load Balance</strong> enables multiple network links to be used simultaneously, increasing bandwidth and improving total throughput.  </p>
+<p>Load Balance enables multiple network links to be used simultaneously, increasing bandwidth and improving total throughput.  </p>
 <p>The <strong>Load Ratio</strong> determines traffic distribution among interfaces, with the system distributing new connections to each interface according to the configured ratio.</p>
 <p><img alt="multi-wan load balance" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/multi-wan/load_balance.png" /></p>
 <p>The following two load ratios are available for configuration:</p>
 <ul>
-<li><strong>Default Load Ratio</strong></li>
-</ul>
+<li>
+<p><strong>Default Load Ratio</strong></p>
 <p>If the router is connected to four networks (Ethernet, Repeater, Tethering and Cellular) at the same time, and all four network interfaces are available to access the Internet, then enabling Load Balance and setting 1:1:1:1 means that the four network interfaces will load the network bandwidth averagely, as the system will assign these four interfaces to new connections based on the set load ratio 1:1:1:1.</p>
-<ul>
-<li><strong>Customize Load Ratio</strong></li>
-</ul>
+</li>
+<li>
+<p><strong>Customize Load Ratio</strong></p>
 <p>If the Ethernet bandwidth is 200 Mbps, the Repeater Wi-Fi bandwidth is 100 Mbps, and no Tethering or Cellular connections are active, you can set the load ratios to 2 for Ethernet, 1 for Repeater, and 0 for Tethering/Cellular. The system allocates new connections based on the configured 2:1 ratio, allowing Ethernet to process approximately twice the connections handled by Repeater. Compared with the Failover mode, this optimizes the overall throughput efficiency by balancing the load across available interface.</p>
+</li>
+</ul>
 <p><strong>Note:</strong> Alive connections or traffic are not ensured to match the load ratio. It is closer to this ratio if it has been used for a longer time.</p>
 <h2 id="usage-scenarios">Usage Scenarios<a class="headerlink" href="#usage-scenarios" title="Permanent link">&para;</a></h2>
 <ul>
@@ -7187,7 +7210,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 6, 2026 02:54:54 UTC">August 6, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 18, 2026 04:33:47 UTC">August 18, 2026</span>
   </span>
 
     
