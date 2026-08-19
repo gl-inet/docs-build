@@ -5262,6 +5262,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#server-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#wireguard-app-install" class="md-nav__link">
     <span class="md-ellipsis">
       WireGuard App Install
@@ -7051,6 +7060,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#server-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#wireguard-app-install" class="md-nav__link">
     <span class="md-ellipsis">
       WireGuard App Install
@@ -7128,9 +7146,9 @@
 <p>The default configuration works for most cases, as shown below. No need to modify the IPv4 address if it does not conflict with your upstream router's gateway.</p>
 <p><img alt="check configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_server/check_configuration.png" /></p>
 <p>(The IPv6 on GL.iNet is disabled by default. If you want to use IPv6 address, please enable IPv6 on your router.)</p>
-<p>If you notice that the IPv4 address conflicts with your upstream router's gateway, modify the address to another one such as <strong>10.1.0.1/24</strong> and click <strong>Apply</strong>. Ensure the "/24" CIDR notation is included to avoid connectivity issues.</p>
+<p>The IPv4 address is the WireGuard server's Tunnel IP. If it conflicts with your upstream router's gateway, modify the address to another one, such as <strong>10.1.0.1/24</strong>, then click <strong>Apply</strong>. Ensure the "/24" CIDR notation is included to avoid connectivity issues.</p>
 <p><img alt="modify configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_server/modify_configuration.png" /></p>
-<p>For example, if there's an Xfinity router in the upstream of a GL.iNet router, the Xfinity router's IP might be 10.0.0.1, which will conflict with the WireGuard Server's Tunnel IP when the GL.iNet router is set up as a WireGuard server, so you need to make the above changes.</p>
+<p>For example, if an Xfinity router is in the upstream of a GL.iNet router, the Xfinity router's IP might be 10.0.0.1, which may conflict with the WireGuard Server's Tunnel IP when the GL.iNet router is set as a WireGuard server, thus you may need to make the above changes. Skip this if there's no conflict.</p>
 <p><img alt="xfinity gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_server/xfinitygateway.jpg" /></p>
 </li>
 <li>
@@ -7196,6 +7214,29 @@
 <li>The port used for the WireGuard Server is blocked by your Internet Service Provider. Change to another port, or contact the Internet Service Provider for further assistance.</li>
 <li>Some countries/regions may block the VPN connection.</li>
 </ul>
+<h2 id="server-options">Server Options<a class="headerlink" href="#server-options" title="Permanent link">&para;</a></h2>
+<p>Server Options include some advanced settings on the server side, such as remote access server's LAN, IP Masquerading, etc. Configure these settings according to your needs.</p>
+<p>For firmware v4.8 and higher, go to <strong>WireGuard Server</strong> and click <strong>Options</strong> in the upper-right corner.</p>
+<p><img alt="wgserver options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_server/wgserver_options1.png" /></p>
+<p>For firmware v4.7 and earlier, go to <strong>VPN Dashboard</strong> -&gt; <strong>VPN Server</strong> and click the gear icon to access the WireGuard Options.</p>
+<p><img alt="wgserver options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_server/wgserver_options2.png" /></p>
+<p>In the pop-up window, you will see the following features.</p>
+<p><img alt="wgserver options" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_server/wgserver_options3.png" /></p>
+<ul>
+<li>
+<p><strong>Allow Remote Access to the LAN Subnet</strong>: If enabled, resources inside the server's LAN subnet can be accessed through the VPN tunnel.</p>
+</li>
+<li>
+<p><strong>IP Masquerading</strong>: If enabled, the source IP addresses of LAN clients will be rewritten to the router's VPN tunnel IP. Disable this only for Site-to-Site setups where the remote peer knows your LAN subnets.</p>
+</li>
+<li>
+<p><strong>MTU</strong>: Short for Maximum Transmission Unit. The MTU value you set for the tunnel will override the MTU settings in the configuration file.</p>
+</li>
+<li>
+<p><strong>Client to Client</strong>: If enabled, VPN clients connected to this server can access each other via their respective VPN tunnel IPs. </p>
+<p>Note that Client‑to‑Client only advertises each client's tunnel IP address. It does not automatically expose the local LAN subnets behind each VPN client. If you need to grant clients access to each other's LAN subnets, please add routing rules on the VPN server to advertise those remote LAN subnets.</p>
+</li>
+</ul>
 <h2 id="wireguard-app-install">WireGuard App Install<a class="headerlink" href="#wireguard-app-install" title="Permanent link">&para;</a></h2>
 <p>Please download the WireGuard App from <a href="https://www.wireguard.com/install" target="_blank">WireGuard Official Website</a>.</p>
 <hr />
@@ -7226,7 +7267,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 11, 2026 04:29:39 UTC">June 11, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 19, 2026 06:51:02 UTC">August 19, 2026</span>
   </span>
 
     
