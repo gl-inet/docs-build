@@ -6326,6 +6326,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ip-masquerading" class="md-nav__link">
+    <span class="md-ellipsis">
+      IP Masquerading
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7124,6 +7133,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ip-masquerading" class="md-nav__link">
+    <span class="md-ellipsis">
+      IP Masquerading
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7311,7 +7329,7 @@
 <p><strong>Note</strong>: If the router's DNS server uses a private IP address accessible only within the local network, you may lose Internet connectivity when running an exit node. To resolve this, log in to the router, go to <strong>NETWORK</strong> -&gt; <strong>DNS</strong>, and manually set a public DNS server such as 8.8.8.8.</p>
 <hr />
 <p>In the following example, a GL.iNet router <strong>GL-MT2500</strong> and a <strong>Leo-Desktop</strong> are on the same Tailnet. </p>
-<p>Here are the steps to set Leo-Desktop as an Exit Node.</p>
+<p>Here are the steps to set Leo-Desktop as an Exit Node. For an alternative custom Exit Nodes setup method, please refer to <a href="#ip-masquerading">IP Masquerading</a>.</p>
 <ol>
 <li>
 <p>Enable subnet routes of GL-MT2500 in the Tailscale Admin console.</p>
@@ -7407,8 +7425,50 @@
 </ol>
 </li>
 </ol>
-<hr />
-<p>References: <a href="https://tailscale.com/kb/1103/exit-nodes/" target="_blank">Exit Nodes (route all traffic)</a></p>
+<p>For more information, you can refer to <a href="https://tailscale.com/kb/1103/exit-nodes/" target="_blank">Exit Nodes (route all traffic)</a>.</p>
+<h2 id="ip-masquerading">IP Masquerading<a class="headerlink" href="#ip-masquerading" title="Permanent link">&para;</a></h2>
+<p><strong>Note</strong>: This feature was introduced in firmware v4.9.</p>
+<p>IP Masquerading is a network address masquerading mechanism. When you enable this option on the router, the source IP addresses of packets from LAN clients are automatically rewritten to the router's Tailscale interface IP address. This means other nodes within the Tailscale network will recognize all traffic forwarded by the subnet router as originating from the router itself, rather than the original LAN client.</p>
+<p>IP Masquerading is recommended in the following scenarios:</p>
+<ul>
+<li>
+<p>When setting up a custom exit node, if you prefer not to configure subnet routes in the Tailscale Admin console and want the router to forward all client traffic in a simpler way.</p>
+</li>
+<li>
+<p>When your LAN devices cannot install Tailscale but need to access Tailscale networks through the router.</p>
+</li>
+</ul>
+<p>In the example below, the GL.iNet routers GL‑BE9300 and GL-MG1300 are on the same Tailnet.</p>
+<p><img alt="tailnet" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailnet.png" /></p>
+<p>Follow the steps below to configure a <strong>custom exit node</strong> on the GL‑BE9300.</p>
+<ol>
+<li>
+<p>Log in to the GL-BE9300's web Admin Panel, go to <strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong>, enable <strong>IP Masquerading</strong>, then click <strong>Apply</strong>.</p>
+<p><img alt="iP masquerading" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/ip_masquerading.png" /></p>
+<p>When IP Masquerading is enabled, subnet routes do not need to be configured in the Tailscale Admin console. LAN clients connected to the router can access the Tailscale network directly via the router's Tailscale virtual IP. </p>
+<p>In this example, the GL-BE9300 (100.115.61.35) and GL-MG1300 (100.113.50.89) have Tailscale virtual IP. If a PC is connected to the GL‑BE9300, it can directly access the GL‑MG1300's web Admin Panel via the GL‑BE9300's Tailscale interface IP.</p>
+<p><img alt="test iP masquerading" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/test_ip_masquerading.png" /></p>
+</li>
+<li>
+<p>Select the device you want to use as an exit node, such as the GL-MG1300 in this example, enable <strong>Run exit node</strong>.</p>
+<p><img alt="run exit node 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node_1.png" width="600" /></p>
+<p>Then click <strong>Apply</strong>.</p>
+<p><img alt="run exit node 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node_2.png" /></p>
+</li>
+<li>
+<p>In the Tailscale Admin console, set up the GL-MG1300 as an Exit node.</p>
+<p><img alt="tailscale exit node 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailscale_exit_node_1.png" /></p>
+<p><img alt="tailscale exit node 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailscale_exit_node_2.png" width="500" /></p>
+<p>To avoid connectivity interruptions when the exit-node authentication key expires, you can enable <strong>Disable Key Expiry</strong>.</p>
+<p><img alt="disable key expirty 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/disable_key_expiry_1.png" /></p>
+<p><img alt="disable key expirty 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/disable_key_expiry_2.png" /></p>
+</li>
+<li>
+<p>Return to the GL-BE9300's web Admin Panel, go to <strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> and enable <strong>Custom Exit Nodes</strong>. Click the refresh button, and select the IP address of the GL-MG1300 from the drop-down menu, then click <strong>Apply</strong>.</p>
+<p><img alt="custom exit nodes 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/custom_exit_nodes_1.png" /></p>
+</li>
+</ol>
+<p>After configuring, devices connected to the router GL-BE9300 will route their traffic through the exit node GL-MG1300 to access the Internet, and all your Internet traffic will appear to originate from the exit node's location.</p>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
 
@@ -7435,7 +7495,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 6, 2026 06:57:28 UTC">August 6, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 26, 2026 04:37:17 UTC">August 26, 2026</span>
   </span>
 
     
