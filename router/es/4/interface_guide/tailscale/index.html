@@ -464,6 +464,8 @@
         
       
         
+          
+        
       
         
           
@@ -663,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://www.gl-inet.com/products/gl-mg1300" class="md-nav__link">
+      <a href="../../user_guide/gl-mg1300/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5544,6 +5546,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ip-masquerading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enmascaramiento de IP
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7046,6 +7057,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ip-masquerading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enmascaramiento de IP
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7229,7 +7249,7 @@
 <p>En resumen, un Exit Node enruta el tráfico saliente de Internet de sus dispositivos del Tailnet y actúa, en la práctica, como un servidor VPN. Cuando se conecta a un Exit Node, todo el tráfico de Internet que no es de Tailscale parece originarse desde su ubicación, lo que puede ayudarle a acceder a contenido restringido geográficamente y mejorar su privacidad en línea. El dispositivo que se encarga de reenviar ese tráfico se denomina “exit node”.</p>
 <p><strong>Nota</strong>: Si el servidor DNS del router usa una dirección IP privada accesible solo desde la red local, puede perder la conectividad a Internet al usar un Exit Node. Para solucionarlo, inicie sesión en el router, vaya a <strong>NETWORK</strong> -&gt; <strong>DNS</strong> y configure manualmente un servidor DNS público, como <code>8.8.8.8</code>.</p>
 <hr />
-<p>En el siguiente ejemplo, un router GL.iNet <strong>GL-MT2500</strong> y un <strong>Leo-Desktop</strong> están en el mismo Tailnet. A continuación se indican los pasos para configurar Leo-Desktop como Exit Node.</p>
+<p>En el siguiente ejemplo, un router GL.iNet <strong>GL-MT2500</strong> y un <strong>Leo-Desktop</strong> están en el mismo Tailnet. A continuación se indican los pasos para configurar Leo-Desktop como Exit Node. Para consultar un método alternativo de configuración de Exit Nodes personalizados, consulte <a href="#ip-masquerading">Enmascaramiento de IP</a>.</p>
 <ol>
 <li>Habilite las rutas de subred del GL-MT2500 en la consola Tailscale Admin.</li>
 </ol>
@@ -7325,8 +7345,50 @@
 </ol>
 </li>
 </ol>
-<hr />
-<p>Referencias: <a href="https://tailscale.com/kb/1103/exit-nodes/" target="_blank">Exit Nodes (route all traffic)</a></p>
+<p>Para obtener más información, consulte <a href="https://tailscale.com/kb/1103/exit-nodes/" target="_blank">Exit Nodes (route all traffic)</a>.</p>
+<h2 id="ip-masquerading">Enmascaramiento de IP<a class="headerlink" href="#ip-masquerading" title="Permanent link">&para;</a></h2>
+<p><strong>Nota</strong>: Esta función se incorporó en el firmware v4.9.</p>
+<p>El enmascaramiento de IP es un mecanismo de enmascaramiento de direcciones de red. Al habilitar esta opción en el router, las direcciones IP de origen de los paquetes de los clientes LAN se sustituyen automáticamente por la dirección IP de la interfaz Tailscale del router. De este modo, los demás nodos de la red Tailscale reconocen todo el tráfico reenviado por el router de subred como procedente del propio router, y no del cliente LAN original.</p>
+<p>Se recomienda usar el enmascaramiento de IP en los siguientes casos:</p>
+<ul>
+<li>
+<p>Al configurar un Exit Node personalizado, si prefiere no configurar rutas de subred en la consola Tailscale Admin y quiere que el router reenvíe todo el tráfico de los clientes de una forma más sencilla.</p>
+</li>
+<li>
+<p>Cuando sus dispositivos LAN no pueden instalar Tailscale, pero necesitan acceder a redes Tailscale a través del router.</p>
+</li>
+</ul>
+<p>En el siguiente ejemplo, los routers GL.iNet GL-BE9300 y GL-MG1300 están en el mismo Tailnet.</p>
+<p><img alt="tailnet" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailnet.png" /></p>
+<p>Siga estos pasos para configurar un <strong>Exit Node personalizado</strong> en el GL-BE9300.</p>
+<ol>
+<li>
+<p>Inicie sesión en el panel de administración web del GL-BE9300, vaya a <strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong>, habilite <strong>IP Masquerading</strong> y haga clic en <strong>Apply</strong>.</p>
+<p><img alt="iP masquerading" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/ip_masquerading.png" /></p>
+<p>Cuando el enmascaramiento de IP está habilitado, no es necesario configurar rutas de subred en la consola Tailscale Admin. Los clientes LAN conectados al router pueden acceder directamente a la red Tailscale mediante la IP virtual de Tailscale del router.</p>
+<p>En este ejemplo, el GL-BE9300 (<code>100.115.61.35</code>) y el GL-MG1300 (<code>100.113.50.89</code>) tienen direcciones IP virtuales de Tailscale. Si un PC está conectado al GL-BE9300, puede acceder directamente al panel de administración web del GL-MG1300 mediante la IP de la interfaz Tailscale del GL-BE9300.</p>
+<p><img alt="test iP masquerading" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/test_ip_masquerading.png" /></p>
+</li>
+<li>
+<p>Seleccione el dispositivo que quiera usar como Exit Node, por ejemplo el GL-MG1300 en este caso, y habilite <strong>Run exit node</strong>.</p>
+<p><img alt="run exit node 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node_1.png" width="600" /></p>
+<p>A continuación, haga clic en <strong>Apply</strong>.</p>
+<p><img alt="run exit node 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node_2.png" /></p>
+</li>
+<li>
+<p>En la consola Tailscale Admin, configure el GL-MG1300 como Exit Node.</p>
+<p><img alt="tailscale exit node 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailscale_exit_node_1.png" /></p>
+<p><img alt="tailscale exit node 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailscale_exit_node_2.png" width="500" /></p>
+<p>Para evitar interrupciones de la conexión cuando caduque la clave de autenticación del Exit Node, puede habilitar <strong>Disable Key Expiry</strong>.</p>
+<p><img alt="disable key expirty 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/disable_key_expiry_1.png" /></p>
+<p><img alt="disable key expirty 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/disable_key_expiry_2.png" /></p>
+</li>
+<li>
+<p>Regrese al panel de administración web del GL-BE9300, vaya a <strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> y habilite <strong>Custom Exit Nodes</strong>. Haga clic en el botón de actualización, seleccione la dirección IP del GL-MG1300 en el menú desplegable y haga clic en <strong>Apply</strong>.</p>
+<p><img alt="custom exit nodes 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/custom_exit_nodes_1.png" /></p>
+</li>
+</ol>
+<p>Una vez completada la configuración, los dispositivos conectados al router GL-BE9300 enrutarán su tráfico a través del Exit Node GL-MG1300 para acceder a Internet, y todo el tráfico de Internet parecerá proceder de la ubicación del Exit Node.</p>
 <hr />
 <p>¿Todavía tiene preguntas? Visite nuestro <a href="https://forum.gl-inet.com" target="_blank">foro de la comunidad</a> o <a href="https://www.gl-inet.com/contacts/" target="_blank">contáctenos</a>.</p>
 
@@ -7353,7 +7415,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 de agosto de 2026 06:05:41 UTC">6 de agosto de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 de agosto de 2026 03:27:17 UTC">27 de agosto de 2026</span>
   </span>
 
     

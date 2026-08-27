@@ -464,6 +464,8 @@
         
       
         
+          
+        
       
         
           
@@ -663,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://www.gl-inet.com/products/gl-mg1300" class="md-nav__link">
+      <a href="../../user_guide/gl-mg1300/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5544,6 +5546,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ip-masquerading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Masquage IP
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7046,6 +7057,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ip-masquerading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Masquage IP
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7236,7 +7256,7 @@
 <p>En résumé, un nœud de sortie achemine le trafic Internet sortant des appareils de votre Tailnet et agit ainsi comme un serveur VPN. Lorsque vous êtes connecté à un nœud de sortie, tout votre trafic Internet non Tailscale semble provenir de son emplacement, ce qui peut vous aider à accéder à des contenus géographiquement restreints et à renforcer votre confidentialité en ligne. L’appareil qui effectue ce transfert de trafic est appelé « nœud de sortie ».</p>
 <p><strong>Remarque</strong> : si le serveur DNS du routeur utilise une adresse IP privée accessible uniquement sur le réseau local, vous pouvez perdre l’accès à Internet lorsque vous utilisez un nœud de sortie. Pour résoudre ce problème, connectez-vous au routeur, accédez à <strong>NETWORK</strong> -&gt; <strong>DNS</strong>, puis définissez manuellement un serveur DNS public tel que <code>8.8.8.8</code>.</p>
 <hr />
-<p>Dans l’exemple suivant, un routeur GL.iNet <strong>GL-MT2500</strong> et un <strong>Leo-Desktop</strong> appartiennent au même Tailnet. Voici les étapes pour configurer Leo-Desktop comme nœud de sortie.</p>
+<p>Dans l’exemple suivant, un routeur GL.iNet <strong>GL-MT2500</strong> et un <strong>Leo-Desktop</strong> appartiennent au même Tailnet. Voici les étapes pour configurer Leo-Desktop comme nœud de sortie. Pour une autre méthode de configuration d’un nœud de sortie personnalisé, consultez <a href="#ip-masquerading">Masquage IP</a>.</p>
 <ol>
 <li>
 <p>Activez les routes de sous-réseau du GL-MT2500 dans la console d’administration Tailscale.</p>
@@ -7334,8 +7354,50 @@
 </ol>
 </li>
 </ol>
-<hr />
-<p>Référence : <a href="https://tailscale.com/kb/1103/exit-nodes/" target="_blank">Exit Nodes (route all traffic)</a></p>
+<p>Pour plus d’informations, consultez <a href="https://tailscale.com/kb/1103/exit-nodes/" target="_blank">Exit Nodes (route all traffic)</a>.</p>
+<h2 id="ip-masquerading">Masquage IP<a class="headerlink" href="#ip-masquerading" title="Permanent link">&para;</a></h2>
+<p><strong>Note</strong> : cette fonction a été introduite avec le firmware v4.9.</p>
+<p>Le masquage IP est un mécanisme de masquage des adresses réseau. Lorsque vous activez cette option sur le routeur, les adresses IP sources des paquets provenant des clients LAN sont automatiquement remplacées par l’adresse IP de l’interface Tailscale du routeur. Les autres nœuds du réseau Tailscale identifient ainsi tout le trafic transféré par le routeur de sous-réseau comme provenant du routeur lui-même, et non du client LAN d’origine.</p>
+<p>Le masquage IP est recommandé dans les cas suivants :</p>
+<ul>
+<li>
+<p>Lors de la configuration d’un nœud de sortie personnalisé, si vous préférez ne pas configurer de routes de sous-réseau dans la console d’administration Tailscale et souhaitez que le routeur transfère plus simplement tout le trafic des clients.</p>
+</li>
+<li>
+<p>Lorsque vos appareils LAN ne peuvent pas installer Tailscale, mais doivent accéder aux réseaux Tailscale par l’intermédiaire du routeur.</p>
+</li>
+</ul>
+<p>Dans l’exemple ci-dessous, les routeurs GL.iNet GL-BE9300 et GL-MG1300 appartiennent au même Tailnet.</p>
+<p><img alt="tailnet" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailnet.png" /></p>
+<p>Suivez les étapes ci-dessous pour configurer un <strong>nœud de sortie personnalisé</strong> sur le GL-BE9300.</p>
+<ol>
+<li>
+<p>Connectez-vous au panneau d’administration web du GL-BE9300, accédez à <strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong>, activez <strong>IP Masquerading</strong>, puis cliquez sur <strong>Apply</strong>.</p>
+<p><img alt="iP masquerading" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/ip_masquerading.png" /></p>
+<p>Lorsque le masquage IP est activé, il n’est pas nécessaire de configurer les routes de sous-réseau dans la console d’administration Tailscale. Les clients LAN connectés au routeur peuvent accéder directement au réseau Tailscale via l’IP virtuelle Tailscale du routeur.</p>
+<p>Dans cet exemple, le GL-BE9300 (<code>100.115.61.35</code>) et le GL-MG1300 (<code>100.113.50.89</code>) disposent d’adresses IP virtuelles Tailscale. Si un PC est connecté au GL-BE9300, il peut accéder directement au panneau d’administration web du GL-MG1300 via l’IP de l’interface Tailscale du GL-BE9300.</p>
+<p><img alt="test iP masquerading" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/test_ip_masquerading.png" /></p>
+</li>
+<li>
+<p>Sélectionnez l’appareil à utiliser comme nœud de sortie, par exemple le GL-MG1300 dans cet exemple, puis activez <strong>Run exit node</strong>.</p>
+<p><img alt="run exit node 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node_1.png" width="600" /></p>
+<p>Cliquez ensuite sur <strong>Apply</strong>.</p>
+<p><img alt="run exit node 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node_2.png" /></p>
+</li>
+<li>
+<p>Dans la console d’administration Tailscale, configurez le GL-MG1300 comme nœud de sortie.</p>
+<p><img alt="tailscale exit node 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailscale_exit_node_1.png" /></p>
+<p><img alt="tailscale exit node 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailscale_exit_node_2.png" width="500" /></p>
+<p>Pour éviter les interruptions de connexion lorsque la clé d’authentification du nœud de sortie expire, vous pouvez activer <strong>Disable Key Expiry</strong>.</p>
+<p><img alt="disable key expirty 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/disable_key_expiry_1.png" /></p>
+<p><img alt="disable key expirty 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/disable_key_expiry_2.png" /></p>
+</li>
+<li>
+<p>Revenez au panneau d’administration web du GL-BE9300, accédez à <strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> et activez <strong>Custom Exit Nodes</strong>. Cliquez sur le bouton d’actualisation, sélectionnez l’adresse IP du GL-MG1300 dans le menu déroulant, puis cliquez sur <strong>Apply</strong>.</p>
+<p><img alt="custom exit nodes 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/custom_exit_nodes_1.png" /></p>
+</li>
+</ol>
+<p>Après la configuration, les appareils connectés au routeur GL-BE9300 achemineront leur trafic via le nœud de sortie GL-MG1300 pour accéder à Internet, et tout votre trafic Internet semblera provenir de l’emplacement de ce nœud.</p>
 <hr />
 <p>Vous avez encore des questions ? Consultez notre <a href="https://forum.gl-inet.com" target="_blank">forum communautaire</a> ou <a href="https://www.gl-inet.com/contacts/" target="_blank">contactez-nous</a>.</p>
 
@@ -7362,7 +7424,7 @@
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 août 2026 06:05:41 UTC">6 août 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 août 2026 03:27:17 UTC">27 août 2026</span>
   </span>
 
     

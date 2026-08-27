@@ -464,6 +464,8 @@
         
       
         
+          
+        
       
         
           
@@ -663,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://www.gl-inet.com/products/gl-mg1300" class="md-nav__link">
+      <a href="../../user_guide/gl-mg1300/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5544,6 +5546,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ip-masquerading" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPマスカレーディング
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7046,6 +7057,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ip-masquerading" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPマスカレーディング
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7236,7 +7256,7 @@
 <p>要するに、Exit node は Tailnet 上のデバイスからの外向きインターネットトラフィックをルーティングする役割を持ち、事実上VPN Serverのように動作します。Exit node に接続すると、Tailscale以外のインターネットトラフィックはその設置場所から送信されているように見えるため、地域制限のあるコンテンツへのアクセスやオンラインプライバシーの強化に役立ちます。このトラフィック転送を担当するデバイスが "exit node" です。</p>
 <p><strong>注</strong>: ルーターのDNSサーバーがローカルネットワーク内でのみ到達可能なプライベートIPアドレスを使用している場合、Exit Node 使用時にインターネット接続を失うことがあります。この場合はルーターにログインし、<strong>NETWORK</strong> -&gt; <strong>DNS</strong> に移動して、8.8.8.8 などのパブリックDNSサーバーを手動で設定してください。</p>
 <hr />
-<p>以下の例では、GL.iNetルーター <strong>GL-MT2500</strong> と <strong>Leo-Desktop</strong> が同じ Tailnet 上にあります。Leo-Desktop を Exit Node として設定する手順は以下のとおりです。</p>
+<p>以下の例では、GL.iNetルーター <strong>GL-MT2500</strong> と <strong>Leo-Desktop</strong> が同じ Tailnet 上にあります。Leo-Desktop を Exit Node として設定する手順は以下のとおりです。カスタム Exit Node の別の設定方法については、<a href="#ip-masquerading">IPマスカレーディング</a>を参照してください。</p>
 <ol>
 <li>
 <p>Tailscale Admin console で GL-MT2500 のサブネットルートを有効にします。</p>
@@ -7334,8 +7354,50 @@
 </ol>
 </li>
 </ol>
-<hr />
-<p>参考情報: <a href="https://tailscale.com/kb/1103/exit-nodes/" target="_blank">Exit Nodes (route all traffic)</a></p>
+<p>詳細は、<a href="https://tailscale.com/kb/1103/exit-nodes/" target="_blank">Exit Nodes (route all traffic)</a>を参照してください。</p>
+<h2 id="ip-masquerading">IPマスカレーディング<a class="headerlink" href="#ip-masquerading" title="Permanent link">&para;</a></h2>
+<p><strong>Note</strong>: この機能はファームウェア v4.9 で導入されました。</p>
+<p>IPマスカレーディングは、ネットワークアドレスをマスカレードする仕組みです。ルーターでこのオプションを有効にすると、LANクライアントから送信されるパケットの送信元IPアドレスが、ルーターのTailscaleインターフェースのIPアドレスに自動的に書き換えられます。そのため、Tailscaleネットワーク内の他のノードは、サブネットルーターが転送するすべてのトラフィックを、元のLANクライアントではなくルーター自身からのトラフィックとして認識します。</p>
+<p>IPマスカレーディングは、次の場合に推奨されます。</p>
+<ul>
+<li>
+<p>カスタム Exit Node を設定する際に、Tailscale Admin console でサブネットルートを設定せず、より簡単な方法でルーターにすべてのクライアントトラフィックを転送させたい場合。</p>
+</li>
+<li>
+<p>LANデバイスにTailscaleをインストールできないものの、ルーター経由でTailscaleネットワークにアクセスする必要がある場合。</p>
+</li>
+</ul>
+<p>以下の例では、GL.iNetルーター GL-BE9300 と GL-MG1300 が同じ Tailnet 上にあります。</p>
+<p><img alt="tailnet" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailnet.png" /></p>
+<p>GL-BE9300 で <strong>カスタム Exit Node</strong> を設定するには、次の手順を実行します。</p>
+<ol>
+<li>
+<p>GL-BE9300 の Web Admin Panel にログインし、<strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> に移動して <strong>IP Masquerading</strong> を有効にし、<strong>Apply</strong> をクリックします。</p>
+<p><img alt="iP masquerading" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/ip_masquerading.png" /></p>
+<p>IPマスカレーディングを有効にすると、Tailscale Admin console でサブネットルートを設定する必要はありません。ルーターに接続されたLANクライアントは、ルーターのTailscale仮想IP経由でTailscaleネットワークに直接アクセスできます。</p>
+<p>この例では、GL-BE9300（<code>100.115.61.35</code>）とGL-MG1300（<code>100.113.50.89</code>）にTailscale仮想IPが割り当てられています。PCがGL-BE9300に接続されている場合、GL-BE9300のTailscaleインターフェースIP経由でGL-MG1300のWeb Admin Panelに直接アクセスできます。</p>
+<p><img alt="test iP masquerading" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/test_ip_masquerading.png" /></p>
+</li>
+<li>
+<p>Exit Node として使用するデバイス（この例では GL-MG1300）を選択し、<strong>Run exit node</strong> を有効にします。</p>
+<p><img alt="run exit node 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node_1.png" width="600" /></p>
+<p>次に <strong>Apply</strong> をクリックします。</p>
+<p><img alt="run exit node 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/run_exit_node_2.png" /></p>
+</li>
+<li>
+<p>Tailscale Admin console で、GL-MG1300 を Exit Node として設定します。</p>
+<p><img alt="tailscale exit node 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailscale_exit_node_1.png" /></p>
+<p><img alt="tailscale exit node 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/tailscale_exit_node_2.png" width="500" /></p>
+<p>Exit Node の認証キーが期限切れになったときの接続中断を避けるため、<strong>Disable Key Expiry</strong> を有効にできます。</p>
+<p><img alt="disable key expirty 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/disable_key_expiry_1.png" /></p>
+<p><img alt="disable key expirty 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/disable_key_expiry_2.png" /></p>
+</li>
+<li>
+<p>GL-BE9300 の Web Admin Panel に戻り、<strong>APPLICATIONS</strong> -&gt; <strong>Tailscale</strong> に移動して <strong>Custom Exit Nodes</strong> を有効にします。更新ボタンをクリックし、ドロップダウンメニューからGL-MG1300のIPアドレスを選択して、<strong>Apply</strong> をクリックします。</p>
+<p><img alt="custom exit nodes 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/tailscale/custom_exit_nodes_1.png" /></p>
+</li>
+</ol>
+<p>設定後、GL-BE9300に接続されたデバイスは、Exit NodeのGL-MG1300経由でトラフィックをルーティングしてインターネットにアクセスします。すべてのインターネットトラフィックは、Exit Nodeの所在地から送信されたように見えます。</p>
 <hr />
 <p>ご不明な点がある場合は、<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a> をご覧いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> までご連絡ください。</p>
 
@@ -7362,7 +7424,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月6日 06:05:41 UTC">2026年8月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月27日 03:27:17 UTC">2026年8月27日</span>
   </span>
 
     
