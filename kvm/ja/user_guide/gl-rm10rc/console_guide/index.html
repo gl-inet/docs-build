@@ -1,0 +1,4761 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="GL.iNet KVM 製品のドキュメント">
+      
+      
+        <meta name="author" content="GL.iNet">
+      
+      
+        <link rel="canonical" href="https://docs.gl-inet.com/kvm/ja/user_guide/gl-rm10rc/console_guide/">
+      
+      
+        <link rel="prev" href="../quick_setup_guide/">
+      
+      
+        <link rel="next" href="../../gl-rmq1/">
+      
+      
+      <link rel="icon" href="https://static.gl-inet.com/docs/router/common/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>コンソールガイド - GL.iNet KVM Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#comet-5g-gl-rm10rc" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../../.." title="GL.iNet KVM Docs" class="md-header__button md-logo" aria-label="GL.iNet KVM Docs" data-md-component="logo">
+      
+  <img src="https://static.gl-inet.com/docs/router/common/logo_white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GL.iNet KVM Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              コンソールガイド
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="言語切り替え">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/kvm/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/kvm/de/" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/kvm/ja/" hreflang="ja" class="md-select__link">
+              日本語
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gl-inet/docs-kvm" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gl-inet/docs-kvm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="タブ" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  ホーム
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  ユーザーガイド
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../faq/" class="md-tabs__link">
+          
+  
+    
+  
+  よくある質問
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../tutorials/" class="md-tabs__link">
+          
+  
+    
+  
+  チュートリアル
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../video_library/" class="md-tabs__link">
+          
+  
+    
+  
+  ビデオライブラリ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../features_update/firmware_v1.9/" class="md-tabs__link">
+          
+  
+    
+  
+  機能のアップデート
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GL.iNet KVM Docs" class="md-nav__button md-logo" aria-label="GL.iNet KVM Docs" data-md-component="logo">
+      
+  <img src="https://static.gl-inet.com/docs/router/common/logo_white.svg" alt="logo">
+
+    </a>
+    GL.iNet KVM Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gl-inet/docs-kvm" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gl-inet/docs-kvm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ホーム
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ユーザーガイド
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            ユーザーガイド
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gl-rm1/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GL-RM1/GL-RM1 V2 (Comet/Comet V2)
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            GL-RM1/GL-RM1 V2 (Comet/Comet V2)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rm1/product_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    製品概要
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rm1/quick_setup_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    クイックセットアップ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rm1/console_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    コンソールガイド
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gl-rm1pe/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GL-RM1PE (Comet PoE)
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            GL-RM1PE (Comet PoE)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rm1pe/product_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    製品概要
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rm1pe/quick_setup_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    クイックセットアップ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rm1pe/console_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    コンソールガイド
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gl-rm10/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GL-RM10 (Comet Pro)
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            GL-RM10 (Comet Pro)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rm10/product_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    製品概要
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rm10/quick_setup_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    クイックセットアップ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rm10/console_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    コンソールガイド
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GL-RM10RC (Comet 5G)
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            GL-RM10RC (Comet 5G)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../product_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    製品概要
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick_setup_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    クイックセットアップ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    コンソールガイド
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    コンソールガイド
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    設定
+  </a>
+  
+    <nav class="md-nav" aria-label="設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    クイック検索
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    ビデオ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    リモートデバイスの設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    システム
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    ネットワーク
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    ツールボックス
+  </a>
+  
+    <nav class="md-nav" aria-label="ツールボックス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    クリップボード
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    ショートカット
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    ウェイク オン ラン
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    ターミナル
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    アクセサリー
+  </a>
+  
+    <nav class="md-nav" aria-label="アクセサリー">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    フィンガーボット
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atx" class="md-nav__link">
+    ATX 電源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    仮想メディア
+  </a>
+  
+    <nav class="md-nav" aria-label="仮想メディア">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    ファイル共有
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    イメージのマウント
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    ストレージ ドライブを交換する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    ディスクをフォーマットします
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    アプリ センター
+  </a>
+  
+    <nav class="md-nav" aria-label="アプリ センター">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailscale" class="md-nav__link">
+    Tailscale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zerotier" class="md-nav__link">
+    ZeroTier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netbird" class="md-nav__link">
+    NetBird
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    ヘルプ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    ツールバー
+  </a>
+  
+    <nav class="md-nav" aria-label="ツールバー">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    テキスト認識
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    折りたたむ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    フルスクリーン
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    アップグレード
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    クラウド サービス
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    セキュリティ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gl-rmq1/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GL-RMQ1 (Comet Q)
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            GL-RMQ1 (Comet Q)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rmq1/product_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    製品概要
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rmq1/quick_setup_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    クイックセットアップ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rmq1/console_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    コンソールガイド
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rmq1/faqs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comet Q よくある質問
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gl-rm4pe/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GL-RM4PE (Comet X)
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            GL-RM4PE (Comet X)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rm4pe/product_overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    製品概要
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rm4pe/quick_setup_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    クイックセットアップ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-rm4pe/console_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    コンソールガイド
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-atx-board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GL-ATXPC (ATXボード)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gl-fgb-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GL-FGB-01 (フィンガーボット)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../faq/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    よくある質問
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            よくある質問
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    クイックスタート
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            クイックスタート
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/quick_faqs_about_glinet_kvm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GL.iNet KVM クイック FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/firmware_upgrade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ファームウェアのアップグレード
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/glkvm_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GLKVM アプリをダウンロード
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/wan_network_detection_and_failover_logic_of_comet5g/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comet 5G の WAN ネットワーク検出とフェイルオーバーロジック
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ローカルおよびリモートアクセス
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            ローカルおよびリモートアクセス
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/local_access_via_browser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ブラウザ経由のローカルアクセス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/remote_access_via_cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    クラウド経由でリモートアクセス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/remote_access_via_glkvm_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GLKVM アプリ経由のリモート アクセス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/remote_access_via_tailscale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tailscale 経由のリモート アクセス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/remote_access_via_zerotier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ZeroTier 経由のリモート アクセス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/remote_access_via_netbird/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NetBird 経由のリモート アクセス
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/privacy_error_from_your_browser/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ブラウザ経由でアクセスするとプライバシーエラーが発生する
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    クラウドサービス
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            クラウドサービス
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_bind_kvm_to_the_cloud_via_dynamic_code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    コードでバインドする
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/unbind/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KVMのバインドを解除
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/disable_cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    クラウドサービスを無効にする
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/delete_cloud_account/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    クラウドアカウントを削除する
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    デバイスの電源の問題
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            デバイスの電源の問題
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/power_cable_connected_but_device_unpowered/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    デバイスの電源が入らない
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/debrick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    デバイスを復旧する
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GLKVM アプリの問題
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            GLKVM アプリの問題
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/no_device_is_found_in_the_glkvm_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    デバイスが見つかりませんでした
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/failed_to_bind_device_to_glkvm_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    デバイスのバインドに失敗しました
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/connection_failed_when_remote_access_via_glkvm_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    デバイスの接続に失敗しました
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/failed_to_install_glkvm_app_the_code_execution_cannot_proceed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows に GLKVM をインストールできませんでした
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    表示の問題
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            表示の問題
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/remote_screen_only_displays_desktop_wallpaper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    リモート画面にはデスクトップの壁紙のみが表示されます
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/remote_screen_goes_blank_no_hdmi_signal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    リモート画面が空白になるか、HDMI 信号が表示されない
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/remote_screen_does_not_show_bios_interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    リモート画面に BIOS インターフェイスが表示されない
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    キーボードとマウスの問題
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            キーボードとマウスの問題
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/cannot_control_mouse_and_keyboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    マウスとキーボードを制御できない
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/mouse_cursors_fail_to_align/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    マウスカーソルの位置が合わない
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/keyboard_does_not_input_output_as_expected/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    キーボードが期待どおりに入力または出力されない
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/relative_mouse_not_working_on_reolink_nvr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reolink NVR で相対マウスが機能しない
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/difference_between_absolute_and_relative_mouse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    絶対マウスと相対マウスの違い
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/fix_mouse_latency_when_rpi4_controls_rpi3_via_kvm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPi4 が KVM 経由で RPi3 を制御する場合のマウス レイテンシ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    オーディオの問題
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            オーディオの問題
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/no_audio_from_the_controlled_device/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    制御対象デバイスから音声が聞こえない
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/speaker_microphone_settings_cannot_be_retained/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    スピーカーとマイクの設定は保持されません
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../tutorials/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    チュートリアル
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            チュートリアル
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ネットワークとシステム
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            ネットワークとシステム
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_set_static_ip_for_comet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KVM の静的 IP を設定する方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_change_kvm_hostname/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KVM ホスト名を変更する方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_change_device_identity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KVM デバイス ID を変更する方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_set_edid_for_glkvm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KVM に EDID を設定する方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_capture_text_from_remote_screen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    リモート画面からテキストをキャプチャする方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_check_usb-c_port_dp_alt_mode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    USB-C ポートの DP Alt Mode を確認する方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_disable_ping_icmp_packets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KVM からの送信 PING/ICMP パケットを無効にする方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_reduce_stun_public_ip_detection_frequency/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STUN パブリック IP の検出頻度を減らす方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    クラウドサービス
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            クラウドサービス
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_bind_kvm_to_the_cloud_via_dynamic_code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    動的コードを介してKVMをクラウドにバインドする方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_use_screen_wall/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    クラウドベースのスクリーンウォール機能の使用方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    仮想メディア
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            仮想メディア
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_share_files_between_controlling_device_and_controlled_device/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    KVM 経由でファイルを共有する方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_install_os_remotely/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OSをリモートインストールする方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_record_remote_screen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    リモート画面を録画する方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    アプリセンター
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            アプリセンター
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/remote_access_via_tailscale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tailscale 経由で KVM にリモートアクセスする方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/remote_access_via_zerotier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ZeroTier 経由で KVM にリモートアクセスする方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/remote_access_via_netbird/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NetBird 経由で KVM にリモートアクセスする方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    トラブルシューティング
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            トラブルシューティング
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/debrick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    U-Boot 経由で KVM のブリックを解除する方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_debrick_kvm_via_rkdevtool/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RKDevTool 経由で KVM のブリックを解除する方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_unbrick_kvm_via_usb_otg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    USB OTG 経由で KVM を復旧する方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_export_device_and_app_logs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    デバイスとアプリのログをエクスポートする方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_export_cellular_logs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    セルラーログをエクスポートする方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_fix_mouse_latency_when_rpi4_controls_rpi3_via_glkvm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPi4 が RPi3 を制御する場合のマウスの遅延を修正する方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ハードウェアとUSB
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            ハードウェアとUSB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/how_to_access_serial_console_via_usb_ttl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    USB TTL 経由でシリアル コンソールにアクセスする方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../video_library/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ビデオライブラリ
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            ビデオライブラリ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../video_library/products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    当社の製品をご紹介します
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../video_library/unboxing_first_set_up/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    開梱と初回セットアップ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../video_library/features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    機能
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    機能のアップデート
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            機能のアップデート
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features_update/firmware_v1.9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ファームウェアv1.9
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    設定
+  </a>
+  
+    <nav class="md-nav" aria-label="設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    クイック検索
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    ビデオ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    リモートデバイスの設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    システム
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    ネットワーク
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    ツールボックス
+  </a>
+  
+    <nav class="md-nav" aria-label="ツールボックス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    クリップボード
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    ショートカット
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    ウェイク オン ラン
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    ターミナル
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    アクセサリー
+  </a>
+  
+    <nav class="md-nav" aria-label="アクセサリー">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    フィンガーボット
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atx" class="md-nav__link">
+    ATX 電源
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    仮想メディア
+  </a>
+  
+    <nav class="md-nav" aria-label="仮想メディア">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    ファイル共有
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    イメージのマウント
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    ストレージ ドライブを交換する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    ディスクをフォーマットします
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    アプリ センター
+  </a>
+  
+    <nav class="md-nav" aria-label="アプリ センター">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tailscale" class="md-nav__link">
+    Tailscale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zerotier" class="md-nav__link">
+    ZeroTier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netbird" class="md-nav__link">
+    NetBird
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    ヘルプ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    ツールバー
+  </a>
+  
+    <nav class="md-nav" aria-label="ツールバー">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    テキスト認識
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    折りたたむ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    フルスクリーン
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    アップグレード
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    クラウド サービス
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    セキュリティ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+  <!-- Edit button -->
+  
+
+  <!--
+    Hack: コンテンツに h1 見出しが含まれているかどうかを確認します。もしそうなら
+     ではありません。ページ タイトル (またはそれぞれのサイト名) が使用されます
+     が主な見出しです。
+  -->
+  
+
+  <!-- Markdown content -->
+  <h1 id="comet-5g-gl-rm10rc">Comet 5G (GL-RM10RC) コンソール ガイド<a class="headerlink" href="#comet-5g-gl-rm10rc" title="Permanent link">&para;</a></h1>
+<h2 id="_1">設定<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>コンソールで、<strong>Settings</strong>に移動します。設定ページには 4 つのセクションが含まれています。</p>
+<ul>
+<li><a href="#video">ビデオ</a></li>
+<li><a href="#remote-device-settings">リモートデバイス設定</a></li>
+<li><a href="#system">システム</a></li>
+<li><a href="#network">ネットワーク</a></li>
+</ul>
+<h3 id="_2">クイック検索<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>[設定] ページの上部にキーワードを入力すると、必要な設定をすぐに見つけることができます。</p>
+<p><img alt="quick search" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/quick-search.png" /></p>
+<h3 id="_3">ビデオ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>表示モード、ビデオ品質、ビデオ送信、画面の向き、EDID など、本体のビデオ設定をカスタマイズできます。</p>
+<p><img alt="settings-video" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/settings-video.png" /></p>
+<ul>
+<li>
+<p><strong>Mode</strong>: 必要に応じてスマート モードとノーマル モードを切り替えます。スマート モードは、特に弱いネットワークでの帯域幅の消費を削減するのに役立ちます。</p>
+</li>
+<li>
+<p><strong>Latency Mode</strong>: デバイスの「最低遅延」と「スムーズ表示」のどちらかを選択できます。この機能はファームウェア v1.9.0 で導入されました。</p>
+<div class="admonition note">
+<p class="admonition-title">最小遅延とスムーズ表示の違いは何ですか?</p>
+<ul>
+<li>
+<p><strong>Lowest Latency</strong>: 入力遅延を最小限に抑え、キーボードとマウスのよりきびきびした応答を実現します。</p>
+</li>
+<li>
+<p><strong>Smooth Display</strong>: 視覚パフォーマンスを最適化し、途切れやフレーム損失を排除し、安定した再生を実現します。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Quality</strong>: ネットワーク環境と解像度要件に応じて、ビデオ品質を自動/低/中/高/超高/ロスレスに調整します。</p>
+</li>
+<li>
+<p><strong>Transfer</strong>: ビデオ伝送方式を WebRTC、WebRTC (FEC)、ダイレクトの間で切り替えます。ダイレクト転送では音が出ませんのでご注意ください。</p>
+<div class="admonition note">
+<p class="admonition-title">WebRTC、WebRTC (FEC) とダイレクトの違いは何ですか?</p>
+<ul>
+<li>
+<p><strong>WebRTC</strong>: リアルタイム リモート コントロールのために、滑らかなビデオと安定したオーディオのバランスをとります。</p>
+</li>
+<li>
+<p><strong>WebRTC (FEC)</strong>: 前方誤り訂正を追加して、貧弱なまたは不安定なネットワーク条件下での接続の安定性を向上させます。選択すると、少量の冗長データを送信することで失われたデータ パケットが自動的に修復され、画面のちらつきや遅延が軽減されます。</p>
+</li>
+<li>
+<p><strong>Direct</strong>: 最低の遅延とロスレスビデオ品質を提供しますが、オーディオ送信はサポートしていません。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Orientation</strong>: コンソールの回転角度を 0°/90°/180°/270° に調整します。</p>
+</li>
+<li>
+<p><strong>EDID</strong>: Extended Display Identification Data の略で、最適な表示パラメータに自動的に一致します。</p>
+<p>デフォルト設定はほとんどのシナリオに適用され、通常は変更する必要はありません。詳細は<a href="../../../tutorials/how_to_set_edid_for_glkvm/" target="_blank">こちら</a>をご参照ください。 EDID 調整後に画面が更新されない場合は、被制御デバイスを再起動してください。</p>
+</li>
+<li>
+<p><strong>View</strong>: この設定は、ブラウザ ウィンドウのサイズを変更するときの画面のスケーリングを決定します。利用可能なオプション: アダプティブ、最高画質、オリジナル ピクセル。この機能はファームウェア v1.8.0 で導入されました。</p>
+</li>
+</ul>
+<h3 id="_4">リモートデバイスの設定<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>被制御デバイスの関連設定を調整できます。</p>
+<p><img alt="settings-remote device" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/settings-remote-device.png" /></p>
+<ul>
+<li>
+<p><strong>Speaker</strong>: 被制御デバイスからのオーディオ出力を制御します (システム サウンド、ビデオ オーディオなど)。</p>
+</li>
+<li>
+<p><strong>Microphone</strong>: ローカル オーディオ (ユーザーの声など) を制御側デバイスからリモート エンドに送信します。ワンクリックのミュート、およびマイクをアクティブにするための長押しショートカット (つまり、Press To Speak) をサポートしています。</p>
+<p><img alt="mic settings" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/mic-settings.png" /></p>
+<p><img alt="press to speak" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/press-to-speak.png" /></p>
+</li>
+<li>
+<p><strong>Keyboard</strong>: 被制御デバイスのキーボードをオンまたはオフにします。</p>
+</li>
+<li>
+<p><strong>Bad Link Mode</strong>: つまり、すぐにキーを放します。各キーの押下は 1 回の素早い押して放す動作として送信され、リモート制御中のキーの固着や意図しない繰り返し入力を防ぎます。</p>
+</li>
+<li>
+<p><strong>Show Virtual Keyboard</strong>: コンソールに仮想キーボードを表示して使用します。</p>
+<p><img alt="show virtual keyboard" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/show-virtual-keyboard.png" /></p>
+</li>
+<li>
+<p><strong>Swap Command and Ctrl for MacOS</strong>: この機能は、Cmd キーと Ctrl キーを交換して、さまざまなオペレーティング システム間でキーボードの互換性を確保します。</p>
+</li>
+<li>
+<p><strong>Mouse</strong>: 被制御デバイスのマウスをオンまたはオフにします。</p>
+</li>
+<li>
+<p><strong>Show Local Cursor</strong>: 現在のデバイスのマウスを画面上に表示します。</p>
+</li>
+<li>
+<p><strong>Mouse Jiggle</strong>: マウス ジグル機能は、微妙な周期的なマウスの動きをシミュレートし、リモート会議やサーバー管理中など、長時間非アクティブな状態が続いて被制御デバイスがスリープ状態になるのを防ぎます。</p>
+</li>
+<li>
+<p><strong>Scroll Rate</strong>: マウス ホイールのスクロール速度、またはホイール 1 回転ごとにスクロールされる行/単位数を指し、リモコン上でコンテンツが移動する速度に影響します。</p>
+</li>
+<li>
+<p><strong>Scroll Direction</strong>: マウス ホイールを上下にスクロールすると、リモート画面上のコンテンツが同じ方向 (自然スクロール) に移動するか、逆方向 (従来のスクロール) に移動するかを決定します。</p>
+<p>標準、垂直反転、水平反転、両反転の 4 つの方向モードが利用可能です。</p>
+</li>
+<li>
+<p><strong>Mouse Mode</strong>: 絶対モードと相対モードを切り替えて、さまざまなリモート コントロール シナリオでスムーズかつ正確なカーソル制御を保証します。</p>
+<div class="admonition note">
+<p class="admonition-title">絶対モードと相対モードの違いは何ですか?</p>
+<ul>
+<li>
+<p><strong>Relative Mode</strong>: マウスの位置は、固定された画面座標ではなく動きに基づいて計算されます。マウスを制御するには、リモート ウィンドウ内をクリックする必要があります。カーソルがリモート画面内でロックされ、スムーズに移動できません。このモードでは、BIOS、古いシステム、および組み込みデバイスとの互換性が向上します。</p>
+</li>
+<li>
+<p><strong>Absolute Mode</strong>: マウスの位置は正確な画面座標に対応します。リモート カーソルはローカル カーソルをスムーズかつ正確に追従するため、ローカル画面とリモート画面の間でシームレスに移動できます。ネットワーク伝送により若干の遅延が発生する場合がありますが、日常のデスクトップ制御や正確な操作に最適です。</p>
+</li>
+</ul>
+<p>つまり、日々の制御をスムーズに行うには、Absolute を使用します。 BIOS アクセス、絶対位置をサポートしていない一部の古いデバイス、または誤ったカーソルの移動を避けるために相対を使用します。</p>
+</div>
+</li>
+<li>
+<p><strong>Relative Sensitivity</strong>: マウス モードが相対の場合に使用できます。</p>
+</li>
+<li>
+<p><strong>Primary Button</strong>: プライマリ クリックとして左ボタンまたは右ボタンを選択します。この機能はファームウェア v1.9.0 で導入されました。</p>
+</li>
+</ul>
+<h3 id="_5">システム<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>コンソールのシステム表示設定をカスタマイズしたり、ワンクリックでデバイスをリセットしたりできます。</p>
+<p><img alt="settings-system" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/settings-system.png" /></p>
+<ul>
+<li>
+<p><strong>Device Identity</strong>: 被制御デバイスによって認識される KVM の ID をカスタマイズまたは変更します。 EDID とデバイス ID は同期されたままであることに注意してください。どちらかを変更すると、もう一方も自動的に更新され、デバイスが正しく認識されるようになります。</p>
+<p><img alt="device identity" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/device-identity.png" /></p>
+</li>
+<li>
+<p><strong>Language</strong>: コンソールの言語を中国語、英語、または日本語に設定します。</p>
+</li>
+<li>
+<p><strong>Color Mode</strong>: テーマの色をライト モードまたはダーク モードにカスタマイズします。</p>
+</li>
+<li>
+<p><strong>Time Zone</strong>: KVM コンソールのタイムゾーンをカスタマイズします。</p>
+</li>
+<li>
+<p><strong>Reset KVM</strong>: ワンクリックで KVM を出荷時設定にリセットします。</p>
+</li>
+<li>
+<p><strong>Screen Display</strong>: 必要に応じて画面表示をカスタマイズできます。この機能はファームウェア v1.9.1 で導入されました。</p>
+<p><img alt="screen display" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/screen-display.png" /></p>
+</li>
+</ul>
+<h3 id="_6">ネットワーク<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>ここで、ホスト名やIPアドレスなど、Comet 5Gのネットワークの詳細を確認および変更できます。</p>
+<p><img alt="settings-network" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/settings-network.png" /></p>
+<ul>
+<li>
+<p><strong>Hostname</strong>: デバイスのホスト名はコンソールで直接変更できます。この機能はファームウェア v1.7.0 で導入されました。</p>
+<p><img alt="modify hostname" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/hostname.png" /></p>
+</li>
+<li>
+<p><strong>Ethernet</strong>: Comet 5G がイーサネット ケーブル経由で上流のネットワーク デバイスに接続すると、そのイーサネット IP アドレスがここに表示されます。 IP アドレスまたは右矢印をクリックすると、イーサネットの詳細が表示されます。</p>
+<p>プロトコルが DHCP の場合、ページは次のように表示されます。</p>
+<p><img alt="ethernet dhcp" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/ethernet1.png" /></p>
+<p>静的 IP アドレスを設定する場合は、プロトコルを <strong>Static</strong> に切り替え、必要なネットワーク パラメーター (IP アドレス、ネットマスク、ゲートウェイなど) をそれに応じて入力します。</p>
+<p><img alt="ethernet static" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/ethernet2.png" /></p>
+</li>
+<li>
+<p><strong>Wireless</strong>: Comet 5G は、<strong>Station Mode</strong> および <strong>AP Mode</strong> の 2 つのワイヤレス動作モードをサポートし、さまざまなネットワーク アクセス要件に対応します。</p>
+<ul>
+<li>
+<p><strong>Station Mode</strong></p>
+<p>このモードは、既存のワイヤレス ネットワークが Comet 5G に接続できるシナリオに適しています。</p>
+<p>このモードでは、Comet 5G はワイヤレス クライアントとして機能し、上流の Wi-Fi ホットスポット (ルーターなど) をスキャンして接続し、ネットワーク アクセスを取得できます。</p>
+<p><img alt="wifi station" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/wifi-sta-mode.png" /></p>
+<p>別の Wi‑Fi ネットワークに接続する場合は、下部の <strong>Switch Wi-Fi</strong> をクリックします。</p>
+<p><img alt="switch wifi 1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/switch-wifi1.png" /></p>
+<p>次に、利用可能なネットワークのリストから Wi-Fi を選択します。</p>
+<p><img alt="switch wifi 2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/switch-wifi2.png" /></p>
+</li>
+<li>
+<p><strong>AP Mode</strong></p>
+<p>このモードはローカル エリア ネットワークのセットアップに最適で、外部ネットワークを必要とせずに KVM のオフライン近距離制御を可能にします。</p>
+<p>このモードでは、Comet 5G 自体が Wi-Fi ホットスポットとして機能し、スマートフォンやラップトップなどの端末デバイスが接続するための信号をブロードキャストします。ただし、Wi-Fi 経由でアップストリーム ネットワークにアクセスすることはできなくなります。</p>
+<p><img alt="wifi ap" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/wifi-ap-mode.png" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Cellular</strong>: Comet 5G にはセルラーモジュールが内蔵されており、SIM カード経由でモバイル ネットワーク アクセスが可能です。</p>
+<p>SIM カードが検出されると、このインターフェイスで携帯電話接続の詳細 (キャリア情報、電話番号、ICCID、現在の APN プロファイルなど) を表示できます。</p>
+<p><img alt="cellular" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/cellular.png" /></p>
+<ul>
+<li>
+<p><strong>SIM Settings</strong> を使用すると、携帯電話の設定を管理できます (APN や MTU の調整など)。</p>
+</li>
+<li>
+<p><strong>AT コマンド</strong> を使用すると、AT コマンドを実行してモデム関連の出力を取得できます。</p>
+</li>
+<li>
+<p><strong>Cellular Firewall</strong> は、携帯電話ネットワークのファイアウォール ルールを設定するために使用されます。</p>
+</li>
+</ul>
+<p>要約すると、セルラー接続は、イーサネットまたは Wi-Fi 接続が利用できない場合の堅牢なバックアップ ネットワーク オプションとして機能します。</p>
+</li>
+</ul>
+<h2 id="_7">ツールボックス<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>コンソールで、<strong>Toolbox</strong>に移動します。ツールボックス ページには、次の 4 つのセクションが含まれています。</p>
+<ul>
+<li><a href="#clipboard">クリップボード</a></li>
+<li><a href="#shortcut">ショートカット</a></li>
+<li><a href="#wake-on-lan">ウェイク オン ラン</a></li>
+<li><a href="#terminal">端末</a></li>
+</ul>
+<h3 id="_8">クリップボード<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>クリップボードを使用すると、ファイルを転送することなく、制御側デバイスから被制御デバイスにテキストを簡単に貼り付けることができます。</p>
+<p><img alt="toolbox-clipboard" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/toolbox-clipboard.png" /></p>
+<h3 id="_9">ショートカット<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>ショートカットを使用すると、仮想キーボードを使用せずにアクションをより速く実行できるため、より効率的に作業し、日常業務の時間を節約できます。ここでいくつかの一般的なショートカットを見つけることができます。</p>
+<p><img alt="toolbox-shortcut-1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/toolbox-shortcut1.png" /></p>
+<p><strong>Modify</strong> をクリックして、必要に応じてショートカット オプションを調整します。</p>
+<p><img alt="toolbox-shortcut-2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/toolbox-shortcut2.png" /></p>
+<h3 id="_10">ウェイク オン ラン<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>Wake-on-LAN (WOL) は、被制御デバイスの電源をリモートでオンにしたり、低電力状態から復帰したりできるテクノロジーです。</p>
+<p><strong>Add Device</strong> をクリックし、同じ LAN からデバイスを選択します。</p>
+<p><img alt="toolbox-wol" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/toolbox-wol.png" /></p>
+<p><img alt="wol-add-device" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/wol-add-device.png" /></p>
+<p>追加したいデバイスがリストにない場合は、<strong>Add Manually</strong> をクリックし、デバイス名と MAC アドレスを入力します。</p>
+<p><img alt="wol-add-manually" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/wol-add-manually.png" /></p>
+<h3 id="_11">ターミナル<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>Comet 5Gの端末にアクセスして詳細設定を行うことができます。 「<strong>Access</strong>」をクリックします。</p>
+<p><img alt="toolbox-terminal-1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/toolbox-terminal1.png" /></p>
+<p>GLKVM ターミナルにリダイレクトされます。</p>
+<p><img alt="toolbox-terminal-2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/toolbox-terminal2.png" /></p>
+<h2 id="_12">アクセサリー<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>GL.iNet は、デバイスの電源オン/オフをリモート制御するためのオプションの KVM アクセサリを提供します。</p>
+<p>まず、対応するユーザー ガイドを参照して、アクセサリを被制御デバイスに接続します。</p>
+<ul>
+<li>
+<p><a href="../../gl-fgb-01/" target="_blank">フィンガーボット(FGB-01) ユーザーガイド</a></p>
+</li>
+<li>
+<p><a href="../../gl-atx-board/" target="_blank">ATX ボード (GL-ATXPC) ユーザーガイド</a></p>
+</li>
+</ul>
+<p>2 番目に、KVM コンソールにログインし、<strong>Accessories</strong> に移動します。アクセサリの設定は、アクセサリをインストールした後にのみ使用できます。</p>
+<h3 id="_13">フィンガーボット<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>Fingerbot は、被制御デバイスの物理的な電源ボタンに貼り付けられ、被制御デバイスの電源の遠隔制御を実現します。</p>
+<p>本体の設定に従って動作します。</p>
+<p><img alt="accessories fingerbot" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/fingerbot.png" /></p>
+<ul>
+<li>
+<p><strong>Time</strong>: フィンガーボットの押し続け時間。 0.5秒/3秒/8秒に設定できます。</p>
+</li>
+<li>
+<p><strong>Strength</strong>:押す強さは軽く押す、強く押すの2段階あります。</p>
+<ul>
+<li>
+<p><strong>Lightly Press</strong>: 短いボタンまたはソフトタッチのボタンに最適です。</p>
+</li>
+<li>
+<p><strong>Firmly Press</strong>: 深いボタンやしっかりしたボタンに最適です。</p>
+</li>
+</ul>
+<p><img alt="press mode" class="glboxshadow gl-70-desktop" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/press_mode.png" /></p>
+</li>
+</ul>
+<h3 id="atx">ATX 電源<a class="headerlink" href="#atx" title="Permanent link">&para;</a></h3>
+<p>ATX ボードはコンピューターのケースに取り付けられており、デバイスの電源オン/オフ/再起動をリモートで制御します。</p>
+<p>本体の設定に従って動作します。</p>
+<p><img alt="accessories atxpower" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/atxboard.png" /></p>
+<ul>
+<li>
+<p><strong>電源 (短く押す)</strong>: 通常の電源投入またはシステムのウェイクアップに使用されます。</p>
+</li>
+<li>
+<p><strong>電源 (長押し)</strong>: 強制シャットダウン操作を実行します。</p>
+</li>
+<li>
+<p><strong>Restart</strong>: デバイスを再起動します。</p>
+</li>
+</ul>
+<h2 id="_14">仮想メディア<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>コンソールで、<strong>Virtual Media</strong>に移動します。ここでは次の操作を実行できます。</p>
+<ul>
+<li><a href="#file-sharing">ファイル共有</a></li>
+<li><a href="#image-mounting">画像取付</a></li>
+<li><a href="#replace-storage-drive">ストレージドライブの交換</a></li>
+<li><a href="#format-disk">ディスクのフォーマット</a></li>
+</ul>
+<p><img alt="virtual media" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/virtual-media.png" /></p>
+<h3 id="_15">ファイル共有<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>Comet 5G は、読み取り/書き込み USB ドライブをエミュレートできるため、制御側デバイスと制御側デバイスの間でファイルを共有および管理できます。</p>
+<p><strong>制御側デバイスから被制御デバイスにファイルを共有するには、以下の手順に従ってください。</strong></p>
+<ol>
+<li>
+<p>ボックスをドラッグまたはクリックして、制御側デバイスからファイルをアップロードするか、URL からアップロードします。</p>
+<p>アップロードされると、以下のようにファイルが表示されます。</p>
+<p><img alt="upload files" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/file-sharing1.png" /></p>
+</li>
+<li>
+<p>「<strong>Mount To Remote</strong>」→「<strong>File Sharing</strong>」をクリックします。</p>
+<p><img alt="file sharing" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/file-sharing2.png" />
+以下に示すように、</p>
+</li>
+<li>
+<p>A ウィンドウがコンソールにポップアップ表示され、ファイル共有の手順が示されます。</p>
+<p><img alt="file sharing tips" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/file-sharing3.png" /></p>
+</li>
+<li>
+<p>少し待つと、<strong>"GLKVM"</strong> という名前のドライブが画面に自動的に表示されます。以前に制御側デバイスから Comet 5G にアップロードしたファイルが、制御側デバイスに共有されていることがわかります。これで、被制御デバイス上のこのドライブ内のファイルを表示、移動、または削除できるようになります。</p>
+<p><img alt="glkvm disk" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/file-sharing4.png" /></p>
+<p><strong>Tips</strong>: ドライブが自動的にポップアップしない場合は、被制御デバイスの <strong>This PC</strong> に移動します。</p>
+<p><img alt="this pc" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/thispc.png" /></p>
+<p>次に、<strong>GLKVM</strong> という名前のドライブを見つけます。これで、このドライブ内のファイルを表示、移動、または削除できるようになります。</p>
+</li>
+<li>
+<p>共有を停止する場合は、ツールバーの <strong>Virtual Media</strong> をクリックし、<strong>Stop Sharing</strong> をクリックします。</p>
+<p><img alt="stop sharing 1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/stop-sharing1.png" /></p>
+</li>
+</ol>
+<p><strong>被制御デバイスから制御側デバイスにファイルを共有するには、以下の手順に従ってください。</strong></p>
+<ol>
+<li>
+<p>被制御デバイスで、共有するファイルをドライブ <strong>GLKVM</strong> に移動またはコピーします。</p>
+<p>たとえば、「slate7pro_datasheet」という名前の PDF ファイルが、被制御デバイスのデスクトップからディスク <strong>GLKVM</strong> に移動されました。</p>
+<p><img alt="move file to disk" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/file-sharing5.png" /></p>
+</li>
+<li>
+<p>Comet 5G のコンソールに移動し、ツールバーの <strong>Virtual Media</strong> をクリックし、<strong>Stop Sharing</strong> をクリックします。</p>
+<p><img alt="stop sharing 2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/stop-sharing2.png" /></p>
+</li>
+<li>
+<p>このファイルは、次に示すように、<strong>Virtual Media</strong> の下に表示されます。これで、このファイルを Comet 5G から制御側デバイスにダウンロードできます。</p>
+<p><img alt="file shared" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/file-sharing6.png" /></p>
+</li>
+</ol>
+<h3 id="_16">イメージのマウント<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>Comet 5G は、被制御デバイス上の読み取り専用の仮想 CD/DVD またはディスク ドライブをシミュレートできます。 BIOS または UEFI 起動プロセス中にこのドライブにアクセスできます。</p>
+<p>この機能は、オペレーティング システムを再インストールしたり、ISO をマウントして制御対象のデバイスにアプリケーションをインストールしたり、その他のタスクを実行したりするのに役立ちます。</p>
+<ol>
+<li>
+<p>ボックスをドラッグまたはクリックしてファイルをアップロードします。 <strong>このファイルが ISO 形式としてマウントできることを確認してください</strong>。</p>
+<p>アップロードされると、以下のようにファイルが表示されます。</p>
+<p><img alt="image mounting 1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/image-mounting1.png" /></p>
+</li>
+<li>
+<p>「<strong>Mount To Remote</strong>」→「<strong>Image Mounting</strong>」をクリックします。</p>
+<p><img alt="image mounting 2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/image-mounting2.png" /></p>
+</li>
+<li>
+<p>ポップアップ ウィンドウでファイルを選択し、<strong>Mount Image</strong> をクリックします。</p>
+<p><img alt="image mounting 3" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/image-mounting3.png" />
+以下に示すように、</p>
+</li>
+<li>
+<p>A ウィンドウがコンソールにポップアップ表示され、取り付け手順が示されます。</p>
+<p><img alt="image mounting 4" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/image-mounting4.png" /></p>
+</li>
+<li>
+<p>これで、被制御デバイスの CD ドライブからこのファイルを使用できるようになります。</p>
+<p><img alt="image mounting 5" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/image-mounting5.png" /></p>
+</li>
+</ol>
+<h3 id="_17">ストレージ ドライブを交換する<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>USB ストレージ デバイスを KVM USB ポートに挿入して、内部ストレージを置き換えることができます。</p>
+<p><img alt="replace storage drive" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/replace-storage.png" /></p>
+<h3 id="_18">ディスクをフォーマットします<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>ワンクリックでディスクをフォーマットしたり、仮想メディアを無効にしたりできます。</p>
+<p><img alt="format disk" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/format-storage.png" /></p>
+<ul>
+<li>
+<p><strong>Format</strong>: ディスク上のすべてのデータを消去し、ファイル システム構造を再初期化します。</p>
+</li>
+<li>
+<p><strong>Disable</strong>: 仮想メディアを無効にすると、KVM デバイスがすぐに再起動されます。</p>
+</li>
+</ul>
+<h2 id="_19">アプリ センター<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p>コンソールで、<strong>Apps Center</strong>に移動します。統合されたアプリケーションはここにあります。</p>
+<p><img alt="apps center" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/apps-center.png" /></p>
+<h3 id="tailscale">Tailscale<a class="headerlink" href="#tailscale" title="Permanent link">&para;</a></h3>
+<p><a href="https://tailscale.com/" target="_blank">Tailscale</a> は、ポート転送や複雑なファイアウォール設定を行わずに、デバイス間で暗号化されたピアツーピア プライベート ネットワークを構築する WireGuard ベースのメッシュ VPN サービスです。</p>
+<p>Comet 5G は Tailscale と統合され、Tailscale 仮想ネットワーク経由でリモート アクセスできるようになります。</p>
+<p>Comet 5G と制御側デバイスを同じ Tailscale アカウントにバインドするだけで、GLKVM アプリをインストールしなくても、制御側デバイスの Web ブラウザーに <strong>Tailscale 仮想 IP</strong> を入力することで、Comet 5G にリモート アクセスできます。詳細は<a href="../../../faq/remote_access_via_tailscale/" target="_blank">こちら</a>をご参照ください。</p>
+<p>バインド後、コンソールにはリンクされた Tailscale アカウントが表示され、出口ノードやサブネット ルートなどの高度な機能のロックが解除されます。</p>
+<p><img alt="tailscale enabled" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/apps-tailscale-enabled.png" /></p>
+<h3 id="zerotier">ZeroTier<a class="headerlink" href="#zerotier" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.zerotier.com/" target="_blank">ZeroTier</a> は、暗号化されたオーバーレイ仮想ネットワークを作成し、分散したデバイスをあたかも同じローカル エリア ネットワーク内にあるかのようにグローバルに接続します。</p>
+<p>Comet 5G は ZeroTier と統合され、ZeroTier 仮想ネットワーク経由でリモート アクセスできるようになります。</p>
+<p>Comet 5G と制御側デバイスを同じ ZeroTier ネットワークに参加させるだけで、GLKVM アプリをインストールしなくても、制御側デバイスの Web ブラウザーに <strong>ZeroTier IP</strong> を入力することで、Comet 5G にリモート アクセスできます。詳細は<a href="../../../faq/remote_access_via_zerotier/" target="_blank">こちら</a>をご参照ください。</p>
+<p>バインド後、コンソールには ZeroTier ネットワーク ID と仮想 IP が表示されます。</p>
+<p><img alt="zerotier enabled" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/apps-zerotier-enabled.png" /></p>
+<h3 id="netbird">NetBird<a class="headerlink" href="#netbird" title="Permanent link">&para;</a></h3>
+<p><a href="https://netbird.io/" target="_blank">NetBird</a> は、家庭用およびビジネス用の安全なプライベート ネットワークを構築できるオープンソースのゼロトラスト ネットワーキング プラットフォームです。 WireGuard® ベースのオーバーレイ ネットワークとして、NetBird は、いつでもどこでもデバイスへの安全なアクセスを可能にします。</p>
+<p>Comet 5G は NetBird と統合されており、NetBird 仮想ネットワーク経由でリモート アクセスできるようになります。詳細は<a href="../../../faq/remote_access_via_netbird/" target="_blank">こちら</a>をご参照ください。</p>
+<p>バインド後、コンソールには NetBird 仮想 IP が表示されます。</p>
+<p><img alt="netbird enabled" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/apps-netbird-enabled.png" /></p>
+<h2 id="_20">ヘルプ<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<p>コンソールで、<strong>Help</strong>に移動します。ここでは、GL.iNet KVM に関する詳細情報とヘルプ ドキュメント、およびトラブルシューティングのためのログをエクスポートできます。</p>
+<p><img alt="help" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/help.png" /></p>
+<h2 id="_21">ツールバー<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<p>コンソールで、右上隅に移動して次のツールにアクセスします。</p>
+<ul>
+<li><a href="#text-recognition">テキスト認識</a></li>
+<li><a href="#collapse">ツールバーを折りたたむ</a></li>
+<li><a href="#fullscreen">フルスクリーン</a></li>
+<li><a href="#upgrade">アップグレード</a></li>
+<li><a href="#cloud-service">クラウドサービス</a></li>
+<li><a href="#security">セキュリティ</a></li>
+<li>再起動</li>
+<li>ログアウト</li>
+</ul>
+<h3 id="_22">テキスト認識<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p>テキスト認識機能を使用すると、リモート画面上の領域を選択し、そこからテキストを簡単に抽出できます。これは光学式文字認識 (OCR) テクノロジーを搭載しており、ファームウェア v1.9.0 で導入されました。</p>
+<p>これを使用するには、下向き矢印をクリックして、中国語、英語、バイリンガル (Zh/En) などの優先認識言語を選択します。</p>
+<p><img alt="recognition language" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/ocr_function.png" /></p>
+<p>次に、「T」アイコンをクリックすると、リモート画面が暗くなります。抽出したいテキストの周りにボックスを描くと、システムが自動的にそれを識別します。必要に応じて、認識されたテキストをコピーできます。</p>
+<p>この機能を使用すると、リモート画面 (つまり、被制御デバイス) からテキストを簡単にキャプチャし、それをローカル制御側デバイスにコピーできます。</p>
+<h3 id="_23">折りたたむ<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p>右上隅の上向き矢印アイコンをクリックして、ツールバーを折りたたみます。</p>
+<p><img alt="collapse" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/collapse1.png" /></p>
+<p>ツールバーが折りたたまれている場合、上部の下向き矢印アイコンをクリックして展開します。</p>
+<p><img alt="collapse" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/collapse2.png" /></p>
+<h3 id="_24">フルスクリーン<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>右上隅にある全画面アイコン (四角形) をクリックして、全画面モードに切り替えます。</p>
+<p><img alt="fullscreen" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/fullscreen1.png" /></p>
+<p>全画面表示を終了するには、<strong>Esc</strong> キーを押し続けるか、右上隅にある全画面表示を終了するアイコン (格子状) をクリックします。</p>
+<p><img alt="fullscreen" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/fullscreen2.png" /></p>
+<h3 id="_25">アップグレード<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p>右上隅にあるファームウェアのバージョンをクリックして、アップデートを確認します。</p>
+<p><img alt="firmware upgrade" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/upgrade1.png" /></p>
+<p>ポップアップ ウィンドウで <strong>Update Settings</strong> をクリックして、ローカル アップグレードを実行したり、ベータ プログラムに参加したり、現在の構成を保存したりできます。</p>
+<p><img alt="firmware upgrade" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/upgrade2.png" /></p>
+<p>ローカル アップグレードを実行する前に、<a href="https://dl.gl-inet.com/kvm" target="_blank">ファームウェア ダウンロード センター</a> から最新のファームウェアをダウンロードしてください。</p>
+<h3 id="_26">クラウド サービス<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<p>GL.iNet KVM クラウドを使用すると、制御対象のデバイスにリモートからアクセスできます。詳細は<a href="../../../faq/remote_access_via_cloud/" target="_blank">こちら</a>をご参照ください。</p>
+<p>Comet 5G がクラウドにバインドされると、コンソールには次のようにクラウドのステータスが表示されます。</p>
+<p><img alt="cloud service" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/cloud.png" /></p>
+<h3 id="_27">セキュリティ<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<p>セキュリティにより、管理者パスワードの変更、2 要素認証の有効化、TLS 証明書のカスタマイズが可能になります。</p>
+<p><img alt="security" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/security.png" /></p>
+<ul>
+<li>
+<p>管理者パスワードを変更します。</p>
+<p><img alt="change admin password" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/change-password.png" width="434" /></p>
+</li>
+<li>
+<p>2FA: アカウントを保護するために 2 要素認証を有効にします。</p>
+<p><img alt="2FA" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10rc/console/2fa.png" /></p>
+</li>
+<li>
+<p>TLS 証明書</p>
+<p>システムは、ブラウザー アクセスにプリインストールされたデフォルトの証明書を使用します。 Web ブラウザー アクセス用の TLS 証明書をカスタマイズする場合は、コンソールの右上隅にある <strong>TLS Certificate</strong> をクリックし、<strong>Custom Certificate</strong> を選択して、<strong>証明書ファイルと秘密キー ファイル</strong>をアップロードします。</p>
+<p><img alt="TLS certificate custom" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/user_guide/gl-rm10/console/tls-cert-custom.png" /></p>
+</li>
+</ul>
+
+  <!-- Last update of source file -->
+  
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+        不透明度のアニメーション化は rgba() よりも高速であるため、これは別の要素です。 -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <!--  Controls are self-explanatory. Order can be changed. -->
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="閉じる (Esc)"></button>
+            <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+            <button class="pswp__button pswp__button--fs" title="全画面表示を切り替える"></button>
+            <button class="pswp__button pswp__button--zoom" title="拡大／縮小"></button>
+            <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+            <!-- element will get class pswp__preloader--active when preloader is running -->
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div> 
+          </div>
+
+          <button class="pswp__button pswp__button--arrow--left" title="前へ（左矢印）">
+          </button>
+
+          <button class="pswp__button pswp__button--arrow--right" title="次へ（右矢印）">
+          </button>
+
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+    </div>
+</div>
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 GL Technologies & Microuter Technologies
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.gl-inet.com" target="_blank" rel="noopener" title="www.gl-inet.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.4c2.2 20.4 3.3 41.8 3.3 64zm28.8-64h123.1c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6 78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7 10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5 11.6 26 20.9 58.2 27 94.7zm-209 0H18.6c30-74.1 93.6-130.9 172-151.6-25.5 34.2-45.3 87.7-55.3 151.6zM8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zm186.6 254.6c-11.6-26-20.9-58.2-27-94.6h176.6c-6.1 36.4-15.5 68.6-27 94.6-10.5 23.6-22.2 40.7-33.5 51.5-11.2 10.7-20.5 13.9-27.8 13.9s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6-78.4-20.7-142-77.5-172-151.6h116.7zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6 25.5-34.2 45.2-87.7 55.3-151.6h116.6z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gl-inet/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/gl.inet.wifi/" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/GLiNetWiFi" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/gl-inet.com/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCBfNEzurltlIeFFCbUgHQyg" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.pinterest.com/glinetWiFi/" target="_blank" rel="noopener" title="www.pinterest.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="../../../javascripts/cookieconsent.js"></script>
+      
+    
+  </body>
+</html>
