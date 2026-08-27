@@ -2817,6 +2817,26 @@
     How to change device identity
   </a>
   
+    <nav class="md-nav" aria-label="How to change device identity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#firmware-v110-and-above" class="md-nav__link">
+    Firmware v1.10 and above
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firmware-v19-and-earlier" class="md-nav__link">
+    Firmware v1.9 and earlier
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3753,6 +3773,26 @@
     How to change device identity
   </a>
   
+    <nav class="md-nav" aria-label="How to change device identity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#firmware-v110-and-above" class="md-nav__link">
+    Firmware v1.10 and above
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firmware-v19-and-earlier" class="md-nav__link">
+    Firmware v1.9 and earlier
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3782,24 +3822,22 @@
   <h1 id="how-to-change-kvm-device-identity">How to change KVM device identity<a class="headerlink" href="#how-to-change-kvm-device-identity" title="Permanent link">&para;</a></h1>
 <h2 id="what-is-kvm-device-identity">What is KVM device identity<a class="headerlink" href="#what-is-kvm-device-identity" title="Permanent link">&para;</a></h2>
 <p>GL.iNet KVM's device identity refers to the identifier that enables the KVM to be recognized and distinguished by the connected device during communication. </p>
-<p>Since GL.iNet KVM works as a combined emulator of several devices for user interaction, when connected to the controlled device, it is recognized as a set of multiple devices, including a monitor, several USB devices such as mouse and keyboard, and USB drive. </p>
-<p>By default, the device identity is <strong>GLKVM</strong>, which can be found on the KVM console (<strong>Settings</strong> -&gt; <strong>System</strong>). </p>
-<p><img alt="device identity" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/device_identity.png" /></p>
 <p>Typically, the KVM is equipped with a Type-C port, as shown below, which connects to the controlled device's USB port to simulate peripheral devices (e.g., keyboard, mouse, USB drive, microphone) and CD-ROM. </p>
 <p><img alt="gl-rm1 type-c" class="glboxshadow gl-60-desktop" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/gl-rm1-type-c.png" /></p>
-<p>When the user clicks the mouse, types on the keyboard, or uses the microphone on the controlling end, these signals are remotely transmitted to the physical KVM device. The KVM then forwards them to the controlled device through its Type-C port. Therefore, the KVM is usually regarded as a composite device, emulating several peripheral devices connected to the controlled device's USB ports.</p>
+<p>When you click the mouse, type on the keyboard, or use the microphone on the controlling end, these signals are remotely transmitted to the physical KVM device. The KVM then forwards them to the controlled device through its Type-C port.</p>
+<p>Therefore, the KVM is usually regarded as a composite device, emulating several peripheral devices connected to the controlled device's USB ports.</p>
+<p><img alt="device identity principle" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/principle.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If the input method/keyboard of the controlling device is not consistent with that of the controlled device, some symbols/letters may have different positions on the keyboard, which can cause the output of the controlled end to be inconsistent with the input of the controlling end. Click <a href="../../faq/keyboard_does_not_input_output_as_expected/">here</a> for details.</p>
 </div>
-<p>Since the device identity of GL.iNet KVM is GLKVM by default, it is displayed as GLKVM or Glinet Composite Device in the system settings of the controlled device (such as Bluetooth &amp; devices).</p>
-<p><img alt="device identity default" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/identity_default.png" /></p>
 <h2 id="why-change-device-identity">Why change device identity<a class="headerlink" href="#why-change-device-identity" title="Permanent link">&para;</a></h2>
-<p>By default, GL.iNet KVM is recognized by the controlled device as a composite device, emulating peripherals such as a keyboard, mouse, microphone, and monitor. This usually does not cause inconvenience, as these settings are only visible to users themselves.</p>
-<p><img alt="mic settings" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/mic.png" />
-<small>(microphone settings)</small></p>
+<p>Since GL.iNet KVM works as a combined emulator of several devices for user interaction, when connected to the controlled device, it is recognized as a set of multiple devices, including a monitor, several USB devices such as mouse and keyboard, and USB drive. </p>
+<p>By default, the device identity is <strong>GLKVM</strong>, thus it will be displayed as GLKVM or Glinet Composite Device in the system settings of the controlled device. This usually does not cause inconvenience, as these settings are only visible to users themselves.</p>
+<p><img alt="device identity default" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/identity_default.png" />
+<small>(Bluetooth &amp; devices settings)</small></p>
 <p><img alt="speaker settings" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/speaker.png" />
-<small>(speaker settings)</small></p>
+<small>(Speaker settings)</small></p>
 <p>However, users may need to change KVM's device identity in the following scenarios.</p>
 <details>
 <summary>Scenario 1: Avoiding alerts from monitoring software on office computer</summary>
@@ -3825,22 +3863,46 @@
 <p>Therefore, changing the device identity alone <strong>may not be sufficient</strong> to evade detection by advanced monitoring or behavioral analysis software.</p>
 </div>
 <h2 id="how-to-change-device-identity">How to change device identity<a class="headerlink" href="#how-to-change-device-identity" title="Permanent link">&para;</a></h2>
+<h3 id="firmware-v110-and-above">Firmware v1.10 and above<a class="headerlink" href="#firmware-v110-and-above" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Log in to your KVM and navigate to <strong>Settings</strong> in the upper-right. In the <strong>USB Devices</strong>, find the <strong>Device Identity</strong> and customize it.</p>
+<p><img alt="identity customize1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/1.10_customize1.png" /></p>
+</li>
+<li>
+<p>In the pop-up window, click <strong>Confirm</strong> to restart.</p>
+<p><img alt="identity customize2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/1.10_customize2.png" /></p>
+</li>
+<li>
+<p>After restarting, the Device Identity is changed on the KVM console.</p>
+<p><img alt="identity customize3" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/1.10_customize3.png" /></p>
+</li>
+<li>
+<p>Verify device identity.</p>
+<p>Access your controlled device through KVM, and navigate to <strong>Settings</strong> -&gt; <strong>Bluetooth &amp; devices</strong> (taking Windows 11 Pro as an example). The input device has been recognized as the custom devices you set, instead of the default GLKVM.</p>
+<p><img alt="identity customize4" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/1.10_customize4.png" /></p>
+</li>
+</ol>
+<h3 id="firmware-v19-and-earlier">Firmware v1.9 and earlier<a class="headerlink" href="#firmware-v19-and-earlier" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Log in to your KVM, and navigate to <strong>Settings</strong> -&gt; <strong>System</strong> -&gt; <strong>Device Identity</strong>. Select a preset identity from the drop-down list.</p>
-<p><img alt="customize1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/customize1.jpg" /></p>
+<p><img alt="identity customize1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/customize1.jpg" /></p>
 <p>Or click on <strong>Customize</strong> and fill in the parameters you want in the pop-up window.</p>
-<p><img alt="customize2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/customize2.jpg" /></p>
+<p><img alt="identity customize2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/customize2.jpg" /></p>
 </li>
 <li>
-<p>Once selected, there will be a pop-up window asking to restart. Click <strong>Confirm</strong> to restart.</p>
-<p><img alt="customize3" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/customize3.png" /></p>
+<p>In the pop-up window, click <strong>Confirm</strong> to restart.</p>
+<p><img alt="identity customize3" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/customize3.png" /></p>
 </li>
 <li>
-<p>After restarting, on the KVM console, the Device Identity has been changed to the modified one.</p>
-<p><img alt="customize4" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/customize4.jpg" /></p>
-<p>Access your controlled device via KVM, and navigate to <strong>Settings</strong> -&gt; <strong>Bluetooth &amp; devices</strong> (taking Windows 10 Pro as an example). The input devices (keyboard and mouse), audio device (microphone), and display (monitor) will be recognized as the custom devices you set, instead of the default GLKVM.</p>
-<p><img alt="customize5" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/identity_modified.png" /></p>
+<p>After restarting, the Device Identity is changed on the KVM console.</p>
+<p><img alt="identity customize4" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/customize4.jpg" /></p>
+</li>
+<li>
+<p>Verify device identity.</p>
+<p>Access your controlled device through KVM, and navigate to <strong>Settings</strong> -&gt; <strong>Bluetooth &amp; devices</strong> (taking Windows 10 Pro as an example). The input devices (keyboard and mouse), audio device (microphone), and display (monitor) will be recognized as the custom devices you set, instead of the default GLKVM.</p>
+<p><img alt="identity customize5" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/customize_device_identity/identity_modified.png" /></p>
 </li>
 </ol>
 <hr />
