@@ -6,6 +6,7 @@
   <meta name="description" content="Documentation for GL.iNet routers, KVM devices, and IoT products.">
   <title>GL.iNet Documentation</title>
   <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root {
       color-scheme: light;
@@ -61,7 +62,6 @@
       display: inline-flex;
       align-items: center;
       gap: 14px;
-      text-decoration: none;
     }
 
     .brand img {
@@ -236,13 +236,36 @@
       margin: 0;
     }
 
-    .site-footer a {
-      color: #ffffff;
-      text-decoration: none;
+    .social-links {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
 
-    .site-footer a:hover {
-      text-decoration: underline;
+    .social-links a {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      color: #ffffff;
+      text-decoration: none;
+      opacity: 0.72;
+      transition: opacity 150ms ease;
+    }
+
+    .social-links a:hover,
+    .social-links a:focus-visible {
+      opacity: 1;
+    }
+
+    .social-links a:focus-visible {
+      border-radius: 3px;
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+    }
+
+    .social-links i {
+      font-size: 16px;
     }
 
     @media (max-width: 800px) {
@@ -302,10 +325,9 @@
 
       .footer-inner {
         min-height: 104px;
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: wrap;
         justify-content: center;
-        gap: 6px;
+        gap: 8px 20px;
       }
     }
 
@@ -320,10 +342,10 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="https://www.gl-inet.com/" aria-label="GL.iNet website">
+      <div class="brand">
         <img src="https://static.gl-inet.com/docs/router/common/logo_white.svg" alt="GL.iNet">
         <span class="brand-label">Documentation</span>
-      </a>
+      </div>
     </div>
   </header>
 
@@ -368,7 +390,29 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <p>Copyright &copy; 2026 GL Technologies &amp; Microuter Technologies</p>
-      <a href="https://www.gl-inet.com/">GL.iNet website</a>
+      <nav class="social-links" aria-label="GL.iNet links">
+        <a href="https://www.gl-inet.com" target="_blank" rel="noopener" aria-label="GL.iNet website">
+          <i class="fa-solid fa-globe" aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/gl-inet/" target="_blank" rel="noopener" aria-label="GL.iNet on GitHub">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.facebook.com/gl.inet.wifi/" target="_blank" rel="noopener" aria-label="GL.iNet on Facebook">
+          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="https://twitter.com/GLiNetWiFi" target="_blank" rel="noopener" aria-label="GL.iNet on X">
+          <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/gl-inet.com/" target="_blank" rel="noopener" aria-label="GL.iNet on LinkedIn">
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCBfNEzurltlIeFFCbUgHQyg" target="_blank" rel="noopener" aria-label="GL.iNet on YouTube">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.pinterest.com/glinetWiFi/" target="_blank" rel="noopener" aria-label="GL.iNet on Pinterest">
+          <i class="fa-brands fa-pinterest" aria-hidden="true"></i>
+        </a>
+      </nav>
     </div>
   </footer>
 </body>
