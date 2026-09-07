@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.gl-inet.com/router/es/4/interface_guide/astrowarp/">
       
       
-        <link rel="prev" href="../cloud/">
+        <link rel="prev" href="../goodpas/">
       
       
         <link rel="next" href="../vpn_dashboard/">
@@ -4720,11 +4720,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../internet_cellular/" class="md-nav__link">
+      <a href="../internet_cellular_v4.10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Celular
+    Red celular
   </span>
   
 
@@ -4969,6 +4969,8 @@
       
         
       
+        
+      
     
     
     
@@ -5032,6 +5034,27 @@
   
   <span class="md-ellipsis">
     GoodCloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../goodpas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GoodPAS
   </span>
   
 
@@ -5115,15 +5138,6 @@
   <a href="#probar-la-conectividad" class="md-nav__link">
     <span class="md-ellipsis">
       Probar la conectividad
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#plan-de-actualizacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Plan de actualización
     </span>
   </a>
   
@@ -7013,15 +7027,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#plan-de-actualizacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Plan de actualización
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#faq" class="md-nav__link">
     <span class="md-ellipsis">
       FAQ
@@ -7055,7 +7060,7 @@
 
   <!-- Markdown content -->
   <h1 id="astrowarp">AstroWarp<a class="headerlink" href="#astrowarp" title="Permanent link">&para;</a></h1>
-<p><strong>Nota</strong>: Esta guía se aplica a la nueva versión de AstroWarp. Esta función pasó a llamarse <strong>GoodPAS</strong> en v4.10.</p>
+<p><strong>Nota</strong>: Esta guía se aplica a la nueva versión de AstroWarp. Esta función pasó a llamarse <a href="../goodpas/">GoodPAS</a> en el firmware v4.10.</p>
 <p>La nueva versión de AstroWarp está integrada en el SDK del router GL.iNet. Adopta el protocolo AmneziaWG con ofuscación de tráfico integrada para ofrecer conexiones estables y seguras, ideales para un acceso remoto fiable en cualquier momento y desde cualquier lugar.</p>
 <p>Esta función permite acceder de forma remota y sin interrupciones a su red doméstica. Puede configurarla y emparejar los dispositivos directamente mediante un código de acceso dinámico en el panel de administración web, estableciendo rápidamente una conexión segura entre su router de viaje y su red doméstica en solo unos segundos, sin necesidad de registrarse ni iniciar sesión.</p>
 <p>Aunque AstroWarp heredado sigue apareciendo en el panel de administración web, dependía de una plataforma AstroWarp independiente para establecer conexiones remotas de red. Haga clic <a href="https://docs.astrowarp.net/" target="_blank">aquí</a> para consultar la documentación de AstroWarp heredado.</p>
@@ -7112,7 +7117,6 @@
 <p>En el siguiente ejemplo, usaremos <strong>Flint 3 (GL-BE9300)</strong> y <strong>Slate 7 (GL-BE3600)</strong> para configurar una red AstroWarp.</p>
 <p>Flint 3 actuará como router doméstico, mientras que Slate 7 actuará como router de viaje que redirige el tráfico de red de vuelta a Flint 3 para acceder a Internet.</p>
 <p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astrowarp/aw_topology.png" /></p>
-<p><strong>Nota</strong>: Cada router GL.iNet incluye <strong>10 GB de datos gratuitos al mes</strong> para redes AstroWarp. Los dispositivos de una red AstroWarp usarán los datos del router doméstico para acceder a Internet. Puede actualizar al plan AstroWarp+ para disponer de datos ilimitados según sea necesario.</p>
 <ol>
 <li>
 <p>Configure Flint 3 para Internet.</p>
@@ -7163,10 +7167,6 @@
 <p><img alt="ipcheck sz" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astrowarp/ipcheck_sz.png" /></p>
 </li>
 </ol>
-<h2 id="plan-de-actualizacion">Plan de actualización<a class="headerlink" href="#plan-de-actualizacion" title="Permanent link">&para;</a></h2>
-<p>Cada router GL.iNet incluye <strong>10 GB de datos gratuitos al mes</strong> para redes AstroWarp. Los dispositivos de una red AstroWarp usarán los datos del router doméstico para acceder a Internet.</p>
-<p>Puede actualizar al plan <strong>AstroWarp+</strong> para disponer de datos ilimitados según sea necesario.</p>
-<p><img alt="upgrade plan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/astrowarp/upgrade_plan.png" /></p>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -7178,16 +7178,10 @@
 <p>R: El router de viaje se desconectará y quedará en estado pendiente, sin acceso a la red. Cuando el router doméstico reanude la conexión, el router de viaje podrá reconectarse automáticamente sin volver a introducir el código de acceso.</p>
 </li>
 <li>
-<p><strong>P: ¿Qué ocurre si se agotan los datos gratuitos o caduca el plan AstroWarp+ en el router doméstico?</strong></p>
-<p>R: El router de viaje pasará al estado pendiente, sin acceso a la red, y no cambiará automáticamente a la red local.</p>
-</li>
-<li>
 <p><strong>P: ¿En qué situaciones entra el router de viaje en estado pendiente?</strong></p>
 <p>R: El router de viaje entrará en estado pendiente cuando el router doméstico cumpla cualquiera de las siguientes condiciones:</p>
 <ul>
 <li>Finaliza la conexión de AstroWarp.</li>
-<li>Agota la cuota de datos gratuitos.</li>
-<li>Llega a la fecha de vencimiento del plan AstroWarp+ (si corresponde).</li>
 <li>Pierde el acceso a Internet.</li>
 </ul>
 </li>
@@ -7198,10 +7192,6 @@
 <li>
 <p><strong>P: ¿Qué ocurre con el router de viaje si restablezco AstroWarp en el router doméstico?</strong></p>
 <p>R: Una vez restablecido AstroWarp en el router doméstico, los dispositivos conectados de forma remota se desconectarán de la red AstroWarp y volverán a su red local para acceder a Internet.</p>
-</li>
-<li>
-<p><strong>P: Si actualizo el router doméstico al plan AstroWarp+ y cambio su función a router de viaje mientras el plan sigue vigente, ¿se conserva el tiempo restante del plan?</strong></p>
-<p>R: El periodo restante no se conserva y caducará en la fecha prevista. Para evitar pérdidas innecesarias, cambie la función del dispositivo después de que venza su plan actual.</p>
 </li>
 <li>
 <p><strong>P: Si he habilitado la nueva versión de AstroWarp en el panel de administración web del router, ¿cómo la desactivo y vuelvo a AstroWarp heredado?</strong></p>
@@ -7237,7 +7227,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 de agosto de 2026 13:27:44 UTC">24 de agosto de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="7 de septiembre de 2026 02:40:30 UTC">7 de septiembre de 2026</span>
   </span>
 
     
