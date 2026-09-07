@@ -7130,77 +7130,42 @@
 <p>Esta página le permite comprobar el estado de la eSIM Physical Card y gestionar perfiles eSIM. Consta de dos partes: <strong>Current eSIM Status</strong> y <strong>eSIM Profile List</strong>.</p>
 <p><img alt="esim detected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/esim_management/esim_detected.png" /></p>
 <h2 id="modelos-compatibles">Modelos compatibles<a class="headerlink" href="#modelos-compatibles" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Modelo de router</th>
-<th style="text-align: center;">Compatibilidad</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">GL-X2000 (Spitz Plus)</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-X3000 (Spitz AX)</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-XE3000 (Puli AX)</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-E750V2 (Mudi V2)</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-E750 (Mudi)</td>
-<td style="text-align: center;">√</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-XE300 (Puli)</td>
-<td style="text-align: center;">※</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-X750 (Spitz)</td>
-<td style="text-align: center;">※</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-X300B (Collie)</td>
-<td style="text-align: center;">※</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-E750V2 vSIM</td>
-<td style="text-align: center;">X</td>
-</tr>
-<tr>
-<td style="text-align: left;">GL-E5800 (Mudi 7)</td>
-<td style="text-align: center;">X</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Para los modelos marcados con ※</strong>:</p>
+<div class="admonition note">
+<p class="admonition-title">Modelos compatibles</p>
+<ul>
+<li>GL-X2000 (Spitz Plus)</li>
+<li>GL-X3000 (Spitz AX)</li>
+<li>GL-XE3000 (Puli AX)</li>
+<li>GL-E750V2 (Mudi V2)</li>
+<li>※ GL-E750 (Mudi)</li>
+<li>※ GL-XE300 (Puli)</li>
+<li>※ GL-X750 (Spitz)</li>
+<li>※ GL-X300B (Collie)</li>
+</ul>
+<p><strong>Nota</strong>:</p>
 <ol>
 <li>
-<p>El firmware estable actual no admite eSIM. Para usar esta función, debe instalar firmware compatible con eSIM. <a href="https://www.gl-inet.com/contacts/" target="_blank">Póngase en contacto con nosotros</a> para obtener más instrucciones.</p>
+<p><strong>En los modelos marcados con ※</strong>, la compatibilidad con tarjetas eSIM físicas depende del módulo utilizado.</p>
+<ul>
+<li>
+<p>Si utiliza un módulo <strong>EC25-AF</strong>, <strong>EC25-E</strong> o <strong>EG25-G</strong>, instale el firmware compatible con eSIM antes de usar una tarjeta eSIM física. <a href="https://www.gl-inet.com/contacts/" target="_blank">Póngase en contacto con nosotros</a> para obtener más instrucciones.</p>
 </li>
 <li>
-<p>En los modelos marcados con ※ que usan el módulo EP06-A, la eSIM no es compatible porque el software de Qualcomm no admite los comandos AT necesarios.</p>
+<p>Si utiliza un módulo <strong>EP06-E</strong>, consulte <a href="https://forum.gl-inet.com/t/upgrade-ep06-e-firmware-to-support-esim/48907" target="_blank">este enlace</a> para actualizar primero el firmware del módulo y, a continuación, instalar el firmware compatible con eSIM.</p>
 </li>
 <li>
-<p>En GL-E750 (Mudi) y en los modelos marcados con ※ que usan el módulo EP06-E, consulte <a href="https://forum.gl-inet.com/t/upgrade-ep06-e-firmware-to-support-esim/48907" target="_blank">este enlace</a> para actualizar primero el firmware del módulo y luego instalar el firmware compatible con eSIM para habilitar la función.</p>
+<p>Si utiliza un módulo <strong>EP06-A</strong>, las tarjetas eSIM físicas no son compatibles porque el software de Qualcomm no admite los comandos AT necesarios.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>GL-E750V2 <u>vSIM</u></strong> no admite tarjetas eSIM físicas.</p>
+</li>
+<li>
+<p><strong>GL-E5800 (Mudi 7)</strong> incorpora una eSIM integrada. Por lo tanto, en Mudi 7 la tarjeta eSIM física se reconocerá como una tarjeta SIM normal, sin funcionalidad eSIM.</p>
 </li>
 </ol>
-<p><strong>Para los modelos marcados con X</strong>:</p>
-<ol>
-<li>
-<p>GL-E750V2 vSIM no admite la función eSIM.</p>
-</li>
-<li>
-<p>GL-E5800 (Mudi 7) incorpora una eSIM integrada. Por lo tanto, en Mudi 7 la eSIM Physical Card se reconocerá como una tarjeta SIM normal, sin funcionalidad eSIM.</p>
-</li>
-</ol>
+</div>
 <h2 id="current-esim-status">Current eSIM Status<a class="headerlink" href="#current-esim-status" title="Permanent link">&para;</a></h2>
 <p>Esta sección muestra información básica y detalles sobre el perfil eSIM activo en ese momento.</p>
 <p><img alt="esim status" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/esim_management/esim_status.png" /></p>
@@ -7285,7 +7250,7 @@
 <p>Conéctese a Internet.</p>
 <p>Después de activar su perfil eSIM, vaya a <strong>INTERNET</strong> -&gt; <strong>Cellular</strong>. Haga clic en <strong>Connect</strong> para establecer una conexión a Internet mediante su perfil eSIM.</p>
 <p><img alt="esim connect" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/esim_management/esim_connect.png" /></p>
-<p><strong>Nota</strong>: Algunos perfiles eSIM pueden requerir configuraciones adicionales, como APN, PIN o TTL. Si es necesario, haga clic en <strong>Manual Setup</strong> o <strong>SIM Card Settings</strong> para ajustar esos parámetros. En algunos casos, puede ser necesario reiniciar el dispositivo para establecer la conexión a Internet.*</p>
+<p><strong>Nota</strong>: Algunos perfiles eSIM pueden requerir configuraciones adicionales, como APN, PIN o TTL. Si es necesario, haga clic en <strong>Manual Setup</strong> o <strong>SIM Card Settings</strong> para ajustar esos parámetros. En algunos casos, puede ser necesario reiniciar el dispositivo para establecer la conexión a Internet.</p>
 </li>
 <li>
 <p>Una vez que el router se conecte correctamente mediante el perfil eSIM, la página se mostrará de la siguiente manera:</p>
@@ -7327,7 +7292,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="25 de abril de 2026 23:45:14 UTC">25 de abril de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="7 de septiembre de 2026 03:55:18 UTC">7 de septiembre de 2026</span>
   </span>
 
     
