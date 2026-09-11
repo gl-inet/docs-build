@@ -4897,6 +4897,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="非セルラールーター">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb" class="md-nav__link">
+    <span class="md-ellipsis">
+      標準 USB モデム
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      ホストレスドングル
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -7225,6 +7249,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="非セルラールーター">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usb" class="md-nav__link">
+    <span class="md-ellipsis">
+      標準 USB モデム
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      ホストレスドングル
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -7481,31 +7529,95 @@
 <p><img alt="shortcut" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/command_shortcut2.png" /></p>
 </li>
 <li>
-<p><strong>SIM Slot</strong>: コマンドを SIM1 と SIM2 のどちらに適用するかを選択します。</p>
+<p><strong>SIM Slot</strong>: コマンドを SIM1 と SIM2 のどちらに適用するかを選択します。使用できるオプションは、セルラールーターの SIM スロット数によって異なります。</p>
 </li>
 <li>
 <p><strong>AT Command</strong>: Shortcut が "Manual command" の場合に、任意のコマンドを入力します。</p>
 </li>
 </ul>
 <h2 id="non-cellular-routers">非セルラールーター<a class="headerlink" href="#non-cellular-routers" title="Permanent link">&para;</a></h2>
-<p>このセクションでは、<strong>Flint 3 (GL-BE9300)</strong> と外付け USB ドングル <a href="https://www.gl-inet.com/products/simpoyo-ufi" target="_blank">SIMPoYo uFi</a> を例に、セルラー接続の設定手順を説明します。</p>
-<p><strong>注意</strong>:</p>
+<p>非セルラールーターにはセルラーモデムが内蔵されていませんが、外付け USB ドングル（別売）を USB ポートに接続すると、セルラー接続を利用できます。</p>
+<p>USB ドングル／モデムの動作モードには、標準 USB モデムモードとホストレスモードがあります。</p>
+<ul>
+<li>
+<p><strong>標準 USB モデムモード</strong>: ルーターが USB ホストとして動作し、ドングルは USB スレーブモデムとして機能します。ドングルはコマンドインターフェース（AT/QMI/MBIM）と仮想 USB Ethernet ポートの両方を提供するため、ルーター標準の Cellular WAN から管理できます。ルーターは ICCID、信号強度、バンドなどの低レベルなセルラー情報を取得でき、SIM 設定はルーターの Web UI から直接行えます。</p>
+</li>
+<li>
+<p><strong>ホストレスモード</strong>: ドングルが内部でセルラー接続を確立し、仮想 USB Ethernet インターフェースをルーターへ提供します。ルーターは制御可能なモデムではなくテザリング WAN として認識するため、Cellular インターフェースではなく Tethering インターフェースから接続します。ルーターでは低レベルなセルラー情報を確認できず、APN や SIM 関連の設定はすべてドングルに内蔵された Web UI で行う必要があります。</p>
+</li>
+</ul>
+<p>USB ドングルの動作モードに対応するセクションを参照してください。</p>
+<h3 id="usb">標準 USB モデム<a class="headerlink" href="#usb" title="Permanent link">&para;</a></h3>
+<p>このセクションでは、<strong>Mango 2 (GL-MG1300)</strong> と 5G 開発ボード <a href="https://www.gl-inet.com/products/gl-m2" target="_blank">GL-M2</a>（5G NR モジュール: RM520N-GL）を例に、セルラー接続の設定手順と関連機能を説明します。</p>
 <ol>
 <li>
-<p>SIMPoYo uFi を含む一部の USB セルラードングルは、<strong>ホストレスモード</strong>で動作します。このモードでは、ドングルが内部でセルラー接続を確立し、仮想 USB Ethernet インターフェースをルーターへ提供します。ルーターは制御可能なセルラーモデムではなくテザリング WAN として認識するため、Cellular インターフェースではなく Tethering インターフェースから接続します。</p>
+<p>SIM カードを GL-M2 ボードに挿入し、GL-M2 をルーターの USB ポートに接続します。</p>
 </li>
 <li>
-<p>ホストレステザリングモードでは、ルーターから信号強度、Cell ID、TAC などの低レベルなセルラー情報を取得したり、APN や SIM 関連パラメーターを制御したりできません。これらの設定は、ドングルに内蔵された Web UI で行ってください。</p>
+<p>ルーターの Web Admin Panel にログインし、<strong>INTERNET</strong> -&gt; <strong>Cellular</strong> に移動します。</p>
+<p>ルーターは自動的にインターネットへの接続を試みます。接続に成功すると、ページにネットワーク情報と緑のドットが表示されます。</p>
+<p><img alt="m2 sim active" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_active.png" /></p>
+</li>
+<li>
+<p>SIM Card Settings。</p>
+<p>SIM の設定を確認するには、<strong>SIM Card Settings</strong> をクリックします。</p>
+<p><img alt="m2 sim settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_settings1.png" /></p>
+<p>APN、IP type、network type など、自動検出された SIM 設定を確認できます。これらの設定を変更すると、再度ダイヤル接続が行われます。</p>
+<p><img alt="m2 sim settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_settings2.png" /></p>
+</li>
+<li>
+<p>SIM Information。</p>
+<p>SIM の詳細を確認するには、<strong>SIM Information</strong> をクリックします。</p>
+<p><img alt="m2 sim info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_info1.png" /></p>
+<p>ICCID、IP アドレス、DNS、セルラーバンド、信号強度など、SIM のネットワーク情報を確認できます。</p>
+<p><img alt="m2 sim info" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_info2.png" /></p>
+</li>
+<li>
+<p>SMS と SMS Forwarding。</p>
+<p>SMS と SMS Forwarding の使用方法については、<a href="../../tutorials/sms/">SMS</a> と <a href="../../tutorials/sms_forwarding/">SMS Forwarding</a> を参照してください。</p>
+</li>
+<li>
+<p>セルラープロファイルを管理します。</p>
+<p>SIM プロファイルを管理するには、右上の歯車アイコンをクリックして <strong>Manage Cellular Profiles</strong> を選択します。</p>
+<p><img alt="m2 cellular settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_cellular_settings.png" /></p>
+<p>現在使用中のプロファイルを確認できます。</p>
+<p><img alt="m2 manage profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_manage_profiles.png" /></p>
+<p>必要に応じて、<strong>Add a New Profile</strong> をクリックしてプロファイルを追加します。</p>
+<p><img alt="m2 add profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_add_profile1.png" /></p>
+<p>必要なパラメーターを入力し、<strong>Apply</strong> をクリックします。</p>
+<p><img alt="m2 add profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_add_profile2.png" /></p>
+</li>
+<li>
+<p>Modem AT Command。</p>
+<p>AT コマンドは、セルラーモデムとの通信に使用する標準的な命令です。この機能を使用すると、コマンドを送信してモデムの状態を確認できます。</p>
+<p>AT コマンドを実行するには、右上の歯車アイコンをクリックして <strong>Modem AT Command</strong> を選択します。</p>
+<p><img alt="m2 cellular settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_cellular_settings.png" /></p>
+<p><img alt="m2 atcommand" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_atcommand.png" /></p>
+<ul>
+<li>
+<p><strong>Shortcut</strong>: Shortcut を <strong>Manual command</strong> に設定した場合は、<strong>AT Command</strong> フィールドにコマンドを入力して、下部の <strong>Send</strong> をクリックします。結果が下の出力欄に表示されます。</p>
+<p>ボックスをクリックして、ドロップダウンリストから<strong>プリセットコマンド</strong>を選択することもできます。</p>
+<p><img alt="shortcut" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/command_shortcut1.png" /></p>
+<p>たとえば、ショートカットに「Request SIM card status」、SIM スロットに SIM1 を選択して「Send」をクリックすると、以下の結果が表示されます。</p>
+<p><img alt="shortcut" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/command_shortcut2.png" /></p>
+</li>
+<li>
+<p><strong>SIM Slot</strong>: コマンドを SIM1 と SIM2 のどちらに適用するかを選択します。使用できるオプションは、ルーターに接続した外付け USB モデムの SIM スロットによって異なります。</p>
+</li>
+<li>
+<p><strong>AT Command</strong>: Shortcut が「Manual command」の場合に、任意のコマンドを入力します。</p>
+</li>
+</ul>
 </li>
 </ol>
-<hr />
-<p>次の手順でセルラー接続を設定します。</p>
+<h3 id="_9">ホストレスドングル<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>このセクションでは、<strong>Flint 3 (GL-BE9300)</strong> と外付け USB ドングル <a href="https://www.gl-inet.com/products/simpoyo-ufi" target="_blank">SIMPoYo uFi</a> を例に、セルラー接続の設定手順を説明します。</p>
 <ol>
 <li>
 <p>USB ドングルをルーターの USB ポートに接続します。</p>
 </li>
 <li>
-<p>ルーターの Web 管理パネルにログインし、<strong>INTERNET</strong> -&gt; <strong>Tethering</strong> に移動して <strong>Connect</strong> をクリックします。</p>
+<p>ルーターの Web Admin Panel にログインし、<strong>INTERNET</strong> -&gt; <strong>Tethering</strong> に移動して <strong>Connect</strong> をクリックします。</p>
 <p><img alt="tethering 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/tethering1.png" /></p>
 <p>TTL、HL、MTU などの詳細設定が必要な場合は、<strong>Connect</strong> をクリックする前に <strong>Advanced</strong> をクリックして設定します。</p>
 <p><img alt="tethering 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/tethering2.png" /></p>
@@ -7514,8 +7626,12 @@
 <p>接続に成功すると、ページにはネットワーク情報と緑のドットが表示されます。</p>
 <p><img alt="tethering 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/tethering3.png" /></p>
 </li>
+<li>
+<p>SIMPoYo uFi 内の SIM カードについて APN や SIM 関連の設定を行う必要がある場合は、<a href="../../user_guide/simpoyo-4g-ufi/#manage-simpoyo-ufi">SIMPoYo uFi の管理</a>を参照してください。</p>
+</li>
 </ol>
-<p>初回設定後は、USB モデムを接続したままルーターを再起動した場合や、モデムを挿し直した場合でも自動的に認識され、Connect ボタンを再度クリックしなくてもネットワーク接続が確立されます。</p>
+<hr />
+<p>ご不明な点がありましたら、<a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> をご利用いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> ください。</p>
 
   <!-- Last update of source file -->
   
@@ -7540,7 +7656,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年9月7日 02:40:30 UTC">2026年9月7日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年9月11日 02:22:49 UTC">2026年9月11日</span>
   </span>
 
     

@@ -4897,6 +4897,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Router ohne Mobilfunkmodul">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-usb-modem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard-USB-Modem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-less-dongle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Host-less-Dongle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -7225,6 +7249,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Router ohne Mobilfunkmodul">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-usb-modem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard-USB-Modem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-less-dongle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Host-less-Dongle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -7481,25 +7529,89 @@
 <p><img alt="shortcut" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/command_shortcut2.png" /></p>
 </li>
 <li>
-<p><strong>SIM Slot</strong>: Wählen Sie, ob der Befehl für SIM1 oder SIM2 gilt.</p>
+<p><strong>SIM Slot</strong>: Wählen Sie, ob der Befehl für SIM1 oder SIM2 gilt. Die verfügbaren Optionen hängen von der Anzahl der SIM-Steckplätze Ihres Mobilfunkrouters ab.</p>
 </li>
 <li>
 <p><strong>AT Command</strong>: Geben Sie den gewünschten Befehl in dieses Feld ein, wenn Shortcut auf „Manual command“ gesetzt ist.</p>
 </li>
 </ul>
 <h2 id="router-ohne-mobilfunkmodul">Router ohne Mobilfunkmodul<a class="headerlink" href="#router-ohne-mobilfunkmodul" title="Permanent link">&para;</a></h2>
-<p>In diesem Abschnitt werden <strong>Flint 3 (GL-BE9300)</strong> und der externe USB-Dongle <a href="https://www.gl-inet.com/products/simpoyo-ufi" target="_blank">SIMPoYo uFi</a> als Beispiel für die Mobilfunkeinrichtung verwendet.</p>
-<p><strong>Hinweis</strong>:</p>
+<p>Auch Router ohne integriertes Mobilfunkmodem können eine Mobilfunkverbindung herstellen, wenn Sie einen externen USB-Dongle (nicht im Lieferumfang enthalten) an den USB-Port anschließen.</p>
+<p>USB-Dongles und -Modems können in unterschiedlichen Modi arbeiten: als Standard-USB-Modem oder im Host-less-Modus.</p>
+<ul>
+<li>
+<p><strong>Standard-USB-Modemmodus</strong>: In diesem Modus dient der Router als USB-Host und der Dongle als USB-Slave-Modem. Da der Dongle sowohl Befehlsschnittstellen (AT/QMI/MBIM) als auch einen virtuellen USB-Ethernet-Port bereitstellt, kann er über das native Cellular WAN des Routers verwaltet werden. Der Router kann Mobilfunkdaten der unteren Ebene wie ICCID, Signalstärke und Frequenzband auslesen. Die SIM-Einstellungen werden direkt im WebUI des Routers konfiguriert.</p>
+</li>
+<li>
+<p><strong>Host-less-Modus</strong>: In diesem Modus stellt der Dongle die Mobilfunkverbindung intern her und stellt dem Router eine virtuelle USB-Ethernet-Schnittstelle bereit. Der Router erkennt ihn als Tethering-WAN und nicht als steuerbares Modem. Die Verbindung wird deshalb über die Tethering-Schnittstelle statt über die Cellular-Schnittstelle hergestellt. Auf dem Router sind keine Mobilfunkdaten der unteren Ebene verfügbar. Alle APN- und SIM-bezogenen Einstellungen müssen über das integrierte WebUI des Dongles vorgenommen werden.</p>
+</li>
+</ul>
+<p>Wählen Sie je nach Betriebsmodus Ihres USB-Dongles den entsprechenden Abschnitt aus.</p>
+<h3 id="standard-usb-modem">Standard-USB-Modem<a class="headerlink" href="#standard-usb-modem" title="Permanent link">&para;</a></h3>
+<p>In diesem Abschnitt werden <strong>Mango 2 (GL-MG1300)</strong> und das 5G-Entwicklungsboard <a href="https://www.gl-inet.com/products/gl-m2" target="_blank">GL-M2</a> (5G-NR-Modul: RM520N-GL) als Beispiel verwendet, um die Mobilfunkeinrichtung und die zugehörigen Funktionen zu erläutern.</p>
 <ol>
 <li>
-<p>Einige USB-Mobilfunk-Dongles, darunter SIMPoYo uFi, arbeiten im <strong>Host-less-Modus</strong>. In diesem Modus stellt der Dongle die Mobilfunkverbindung intern her und stellt dem Router eine virtuelle USB-Ethernet-Schnittstelle bereit. Der Router behandelt ihn als angebundenes WAN und nicht als steuerbares Mobilfunkmodem. Die Verbindung wird daher über die Tethering-Schnittstelle statt über die Cellular-Schnittstelle hergestellt.</p>
+<p>Setzen Sie eine SIM-Karte in das GL-M2-Board ein und schließen Sie das GL-M2 anschließend an den USB-Port Ihres Routers an.</p>
 </li>
 <li>
-<p>Im Host-less-Tethering-Modus kann der Router nicht auf Mobilfunkdaten der unteren Ebene wie Signalstärke, Cell ID und TAC zugreifen und weder APN- noch SIM-bezogene Parameter steuern. Konfigurieren Sie diese Einstellungen über die integrierte Weboberfläche des Dongles.</p>
+<p>Melden Sie sich im webbasierten Admin Panel des Routers an und navigieren Sie zu <strong>INTERNET</strong> -&gt; <strong>Cellular</strong>.</p>
+<p>Der Router versucht automatisch, eine Internetverbindung herzustellen. Sobald die Verbindung hergestellt ist, werden auf der Seite die Netzwerkdetails und ein grüner Punkt angezeigt. Dieser weist auf eine erfolgreiche Verbindung hin.</p>
+<p><img alt="m2 sim active" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_active.png" /></p>
+</li>
+<li>
+<p>SIM-Karteneinstellungen.</p>
+<p>Klicken Sie auf <strong>SIM Card Settings</strong>, um die SIM-Konfiguration anzuzeigen.</p>
+<p><img alt="m2 sim settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_settings1.png" /></p>
+<p>Sie sehen die automatisch erkannten SIM-Einstellungen wie APN, IP-Typ und Netzwerktyp. Wenn Sie diese Einstellungen ändern, wird die Verbindung neu aufgebaut.</p>
+<p><img alt="m2 sim settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_settings2.png" /></p>
+</li>
+<li>
+<p>SIM-Informationen.</p>
+<p>Klicken Sie auf <strong>SIM Information</strong>, um die Details Ihrer SIM-Karte anzuzeigen.</p>
+<p><img alt="m2 sim info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_info1.png" /></p>
+<p>Sie sehen die Netzwerkdetails Ihrer SIM-Karte wie ICCID, IP-Adresse, DNS, Mobilfunkband und Signalstärke.</p>
+<p><img alt="m2 sim info" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_info2.png" /></p>
+</li>
+<li>
+<p>SMS und SMS Forwarding.</p>
+<p>Informationen zur Verwendung von SMS und SMS Forwarding finden Sie unter <a href="../../tutorials/sms/">SMS</a> und <a href="../../tutorials/sms_forwarding/">SMS Forwarding</a>.</p>
+</li>
+<li>
+<p>Mobilfunkprofile verwalten.</p>
+<p>Klicken Sie oben rechts auf das Zahnradsymbol und wählen Sie <strong>Manage Cellular Profiles</strong>, um Ihre SIM-Profile zu verwalten.</p>
+<p><img alt="m2 cellular settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_cellular_settings.png" /></p>
+<p>Das derzeit verwendete Profil wird angezeigt.</p>
+<p><img alt="m2 manage profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_manage_profiles.png" /></p>
+<p>Klicken Sie bei Bedarf auf <strong>Add a New Profile</strong>, um weitere Profile hinzuzufügen.</p>
+<p><img alt="m2 add profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_add_profile1.png" /></p>
+<p>Geben Sie die erforderlichen Parameter ein und klicken Sie anschließend auf <strong>Apply</strong>.</p>
+<p><img alt="m2 add profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_add_profile2.png" /></p>
+</li>
+<li>
+<p>Modem-AT-Befehl.</p>
+<p>AT-Befehle sind Standardanweisungen zur Kommunikation mit dem Mobilfunkmodem. Mit dieser Funktion können Sie Befehle senden und den Modemstatus prüfen.</p>
+<p>Klicken Sie oben rechts auf das Zahnradsymbol und wählen Sie <strong>Modem AT Command</strong>, um einen AT-Befehl auszuführen.</p>
+<p><img alt="m2 cellular settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_cellular_settings.png" /></p>
+<p><img alt="m2 atcommand" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_atcommand.png" /></p>
+<ul>
+<li>
+<p><strong>Shortcut</strong>: Wenn Shortcut auf <strong>Manual command</strong> gesetzt ist, geben Sie den gewünschten Befehl in das Feld <strong>AT Command</strong> ein und klicken Sie unten auf <strong>Send</strong>. Das System zeigt das Ergebnis im darunterliegenden Ausgabefeld an.</p>
+<p>Sie können auch auf das Feld klicken und einen <strong>preset command</strong> aus der Dropdown-Liste auswählen.</p>
+<p><img alt="shortcut" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/command_shortcut1.png" /></p>
+<p>Wenn Sie beispielsweise den Shortcut „Request SIM card status“ und den SIM-Steckplatz SIM1 auswählen, klicken Sie auf „Send“. Das Ergebnis wird wie unten dargestellt angezeigt.</p>
+<p><img alt="shortcut" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/command_shortcut2.png" /></p>
+</li>
+<li>
+<p><strong>SIM Slot</strong>: Wählen Sie, ob der Befehl für SIM1 oder SIM2 gilt. Die verfügbaren Optionen hängen von den SIM-Steckplätzen des externen USB-Modems ab, das an den Router angeschlossen ist.</p>
+</li>
+<li>
+<p><strong>AT Command</strong>: Geben Sie den gewünschten Befehl in dieses Feld ein, wenn Shortcut auf „Manual command“ gesetzt ist.</p>
+</li>
+</ul>
 </li>
 </ol>
-<hr />
-<p>Führen Sie die folgenden Schritte aus, um eine Mobilfunkverbindung einzurichten.</p>
+<h3 id="host-less-dongle">Host-less-Dongle<a class="headerlink" href="#host-less-dongle" title="Permanent link">&para;</a></h3>
+<p>In diesem Abschnitt werden <strong>Flint 3 (GL-BE9300)</strong> und der externe USB-Dongle <a href="https://www.gl-inet.com/products/simpoyo-ufi" target="_blank">SIMPoYo uFi</a> als Beispiel für die Mobilfunkeinrichtung verwendet.</p>
 <ol>
 <li>
 <p>Stecken Sie den USB-Dongle in den USB-Port des Routers.</p>
@@ -7514,8 +7626,12 @@
 <p>Sobald die Verbindung hergestellt ist, werden Netzwerkdetails und ein grüner Punkt angezeigt. Dieser weist auf eine erfolgreiche Verbindung hin.</p>
 <p><img alt="tethering 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/tethering3.png" /></p>
 </li>
+<li>
+<p>Informationen zur Konfiguration der APN- und SIM-bezogenen Einstellungen für die SIM-Karte im SIMPoYo uFi finden Sie unter <a href="../../user_guide/simpoyo-4g-ufi/#simpoyo-ufi-verwalten">SIMPoYo uFi verwalten</a>.</p>
+</li>
 </ol>
-<p>Nach der Ersteinrichtung wird der USB-Dongle automatisch erkannt, wenn Sie den Router mit eingestecktem Dongle neu starten oder den Dongle erneut einstecken. Die Netzwerkverbindung wird hergestellt, ohne dass Sie erneut auf <strong>Connect</strong> klicken müssen.</p>
+<hr />
+<p>Haben Sie noch Fragen? Besuchen Sie unser <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> oder <a href="https://www.gl-inet.com/contacts/" target="_blank">kontaktieren Sie uns</a>.</p>
 
   <!-- Last update of source file -->
   
@@ -7540,7 +7656,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="7. September 2026 02:40:30 UTC">7. September 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11. September 2026 02:22:49 UTC">11. September 2026</span>
   </span>
 
     

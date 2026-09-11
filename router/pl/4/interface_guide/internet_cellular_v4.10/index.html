@@ -4897,6 +4897,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Routery bez modemu komórkowego">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standardowy-modem-usb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standardowy modem USB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modem-host-less" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modem host-less
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -7225,6 +7249,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Routery bez modemu komórkowego">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standardowy-modem-usb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standardowy modem USB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modem-host-less" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modem host-less
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -7481,31 +7529,95 @@
 <p><img alt="shortcut" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/command_shortcut2.png" /></p>
 </li>
 <li>
-<p><strong>SIM Slot</strong>: wybierz, czy polecenie ma dotyczyć SIM1, czy SIM2.</p>
+<p><strong>SIM Slot</strong>: wybierz, czy polecenie ma dotyczyć SIM1, czy SIM2. Dostępne opcje zależą od liczby gniazd SIM w routerze komórkowym.</p>
 </li>
 <li>
 <p><strong>AT Command</strong>: gdy Shortcut ma wartość "Manual command", wpisz w tym polu wybrane polecenie.</p>
 </li>
 </ul>
 <h2 id="non-cellular-routers">Routery bez modemu komórkowego<a class="headerlink" href="#non-cellular-routers" title="Permanent link">&para;</a></h2>
-<p>W tej sekcji użyto routera <strong>Flint 3 (GL-BE9300)</strong> i zewnętrznego modemu USB <a href="https://www.gl-inet.com/products/simpoyo-ufi" target="_blank">SIMPoYo uFi</a> jako przykładu do opisania konfiguracji połączenia komórkowego.</p>
-<p><strong>Uwaga</strong>:</p>
+<p>Routery bez modemu komórkowego nie mają wbudowanego modemu, ale można podłączyć zewnętrzny modem USB (sprzedawany oddzielnie) do portu USB, aby uzyskać łączność komórkową.</p>
+<p>Modemy USB mogą działać w różnych trybach: standardowego modemu USB lub host-less.</p>
+<ul>
+<li>
+<p><strong>Tryb standardowego modemu USB</strong>: router działa jako host USB, a podłączony modem jako urządzenie podrzędne USB. Modem udostępnia zarówno interfejsy poleceń (AT/QMI/MBIM), jak i wirtualny port USB Ethernet, dzięki czemu można nim zarządzać przez natywny interfejs Cellular WAN routera. Router może odczytywać niskopoziomowe dane sieci komórkowej, takie jak ICCID, siła sygnału i pasmo, a ustawienia SIM można konfigurować bezpośrednio w interfejsie webowym routera.</p>
+</li>
+<li>
+<p><strong>Tryb host-less</strong>: modem sam ustanawia połączenie komórkowe i udostępnia routerowi wirtualny interfejs USB Ethernet. Router rozpoznaje go jako tethering WAN, a nie jako sterowalny modem, dlatego połączenie jest nawiązywane przez interfejs Tethering zamiast Cellular. Router nie udostępnia niskopoziomowych danych sieci komórkowej, a wszystkie ustawienia APN i SIM należy skonfigurować w interfejsie webowym wbudowanym w modem.</p>
+</li>
+</ul>
+<p>Przejdź do sekcji odpowiadającej trybowi pracy modemu USB.</p>
+<h3 id="standardowy-modem-usb">Standardowy modem USB<a class="headerlink" href="#standardowy-modem-usb" title="Permanent link">&para;</a></h3>
+<p>Ta sekcja przedstawia konfigurację połączenia komórkowego i powiązane funkcje na przykładzie routera <strong>Mango 2 (GL-MG1300)</strong> oraz płytki deweloperskiej 5G <a href="https://www.gl-inet.com/products/gl-m2" target="_blank">GL-M2</a> (moduł 5G NR: RM520N-GL).</p>
 <ol>
 <li>
-<p>Niektóre komórkowe modemy USB, w tym SIMPoYo uFi, działają w <strong>trybie host-less</strong>. W tym trybie modem sam nawiązuje połączenie komórkowe i udostępnia routerowi wirtualny interfejs USB Ethernet. Router traktuje go jako połączenie WAN przez tethering, a nie jako sterowalny modem komórkowy. Dlatego połączenie jest nawiązywane przez interfejs Tethering, a nie Cellular.</p>
+<p>Włóż kartę SIM do płytki GL-M2, a następnie podłącz GL-M2 do portu USB routera.</p>
 </li>
 <li>
-<p>W trybie tetheringu host-less router nie ma dostępu do niskopoziomowych parametrów sieci komórkowej, takich jak siła sygnału, Cell ID i TAC, ani nie może sterować APN lub parametrami karty SIM. Skonfiguruj te ustawienia we wbudowanym interfejsie WWW modemu.</p>
+<p>Zaloguj się do Web Admin Panel routera i przejdź do <strong>INTERNET</strong> -&gt; <strong>Cellular</strong>.</p>
+<p>Router automatycznie spróbuje połączyć się z Internetem. Po nawiązaniu połączenia na stronie pojawią się szczegóły sieci oraz zielona kropka wskazująca pomyślne połączenie.</p>
+<p><img alt="m2 sim active" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_active.png" /></p>
+</li>
+<li>
+<p>SIM Card Settings.</p>
+<p>Aby wyświetlić konfigurację SIM, kliknij <strong>SIM Card Settings</strong>.</p>
+<p><img alt="m2 sim settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_settings1.png" /></p>
+<p>Można wyświetlić automatycznie wykryte ustawienia SIM, takie jak APN, typ IP i typ sieci. Zmiana tych ustawień spowoduje ponowne zestawienie połączenia.</p>
+<p><img alt="m2 sim settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_settings2.png" /></p>
+</li>
+<li>
+<p>SIM Information.</p>
+<p>Aby wyświetlić szczegóły SIM, kliknij <strong>SIM Information</strong>.</p>
+<p><img alt="m2 sim info" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_info1.png" /></p>
+<p>Można wyświetlić szczegóły sieci SIM, takie jak ICCID, adres IP, DNS, pasmo sieci komórkowej i siła sygnału.</p>
+<p><img alt="m2 sim info" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_sim_info2.png" /></p>
+</li>
+<li>
+<p>SMS i SMS Forwarding.</p>
+<p>Informacje o korzystaniu z SMS i SMS Forwarding znajdziesz w artykułach <a href="../../tutorials/sms/">SMS</a> i <a href="../../tutorials/sms_forwarding/">SMS Forwarding</a>.</p>
+</li>
+<li>
+<p>Zarządzaj profilami komórkowymi.</p>
+<p>Aby zarządzać profilami SIM, kliknij ikonę koła zębatego w prawym górnym rogu i wybierz <strong>Manage Cellular Profiles</strong>.</p>
+<p><img alt="m2 cellular settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_cellular_settings.png" /></p>
+<p>Zostanie wyświetlony aktualnie używany profil.</p>
+<p><img alt="m2 manage profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_manage_profiles.png" /></p>
+<p>W razie potrzeby kliknij <strong>Add a New Profile</strong>, aby dodać kolejne profile.</p>
+<p><img alt="m2 add profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_add_profile1.png" /></p>
+<p>Wprowadź wymagane parametry, a następnie kliknij <strong>Apply</strong>.</p>
+<p><img alt="m2 add profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_add_profile2.png" /></p>
+</li>
+<li>
+<p>Modem AT Command.</p>
+<p>Polecenia AT to standardowe instrukcje używane do komunikacji z modemem komórkowym. Ta funkcja umożliwia wysyłanie poleceń i sprawdzanie stanu modemu.</p>
+<p>Aby wykonać polecenie AT, kliknij ikonę koła zębatego w prawym górnym rogu i wybierz <strong>Modem AT Command</strong>.</p>
+<p><img alt="m2 cellular settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_cellular_settings.png" /></p>
+<p><img alt="m2 atcommand" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/m2_atcommand.png" /></p>
+<ul>
+<li>
+<p><strong>Shortcut</strong>: gdy Shortcut ma wartość <strong>Manual command</strong>, wprowadź polecenie w polu <strong>AT Command</strong> i kliknij <strong>Send</strong> u dołu. System zwróci wynik w polu wyjściowym poniżej.</p>
+<p>Możesz także kliknąć pole i wybrać <strong>gotowe polecenie</strong> z listy rozwijanej.</p>
+<p><img alt="shortcut" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/command_shortcut1.png" /></p>
+<p>Jeśli na przykład wybierzesz skrót „Request SIM card status” i gniazdo SIM1, wystarczy kliknąć „Send”, aby uzyskać wynik pokazany poniżej.</p>
+<p><img alt="shortcut" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/command_shortcut2.png" /></p>
+</li>
+<li>
+<p><strong>SIM Slot</strong>: wybierz, czy polecenie ma dotyczyć SIM1, czy SIM2. Dostępne opcje zależą od gniazd SIM w zewnętrznym modemie USB podłączonym do routera.</p>
+</li>
+<li>
+<p><strong>AT Command</strong>: wprowadź polecenie w tym polu, gdy Shortcut ma wartość „Manual command”.</p>
+</li>
+</ul>
 </li>
 </ol>
-<hr />
-<p>Wykonaj poniższe czynności, aby skonfigurować połączenie komórkowe.</p>
+<h3 id="modem-host-less">Modem host-less<a class="headerlink" href="#modem-host-less" title="Permanent link">&para;</a></h3>
+<p>Ta sekcja przedstawia konfigurację połączenia komórkowego na przykładzie routera <strong>Flint 3 (GL-BE9300)</strong> i zewnętrznego modemu USB <a href="https://www.gl-inet.com/products/simpoyo-ufi" target="_blank">SIMPoYo uFi</a>.</p>
 <ol>
 <li>
 <p>Podłącz modem USB do portu USB routera.</p>
 </li>
 <li>
-<p>Zaloguj się do webowego panelu administracyjnego routera, przejdź do <strong>INTERNET</strong> -&gt; <strong>Tethering</strong>, a następnie kliknij <strong>Connect</strong>.</p>
+<p>Zaloguj się do Web Admin Panel routera, przejdź do <strong>INTERNET</strong> -&gt; <strong>Tethering</strong>, a następnie kliknij <strong>Connect</strong>.</p>
 <p><img alt="tethering 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/tethering1.png" /></p>
 <p>Jeśli musisz ustawić opcje zaawansowane, takie jak TTL, HL i MTU, przed kliknięciem <strong>Connect</strong> wybierz <strong>Advanced</strong> i dostosuj ustawienia.</p>
 <p><img alt="tethering 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/tethering2.png" /></p>
@@ -7514,8 +7626,12 @@
 <p>Po nawiązaniu połączenia na stronie zostaną wyświetlone szczegóły sieci i zielona kropka wskazująca pomyślne połączenie.</p>
 <p><img alt="tethering 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/internet_cellular/4.10/tethering3.png" /></p>
 </li>
+<li>
+<p>Jeśli chcesz skonfigurować ustawienia APN i SIM karty w modemie SIMPoYo uFi, zapoznaj się z sekcją <a href="../../user_guide/simpoyo-4g-ufi/#manage-simpoyo-ufi">Zarządzanie SIMPoYo uFi</a>.</p>
+</li>
 </ol>
-<p>Po wstępnej konfiguracji modem zostanie rozpoznany automatycznie po ponownym uruchomieniu routera z podłączonym modemem lub po ponownym podłączeniu modemu. Połączenie sieciowe zostanie ustanowione bez ponownego klikania przycisku Connect.</p>
+<hr />
+<p>Masz dodatkowe pytania? Odwiedź nasze <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> lub <a href="https://www.gl-inet.com/contacts/" target="_blank">skontaktuj się z nami</a>.</p>
 
   <!-- Last update of source file -->
   
@@ -7540,7 +7656,7 @@
     <span class="md-icon" title="Ostatnia aktualizacja">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="7 września 2026 02:40:30 UTC">7 września 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 września 2026 02:22:49 UTC">11 września 2026</span>
   </span>
 
     
