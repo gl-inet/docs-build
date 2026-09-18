@@ -5995,18 +5995,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supported-models" class="md-nav__link">
+  <a href="#for-firmware-v411-and-above" class="md-nav__link">
     <span class="md-ellipsis">
-      Supported Models
+      For firmware v4.11 and above
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-setup" class="md-nav__link">
+  <a href="#for-firmware-v49-to-v410" class="md-nav__link">
     <span class="md-ellipsis">
-      Quick Setup
+      For firmware v4.9 to v4.10
     </span>
   </a>
   
@@ -7191,18 +7191,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supported-models" class="md-nav__link">
+  <a href="#for-firmware-v411-and-above" class="md-nav__link">
     <span class="md-ellipsis">
-      Supported Models
+      For firmware v4.11 and above
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-setup" class="md-nav__link">
+  <a href="#for-firmware-v49-to-v410" class="md-nav__link">
     <span class="md-ellipsis">
-      Quick Setup
+      For firmware v4.9 to v4.10
     </span>
   </a>
   
@@ -7233,8 +7233,8 @@
 
   <!-- Markdown content -->
   <h1 id="sqm-smart-queue-management">SQM (Smart Queue Management)<a class="headerlink" href="#sqm-smart-queue-management" title="Permanent link">&para;</a></h1>
-<p><strong>Note</strong>: This feature was introduced in firmware v4.9.</p>
-<hr />
+<p><strong>Note</strong>: This feature was introduced in firmware v4.9. Some models, such as Mango 2 (GL-MG1300), do not support SQM due to insufficient memory, even when running firmware v4.9 or later.</p>
+<p>On the left side of the web Admin Panel, go to <strong>FLOW CONTROL</strong> -&gt; <strong>SQM</strong>. </p>
 <p>SQM (Smart Queue Management) intelligently manages your router's network traffic to minimize latency and "bufferbloat", ensuring smoother gaming and voice calls. </p>
 <p><strong>Note</strong>:</p>
 <ol>
@@ -7244,22 +7244,57 @@
 <li>SQM and QoS cannot be enabled simultaneously.</li>
 <li>SQM cannot work with Network Acceleration. Enabling SQM will automatically disable Network Acceleration to ensure stable performance.</li>
 </ol>
-<h2 id="supported-models">Supported Models<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Supported Models</p>
+<h2 id="for-firmware-v411-and-above">For firmware v4.11 and above<a class="headerlink" href="#for-firmware-v411-and-above" title="Permanent link">&para;</a></h2>
+<p>Toggle the switch to enable SQM, then complete the configuration following the steps below.</p>
+<p><img alt="sqm v4.11" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/sqm/sqm_v4.11.png" width="600" /></p>
+<ol>
+<li>
+<p><strong>WAN Bandwidth</strong></p>
+<p>Enter your WAN upload and download speeds (input range: 1 - 10000) manually, or click <strong>Run Speedtest</strong> to measure them and automatically populate the fields. An active internet connection is required to run the speed test.</p>
+<p><img alt="wan bandwidth" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/sqm/wan_bandwidth.png" width="600" /></p>
+<p><strong>Note</strong>: Values entered in the input field are in <strong>Mbps</strong> (megabits per second). The equivalent <strong>MB/s</strong> (megabytes per second) is displayed for your reference.</p>
+</li>
+<li>
+<p><strong>Queue Discipline</strong></p>
+<p>Select a queueing rule to manage traffic and reduce latency under load.</p>
+<p><img alt="queue discipline" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/sqm/queue_discipline.png" width="600" /></p>
 <ul>
-<li>GL-BE14000 (Flint 4)</li>
-<li>GL-BE10000 (Slate 7 Pro)</li>
-<li>GL-MT3600BE (Beryl 7)</li>
-<li>GL-MT5000 (Brume 3)</li>
-<li>GL-BE9300 (Flint 3)</li>
-<li>GL-BE3600 (Slate 7)</li>
-<li>GL-MT6000 (Flint 2)</li>
-<li>GL-MT3000 (Beryl AX)</li>
+<li>
+<p><strong>cake</strong>: Smart, automatic traffic shaping with superior overall latency control (recommended). </p>
+<p>When <strong>cake</strong> is selected as the queue discipline, <strong>Cake Autorate</strong> is available as an optional feature.</p>
+<p>Cake Autorate is a latency-driven shaper that reduces or raises CAKE bandwidth in real time based on probe RTT. No active speed tests are performed; only lightweight pings are used. Recommended whenever the WAN bandwidth fluctuates; not needed on stable links.</p>
+<p><img alt="cake autorate" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/sqm/cake_autorate.png" width="600" /></p>
+<p><strong>Note</strong>: Cake Autorate generates continuous background probe traffic. Consider this additional data usage when using a metered connection.</p>
+<p>The default settings are suitable for most connections. Only change the following parameters if you understand how they affect Cake Autorate. If needed, click <strong>Reset to Default</strong> to restore the default probe and threshold settings.</p>
+<p><img alt="Probe &amp; threshold parameters" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/sqm/probe_threshold_parameters.png" width="600" /></p>
+<ul>
+<li>
+<p><strong>Probe Server Addresses</strong>: A list of IP addresses separated by commas, used for network quality probing.</p>
+</li>
+<li>
+<p><strong>Probe Interval</strong>: Shorter intervals enable faster response but consume more CPU resources.</p>
+</li>
+<li>
+<p><strong>Concurrent Probes</strong>: The number of concurrent probes must not exceed the number of probe servers; higher values increase CPU load.</p>
+</li>
+<li>
+<p><strong>Idle Detection Threshold</strong>: When the transfer rate falls below this value, the connection will be considered idle. This value must not exceed 25% of the configured speed limit.</p>
+</li>
+<li>
+<p><strong>Download Latency Threshold</strong>: When download latency exceeds this threshold, bandwidth reduction is triggered.</p>
+</li>
+<li>
+<p><strong>Upload Latency Threshold</strong>: When upload latency exceeds this threshold, bandwidth reduction is triggered.</p>
+</li>
 </ul>
-</div>
-<h2 id="quick-setup">Quick Setup<a class="headerlink" href="#quick-setup" title="Permanent link">&para;</a></h2>
-<p>On the left side of the web Admin Panel, go to <strong>FLOW CONTROL</strong> -&gt; <strong>SQM</strong>. </p>
+</li>
+<li>
+<p><strong>fq_codel</strong>: Simple, efficient fair queueing with basic latency reduction.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="for-firmware-v49-to-v410">For firmware v4.9 to v4.10<a class="headerlink" href="#for-firmware-v49-to-v410" title="Permanent link">&para;</a></h2>
 <p>Toggle the switch to enable SQM, and set your maximum upload and download speeds (input range: 1 - 10000) for traffic scheduling. Match them to your actual internet bandwidth for the best results.</p>
 <p><img alt="sqm" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/sqm/sqm.png" /></p>
 <p><strong>Note</strong>: Values entered in the input field are in <strong>Mbps</strong> (megabits per second). The equivalent <strong>MB/s</strong> (megabytes per second) is displayed for your reference.</p>
@@ -7275,7 +7310,7 @@
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>A difference between QoS and SQM settings is that the QoS allows you set the application priorities, with the router allocating bandwidth accordingly; while the SQM allows you to select a queue rule.</p>
+<p>A difference between QoS and SQM settings is that the QoS allows you to set the application priorities, with the router allocating bandwidth accordingly; while the SQM allows you to select a queue rule.</p>
 </div>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> or <a href="https://www.gl-inet.com/contacts/" target="_blank">Contact us</a>.</p>
@@ -7303,7 +7338,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 6, 2026 08:48:44 UTC">August 6, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 18, 2026 11:01:27 UTC">September 18, 2026</span>
   </span>
 
     
