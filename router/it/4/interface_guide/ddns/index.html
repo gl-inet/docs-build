@@ -753,11 +753,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_guide/gl-mt3600be/" class="md-nav__link">
+      <a href="../../user_guide/gl-e5800/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    GL-MT3600BE (Beryl 7)
+    GL-E5800 (Mudi 7)
   </span>
   
 
@@ -774,11 +774,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_guide/gl-e5800/" class="md-nav__link">
+      <a href="../../user_guide/gl-mt3600be/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    GL-E5800 (Mudi 7)
+    GL-MT3600BE (Beryl 7)
   </span>
   
 
@@ -4226,8 +4226,6 @@
       
         
       
-        
-      
     
     
     
@@ -4396,27 +4394,6 @@
   
   <span class="md-ellipsis">
     Usare WinSCP per modificare i file
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorials/how_to_activate_top_up_sim_cards/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Attivare o ricaricare le SIM T-Mobile
   </span>
   
 
@@ -7087,7 +7064,7 @@
         
   
   <span class="md-ellipsis">
-    Tutorial
+    Video tutorial
   </span>
   
 
@@ -7207,7 +7184,7 @@
 <p><strong>Nota</strong>: se abiliti DDNS e VPN Client contemporaneamente, assicurati che <strong>Services From GL.iNet Use VPN</strong> sia disabilitato. Questa funzione si trova nelle <a href="../vpn_dashboard_v4.8/#tunnel-options">VPN Client Options</a> del VPN Dashboard.</p>
 <h2 id="verificare-se-ddns-funziona">Verificare se DDNS funziona<a class="headerlink" href="#verificare-se-ddns-funziona" title="Permanent link">&para;</a></h2>
 <p>Puoi verificare se DDNS funziona usando lo strumento di test DDNS oppure controllando manualmente tramite comandi.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Usare lo strumento DDNS Test</label><label for="__tabbed_1_2">Controllo manuale</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Usare lo strumento DDNS Test</label><label for="__tabbed_1_2">Usare i comandi</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Nella pagina Dynamic DNS, fai clic su <strong>DDNS Test</strong>.</p>
@@ -7219,19 +7196,23 @@
 <div class="tabbed-block">
 <ol>
 <li>
-<p>Usa il comando <code>nslookup</code> per ottenere la mappatura tra nome di dominio e indirizzo IP, come mostrato di seguito.</p>
-<p><img alt="nslookup 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/ddns/nslookup1.jpg" /></p>
-<p>Sostituisci "xxxxxxx.glddns.com" nell'immagine sopra con il tuo Host Name.</p>
-<p>"8.8.8.8" nell'immagine sopra e' il DNS di Google. Usalo oppure sostituiscilo con un altro DNS, quindi premi Invio.</p>
+<p>Usa il comando <code>nslookup</code> per verificare la corrispondenza tra nome di dominio e indirizzo IP, come mostrato di seguito.</p>
+<p><img alt="nslookup 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/ddns/nslookup.png" width="600" /></p>
+<p><strong>Suggerimenti:</strong></p>
+<ul>
+<li>Sostituisci "xxxxxxx.glddns.com" nell'immagine con il tuo Host Name.</li>
+<li>"8.8.8.8" è il DNS di Google. Puoi usarlo o sostituirlo con un altro server DNS, quindi premere Invio.</li>
+</ul>
 </li>
 <li>
-<p>Se come risultato ottieni un indirizzo IP pubblico, ad esempio "103.81.180.10" come nell'immagine seguente, significa che il tuo dominio DDNS e' stato associato correttamente a un indirizzo IP pubblico.</p>
-<p><img alt="nslookup 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/ddns/nslookup2.jpg" /></p>
-<p>Su un dispositivo connesso al router, cerca "what is my ip address" in un browser oppure visita un sito come <a href="https://whatismyipaddress.com" target="_blank">What Is My IP Address</a>. Otterrai il tuo indirizzo IP pubblico. Confronta i due indirizzi IP ottenuti dai passaggi 1 e 2. Se coincidono, DDNS e' attivo; in caso contrario, non lo e'.</p>
+<p>In base al risultato, verifica se il dominio DDNS è associato a un indirizzo IP pubblico.</p>
+<ul>
+<li>Se ottieni un indirizzo IP pubblico, ad esempio "183.178.10.100" nell'immagine, il dominio DDNS è stato associato a un indirizzo IP pubblico.</li>
+<li>Se compare "server can't find xxxxxxx.glddns.com", la risoluzione del dominio potrebbe non essere riuscita. Prosegui con il passaggio successivo per verificare.</li>
+</ul>
 </li>
 <li>
-<p>Se ricevi un messaggio <code>** server can't find xxxxxxx.glddns.com: NXDOMAIN</code>, come mostrato di seguito, significa che la risoluzione del dominio non e' riuscita e che il tuo dominio DDNS non e' stato associato correttamente a un indirizzo IP pubblico.</p>
-<p><img alt="nslookup 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/ddns/nslookup3.png" /></p>
+<p>Accedi al pannello di amministrazione web del router e vai su <strong>INTERNET</strong>. Individua l'indirizzo IP WAN nell'interfaccia attiva e confrontalo con l'indirizzo IP pubblico ottenuto sopra. Se coincidono, DDNS funziona; altrimenti no.</p>
 </li>
 </ol>
 </div>
@@ -7331,7 +7312,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 aprile 2026 22:42:05 UTC">19 aprile 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 settembre 2026 08:05:12 UTC">23 settembre 2026</span>
   </span>
 
     

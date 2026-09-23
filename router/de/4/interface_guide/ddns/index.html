@@ -753,11 +753,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_guide/gl-mt3600be/" class="md-nav__link">
+      <a href="../../user_guide/gl-e5800/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    GL-MT3600BE (Beryl 7)
+    GL-E5800 (Mudi 7)
   </span>
   
 
@@ -774,11 +774,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user_guide/gl-e5800/" class="md-nav__link">
+      <a href="../../user_guide/gl-mt3600be/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    GL-E5800 (Mudi 7)
+    GL-MT3600BE (Beryl 7)
   </span>
   
 
@@ -4226,8 +4226,6 @@
       
         
       
-        
-      
     
     
     
@@ -4396,27 +4394,6 @@
   
   <span class="md-ellipsis">
     Mit WinSCP Dateien ändern
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tutorials/how_to_activate_top_up_sim_cards/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    T-Mobile-SIM-Karten aktivieren oder aufladen
   </span>
   
 
@@ -7087,7 +7064,7 @@
         
   
   <span class="md-ellipsis">
-    Tutorials
+    Video Tutorials
   </span>
   
 
@@ -7207,7 +7184,7 @@
 <p><strong>Hinweis</strong>: Wenn Sie DDNS und den VPN-Client gleichzeitig aktivieren, stellen Sie sicher, dass <strong>Services From GL.iNet Use VPN</strong> deaktiviert ist. Diese Option finden Sie in den <a href="../vpn_dashboard_v4.8/#tunnel-options">VPN Client Options</a> des VPN Dashboard.</p>
 <h2 id="prufen-ob-ddns-funktioniert">Prüfen, ob DDNS funktioniert<a class="headerlink" href="#prufen-ob-ddns-funktioniert" title="Permanent link">&para;</a></h2>
 <p>Sie können prüfen, ob DDNS funktioniert, indem Sie das DDNS-Testwerkzeug verwenden oder es manuell per Befehlen überprüfen.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">DDNS-Testwerkzeug verwenden</label><label for="__tabbed_1_2">Manuell prüfen</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">DDNS-Testwerkzeug verwenden</label><label for="__tabbed_1_2">Mit Befehlen prüfen</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Klicken Sie auf der Seite Dynamic DNS auf <strong>DDNS Test</strong>.</p>
@@ -7220,18 +7197,22 @@
 <ol>
 <li>
 <p>Verwenden Sie den Befehl <code>nslookup</code>, um die Zuordnung zwischen Domainnamen und IP-Adresse zu ermitteln, wie unten dargestellt.</p>
-<p><img alt="nslookup 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/interface_guide/ddns/nslookup1.jpg" /></p>
-<p>Ersetzen Sie <code>xxxxxxx.glddns.com</code> im obigen Bild durch Ihren Host Name.</p>
-<p><code>8.8.8.8</code> im obigen Bild ist der Google-DNS. Verwenden Sie ihn oder ersetzen Sie ihn durch einen anderen DNS-Server und drücken Sie dann die Eingabetaste.</p>
+<p><img alt="nslookup 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/ddns/nslookup.png" width="600" /></p>
+<p><strong>Tipps:</strong></p>
+<ul>
+<li>Ersetzen Sie <code>xxxxxxx.glddns.com</code> im Bild durch Ihren Host Name.</li>
+<li><code>8.8.8.8</code> im Bild ist der Google-DNS-Server. Sie können ihn verwenden oder einen anderen DNS-Server angeben und dann die Eingabetaste drücken.</li>
+</ul>
 </li>
 <li>
-<p>Wenn Sie als Ausgabe eine öffentliche IP-Adresse erhalten, z. B. <code>103.81.180.10</code> im folgenden Bild, bedeutet dies, dass Ihre DDNS-Domain erfolgreich einer öffentlichen IP-Adresse zugeordnet wurde.</p>
-<p><img alt="nslookup 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/interface_guide/ddns/nslookup2.jpg" /></p>
-<p>Suchen Sie auf einem mit dem Router verbundenen Gerät in einem Browser nach „what is my ip address“ oder besuchen Sie eine Website wie <a href="https://whatismyipaddress.com" target="_blank">What Is My IP Address</a>. Dort wird Ihre öffentliche IP-Adresse angezeigt. Vergleichen Sie die beiden in Schritt 1 und 2 erhaltenen IP-Adressen. Sind sie identisch, ist DDNS wirksam; andernfalls nicht.</p>
+<p>Prüfen Sie anhand des Ergebnisses, ob Ihre DDNS-Domain einer öffentlichen IP-Adresse zugeordnet wurde.</p>
+<ul>
+<li>Wenn eine öffentliche IP-Adresse wie <code>183.178.10.100</code> im Bild angezeigt wird, wurde die DDNS-Domain erfolgreich zugeordnet.</li>
+<li>Wenn die Meldung <code>server can't find xxxxxxx.glddns.com</code> angezeigt wird, ist die Domainauflösung möglicherweise fehlgeschlagen. Überprüfen Sie dies im nächsten Schritt.</li>
+</ul>
 </li>
 <li>
-<p>Wenn Sie die Meldung <code>** server can't find xxxxxxx.glddns.com: NXDOMAIN</code> erhalten, wie unten dargestellt, bedeutet dies, dass die Domainauflösung fehlgeschlagen ist und Ihre DDNS-Domain nicht erfolgreich einer öffentlichen IP-Adresse zugeordnet wurde.</p>
-<p><img alt="nslookup 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/interface_guide/ddns/nslookup3.png" /></p>
+<p>Melden Sie sich am Web-Admin-Panel Ihres Routers an und öffnen Sie <strong>INTERNET</strong>. Suchen Sie die WAN-IP-Adresse des Routers an der derzeit aktiven Schnittstelle. Vergleichen Sie sie mit der oben ermittelten öffentlichen IP-Adresse. Sind beide identisch, funktioniert DDNS; andernfalls nicht.</p>
 </li>
 </ol>
 </div>
@@ -7331,7 +7312,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="3. August 2026 06:39:17 UTC">3. August 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23. September 2026 08:05:12 UTC">23. September 2026</span>
   </span>
 
     
