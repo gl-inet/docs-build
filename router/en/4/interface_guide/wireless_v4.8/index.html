@@ -7347,7 +7347,7 @@
 <p><img alt="wifi qr code" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireless/wifi_ssid_qr_code.png" /></p>
 </li>
 <li>
-<p><strong>Randomized BSSID</strong>: This feature is enabled by default. It aims to prevent the client vendors from collecting nearby Wi-Fi BSSIDs and client devices' GPS coordinates to their servers. Click <a href="#randomized-bssid">here</a> for more details.</p>
+<p><strong>Randomized BSSID</strong>: Enabled by default, it prevents the router from being tracked via a fixed BSSID. Click <a href="#randomized-bssid">Randomized BSSID</a> for details.</p>
 </li>
 <li>
 <p>The <strong>Bandwidth</strong> and <strong>Channel</strong> cannot be modified when the router acts as a <a href="../internet_repeater/">repeater</a>, as they follow that of the repeated network.</p>
@@ -7364,25 +7364,49 @@
 </li>
 </ul>
 <h2 id="randomized-bssid">Randomized BSSID<a class="headerlink" href="#randomized-bssid" title="Permanent link">&para;</a></h2>
-<p>Randomized BSSID has been available since firmware v4.6. It aims to prevent the client vendors from collecting nearby Wi-Fi BSSIDs and client devices' GPS coordinates to their servers.</p>
-<p><strong>How Client Vendors Collect Location Data</strong></p>
-<p>Client vendors usually collect the geographical location data of Wi-Fi access points by leveraging their unique BSSIDs to locate devices. When client devices (e.g., mobile phones, computers) scan or connect to a router:</p>
-<ul>
+<p>Randomized BSSID is a privacy feature available since firmware v4.6 and enabled by default. It prevents your router from being located and tracked through a fixed Wi-Fi BSSID (the MAC address of the router's wireless interface).</p>
+<p><strong>Why a fixed BSSID is a privacy risk</strong></p>
+<p>Mobile operating systems (e.g., Android and iOS) rely on crowd-sourced Wi-Fi positioning to provide location services:</p>
+<ol>
 <li>
-<p>If other devices are within the router’s Wi-Fi signal coverage, their location and movement trajectories may be exposed.</p>
+<p>Client devices (phones, laptops) periodically upload the BSSIDs they can see, along with their own GPS-derived location, to the OS/device vendor's server.</p>
 </li>
 <li>
-<p>If a device uses GPS for positioning, it periodically uploads nearby Wi-Fi BSSIDs and corresponding GPS coordinates to the vendor’s server.</p>
+<p>Vendors aggregate this data into a global BSSID-to-location database.</p>
 </li>
-</ul>
+<li>
+<p>Any device with Wi-Fi enabled — even without GPS — can query that database to estimate its location from the BSSIDs around it.</p>
+</li>
+</ol>
 <p><img alt="randomized bssid" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireless/randomized-bssid-new.jpg" /></p>
-<p><strong>Security Risks of Crowdsourced Tracking</strong></p>
-<p>Even devices without GPS (or with GPS disabled) can estimate their location by querying visible BSSID info. However, this crowd-sourced location tracking system has security vulnerabilities. Attackers can use it to accumulate a global database of Wi-Fi access point locations and continuously track the movement trajectories of devices, posing a threat to user privacy and security.</p>
-<p><strong>How Randomized BSSID Protects Your Privacy</strong></p>
-<p>To address these vulnerabilities, GL-iNet routers implement the Randomized BSSID feature as a privacy safeguard.</p>
-<p>In the router’s web admin panel, go to WIRELESS -&gt; 5GHz Wi-Fi or 2.4GHz Wi-Fi, the BSSID option is enabled by default. </p>
-<p>With this setting, the device uses a randomly generated BSSID and renews it each time it boots. If you disable the random BSSID, the router reverts to using the real MAC address.</p>
-<p><strong>Note</strong>: For Guest Wi-Fi, the BSSID remains consistent with the Main Wi-Fi BSSID within the same frequency band.</p>
+<p>As a result, a router with a fixed BSSID acts like a stationary location beacon: it can be geo-located remotely, and its movements (for example, when you travel with it) can be traced over time. Attackers may also query such databases to locate routers or fingerprint them via the BSSID's vendor information (OUI).</p>
+<p><strong>How Randomized BSSID protects you</strong></p>
+<p>When this feature is enabled, the router generates a random BSSID and renews it at each boot. Since the BSSID keeps changing, it can no longer be tied to a fixed location in vendor databases, breaking the BSSID-location association used for tracking.</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enabled (default)</td>
+<td>A new random BSSID is generated and renewed at each boot</td>
+</tr>
+<tr>
+<td>Disabled</td>
+<td>The router uses its real factory MAC address as the BSSID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes</strong>:</p>
+<ol>
+<li>The BSSID changes only when the router reboots; it stays the same during a running session.</li>
+<li>For Guest Wi-Fi, the BSSID remains consistent with the Main Wi-Fi BSSID on the same frequency band.</li>
+<li>If the MLO Wi-Fi radio bands include 6 GHz, the MLO Wi-Fi BSSID synchronizes with the 6 GHz Wi-Fi BSSID.</li>
+<li>Randomized BSSID blocks tracking via the router's BSSID, but it does not stop client devices from reporting their own location, and it is not a complete privacy solution: SSID, channel, and signal characteristics can still be observed.</li>
+</ol>
 <hr />
 <p>Still have questions? Visit our <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a>.</p>
 
@@ -7409,7 +7433,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 6, 2026 06:09:09 UTC">August 6, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 13, 2026 09:25:42 UTC">October 13, 2026</span>
   </span>
 
     
