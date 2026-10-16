@@ -151,6 +151,12 @@
             </a>
           </li>
         
+          <li class="md-select__item">
+            <a href="/kvm/es/tutorials/how_to_unbrick_kvm_via_usb_otg/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -3876,6 +3882,13 @@
 <p><img alt="rmq1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/how_to_unbrick_kvm_via_usb_otg/rmq1-usbotg.png" /></p>
 </li>
 <li>
+<p>ソースリポジトリをクローンし、そのディレクトリに移動します。この手順は macOS と Linux の両方で必要です。Git がインストールされていることを確認し、次のコマンドを実行してください。</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/gl-inet/axdl-rs.git
+<span class="nb">cd</span><span class="w"> </span>axdl-rs
+</code></pre></div>
+<p>以降のコマンドは、このディレクトリ内で実行してください。</p>
+</li>
+<li>
 <p>プラットフォーム固有の依存関係をインストールします。</p>
 <ul>
 <li>
@@ -3883,13 +3896,7 @@
 <p><div class="highlight"><pre><span></span><code>sudo apt install -y libudev-dev libusb-1.0-0-dev
 </code></pre></div>
  通常のユーザーがデバイスにアクセスできるように udev ルールを構成します。</p>
-<div class="highlight"><pre><span></span><code># Clone the repository
-git clone https://github.com/gl-inet/axdl-rs.git
-
-# Change directory
-cd axdl-rs
-
-# Copy the udev rule file to the system directory
+<div class="highlight"><pre><span></span><code># Copy the udev rule file to the system directory
 sudo cp 99-axdl.rules /etc/udev/rules.d/
 
 # Reload udev rules to apply changes
@@ -3904,11 +3911,13 @@ sudo udevadm control --reload
 <p><code>brew</code> 経由で <code>libusb</code> をインストールし、USB と KVM デバイスとの通信を有効にします。</p>
 <div class="highlight"><pre><span></span><code>brew install libusb
 </code></pre></div>
-<p><code>axdl-cli</code> ツールをビルドする</p>
-<div class="highlight"><pre><span></span><code>cargo build --bin axdl-cli --package axdl-cli
-</code></pre></div>
 </li>
 </ul>
+</li>
+<li>
+<p>どちらのプラットフォームでも、<code>axdl-cli</code> ツールをビルドします。</p>
+<div class="highlight"><pre><span></span><code>cargo<span class="w"> </span>build<span class="w"> </span>--bin<span class="w"> </span>axdl-cli<span class="w"> </span>--package<span class="w"> </span>axdl-cli
+</code></pre></div>
 </li>
 <li>
 <p>次のコマンドを入力してファームウェアをフラッシュします。 <code>/path/to/firmware.axp</code> を、ダウンロードしたファームウェア ファイルへの実際のパスに置き換えてください。</p>
@@ -3962,7 +3971,7 @@ Done
   <small>
     
       最終更新日:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年9月7日 04:04:46 UTC">2026年9月7日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月16日 08:53:37 UTC">2026年10月16日</span>
       
     
   </small>

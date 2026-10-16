@@ -151,6 +151,12 @@
             </a>
           </li>
         
+          <li class="md-select__item">
+            <a href="/kvm/es/faq/privacy_error_from_your_browser/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -3880,7 +3886,7 @@
   <h1 id="datenschutzwarnung-beim-zugriff-auf-kvm-per-browser">Datenschutzwarnung beim Zugriff auf KVM per Browser<a class="headerlink" href="#datenschutzwarnung-beim-zugriff-auf-kvm-per-browser" title="Permanent link">&para;</a></h1>
 <p>Beim Zugriff auf das GL.iNet KVM per Browser kann eine Browserwarnung angezeigt werden: <strong>Your connection isn't private</strong>.</p>
 <p><img alt="privacy error" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/privacy_error_1.png" /></p>
-<p>Dies ist eine übliche Sicherheitswarnung, die Browser anzeigen, wenn sie eine Website ohne SSL/TLS-Zertifikat erkennen. HTTPS-Verbindungen verwenden Zertifikate, um die Serveridentität zu prüfen und Daten zu verschlüsseln.</p>
+<p>Diese Warnung bedeutet, dass der Browser das vom KVM bereitgestellte SSL/TLS-Zertifikat nicht validieren kann. Beispielsweise wurde es möglicherweise nicht von einer Zertifizierungsstelle ausgestellt, der Ihr Browser vertraut, oder es stimmt nicht mit der IP-Adresse oder dem Hostnamen überein, über den Sie auf die Konsole zugreifen.</p>
 <h2 id="warum-wird-diese-warnung-angezeigt">Warum wird diese Warnung angezeigt?<a class="headerlink" href="#warum-wird-diese-warnung-angezeigt" title="Permanent link">&para;</a></h2>
 <p>Im obigen Beispiel ist <strong>192.168.8.11</strong> die lokale IP-Adresse des KVM, die vom vorgeschalteten Router dynamisch per DHCP zugewiesen wurde.</p>
 <div class="admonition note">
@@ -3888,10 +3894,10 @@
 <p>Wenn das Gateway des Routers, mit dem Ihr GL.iNet KVM verbunden ist, "192.168.x.1" lautet (wobei x in privaten Netzwerken typischerweise 0, 1 oder 8 ist), sollte die lokale IP Ihres KVM "192.168.x.y" lauten (wobei y eine gültige Hostadresse im Subnetz ist).</p>
 </div>
 <p>Diese lokale IP-Adresse wird verwendet, um auf die GL.iNet KVM-Konsole zuzugreifen, nicht auf eine öffentliche Website.</p>
-<p>Browser unterscheiden jedoch normalerweise nicht zwischen einer lokalen Konsole und normalen öffentlichen Websites. Sie behandeln alle IP-Adressen als Websites und erwarten, dass HTTPS-Verbindungen durch SSL/TLS-Zertifikate abgesichert sind.</p>
-<p>Eine tatsächlich sichere Website verwendet ein SSL/TLS-Zertifikat. Wenn Browser daher auf eine lokale Konsole ohne Zertifikat zugreifen, lösen sie wegen des fehlenden Zertifikats eine Sicherheitswarnung aus.</p>
+<p>Das KVM verwendet für den HTTPS-Zugriff per Browser ein Standard-TLS-Zertifikat. Browser prüfen Zertifikate lokaler Konsolen genauso wie die öffentlicher Websites: Das Zertifikat muss vertrauenswürdig und gültig sein und zur aufgerufenen Adresse passen.</p>
+<p>Wenn Ihr Browser dem Standardzertifikat nicht vertraut oder dieses die eingegebene lokale IP-Adresse bzw. den Hostnamen nicht abdeckt, zeigt er eine Warnung an. Diese bedeutet nicht, dass das KVM kein Zertifikat besitzt. HTTPS kann die Verbindung weiterhin verschlüsseln, aber der Browser kann die Identität des KVM nicht überprüfen.</p>
 <h2 id="wie-lasst-sich-die-warnung-beheben">Wie lässt sich die Warnung beheben?<a class="headerlink" href="#wie-lasst-sich-die-warnung-beheben" title="Permanent link">&para;</a></h2>
-<p>Klicken Sie auf <strong>Advanced</strong> und <strong>Continue to "192.168.8.11"</strong>.</p>
+<p>Prüfen Sie beim lokalen Zugriff zunächst, ob die Adresse zu Ihrem KVM gehört. Klicken Sie anschließend auf <strong>Advanced</strong> und <strong>Continue to "192.168.8.11"</strong> (der genaue Wortlaut hängt vom Browser ab).</p>
 <p><img alt="Continue to 192.168.8.11" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/privacy_error_2.jpg" /></p>
 <p>Danach werden Sie zur GL.iNet KVM-Konsole weitergeleitet.</p>
 <p><img alt="local access to kvm admin" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/local_access.png" /></p>
@@ -3899,14 +3905,14 @@
 <p>Ja. Sie können auf dem KVM Ihr eigenes SSL/TLS-Zertifikat installieren und verwenden. Führen Sie die folgenden Schritte aus.</p>
 <ol>
 <li>
-<p>Beantragen Sie ein SSL/TLS-Zertifikat oder verwenden Sie ein selbstsigniertes Zertifikat.</p>
+<p>Besorgen Sie ein SSL/TLS-Zertifikat, das den Hostnamen oder die IP-Adresse abdeckt, über die Sie auf das KVM zugreifen. Um Browserwarnungen zu vermeiden, muss das Zertifikat gültig sein und von einer Zertifizierungsstelle stammen, der Ihr Browser vertraut. Ein selbstsigniertes Zertifikat löst weiterhin eine Warnung aus, sofern Sie Ihr steuerndes Gerät nicht ausdrücklich so konfigurieren, dass es diesem Zertifikat vertraut.</p>
 </li>
 <li>
 <p>Melden Sie sich an Ihrer KVM-Konsole an. Klicken Sie oben rechts auf das Schildsymbol, um zu <strong>Security</strong> -&gt; <strong>TLS Certificate</strong> zu wechseln.</p>
 <p><img alt="custom cert 1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/custom_cert1.png" /></p>
 <p>Wählen Sie im Popup-Fenster <strong>Custom Certificate</strong> aus und laden Sie anschließend Ihre Zertifikatsdatei und den privaten Schlüssel hoch. Diese Funktion ist seit Firmware v1.8.0 verfügbar.</p>
 <p><img alt="custom cert 2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/custom_cert2.png" /></p>
-<p>Alternativ können Sie die Konfigurationsdateien auf dem KVM per SSH-Terminal oder WinSCP bearbeiten. Das automatisch erzeugte Zertifikat und der Schlüssel werden unter folgendem Pfad gespeichert:</p>
+<p>Alternativ können Sie das Zertifikat und den privaten Schlüssel auf dem KVM per SSH-Terminal oder WinSCP ersetzen. Beide werden in folgendem Verzeichnis gespeichert:</p>
 <p><code>/etc/kvmd/user/ssl</code></p>
 <p>Ersetzen Sie sie durch Ihr neues SSL-Zertifikat und Ihren privaten Schlüssel.</p>
 </li>
@@ -3922,7 +3928,7 @@
   <small>
     
       Letztes Update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="29. Juli 2026 11:45:05 UTC">29. Juli 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16. Oktober 2026 08:53:37 UTC">16. Oktober 2026</span>
       
     
   </small>

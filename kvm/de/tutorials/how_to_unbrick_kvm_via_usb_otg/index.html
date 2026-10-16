@@ -151,6 +151,12 @@
             </a>
           </li>
         
+          <li class="md-select__item">
+            <a href="/kvm/es/tutorials/how_to_unbrick_kvm_via_usb_otg/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -4008,20 +4014,21 @@
 <p><img alt="rmq1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/how_to_unbrick_kvm_via_usb_otg/rmq1-usbotg.png" /></p>
 </li>
 <li>
-<p>Installieren Sie die plattformspezifischen Abhaengigkeiten:</p>
+<p>Klonen Sie das Quellcode-Repository und wechseln Sie in dessen Verzeichnis. Dieser Schritt ist sowohl unter macOS als auch unter Linux erforderlich. Stellen Sie sicher, dass Git installiert ist, und führen Sie dann Folgendes aus:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/gl-inet/axdl-rs.git
+<span class="nb">cd</span><span class="w"> </span>axdl-rs
+</code></pre></div>
+<p>Führen Sie die weiteren Befehle in diesem Verzeichnis aus.</p>
+</li>
+<li>
+<p>Installieren Sie die plattformspezifischen Abhängigkeiten:</p>
 <ul>
 <li>
 <p><strong>Linux (Debian-basiert)</strong></p>
 <p><div class="highlight"><pre><span></span><code>sudo apt install -y libudev-dev libusb-1.0-0-dev
 </code></pre></div>
  Konfigurieren Sie udev-Regeln, damit normale Benutzer auf das Geraet zugreifen koennen:</p>
-<div class="highlight"><pre><span></span><code># Repository klonen
-git clone https://github.com/gl-inet/axdl-rs.git
-
-# In das Verzeichnis wechseln
-cd axdl-rs
-
-# udev-Regeldatei in das Systemverzeichnis kopieren
+<div class="highlight"><pre><span></span><code># udev-Regeldatei in das Systemverzeichnis kopieren
 sudo cp 99-axdl.rules /etc/udev/rules.d/
 
 # udev-Regeln neu laden, damit die Aenderungen wirksam werden
@@ -4036,11 +4043,13 @@ sudo udevadm control --reload
 <p>Installieren Sie <code>libusb</code> ueber <code>brew</code>, um die USB-Kommunikation mit KVM-Geraeten zu ermoeglichen:</p>
 <div class="highlight"><pre><span></span><code>brew install libusb
 </code></pre></div>
-<p>Erstellen Sie das Tool <code>axdl-cli</code></p>
-<div class="highlight"><pre><span></span><code>cargo build --bin axdl-cli --package axdl-cli
-</code></pre></div>
 </li>
 </ul>
+</li>
+<li>
+<p>Erstellen Sie das Tool <code>axdl-cli</code> auf der jeweiligen Plattform:</p>
+<div class="highlight"><pre><span></span><code>cargo<span class="w"> </span>build<span class="w"> </span>--bin<span class="w"> </span>axdl-cli<span class="w"> </span>--package<span class="w"> </span>axdl-cli
+</code></pre></div>
 </li>
 <li>
 <p>Geben Sie den folgenden Befehl ein, um die Firmware zu flashen. Ersetzen Sie <code>/path/to/firmware.axp</code> bitte durch den tatsaechlichen Pfad zu Ihrer heruntergeladenen Firmwaredatei.</p>
@@ -4094,7 +4103,7 @@ Done
   <small>
     
       Letztes Update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="7. September 2026 03:25:54 UTC">7. September 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16. Oktober 2026 08:53:37 UTC">16. Oktober 2026</span>
       
     
   </small>

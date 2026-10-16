@@ -151,6 +151,12 @@
             </a>
           </li>
         
+          <li class="md-select__item">
+            <a href="/kvm/es/faq/privacy_error_from_your_browser/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -3748,7 +3754,7 @@
   <h1 id="kvm">ブラウザ経由で KVM にアクセスするとプライバシー エラーが発生する<a class="headerlink" href="#kvm" title="Permanent link">&para;</a></h1>
 <p>ブラウザ経由で GL.iNet KVM にアクセスすると、ブラウザの警告が表示される場合があります: <strong>接続はプライベートではありません</strong>。</p>
 <p><img alt="privacy error" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/privacy_error_1.png" /></p>
-<p>HTTPS 接続は証明書に依存してサーバー ID を検証し、データを暗号化するため、これはブラウザーが SSL/TLS 証明書のない Web サイトを検出したときに発行する標準のセキュリティ警告です。</p>
+<p>この警告は、KVM が提示した SSL/TLS 証明書をブラウザが検証できないことを示します。たとえば、ブラウザが信頼する認証局によって発行されていない場合や、コンソールへのアクセスに使用した IP アドレスまたはホスト名と証明書が一致しない場合に表示されます。</p>
 <h2 id="_1">この警告が表示されるのはなぜですか?<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>上記の例では、<strong>192.168.8.11</strong> は、DHCP 経由で上位ルーターによって動的に割り当てられる KVM ローカル IP アドレスです。</p>
 <div class="admonition note">
@@ -3756,10 +3762,10 @@
 <p>GL.iNet KVM が接続されているルーターのゲートウェイが「192.168.x.1」(プライベート ネットワークでは x は通常 0、1、または 8) の場合、KVM のローカル IP は「192.168.x.y」(y は有効なホスト アドレス) である必要があります。サブネット内)。</p>
 </div>
 <p>このローカル IP アドレスは、公開 Web サイトではなく、GL.iNet KVM コンソールにアクセスするために使用されます。</p>
-<p>ただし、ブラウザは通常、ローカル コンソールと通常の公開 Web サイトを区別しません。すべての IP アドレスを Web サイトとして扱い、HTTPS 接続が SSL/TLS 証明書によって保護されることを期待します。</p>
-<p>本当に安全な Web サイトでは SSL/TLS 証明書が使用されるため、ブラウザーがローカル コンソール (証明書を持たない) にアクセスすると、証明書がないためにセキュリティ アラートがトリガーされます。</p>
+<p>KVM は、ブラウザからの HTTPS アクセスにデフォルトの TLS 証明書を使用します。ブラウザは、公開 Web サイトと同様にローカルコンソールの証明書も検証します。証明書は信頼されており、有効で、アクセス先のアドレスと一致している必要があります。</p>
+<p>デフォルトの証明書をブラウザが信頼していない場合や、入力したローカル IP アドレスまたはホスト名が証明書の対象に含まれていない場合、警告が表示されます。この警告は、KVM に証明書がないことを意味するものではありません。HTTPS による通信の暗号化は可能ですが、ブラウザは KVM の身元を確認できません。</p>
 <h2 id="_2">警告を解決するにはどうすればよいですか?<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><strong>Advanced</strong> をクリックし、<strong>「192.168.8.11」に進みます</strong>。</p>
+<p>ローカルアクセスでは、まずアドレスがご使用の KVM のものであることを確認してください。その後、<strong>Advanced</strong>、<strong>Continue to "192.168.8.11"</strong> の順にクリックします（表示される文言はブラウザによって異なります）。</p>
 <p><img alt="Continue to 192.168.8.11" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/privacy_error_2.jpg" /></p>
 <p>その後、GL.iNet KVM コンソールにリダイレクトされます。</p>
 <p><img alt="local access to kvm admin" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/local_access.png" /></p>
@@ -3767,14 +3773,14 @@
 <p>はい。独自の SSL/TLS 証明書を KVM にインストールして使用できます。以下の手順に従ってください。</p>
 <ol>
 <li>
-<p>SSL/TLS 証明書を申請するか、自己署名証明書を使用します。</p>
+<p>KVM へのアクセスに使用するホスト名または IP アドレスを対象とする SSL/TLS 証明書を取得します。ブラウザの警告を回避するには、証明書が有効で、ブラウザが信頼する認証局によって発行されている必要があります。自己署名証明書は、制御側デバイスでその証明書を信頼するよう明示的に設定しない限り、引き続き警告の原因となります。</p>
 </li>
 <li>
 <p>KVM コンソールにログインします。右上隅の盾アイコンをクリックして、<strong>Security</strong> -&gt; <strong>TLS Certificate</strong> に移動します。</p>
 <p><img alt="custom cert 1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/custom_cert1.png" /></p>
 <p>ポップアップ ウィンドウで <strong>Custom Certificate</strong> を選択し、証明書ファイルと秘密キーをアップロードします。この機能はファームウェア v1.8.0 以降で利用可能です。</p>
 <p><img alt="custom cert 2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/custom_cert2.png" /></p>
-<p>または、SSH ターミナルまたは WinSCP 経由で KVM の構成ファイルを編集することもできます。自動生成された証明書とキーは次のパスに保存されます。</p>
+<p>または、SSH ターミナルや WinSCP 経由で KVM 上の証明書と秘密キーを置き換えることもできます。証明書と秘密キーは次のディレクトリに保存されています。</p>
 <p><code>/etc/kvmd/user/ssl</code></p>
 <p>これらを新しい SSL 証明書と秘密キーに置き換えます。</p>
 </li>
@@ -3790,7 +3796,7 @@
   <small>
     
       最終更新日:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月27日 07:31:44 UTC">2026年8月27日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月16日 08:53:37 UTC">2026年10月16日</span>
       
     
   </small>
