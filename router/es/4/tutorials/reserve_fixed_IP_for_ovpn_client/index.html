@@ -177,6 +177,12 @@
             </a>
           </li>
         
+          <li class="md-select__item">
+            <a href="/router/uk/4/tutorials/reserve_fixed_IP_for_ovpn_client/" hreflang="uk" class="md-select__link">
+              Українська
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -3692,7 +3698,7 @@
         
   
   <span class="md-ellipsis">
-    Obtener registros del módulo
+    Obtener registros del módem
   </span>
   
 
@@ -7103,7 +7109,7 @@
 </ol>
 <p><img alt="add ccd folder" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/add_ccd_folder.png" /></p>
 <ol>
-<li>Añade un archivo llamado <code>GLsupport</code>, escribe <code>ifconfig-push 10.8.0.10 255.255.255.0</code> y luego guarda el archivo y sal.</li>
+<li>Vaya a <code>/etc/openvpn/ccd</code>, añada un archivo llamado <code>GLsupport</code>, escriba <code>ifconfig-push 10.8.0.10 255.255.255.0</code> y, a continuación, guarde el archivo y salga.</li>
 </ol>
 <p>Verifica el contenido con <code>cat GLsupport</code></p>
 <p><img alt="ifconfig-push" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/ifconfig-push.png" />
@@ -7112,7 +7118,7 @@
 <li><code>255.255.255.0</code> es la máscara de subred y puede sustituirla por la máscara de subred de su servidor OpenVPN.</li>
 </ul>
 <p><strong>Nota</strong>: Si quiere fijar direcciones IP para varios clientes OpenVPN, cree varios nombres de usuario y contraseñas en el paso 2 y, a continuación, repita el paso 5. Añada archivos a la carpeta <code>ccd</code> según el orden de los usuarios, por ejemplo <code>user_1</code>, <code>user_2</code>, <code>user_3</code>, seguidos del comando <code>ifconfig-push</code> y de su correspondiente IP fija y máscara de subred.</p>
-<p>Por ejemplo: <code>ifconfig-push 10.8.0.20 225.225.225.0</code>, <code>ifconfig-push 10.8.0.30 225.225.225.0</code>, <code>ifconfig-push 10.8.0.40 225.225.225.0</code></p>
+<p>Por ejemplo: <code>ifconfig-push 10.8.0.20 255.255.255.0</code>, <code>ifconfig-push 10.8.0.30 255.255.255.0</code>, <code>ifconfig-push 10.8.0.40 255.255.255.0</code></p>
 <ol>
 <li>Por último, realice una prueba con su cliente OVPN y compruebe si la <strong>Client Virtual IP (IPv4)</strong> es la reservada.</li>
 </ol>
@@ -7147,7 +7153,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="22 de mayo de 2026 07:40:43 UTC">22 de mayo de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 de octubre de 2026 08:30:23 UTC">16 de octubre de 2026</span>
   </span>
 
     

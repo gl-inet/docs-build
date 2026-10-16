@@ -173,6 +173,12 @@
             </a>
           </li>
         
+          <li class="md-select__item">
+            <a href="/router/uk/4/interface_guide/wireless_v4.8/" hreflang="uk" class="md-select__link">
+              Українська
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -3672,7 +3678,7 @@
         
   
   <span class="md-ellipsis">
-    モジュールログを取得する
+    モデムログの取得
   </span>
   
 
@@ -7126,7 +7132,7 @@
 <p>このページの内容は、ファームウェア v4.8.x 以前に基づいています。デバイスで別のファームウェアバージョンを使用している場合は、以下のセレクターで該当するガイドに切り替えてください。</p>
 <div class="gl-link-select" data-label="ファームウェアバージョン" data-placeholder="ファームウェア v4.8 以前">
 <ul>
-<li><a href="../wireless/">ファームウェア v4.9</a></li>
+<li><a href="../wireless/">ファームウェア v4.9 以降</a></li>
 </ul>
 </div>
 <hr />
@@ -7265,7 +7271,7 @@
 <p><img alt="wifi qr code" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireless/wifi_ssid_qr_code.png" /></p>
 </li>
 <li>
-<p><strong>Randomized BSSID</strong>: この機能はデフォルトで有効です。周辺の Wi-Fi BSSID とクライアントデバイスの GPS 座標が、クライアントベンダーのサーバーに収集されることを防ぐことを目的としています。詳細は<a href="#randomized-bssid">こちら</a>を参照してください。</p>
+<p><strong>Randomized BSSID</strong>: デフォルトで有効になっており、固定BSSIDによるルーターの追跡を防ぎます。詳細は<a href="#randomized-bssid">Randomized BSSID</a>を参照してください。</p>
 </li>
 <li>
 <p>ルーターが<a href="../internet_repeater/">リピーター</a>として動作している間は、<strong>Bandwidth</strong> と <strong>Channel</strong> は変更できません。中継先ネットワークの設定に従います。</p>
@@ -7282,25 +7288,49 @@
 </li>
 </ul>
 <h2 id="randomized-bssid">Randomized BSSID<a class="headerlink" href="#randomized-bssid" title="Permanent link">&para;</a></h2>
-<p>Randomized BSSID はファームウェア v4.6 以降で利用できます。周辺の Wi-Fi BSSID とクライアントデバイスの GPS 座標が、クライアントベンダーのサーバーに収集されることを防ぐことを目的としています。</p>
-<p><strong>クライアントベンダーが位置情報を収集する仕組み</strong></p>
-<p>クライアントベンダーは通常、Wi-Fi アクセスポイント固有の BSSID を利用して、その地理的位置情報を収集し、デバイスの位置推定に利用します。クライアントデバイス（スマートフォン、PC など）がルーターをスキャンまたは接続すると、次のようなことが起こります。</p>
-<ul>
+<p>Randomized BSSIDは、ファームウェアv4.6以降で利用でき、デフォルトで有効になっているプライバシー保護機能です。固定のWi-Fi BSSID（ルーターの無線インターフェースのMACアドレス）によるルーターの位置特定や追跡を防ぎます。</p>
+<p><strong>固定BSSIDがプライバシー上のリスクとなる理由</strong></p>
+<p>AndroidやiOSなどのモバイルOSは、利用者のデバイスから収集したデータに基づくWi-Fi測位を位置情報サービスに使用しています。</p>
+<ol>
 <li>
-<p>他のデバイスがルーターの Wi-Fi 信号範囲内にある場合、それらの位置や移動履歴が露出する可能性があります。</p>
+<p>スマートフォンやノートPCなどのクライアントデバイスが、検出したBSSIDと自身のGPS位置情報を、OSやデバイスの提供元のサーバーへ定期的にアップロードします。</p>
 </li>
 <li>
-<p>デバイスが位置情報に GPS を使用している場合、近くの Wi-Fi BSSID と対応する GPS 座標が定期的にベンダーのサーバーへアップロードされます。</p>
+<p>提供元が、このデータをBSSIDと位置情報を対応付ける世界規模のデータベースに集約します。</p>
 </li>
-</ul>
+<li>
+<p>Wi-Fiが有効なデバイスは、GPSがなくても、このデータベースに問い合わせて周辺のBSSIDから自身の位置を推定できます。</p>
+</li>
+</ol>
 <p><img alt="randomized bssid" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireless/randomized-bssid-new.jpg" /></p>
-<p><strong>クラウドソース型追跡のセキュリティリスク</strong></p>
-<p>GPS を搭載していないデバイス（または GPS を無効にしたデバイス）でも、見えている BSSID 情報を照会することで現在地を推定できます。しかし、このようなクラウドソース型の位置追跡システムにはセキュリティ上の脆弱性があります。攻撃者はこれを利用して Wi-Fi アクセスポイントの位置情報のグローバルデータベースを蓄積し、デバイスの移動経路を継続的に追跡できるため、ユーザーのプライバシーとセキュリティを脅かす可能性があります。</p>
-<p><strong>Randomized BSSID がプライバシーを保護する仕組み</strong></p>
-<p>こうした脆弱性に対処するため、GL.iNet ルーターはプライバシー保護機能として Randomized BSSID を実装しています。</p>
-<p>ルーターの Web 管理パネルで <strong>WIRELESS</strong> -&gt; <strong>5GHz Wi-Fi</strong> または <strong>2.4GHz Wi-Fi</strong> に移動すると、BSSID オプションはデフォルトで有効になっています。</p>
-<p>この設定では、デバイスはランダムに生成された BSSID を使用し、起動のたびに更新します。ランダム BSSID を無効にすると、ルーターは実際の MAC アドレスを使用するように戻ります。</p>
-<p><strong>注意</strong>: ゲスト Wi-Fi の BSSID は、同じ周波数帯のメイン Wi-Fi の BSSID と一致したままになります。</p>
+<p>その結果、固定BSSIDを持つルーターは一定の位置を示すビーコンのように機能します。リモートから位置を特定でき、旅行中などの移動も継続的に追跡される可能性があります。攻撃者がこうしたデータベースを照会し、ルーターを探したり、BSSIDのベンダー情報（OUI）から機器の特徴を識別したりすることもあります。</p>
+<p><strong>Randomized BSSIDによる保護の仕組み</strong></p>
+<p>この機能を有効にすると、ルーターはランダムなBSSIDを生成し、起動のたびに更新します。BSSIDが変わり続けるため、提供元のデータベースで固定の位置に結び付けられなくなり、追跡に使われるBSSIDと位置の対応関係を断ち切ります。</p>
+<table>
+<thead>
+<tr>
+<th>状態</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有効（デフォルト）</td>
+<td>起動のたびに新しいランダムBSSIDを生成して更新します</td>
+</tr>
+<tr>
+<td>無効</td>
+<td>ルーターの実際の工場出荷時MACアドレスをBSSIDとして使用します</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意</strong>:</p>
+<ol>
+<li>BSSIDはルーターの再起動時にのみ変化し、動作中は変わりません。</li>
+<li>ゲストWi-FiのBSSIDは、同じ周波数帯のメインWi-FiのBSSIDと一致します。</li>
+<li>MLO Wi-Fiの無線帯域に6 GHzが含まれる場合、MLO Wi-FiのBSSIDは6 GHz Wi-FiのBSSIDと同期します。</li>
+<li>Randomized BSSIDはルーターのBSSIDを使った追跡を防ぎますが、クライアントデバイス自身による位置情報の報告は防げません。また、プライバシーを完全に保護する機能ではなく、SSID、チャンネル、信号の特徴は引き続き観測できます。</li>
+</ol>
 <hr />
 <p>ご不明な点がありましたら、<a href="https://forum.gl-inet.com" target="_blank">コミュニティ・フォーラム</a>をご利用ください。</p>
 
@@ -7327,7 +7357,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月6日 06:05:41 UTC">2026年8月6日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月16日 08:30:23 UTC">2026年10月16日</span>
   </span>
 
     

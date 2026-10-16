@@ -177,6 +177,12 @@
             </a>
           </li>
         
+          <li class="md-select__item">
+            <a href="/router/uk/4/interface_guide/astrowarp/" hreflang="uk" class="md-select__link">
+              Українська
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -3678,7 +3684,7 @@
         
   
   <span class="md-ellipsis">
-    Obtenir les journaux du module
+    Obtenir les journaux du modem
   </span>
   
 
@@ -7191,20 +7197,31 @@
 
   <!-- Markdown content -->
   <h1 id="astrowarp">AstroWarp<a class="headerlink" href="#astrowarp" title="Permanent link">&para;</a></h1>
-<p><strong>Remarque</strong> : ce guide s’applique à la nouvelle version d’AstroWarp. Cette fonction a été renommée <a href="../goodpas/">GoodPAS</a> dans le firmware v4.10.</p>
+<p><strong>Remarque</strong> : ce guide s’applique à la nouvelle version d’AstroWarp. Cette fonction a été renommée <a href="../goodpas/">GoodPAS</a> dans le firmware v4.11 (v4.10 pour le GL-MG1300).</p>
 <p>La nouvelle version d’AstroWarp est intégrée au SDK des routeurs GL.iNet. Elle adopte le protocole AmneziaWG avec obfuscation de trafic intégrée, offrant des connexions stables et sécurisées pour un accès à distance fiable à tout moment, où que vous soyez.</p>
 <p>Cette fonctionnalité permet un accès à distance fluide à votre réseau domestique. Vous pouvez configurer et appairer directement les appareils via un code d’accès dynamique dans le panneau d’administration web, afin d’établir rapidement une connexion sécurisée entre votre routeur de voyage et votre réseau domestique en quelques secondes, sans inscription ni connexion.</p>
 <p>L’ancienne version d’AstroWarp, bien que visible dans le panneau d’administration web, reposait sur une plateforme AstroWarp autonome pour établir des connexions réseau à distance. Cliquez <a href="https://docs.astrowarp.net/" target="_blank">ici</a> pour consulter la documentation de l’ancienne version d’AstroWarp.</p>
 <p><strong>Remarque</strong> :</p>
 <ol>
-<li>Il n’est pas recommandé d’utiliser AstroWarp en même temps que les fonctionnalités suivantes, car cela peut provoquer des conflits de routage : GoodCloud Site to Site, ZeroTier, Tailscale, Tor.</li>
-<li>Lorsque AstroWarp est activé, la fonction <strong>Network Mode</strong> ne peut pas être utilisée.</li>
+<li>
+<p>Il n’est pas recommandé d’utiliser AstroWarp en même temps que les fonctionnalités suivantes, car cela peut provoquer des conflits de routage : OpenVPN Client, WireGuard Client, GoodCloud Site to Site, ZeroTier, Tailscale, Tor.</p>
+</li>
+<li>
+<p>Lorsque AstroWarp est activé, la fonction <strong>Network Mode</strong> ne peut pas être utilisée.</p>
+</li>
+<li>
+<p>Lorsque AstroWarp est activé, il bénéficie de la priorité de routage la plus élevée et ne peut pas être utilisé en cascade avec le client VPN.</p>
+<p>Par exemple, si les routeurs A et B établissent un réseau AstroWarp avec le routeur B comme nœud de sortie, le trafic acheminé par AstroWarp accède à Internet via l’adresse IP publique WAN du routeur B, même si le client VPN est activé sur ce routeur. Ce trafic ne passe pas par le tunnel du client VPN du routeur B.</p>
+</li>
 </ol>
 <h2 id="modeles-pris-en-charge">Modèles pris en charge<a class="headerlink" href="#modeles-pris-en-charge" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Modèles pris en charge</summary>
 <p>Ces modèles sont compatibles avec la nouvelle version d’AstroWarp. Pour consulter la liste des modèles pris en charge par l’ancienne version d’AstroWarp, cliquez <a href="https://docs.astrowarp.net/en/quick_start/" target="_blank">ici</a>.</p>
 <ul>
+<li>GL-MT6000 (Fortify)</li>
+<li>GL-BE14000 (Flint 4)</li>
+<li>GL-MG1300 (Mango 2)</li>
 <li>GL-BE9300 (Flint 3)</li>
 <li>GL-BE3600 (Slate 7)</li>
 <li>GL-MT6000 (Flint 2)</li>
@@ -7224,8 +7241,6 @@
 <summary>Modèles non pris en charge</summary>
 <p>Ces appareils sont incompatibles avec la nouvelle version d’AstroWarp, tandis que certains modèles fonctionnent encore avec l’ancienne version. Consultez <a href="https://docs.astrowarp.net/en/quick_start/" target="_blank">ce lien</a> pour plus de détails.</p>
 <ul>
-<li>GL-BE14000 (Flint 4)</li>
-<li>GL-MG1300 (Mango 2)</li>
 <li>GL-E5800 (Mudi 7)</li>
 <li>GL-BE6500 (Flint 3e)</li>
 <li>GL-B3000 (Marble)</li>
@@ -7358,7 +7373,7 @@
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="7 septembre 2026 02:40:30 UTC">7 septembre 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 octobre 2026 08:30:23 UTC">16 octobre 2026</span>
   </span>
 
     

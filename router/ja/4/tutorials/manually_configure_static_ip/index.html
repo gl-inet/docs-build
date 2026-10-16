@@ -177,6 +177,12 @@
             </a>
           </li>
         
+          <li class="md-select__item">
+            <a href="/router/uk/4/tutorials/manually_configure_static_ip/" hreflang="uk" class="md-select__link">
+              Українська
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -3680,7 +3686,7 @@
         
   
   <span class="md-ellipsis">
-    モジュールログを取得する
+    モデムログの取得
   </span>
   
 
@@ -7272,7 +7278,7 @@
 <p>TCP/IP を選択します。以下のようなウィンドウが表示されます。</p>
 <p><img alt="Mac_Wi-Fi_settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Mac_Wi-Fi_settings.png" /></p>
 <p>Configure IPv4 メニューから Manually を選択します。</p>
-<p>IPv4 Address フィールドに固定IPアドレスを入力します。どの番号を入力すべきでしょうか。一般的には、現在のIPアドレスの末尾だけを変更する方法が簡単です。この例では、192.168.7.0 から 192.168.7.255 の範囲内で、他のデバイスにまだ割り当てられていないアドレスなら使用できます。</p>
+<p>IPv4 Addressフィールドに固定IPアドレスを入力します。現在のIPアドレスの末尾を変更する方法があります。192.168.7.0/24ネットワークでは、192.168.7.1から192.168.7.254までの未使用のホストアドレスを選択してください。ネットワークアドレスやブロードキャストアドレスは使用しないでください。</p>
 <p>OK -&gt; Apply をクリックします。</p>
 </div>
 <div class="tabbed-block">
@@ -7301,7 +7307,7 @@
 <p class="glboxshadow"><img alt="DHCP_to_Static" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/DHCP_to_Static.png" /></p>
 </li>
 <li>
-<p>自宅やその他のプライベートネットワークで固定IPアドレスを使う場合は、以下の標準的なプライベートIPアドレス範囲内から選択してください: 10.0.0.0 ～ 10.255.255.255、172.16.0.0 ～ 172.31.255.255、192.168.0.0 ～ 192.168.255.255</p>
+<p>自宅やその他のプライベートネットワークで固定IPアドレスを使う場合は、現在のサブネット内で未使用のホストアドレスを選択してください。標準的なプライベートIPアドレスの範囲は次のとおりです: 10.0.0.0 ～ 10.255.255.255、172.16.0.0 ～ 172.31.255.255、192.168.0.0 ～ 192.168.255.255</p>
 </li>
 <li>
 <p>ここでIPアドレスを入力します。</p>
@@ -7310,9 +7316,9 @@
 </ul>
 </li>
 <li>
-<p>Gateway は通常、IPアドレスに基づいて自動入力されます。入力されない場合は、IPアドレスをコピーして末尾の数字を 1 に変更してください。</p>
+<p>ゲートウェイはIPアドレスに基づいて自動的に入力されます。入力されない場合は、ネットワークのゲートウェイのIPアドレスを入力してください。</p>
 <ul>
-<li>例: 前の例では 192.168.1.1</li>
+<li>例: ルーターのIPアドレスが192.168.1.1の場合は、192.168.1.1と入力します。</li>
 </ul>
 </li>
 <li>
@@ -7321,7 +7327,7 @@
 </ol>
 </div>
 <div class="tabbed-block">
-<p>自宅やその他のプライベートネットワークで固定IPアドレスを使う場合は、以下の標準的なプライベートIPアドレス範囲内から選択してください。</p>
+<p>自宅やその他のプライベートネットワークで固定IPアドレスを使う場合は、現在のサブネット内で未使用のホストアドレスを選択してください。標準的なプライベートIPアドレスの範囲は次のとおりです:</p>
 <p>10.0.0.0 ～ 10.255.255.255
 172.16.0.0 ～ 172.31.255.255
 192.168.0.0 ～ 192.168.255.255</p>
@@ -7360,7 +7366,7 @@
 <li>
 <p>Subnet Mask をタップして情報を入力します。</p>
 <ul>
-<li>通常は 225.225.0.0 です。</li>
+<li>接続しているネットワークのサブネットマスクを使用してください。</li>
 </ul>
 </li>
 <li>
@@ -7396,7 +7402,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年7月27日 10:15:08 UTC">2026年7月27日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月16日 08:30:23 UTC">2026年10月16日</span>
   </span>
 
     

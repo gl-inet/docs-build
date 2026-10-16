@@ -177,6 +177,12 @@
             </a>
           </li>
         
+          <li class="md-select__item">
+            <a href="/router/uk/4/interface_guide/goodpas/" hreflang="uk" class="md-select__link">
+              Українська
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -3678,7 +3684,7 @@
         
   
   <span class="md-ellipsis">
-    Pobierz logi modulu
+    Pobierz logi modemu
   </span>
   
 
@@ -7173,7 +7179,7 @@
 
   <!-- Markdown content -->
   <h1 id="goodpas">GoodPAS<a class="headerlink" href="#goodpas" title="Permanent link">&para;</a></h1>
-<p><strong>Uwaga</strong>: ta funkcja została wprowadzona w firmware v4.11, w którym nazwę AstroWarp zmieniono na GoodPAS. Jeśli urządzenie korzysta ze starszej wersji firmware, zapoznaj się z przewodnikiem <a href="../astrowarp/">AstroWarp</a>.</p>
+<p><strong>Uwaga</strong>: ta funkcja została wprowadzona w firmware v4.11 (v4.10 w przypadku GL-MG1300), w którym nazwę AstroWarp zmieniono na GoodPAS. Jeśli urządzenie korzysta ze starszej wersji firmware, zapoznaj się z przewodnikiem <a href="../astrowarp/">AstroWarp</a>.</p>
 <hr />
 <p>W menu po lewej stronie webowego panelu administracyjnego przejdź do <strong>CLOUD SERVICES</strong> -&gt; <strong>GoodPAS</strong>.</p>
 <p>GoodPAS to zaawansowane rozwiązanie do zdalnego dostępu, zintegrowane z SDK routerów GL.iNet. Korzysta z protokołu AmneziaWG z wbudowanym maskowaniem ruchu, zapewniając stabilne i bezpieczne połączenia na potrzeby niezawodnego zdalnego dostępu w dowolnym miejscu i czasie.</p>
@@ -7181,10 +7187,14 @@
 <p><strong>Uwaga</strong>:</p>
 <ol>
 <li>
-<p>Nie zaleca się korzystania z GoodPAS jednocześnie z żadną z następujących funkcji, ponieważ może to powodować konflikty routingu: GoodCloud Site to Site, ZeroTier, Tailscale, Tor.</p>
+<p>Nie zaleca się korzystania z GoodPAS jednocześnie z żadną z następujących funkcji, ponieważ może to powodować konflikty routingu: OpenVPN Client, WireGuard Client, GoodCloud Site to Site, ZeroTier, Tailscale, Tor.</p>
 </li>
 <li>
 <p>Gdy GoodPAS jest włączony, nie można korzystać z funkcji Network Mode.</p>
+</li>
+<li>
+<p>Po włączeniu GoodPAS ma najwyższy priorytet routingu i nie może być łączony kaskadowo z klientem VPN.</p>
+<p>Na przykład, jeśli router A i router B utworzą sieć GoodPAS, w której router B jest węzłem wyjściowym, ruch przekazywany przez GoodPAS będzie wychodził do Internetu przez publiczny adres IP WAN routera B, nawet gdy na routerze B jest włączony klient VPN. Ten ruch nie będzie przekazywany przez tunel klienta VPN routera B.</p>
 </li>
 </ol>
 <h2 id="szybka-konfiguracja">Szybka konfiguracja<a class="headerlink" href="#szybka-konfiguracja" title="Permanent link">&para;</a></h2>
@@ -7294,7 +7304,7 @@
     <span class="md-icon" title="Ostatnia aktualizacja">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2 października 2026 08:01:56 UTC">2 października 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 października 2026 08:30:23 UTC">16 października 2026</span>
   </span>
 
     

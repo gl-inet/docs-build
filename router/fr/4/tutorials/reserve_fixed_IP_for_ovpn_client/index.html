@@ -177,6 +177,12 @@
             </a>
           </li>
         
+          <li class="md-select__item">
+            <a href="/router/uk/4/tutorials/reserve_fixed_IP_for_ovpn_client/" hreflang="uk" class="md-select__link">
+              Українська
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -3692,7 +3698,7 @@
         
   
   <span class="md-ellipsis">
-    Obtenir les journaux du module
+    Obtenir les journaux du modem
   </span>
   
 
@@ -7104,7 +7110,7 @@
 <p><img alt="add ccd folder" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/add_ccd_folder.png" /></p>
 </li>
 <li>
-<p>Ajoutez un fichier "GLsupport", saisissez <code>ifconfig-push 10.8.0.10 255.255.255.0</code>, puis enregistrez et quittez le fichier.</p>
+<p>Accédez à <code>/etc/openvpn/ccd</code> et ajoutez un fichier "GLsupport", saisissez <code>ifconfig-push 10.8.0.10 255.255.255.0</code>, puis enregistrez et quittez le fichier.</p>
 <p>Vérifiez le contenu avec <code>cat GLsupport</code></p>
 <p><img alt="ifconfig-push" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/reserve_fixed_ip_for_ovpn_client/ifconfig-push.png" /></p>
 <ul>
@@ -7115,8 +7121,8 @@
 <p>"255.255.255.0" est le masque de sous-réseau, que vous pouvez remplacer par le masque de sous-réseau de votre serveur OpenVPN.</p>
 </li>
 </ul>
-<p><strong>Remarque</strong> : si vous souhaitez fixer des adresses IP pour plusieurs clients OpenVPN, veuillez créer plusieurs noms d'utilisateur et mots de passe à l'étape 2, puis répéter l'étape 5, ajouter des fichiers dans le dossier CCD dans l'ordre des utilisateurs, comme user_1, user_2, user_3, suivis de la commande "ifconfig push" et de leurs IP fixes et masques de sous-réseau correspondants. </p>
-<p>Par exemple, <code>ifconfig-push 10.8.0.20 225.225.225.0</code>, <code>ifconfig-push 10.8.0.30 225.225.225.0</code>, <code>ifconfig-push 10.8.0.40 225.225.225.0</code></p>
+<p><strong>Remarque</strong> : si vous souhaitez fixer des adresses IP pour plusieurs clients OpenVPN, veuillez créer plusieurs noms d'utilisateur et mots de passe à l'étape 2, puis répéter l'étape 5, ajouter des fichiers dans le dossier CCD dans l'ordre des utilisateurs, comme user_1, user_2, user_3, suivis de la commande "ifconfig-push" et de leurs IP fixes et masques de sous-réseau correspondants.</p>
+<p>Par exemple, <code>ifconfig-push 10.8.0.20 255.255.255.0</code>, <code>ifconfig-push 10.8.0.30 255.255.255.0</code>, <code>ifconfig-push 10.8.0.40 255.255.255.0</code></p>
 </li>
 <li>
 <p>Enfin, testez avec votre client OVPN et vérifiez que l'IP virtuelle du client (<strong>Client Virtual IP (IPv4)</strong>) correspond bien à l'adresse réservée. </p>
@@ -7153,7 +7159,7 @@
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="26 mars 2026 07:44:18 UTC">26 mars 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 octobre 2026 08:30:23 UTC">16 octobre 2026</span>
   </span>
 
     

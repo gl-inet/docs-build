@@ -173,6 +173,12 @@
             </a>
           </li>
         
+          <li class="md-select__item">
+            <a href="/router/uk/4/interface_guide/wireless_v4.8/" hreflang="uk" class="md-select__link">
+              Українська
+            </a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -3672,7 +3678,7 @@
         
   
   <span class="md-ellipsis">
-    Obtener registros del módulo
+    Obtener registros del módem
   </span>
   
 
@@ -7126,7 +7132,7 @@
 <p>El contenido de esta página se basa en la versión de firmware v4.8.x y anteriores. Si su dispositivo ejecuta otra versión de firmware, use el selector siguiente para cambiar a la guía correspondiente.</p>
 <div class="gl-link-select" data-label="Versión de firmware" data-placeholder="Firmware v4.8 y anteriores">
 <ul>
-<li><a href="../wireless/">Firmware v4.9</a></li>
+<li><a href="../wireless/">Firmware v4.9 y posteriores</a></li>
 </ul>
 </div>
 <hr />
@@ -7265,7 +7271,7 @@
 <p><img alt="wifi qr code" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireless/wifi_ssid_qr_code.png" /></p>
 <ul>
 <li>
-<p><strong>Randomized BSSID</strong>: esta función está habilitada de forma predeterminada. Su objetivo es impedir que los fabricantes de los clientes recopilen los BSSID Wi-Fi cercanos y las coordenadas GPS de los dispositivos cliente en sus servidores. Haga clic <a href="#randomized-bssid">aquí</a> para obtener más información.</p>
+<p><strong>Randomized BSSID</strong>: Está habilitado de forma predeterminada e impide rastrear el router mediante un BSSID fijo. Consulte <a href="#randomized-bssid">Randomized BSSID</a> para obtener más información.</p>
 </li>
 <li>
 <p><strong>Bandwidth</strong> y <strong>Channel</strong> no se pueden modificar cuando el router actúa como <a href="../internet_repeater/">repetidor</a>, ya que siguen la configuración de la red repetida.</p>
@@ -7282,25 +7288,49 @@
 <li>Cuando <strong>Bandwidth</strong> se configura en <strong>160 MHz</strong> (solo disponible en algunos modelos), la Wi-Fi siempre utilizará un canal DFS, aunque elija un canal no DFS o <strong>Auto</strong> en la configuración de <strong>Channel</strong>.</li>
 </ul>
 <h2 id="randomized-bssid">Randomized BSSID<a class="headerlink" href="#randomized-bssid" title="Permanent link">&para;</a></h2>
-<p>Randomized BSSID está disponible desde el firmware v4.6. Su objetivo es impedir que los fabricantes de los clientes recopilen los BSSID Wi-Fi cercanos y las coordenadas GPS de los dispositivos cliente en sus servidores.</p>
-<p><strong>Cómo recopilan los fabricantes de clientes los datos de ubicación</strong></p>
-<p>Los fabricantes de clientes suelen recopilar la ubicación geográfica de los puntos de acceso Wi-Fi aprovechando sus BSSID únicos para localizar dispositivos. Cuando los dispositivos cliente, como teléfonos móviles u ordenadores, escanean o se conectan a un router:</p>
-<ul>
+<p>Randomized BSSID es una función de privacidad disponible desde el firmware v4.6 y habilitada de forma predeterminada. Evita que el router sea localizado y rastreado mediante un BSSID Wi-Fi fijo (la dirección MAC de la interfaz inalámbrica del router).</p>
+<p><strong>Por qué un BSSID fijo supone un riesgo para la privacidad</strong></p>
+<p>Los sistemas operativos móviles (como Android e iOS) utilizan el posicionamiento Wi-Fi basado en datos colaborativos para ofrecer servicios de ubicación:</p>
+<ol>
 <li>
-<p>Si hay otros dispositivos dentro de la cobertura de la señal Wi-Fi del router, su ubicación y sus trayectorias de movimiento pueden quedar expuestas.</p>
+<p>Los dispositivos cliente (teléfonos y portátiles) suben periódicamente los BSSID que detectan, junto con su propia ubicación obtenida mediante GPS, al servidor del proveedor del sistema operativo o del dispositivo.</p>
 </li>
 <li>
-<p>Si un dispositivo utiliza GPS para posicionarse, sube periódicamente a los servidores del fabricante los BSSID Wi-Fi cercanos y las coordenadas GPS correspondientes.</p>
+<p>Los proveedores agrupan estos datos en una base de datos global que asocia cada BSSID con una ubicación.</p>
 </li>
-</ul>
+<li>
+<p>Cualquier dispositivo con Wi-Fi habilitado, incluso sin GPS, puede consultar esa base de datos para estimar su ubicación a partir de los BSSID cercanos.</p>
+</li>
+</ol>
 <p><img alt="randomized bssid" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireless/randomized-bssid-new.jpg" /></p>
-<p><strong>Riesgos de seguridad del seguimiento colaborativo</strong></p>
-<p>Incluso los dispositivos sin GPS, o con el GPS desactivado, pueden estimar su ubicación consultando la información visible del BSSID. Sin embargo, este sistema colaborativo de seguimiento de ubicación presenta vulnerabilidades de seguridad. Los atacantes pueden utilizarlo para acumular una base de datos global de ubicaciones de puntos de acceso Wi-Fi y rastrear continuamente las trayectorias de movimiento de los dispositivos, lo que supone una amenaza para la privacidad y la seguridad del usuario.</p>
-<p><strong>Cómo protege su privacidad Randomized BSSID</strong></p>
-<p>Para abordar estas vulnerabilidades, los routers GL.iNet implementan la función Randomized BSSID como medida de protección de la privacidad.</p>
-<p>En el panel de administración web del router, vaya a <strong>WIRELESS</strong> -&gt; <strong>5GHz Wi-Fi</strong> o <strong>2.4GHz Wi-Fi</strong>. La opción BSSID está habilitada de forma predeterminada.</p>
-<p>Con este ajuste, el dispositivo utiliza un BSSID generado aleatoriamente y lo renueva cada vez que se inicia. Si deshabilita el BSSID aleatorio, el router volverá a utilizar la dirección MAC real.</p>
-<p><strong>Nota</strong>: En la Wi-Fi de invitados, el BSSID se mantiene coherente con el BSSID de la Wi-Fi principal dentro de la misma banda de frecuencia.</p>
+<p>Como resultado, un router con un BSSID fijo actúa como una baliza de ubicación: puede geolocalizarse de forma remota y sus movimientos (por ejemplo, cuando viaja con él) pueden rastrearse a lo largo del tiempo. Los atacantes también pueden consultar estas bases de datos para localizar routers o identificarlos mediante la información del fabricante (OUI) del BSSID.</p>
+<p><strong>Cómo le protege Randomized BSSID</strong></p>
+<p>Cuando esta función está habilitada, el router genera un BSSID aleatorio y lo renueva en cada arranque. Al cambiar continuamente, el BSSID ya no puede asociarse a una ubicación fija en las bases de datos de los proveedores, lo que rompe la asociación entre BSSID y ubicación utilizada para el rastreo.</p>
+<table>
+<thead>
+<tr>
+<th>Estado</th>
+<th>Comportamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Habilitado (predeterminado)</td>
+<td>Se genera un nuevo BSSID aleatorio en cada arranque</td>
+</tr>
+<tr>
+<td>Deshabilitado</td>
+<td>El router utiliza su dirección MAC real de fábrica como BSSID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notas</strong>:</p>
+<ol>
+<li>El BSSID solo cambia cuando el router se reinicia; permanece igual durante una sesión en ejecución.</li>
+<li>En la red Wi-Fi de invitados, el BSSID coincide con el de la red Wi-Fi principal en la misma banda de frecuencia.</li>
+<li>Si las bandas de la red Wi-Fi MLO incluyen 6 GHz, el BSSID de la red Wi-Fi MLO se sincroniza con el BSSID de la red Wi-Fi de 6 GHz.</li>
+<li>Randomized BSSID bloquea el rastreo mediante el BSSID del router, pero no impide que los dispositivos cliente comuniquen su propia ubicación. No es una solución de privacidad completa: el SSID, el canal y las características de la señal siguen siendo observables.</li>
+</ol>
 <hr />
 <p>¿Todavía tiene preguntas? Visite nuestro <a href="https://forum.gl-inet.com" target="_blank">foro de la comunidad</a>.</p>
 
@@ -7327,7 +7357,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 de agosto de 2026 06:05:41 UTC">6 de agosto de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 de octubre de 2026 08:30:23 UTC">16 de octubre de 2026</span>
   </span>
 
     
