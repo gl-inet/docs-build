@@ -4008,6 +4008,13 @@
 <p><img alt="rmq1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/tutorials/how_to_unbrick_kvm_via_usb_otg/rmq1-usbotg.png" /></p>
 </li>
 <li>
+<p>Clone the source repository and enter its directory. This step is required on both macOS and Linux. Make sure Git is installed, then run:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/gl-inet/axdl-rs.git
+<span class="nb">cd</span><span class="w"> </span>axdl-rs
+</code></pre></div>
+<p>Run the remaining commands in this directory.</p>
+</li>
+<li>
 <p>Install platform-specific dependencies:</p>
 <ul>
 <li>
@@ -4015,13 +4022,7 @@
 <p><div class="highlight"><pre><span></span><code>sudo apt install -y libudev-dev libusb-1.0-0-dev
 </code></pre></div>
  Configure udev rules to allow regular users to access the device:</p>
-<div class="highlight"><pre><span></span><code># Clone the repository
-git clone https://github.com/gl-inet/axdl-rs.git
-
-# Change directory
-cd axdl-rs
-
-# Copy the udev rule file to the system directory
+<div class="highlight"><pre><span></span><code># Copy the udev rule file to the system directory
 sudo cp 99-axdl.rules /etc/udev/rules.d/
 
 # Reload udev rules to apply changes
@@ -4036,11 +4037,13 @@ sudo udevadm control --reload
 <p>Install <code>libusb</code> via <code>brew</code> to enable USB communication with KVM devices:</p>
 <div class="highlight"><pre><span></span><code>brew install libusb
 </code></pre></div>
-<p>Build the <code>axdl-cli</code> tool</p>
-<div class="highlight"><pre><span></span><code>cargo build --bin axdl-cli --package axdl-cli
-</code></pre></div>
 </li>
 </ul>
+</li>
+<li>
+<p>Build the <code>axdl-cli</code> tool on either platform:</p>
+<div class="highlight"><pre><span></span><code>cargo<span class="w"> </span>build<span class="w"> </span>--bin<span class="w"> </span>axdl-cli<span class="w"> </span>--package<span class="w"> </span>axdl-cli
+</code></pre></div>
 </li>
 <li>
 <p>Enter the following command to flash the firmware. Please replace the <code>/path/to/firmware.axp</code> with the actual path to your downloaded firmware file.</p>
@@ -4094,7 +4097,7 @@ Done
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 7, 2026 03:52:52 UTC">September 7, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 16, 2026 02:09:17 UTC">October 16, 2026</span>
       
     
   </small>

@@ -3799,13 +3799,17 @@
   <!-- Markdown content -->
   <h1 id="how-to-reduce-stun-public-ip-detection-frequency">How to reduce STUN Public IP detection frequency<a class="headerlink" href="#how-to-reduce-stun-public-ip-detection-frequency" title="Permanent link">&para;</a></h1>
 <p>The KVM device uses STUN requests to detect its public IP address for remote access. By default, the device sends STUN detection requests at regular intervals. If you only access the KVM over a local network or VPN, you can adjust the configuration to reduce the STUN request frequency.</p>
-<p>Run the following command to extend the STUN detection interval and lower request frequency:</p>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>/etc/kvmd/override.yaml<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
-<span class="s">janus:</span>
-<span class="s">    check:</span>
-<span class="s">        retries: 10000</span>
-<span class="s">EOF</span>
+<p>Log in to the KVM via SSH or open <strong>Toolbox</strong> &gt; <strong>Terminal</strong> in the KVM console. Back up the existing override file before editing it:</p>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-p<span class="w"> </span>/etc/kvmd/override.yaml<span class="w"> </span>/etc/kvmd/override.yaml.bak
+vi<span class="w"> </span>/etc/kvmd/override.yaml
 </code></pre></div>
+<p>If you already have an <code>override.yaml.bak</code> backup, choose a different backup filename to preserve it. If <code>override.yaml</code> does not exist, skip the backup command and create it with the editor.</p>
+<p>Merge the following setting into the file, preserving all existing overrides:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">janus</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">check</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">retries</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+</code></pre></div>
+<p>If a <code>janus</code> section already exists, add or update <code>check.retries</code> within that section. If <code>check</code> already exists under <code>janus</code>, update its <code>retries</code> value or add it there. Do not create duplicate <code>janus</code> or <code>check</code> keys. Use spaces for YAML indentation and save the file when finished.</p>
 <blockquote>
 <p><strong>Note:</strong> This configuration greatly reduces the number of STUN requests initiated by Janus. However, it may also lower the success rate of STUN hole punching for external network penetration. <strong>Only apply this if you exclusively access the KVM via a local network or VPN.</strong></p>
 </blockquote>
@@ -3820,7 +3824,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 2, 2026 10:54:37 UTC">June 2, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 16, 2026 02:09:17 UTC">October 16, 2026</span>
       
     
   </small>

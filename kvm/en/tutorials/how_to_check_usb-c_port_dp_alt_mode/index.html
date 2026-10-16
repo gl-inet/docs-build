@@ -3952,7 +3952,7 @@
 <p>DP Alt Mode (or DisplayPort Alternate Mode) is a feature built into certain USB-C ports that enables them to transmit a high-quality video signal — in addition to the data and power they normally handle.</p>
 <p>In plain terms: it allows a single USB-C cable to transmit video from your phone, tablet, or laptop straight to a monitor, TV, or projector — no special adapter or docking station required. Without DP Alt Mode, the port can only transfer data and supply power; it cannot output video to an external display.</p>
 <h2 id="why-it-matters">Why it matters<a class="headerlink" href="#why-it-matters" title="Permanent link">&para;</a></h2>
-<p>DP Alt Mode matters for <strong>Comet Q</strong>, as Comet Q relies on it to receive video from your device. If your USB-C port supports it, Comet Q just works — plug and play. If not, no external display adapter can resolve this limitation.</p>
+<p>DP Alt Mode matters for <strong>Comet Q</strong>, as Comet Q relies on it to receive video from your device. The controlled device must support native video output through its USB-C port. Note that a DisplayLink adapter may not add this capability for a direct connection to Comet Q.</p>
 <p>Not every USB-C port is created equal. Some only carry data and power; others can also output video. The shape of the connector is the same, but the capabilities behind it are not. Two USB-C ports can look identical and behave very differently — which is why it pays to check before buying any USB-C display accessory.</p>
 <h2 id="general-methods-to-verify-dp-alt-mode">General methods to verify DP Alt Mode<a class="headerlink" href="#general-methods-to-verify-dp-alt-mode" title="Permanent link">&para;</a></h2>
 <ol>
@@ -3966,7 +3966,7 @@
 </li>
 <li>
 <p><strong>Check system settings</strong>.</p>
-<p>Your operating system can detect whether the USB-C port supports external display output. See platform-specific instructions below.</p>
+<p>System settings can help identify a connected display, but they do not always establish whether a specific USB-C port supports native DP Alt Mode. Combine these checks with the manufacturer's specifications and a direct connection test. See platform-specific instructions below.</p>
 <ul>
 <li><a href="#how-to-check-on-windows">How to check on Windows</a></li>
 <li><a href="#how-to-check-on-mac">How to check on Mac</a></li>
@@ -3977,18 +3977,26 @@
 </li>
 <li>
 <p><strong>Perform a quick test</strong>.</p>
-<p>Connect your device to a monitor or TV via a USB-C to HDMI / DisplayPort cable. If the screen mirrors or extends your display, DP Alt Mode is functioning properly.</p>
+<p>Connect your device to a monitor or TV using a USB-C to HDMI / DisplayPort cable or adapter that explicitly requires DP Alt Mode. If the screen mirrors or extends your display, native video output is working on that port. Do not use a DisplayLink adapter for this test.</p>
 </li>
 </ol>
 <hr />
 <h2 id="how-to-check-on-windows">How to check on Windows<a class="headerlink" href="#how-to-check-on-windows" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Press <code>Win + X</code> and open <strong>Device Manager</strong>.</li>
-<li>Expand <strong>Universal Serial Bus controllers</strong> and look for entries that mention <em>"USB4"</em>, <em>"Thunderbolt"</em>, or <em>"DisplayLink"</em>.</li>
-<li>Alternatively, open <strong>Settings</strong> &gt; <strong>System</strong> &gt; <strong>Display</strong> &gt; <strong>Multiple displays</strong>. With Comet Q (or another display) plugged in, your monitor should appear.</li>
-<li>You can also check your laptop's user manual or the manufacturer's product page — search for <em>"DisplayPort over USB-C"</em> or <em>"DP Alt Mode"</em>.</li>
+<li>Look for entries mentioning <em>"USB4"</em> or <em>"Thunderbolt"</em>. These can help identify the hardware, but Device Manager alone does not confirm DP Alt Mode support on a specific port.</li>
+<li>Check your laptop's user manual or the manufacturer's product page for the exact port — search for <em>"DisplayPort over USB-C"</em> or <em>"DP Alt Mode"</em>.</li>
+<li>Connect Comet Q directly, or connect a display using an adapter that explicitly requires DP Alt Mode. Open <strong>Settings</strong> &gt; <strong>System</strong> &gt; <strong>Display</strong> &gt; <strong>Multiple displays</strong> to check whether the display is detected.</li>
 </ol>
-<p><strong>Note</strong>: If your laptop has multiple USB-C ports, only some may support video output. Check each port individually.</p>
+<p><strong>Note</strong>:</p>
+<ol>
+<li>
+<p><strong>DisplayLink is not proof of DP Alt Mode support.</strong> DisplayLink transmits video over USB data and can also work through USB-A. A DisplayLink entry in Device Manager, or a working display connected through a DisplayLink dock, does not establish native USB-C video output. See <a href="https://www.synaptics.com/products/displaylink-graphics/usb-c" target="_blank">Synaptics: USB-C with DisplayLink</a>.</p>
+</li>
+<li>
+<p>If your laptop has multiple USB-C ports, only some may support video output. Check each port individually.</p>
+</li>
+</ol>
 <h2 id="how-to-check-on-mac">How to check on Mac<a class="headerlink" href="#how-to-check-on-mac" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Click the <strong>Apple menu</strong> &gt; <strong>About This Mac</strong> &gt; <strong>More Info</strong>.</li>
@@ -4077,13 +4085,14 @@
 <h2 id="how-to-check-on-android">How to check on Android<a class="headerlink" href="#how-to-check-on-android" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Open your phone's <strong>Settings</strong> and search for <em>"display"</em>, <em>"HDMI"</em>, or <em>"desktop mode"</em>.</li>
-<li>Look for features such as <strong>Samsung DeX</strong>, <strong>Motorola Ready For</strong>, <strong>Huawei EasyProjection</strong>, or <em>"External display"</em>. If any are present, your device's USB-C port supports DP Alt Mode.</li>
+<li>Look for features such as <strong>Samsung DeX</strong>, <strong>Motorola Ready For</strong>, <strong>Huawei EasyProjection</strong>, or <em>"External display"</em>. Check the manufacturer's documentation to confirm that the exact model supports a <strong>wired USB-C display connection</strong>; a wireless display feature alone is not proof of DP Alt Mode support.</li>
 <li>If your phone supports it, you'll typically see a notification like <em>"External display connected"</em> when you plug into a monitor.</li>
-<li>You can also install a free app such as <em>USB Device Info</em> to inspect port capabilities.</li>
+<li>Confirm video output with a direct connection to Comet Q or a display using an adapter that requires DP Alt Mode. USB information apps alone cannot reliably establish native video output support.</li>
 </ol>
 <p><strong>Note</strong>: Many budget Android phones omit DP Alt Mode even though they have USB-C. Always confirm before purchasing Comet Q.</p>
 <div class="admonition note">
-<p class="admonition-title">Here are the supported models, using Samsung as example:</p>
+<p class="admonition-title">Examples of Samsung devices with wired display output</p>
+<p>Check the exact model against <a href="https://www.samsung.com/us/support/answer/ANS10001955/" target="_blank">Samsung's DeX compatibility information</a>. Wireless DeX support alone does not confirm wired USB-C video output. These examples do not constitute a list of devices tested with Comet Q.</p>
 <ul>
 <li>Galaxy A90 5G</li>
 <li>Galaxy Book</li>
@@ -4116,7 +4125,8 @@
 </ul>
 </li>
 <li>Galaxy Z<ul>
-<li>Galaxy Z Flip</li>
+<li>Galaxy Z Flip7</li>
+<li>Galaxy Z Flip8</li>
 <li>Galaxy Z Fold2</li>
 <li>Galaxy Z Fold3</li>
 <li>Galaxy Z Fold4</li>
@@ -4127,15 +4137,18 @@
 </div>
 <h2 id="how-to-check-on-iphone-and-ipad">How to check on iPhone and iPad<a class="headerlink" href="#how-to-check-on-iphone-and-ipad" title="Permanent link">&para;</a></h2>
 <ol>
-<li>iPhone 15 series and newer all support DisplayPort Alt Mode through their USB-C port.</li>
+<li>iPhone 15 series and newer: Apple's current external-display support list includes iPhone 15 models, iPhone 16 models (except iPhone 16e), iPhone 17 models (except iPhone 17e), and iPhone 18 Pro models. <strong>iPhone 16e and iPhone 17e do not support USB-C external displays.</strong> Check <a href="https://support.apple.com/en-ie/105099#displays" target="_blank">Apple's display connection documentation</a> for your exact model.</li>
 <li>iPhone 14 and earlier use Lightning and are not compatible.</li>
 <li>All iPad models with USB-C (iPad Pro, iPad Air 4th gen and later, iPad mini 6th gen and later, iPad 10th gen and later) support video output.</li>
 <li>iPads with the older Lightning port are not compatible.</li>
 </ol>
 <div class="admonition note">
-<p class="admonition-title">Here are the supported models</p>
+<p class="admonition-title">Examples of models with USB-C video output</p>
+<p>The iPhone entries below were checked against Apple's external-display documentation.</p>
 <ul>
 <li>iPhone<ul>
+<li>iPhone 18 Pro</li>
+<li>iPhone 18 Pro Max</li>
 <li>iPhone 17 Pro</li>
 <li>iPhone 17 Pro Max</li>
 <li>iPhone 17</li>
@@ -4144,7 +4157,7 @@
 <li>iPhone 16</li>
 <li>iPhone 16 Plus</li>
 <li>iPhone 15 Pro</li>
-<li>iPhone 15 ProMax</li>
+<li>iPhone 15 Pro Max</li>
 <li>iPhone 15</li>
 <li>iPhone 15 Plus</li>
 </ul>
@@ -4186,7 +4199,6 @@
 <h2 id="handhelds-tablets-and-other-devices">Handhelds, tablets and other devices<a class="headerlink" href="#handhelds-tablets-and-other-devices" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>Steam Deck</strong>, <strong>ROG Ally</strong>, <strong>Lenovo Legion Go</strong> — all support DP Alt Mode.</li>
-<li><strong>Nintendo Switch / Switch 2</strong> — supports DP Alt Mode (this is how the dock outputs to your TV).</li>
 <li><strong>Most Windows tablets</strong> with USB-C (Surface Pro 8 and newer, etc.) — supported.</li>
 <li>For anything else, check the official spec page and search for the keywords <em>"DisplayPort"</em>, <em>"Alt Mode"</em>, <em>"video output"</em>, or <em>"Thunderbolt"</em>.</li>
 </ol>
@@ -4201,7 +4213,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 6, 2026 06:38:37 UTC">August 6, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 16, 2026 02:09:17 UTC">October 16, 2026</span>
       
     
   </small>
