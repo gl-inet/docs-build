@@ -3428,11 +3428,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../../tutorials/secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Utiliser WireGuard pour securiser RDP depuis l'exterieur du reseau
+    Sécuriser RDP avec WireGuard
   </span>
   
 
@@ -7302,7 +7302,7 @@
 <p><strong>Remarque :</strong> ce guide s'applique uniquement au routeur commercialisé conjointement par GL.iNet et ExpressVPN, <strong>Fortify (GL-MT6000)</strong>.</p>
 <hr />
 <p><a href="https://www.expressvpn.com/" target="_blank">ExpressVPN</a> est l'un des principaux services VPN premium au monde, conçu pour protéger votre confidentialité en ligne, sécuriser votre connexion Internet et permettre une diffusion sécurisée depuis n'importe où. Il offre des vitesses ultra-rapides, un cryptage de niveau militaire et un accès à des serveurs dans plus de 100 pays. Que vous souhaitiez diffuser du streaming, naviguer en privé ou protéger vos données sur un réseau Wi-Fi public, ExpressVPN vous offre une expérience rapide et sécurisée.</p>
-<p><strong>Fortify (GL-MT6000)</strong> est un routeur co-marqué publié conjointement par GL.iNet et ExpressVPN. Chaque unité est livrée avec un abonnement ExpressVPN gratuit d'un an. Les utilisateurs peuvent utiliser l'abonnement et connecter leurs comptes directement sur le panneau d'administration Web du routeur. Une fois activé, tout le trafic passant par le routeur exploitera le réseau haut débit d'ExpressVPN et le cryptage robuste pour protéger l'ensemble de votre connexion réseau et votre confidentialité en ligne.</p>
+<p><strong>Fortify (GL-MT6000)</strong> est un routeur co-marqué publié conjointement par GL.iNet et ExpressVPN. Chaque unité est livrée avec un abonnement ExpressVPN gratuit d'un an. Les utilisateurs peuvent utiliser l'abonnement et connecter leurs comptes directement sur le panneau d'administration Web du routeur. Lorsqu’un tunnel ExpressVPN est connecté, le routeur chiffre et achemine le trafic via ce tunnel conformément à vos paramètres de stratégie VPN.</p>
 <p>Ce guide vous explique comment utiliser le forfait ExpressVPN de 12 mois dans le panneau d'administration Web du routeur. Il couvre également la personnalisation des politiques VPN en fonction de vos scénarios d'utilisation et de vos exigences, vous aidant ainsi à profiter sans effort d'une connectivité Internet cryptée, sécurisée et haut débit.</p>
 <h2 id="utiliser-le-forfait-expressvpn">Utiliser le forfait ExpressVPN<a class="headerlink" href="#utiliser-le-forfait-expressvpn" title="Permanent link">&para;</a></h2>
 <p>Connectez-vous au panneau d'administration Web de Fortify et accédez à <strong>VPN</strong> -&gt; <strong>VPN Client Profile</strong>.</p>
@@ -7542,8 +7542,9 @@
 </ol>
 </details>
 <h2 id="kill-switch">Kill Switch<a class="headerlink" href="#kill-switch" title="Permanent link">&para;</a></h2>
-<p>Kill Switch est une fonctionnalité de sécurité pour les connexions VPN. Il coupe automatiquement tout accès Internet à votre réseau local si la connexion VPN s'interrompt de manière inattendue, empêchant ainsi votre véritable adresse IP et vos données en ligne d'être exposées et garantissant une confidentialité et une sécurité continues. Cette fonctionnalité est particulièrement utile pour maintenir un accès Internet sécurisé et anonyme, par exemple lorsque vous utilisez des réseaux publics, traitez des données sensibles ou masquez votre véritable adresse IP.</p>
-<p>Lorsqu'il est activé, il bloque tout trafic client qui tente de contourner le tunnel VPN, arrêtant ainsi efficacement les fuites VPN causées par des problèmes de configuration DNS, des déconnexions inattendues, des requêtes IP directes et d'autres scénarios similaires.</p>
+<p>Le Kill Switch VPN aide à empêcher le trafic de basculer vers une connexion Internet non chiffrée lorsque la connexion VPN échoue.</p>
+<p>Pour un tunnel individuel, l’activation de <strong>Kill Switch</strong> bloque l’accès à Internet du trafic affecté à ce tunnel si sa connexion échoue. Les autres flux suivent les paramètres <strong>All Other Traffic</strong>.</p>
+<p><strong>Enhanced Kill Switch</strong> bloque le trafic Internet qui ne correspond à aucun tunnel VPN. Il ne remplace pas le paramètre <strong>Kill Switch</strong> propre à chaque tunnel.</p>
 <p>Fortify prend en charge la configuration Kill Switch pour la connexion VPN globale, ainsi que pour chaque tunnel VPN individuel.</p>
 <ul>
 <li>
@@ -7650,7 +7651,7 @@
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 septembre 2026 07:38:32 UTC">21 septembre 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 octobre 2026 06:29:14 UTC">20 octobre 2026</span>
   </span>
 
     

@@ -3430,11 +3430,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    WireGuard で外部ネットワークからの RDP を保護する
+    WireGuardでRDPを保護する
   </span>
   
 
@@ -4303,17 +4303,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    クライアントデバイスに静的 IP を手動で設定する
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -4323,34 +4312,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ethernetip" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ethernetアダプターで固定IPアドレスを設定する
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -7103,23 +7064,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ethernetip" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ethernetアダプターで固定IPアドレスを設定する
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -7143,44 +7087,44 @@
 
   <!-- Markdown content -->
   <h1 id="ip">クライアントデバイスで固定IPを手動設定する方法<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h1>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows 11</label><label for="__tabbed_1_2">macOS</label><label for="__tabbed_1_3">Android</label><label for="__tabbed_1_4">iOS</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows 11</label><label for="__tabbed_1_2">macOS</label><label for="__tabbed_1_3">iOS</label><label for="__tabbed_1_4">Android</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Windows 11 では、設定アプリから無線および有線アダプターの固定IPアドレス設定を行えます。</p>
+<p>Windows 11では、無線および有線アダプターに固定IPアドレスを設定できます。</p>
 <p><strong>Wi-Fiアダプターで固定IPアドレスを設定する</strong></p>
-<p>Wi-Fiアダプターに固定IPアドレス設定を割り当てるには、以下の手順を実行します。</p>
 <ol>
 <li>
-<p>Windows 11 の Settings を開き、Network &amp; Internet -&gt; Wi-Fi タブ -&gt; 現在接続中のネットワーク接続を選択します。</p>
+<p>Windows 11のPCで、<strong>Settings</strong> -&gt; <strong>Network &amp; internet</strong> -&gt; <strong>Wi-Fi</strong>と進み、現在接続中のWi-Fi接続を選択します。</p>
 </li>
 <li>
-<p>「IP settings」セクションで Edit ボタンをクリックします。</p>
+<p><strong>IP assignment</strong>を見つけ、<strong>Edit</strong>ボタンをクリックします。</p>
 <p><img alt="Windows 11 edit IP address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Windows_11_edit_IP_address.png" /></p>
 </li>
 <li>
-<p>以下の手順で設定します。</p>
+<p>ポップアップウィンドウで<strong>Manual</strong>を選択し、<strong>IPv4</strong>を有効にします。</p>
+<p><img alt="IPの手動設定" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/manual.jpg" /></p>
+</li>
+<li>
+<p>以下の手順でIP設定を編集します。</p>
 <p><img alt="Settings_app_set_static_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Settings_app_set_static_IP_address.png" /></p>
 <ul>
 <li>
-<p>Manual を選択し、IPv4 のトグルスイッチをオンにします。</p>
+<p>IP address: 固定IPアドレスを設定します。例: <code>10.1.4.119</code>。</p>
 </li>
 <li>
-<p>Windows 11 に固定IPアドレスを設定します。例: 10.1.4.119。</p>
+<p>Subnet mask: サブネットマスクを指定します。例: <code>255.255.255.0</code>。</p>
 </li>
 <li>
-<p>サブネットマスクを指定します。例: 255.255.255.0。</p>
+<p>Gateway: ゲートウェイアドレスを入力します。通常は同じサブネットにあるルーターのLAN IPアドレスです。たとえば、IPアドレスが<code>10.1.4.119</code>の場合、ゲートウェイは通常<code>10.1.4.1</code>です。</p>
 </li>
 <li>
-<p>Default Gateway アドレスを指定します。</p>
+<p>Preferred DNS: 優先DNSアドレスを指定します（必須）。GoogleのDNSサーバー<code>8.8.8.8</code>などのパブリックDNSサーバーを指定できます。</p>
 </li>
 <li>
-<p>Preferred DNS アドレスを指定します（必須）。</p>
+<p>Alternate DNS: 代替DNSアドレスを指定します（任意）。</p>
 </li>
 <li>
-<p>（任意）「Alternate DNS」アドレスを指定します。</p>
-</li>
-<li>
-<p>「DNS over HTTPS」ドロップダウンメニューで、Preferred DNS と Alternate DNS の両方に対して Off を選択します。必要に応じて、以下のオプションで DoH を有効にすることもできます。</p>
+<p>DNS over HTTPS: "Off"を選択します。次の3つのオプションがあります。</p>
 <ul>
 <li>
 <p>Off: すべてのDNSトラフィックを暗号化せず送信します。</p>
@@ -7194,55 +7138,51 @@
 </ul>
 </li>
 <li>
-<p>「Fallback to plaintext」トグルスイッチをオフにします（DoHを有効にした場合）。</p>
-<ul>
-<li>Quick tip: この機能を有効にすると、システムはDNSトラフィックを暗号化しますが、暗号化なしのクエリ送信も許可します。</li>
-</ul>
+<p>DNS over HTTPSを有効にする場合は、"Fallback to plaintext"トグルスイッチをオフにします。</p>
+<p><strong>ヒント</strong>: この機能を有効にすると、システムはDNSトラフィックを暗号化しますが、暗号化なしのクエリ送信も許可します。</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Save ボタンをクリックします。</p>
+<p><strong>Save</strong>をクリックして設定を適用します。</p>
 <p>手順が完了すると、固定ネットワーク設定がコンピューターに適用されます。Webブラウザを開いてWebサイトを表示し、新しい設定をテストできます。</p>
 </li>
 </ol>
-<h2 id="ethernetip"><strong>Ethernetアダプターで固定IPアドレスを設定する</strong><a class="headerlink" href="#ethernetip" title="Permanent link">&para;</a></h2>
-<p>Windows 11 の Ethernet（有線）アダプターに固定IPアドレスを割り当てるには、以下の手順を実行します。</p>
+<hr />
+<p><strong>Ethernetアダプターで固定IPアドレスを設定する</strong></p>
 <ol>
 <li>
-<p>Settings -&gt; Network &amp; Internet -&gt; Ethernet タブを開きます。</p>
+<p>Windows 11のPCで、<strong>Settings</strong> -&gt; <strong>Network &amp; internet</strong> -&gt; <strong>Ethernet</strong>と進みます。</p>
 </li>
 <li>
-<p>「IP settings」セクションで Edit ボタンをクリックします。</p>
+<p><strong>IP assignment</strong>を見つけ、<strong>Edit</strong>ボタンをクリックします。</p>
 <p><img alt="Edit_TCP/IP_Ethernet_settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Edit_TCP_IP_Ethernet_settings.png" /></p>
 </li>
 <li>
-<p>以下の手順で設定します。</p>
+<p>ポップアップウィンドウで<strong>Manual</strong>を選択し、<strong>IPv4</strong>を有効にします。</p>
+<p><img alt="IPの手動設定" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/manual.jpg" /></p>
+</li>
+<li>
+<p>以下の手順でIP設定を編集します。</p>
 <p><img alt="Settings_app_set_static_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Settings_app_set_static_IP_address.png" /></p>
 <ul>
 <li>
-<p>Manual を選択します。</p>
+<p>IP address: 固定IPアドレスを設定します。例: <code>10.1.4.119</code>。</p>
 </li>
 <li>
-<p>IPv4 のトグルスイッチをオンにします。</p>
+<p>Subnet mask: サブネットマスクを指定します。例: <code>255.255.255.0</code>。</p>
 </li>
 <li>
-<p>Windows 11 に固定IPアドレスを設定します。例: 10.1.4.119。</p>
+<p>Gateway: ゲートウェイアドレスを入力します。通常は同じサブネットにあるルーターのLAN IPアドレスです。たとえば、IPアドレスが<code>10.1.4.119</code>の場合、ゲートウェイは通常<code>10.1.4.1</code>です。</p>
 </li>
 <li>
-<p>サブネットマスクを指定します。例: 255.255.255.0。</p>
+<p>Preferred DNS: 優先DNSアドレスを指定します（必須）。GoogleのDNSサーバー<code>8.8.8.8</code>などのパブリックDNSサーバーを指定できます。</p>
 </li>
 <li>
-<p>Default Gateway アドレスを指定します。</p>
+<p>Alternate DNS: 代替DNSアドレスを指定します（任意）。</p>
 </li>
 <li>
-<p>Preferred DNS アドレスを指定します（必須）。</p>
-</li>
-<li>
-<p>（任意）「Alternate DNS」アドレスを指定します。</p>
-</li>
-<li>
-<p>「DNS over HTTPS」ドロップダウンメニューで、Preferred DNS と Alternate DNS の両方に対して Off を選択します。必要に応じて、以下のオプションで DoH を有効にできます。</p>
+<p>DNS over HTTPS: "Off"を選択します。次の3つのオプションがあります。</p>
 <ul>
 <li>
 <p>Off: すべてのDNSトラフィックを暗号化せず送信します。</p>
@@ -7256,123 +7196,90 @@
 </ul>
 </li>
 <li>
-<p>「Fallback to plaintext」トグルスイッチをオフにします（DoHを有効にした場合）。</p>
+<p>DNS over HTTPSを有効にする場合は、"Fallback to plaintext"トグルスイッチをオフにします。</p>
+<p><strong>ヒント</strong>: この機能を有効にすると、システムはDNSトラフィックを暗号化しますが、暗号化なしのクエリ送信も許可します。</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Save ボタンをクリックします。</p>
-<p>手順が完了したら、WebブラウザでWebサイトを開いて設定をテストできます。</p>
+<p><strong>Save</strong>をクリックして設定を適用します。</p>
+<p>手順が完了すると、固定ネットワーク設定がコンピューターに適用されます。Webブラウザを開いてWebサイトを表示し、新しい設定をテストできます。</p>
 </li>
 </ol>
 </div>
 <div class="tabbed-block">
 <p>macOSで固定IPアドレスを設定する方法は次のとおりです。</p>
-<p>MacBookを使用している場合は、新しいネットワークロケーションを作成しておくと便利です。これにより、特定のネットワークでのみ固定IPアドレスを使い、他のネットワークでは使わない設定ができます。</p>
-<p>Appleメニューから System Preferences を選択します。</p>
-<p>Network を選択します。以下のようなウィンドウが表示されます。</p>
+<p>Appleメニューから<strong>System Preferences</strong>を選択します。</p>
+<p><strong>Network</strong>を選択すると、以下のページが表示されます。サイドバーから、<strong>Wi-Fi</strong>などの有効なネットワークインターフェースを選択します。</p>
 <p><img alt="Mac_network_settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Mac_network_settings.png" /></p>
-<p>サイドバーから有効なネットワークインターフェースを選択します。この例では無線ネットワークに接続しているため、Wi-Fi を選択します。</p>
-<p>Mac に現在割り当てられているIPアドレスを控えておきます。このあと、表示されているプライベートIPアドレス範囲内から新しいIPアドレスを選ぶ必要があります。詳細は次の手順で説明します。</p>
-<p>Advanced をクリックします。</p>
-<p>TCP/IP を選択します。以下のようなウィンドウが表示されます。</p>
+<p>Macに現在割り当てられているIPアドレスを控えておきます。表示されているプライベートIPアドレス範囲内から、新しいIPアドレスを選ぶ必要があります。</p>
+<p>右下の<strong>Advanced</strong>をクリックします。</p>
+<p>次に<strong>TCP/IP</strong>を選択すると、以下のページが表示されます。</p>
 <p><img alt="Mac_Wi-Fi_settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Mac_Wi-Fi_settings.png" /></p>
-<p>Configure IPv4 メニューから Manually を選択します。</p>
-<p>IPv4 Addressフィールドに固定IPアドレスを入力します。現在のIPアドレスの末尾を変更する方法があります。192.168.7.0/24ネットワークでは、192.168.7.1から192.168.7.254までの未使用のホストアドレスを選択してください。ネットワークアドレスやブロードキャストアドレスは使用しないでください。</p>
-<p>OK -&gt; Apply をクリックします。</p>
-</div>
-<div class="tabbed-block">
-<p>手順はAndroidのバージョンによって異なります。このドキュメントは Android 11 を基準にしています。</p>
-<ol>
-<li>Settings -&gt; Network &amp; Internet -&gt; Wi-Fi と進み、現在接続しているネットワークをタップして設定メニューを開きます。</li>
-</ol>
-<p class="glboxshadow"><img alt="list_available_networks" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/list_available_networks.png" /></p>
-<ol>
+<ul>
 <li>
-<p>固定IPアドレスを設定するには、以下を実行します。</p>
+<p>Configure IPv4: "Manually"を選択します。</p>
 </li>
 <li>
-<p>右上の鉛筆アイコンを選択してネットワーク設定にアクセスします。</p>
+<p>IPv4 Address: 固定IPアドレスを入力します。現在のIPアドレスの最初の3オクテットをそのままにし、最後のオクテットを未使用の値に変更します。たとえば、<code>192.168.7.0/24</code>ネットワークでは、<code>192.168.7.2</code>から<code>192.168.7.254</code>までの未使用のアドレスを選択します（ルーターのアドレスである<code>.1</code>は避けてください）。<code>192.168.7.0</code>と<code>192.168.7.255</code>は使用しないでください。</p>
+</li>
+<li>
+<p>Subnet Mask: <code>255.255.255.0</code>（またはネットワーク管理者が指定したサブネットマスク）を入力します。</p>
+</li>
+<li>
+<p>Router: ルーターのLAN IPアドレスを入力します。例: <code>192.168.7.1</code>。</p>
+</li>
+</ul>
+<p><strong>OK</strong>をクリックし、次に<strong>Apply</strong>をクリックします。</p>
+</div>
+<div class="tabbed-block">
+<p>手順はiOSのバージョンによって異なる場合があります。以下の手順はiOS 26.2.2を基準にしています。</p>
+<ol>
+<li>
+<p><strong>Settings</strong> -&gt; <strong>WLAN</strong>と進みます。現在接続しているWi-Fiネットワークの横にある青い情報アイコン（i）をタップします。</p>
+<p><img alt="iOSの固定IP設定" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/ios1.png" width="360" /></p>
+</li>
+<li>
+<p>下にスクロールして<strong>IPv4 Address</strong>を見つけ、<strong>Configure IP</strong>を<strong>Manual</strong>に設定します。</p>
+<p><img alt="iOSの固定IP設定" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/ios2.png" width="360" /></p>
+</li>
+<li>
+<p>iPhone/iPadで使用する<strong>IP Address</strong>、<strong>Subnet Mask</strong>、<strong>Router IP</strong>を指定し、右上の<strong>Save</strong>をタップします。</p>
+<p><img alt="iOSの固定IP設定" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/ios3.png" width="360" /></p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>手順はAndroidのバージョンによって異なる場合があります。以下の手順はAndroid 11を基準にしています。</p>
+<ol>
+<li>
+<p><strong>Settings</strong> -&gt; <strong>Network &amp; Internet</strong> -&gt; <strong>Wi-Fi</strong>と進みます。現在接続しているネットワークをタップして設定メニューを開きます。</p>
+<p class="glboxshadow"><img alt="list_available_networks" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/list_available_networks.png" /></p>
+</li>
+<li>
+<p>右上の鉛筆アイコンをタップしてネットワーク設定にアクセスします。</p>
 <p class="glboxshadow"><img alt="pencil_icon" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/pencil_icon.png" /></p>
 </li>
 <li>
-<p>Advanced Options を選択します。</p>
+<p><strong>Advanced options</strong>をタップします。</p>
 <p class="glboxshadow"><img alt="advanced_options" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/advanced_options.png" /></p>
 </li>
 <li>
-<p>IP Settings を選択します。</p>
-</li>
-<li>
-<p>設定を DHCP から Static に変更します。</p>
+<p><strong>IP Settings</strong>をタップし、<strong>Static</strong>を選択します。</p>
 <p class="glboxshadow"><img alt="DHCP_to_Static" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/DHCP_to_Static.png" /></p>
 </li>
 <li>
-<p>自宅やその他のプライベートネットワークで固定IPアドレスを使う場合は、現在のサブネット内で未使用のホストアドレスを選択してください。標準的なプライベートIPアドレスの範囲は次のとおりです: 10.0.0.0 ～ 10.255.255.255、172.16.0.0 ～ 172.31.255.255、192.168.0.0 ～ 192.168.255.255</p>
+<p><strong>IP address</strong>を入力します。<strong>Gateway</strong>はIPアドレスに基づいて自動的に入力されます。入力されない場合は、ネットワークのゲートウェイを入力してください。ゲートウェイは通常、同じサブネットにあるルーターのLAN IPアドレスです。</p>
+<p><strong>ヒント</strong>: 自宅やその他のプライベートネットワークで固定IPアドレスを使う場合は、現在のサブネット内で未使用のホストアドレスを選択してください。標準的なプライベートIPアドレスの範囲は次のとおりです。</p>
+<div class="highlight"><pre><span></span><code>10.0.0.0 ~ 10.255.255.255
+172.16.0.0 ~ 172.31.255.255
+192.168.0.0 ~ 192.168.255.255
+</code></pre></div>
 </li>
 <li>
-<p>ここでIPアドレスを入力します。</p>
-<ul>
-<li>この手順はネットワークごとに異なります。例: 192.168.1.128</li>
-</ul>
-</li>
-<li>
-<p>ゲートウェイはIPアドレスに基づいて自動的に入力されます。入力されない場合は、ネットワークのゲートウェイのIPアドレスを入力してください。</p>
-<ul>
-<li>例: ルーターのIPアドレスが192.168.1.1の場合は、192.168.1.1と入力します。</li>
-</ul>
-</li>
-<li>
-<p>Save をタップし、ネットワークが再接続されるのを待ちます。</p>
+<p><strong>Save</strong>をタップし、ネットワークが再接続されるのを待ちます。</p>
 </li>
 </ol>
-</div>
-<div class="tabbed-block">
-<p>自宅やその他のプライベートネットワークで固定IPアドレスを使う場合は、現在のサブネット内で未使用のホストアドレスを選択してください。標準的なプライベートIPアドレスの範囲は次のとおりです:</p>
-<p>10.0.0.0 ～ 10.255.255.255
-172.16.0.0 ～ 172.31.255.255
-192.168.0.0 ～ 192.168.255.255</p>
-<p>固定IPアドレスを設定するには、以下を実行します。</p>
-<ul>
-<li>
-<p>Settings アイコンをタップします。</p>
-</li>
-<li>
-<p>Wi-Fi に移動します。</p>
-</li>
-<li>
-<p>Wi-Fiネットワーク名の横にある青い情報アイコン (i) をタップします。</p>
-<ul>
-<li>iOS 7 より古いバージョンでは、青いエラーアイコンの場合があります。</li>
-</ul>
-</li>
-<li>
-<p>以下のように Static タブへ移動します。</p>
-</li>
-</ul>
-<p><img alt="IP_Settings_Screen_iOS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/IP_Settings_Screen_iOS.png" /></p>
-<ul>
-<li>
-<p>IP Address フィールドをタップします。</p>
-</li>
-<li>
-<p>iPhone/iPad で使用したい固定IPアドレスを入力します。</p>
-</li>
-<li>
-<p>Router フィールドをタップします。</p>
-</li>
-<li>
-<p>ルーターのIPアドレスを入力します。</p>
-</li>
-<li>
-<p>Subnet Mask をタップして情報を入力します。</p>
-<ul>
-<li>接続しているネットワークのサブネットマスクを使用してください。</li>
-</ul>
-</li>
-<li>
-<p>画面左上の Wi-Fi ボタンをタップして設定を保存します。</p>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -7402,7 +7309,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月16日 08:30:23 UTC">2026年10月16日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月20日 06:29:14 UTC">2026年10月20日</span>
   </span>
 
     

@@ -3430,11 +3430,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    WireGuard で外部ネットワークからの RDP を保護する
+    WireGuardでRDPを保護する
   </span>
   
 
@@ -7262,13 +7262,13 @@
 <p><img alt="sms forwarding email" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/sms_forwarding/sms_forward_email.png" /></p>
 <ul>
 <li>
-<p><strong>SMTP Server Address</strong>: Gmail、Outlook、iCloud、Yahoo のサーバーアドレスはドロップダウンリストから選択できます。他のメールプロバイダーについては、各社のドキュメントまたはサポートを参照してください。</p>
+<p><strong>SMTP Server Address</strong>: Gmail、Outlook、iCloud、Yahooのサーバーアドレスはドロップダウンリストから選択できます。プリセットのサーバーアドレスがあっても、プロバイダーの認証要件への対応が保証されるわけではありません。他のメールプロバイダーについては、各社のドキュメントまたはサポートを参照してください。</p>
 </li>
 <li>
 <p><strong>Encryption Method</strong>: none、SSL/TLS、STARTTLS の3つのオプションがあります。</p>
 </li>
 <li><strong>Username</strong>: ここにメールアドレスを入力します。</li>
-<li><strong>Password</strong>: アプリ専用パスワード、またはログインアカウントのパスワードを使用します。Gmail、Outlook、iCloud、Yahoo については以下のガイドを参照してください。</li>
+<li><strong>Password</strong>: アプリ専用パスワードなど、メールプロバイダーが指定するSMTPパスワードを入力します。各プロバイダーの要件は以下を参照してください。</li>
 <li><strong>Subject</strong>: ここでメール件名を設定します。</li>
 </ul>
 <details>
@@ -7277,8 +7277,10 @@
 <p>465 と 587 の両方のポートを使用できます。</p>
 </details>
 <details>
-<summary>Outlook</summary>
-<p>Outlook では追加設定なしで通常のパスワードを直接使用でき、ポート 587 をサポートしています。公式ガイド <a href="https://support.microsoft.com/en-us/office/pop-imap-and-smtp-settings-for-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040" target="_blank">POP, IMAP, and SMTP settings for Outlook.com</a> を参照してください。</p>
+<summary>Outlook.com</summary>
+<p>Outlook.comのSMTP認証にはOAuth2（Modern Authentication）が必要です。SMTPサーバーは <code>smtp-mail.outlook.com</code> で、ポート <code>587</code> と <code>STARTTLS</code> を使用します。</p>
+<p>Outlook.comアカウントでSMSをメール転送する前に、ルーターのファームウェアがこの認証方式に対応していることを確認してください。</p>
+<p>Microsoftの<a href="https://support.microsoft.com/en-us/outlook/pop-imap-and-smtp-settings-for-outlook-com" target="_blank">Outlook.comのPOP、IMAP、SMTP設定</a>を参照してください。</p>
 </details>
 <details>
 <summary>iCloud</summary>
@@ -7325,7 +7327,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月16日 08:30:23 UTC">2026年10月16日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月20日 06:29:14 UTC">2026年10月20日</span>
   </span>
 
     

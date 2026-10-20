@@ -3447,11 +3447,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Захист RDP через WireGuard для доступу із зовнішньої мережі
+    Захист RDP за допомогою WireGuard
   </span>
   
 
@@ -7305,13 +7305,13 @@
 <p><img alt="Пересилання SMS електронною поштою" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/sms_forwarding/sms_forward_email.png" /></p>
 <ul>
 <li>
-<p><strong>SMTP Server Address</strong>: У розкривному списку доступні попередньо задані адреси серверів Gmail, Outlook, iCloud і Yahoo. Для інших поштових сервісів зверніться до їхньої документації або служби підтримки.</p>
+<p><strong>SMTP Server Address</strong>: У розкривному списку доступні попередньо задані адреси серверів Gmail, Outlook, iCloud і Yahoo. Наявність заданої адреси не гарантує сумісності з вимогами провайдера до автентифікації. Для інших поштових сервісів зверніться до їхньої документації або служби підтримки.</p>
 </li>
 <li>
 <p><strong>Encryption Method</strong>: Доступні три варіанти: none, SSL/TLS і STARTTLS.</p>
 </li>
 <li><strong>Username</strong>: Введіть адресу електронної пошти.</li>
-<li><strong>Password</strong>: Використовуйте пароль програми або пароль облікового запису. Для Gmail, Outlook, iCloud і Yahoo див. інструкції нижче.</li>
+<li><strong>Password</strong>: Введіть пароль SMTP, якого вимагає ваш поштовий провайдер, наприклад пароль програми. Див. вимоги окремих провайдерів нижче.</li>
 <li><strong>Subject</strong>: Укажіть тему листа.</li>
 </ul>
 <details>
@@ -7320,8 +7320,10 @@
 <p>Можна використовувати як порт 465, так і порт 587.</p>
 </details>
 <details>
-<summary>Outlook</summary>
-<p>Для Outlook можна використовувати пароль облікового запису напряму без додаткових налаштувань; підтримується порт 587. Див. офіційний посібник <a href="https://support.microsoft.com/en-us/office/pop-imap-and-smtp-settings-for-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040" target="_blank">Налаштування POP, IMAP і SMTP для Outlook.com</a>.</p>
+<summary>Outlook.com</summary>
+<p>Outlook.com вимагає OAuth2 (Modern Authentication) для автентифікації SMTP. Його SMTP-сервер — <code>smtp-mail.outlook.com</code>, порт — <code>587</code>, шифрування — <code>STARTTLS</code>.</p>
+<p>Перш ніж використовувати обліковий запис Outlook.com для надсилання переадресованих SMS, переконайтеся, що прошивка маршрутизатора підтримує цей метод автентифікації.</p>
+<p>Див. документацію Microsoft: <a href="https://support.microsoft.com/en-us/outlook/pop-imap-and-smtp-settings-for-outlook-com" target="_blank">Налаштування POP, IMAP і SMTP для Outlook.com</a>.</p>
 </details>
 <details>
 <summary>iCloud</summary>
@@ -7368,7 +7370,7 @@
     <span class="md-icon" title="Востаннє оновлено">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 жовтня 2026 р. 09:15:26 UTC">16 жовтня 2026 р.</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 жовтня 2026 р. 06:29:14 UTC">20 жовтня 2026 р.</span>
   </span>
 
     

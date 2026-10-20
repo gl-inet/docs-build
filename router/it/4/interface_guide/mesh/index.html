@@ -3428,11 +3428,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../../tutorials/secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Usare WireGuard per proteggere RDP da reti esterne
+    Proteggere RDP con WireGuard
   </span>
   
 
@@ -4914,6 +4914,63 @@
       Indice
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mesh-vs-extender-vs-access-point-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confronto tra le modalità Mesh, Extender e Access Point
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Confronto tra le modalità Mesh, Extender e Access Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprendere-le-differenze-di-prestazioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprendere le differenze di prestazioni
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comprendere le differenze di prestazioni">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modalita-extender" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modalità Extender
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesh-wireless" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh wireless
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modalita-access-point-e-mesh-cablato" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modalità Access Point e Mesh cablato
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#supported-models" class="md-nav__link">
@@ -7170,6 +7227,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#mesh-vs-extender-vs-access-point-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confronto tra le modalità Mesh, Extender e Access Point
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Confronto tra le modalità Mesh, Extender e Access Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprendere-le-differenze-di-prestazioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprendere le differenze di prestazioni
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comprendere le differenze di prestazioni">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modalita-extender" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modalità Extender
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mesh-wireless" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh wireless
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modalita-access-point-e-mesh-cablato" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modalità Access Point e Mesh cablato
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#supported-models" class="md-nav__link">
     <span class="md-ellipsis">
       Modelli supportati
@@ -7268,6 +7382,126 @@
 <hr />
 <p>Nel menu a sinistra del pannello di amministrazione web, andare su <strong>MESH</strong>.</p>
 <p>Mesh è una funzione basata sullo standard Wi-Fi EasyMesh™ che estende la copertura Wi‑Fi in tutta la casa e consente il roaming senza interruzioni. Se si dispone di più router GL.iNet, impostarne uno come router principale e gli altri come nodi Mesh.</p>
+<h2 id="mesh-vs-extender-vs-access-point-mode">Confronto tra le modalità Mesh, Extender e Access Point<a class="headerlink" href="#mesh-vs-extender-vs-access-point-mode" title="Permanent link">&para;</a></h2>
+<p>Tutte e tre le modalità possono estendere la copertura Wi-Fi. Le differenze principali riguardano il collegamento al router principale e la configurazione e gestione dei dispositivi. Il <strong>backhaul</strong> è il collegamento tra il router principale e un extender, un access point o un nodo Mesh.</p>
+<p>Questa tabella confronta le modalità autonome Extender e Access Point di GL.iNet con la sua implementazione Mesh.</p>
+<table>
+<thead>
+<tr>
+<th>Funzionalità</th>
+<th>Modalità Extender</th>
+<th>Modalità Access Point</th>
+<th>Modalità Mesh</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Backhaul wireless</strong></td>
+<td>✅ Supportato</td>
+<td>❌ Non utilizzato</td>
+<td>✅ Supportato</td>
+</tr>
+<tr>
+<td><strong>Backhaul Ethernet</strong></td>
+<td>❌ Non utilizzato in questa modalità</td>
+<td>✅ Supportato</td>
+<td>✅ Supportato</td>
+</tr>
+<tr>
+<td><strong>Backhaul full-duplex</strong></td>
+<td>❌ Il Wi-Fi è half-duplex</td>
+<td>✅ Ethernet</td>
+<td>✅ Solo Ethernet; il backhaul wireless resta half-duplex</td>
+</tr>
+<tr>
+<td><strong>Backhaul wireless a 2.4/5 GHz</strong></td>
+<td>⚠️ Le bande disponibili dipendono dal modello e dal firmware</td>
+<td>❌ Non applicabile</td>
+<td>⚠️ Le bande disponibili dipendono dal modello e dal firmware</td>
+</tr>
+<tr>
+<td><strong>Backhaul wireless a 6 GHz</strong></td>
+<td>⚠️ Dipende dal modello e dal firmware</td>
+<td>❌ Non applicabile</td>
+<td>🔜 In arrivo</td>
+</tr>
+<tr>
+<td><strong>Roaming Wi-Fi</strong></td>
+<td>✅ Controllato dal client</td>
+<td>✅ Controllato dal client</td>
+<td>✅ Controllato dal client, con assistenza 802.11k/v</td>
+</tr>
+<tr>
+<td><strong>Sincronizzazione automatica delle impostazioni Wi-Fi</strong></td>
+<td>❌ Configurazione separata</td>
+<td>❌ Configurazione separata</td>
+<td>✅ Dal router principale</td>
+</tr>
+<tr>
+<td><strong>Gestione centralizzata dei nodi</strong></td>
+<td>❌ Configurazione separata</td>
+<td>❌ Configurazione separata</td>
+<td>✅ Tramite il router principale</td>
+</tr>
+<tr>
+<td><strong>Topologia di rete e panoramica dei client</strong></td>
+<td>❌ Nessuna panoramica dell’intera rete Mesh</td>
+<td>❌ Nessuna panoramica dell’intera rete Mesh</td>
+<td>✅ Disponibile sul router principale</td>
+</tr>
+<tr>
+<td><strong>Espansione gestita centralmente</strong></td>
+<td>❌ Extender indipendenti</td>
+<td>❌ Access point indipendenti</td>
+<td>✅ Un router principale e fino a otto nodi</td>
+</tr>
+<tr>
+<td><strong>Salti wireless gestiti centralmente</strong></td>
+<td>❌ Non gestiti da Mesh</td>
+<td>❌ Non applicabile</td>
+<td>✅ Fino a tre salti wireless</td>
+</tr>
+<tr>
+<td><strong>Passaggio automatico tra backhaul cablato e wireless</strong></td>
+<td>❌ Nessuna commutazione gestita da Mesh</td>
+<td>❌ Nessuna commutazione gestita da Mesh</td>
+<td>✅ Priorità a Ethernet</td>
+</tr>
+<tr>
+<td><strong>Ideale per</strong></td>
+<td>Semplice estensione della copertura wireless</td>
+<td>Estensione della copertura dove è disponibile Ethernet</td>
+<td>Copertura coordinata con collegamenti cablati, wireless o misti</td>
+</tr>
+</tbody>
+</table>
+<p>✅ Supportato · ❌ Non supportato o non applicabile in questa modalità · ⚠️ Dipende da hardware, firmware o configurazione · 🔜 Funzionalità prevista</p>
+<p>Mesh sincronizza le impostazioni Wi-Fi supportate delle reti principale, ospite, IoT e MLO. Offre inoltre la gestione centralizzata dei nodi, inclusi riavvio, rimozione e aggiornamento dei nodi GL.iNet supportati. I nodi possono essere aggiunti tramite scansione Wi-Fi, collegamento Ethernet o pulsante Mesh/WPS, ove supportato. La gestione del backhaul comprende la priorità a Ethernet, il passaggio tra collegamenti cablati e wireless e la prevenzione dei loop.</p>
+<h3 id="comprendere-le-differenze-di-prestazioni">Comprendere le differenze di prestazioni<a class="headerlink" href="#comprendere-le-differenze-di-prestazioni" title="Permanent link">&para;</a></h3>
+<h4 id="modalita-extender">Modalità Extender<a class="headerlink" href="#modalita-extender" title="Permanent link">&para;</a></h4>
+<p>Il dispositivo si connette a una rete Wi-Fi esistente. La radio usata per il collegamento a monte segue il canale del router principale. Anche i client che utilizzano la stessa radio usano quel canale, quindi il traffico a monte e quello dei client condividono il tempo di trasmissione.</p>
+<p>Sui modelli multibanda supportati, radio separate possono comunque servire i client su altre bande. Ad esempio, un extender può collegarsi a monte tramite 2.4 GHz e servire i client con la propria radio separata a 5 GHz. Questi due collegamenti non competono per il tempo di trasmissione dello stesso canale. Le combinazioni disponibili dipendono dal modello e dal firmware; la modalità Extender non è intrinsecamente limitata al funzionamento su una sola banda.</p>
+<p>Lo stesso requisito relativo al canale a monte si applica alla funzione di connessione Repeater di GL.iNet, sebbene il funzionamento Repeater e la modalità di rete autonoma Extender differiscano sotto altri aspetti.</p>
+<h4 id="mesh-wireless">Mesh wireless<a class="headerlink" href="#mesh-wireless" title="Permanent link">&para;</a></h4>
+<p>Nella configurazione Mesh a tre bande testata, il nodo utilizza <strong>5 GHz per il backhaul wireless</strong>. Il canale a 5 GHz del nodo segue quello del router principale e non può essere modificato indipendentemente, mentre le <strong>impostazioni dei canali separati a 2.4 GHz e 6 GHz restano configurabili indipendentemente</strong>. Si tratta di impostazioni dei canali, non di un’indicazione delle bande a cui possono connettersi i client. Modificare un canale destinato ai client non cambia la banda del backhaul.</p>
+<p>L’effetto sulle prestazioni dipende quindi dal modo in cui si connette il client:</p>
+<ul>
+<li><strong>Dispositivi connessi tramite 5 GHz:</strong> se un telefono, un portatile o un altro dispositivo si connette al Wi-Fi a 5 GHz del nodo Mesh mentre la stessa radio trasporta il backhaul wireless, i collegamenti condividono il tempo di trasmissione. Il blocco del canale a 5 GHz del nodo non impedisce necessariamente ai client di connettersi su quella banda.</li>
+<li><strong>Dispositivi connessi tramite 2.4 GHz o 6 GHz:</strong> quando questi client utilizzano una radio separata da quella del backhaul wireless a 5 GHz, i due collegamenti non subiscono la penalizzazione dovuta all’inoltro sullo stesso canale.</li>
+</ul>
+<p>Questa descrizione riguarda la configurazione testata, non tutti i modelli Mesh supportati. L’inoltro tramite radio separate non è esclusivo di Mesh e il passaggio da Extender a Mesh non migliora automaticamente la velocità effettiva.</p>
+<h4 id="modalita-access-point-e-mesh-cablato">Modalità Access Point e Mesh cablato<a class="headerlink" href="#modalita-access-point-e-mesh-cablato" title="Permanent link">&para;</a></h4>
+<p>Entrambi utilizzano Ethernet per il collegamento al router principale. Il backhaul Ethernet funziona in full-duplex ed evita di trasmettere il traffico di backhaul tramite Wi-Fi. Le connessioni Wi-Fi dei client restano half-duplex. A parità di hardware e condizioni, la modalità Access Point e Mesh cablato possono offrire velocità effettive simili; Mesh aggiunge configurazione e gestione coordinate.</p>
+<p>Mesh dà priorità al backhaul Ethernet e supporta il passaggio al wireless quando è disponibile un collegamento wireless adatto. Nella configurazione testata, il canale a 5 GHz del nodo resta allineato a quello del router principale anche quando il backhaul Ethernet è attivo. Questo non significa che il backhaul wireless stia trasportando il traffico. Ethernet elimina il salto wireless del backhaul dati, ma nodi e client vicini che utilizzano lo stesso canale Wi-Fi possono comunque competere per il tempo di trasmissione.</p>
+<div class="admonition note">
+<p class="admonition-title">Backhaul Mesh a 6 GHz — In arrivo</p>
+<p>Il backhaul Mesh a 6 GHz richiederà hardware compatibile con 6 GHz sia sul router principale sia sul nodo Mesh, insieme a firmware che lo supporti. Non presumere che tutti i modelli compatibili con Mesh supporteranno questa funzionalità.</p>
+<p>Questo è diverso dal connettere un client alla rete Wi-Fi a 6 GHz esistente di un nodo. Con il backhaul a 6 GHz, una radio separata a 5 GHz potrebbe servire i client senza condividere il tempo di trasmissione del canale di backhaul. Una radio è dedicata al backhaul solo quando è riservata a tale scopo anziché servire anche i client.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Radio separate non rendono il Wi-Fi full-duplex</p>
+<p>Ogni collegamento Wi-Fi resta half-duplex. L’inoltro tramite radio separate evita di condividere un canale tra i collegamenti di backhaul e dei client, ma non elimina altre interferenze, contese o limitazioni dovute a più salti. La velocità effettiva end-to-end resta limitata dal collegamento più lento e dalle condizioni di rete.</p>
+</div>
 <h2 id="supported-models">Modelli supportati<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Modelli supportati</summary>
@@ -7409,7 +7643,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 ottobre 2026 08:30:23 UTC">16 ottobre 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 ottobre 2026 06:29:14 UTC">20 ottobre 2026</span>
   </span>
 
     

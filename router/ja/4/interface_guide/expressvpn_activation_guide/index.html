@@ -3428,11 +3428,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../../tutorials/secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    WireGuard で外部ネットワークからの RDP を保護する
+    WireGuardでRDPを保護する
   </span>
   
 
@@ -7302,7 +7302,7 @@
 <p><strong>注：</strong> このガイドは、GL.iNet x ExpressVPN の共同ブランドルーター <strong>Fortify (GL-MT6000)</strong> にのみ適用されます。</p>
 <hr />
 <p><a href="https://www.expressvpn.com/" target="_blank">ExpressVPN</a>は、オンラインプライバシーを保護し、インターネット接続を安全に保ち、どこからでも安全なストリーミングを利用できるように設計された、世界有数のプレミアムVPNサービスです。高速通信、強力な暗号化、100か国以上のサーバーを提供します。ストリーミング、プライベートな閲覧、公共Wi-Fiでのデータ保護など、さまざまな用途で高速かつ安全に利用できます。</p>
-<p><strong>Fortify (GL-MT6000)</strong> は、GL.iNet と ExpressVPN が共同でリリースした共同ブランドのルーターです。すべてのユニットには、1 年間の ExpressVPN サブスクリプションが無料で付属しています。ユーザーはサブスクリプションを引き換えて、ルーターの Web 管理パネルでアカウントに直接接続できます。アクティブ化すると、ルーターを通過するすべてのトラフィックはExpressVPNの高速ネットワークと堅牢な暗号化を利用して、ネットワーク接続全体とオンラインプライバシーを保護します。</p>
+<p><strong>Fortify (GL-MT6000)</strong> は、GL.iNet と ExpressVPN が共同でリリースした共同ブランドのルーターです。すべてのユニットには、1 年間の ExpressVPN サブスクリプションが無料で付属しています。ユーザーはサブスクリプションを引き換えて、ルーターの Web 管理パネルでアカウントに直接接続できます。ExpressVPNトンネルが接続されている場合、ルーターはVPNポリシー設定に従ってトラフィックを暗号化し、そのトンネル経由で転送します。</p>
 <p>このガイドでは、ルーターの Web 管理パネル内で 12 か月の ExpressVPN プランを利用する手順を説明します。また、使用シナリオや要件に基づいた VPN ポリシーのカスタマイズについても説明しており、暗号化された安全な高速インターネット接続を簡単に楽しむことができます。</p>
 <h2 id="expressvpn_1">ExpressVPN プランを利用する<a class="headerlink" href="#expressvpn_1" title="Permanent link">&para;</a></h2>
 <p>Fortify の Web 管理パネルにログインし、<strong>VPN</strong> -&gt; <strong>VPN Client Profile</strong> に移動します。</p>
@@ -7537,8 +7537,9 @@
 </ol>
 </details>
 <h2 id="_3">キルスイッチ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>Kill Switch は、VPN 接続のセキュリティ機能です。 VPN 接続が予期せず切断された場合、ローカル ネットワークへのすべてのインターネット アクセスが自動的に遮断され、実際の IP アドレスとオンライン データの公開が防止され、継続的なプライバシーとセキュリティが確保されます。この機能は、パブリック ネットワークの使用時、機密データの処理時、実際の IP アドレスの非表示時など、安全な匿名インターネット アクセスを維持する場合に特に役立ちます。</p>
-<p>有効にすると、VPN トンネルをバイパスしようとするクライアント トラフィックがブロックされ、DNS 構成の問題、予期しない切断、直接 IP 要求、およびその他の同様のシナリオによって引き起こされる VPN リークを効果的に阻止します。</p>
+<p>VPNのキルスイッチは、VPN接続に障害が発生したときに、トラフィックが暗号化されていないインターネット接続へ切り替わるのを防ぐのに役立ちます。</p>
+<p>個別のトンネルで <strong>Kill Switch</strong> を有効にすると、その接続に障害が発生した場合、そのトンネルに割り当てられたトラフィックのインターネットアクセスがブロックされます。その他のトラフィックには <strong>All Other Traffic</strong> の設定が適用されます。</p>
+<p><strong>Enhanced Kill Switch</strong> は、どのVPNトンネルにも一致しないインターネットトラフィックをブロックします。各トンネルの <strong>Kill Switch</strong> 設定を上書きすることはありません。</p>
 <p>Fortify は、グローバル VPN 接続および個々の VPN トンネルのキル スイッチ構成をサポートしています。</p>
 <ul>
 <li>
@@ -7645,7 +7646,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年9月21日 07:38:32 UTC">2026年9月21日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月20日 06:29:14 UTC">2026年10月20日</span>
   </span>
 
     

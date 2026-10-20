@@ -3428,11 +3428,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../../tutorials/secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Utiliser WireGuard pour securiser RDP depuis l'exterieur du reseau
+    Sécuriser RDP avec WireGuard
   </span>
   
 
@@ -7421,8 +7421,9 @@
 <h3 id="kill-switch">Kill Switch<a class="headerlink" href="#kill-switch" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Qu’est-ce que le Kill Switch ?</p>
-<p>Le Kill Switch est une fonction de sécurité pour les connexions VPN. Il coupe automatiquement tout accès à Internet sur votre réseau local si la connexion VPN se déconnecte de manière inattendue, afin d’empêcher l’exposition de votre véritable adresse IP et de vos données en ligne, et de garantir une confidentialité et une sécurité continues. Cette fonction est particulièrement utile pour conserver un accès Internet sécurisé et anonyme, par exemple lors de l’utilisation de réseaux publics, du traitement de données sensibles ou lorsque vous souhaitez masquer votre véritable adresse IP.</p>
-<p>Lorsqu’il est activé, il bloque tout trafic client qui tente de contourner le tunnel VPN, ce qui empêche efficacement les fuites VPN causées par des problèmes de configuration DNS, des déconnexions inattendues, des requêtes IP directes et d’autres scénarios similaires.</p>
+<p>Le Kill Switch VPN aide à empêcher le trafic de basculer vers une connexion Internet non chiffrée lorsque la connexion VPN échoue.</p>
+<p>Pour un tunnel individuel, l’activation de <strong>Kill Switch</strong> bloque l’accès à Internet du trafic affecté à ce tunnel si sa connexion échoue. Les autres flux suivent les paramètres <strong>All Other Traffic</strong>.</p>
+<p><strong>Enhanced Kill Switch</strong> bloque le trafic Internet qui ne correspond à aucun tunnel VPN. Il ne remplace pas le paramètre <strong>Kill Switch</strong> propre à chaque tunnel.</p>
 </div>
 <p>Depuis le firmware v4.8, les routeurs GL.iNet prennent en charge la configuration d’un Kill Switch pour chaque tunnel VPN individuel, ainsi que pour la connexion VPN globale.</p>
 <ul>
@@ -7665,7 +7666,7 @@
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 octobre 2026 08:30:23 UTC">16 octobre 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 octobre 2026 06:29:14 UTC">20 octobre 2026</span>
   </span>
 
     

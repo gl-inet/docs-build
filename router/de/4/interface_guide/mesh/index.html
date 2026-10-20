@@ -3428,11 +3428,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../../tutorials/secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    WireGuard zum Schutz von RDP von außerhalb des Netzwerks verwenden
+    RDP mit WireGuard absichern
   </span>
   
 
@@ -4914,6 +4914,63 @@
       Inhaltsverzeichnis
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mesh-vs-extender-vs-access-point-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh, Extender und Access-Point-Modus im Vergleich
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesh, Extender und Access-Point-Modus im Vergleich">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leistungsunterschiede-verstehen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leistungsunterschiede verstehen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Leistungsunterschiede verstehen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extender-modus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extender-Modus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drahtloses-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drahtloses Mesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-point-modus-und-kabelgebundenes-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access-Point-Modus und kabelgebundenes Mesh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#supported-models" class="md-nav__link">
@@ -7170,6 +7227,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#mesh-vs-extender-vs-access-point-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh, Extender und Access-Point-Modus im Vergleich
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesh, Extender und Access-Point-Modus im Vergleich">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leistungsunterschiede-verstehen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leistungsunterschiede verstehen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Leistungsunterschiede verstehen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extender-modus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extender-Modus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drahtloses-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drahtloses Mesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-point-modus-und-kabelgebundenes-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access-Point-Modus und kabelgebundenes Mesh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#supported-models" class="md-nav__link">
     <span class="md-ellipsis">
       Unterstützte Modelle
@@ -7268,6 +7382,126 @@
 <hr />
 <p>Navigieren Sie auf der linken Seite des webbasierten Admin Panels zu <strong>MESH</strong>.</p>
 <p>Mesh ist eine auf dem Wi-Fi EasyMesh™-Standard basierende Funktion, die die WLAN-Abdeckung im gesamten Zuhause erweitert und nahtloses Roaming ermöglicht. Wenn Sie mehrere GL.iNet-Router besitzen, legen Sie einen davon als Hauptrouter und die übrigen als Mesh-Knoten fest. Dadurch können Sie sich in Ihrem Zuhause bewegen, ohne die WLAN-Verbindung wechseln zu müssen.</p>
+<h2 id="mesh-vs-extender-vs-access-point-mode">Mesh, Extender und Access-Point-Modus im Vergleich<a class="headerlink" href="#mesh-vs-extender-vs-access-point-mode" title="Permanent link">&para;</a></h2>
+<p>Alle drei Modi können die Wi-Fi-Abdeckung erweitern. Die wesentlichen Unterschiede betreffen die Verbindung zum Hauptrouter sowie die Konfiguration und Verwaltung der Geräte. <strong>Backhaul</strong> bezeichnet die Verbindung zwischen dem Hauptrouter und einem Extender, Access Point oder Mesh-Knoten.</p>
+<p>Die folgende Tabelle vergleicht die eigenständigen Modi Extender und Access Point von GL.iNet mit der Mesh-Implementierung.</p>
+<table>
+<thead>
+<tr>
+<th>Funktion</th>
+<th>Extender-Modus</th>
+<th>Access-Point-Modus</th>
+<th>Mesh-Modus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Drahtloser Backhaul</strong></td>
+<td>✅ Unterstützt</td>
+<td>❌ Nicht verwendet</td>
+<td>✅ Unterstützt</td>
+</tr>
+<tr>
+<td><strong>Ethernet-Backhaul</strong></td>
+<td>❌ In diesem Modus nicht verwendet</td>
+<td>✅ Unterstützt</td>
+<td>✅ Unterstützt</td>
+</tr>
+<tr>
+<td><strong>Vollduplex-Backhaul</strong></td>
+<td>❌ Wi-Fi arbeitet im Halbduplexbetrieb</td>
+<td>✅ Ethernet</td>
+<td>✅ Nur Ethernet; drahtloser Backhaul bleibt Halbduplex</td>
+</tr>
+<tr>
+<td><strong>Drahtloser Backhaul über 2.4/5 GHz</strong></td>
+<td>⚠️ Verfügbare Bänder hängen von Modell und Firmware ab</td>
+<td>❌ Nicht zutreffend</td>
+<td>⚠️ Verfügbare Bänder hängen von Modell und Firmware ab</td>
+</tr>
+<tr>
+<td><strong>Drahtloser Backhaul über 6 GHz</strong></td>
+<td>⚠️ Abhängig von Modell und Firmware</td>
+<td>❌ Nicht zutreffend</td>
+<td>🔜 Demnächst verfügbar</td>
+</tr>
+<tr>
+<td><strong>Wi-Fi-Roaming</strong></td>
+<td>✅ Vom Client gesteuert</td>
+<td>✅ Vom Client gesteuert</td>
+<td>✅ Vom Client gesteuert, mit Unterstützung durch 802.11k/v</td>
+</tr>
+<tr>
+<td><strong>Automatische Synchronisierung der Wi-Fi-Einstellungen</strong></td>
+<td>❌ Separat konfigurieren</td>
+<td>❌ Separat konfigurieren</td>
+<td>✅ Vom Hauptrouter aus</td>
+</tr>
+<tr>
+<td><strong>Zentrale Knotenverwaltung</strong></td>
+<td>❌ Separat konfigurieren</td>
+<td>❌ Separat konfigurieren</td>
+<td>✅ Über den Hauptrouter</td>
+</tr>
+<tr>
+<td><strong>Netzwerktopologie und Client-Übersicht</strong></td>
+<td>❌ Keine Mesh-weite Übersicht</td>
+<td>❌ Keine Mesh-weite Übersicht</td>
+<td>✅ Auf dem Hauptrouter verfügbar</td>
+</tr>
+<tr>
+<td><strong>Zentral verwaltete Erweiterung</strong></td>
+<td>❌ Unabhängige Extender</td>
+<td>❌ Unabhängige Access Points</td>
+<td>✅ Ein Hauptrouter und bis zu acht Knoten</td>
+</tr>
+<tr>
+<td><strong>Zentral verwaltete drahtlose Hops</strong></td>
+<td>❌ Nicht durch Mesh verwaltet</td>
+<td>❌ Nicht zutreffend</td>
+<td>✅ Bis zu drei drahtlose Hops</td>
+</tr>
+<tr>
+<td><strong>Automatischer Wechsel zwischen kabelgebundenem und drahtlosem Backhaul</strong></td>
+<td>❌ Kein durch Mesh verwalteter Wechsel</td>
+<td>❌ Kein durch Mesh verwalteter Wechsel</td>
+<td>✅ Bevorzugt Ethernet</td>
+</tr>
+<tr>
+<td><strong>Besonders geeignet für</strong></td>
+<td>Einfache drahtlose Erweiterung der Abdeckung</td>
+<td>Erweiterung der Abdeckung bei verfügbarem Ethernet</td>
+<td>Abgestimmte Abdeckung mit kabelgebundenen, drahtlosen oder gemischten Verbindungen</td>
+</tr>
+</tbody>
+</table>
+<p>✅ Unterstützt · ❌ In diesem Modus nicht unterstützt oder nicht zutreffend · ⚠️ Abhängig von Hardware, Firmware oder Konfiguration · 🔜 Geplante Funktion</p>
+<p>Mesh synchronisiert unterstützte Wi-Fi-Einstellungen für Haupt-, Gast-, IoT- und MLO-Netzwerke. Es bietet außerdem eine zentrale Knotenverwaltung, einschließlich Neustart, Entfernen und Aktualisieren unterstützter GL.iNet-Knoten. Knoten lassen sich per Wi-Fi-Suche, Ethernet-Verbindung oder, sofern unterstützt, über eine Mesh/WPS-Taste hinzufügen. Die Backhaul-Verwaltung umfasst Ethernet-Priorität, den Wechsel zwischen kabelgebundenen und drahtlosen Verbindungen sowie die Vermeidung von Schleifen.</p>
+<h3 id="leistungsunterschiede-verstehen">Leistungsunterschiede verstehen<a class="headerlink" href="#leistungsunterschiede-verstehen" title="Permanent link">&para;</a></h3>
+<h4 id="extender-modus">Extender-Modus<a class="headerlink" href="#extender-modus" title="Permanent link">&para;</a></h4>
+<p>Das Gerät verbindet sich mit einem bestehenden Wi-Fi-Netzwerk. Das für diese Upstream-Verbindung verwendete Funkmodul folgt dem Kanal des Hauptrouters. Clients, die dasselbe Funkmodul nutzen, verwenden ebenfalls diesen Kanal. Upstream- und Client-Datenverkehr teilen sich daher die verfügbare Sendezeit.</p>
+<p>Bei unterstützten Mehrbandmodellen können separate Funkmodule weiterhin Clients auf anderen Bändern versorgen. Ein Extender kann sich beispielsweise über 2.4 GHz mit dem Hauptrouter verbinden und gleichzeitig Clients über sein separates 5-GHz-Funkmodul bedienen. Diese beiden Verbindungen konkurrieren nicht um die Sendezeit desselben Kanals. Die verfügbaren Kombinationen hängen von Modell und Firmware ab; der Extender-Modus ist grundsätzlich nicht auf ein einzelnes Band beschränkt.</p>
+<p>Dieselbe Vorgabe für den Upstream-Kanal gilt für die Repeater-Verbindungsfunktion von GL.iNet, obwohl sich der Repeater-Betrieb und der eigenständige Extender-Netzwerkmodus in anderen Punkten unterscheiden.</p>
+<h4 id="drahtloses-mesh">Drahtloses Mesh<a class="headerlink" href="#drahtloses-mesh" title="Permanent link">&para;</a></h4>
+<p>In der getesteten Tri-Band-Mesh-Konfiguration nutzt der Knoten <strong>5 GHz für den drahtlosen Backhaul</strong>. Sein 5-GHz-Kanal folgt dem Hauptrouter und kann nicht unabhängig geändert werden. Die separaten <strong>Kanaleinstellungen für 2.4 GHz und 6 GHz bleiben dagegen unabhängig konfigurierbar</strong>. Diese Aussage bezieht sich auf Kanaleinstellungen und nicht darauf, mit welchen Bändern sich Client-Geräte verbinden können. Eine Änderung des clientseitigen Kanals ändert das Backhaul-Band nicht.</p>
+<p>Die Auswirkungen auf die Leistung hängen daher von der Client-Verbindung ab:</p>
+<ul>
+<li><strong>Über 5 GHz verbundene Geräte:</strong> Wenn sich ein Smartphone, Laptop oder anderes Gerät mit dem 5-GHz-Wi-Fi des Mesh-Knotens verbindet und dasselbe Funkmodul den drahtlosen Backhaul überträgt, teilen sich die Verbindungen die verfügbare Sendezeit. Ein festgelegter 5-GHz-Kanal des Knotens verhindert nicht zwangsläufig, dass sich Clients auf diesem Band verbinden.</li>
+<li><strong>Über 2.4 GHz oder 6 GHz verbundene Geräte:</strong> Wenn diese Clients ein separates Funkmodul gegenüber dem drahtlosen 5-GHz-Backhaul verwenden, entfällt bei diesen beiden Verbindungen der Nachteil der Weiterleitung auf demselben Kanal.</li>
+</ul>
+<p>Dies beschreibt die getestete Konfiguration, nicht jedes unterstützte Mesh-Modell. Die Weiterleitung über separate Funkmodule ist keine exklusive Mesh-Funktion. Ein Wechsel von Extender zu Mesh verbessert den Durchsatz nicht automatisch.</p>
+<h4 id="access-point-modus-und-kabelgebundenes-mesh">Access-Point-Modus und kabelgebundenes Mesh<a class="headerlink" href="#access-point-modus-und-kabelgebundenes-mesh" title="Permanent link">&para;</a></h4>
+<p>Beide nutzen Ethernet für die Verbindung zum Hauptrouter. Ethernet-Backhaul arbeitet im Vollduplexbetrieb und vermeidet die Übertragung des Backhaul-Datenverkehrs über Wi-Fi. Wi-Fi-Verbindungen der Clients bleiben Halbduplex. Bei ansonsten vergleichbarer Hardware und vergleichbaren Bedingungen können Access-Point-Modus und kabelgebundenes Mesh einen ähnlichen Durchsatz bieten; Mesh ergänzt eine abgestimmte Konfiguration und Verwaltung.</p>
+<p>Mesh bevorzugt Ethernet-Backhaul und unterstützt den Wechsel zu einer drahtlosen Verbindung, wenn eine geeignete Verbindung verfügbar ist. In der getesteten Konfiguration bleibt der 5-GHz-Kanal des Knotens auch bei aktivem Ethernet-Backhaul mit dem Hauptrouter abgestimmt. Dies bedeutet nicht, dass der Datenverkehr über den drahtlosen Backhaul läuft. Ethernet beseitigt den drahtlosen Hop für den Daten-Backhaul, doch benachbarte Knoten und Clients auf demselben Wi-Fi-Kanal können weiterhin um Sendezeit konkurrieren.</p>
+<div class="admonition note">
+<p class="admonition-title">6-GHz-Mesh-Backhaul — Demnächst verfügbar</p>
+<p>Für 6-GHz-Mesh-Backhaul werden sowohl am Hauptrouter als auch am Mesh-Knoten kompatible 6-GHz-Hardware und unterstützende Firmware benötigt. Gehen Sie nicht davon aus, dass alle Mesh-fähigen Modelle diese Funktion unterstützen werden.</p>
+<p>Dies unterscheidet sich davon, einen Client mit dem bestehenden 6-GHz-Wi-Fi-Netzwerk eines Knotens zu verbinden. Mit 6-GHz-Backhaul könnte ein separates 5-GHz-Funkmodul Clients bedienen, ohne die Sendezeit des Backhaul-Kanals zu teilen. Ein Funkmodul ist nur dann ausschließlich für Backhaul vorgesehen, wenn es für diesen Zweck reserviert ist und nicht zusätzlich Clients bedient.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Separate Funkmodule machen Wi-Fi nicht zu Vollduplex</p>
+<p>Jede Wi-Fi-Verbindung bleibt Halbduplex. Die Weiterleitung über separate Funkmodule vermeidet die gemeinsame Nutzung eines Kanals für Backhaul- und Client-Verbindungen, beseitigt aber keine anderen Störungen, Kanalbelegungskonflikte oder Mehrfach-Hop-Einschränkungen. Der Ende-zu-Ende-Durchsatz wird weiterhin durch die langsamere Verbindung und die Netzwerkbedingungen begrenzt.</p>
+</div>
 <h2 id="supported-models">Unterstützte Modelle<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Unterstützte Modelle</summary>
@@ -7409,7 +7643,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16. Oktober 2026 08:30:23 UTC">16. Oktober 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20. Oktober 2026 06:29:14 UTC">20. Oktober 2026</span>
   </span>
 
     

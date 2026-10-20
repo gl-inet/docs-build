@@ -3428,11 +3428,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../../tutorials/secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Usar WireGuard para proteger RDP desde fuera de la red
+    Proteger RDP con WireGuard
   </span>
   
 
@@ -7302,7 +7302,7 @@
 <p><strong>Nota:</strong> Esta guía solo se aplica al router de marca compartida de GL.iNet y ExpressVPN <strong>Fortify (GL-MT6000)</strong>.</p>
 <hr />
 <p><a href="https://www.expressvpn.com/" target="_blank">ExpressVPN</a> es uno de los servicios VPN premium líderes en el mundo diseñado para proteger su privacidad en línea, asegurar su conexión a Internet y permitir la transmisión segura desde cualquier lugar. Ofrece velocidades ultrarrápidas, cifrado de nivel militar y acceso a servidores en más de 100 países. Ya sea que desee transmitir, navegar de forma privada o proteger sus datos en una red Wi-Fi pública, ExpressVPN le brinda una experiencia rápida y segura.</p>
-<p><strong>Fortify (GL-MT6000)</strong> es un enrutador de marca compartida lanzado conjuntamente por GL.iNet y ExpressVPN. Cada unidad viene con una suscripción gratuita a ExpressVPN por un año. Los usuarios pueden canjear la suscripción y conectar sus cuentas directamente en el Panel de administración web del enrutador. Una vez activado, todo el tráfico que pase a través del enrutador aprovechará la red de alta velocidad y el cifrado sólido de ExpressVPN para proteger toda su conexión de red y su privacidad en línea.</p>
+<p><strong>Fortify (GL-MT6000)</strong> es un enrutador de marca compartida lanzado conjuntamente por GL.iNet y ExpressVPN. Cada unidad viene con una suscripción gratuita a ExpressVPN por un año. Los usuarios pueden canjear la suscripción y conectar sus cuentas directamente en el Panel de administración web del enrutador. Cuando se conecta un túnel ExpressVPN, el enrutador cifra y dirige el tráfico a través de ese túnel según la configuración de sus políticas VPN.</p>
 <p>Esta guía lo guía para canjear el plan ExpressVPN de 12 meses dentro del Panel de administración web del enrutador. También cubre la personalización de políticas de VPN según sus escenarios y requisitos de uso, ayudándolo a disfrutar sin esfuerzo de una conectividad a Internet cifrada, segura y de alta velocidad.</p>
 <h2 id="canjear-el-plan-expressvpn">Canjear el plan ExpressVPN<a class="headerlink" href="#canjear-el-plan-expressvpn" title="Permanent link">&para;</a></h2>
 <p>Inicie sesión en el panel de administración web de Fortify y navegue hasta <strong>VPN</strong> -&gt; <strong>VPN Client Profile</strong>.</p>
@@ -7542,8 +7542,9 @@
 </ol>
 </details>
 <h2 id="kill-switch">Kill Switch<a class="headerlink" href="#kill-switch" title="Permanent link">&para;</a></h2>
-<p>Kill Switch es una característica de seguridad para conexiones VPN. Corta automáticamente todo el acceso a Internet para su red local si la conexión VPN se cae inesperadamente, evitando que su dirección IP real y sus datos en línea queden expuestos y garantizando privacidad y seguridad continuas. Esta función es particularmente útil para mantener un acceso a Internet seguro y anónimo, como cuando se utilizan redes públicas, se procesan datos confidenciales o se oculta su dirección IP real.</p>
-<p>Cuando está habilitado, bloquea cualquier tráfico de cliente que intente evitar el túnel VPN, deteniendo efectivamente las fugas de VPN causadas por problemas de configuración de DNS, desconexiones inesperadas, solicitudes de IP directas y otros escenarios similares.</p>
+<p>El Kill Switch de VPN ayuda a evitar que el tráfico pase a una conexión a Internet sin cifrar cuando falla la conexión VPN.</p>
+<p>Al activar <strong>Kill Switch</strong> para un túnel individual, se bloquea el acceso a Internet del tráfico asignado a ese túnel si falla su conexión. El resto del tráfico sigue la configuración de <strong>All Other Traffic</strong>.</p>
+<p><strong>Enhanced Kill Switch</strong> bloquea el tráfico de Internet que no coincide con ningún túnel VPN. No anula la configuración de <strong>Kill Switch</strong> de cada túnel.</p>
 <p>Fortify admite la configuración Kill Switch para la conexión VPN global, así como para cada túnel VPN individual.</p>
 <ul>
 <li>
@@ -7650,7 +7651,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de septiembre de 2026 07:38:32 UTC">21 de septiembre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 de octubre de 2026 06:29:14 UTC">20 de octubre de 2026</span>
   </span>
 
     

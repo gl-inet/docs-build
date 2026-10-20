@@ -3430,11 +3430,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Usar WireGuard para proteger RDP desde fuera de la red
+    Proteger RDP con WireGuard
   </span>
   
 
@@ -4303,17 +4303,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Configurar manualmente una IP estática en los dispositivos cliente
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -4323,34 +4312,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configurar-una-ip-estatica-en-el-adaptador-ethernet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configurar una IP estática en el adaptador Ethernet
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -7103,23 +7064,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configurar-una-ip-estatica-en-el-adaptador-ethernet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configurar una IP estática en el adaptador Ethernet
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -7143,44 +7087,44 @@
 
   <!-- Markdown content -->
   <h1 id="como-configurar-manualmente-una-ip-estatica-en-los-dispositivos-cliente">¿Cómo configurar manualmente una IP estática en los dispositivos cliente?<a class="headerlink" href="#como-configurar-manualmente-una-ip-estatica-en-los-dispositivos-cliente" title="Permanent link">&para;</a></h1>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows 11</label><label for="__tabbed_1_2">macOS</label><label for="__tabbed_1_3">Android</label><label for="__tabbed_1_4">iOS</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows 11</label><label for="__tabbed_1_2">macOS</label><label for="__tabbed_1_3">iOS</label><label for="__tabbed_1_4">Android</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>En Windows 11, puede configurar una dirección IP estática desde la app Settings tanto para adaptadores inalámbricos como cableados.</p>
+<p>En Windows 11, puede configurar una dirección IP estática tanto para adaptadores inalámbricos como cableados.</p>
 <p><strong>Configurar una IP estática en el adaptador Wi-Fi</strong></p>
-<p>Para asignar una dirección IP estática a un adaptador Wi-Fi, siga estos pasos:</p>
 <ol>
 <li>
-<p>Abra Settings en Windows 11 -&gt; Network &amp; Internet -&gt; la pestaña Wi-Fi -&gt; seleccione la conexión de red actual.</p>
+<p>En un PC con Windows 11, vaya a <strong>Settings</strong> -&gt; <strong>Network &amp; internet</strong> -&gt; <strong>Wi-Fi</strong> y seleccione la conexión Wi-Fi actual.</p>
 </li>
 <li>
-<p>En la sección “IP settings”, haga clic en el botón Edit.</p>
+<p>Busque <strong>IP assignment</strong> y haga clic en el botón <strong>Edit</strong>.</p>
 <p><img alt="Windows 11 edit IP address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Windows_11_edit_IP_address.png" /></p>
 </li>
 <li>
-<p>Siga los pasos que aparecen a continuación para configurarla:</p>
+<p>En la ventana emergente, seleccione <strong>Manual</strong> y active <strong>IPv4</strong>.</p>
+<p><img alt="Configuración IP manual" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/manual.jpg" /></p>
+</li>
+<li>
+<p>Siga estos pasos para editar la configuración IP.</p>
 <p><img alt="Settings_app_set_static_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Settings_app_set_static_IP_address.png" /></p>
 <ul>
 <li>
-<p>Seleccione la opción Manual y active el interruptor IPv4.</p>
+<p>IP address: Defina una dirección IP estática, por ejemplo, <code>10.1.4.119</code>.</p>
 </li>
 <li>
-<p>Defina una dirección IP estática para Windows 11, por ejemplo, 10.1.4.119.</p>
+<p>Subnet mask: Especifique una máscara de subred, por ejemplo, <code>255.255.255.0</code>.</p>
 </li>
 <li>
-<p>Especifique una Subnet mask, por ejemplo, 255.255.255.0.</p>
+<p>Gateway: Introduzca la dirección de la puerta de enlace, que normalmente es la IP LAN del router en la misma subred. Por ejemplo, si su IP es <code>10.1.4.119</code>, la puerta de enlace suele ser <code>10.1.4.1</code>.</p>
 </li>
 <li>
-<p>Especifique una dirección Default Gateway.</p>
+<p>Preferred DNS: Especifique una dirección DNS preferida (obligatoria). Puede utilizar un servidor DNS público, como el servidor DNS de Google <code>8.8.8.8</code>.</p>
 </li>
 <li>
-<p>Especifique una dirección Preferred DNS, obligatoria.</p>
+<p>Alternate DNS: Especifique una dirección DNS alternativa (opcional).</p>
 </li>
 <li>
-<p>Opcional: especifique una dirección “Alternate DNS”.</p>
-</li>
-<li>
-<p>Use el menú desplegable “DNS over HTTPS” y seleccione la opción Off para las direcciones preferida y alternativa, aunque también puede habilitar DoH con estas opciones:</p>
+<p>DNS over HTTPS: Seleccione "Off". Hay tres opciones:</p>
 <ul>
 <li>
 <p>Off: transmite todo el tráfico DNS sin cifrado.</p>
@@ -7194,55 +7138,51 @@
 </ul>
 </li>
 <li>
-<p>Desactive el interruptor “Fallback to plaintext”, si habilitó DoH.</p>
-<ul>
-<li>Consejo rápido: si habilita esta función, el sistema cifrará el tráfico DNS, pero permitirá enviar consultas sin cifrado.</li>
-</ul>
+<p>Desactive el interruptor "Fallback to plaintext" si habilita DNS over HTTPS.</p>
+<p><strong>Consejo</strong>: Si habilita esta función, el sistema cifrará el tráfico DNS, pero permitirá enviar consultas sin cifrado.</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Haga clic en el botón Save.</p>
+<p>Haga clic en <strong>Save</strong> para aplicar la configuración.</p>
 <p>Cuando termine estos pasos, la configuración de red estática se aplicará al equipo. Puede probar la nueva configuración abriendo el navegador web y cargando un sitio web.</p>
 </li>
 </ol>
-<h2 id="configurar-una-ip-estatica-en-el-adaptador-ethernet"><strong>Configurar una IP estática en el adaptador Ethernet</strong><a class="headerlink" href="#configurar-una-ip-estatica-en-el-adaptador-ethernet" title="Permanent link">&para;</a></h2>
-<p>Para asignar una dirección IP estática a un adaptador Ethernet por cable en Windows 11, siga estos pasos:</p>
+<hr />
+<p><strong>Configurar una IP estática en el adaptador Ethernet</strong></p>
 <ol>
 <li>
-<p>Abra Settings -&gt; Network &amp; Internet -&gt; pestaña Ethernet.</p>
+<p>En un PC con Windows 11, vaya a <strong>Settings</strong> -&gt; <strong>Network &amp; internet</strong> -&gt; <strong>Ethernet</strong>.</p>
 </li>
 <li>
-<p>En la sección “IP settings”, haga clic en el botón Edit.</p>
+<p>Busque <strong>IP assignment</strong> y haga clic en el botón <strong>Edit</strong>.</p>
 <p><img alt="Edit_TCP/IP_Ethernet_settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Edit_TCP_IP_Ethernet_settings.png" /></p>
 </li>
 <li>
-<p>Siga los pasos que aparecen a continuación para configurarla:</p>
+<p>En la ventana emergente, seleccione <strong>Manual</strong> y active <strong>IPv4</strong>.</p>
+<p><img alt="Configuración IP manual" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/manual.jpg" /></p>
+</li>
+<li>
+<p>Siga estos pasos para editar la configuración IP.</p>
 <p><img alt="Settings_app_set_static_IP_address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Settings_app_set_static_IP_address.png" /></p>
 <ul>
 <li>
-<p>Seleccione la opción Manual.</p>
+<p>IP address: Defina una dirección IP estática, por ejemplo, <code>10.1.4.119</code>.</p>
 </li>
 <li>
-<p>Active el interruptor IPv4.</p>
+<p>Subnet mask: Especifique una máscara de subred, por ejemplo, <code>255.255.255.0</code>.</p>
 </li>
 <li>
-<p>Defina una dirección IP estática para Windows 11, por ejemplo, 10.1.4.119.</p>
+<p>Gateway: Introduzca la dirección de la puerta de enlace, que normalmente es la IP LAN del router en la misma subred. Por ejemplo, si su IP es <code>10.1.4.119</code>, la puerta de enlace suele ser <code>10.1.4.1</code>.</p>
 </li>
 <li>
-<p>Especifique una Subnet mask, por ejemplo, 255.255.255.0.</p>
+<p>Preferred DNS: Especifique una dirección DNS preferida (obligatoria). Puede utilizar un servidor DNS público, como el servidor DNS de Google <code>8.8.8.8</code>.</p>
 </li>
 <li>
-<p>Especifique una dirección Default Gateway.</p>
+<p>Alternate DNS: Especifique una dirección DNS alternativa (opcional).</p>
 </li>
 <li>
-<p>Especifique una dirección Preferred DNS, obligatoria.</p>
-</li>
-<li>
-<p>Opcional: especifique una dirección “Alternate DNS”.</p>
-</li>
-<li>
-<p>Use el menú desplegable “DNS over HTTPS” y seleccione la opción Off para las direcciones preferida y alternativa, aunque también puede habilitar DoH con estas opciones:</p>
+<p>DNS over HTTPS: Seleccione "Off". Hay tres opciones:</p>
 <ul>
 <li>
 <p>Off: transmite todo el tráfico DNS sin cifrado.</p>
@@ -7256,123 +7196,90 @@
 </ul>
 </li>
 <li>
-<p>Desactive el interruptor “Fallback to plaintext”, si habilitó DoH.</p>
+<p>Desactive el interruptor "Fallback to plaintext" si habilita DNS over HTTPS.</p>
+<p><strong>Consejo</strong>: Si habilita esta función, el sistema cifrará el tráfico DNS, pero permitirá enviar consultas sin cifrado.</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Haga clic en el botón Save.</p>
-<p>Después de completar los pasos, puede probar la configuración abriendo un sitio web en el navegador.</p>
+<p>Haga clic en <strong>Save</strong> para aplicar la configuración.</p>
+<p>Cuando termine estos pasos, la configuración de red estática se aplicará al equipo. Puede probar la nueva configuración abriendo el navegador web y cargando un sitio web.</p>
 </li>
 </ol>
 </div>
 <div class="tabbed-block">
-<p>Así puede configurar una dirección IP estática en macOS:</p>
-<p>Si tiene un MacBook, es posible que quiera crear una nueva ubicación de red. Esto le permitirá usar la dirección IP estática en determinadas redes y no en otras.</p>
-<p>En el menú Apple, seleccione System Preferences.</p>
-<p>Seleccione Network. Aparecerá la ventana que se muestra a continuación.</p>
+<p>Así puede configurar una dirección IP estática en macOS.</p>
+<p>En el menú Apple, seleccione <strong>System Preferences</strong>.</p>
+<p>Seleccione <strong>Network</strong> y aparecerá la siguiente página. En la barra lateral, seleccione una interfaz de red activa, como <strong>Wi-Fi</strong>.</p>
 <p><img alt="Mac_network_settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Mac_network_settings.png" /></p>
-<p>En la barra lateral, seleccione una interfaz de red activa. En este ejemplo, está conectado a una red inalámbrica, por lo que debe seleccionar Wi-Fi.</p>
-<p>Tome nota de la dirección IP actual asignada a su Mac. Tendrá que elegir una nueva dirección IP dentro del rango de direcciones IP privadas indicado. Esto se explica con más detalle enseguida.</p>
-<p>Haga clic en Advanced.</p>
-<p>Seleccione TCP/IP. Aparecerá la ventana que se muestra a continuación.</p>
+<p>Tome nota de la dirección IP actual asignada a su Mac. Tendrá que elegir una nueva dirección IP dentro del rango de direcciones IP privadas indicado.</p>
+<p>Haga clic en <strong>Advanced</strong> en la esquina inferior derecha.</p>
+<p>A continuación, seleccione <strong>TCP/IP</strong> y aparecerá la siguiente página.</p>
 <p><img alt="Mac_Wi-Fi_settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Mac_Wi-Fi_settings.png" /></p>
-<p>En el menú Configure IPv4, seleccione Manually.</p>
-<p>Introduzca una dirección IP estática en el campo IPv4 Address. Un método consiste en tomar su dirección IP actual y cambiar la última parte. Para una red 192.168.7.0/24, elija una dirección de host sin usar entre 192.168.7.1 y 192.168.7.254. No utilice la dirección de red ni la de difusión.</p>
-<p>Haga clic en OK -&gt; Apply.</p>
-</div>
-<div class="tabbed-block">
-<p>Los pasos pueden variar según la versión de Android. Esta documentación se basa en Android 11.</p>
-<ol>
-<li>Vaya a Settings -&gt; seleccione Network &amp; Internet, luego Wi-Fi -&gt; toque la red conectada actualmente para abrir el menú de configuración.</li>
-</ol>
-<p class="glboxshadow"><img alt="list_available_networks" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/list_available_networks.png" /></p>
-<ol>
+<ul>
 <li>
-<p>Para configurar una dirección IP estática, haga lo siguiente:</p>
+<p>Configure IPv4: Seleccione "Manually".</p>
 </li>
 <li>
-<p>Seleccione el icono del lápiz en la parte superior derecha para acceder a la configuración de red.</p>
+<p>IPv4 Address: Introduzca una dirección IP estática. Mantenga los tres primeros octetos de su IP actual y cambie el último por un valor sin usar. Por ejemplo, en la red <code>192.168.7.0/24</code>, elija una dirección de <code>192.168.7.2</code> a <code>192.168.7.254</code> que no esté en uso (evite <code>.1</code>, que corresponde al router). No utilice <code>192.168.7.0</code> ni <code>192.168.7.255</code>.</p>
+</li>
+<li>
+<p>Subnet Mask: Introduzca <code>255.255.255.0</code> (o la máscara de subred proporcionada por su administrador de red).</p>
+</li>
+<li>
+<p>Router: Introduzca la dirección IP LAN del router, por ejemplo, <code>192.168.7.1</code>.</p>
+</li>
+</ul>
+<p>Haga clic en <strong>OK</strong> y después en <strong>Apply</strong>.</p>
+</div>
+<div class="tabbed-block">
+<p>Los pasos pueden variar según la versión de iOS. Los siguientes pasos se basan en iOS 26.2.2.</p>
+<ol>
+<li>
+<p>Vaya a <strong>Settings</strong> -&gt; <strong>WLAN</strong>. Toque el icono azul de información (i) situado junto a la red Wi-Fi conectada actualmente.</p>
+<p><img alt="IP estática en iOS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/ios1.png" width="360" /></p>
+</li>
+<li>
+<p>Desplácese hasta <strong>IPv4 Address</strong> y establezca <strong>Configure IP</strong> en <strong>Manual</strong>.</p>
+<p><img alt="IP estática en iOS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/ios2.png" width="360" /></p>
+</li>
+<li>
+<p>Especifique los valores de <strong>IP Address</strong>, <strong>Subnet Mask</strong> y <strong>Router IP</strong> que desea utilizar en su iPhone/iPad y toque <strong>Save</strong> en la esquina superior derecha.</p>
+<p><img alt="IP estática en iOS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/ios3.png" width="360" /></p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>Los pasos pueden variar según la versión de Android. Los siguientes pasos se basan en Android 11.</p>
+<ol>
+<li>
+<p>Vaya a <strong>Settings</strong> -&gt; <strong>Network &amp; Internet</strong> -&gt; <strong>Wi-Fi</strong>. Toque la red conectada actualmente para abrir el menú de configuración.</p>
+<p class="glboxshadow"><img alt="list_available_networks" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/list_available_networks.png" /></p>
+</li>
+<li>
+<p>Toque el icono del lápiz en la esquina superior derecha para acceder a la configuración de red.</p>
 <p class="glboxshadow"><img alt="pencil_icon" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/pencil_icon.png" /></p>
 </li>
 <li>
-<p>Seleccione Advanced Options.</p>
+<p>Toque <strong>Advanced options</strong>.</p>
 <p class="glboxshadow"><img alt="advanced_options" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/advanced_options.png" /></p>
 </li>
 <li>
-<p>Seleccione IP Settings.</p>
-</li>
-<li>
-<p>Cambie la configuración de DHCP a Static.</p>
+<p>Toque <strong>IP Settings</strong> y seleccione <strong>Static</strong>.</p>
 <p class="glboxshadow"><img alt="DHCP_to_Static" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/DHCP_to_Static.png" /></p>
 </li>
 <li>
-<p>Cuando use direcciones IP estáticas en redes domésticas y otras redes privadas, elija una dirección de host sin usar en su subred actual. Los rangos estándar de direcciones IP privadas son: 10.0.0.0 – 10.255.255.255, 172.16.0.0 – 172.31.255.255, 192.168.0.0 – 192.168.255.255</p>
+<p>Introduzca la <strong>IP address</strong>. El campo <strong>Gateway</strong> debería rellenarse automáticamente en función de la dirección IP. Si no es así, introduzca la puerta de enlace de su red. Normalmente es la IP LAN del router en la misma subred.</p>
+<p><strong>Consejo</strong>: Cuando use direcciones IP estáticas en redes domésticas y otras redes privadas, elija una dirección de host sin usar en la subred actual. Los rangos estándar de direcciones IP privadas son:</p>
+<div class="highlight"><pre><span></span><code>10.0.0.0 ~ 10.255.255.255
+172.16.0.0 ~ 172.31.255.255
+192.168.0.0 ~ 192.168.255.255
+</code></pre></div>
 </li>
 <li>
-<p>Ahora introduzca la dirección IP.</p>
-<ul>
-<li>Este paso depende de cada red. Por ejemplo: 192.168.1.128.</li>
-</ul>
-</li>
-<li>
-<p>La puerta de enlace debería rellenarse automáticamente en función de la dirección IP. Si no es así, introduzca la dirección IP de la puerta de enlace de su red.</p>
-<ul>
-<li>Por ejemplo, si la dirección IP de su router es 192.168.1.1, introduzca 192.168.1.1.</li>
-</ul>
-</li>
-<li>
-<p>Toque Save y deje que la red vuelva a conectarse.</p>
+<p>Toque <strong>Save</strong> y espere a que la red vuelva a conectarse.</p>
 </li>
 </ol>
-</div>
-<div class="tabbed-block">
-<p>Cuando use direcciones IP estáticas en redes domésticas y otras redes privadas, elija una dirección de host sin usar en su subred actual. Los rangos estándar de direcciones IP privadas son:</p>
-<p>10.0.0.0 a 10.255.255.255
-172.16.0.0 a 172.31.255.255
-192.168.0.0 a 192.168.255.255</p>
-<p>Para configurar una dirección IP estática, haga lo siguiente:</p>
-<ul>
-<li>
-<p>Toque el icono Settings.</p>
-</li>
-<li>
-<p>Vaya a Wi-Fi.</p>
-<ul>
-<li>Toque el icono azul de información (i) situado junto al nombre de la red Wi-Fi.<ul>
-<li>Puede aparecer como una flecha azul si usa una versión anterior a iOS 7.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Vaya a la pestaña Static, como se muestra a continuación.</p>
-</li>
-</ul>
-<p><img alt="IP_Settings_Screen_iOS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/IP_Settings_Screen_iOS.png" /></p>
-<ul>
-<li>
-<p>Toque el campo IP Address.</p>
-</li>
-<li>
-<p>Introduzca la dirección IP estática que desea usar en su iPhone o iPad.</p>
-</li>
-<li>
-<p>Toque el campo Router.</p>
-</li>
-<li>
-<p>Introduzca la dirección IP del router.</p>
-</li>
-<li>
-<p>Toque Subnet Mask e introduzca la información correspondiente.</p>
-<ul>
-<li>Utilice la máscara de subred de la red a la que está conectado.</li>
-</ul>
-</li>
-<li>
-<p>Toque el botón Wi-Fi en la esquina superior izquierda de la pantalla para guardar la configuración.</p>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -7402,7 +7309,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 de octubre de 2026 08:30:23 UTC">16 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 de octubre de 2026 06:29:14 UTC">20 de octubre de 2026</span>
   </span>
 
     

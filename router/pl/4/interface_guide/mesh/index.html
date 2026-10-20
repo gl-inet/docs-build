@@ -3428,11 +3428,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../../tutorials/secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Uzyj WireGuard do zabezpieczenia RDP spoza sieci
+    Zabezpieczanie RDP za pomocą WireGuard
   </span>
   
 
@@ -4914,6 +4914,63 @@
       Spis treści
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mesh-vs-extender-vs-access-point-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Porównanie trybów Mesh, Extender i Access Point
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Porównanie trybów Mesh, Extender i Access Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roznice-w-wydajnosci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Różnice w wydajności
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Różnice w wydajności">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tryb-extender" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tryb Extender
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bezprzewodowy-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bezprzewodowy Mesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tryb-access-point-i-przewodowy-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tryb Access Point i przewodowy Mesh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#supported-models" class="md-nav__link">
@@ -7170,6 +7227,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#mesh-vs-extender-vs-access-point-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Porównanie trybów Mesh, Extender i Access Point
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Porównanie trybów Mesh, Extender i Access Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roznice-w-wydajnosci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Różnice w wydajności
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Różnice w wydajności">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tryb-extender" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tryb Extender
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bezprzewodowy-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bezprzewodowy Mesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tryb-access-point-i-przewodowy-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tryb Access Point i przewodowy Mesh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#supported-models" class="md-nav__link">
     <span class="md-ellipsis">
       Obsługiwane modele
@@ -7268,6 +7382,126 @@
 <hr />
 <p>W panelu administracyjnym po lewej stronie przejdź do <strong>MESH</strong>.</p>
 <p>Mesh to funkcja oparta na standardzie Wi-Fi EasyMesh™, która rozszerza zasięg Wi‑Fi w całym domu i umożliwia płynny roaming. Jeśli masz kilka routerów GL.iNet, ustaw jeden jako router główny, a pozostałe jako węzły Mesh.</p>
+<h2 id="mesh-vs-extender-vs-access-point-mode">Porównanie trybów Mesh, Extender i Access Point<a class="headerlink" href="#mesh-vs-extender-vs-access-point-mode" title="Permanent link">&para;</a></h2>
+<p>Wszystkie trzy tryby mogą rozszerzać zasięg Wi-Fi. Główne różnice dotyczą sposobu połączenia z routerem głównym oraz konfiguracji urządzeń i zarządzania nimi. <strong>Backhaul</strong> to połączenie między routerem głównym a wzmacniaczem sygnału, punktem dostępowym lub węzłem Mesh.</p>
+<p>Tabela porównuje samodzielne tryby Extender i Access Point firmy GL.iNet z jej implementacją Mesh.</p>
+<table>
+<thead>
+<tr>
+<th>Funkcja</th>
+<th>Tryb Extender</th>
+<th>Tryb Access Point</th>
+<th>Tryb Mesh</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bezprzewodowy backhaul</strong></td>
+<td>✅ Obsługiwany</td>
+<td>❌ Nieużywany</td>
+<td>✅ Obsługiwany</td>
+</tr>
+<tr>
+<td><strong>Backhaul Ethernet</strong></td>
+<td>❌ Nieużywany w tym trybie</td>
+<td>✅ Obsługiwany</td>
+<td>✅ Obsługiwany</td>
+</tr>
+<tr>
+<td><strong>Backhaul pełnodupleksowy</strong></td>
+<td>❌ Wi-Fi działa w półdupleksie</td>
+<td>✅ Ethernet</td>
+<td>✅ Tylko Ethernet; bezprzewodowy backhaul pozostaje półdupleksowy</td>
+</tr>
+<tr>
+<td><strong>Bezprzewodowy backhaul 2.4/5 GHz</strong></td>
+<td>⚠️ Dostępne pasma zależą od modelu i firmware</td>
+<td>❌ Nie dotyczy</td>
+<td>⚠️ Dostępne pasma zależą od modelu i firmware</td>
+</tr>
+<tr>
+<td><strong>Bezprzewodowy backhaul 6 GHz</strong></td>
+<td>⚠️ Zależy od modelu i firmware</td>
+<td>❌ Nie dotyczy</td>
+<td>🔜 Wkrótce</td>
+</tr>
+<tr>
+<td><strong>Roaming Wi-Fi</strong></td>
+<td>✅ Sterowany przez klienta</td>
+<td>✅ Sterowany przez klienta</td>
+<td>✅ Sterowany przez klienta, ze wsparciem 802.11k/v</td>
+</tr>
+<tr>
+<td><strong>Automatyczna synchronizacja ustawień Wi-Fi</strong></td>
+<td>❌ Konfiguracja osobna</td>
+<td>❌ Konfiguracja osobna</td>
+<td>✅ Z routera głównego</td>
+</tr>
+<tr>
+<td><strong>Centralne zarządzanie węzłami</strong></td>
+<td>❌ Konfiguracja osobna</td>
+<td>❌ Konfiguracja osobna</td>
+<td>✅ Przez router główny</td>
+</tr>
+<tr>
+<td><strong>Topologia sieci i przegląd klientów</strong></td>
+<td>❌ Brak przeglądu całej sieci Mesh</td>
+<td>❌ Brak przeglądu całej sieci Mesh</td>
+<td>✅ Dostępne na routerze głównym</td>
+</tr>
+<tr>
+<td><strong>Centralnie zarządzana rozbudowa</strong></td>
+<td>❌ Niezależne wzmacniacze sygnału</td>
+<td>❌ Niezależne punkty dostępowe</td>
+<td>✅ Jeden router główny i maksymalnie osiem węzłów</td>
+</tr>
+<tr>
+<td><strong>Centralnie zarządzane przeskoki bezprzewodowe</strong></td>
+<td>❌ Brak zarządzania przez Mesh</td>
+<td>❌ Nie dotyczy</td>
+<td>✅ Maksymalnie trzy przeskoki bezprzewodowe</td>
+</tr>
+<tr>
+<td><strong>Automatyczne przełączanie między backhaulem przewodowym i bezprzewodowym</strong></td>
+<td>❌ Brak przełączania zarządzanego przez Mesh</td>
+<td>❌ Brak przełączania zarządzanego przez Mesh</td>
+<td>✅ Priorytet dla Ethernet</td>
+</tr>
+<tr>
+<td><strong>Najlepsze zastosowanie</strong></td>
+<td>Proste rozszerzenie zasięgu bezprzewodowego</td>
+<td>Rozszerzenie zasięgu tam, gdzie dostępny jest Ethernet</td>
+<td>Skoordynowany zasięg przy połączeniach przewodowych, bezprzewodowych lub mieszanych</td>
+</tr>
+</tbody>
+</table>
+<p>✅ Obsługiwane · ❌ Nieobsługiwane lub nie dotyczy w tym trybie · ⚠️ Zależy od sprzętu, firmware lub konfiguracji · 🔜 Planowana funkcja</p>
+<p>Mesh synchronizuje obsługiwane ustawienia Wi-Fi sieci głównej, gościnnej, IoT i MLO. Zapewnia również centralne zarządzanie węzłami, w tym ponowne uruchamianie, usuwanie i aktualizowanie obsługiwanych węzłów GL.iNet. Węzły można dodawać przez skanowanie Wi-Fi, połączenie Ethernet lub przycisk Mesh/WPS, jeśli jest obsługiwany. Zarządzanie backhaulem obejmuje priorytet dla Ethernet, przełączanie między połączeniami przewodowymi i bezprzewodowymi oraz zapobieganie pętlom.</p>
+<h3 id="roznice-w-wydajnosci">Różnice w wydajności<a class="headerlink" href="#roznice-w-wydajnosci" title="Permanent link">&para;</a></h3>
+<h4 id="tryb-extender">Tryb Extender<a class="headerlink" href="#tryb-extender" title="Permanent link">&para;</a></h4>
+<p>Urządzenie łączy się z istniejącą siecią Wi-Fi. Moduł radiowy używany do połączenia z routerem nadrzędnym pracuje na kanale routera głównego. Klienci korzystający z tego samego modułu radiowego również używają tego kanału, więc ruch do routera nadrzędnego i ruch klientów współdzielą czas transmisji.</p>
+<p>W obsługiwanych modelach wielopasmowych osobne moduły radiowe mogą nadal obsługiwać klientów w innych pasmach. Na przykład wzmacniacz sygnału może łączyć się z routerem nadrzędnym przez 2.4 GHz, jednocześnie obsługując klientów przez osobny moduł radiowy 5 GHz. Te dwa połączenia nie rywalizują o czas transmisji na tym samym kanale. Dostępne kombinacje zależą od modelu i firmware; tryb Extender nie jest z założenia ograniczony do jednego pasma.</p>
+<p>Ten sam wymóg dotyczący kanału połączenia nadrzędnego dotyczy funkcji połączenia Repeater firmy GL.iNet, choć działanie Repeater i samodzielny tryb sieciowy Extender różnią się pod innymi względami.</p>
+<h4 id="bezprzewodowy-mesh">Bezprzewodowy Mesh<a class="headerlink" href="#bezprzewodowy-mesh" title="Permanent link">&para;</a></h4>
+<p>W testowanej trzypasmowej konfiguracji Mesh węzeł używa <strong>pasma 5 GHz do bezprzewodowego backhaulu</strong>. Kanał 5 GHz węzła jest zgodny z kanałem routera głównego i nie można go zmienić niezależnie, natomiast <strong>ustawienia osobnych kanałów 2.4 GHz i 6 GHz pozostają konfigurowalne niezależnie</strong>. Dotyczy to ustawień kanałów, a nie tego, z którymi pasmami mogą łączyć się urządzenia klienckie. Zmiana kanału dla klientów nie zmienia pasma backhaulu.</p>
+<p>Wpływ na wydajność zależy więc od sposobu połączenia klienta:</p>
+<ul>
+<li><strong>Urządzenia połączone przez 5 GHz:</strong> jeśli telefon, laptop lub inne urządzenie łączy się z Wi-Fi 5 GHz węzła Mesh, a ten sam moduł radiowy obsługuje bezprzewodowy backhaul, połączenia współdzielą czas transmisji. Zablokowanie kanału 5 GHz węzła nie musi uniemożliwiać klientom połączenia w tym paśmie.</li>
+<li><strong>Urządzenia połączone przez 2.4 GHz lub 6 GHz:</strong> gdy klienci korzystają z modułu radiowego innego niż bezprzewodowy backhaul 5 GHz, oba łącza nie ponoszą kosztu przekazywania ruchu na tym samym kanale.</li>
+</ul>
+<p>Opis dotyczy testowanej konfiguracji, a nie wszystkich obsługiwanych modeli Mesh. Przekazywanie ruchu przez osobne moduły radiowe nie jest wyłączną cechą Mesh, a przejście z Extender na Mesh nie zapewnia automatycznej poprawy przepustowości.</p>
+<h4 id="tryb-access-point-i-przewodowy-mesh">Tryb Access Point i przewodowy Mesh<a class="headerlink" href="#tryb-access-point-i-przewodowy-mesh" title="Permanent link">&para;</a></h4>
+<p>Oba rozwiązania używają Ethernet do połączenia z routerem głównym. Backhaul Ethernet działa w pełnym dupleksie i pozwala uniknąć przesyłania ruchu backhaulu przez Wi-Fi. Połączenia Wi-Fi klientów pozostają półdupleksowe. Przy porównywalnym sprzęcie i warunkach tryb Access Point oraz przewodowy Mesh mogą zapewniać podobną przepustowość; Mesh dodaje skoordynowaną konfigurację i zarządzanie.</p>
+<p>Mesh nadaje priorytet backhaulowi Ethernet i obsługuje przełączenie na połączenie bezprzewodowe, gdy dostępne jest odpowiednie łącze. W testowanej konfiguracji kanał 5 GHz węzła pozostaje zgodny z kanałem routera głównego nawet przy aktywnym backhaulu Ethernet. Nie oznacza to, że ruch jest przesyłany przez bezprzewodowy backhaul. Ethernet usuwa bezprzewodowy przeskok backhaulu danych, ale pobliskie węzły i klienci korzystający z tego samego kanału Wi-Fi nadal mogą rywalizować o czas transmisji.</p>
+<div class="admonition note">
+<p class="admonition-title">Backhaul Mesh 6 GHz — Wkrótce</p>
+<p>Backhaul Mesh 6 GHz będzie wymagał zgodnego sprzętu 6 GHz zarówno w routerze głównym, jak i węźle Mesh, a także obsługującego go firmware. Nie zakładaj, że wszystkie modele obsługujące Mesh będą obsługiwać tę funkcję.</p>
+<p>To coś innego niż połączenie klienta z istniejącą siecią Wi-Fi 6 GHz węzła. Przy backhaulu 6 GHz osobny moduł radiowy 5 GHz mógłby obsługiwać klientów bez współdzielenia czasu transmisji kanału backhaulu. Moduł radiowy jest dedykowany backhaulowi tylko wtedy, gdy jest zarezerwowany do tego celu i nie obsługuje jednocześnie klientów.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Osobne moduły radiowe nie zmieniają Wi-Fi w pełnodupleksowe</p>
+<p>Każde łącze Wi-Fi pozostaje półdupleksowe. Przekazywanie ruchu przez osobne moduły radiowe pozwala uniknąć współdzielenia jednego kanału przez łącza backhaulu i klientów, ale nie usuwa innych zakłóceń, rywalizacji o medium ani ograniczeń wielu przeskoków. Przepustowość całego połączenia nadal ograniczają wolniejsze łącze i warunki sieciowe.</p>
+</div>
 <h2 id="supported-models">Obsługiwane modele<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Obsługiwane modele</summary>
@@ -7409,7 +7643,7 @@
     <span class="md-icon" title="Ostatnia aktualizacja">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 października 2026 08:30:23 UTC">16 października 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 października 2026 06:29:14 UTC">20 października 2026</span>
   </span>
 
     

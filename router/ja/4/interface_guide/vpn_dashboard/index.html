@@ -3428,11 +3428,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../../tutorials/secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    WireGuard で外部ネットワークからの RDP を保護する
+    WireGuardでRDPを保護する
   </span>
   
 
@@ -7421,8 +7421,9 @@
 <h3 id="kill-switch">Kill Switch<a class="headerlink" href="#kill-switch" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Kill Switch とは？</p>
-<p>Kill Switch は、VPN 接続のためのセキュリティ機能です。VPN 接続が予期せず切断された場合に、ローカルネットワークのすべてのインターネットアクセスを自動的に遮断し、実際の IP アドレスやオンラインデータの露出を防ぎ、継続的なプライバシーとセキュリティを確保します。公衆ネットワークの利用時、機密データの処理時、実 IP アドレスを隠したい場合など、安全で匿名性の高いインターネットアクセスを維持するのに特に有効です。</p>
-<p>有効にすると、VPN トンネルをバイパスしようとするクライアントトラフィックをすべてブロックし、DNS 設定の問題、予期しない切断、IP 直接指定のリクエストなどによる VPN リークを効果的に防ぎます。</p>
+<p>VPNのキルスイッチは、VPN接続に障害が発生したときに、トラフィックが暗号化されていないインターネット接続へ切り替わるのを防ぐのに役立ちます。</p>
+<p>個別のトンネルで <strong>Kill Switch</strong> を有効にすると、その接続に障害が発生した場合、そのトンネルに割り当てられたトラフィックのインターネットアクセスがブロックされます。その他のトラフィックには <strong>All Other Traffic</strong> の設定が適用されます。</p>
+<p><strong>Enhanced Kill Switch</strong> は、どのVPNトンネルにも一致しないインターネットトラフィックをブロックします。各トンネルの <strong>Kill Switch</strong> 設定を上書きすることはありません。</p>
 </div>
 <p>ファームウェア v4.8 以降、GL.iNet ルーターでは各 VPN トンネルごとの Kill Switch と、グローバル VPN 接続の Kill Switch の両方を設定できます。</p>
 <ul>
@@ -7665,7 +7666,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月16日 08:30:23 UTC">2026年10月16日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月20日 06:29:14 UTC">2026年10月20日</span>
   </span>
 
     

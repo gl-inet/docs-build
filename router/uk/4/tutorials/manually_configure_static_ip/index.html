@@ -3447,11 +3447,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Захист RDP через WireGuard для доступу із зовнішньої мережі
+    Захист RDP за допомогою WireGuard
   </span>
   
 
@@ -4320,17 +4320,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Налаштування статичної IP-адреси на клієнтських пристроях вручну
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -4340,34 +4329,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Зміст">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Зміст
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#set-static-ip-address-on-ethernet-adapter" class="md-nav__link">
-    <span class="md-ellipsis">
-      Налаштування статичної IP-адреси адаптера Ethernet
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -7140,23 +7101,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Зміст
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#set-static-ip-address-on-ethernet-adapter" class="md-nav__link">
-    <span class="md-ellipsis">
-      Налаштування статичної IP-адреси адаптера Ethernet
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -7180,236 +7124,199 @@
 
   <!-- Markdown content -->
   <h1 id="how-to-manually-configure-static-ip-on-the-client-devices">Як вручну налаштувати статичну IP-адресу на клієнтських пристроях?<a class="headerlink" href="#how-to-manually-configure-static-ip-on-the-client-devices" title="Permanent link">&para;</a></h1>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows 11</label><label for="__tabbed_1_2">macOS</label><label for="__tabbed_1_3">Android</label><label for="__tabbed_1_4">iOS</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows 11</label><label for="__tabbed_1_2">macOS</label><label for="__tabbed_1_3">iOS</label><label for="__tabbed_1_4">Android</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>У Windows 11 статичну IP-адресу для бездротових і дротових адаптерів можна налаштувати через застосунок <strong>Settings</strong>.</p>
+<p>У Windows 11 можна налаштувати статичну IP-адресу для бездротових і дротових адаптерів.</p>
 <p><strong>Налаштування статичної IP-адреси адаптера Wi-Fi</strong></p>
-<p>Щоб призначити адаптеру Wi-Fi статичну IP-адресу, виконайте такі кроки:</p>
 <ol>
 <li>
-<p>У Windows 11 відкрийте <strong>Settings</strong> -&gt; <strong>Network &amp; Internet</strong> -&gt; вкладку <strong>Wi-Fi</strong> -&gt; виберіть поточне мережеве з’єднання.</p>
+<p>На комп’ютері з Windows 11 відкрийте <strong>Settings</strong> -&gt; <strong>Network &amp; internet</strong> -&gt; <strong>Wi-Fi</strong> та виберіть поточне з’єднання Wi-Fi.</p>
 </li>
 <li>
-<p>У розділі <strong>IP settings</strong> натисніть <strong>Edit</strong>.</p>
+<p>Знайдіть <strong>IP assignment</strong> і натисніть кнопку <strong>Edit</strong>.</p>
 <p><img alt="Редагування IP-адреси у Windows 11" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Windows_11_edit_IP_address.png" /></p>
 </li>
 <li>
-<p>Виконайте наведені нижче кроки для налаштування:</p>
+<p>У спливному вікні виберіть <strong>Manual</strong> і ввімкніть <strong>IPv4</strong>.</p>
+<p><img alt="Ручне налаштування IP" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/manual.jpg" /></p>
+</li>
+<li>
+<p>Виконайте наведені нижче кроки, щоб змінити налаштування IP.</p>
 <p><img alt="Налаштування статичної IP-адреси" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Settings_app_set_static_IP_address.png" /></p>
 <ul>
 <li>
-<p>Виберіть <strong>Manual</strong> і ввімкніть перемикач <strong>IPv4</strong>.</p>
+<p>IP address: установіть статичну IP-адресу, наприклад <code>10.1.4.119</code>.</p>
 </li>
 <li>
-<p>Установіть статичну IP-адресу для Windows 11, наприклад 10.1.4.119.</p>
+<p>Subnet mask: укажіть маску підмережі, наприклад <code>255.255.255.0</code>.</p>
 </li>
 <li>
-<p>Укажіть <strong>Subnet mask</strong>, наприклад 255.255.255.0.</p>
+<p>Gateway: введіть адресу шлюзу, зазвичай це IP-адреса LAN маршрутизатора в тій самій підмережі. Наприклад, якщо ваша IP-адреса — <code>10.1.4.119</code>, адреса шлюзу зазвичай — <code>10.1.4.1</code>.</p>
 </li>
 <li>
-<p>Укажіть адресу <strong>Default Gateway</strong>.</p>
+<p>Preferred DNS: укажіть основну адресу DNS (обов’язково). Можна використати публічний DNS-сервер, наприклад DNS-сервер Google <code>8.8.8.8</code>.</p>
 </li>
 <li>
-<p>Укажіть адресу <strong>Preferred DNS</strong> (обов’язково).</p>
+<p>Alternate DNS: укажіть альтернативну адресу DNS (необов’язково).</p>
 </li>
 <li>
-<p>За потреби вкажіть адресу <strong>Alternate DNS</strong>.</p>
-</li>
-<li>
-<p>У розкривному меню <strong>DNS over HTTPS</strong> виберіть <strong>Off</strong> для основної та альтернативної адрес DNS. Щоб увімкнути DoH, можна вибрати такі параметри:</p>
+<p>DNS over HTTPS: виберіть "Off". Доступні три варіанти:</p>
 <ul>
 <li>
-<p><strong>Off</strong>: увесь DNS-трафік передається без шифрування.</p>
+<p>Off: увесь DNS-трафік передається без шифрування.</p>
 </li>
 <li>
-<p><strong>On (automatic template)</strong>: увесь DNS-трафік передається із шифруванням.</p>
+<p>On (automatic template): увесь DNS-трафік передається із шифруванням.</p>
 </li>
 <li>
-<p><strong>On (manual template)</strong>: дає змогу вказати конкретний шаблон. Це потрібно лише тоді, коли служба DNS не працює автоматично або має шаблон, який працює належним чином.</p>
+<p>On (manual template): дає змогу вказати конкретний шаблон. Це потрібно лише тоді, коли служба DNS не працює автоматично або має шаблон, який працює належним чином.</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Вимкніть перемикач <strong>Fallback to plaintext</strong>, якщо ввімкнено DoH.</p>
-<ul>
-<li>Порада: якщо ввімкнути цю функцію, система шифруватиме DNS-трафік, але дозволятиме надсилати запити без шифрування.</li>
-</ul>
+<p>Вимкніть перемикач "Fallback to plaintext", якщо вмикаєте DNS over HTTPS.</p>
+<p><strong>Порада</strong>: якщо ввімкнути цю функцію, система шифруватиме DNS-трафік, але дозволятиме надсилати запити без шифрування.</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Натисніть <strong>Save</strong>.</p>
+<p>Натисніть <strong>Save</strong>, щоб застосувати налаштування.</p>
 <p>Після виконання цих кроків статичну конфігурацію мережі буде застосовано на комп’ютері. Щоб перевірити нові налаштування, відкрийте браузер і завантажте вебсайт.</p>
 </li>
 </ol>
-<h2 id="set-static-ip-address-on-ethernet-adapter"><strong>Налаштування статичної IP-адреси адаптера Ethernet</strong><a class="headerlink" href="#set-static-ip-address-on-ethernet-adapter" title="Permanent link">&para;</a></h2>
-<p>Щоб призначити адаптеру Ethernet (дротовому) статичну IP-адресу у Windows 11, виконайте такі кроки:</p>
+<hr />
+<p id="set-static-ip-address-on-ethernet-adapter"><strong>Налаштування статичної IP-адреси адаптера Ethernet</strong></p>
 <ol>
 <li>
-<p>Відкрийте <strong>Settings</strong> -&gt; <strong>Network &amp; Internet</strong> -&gt; вкладку <strong>Ethernet</strong>.</p>
+<p>На комп’ютері з Windows 11 відкрийте <strong>Settings</strong> -&gt; <strong>Network &amp; internet</strong> -&gt; <strong>Ethernet</strong>.</p>
 </li>
 <li>
-<p>У розділі <strong>IP settings</strong> натисніть <strong>Edit</strong>.</p>
+<p>Знайдіть <strong>IP assignment</strong> і натисніть кнопку <strong>Edit</strong>.</p>
 <p><img alt="Редагування параметрів TCP/IP для Ethernet" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Edit_TCP_IP_Ethernet_settings.png" /></p>
 </li>
 <li>
-<p>Виконайте наведені нижче кроки для налаштування:</p>
+<p>У спливному вікні виберіть <strong>Manual</strong> і ввімкніть <strong>IPv4</strong>.</p>
+<p><img alt="Ручне налаштування IP" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/manual.jpg" /></p>
+</li>
+<li>
+<p>Виконайте наведені нижче кроки, щоб змінити налаштування IP.</p>
 <p><img alt="Налаштування статичної IP-адреси" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Settings_app_set_static_IP_address.png" /></p>
 <ul>
 <li>
-<p>Виберіть <strong>Manual</strong>.</p>
+<p>IP address: установіть статичну IP-адресу, наприклад <code>10.1.4.119</code>.</p>
 </li>
 <li>
-<p>Увімкніть перемикач <strong>IPv4</strong>.</p>
+<p>Subnet mask: укажіть маску підмережі, наприклад <code>255.255.255.0</code>.</p>
 </li>
 <li>
-<p>Установіть статичну IP-адресу для Windows 11, наприклад 10.1.4.119.</p>
+<p>Gateway: введіть адресу шлюзу, зазвичай це IP-адреса LAN маршрутизатора в тій самій підмережі. Наприклад, якщо ваша IP-адреса — <code>10.1.4.119</code>, адреса шлюзу зазвичай — <code>10.1.4.1</code>.</p>
 </li>
 <li>
-<p>Укажіть <strong>Subnet mask</strong>, наприклад 255.255.255.0.</p>
+<p>Preferred DNS: укажіть основну адресу DNS (обов’язково). Можна використати публічний DNS-сервер, наприклад DNS-сервер Google <code>8.8.8.8</code>.</p>
 </li>
 <li>
-<p>Укажіть адресу <strong>Default Gateway</strong>.</p>
+<p>Alternate DNS: укажіть альтернативну адресу DNS (необов’язково).</p>
 </li>
 <li>
-<p>Укажіть адресу <strong>Preferred DNS</strong> (обов’язково).</p>
-</li>
-<li>
-<p>За потреби вкажіть адресу <strong>Alternate DNS</strong>.</p>
-</li>
-<li>
-<p>У розкривному меню <strong>DNS over HTTPS</strong> виберіть <strong>Off</strong> для основної та альтернативної адрес DNS. Щоб увімкнути DoH, можна вибрати такі параметри:</p>
+<p>DNS over HTTPS: виберіть "Off". Доступні три варіанти:</p>
 <ul>
 <li>
-<p><strong>Off</strong>: увесь DNS-трафік передається без шифрування.</p>
+<p>Off: увесь DNS-трафік передається без шифрування.</p>
 </li>
 <li>
-<p><strong>On (automatic template)</strong>: увесь DNS-трафік передається із шифруванням.</p>
+<p>On (automatic template): увесь DNS-трафік передається із шифруванням.</p>
 </li>
 <li>
-<p><strong>On (manual template)</strong>: дає змогу вказати конкретний шаблон. Це потрібно лише тоді, коли служба DNS не працює автоматично або має шаблон, який працює належним чином.</p>
+<p>On (manual template): дає змогу вказати конкретний шаблон. Це потрібно лише тоді, коли служба DNS не працює автоматично або має шаблон, який працює належним чином.</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Вимкніть перемикач <strong>Fallback to plaintext</strong>, якщо ввімкнено DoH.</p>
+<p>Вимкніть перемикач "Fallback to plaintext", якщо вмикаєте DNS over HTTPS.</p>
+<p><strong>Порада</strong>: якщо ввімкнути цю функцію, система шифруватиме DNS-трафік, але дозволятиме надсилати запити без шифрування.</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Натисніть <strong>Save</strong>.</p>
-<p>Після виконання цих кроків перевірте налаштування, відкривши вебсайт у браузері.</p>
+<p>Натисніть <strong>Save</strong>, щоб застосувати налаштування.</p>
+<p>Після виконання цих кроків статичну конфігурацію мережі буде застосовано на комп’ютері. Щоб перевірити нові налаштування, відкрийте браузер і завантажте вебсайт.</p>
 </li>
 </ol>
 </div>
 <div class="tabbed-block">
-<p>Щоб налаштувати статичну IP-адресу в macOS, виконайте такі дії:</p>
-<p>Якщо ви користуєтеся MacBook, можна створити нове мережеве розташування. Це дасть змогу використовувати статичну IP-адресу лише для певних мереж.</p>
+<p>Ось як налаштувати статичну IP-адресу в macOS.</p>
 <p>У меню Apple виберіть <strong>System Preferences</strong>.</p>
-<p>Виберіть <strong>Network</strong>. З’явиться наведене нижче вікно.</p>
+<p>Виберіть <strong>Network</strong>, щоб відкрити наведену нижче сторінку. На бічній панелі виберіть активний мережевий інтерфейс, наприклад <strong>Wi-Fi</strong>.</p>
 <p><img alt="Мережеві налаштування Mac" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Mac_network_settings.png" /></p>
-<p>На бічній панелі виберіть активний мережевий інтерфейс. У цьому прикладі використовується бездротове з’єднання, тому виберіть <strong>Wi-Fi</strong>.</p>
-<p>Запишіть поточну IP-адресу свого Mac. Потрібно буде вибрати нову IP-адресу з наведеного діапазону приватних IP-адрес. Докладніше про це — нижче.</p>
-<p>Натисніть <strong>Advanced</strong>.</p>
-<p>Виберіть <strong>TCP/IP</strong>. З’явиться наведене нижче вікно.</p>
+<p>Запишіть поточну IP-адресу свого Mac. Потрібно буде вибрати нову IP-адресу з наведеного діапазону приватних IP-адрес.</p>
+<p>Натисніть <strong>Advanced</strong> у нижньому правому куті.</p>
+<p>Потім виберіть <strong>TCP/IP</strong>, щоб відкрити наведену нижче сторінку.</p>
 <p><img alt="Налаштування Wi-Fi на Mac" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/Mac_Wi-Fi_settings.png" /></p>
-<p>У меню <strong>Configure IPv4</strong> виберіть <strong>Manually</strong>.</p>
-<p>Введіть статичну IP-адресу в поле <strong>IPv4 Address</strong>. Один зі способів вибрати адресу — змінити останню частину поточної IP-адреси. Для мережі 192.168.7.0/24 виберіть вільну адресу вузла від 192.168.7.1 до 192.168.7.254. Не використовуйте адресу мережі або широкомовну адресу.</p>
-<p>Натисніть <strong>OK</strong> -&gt; <strong>Apply</strong>.</p>
+<ul>
+<li>
+<p>Configure IPv4: виберіть "Manually".</p>
+</li>
+<li>
+<p>IPv4 Address: введіть статичну IP-адресу. Залиште перші три октети поточної IP-адреси та змініть останній октет на невикористане значення. Наприклад, у мережі <code>192.168.7.0/24</code> виберіть вільну адресу від <code>192.168.7.2</code> до <code>192.168.7.254</code> (уникайте <code>.1</code>, це адреса маршрутизатора). Не використовуйте <code>192.168.7.0</code> або <code>192.168.7.255</code>.</p>
+</li>
+<li>
+<p>Subnet Mask: введіть <code>255.255.255.0</code> (або маску підмережі, надану адміністратором мережі).</p>
+</li>
+<li>
+<p>Router: введіть IP-адресу LAN маршрутизатора, наприклад <code>192.168.7.1</code>.</p>
+</li>
+</ul>
+<p>Натисніть <strong>OK</strong>, а потім <strong>Apply</strong>.</p>
 </div>
 <div class="tabbed-block">
-<p>Кроки можуть відрізнятися залежно від версії Android. Цю інструкцію створено для Android 11.</p>
-<ol>
-<li>Відкрийте <strong>Settings</strong> -&gt; виберіть <strong>Network &amp; Internet</strong>, потім <strong>Wi-Fi</strong> -&gt; натисніть поточну підключену мережу, щоб відкрити меню налаштувань.</li>
-</ol>
-<p class="glboxshadow"><img alt="Список доступних мереж" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/list_available_networks.png" /></p>
+<p>Кроки можуть відрізнятися залежно від версії iOS. Наведені нижче кроки стосуються iOS 26.2.2.</p>
 <ol>
 <li>
-<p>Щоб налаштувати статичну IP-адресу, виконайте такі дії:</p>
+<p>Відкрийте <strong>Settings</strong> -&gt; <strong>WLAN</strong>. Натисніть синій значок інформації (i) поруч із поточною підключеною мережею Wi-Fi.</p>
+<p><img alt="Статична IP-адреса в iOS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/ios1.png" width="360" /></p>
+</li>
+<li>
+<p>Прокрутіть униз до <strong>IPv4 Address</strong> і встановіть <strong>Manual</strong> для <strong>Configure IP</strong>.</p>
+<p><img alt="Статична IP-адреса в iOS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/ios2.png" width="360" /></p>
+</li>
+<li>
+<p>Укажіть значення <strong>IP Address</strong>, <strong>Subnet Mask</strong> і <strong>Router IP</strong>, які хочете використовувати на iPhone/iPad, а потім натисніть <strong>Save</strong> у верхньому правому куті.</p>
+<p><img alt="Статична IP-адреса в iOS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/ios3.png" width="360" /></p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>Кроки можуть відрізнятися залежно від версії Android. Наведені нижче кроки стосуються Android 11.</p>
+<ol>
+<li>
+<p>Відкрийте <strong>Settings</strong> -&gt; <strong>Network &amp; Internet</strong> -&gt; <strong>Wi-Fi</strong>. Натисніть поточну підключену мережу, щоб відкрити меню налаштувань.</p>
+<p class="glboxshadow"><img alt="Список доступних мереж" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/list_available_networks.png" /></p>
 </li>
 <li>
 <p>Натисніть значок олівця у верхньому правому куті, щоб відкрити налаштування мережі.</p>
 <p class="glboxshadow"><img alt="Значок олівця" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/pencil_icon.png" /></p>
 </li>
 <li>
-<p>Виберіть <strong>Advanced Options</strong>.</p>
+<p>Натисніть <strong>Advanced options</strong>.</p>
 <p class="glboxshadow"><img alt="Додаткові параметри" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/advanced_options.png" /></p>
 </li>
 <li>
-<p>Виберіть <strong>IP Settings</strong>.</p>
-</li>
-<li>
-<p>Змініть значення з <strong>DHCP</strong> на <strong>Static</strong>.</p>
+<p>Натисніть <strong>IP Settings</strong> і виберіть <strong>Static</strong>.</p>
 <p class="glboxshadow"><img alt="Зміна DHCP на Static" class="gl-50-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/DHCP_to_Static.png" /></p>
 </li>
 <li>
-<p>Для домашніх та інших приватних мереж виберіть вільну адресу вузла у своїй поточній підмережі. Стандартні діапазони приватних IP-адрес: від 10.0.0.0 до 10.255.255.255, від 172.16.0.0 до 172.31.255.255, від 192.168.0.0 до 192.168.255.255.</p>
-</li>
-<li>
-<p>Введіть IP-адресу.</p>
-<ul>
-<li>Цей крок залежить від конкретної мережі. Приклад: 192.168.1.128.</li>
-</ul>
-</li>
-<li>
-<p>Поле <strong>Gateway</strong> має заповнитися автоматично на основі IP-адреси. Якщо цього не сталося, введіть IP-адресу шлюзу вашої мережі.</p>
-<ul>
-<li>Приклад: якщо IP-адреса вашого маршрутизатора 192.168.1.1, введіть 192.168.1.1.</li>
-</ul>
+<p>Введіть <strong>IP address</strong>. Поле <strong>Gateway</strong> має заповнитися автоматично на основі IP-адреси. Якщо цього не сталося, введіть шлюз вашої мережі. Зазвичай це IP-адреса LAN маршрутизатора в тій самій підмережі.</p>
+<p><strong>Порада</strong>: для домашніх та інших приватних мереж виберіть вільну адресу вузла у своїй поточній підмережі. Стандартні діапазони приватних IP-адрес:</p>
+<div class="highlight"><pre><span></span><code>10.0.0.0 ~ 10.255.255.255
+172.16.0.0 ~ 172.31.255.255
+192.168.0.0 ~ 192.168.255.255
+</code></pre></div>
 </li>
 <li>
 <p>Натисніть <strong>Save</strong> і дочекайтеся повторного підключення до мережі.</p>
 </li>
 </ol>
-</div>
-<div class="tabbed-block">
-<p>Для домашніх та інших приватних мереж виберіть вільну адресу вузла у своїй поточній підмережі. Стандартні діапазони приватних IP-адрес:</p>
-<p>Від 10.0.0.0 до 10.255.255.255
-Від 172.16.0.0 до 172.31.255.255
-Від 192.168.0.0 до 192.168.255.255</p>
-<p>Щоб налаштувати статичну IP-адресу, виконайте такі дії:</p>
-<ul>
-<li>
-<p>Натисніть значок <strong>Settings</strong>.</p>
-</li>
-<li>
-<p>Перейдіть до <strong>Wi-Fi</strong>.</p>
-</li>
-<li>
-<p>Натисніть синій значок інформації (i) поруч із назвою мережі Wi-Fi.</p>
-<ul>
-<li>У версіях, старіших за iOS 7, це може бути синій значок помилки.</li>
-</ul>
-</li>
-<li>
-<p>Перейдіть на вкладку <strong>Static</strong>, показану нижче.</p>
-</li>
-</ul>
-<p><img alt="Налаштування IP-адреси в iOS" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/manually_configure_static_ip/IP_Settings_Screen_iOS.png" /></p>
-<ul>
-<li>
-<p>Натисніть поле <strong>IP Address</strong>.</p>
-</li>
-<li>
-<p>Введіть статичну IP-адресу, яку хочете використовувати на iPhone/iPad.</p>
-</li>
-<li>
-<p>Натисніть поле <strong>Router</strong>.</p>
-</li>
-<li>
-<p>Введіть IP-адресу маршрутизатора.</p>
-</li>
-<li>
-<p>Натисніть <strong>Subnet Mask</strong> і введіть значення.</p>
-<ul>
-<li>Використовуйте маску підмережі, до якої ви підключені.</li>
-</ul>
-</li>
-<li>
-<p>Натисніть кнопку <strong>Wi-Fi</strong> у верхньому лівому куті екрана, щоб зберегти налаштування.</p>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -7439,7 +7346,7 @@
     <span class="md-icon" title="Востаннє оновлено">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 жовтня 2026 р. 09:15:26 UTC">16 жовтня 2026 р.</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 жовтня 2026 р. 06:29:14 UTC">20 жовтня 2026 р.</span>
   </span>
 
     

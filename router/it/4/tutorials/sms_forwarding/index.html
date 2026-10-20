@@ -3430,11 +3430,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../use_wireguard_to_secure_rdp_from_outside_network/" class="md-nav__link">
+      <a href="../secure_rdp_with_wireguard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Usare WireGuard per proteggere RDP da reti esterne
+    Proteggere RDP con WireGuard
   </span>
   
 
@@ -7262,13 +7262,13 @@
 <p><img alt="sms forwarding email" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/sms_forwarding/sms_forward_email.png" /></p>
 <ul>
 <li>
-<p><strong>SMTP Server Address</strong>: nel menu a discesa sono disponibili indirizzi server preimpostati per Gmail, Outlook, iCloud e Yahoo. Per altri provider email, consulta la loro documentazione o contatta il supporto.</p>
+<p><strong>SMTP Server Address</strong>: Nel menu a discesa sono disponibili indirizzi server preimpostati per Gmail, Outlook, iCloud e Yahoo. Un indirizzo preimpostato non garantisce la compatibilità con i requisiti di autenticazione del provider. Per altri provider di posta, consulta la loro documentazione o contatta la loro assistenza.</p>
 </li>
 <li>
 <p><strong>Encryption Method</strong>: sono disponibili tre opzioni, none, SSL/TLS e STARTTLS.</p>
 </li>
 <li><strong>Username</strong>: inserisci qui l'indirizzo email.</li>
-<li><strong>Password</strong>: usa una password specifica per l'app oppure la password dell'account di accesso. Per Gmail, Outlook, iCloud e Yahoo, consulta la guida sotto.</li>
+<li><strong>Password</strong>: Inserisci la password SMTP richiesta dal tuo provider di posta, ad esempio una password specifica per l’app. Consulta i requisiti dei singoli provider riportati di seguito.</li>
 <li><strong>Subject</strong>: imposta qui l'oggetto dell'email.</li>
 </ul>
 <details>
@@ -7277,8 +7277,10 @@
 <p>Sono utilizzabili sia la porta 465 sia la 587.</p>
 </details>
 <details>
-<summary>Outlook</summary>
-<p>Per Outlook, puoi usare direttamente la password senza configurazioni aggiuntive e la porta supportata e la 587. Consulta la guida ufficiale <a href="https://support.microsoft.com/en-us/office/pop-imap-and-smtp-settings-for-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040" target="_blank">POP, IMAP, and SMTP settings for Outlook.com</a></p>
+<summary>Outlook.com</summary>
+<p>Outlook.com richiede OAuth2 (Modern Authentication) per l’autenticazione SMTP. Il server SMTP è <code>smtp-mail.outlook.com</code>, con porta <code>587</code> e <code>STARTTLS</code>.</p>
+<p>Prima di usare un account Outlook.com per inviare SMS inoltrati, verifica che il firmware del router supporti questo metodo di autenticazione.</p>
+<p>Consulta la documentazione Microsoft sulle <a href="https://support.microsoft.com/en-us/outlook/pop-imap-and-smtp-settings-for-outlook-com" target="_blank">impostazioni POP, IMAP e SMTP per Outlook.com</a>.</p>
 </details>
 <details>
 <summary>iCloud</summary>
@@ -7325,7 +7327,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 ottobre 2026 08:30:23 UTC">16 ottobre 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 ottobre 2026 06:29:14 UTC">20 ottobre 2026</span>
   </span>
 
     
