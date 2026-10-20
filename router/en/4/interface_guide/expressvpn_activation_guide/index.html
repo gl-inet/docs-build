@@ -7380,7 +7380,7 @@
 <p><strong>Note:</strong> This guide only applies to GL.iNet x ExpressVPN co-branded router <strong>Fortify (GL-MT6000)</strong>. </p>
 <hr />
 <p><a href="https://www.expressvpn.com/" target="_blank">ExpressVPN</a> is one of the world's leading premium VPN services designed to protect your online privacy, secure your internet connection, and enable secure streaming from anywhere. It offers lightning-fast speeds, military-grade encryption, and access to servers in over 100+ countries. Whether you want to stream, browse privately, or protect your data on public Wi-Fi, ExpressVPN gives you a fast &amp; secure experience.</p>
-<p><strong>Fortify (GL-MT6000)</strong> is a co-branded router jointly released by GL.iNet and ExpressVPN. Every unit comes with a complimentary one-year ExpressVPN subscription. Users can redeem the subscription and connect their accounts directly on the router's web Admin Panel. Once activated, all traffic passing through the router will leverage ExpressVPN's high-speed network and robust encryption to protect your entire network connection and online privacy.</p>
+<p><strong>Fortify (GL-MT6000)</strong> is a co-branded router jointly released by GL.iNet and ExpressVPN. Every unit comes with a complimentary one-year ExpressVPN subscription. Users can redeem the subscription and connect their accounts directly on the router's web Admin Panel. When an ExpressVPN tunnel is connected, the router encrypts and routes traffic through that tunnel according to your VPN policy settings.</p>
 <p>This guide walks you through redeeming the 12-month ExpressVPN plan within the router's web Admin Panel. It also covers customizing VPN policies based on your usage scenarios and requirements, helping you effortlessly enjoy encrypted, secure and high-speed internet connectivity.</p>
 <h2 id="redeem-expressvpn-plan">Redeem ExpressVPN Plan<a class="headerlink" href="#redeem-expressvpn-plan" title="Permanent link">&para;</a></h2>
 <p>Log in to the Fortify's web Admin Panel, and navigate to <strong>VPN</strong> -&gt; <strong>VPN Client Profile</strong>.</p>
@@ -7615,8 +7615,9 @@
 </ol>
 </details>
 <h2 id="kill-switch">Kill Switch<a class="headerlink" href="#kill-switch" title="Permanent link">&para;</a></h2>
-<p>Kill Switch is a security feature for VPN connections. It automatically cuts off all internet access for your local network if the VPN connection drops unexpectedly, preventing your real IP address and online data from being exposed and ensuring continuous privacy and security. This feature is particularly useful for maintaining secure, anonymous internet access, such as when using public networks, processing sensitive data, or hiding your real IP address.</p>
-<p>When enabled, it blocks any client traffic that attempts to bypass the VPN tunnel, effectively stopping VPN leaks caused by DNS configuration issues, unexpected disconnections, direct IP requests, and other similar scenarios.</p>
+<p>A VPN Kill Switch helps prevent traffic from falling back to an unencrypted Internet connection when a VPN connection fails.</p>
+<p>For an individual tunnel, enabling <strong>Kill Switch</strong> blocks Internet access for traffic assigned to that tunnel if its connection fails. Other traffic follows the <strong>All Other Traffic</strong> settings.</p>
+<p><strong>Enhanced Kill Switch</strong> blocks Internet traffic that does not match any VPN tunnel. It does not override each tunnel's <strong>Kill Switch</strong> setting.</p>
 <p>Fortify supports Kill Switch configuration for the global VPN connection, as well as for each individual VPN tunnel.</p>
 <ul>
 <li>
@@ -7723,7 +7724,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 18, 2026 08:27:36 UTC">September 18, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 20, 2026 03:43:57 UTC">October 20, 2026</span>
   </span>
 
     
