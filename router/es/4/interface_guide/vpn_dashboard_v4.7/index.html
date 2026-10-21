@@ -7191,6 +7191,8 @@
 </li>
 <li>
 <p><strong>IP Masquerading</strong>: Si está habilitado, las direcciones IP de origen de los clientes LAN se reescribirán con la IP del túnel VPN del router. Deshabilite esta opción solo en configuraciones site-to-site donde el par remoto conozca sus subredes LAN.</p>
+<p>Como se muestra a continuación, si el enmascaramiento de IP está habilitado, cuando el portátil (192.168.10.200) de la LAN de viaje envía tráfico a través del túnel al NAS doméstico (192.168.8.100), el router de viaje reescribe la IP de origen <code>192.168.10.200</code> con la dirección de túnel del cliente VPN, <code>10.1.0.2</code>, por lo que el lado del servidor ve que el tráfico procede del cliente y no de la LAN local del cliente.</p>
+<p><img alt="ip masquerading" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.7/ip_masquerading.png" /></p>
 </li>
 <li>
 <p><strong>MTU</strong>: Abreviatura de Maximum Transmission Unit. Esta opción le permite personalizar el MTU del túnel VPN, sobrescribiendo el valor definido en el archivo de configuración.</p>
@@ -7294,6 +7296,8 @@
 </li>
 <li>
 <p><strong>IP Masquerading</strong>: Si está habilitado, las direcciones IP de origen de los clientes LAN se reescribirán con la IP del túnel VPN del router. Deshabilite esta opción solo en configuraciones site-to-site donde el par remoto conozca sus subredes LAN.</p>
+<p>Como se muestra a continuación, si el enmascaramiento de IP está habilitado, cuando el NAS (192.168.8.100) de la LAN doméstica envía tráfico a través del túnel al portátil de viaje (192.168.10.200), el router doméstico reescribe la IP de origen <code>192.168.8.100</code> con la dirección de túnel del servidor VPN, <code>10.1.0.1</code>, por lo que el lado remoto ve que el tráfico procede del servidor y no de la LAN local del servidor.</p>
+<p><img alt="ip masquerading" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.7/ip_masquerading.png" /></p>
 </li>
 <li>
 <p><strong>MTU</strong>: Abreviatura de Maximum Transmission Unit. El valor MTU que establezca para el túnel sobrescribirá los ajustes MTU del archivo de configuración.</p>
@@ -7343,7 +7347,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 de octubre de 2026 09:53:39 UTC">20 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 de octubre de 2026 03:20:23 UTC">21 de octubre de 2026</span>
   </span>
 
     
