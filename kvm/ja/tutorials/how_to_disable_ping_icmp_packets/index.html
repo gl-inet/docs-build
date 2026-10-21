@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kvm-pingicmp" class="md-skip">
+        <a href="#how-to-disable-outgoing-pingicmp-packets-from-kvm" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -2818,14 +2818,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#for-ethernet-only-devices" class="md-nav__link">
     イーサネット専用デバイスの場合
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wi-fi" class="md-nav__link">
+  <a href="#for-devices-with-both-ethernet-and-wi-fi" class="md-nav__link">
     イーサネットと Wi-Fi の両方を備えたデバイスの場合
   </a>
   
@@ -3718,14 +3718,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#for-ethernet-only-devices" class="md-nav__link">
     イーサネット専用デバイスの場合
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wi-fi" class="md-nav__link">
+  <a href="#for-devices-with-both-ethernet-and-wi-fi" class="md-nav__link">
     イーサネットと Wi-Fi の両方を備えたデバイスの場合
   </a>
   
@@ -3755,9 +3755,9 @@
   
 
   <!-- Markdown content -->
-  <h1 id="kvm-pingicmp">KVM からの送信 PING/ICMP パケットを無効にする方法<a class="headerlink" href="#kvm-pingicmp" title="Permanent link">&para;</a></h1>
+  <h1 id="how-to-disable-outgoing-pingicmp-packets-from-kvm">KVM からの送信 PING/ICMP パケットを無効にする方法<a class="headerlink" href="#how-to-disable-outgoing-pingicmp-packets-from-kvm" title="Permanent link">&para;</a></h1>
 <p>KVM デバイスは、ネットワーク接続検出のために PING (ICMP) パケットを定期的に送信します。このドキュメントでは、この動作とそれに伴う副作用を無効にする方法について説明します。</p>
-<h2 id="_1">イーサネット専用デバイスの場合<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="for-ethernet-only-devices">イーサネット専用デバイスの場合<a class="headerlink" href="#for-ethernet-only-devices" title="Permanent link">&para;</a></h2>
 <p>Comet (GL-RM1) や Comet PoE (GL-RM1PE) など、イーサネット接続のみを備えたデバイスの場合、システムはデフォルト ゲートウェイに PING パケットを送信して、インターネット接続を確認します。結果は LED のステータスによって示されます。</p>
 <p>この動作を一時的に無効にするには、次のコマンドを実行します。</p>
 <div class="highlight"><pre><span></span><code>/etc/init.d/S23led<span class="w"> </span>stop
@@ -3765,13 +3765,13 @@
 <blockquote>
 <p><strong>注:</strong> このサービスを無効にすると、<strong>リセット ボタン</strong>も使用できなくなります。</p>
 </blockquote>
-<h2 id="wi-fi">イーサネットと Wi-Fi の両方を備えたデバイスの場合<a class="headerlink" href="#wi-fi" title="Permanent link">&para;</a></h2>
+<h2 id="for-devices-with-both-ethernet-and-wi-fi">イーサネットと Wi-Fi の両方を備えたデバイスの場合<a class="headerlink" href="#for-devices-with-both-ethernet-and-wi-fi" title="Permanent link">&para;</a></h2>
 <p>イーサネットと Wi-Fi の両方を備えたデバイスの場合、システムはパブリック DNS サーバーに PING パケットを送信し、各ネットワーク インターフェイスのインターネット アクセスを確認します。このメカニズムは動的なマルチ WAN フェイルオーバーに使用され、イーサネット接続がインターネット アクセスを失った場合にデバイスが Wi-Fi に切り替わるようにします。</p>
 <p>この動作を一時的に無効にするには、次のコマンドを実行します。</p>
 <div class="highlight"><pre><span></span><code>/etc/init.d/S98multi-wan<span class="w"> </span>stop
 </code></pre></div>
 <hr />
-<p>まだ質問がありますか? <a href="https://forum.gl-inet.com" target="_blank">コミュニティ フォーラム</a> または <a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> にアクセスしてください。</p>
+<p>まだ質問がありますか？ <a href="https://forum.gl-inet.com" target="_blank">コミュニティ フォーラム</a> または <a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> にアクセスしてください。</p>
 
   <!-- Last update of source file -->
   
@@ -3781,7 +3781,7 @@
   <small>
     
       最終更新日:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月27日 07:31:44 UTC">2026年8月27日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月21日 08:45:04 UTC">2026年10月21日</span>
       
     
   </small>

@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kvm" class="md-skip">
+        <a href="#privacy-error-when-accessing-kvm-via-browser" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -1760,22 +1760,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    この警告が表示されるのはなぜですか?
+  <a href="#why-do-i-get-this-warning" class="md-nav__link">
+    この警告が表示されるのはなぜですか？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    警告を解決するにはどうすればよいですか?
+  <a href="#how-to-resolve-the-warning" class="md-nav__link">
+    警告を解決するにはどうすればよいですか？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    独自の証明書を使用できますか?
+  <a href="#can-i-use-my-own-certificate" class="md-nav__link">
+    独自の証明書を使用できますか？
   </a>
   
 </li>
@@ -3725,22 +3725,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    この警告が表示されるのはなぜですか?
+  <a href="#why-do-i-get-this-warning" class="md-nav__link">
+    この警告が表示されるのはなぜですか？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    警告を解決するにはどうすればよいですか?
+  <a href="#how-to-resolve-the-warning" class="md-nav__link">
+    警告を解決するにはどうすればよいですか？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    独自の証明書を使用できますか?
+  <a href="#can-i-use-my-own-certificate" class="md-nav__link">
+    独自の証明書を使用できますか？
   </a>
   
 </li>
@@ -3769,25 +3769,25 @@
   
 
   <!-- Markdown content -->
-  <h1 id="kvm">ブラウザ経由で KVM にアクセスするとプライバシー エラーが発生する<a class="headerlink" href="#kvm" title="Permanent link">&para;</a></h1>
+  <h1 id="privacy-error-when-accessing-kvm-via-browser">ブラウザ経由で KVM にアクセスするとプライバシー エラーが発生する<a class="headerlink" href="#privacy-error-when-accessing-kvm-via-browser" title="Permanent link">&para;</a></h1>
 <p>ブラウザ経由で GL.iNet KVM にアクセスすると、ブラウザの警告が表示される場合があります: <strong>接続はプライベートではありません</strong>。</p>
 <p><img alt="privacy error" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/privacy_error_1.png" /></p>
 <p>この警告は、KVM が提示した SSL/TLS 証明書をブラウザが検証できないことを示します。たとえば、ブラウザが信頼する認証局によって発行されていない場合や、コンソールへのアクセスに使用した IP アドレスまたはホスト名と証明書が一致しない場合に表示されます。</p>
-<h2 id="_1">この警告が表示されるのはなぜですか?<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="why-do-i-get-this-warning">この警告が表示されるのはなぜですか？<a class="headerlink" href="#why-do-i-get-this-warning" title="Permanent link">&para;</a></h2>
 <p>上記の例では、<strong>192.168.8.11</strong> は、DHCP 経由で上位ルーターによって動的に割り当てられる KVM ローカル IP アドレスです。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>GL.iNet KVM が接続されているルーターのゲートウェイが「192.168.x.1」(プライベート ネットワークでは x は通常 0、1、または 8) の場合、KVM のローカル IP は「192.168.x.y」(y は有効なホスト アドレス) である必要があります。サブネット内)。</p>
+<p>GL.iNet KVM が接続されているルーターのゲートウェイが「192.168.x.1」（プライベート ネットワークでは x は通常 0、1、または 8）の場合、KVM のローカル IP は「192.168.x.y」（y は有効なホスト アドレス）である必要があります。サブネット内）。</p>
 </div>
 <p>このローカル IP アドレスは、公開 Web サイトではなく、GL.iNet KVM コンソールにアクセスするために使用されます。</p>
 <p>KVM は、ブラウザからの HTTPS アクセスにデフォルトの TLS 証明書を使用します。ブラウザは、公開 Web サイトと同様にローカルコンソールの証明書も検証します。証明書は信頼されており、有効で、アクセス先のアドレスと一致している必要があります。</p>
 <p>デフォルトの証明書をブラウザが信頼していない場合や、入力したローカル IP アドレスまたはホスト名が証明書の対象に含まれていない場合、警告が表示されます。この警告は、KVM に証明書がないことを意味するものではありません。HTTPS による通信の暗号化は可能ですが、ブラウザは KVM の身元を確認できません。</p>
-<h2 id="_2">警告を解決するにはどうすればよいですか?<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="how-to-resolve-the-warning">警告を解決するにはどうすればよいですか？<a class="headerlink" href="#how-to-resolve-the-warning" title="Permanent link">&para;</a></h2>
 <p>ローカルアクセスでは、まずアドレスがご使用の KVM のものであることを確認してください。その後、<strong>Advanced</strong>、<strong>Continue to "192.168.8.11"</strong> の順にクリックします（表示される文言はブラウザによって異なります）。</p>
 <p><img alt="Continue to 192.168.8.11" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/privacy_error_2.jpg" /></p>
 <p>その後、GL.iNet KVM コンソールにリダイレクトされます。</p>
 <p><img alt="local access to kvm admin" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/privacy_error_from_your_browser/local_access.png" /></p>
-<h2 id="_3">独自の証明書を使用できますか?<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="can-i-use-my-own-certificate">独自の証明書を使用できますか？<a class="headerlink" href="#can-i-use-my-own-certificate" title="Permanent link">&para;</a></h2>
 <p>はい。独自の SSL/TLS 証明書を KVM にインストールして使用できます。以下の手順に従ってください。</p>
 <ol>
 <li>
@@ -3804,7 +3804,7 @@
 </li>
 </ol>
 <hr />
-<p>まだ質問がありますか? <a href="https://forum.gl-inet.com" target="_blank">コミュニティ フォーラム</a> または <a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> にアクセスしてください。</p>
+<p>まだ質問がありますか？ <a href="https://forum.gl-inet.com" target="_blank">コミュニティ フォーラム</a> または <a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> にアクセスしてください。</p>
 
   <!-- Last update of source file -->
   
@@ -3814,7 +3814,7 @@
   <small>
     
       最終更新日:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月16日 08:53:37 UTC">2026年10月16日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月21日 08:45:04 UTC">2026年10月21日</span>
       
     
   </small>

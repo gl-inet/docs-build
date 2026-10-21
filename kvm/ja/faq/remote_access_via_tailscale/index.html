@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tailscale-kvm" class="md-skip">
+        <a href="#how-to-access-kvm-remotely-via-tailscale" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -3134,21 +3134,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#kvm-tailscale" class="md-nav__link">
+  <a href="#bind-kvm-to-tailscale" class="md-nav__link">
     KVM を Tailscale にバインド
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#bind-the-controlling-device" class="md-nav__link">
     制御側デバイスをバインドする
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tailscale" class="md-nav__link">
+  <a href="#remote-access-via-tailscale" class="md-nav__link">
     Tailscale 経由のリモート アクセス
   </a>
   
@@ -3725,21 +3725,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#kvm-tailscale" class="md-nav__link">
+  <a href="#bind-kvm-to-tailscale" class="md-nav__link">
     KVM を Tailscale にバインド
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#bind-the-controlling-device" class="md-nav__link">
     制御側デバイスをバインドする
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tailscale" class="md-nav__link">
+  <a href="#remote-access-via-tailscale" class="md-nav__link">
     Tailscale 経由のリモート アクセス
   </a>
   
@@ -3769,10 +3769,10 @@
   
 
   <!-- Markdown content -->
-  <h1 id="tailscale-kvm">Tailscale 経由で KVM にリモートでアクセスする方法<a class="headerlink" href="#tailscale-kvm" title="Permanent link">&para;</a></h1>
-<p>GL.iNet KVM は Tailscale を統合し、リモート アクセスのために Tailscale 仮想ネットワークにバインドできるようにします。GLKVM アプリをインストールしたり、クラウド サービスを使用したりする必要はありません。これは、制御側デバイスが Windows、macOS、Android、または iOS を実行していない場合 (したがって、GLKVM アプリをインストールできない場合)、または GLKVM アプリやクラウド サービスを使用したくない場合に特に便利です。</p>
+  <h1 id="how-to-access-kvm-remotely-via-tailscale">Tailscale 経由で KVM にリモートでアクセスする方法<a class="headerlink" href="#how-to-access-kvm-remotely-via-tailscale" title="Permanent link">&para;</a></h1>
+<p>GL.iNet KVM は Tailscale を統合し、リモート アクセスのために Tailscale 仮想ネットワークにバインドできるようにします。GLKVM アプリをインストールしたり、クラウド サービスを使用したりする必要はありません。これは、制御側デバイスが Windows、macOS、Android、または iOS を実行していない場合（したがって、GLKVM アプリをインストールできない場合）、または GLKVM アプリやクラウド サービスを使用したくない場合に特に便利です。</p>
 <p>Tailscale 経由で GL.iNet KVM にリモート アクセスするには、次の手順に従います。</p>
-<h2 id="kvm-tailscale">KVM を Tailscale にバインド<a class="headerlink" href="#kvm-tailscale" title="Permanent link">&para;</a></h2>
+<h2 id="bind-kvm-to-tailscale">KVM を Tailscale にバインド<a class="headerlink" href="#bind-kvm-to-tailscale" title="Permanent link">&para;</a></h2>
 <p><strong>始める前に、KVM と制御側デバイスを同じローカル ネットワークに接続してください。</strong></p>
 <ol>
 <li>
@@ -3802,8 +3802,8 @@
 <p><img alt="tailscale console 1" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/tailscale_panel_1.png" /></p>
 </li>
 </ol>
-<h2 id="_1">制御側デバイスをバインドする<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>以下の例は、Windows ラップトップ (制御側デバイスとして) を Tailscale ネットワークにバインドする方法を示しています。</p>
+<h2 id="bind-the-controlling-device">制御側デバイスをバインドする<a class="headerlink" href="#bind-the-controlling-device" title="Permanent link">&para;</a></h2>
+<p>以下の例は、Windows ラップトップ（制御側デバイスとして）を Tailscale ネットワークにバインドする方法を示しています。</p>
 <ol>
 <li>
 <p><a href="https://tailscale.com/download" target="_blank">ここから</a>からラップトップにTailscaleをインストールします。</p>
@@ -3813,7 +3813,7 @@
 <p><img alt="log in tailscale" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/log_in_tailscale.png" /></p>
 </li>
 <li>
-<p>ログイン後、ラップトップ (制御側デバイスなど) をテールネットに接続しようとしていることがページに表示されます。 「<strong>Connect</strong>」をクリックします。</p>
+<p>ログイン後、ラップトップ（制御側デバイスなど）をテールネットに接続しようとしていることがページに表示されます。 「<strong>Connect</strong>」をクリックします。</p>
 <p><img alt="connect pc to tailnet" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/connect_pc_to_tailscale.png" /></p>
 <p>ラップトップはテールネットに正常にバインドされます。</p>
 <p><img alt="bind pc successful" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/bind_pc_successful.png" /></p>
@@ -3823,15 +3823,15 @@
 <p><img alt="tailscale console 2" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/tailscale_panel_2.png" /></p>
 </li>
 </ol>
-<h2 id="tailscale">Tailscale 経由のリモート アクセス<a class="headerlink" href="#tailscale" title="Permanent link">&para;</a></h2>
-<p>Tailscale コンソールで、glkvm の <strong>Address</strong> (この例では <code>100.104.185.26</code>) をクリックします。</p>
+<h2 id="remote-access-via-tailscale">Tailscale 経由のリモート アクセス<a class="headerlink" href="#remote-access-via-tailscale" title="Permanent link">&para;</a></h2>
+<p>Tailscale コンソールで、glkvm の <strong>Address</strong> （この例では <code>100.104.185.26</code>）をクリックします。</p>
 <p><img alt="get vittual ip" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/get_vitual_ip.png" /></p>
 <p>次の 4 つの値が表示されます。</p>
 <ul>
-<li>glkvm (デバイス名)</li>
-<li>glkvm.tail1fd0.ts.net (Tailscale が割り当てたドメイン)</li>
-<li>fd7a:115c:a1e0:301:b92f (仮想 IPv6)</li>
-<li>100.104.185.26 (仮想 IPv4)。</li>
+<li>glkvm（デバイス名）</li>
+<li>glkvm.tail1fd0.ts.net（Tailscale が割り当てたドメイン）</li>
+<li>fd7a:115c:a1e0:301:b92f（仮想 IPv6）</li>
+<li>100.104.185.26（仮想 IPv4）。</li>
 </ul>
 <p>これらは、デバイスの識別と仮想ネットワーク通信のために Tailscale によって割り当てられます。 Tailscale が割り当てたドメイン、仮想 IPv4 および仮想 IPv6 を使用して、KVM デバイスにリモート アクセスできます。</p>
 <p>仮想 IPv4 を例に挙げます。</p>
@@ -3842,7 +3842,7 @@
 <li>
 <p>新しいタブを開き、IP アドレスをアドレス バーに貼り付けます。</p>
 <p><img alt="access vitual ip" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/enter_vitual_ip.png" /></p>
-<p>A プライバシー エラーが表示される場合があります。 <a href="../privacy_error_from_your_browser/" target="_blank">このプライバシー エラーが発生するのはなぜですか?</a></p>
+<p>A プライバシー エラーが表示される場合があります。 <a href="../privacy_error_from_your_browser/" target="_blank">このプライバシー エラーが発生するのはなぜですか？</a></p>
 <p><img alt="privacy error" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/privacy_error.png" /></p>
 <p><strong>Advanced</strong> をクリックし、<strong>100.104.185.26 に進みます</strong>。 GLKVM ログイン ページにリダイレクトされます。</p>
 <p><img alt="proceed" class="glboxshadow" src="https://static.gl-inet.com/docs/kvm/faq/remote_access_controlled_device_via_tailscale/proceed.png" /></p>
@@ -3853,7 +3853,7 @@
 </li>
 </ol>
 <hr />
-<p>まだ質問がありますか? <a href="https://forum.gl-inet.com" target="_blank">コミュニティ フォーラム</a> または <a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> にアクセスしてください。</p>
+<p>まだ質問がありますか？ <a href="https://forum.gl-inet.com" target="_blank">コミュニティ フォーラム</a> または <a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a> にアクセスしてください。</p>
 
   <!-- Last update of source file -->
   
@@ -3863,7 +3863,7 @@
   <small>
     
       最終更新日:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年8月27日 07:41:18 UTC">2026年8月27日</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月21日 08:45:04 UTC">2026年10月21日</span>
       
     
   </small>

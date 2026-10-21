@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jak-wyaczyc-wysyanie-pakietow-pingicmp-z-kvm" class="md-skip">
+        <a href="#how-to-disable-outgoing-pingicmp-packets-from-kvm" class="md-skip">
           Przejdź do treści
         </a>
       
@@ -2818,14 +2818,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#urzadzenia-obsugujace-wyacznie-ethernet" class="md-nav__link">
+  <a href="#for-ethernet-only-devices" class="md-nav__link">
     Urządzenia obsługujące wyłącznie Ethernet
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#urzadzenia-obsugujace-ethernet-i-wi-fi" class="md-nav__link">
+  <a href="#for-devices-with-both-ethernet-and-wi-fi" class="md-nav__link">
     Urządzenia obsługujące Ethernet i Wi-Fi
   </a>
   
@@ -3718,14 +3718,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#urzadzenia-obsugujace-wyacznie-ethernet" class="md-nav__link">
+  <a href="#for-ethernet-only-devices" class="md-nav__link">
     Urządzenia obsługujące wyłącznie Ethernet
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#urzadzenia-obsugujace-ethernet-i-wi-fi" class="md-nav__link">
+  <a href="#for-devices-with-both-ethernet-and-wi-fi" class="md-nav__link">
     Urządzenia obsługujące Ethernet i Wi-Fi
   </a>
   
@@ -3755,9 +3755,9 @@
   
 
   <!-- Markdown content -->
-  <h1 id="jak-wyaczyc-wysyanie-pakietow-pingicmp-z-kvm">Jak wyłączyć wysyłanie pakietów PING/ICMP z KVM<a class="headerlink" href="#jak-wyaczyc-wysyanie-pakietow-pingicmp-z-kvm" title="Permanent link">&para;</a></h1>
+  <h1 id="how-to-disable-outgoing-pingicmp-packets-from-kvm">Jak wyłączyć wysyłanie pakietów PING/ICMP z KVM<a class="headerlink" href="#how-to-disable-outgoing-pingicmp-packets-from-kvm" title="Permanent link">&para;</a></h1>
 <p>Urządzenie KVM okresowo wysyła pakiety PING (ICMP), aby sprawdzać łączność sieciową. Ten dokument wyjaśnia, jak wyłączyć tę funkcję i jakie są tego skutki uboczne.</p>
-<h2 id="urzadzenia-obsugujace-wyacznie-ethernet">Urządzenia obsługujące wyłącznie Ethernet<a class="headerlink" href="#urzadzenia-obsugujace-wyacznie-ethernet" title="Permanent link">&para;</a></h2>
+<h2 id="for-ethernet-only-devices">Urządzenia obsługujące wyłącznie Ethernet<a class="headerlink" href="#for-ethernet-only-devices" title="Permanent link">&para;</a></h2>
 <p>W urządzeniach z samym połączeniem Ethernet, takich jak Comet (GL-RM1) i Comet PoE (GL-RM1PE), system wysyła pakiety PING do bramy domyślnej, aby sprawdzić dostęp do internetu. Wynik jest sygnalizowany stanem diody LED.</p>
 <p>Aby tymczasowo wyłączyć tę funkcję, uruchom poniższe polecenie:</p>
 <div class="highlight"><pre><span></span><code>/etc/init.d/S23led<span class="w"> </span>stop
@@ -3765,7 +3765,7 @@
 <blockquote>
 <p><strong>Uwaga:</strong> Wyłączenie tej usługi spowoduje również wyłączenie <strong>przycisku Reset</strong>.</p>
 </blockquote>
-<h2 id="urzadzenia-obsugujace-ethernet-i-wi-fi">Urządzenia obsługujące Ethernet i Wi-Fi<a class="headerlink" href="#urzadzenia-obsugujace-ethernet-i-wi-fi" title="Permanent link">&para;</a></h2>
+<h2 id="for-devices-with-both-ethernet-and-wi-fi">Urządzenia obsługujące Ethernet i Wi-Fi<a class="headerlink" href="#for-devices-with-both-ethernet-and-wi-fi" title="Permanent link">&para;</a></h2>
 <p>W urządzeniach wyposażonych w Ethernet i Wi-Fi system wysyła pakiety PING do publicznych serwerów DNS, aby sprawdzać dostęp do internetu na każdym interfejsie sieciowym. Mechanizm ten służy do dynamicznego przełączania awaryjnego między łączami WAN i umożliwia przełączenie na Wi-Fi, gdy połączenie Ethernet utraci dostęp do internetu.</p>
 <p>Aby tymczasowo wyłączyć tę funkcję, uruchom poniższe polecenie:</p>
 <div class="highlight"><pre><span></span><code>/etc/init.d/S98multi-wan<span class="w"> </span>stop
@@ -3781,7 +3781,7 @@
   <small>
     
       Ostatnia aktualizacja:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 października 2026 10:05:16 UTC">16 października 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 października 2026 08:38:37 UTC">21 października 2026</span>
       
     
   </small>

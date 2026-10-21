@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ausgehende-pingicmp-pakete-vom-kvm-deaktivieren" class="md-skip">
+        <a href="#how-to-disable-outgoing-pingicmp-packets-from-kvm" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -1646,7 +1646,7 @@
         
   
   <span class="md-ellipsis">
-    WAN Network Detection and Failover-Logik von Comet 5G
+    WAN-Netzwerkerkennung und Failover-Logik von Comet 5G
   </span>
   
 
@@ -2950,14 +2950,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fuer-reine-ethernet-geraete" class="md-nav__link">
+  <a href="#for-ethernet-only-devices" class="md-nav__link">
     Fuer reine Ethernet-Geraete
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fuer-geraete-mit-ethernet-und-wi-fi" class="md-nav__link">
+  <a href="#for-devices-with-both-ethernet-and-wi-fi" class="md-nav__link">
     Fuer Geraete mit Ethernet und Wi-Fi
   </a>
   
@@ -3850,14 +3850,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fuer-reine-ethernet-geraete" class="md-nav__link">
+  <a href="#for-ethernet-only-devices" class="md-nav__link">
     Fuer reine Ethernet-Geraete
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fuer-geraete-mit-ethernet-und-wi-fi" class="md-nav__link">
+  <a href="#for-devices-with-both-ethernet-and-wi-fi" class="md-nav__link">
     Fuer Geraete mit Ethernet und Wi-Fi
   </a>
   
@@ -3887,9 +3887,9 @@
   
 
   <!-- Markdown content -->
-  <h1 id="ausgehende-pingicmp-pakete-vom-kvm-deaktivieren">Ausgehende PING/ICMP-Pakete vom KVM deaktivieren<a class="headerlink" href="#ausgehende-pingicmp-pakete-vom-kvm-deaktivieren" title="Permanent link">&para;</a></h1>
+  <h1 id="how-to-disable-outgoing-pingicmp-packets-from-kvm">Ausgehende PING/ICMP-Pakete vom KVM deaktivieren<a class="headerlink" href="#how-to-disable-outgoing-pingicmp-packets-from-kvm" title="Permanent link">&para;</a></h1>
 <p>Das KVM-Geraet sendet regelmaessig PING (ICMP)-Pakete, um die Netzwerkverbindung zu pruefen. Dieses Dokument erklaert, wie Sie dieses Verhalten deaktivieren und welche Nebenwirkungen damit verbunden sind.</p>
-<h2 id="fuer-reine-ethernet-geraete">Fuer reine Ethernet-Geraete<a class="headerlink" href="#fuer-reine-ethernet-geraete" title="Permanent link">&para;</a></h2>
+<h2 id="for-ethernet-only-devices">Fuer reine Ethernet-Geraete<a class="headerlink" href="#for-ethernet-only-devices" title="Permanent link">&para;</a></h2>
 <p>Bei Geraeten mit ausschliesslich Ethernet-Verbindung, z. B. Comet (GL-RM1) und Comet PoE (GL-RM1PE), sendet das System PING-Pakete an das Standard-Gateway, um die Internetverbindung zu pruefen. Das Ergebnis wird ueber den LED-Status angezeigt.</p>
 <p>Fuehren Sie den folgenden Befehl aus, um dieses Verhalten temporaer zu deaktivieren:</p>
 <div class="highlight"><pre><span></span><code>/etc/init.d/S23led<span class="w"> </span>stop
@@ -3897,7 +3897,7 @@
 <blockquote>
 <p><strong>Hinweis:</strong> Wenn dieser Dienst deaktiviert wird, ist auch die <strong>Reset button</strong> nicht verfuegbar.</p>
 </blockquote>
-<h2 id="fuer-geraete-mit-ethernet-und-wi-fi">Fuer Geraete mit Ethernet und Wi-Fi<a class="headerlink" href="#fuer-geraete-mit-ethernet-und-wi-fi" title="Permanent link">&para;</a></h2>
+<h2 id="for-devices-with-both-ethernet-and-wi-fi">Fuer Geraete mit Ethernet und Wi-Fi<a class="headerlink" href="#for-devices-with-both-ethernet-and-wi-fi" title="Permanent link">&para;</a></h2>
 <p>Bei Geraeten mit Ethernet und Wi-Fi sendet das System PING-Pakete an oeffentliche DNS-Server, um den Internetzugriff fuer jede Netzwerkschnittstelle zu pruefen. Dieser Mechanismus dient dem dynamischen Multi-WAN-Failover und stellt sicher, dass das Geraet zu Wi-Fi wechseln kann, wenn die Ethernet-Verbindung den Internetzugriff verliert.</p>
 <p>Fuehren Sie den folgenden Befehl aus, um dieses Verhalten temporaer zu deaktivieren:</p>
 <div class="highlight"><pre><span></span><code>/etc/init.d/S98multi-wan<span class="w"> </span>stop
@@ -3913,7 +3913,7 @@
   <small>
     
       Letztes Update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="29. Juli 2026 10:13:25 UTC">29. Juli 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21. Oktober 2026 08:38:37 UTC">21. Oktober 2026</span>
       
     
   </small>
