@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#so-aktivieren-sie-den-openvpn-tap-s2s-modus-auf-glinet-routern" class="md-skip">
+        <a href="#how-to-enable-openvpn-tap-s2s-mode-on-glinet-routers" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -3436,7 +3436,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#einsatzszenarien" class="md-nav__link">
+  <a href="#usage-scenarios" class="md-nav__link">
     <span class="md-ellipsis">
       Einsatzszenarien
     </span>
@@ -3445,7 +3445,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tap-s2s-vs-tun-modus" class="md-nav__link">
+  <a href="#tap-s2s-vs-tun-mode" class="md-nav__link">
     <span class="md-ellipsis">
       TAP-S2S- vs. TUN-Modus
     </span>
@@ -3454,7 +3454,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#anleitung" class="md-nav__link">
+  <a href="#tutorials" class="md-nav__link">
     <span class="md-ellipsis">
       Anleitung
     </span>
@@ -7128,7 +7128,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#einsatzszenarien" class="md-nav__link">
+  <a href="#usage-scenarios" class="md-nav__link">
     <span class="md-ellipsis">
       Einsatzszenarien
     </span>
@@ -7137,7 +7137,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tap-s2s-vs-tun-modus" class="md-nav__link">
+  <a href="#tap-s2s-vs-tun-mode" class="md-nav__link">
     <span class="md-ellipsis">
       TAP-S2S- vs. TUN-Modus
     </span>
@@ -7146,7 +7146,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#anleitung" class="md-nav__link">
+  <a href="#tutorials" class="md-nav__link">
     <span class="md-ellipsis">
       Anleitung
     </span>
@@ -7178,10 +7178,10 @@
   
 
   <!-- Markdown content -->
-  <h1 id="so-aktivieren-sie-den-openvpn-tap-s2s-modus-auf-glinet-routern">So aktivieren Sie den OpenVPN-TAP-S2S-Modus auf GL.iNet-Routern<a class="headerlink" href="#so-aktivieren-sie-den-openvpn-tap-s2s-modus-auf-glinet-routern" title="Permanent link">&para;</a></h1>
-<h2 id="einsatzszenarien">Einsatzszenarien<a class="headerlink" href="#einsatzszenarien" title="Permanent link">&para;</a></h2>
+  <h1 id="how-to-enable-openvpn-tap-s2s-mode-on-glinet-routers">So aktivieren Sie den OpenVPN-TAP-S2S-Modus auf GL.iNet-Routern<a class="headerlink" href="#how-to-enable-openvpn-tap-s2s-mode-on-glinet-routers" title="Permanent link">&para;</a></h1>
+<h2 id="usage-scenarios">Einsatzszenarien<a class="headerlink" href="#usage-scenarios" title="Permanent link">&para;</a></h2>
 <p>Nach dem Aktivieren des TAP-S2S-Modus kann das OpenVPN-Client-Gerät per Fernzugriff auf das OpenVPN-Server-Gerät zugreifen, und das OpenVPN-Server-Gerät kann ebenfalls per Fernzugriff auf das OpenVPN-Client-Gerät zugreifen. Der Nachteil dabei ist jedoch, dass die vom OpenVPN-Client selbst festgelegten VPN-Regeln nach dem Aktivieren des TAP-S2S-Modus nicht mehr wirksam sind.</p>
-<h2 id="tap-s2s-vs-tun-modus">TAP-S2S- vs. TUN-Modus<a class="headerlink" href="#tap-s2s-vs-tun-modus" title="Permanent link">&para;</a></h2>
+<h2 id="tap-s2s-vs-tun-mode">TAP-S2S- vs. TUN-Modus<a class="headerlink" href="#tap-s2s-vs-tun-mode" title="Permanent link">&para;</a></h2>
 <p>Netzwerktopologie</p>
 <p><img alt="tap_s2s_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/tap_s2s_vs_tun/tap_s2s_topology.png" /></p>
 <p><img alt="tun_topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/tap_s2s_vs_tun/tun_topology.png" /></p>
@@ -7192,7 +7192,7 @@
 <li>Wenn ein Gerät auf der LAN-Seite des GL-X3000 die IP-Adresse eines Geräts auf der LAN-Seite des GL-MT6000 kennt, ist im TAP-S2S-Modus ein direkter Fernzugriff möglich. Im TUN-Modus ist dies ohne zusätzliche Einstellungen nicht direkt möglich.</li>
 <li>Im TAP-S2S-Modus muss der GL-X3000 über den GL-MT6000 auf das Internet zugreifen, während der GL-X3000 im TUN-Modus direkt auf das Internet zugreifen kann. Daher sind im TAP-S2S-Modus die auf dem GL-X3000 festgelegten VPN-Regeln nicht wirksam und es müssen die VPN-Regeln des GL-MT6000 befolgt werden.</li>
 </ol>
-<h2 id="anleitung">Anleitung<a class="headerlink" href="#anleitung" title="Permanent link">&para;</a></h2>
+<h2 id="tutorials">Anleitung<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>
 <p>Verwenden Sie zunächst einen Router mit öffentlicher IP-Adresse (angenommen GL-MT6000), um den <strong>OpenVPN Server</strong> zu öffnen, setzen Sie den Gerätemodus auf <strong>TAP-S2S</strong>, klicken Sie auf <strong>Apply</strong> und anschließend auf <strong>Export Client Configuration</strong>.</p>
 <p><img alt="tutorials_select_mode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/tap_s2s_vs_tun/tutorials_select_mode.png" /></p>
 <p><img alt="tutorials_export" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/tap_s2s_vs_tun/tutorials_export.png" /></p>
@@ -7234,7 +7234,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="3. August 2026 06:39:17 UTC">3. August 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20. Oktober 2026 09:53:39 UTC">20. Oktober 2026</span>
   </span>
 
     

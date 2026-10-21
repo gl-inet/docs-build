@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#comment-acheminer-les-requetes-dns-du-client-vpn-vers-le-dns-amont-du-serveur-vpn" class="md-skip">
+        <a href="#how-to-route-vpn-client-dns-queries-to-the-vpn-servers-upstream-dns" class="md-skip">
           Aller au contenu
         </a>
       
@@ -3562,7 +3562,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#topologie" class="md-nav__link">
+  <a href="#topology" class="md-nav__link">
     <span class="md-ellipsis">
       Topologie
     </span>
@@ -3571,7 +3571,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
       Configuration
     </span>
@@ -3580,7 +3580,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#verifier-la-resolution-dns" class="md-nav__link">
+  <a href="#verify-dns-resolution" class="md-nav__link">
     <span class="md-ellipsis">
       Vérifier la résolution DNS
     </span>
@@ -7128,7 +7128,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#topologie" class="md-nav__link">
+  <a href="#topology" class="md-nav__link">
     <span class="md-ellipsis">
       Topologie
     </span>
@@ -7137,7 +7137,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
       Configuration
     </span>
@@ -7146,7 +7146,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#verifier-la-resolution-dns" class="md-nav__link">
+  <a href="#verify-dns-resolution" class="md-nav__link">
     <span class="md-ellipsis">
       Vérifier la résolution DNS
     </span>
@@ -7178,16 +7178,16 @@
   
 
   <!-- Markdown content -->
-  <h1 id="comment-acheminer-les-requetes-dns-du-client-vpn-vers-le-dns-amont-du-serveur-vpn">Comment acheminer les requêtes DNS du client VPN vers le DNS amont du serveur VPN ?<a class="headerlink" href="#comment-acheminer-les-requetes-dns-du-client-vpn-vers-le-dns-amont-du-serveur-vpn" title="Permanent link">&para;</a></h1>
+  <h1 id="how-to-route-vpn-client-dns-queries-to-the-vpn-servers-upstream-dns">Comment acheminer les requêtes DNS du client VPN vers le DNS amont du serveur VPN ?<a class="headerlink" href="#how-to-route-vpn-client-dns-queries-to-the-vpn-servers-upstream-dns" title="Permanent link">&para;</a></h1>
 <p>Ce tutoriel présente les étapes permettant de rediriger toutes les requêtes DNS des clients VPN vers votre serveur DNS auto-hébergé sur le côté LAN de votre routeur principal, en amont du serveur VPN.</p>
-<h2 id="topologie">Topologie<a class="headerlink" href="#topologie" title="Permanent link">&para;</a></h2>
+<h2 id="topology">Topologie<a class="headerlink" href="#topology" title="Permanent link">&para;</a></h2>
 <p>Dans ce tutoriel, nous utilisons <strong>Flint 3 (GL-BE9300)</strong> et <strong>Slate 7 (GL-BE3600)</strong> comme exemples. </p>
 <p>Flint 3 est le serveur VPN, qui a un routeur principal sur son réseau amont, et Slate 7 est le client VPN qui se connecte à Flint 3.</p>
 <p>Lorsqu'un tunnel VPN est établi entre le serveur et le client VPN, par défaut, les requêtes DNS du client VPN sont d'abord envoyées au serveur VPN, puis transférées au routeur principal, et enfin résolues par les serveurs DNS attribués par le fournisseur d'accès Internet configurés sur le WAN du routeur principal.</p>
 <p><img alt="topology 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/route_vpn_dns_to_server_upstream_dns/topology-1.jpg" /></p>
 <p>Cependant, si vous avez déployé un serveur DNS auto-hébergé (adresse IP <code>192.168.1.13</code>) sur le routeur principal, des configurations supplémentaires sont nécessaires pour acheminer les requêtes DNS vers ce serveur DNS auto-hébergé.</p>
 <p><img alt="topology 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/route_vpn_dns_to_server_upstream_dns/topology-2.jpg" /></p>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h2 id="setup">Configuration<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Connectez-vous au panneau d'administration web du Flint 3, accédez à <strong>NETWORK</strong> -&gt; <strong>DNS</strong>. Basculez le mode serveur DNS (<strong>DNS Server Mode</strong>) sur <strong>Manual DNS</strong>, puis saisissez l'adresse IP de votre serveur DNS.</p>
@@ -7220,7 +7220,7 @@
 <p><img alt="start client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/route_vpn_dns_to_server_upstream_dns/start_client.png" /></p>
 </li>
 </ol>
-<h2 id="verifier-la-resolution-dns">Vérifier la résolution DNS<a class="headerlink" href="#verifier-la-resolution-dns" title="Permanent link">&para;</a></h2>
+<h2 id="verify-dns-resolution">Vérifier la résolution DNS<a class="headerlink" href="#verify-dns-resolution" title="Permanent link">&para;</a></h2>
 <p>Exécutez la commande suivante pour capturer le trafic DNS sur le client VPN. Elle montrera que tout le trafic DNS du client VPN est envoyé vers le serveur VPN (c'est-à-dire <code>10.0.0.1</code> dans cet exemple).</p>
 <p><img alt="client dns traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/route_vpn_dns_to_server_upstream_dns/client_dns_traffic.png" /></p>
 <p>Exécutez la commande suivante pour capturer le trafic DNS sur le serveur VPN. Elle montrera que tout le trafic DNS du client VPN est finalement envoyé vers le serveur DNS auto-hébergé (c'est-à-dire <code>192.168.1.13</code> dans cet exemple).</p>
@@ -7251,7 +7251,7 @@
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="26 mars 2026 07:44:18 UTC">26 mars 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 octobre 2026 09:53:39 UTC">20 octobre 2026</span>
   </span>
 
     

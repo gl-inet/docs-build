@@ -7412,7 +7412,7 @@
 <p>Select VPN profile.</p>
 <p>Select one or multiple profiles, and adjust their priority on the right as needed, then click <strong>Next</strong>. </p>
 <p><img alt="select profile" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/select_profile.png" /></p>
-<p><strong>Note</strong>: When multiple profiles are selected, the tunnel will attempt to connect using each profile in priority order until a connection is successfully established. If all profiles within a single tunnel fail to connect, the system will determine whether to switch to the router's local network (WAN) based on the status of the Kill Switch in the <a href="#tunnel-options">Tunnel Options</a> and <a href="#all-other-traffic">All Other Traffic</a> settings.</p>
+<p><strong>Note</strong>: When multiple profiles are selected, the tunnel will attempt to connect using each profile in priority order until a connection is successfully established. If all profiles within a single tunnel fail to connect, the system will determine whether to switch to the router's local WAN based on the status of the Kill Switch in the <a href="#tunnel-options">Tunnel Options</a> and <a href="#all-other-traffic">All Other Traffic</a> settings.</p>
 </li>
 <li>
 <p>Select client source, then click <strong>Next</strong>.</p>
@@ -7455,7 +7455,7 @@
 </ul>
 </li>
 <li>
-<p>A VPN tunnel is added successfully. You will be directed to the <strong>VPN Dashboard</strong>. Add more VPN tunnels if needed.</p>
+<p>The VPN tunnel has been added successfully. You will be directed to the <strong>VPN Dashboard</strong>. Add more VPN tunnels if needed.</p>
 <p>For security, please go to <a href="#all-other-traffic">All Other Traffic</a> and <a href="#tunnel-options">Tunnel Options</a> to check <strong>Kill Switch</strong> status before enabling your VPN tunnel.</p>
 </li>
 </ol>
@@ -7500,7 +7500,7 @@
 <p><img alt="case 1 kill switch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/1_killswitch2.png" /></p>
 </li>
 <li>
-<p>Make sure the <strong>Allow Non-VPN Traffic</strong> is enabled. This is enabled by default to ensure that traffic not matching the VPN tunnel can still access the Internet through the local WAN.</p>
+<p>Make sure <strong>Allow Non-VPN Traffic</strong> is enabled. This is enabled by default to ensure that traffic not matching the VPN tunnel can still access the Internet through the local WAN.</p>
 <p><img alt="case 1 allow non-vpn traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/1_allow_nonvpn.png" /></p>
 </li>
 <li>
@@ -7581,7 +7581,7 @@
 <p><img alt="tunnel 2 kill switch" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_killswitch4.png" /></p>
 </li>
 <li>
-<p>Click the gear icon at the upper right and enable <strong>Enhanced Kill Switch</strong>. This ensures that all traffic must access Internet via the VPN.</p>
+<p>Click the gear icon at the upper right and enable <strong>Enhanced Kill Switch</strong>. This ensures that all traffic must access the Internet via the VPN.</p>
 <p><img alt="enhanced killswitch1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_enhanced_killswitch1.png" /></p>
 <p><img alt="enhanced killswitch2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/2_enhanced_killswitch2.png" /></p>
 </li>
@@ -7603,7 +7603,7 @@
 <p>For an individual tunnel, enabling <strong>Kill Switch</strong> blocks Internet access for traffic assigned to that tunnel if its connection fails. Other traffic follows the <strong>All Other Traffic</strong> settings.</p>
 <p><strong>Enhanced Kill Switch</strong> blocks Internet traffic that does not match any VPN tunnel. It does not override each tunnel's <strong>Kill Switch</strong> setting.</p>
 </div>
-<p>Since firmware v4.8, GL.iNet routers supports Kill Switch configuration for the global VPN connection, as well as for each individual VPN tunnel.</p>
+<p>Since firmware v4.8, GL.iNet routers support Kill Switch configuration for the global VPN connection, as well as for each individual VPN tunnel.</p>
 <ul>
 <li>
 <p>To set up Kill Switch for the global VPN connection (i.e., Enhanced Kill Switch), refer to <a href="#all-other-traffic">All Other Traffic</a>.</p>
@@ -7613,7 +7613,7 @@
 </li>
 </ul>
 <h2 id="all-other-traffic">All Other Traffic<a class="headerlink" href="#all-other-traffic" title="Permanent link">&para;</a></h2>
-<p>Click the gear icon at the upper right to set up policy for those traffic not matching VPN tunnel.</p>
+<p>Click the gear icon at the upper right to set up a policy for traffic that does not match any VPN tunnel.</p>
 <p><img alt="all other traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/vpn_dashboard/4.9/all_other_traffic.png" /></p>
 <p>This policy controls whether traffic that does not match any of your VPN tunnel groups can access the Internet or not. It has two options: <strong>Allow Non-VPN Traffic</strong> and <strong>Enhanced Kill Switch</strong>.</p>
 <ul>
@@ -7711,7 +7711,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 20, 2026 10:19:07 UTC">October 20, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 21, 2026 01:39:56 UTC">October 21, 2026</span>
   </span>
 
     

@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#como-acceder-al-lado-lan-del-cliente-wireguard-desde-el-servidor" class="md-skip">
+        <a href="#how-to-access-wireguard-client-lan-side-from-server" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -3373,7 +3373,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#topologia" class="md-nav__link">
+  <a href="#topology" class="md-nav__link">
     <span class="md-ellipsis">
       Topología
     </span>
@@ -3382,7 +3382,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-anadir-una-regla-de-ruta-en-el-servidor" class="md-nav__link">
+  <a href="#1-add-route-rule-on-server" class="md-nav__link">
     <span class="md-ellipsis">
       1. Añadir una regla de ruta en el servidor
     </span>
@@ -3391,7 +3391,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-permitir-el-acceso-remoto-a-la-lan-del-cliente" class="md-nav__link">
+  <a href="#2-allow-remote-access-to-client-lan" class="md-nav__link">
     <span class="md-ellipsis">
       2. Permitir el acceso remoto a la LAN del cliente
     </span>
@@ -3400,7 +3400,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-probar-la-conexion" class="md-nav__link">
+  <a href="#3-test-connection" class="md-nav__link">
     <span class="md-ellipsis">
       3. Probar la conexión
     </span>
@@ -7137,7 +7137,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#topologia" class="md-nav__link">
+  <a href="#topology" class="md-nav__link">
     <span class="md-ellipsis">
       Topología
     </span>
@@ -7146,7 +7146,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-anadir-una-regla-de-ruta-en-el-servidor" class="md-nav__link">
+  <a href="#1-add-route-rule-on-server" class="md-nav__link">
     <span class="md-ellipsis">
       1. Añadir una regla de ruta en el servidor
     </span>
@@ -7155,7 +7155,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-permitir-el-acceso-remoto-a-la-lan-del-cliente" class="md-nav__link">
+  <a href="#2-allow-remote-access-to-client-lan" class="md-nav__link">
     <span class="md-ellipsis">
       2. Permitir el acceso remoto a la LAN del cliente
     </span>
@@ -7164,7 +7164,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-probar-la-conexion" class="md-nav__link">
+  <a href="#3-test-connection" class="md-nav__link">
     <span class="md-ellipsis">
       3. Probar la conexión
     </span>
@@ -7196,12 +7196,12 @@
   
 
   <!-- Markdown content -->
-  <h1 id="como-acceder-al-lado-lan-del-cliente-wireguard-desde-el-servidor">Cómo acceder al lado LAN del cliente WireGuard desde el servidor<a class="headerlink" href="#como-acceder-al-lado-lan-del-cliente-wireguard-desde-el-servidor" title="Permanent link">&para;</a></h1>
+  <h1 id="how-to-access-wireguard-client-lan-side-from-server">Cómo acceder al lado LAN del cliente WireGuard desde el servidor<a class="headerlink" href="#how-to-access-wireguard-client-lan-side-from-server" title="Permanent link">&para;</a></h1>
 <p>Este tutorial presenta los pasos para acceder, desde el lado de su servidor WireGuard, a la subred LAN del cliente WireGuard, por ejemplo cámaras IP, NAS, etc.</p>
-<h2 id="topologia">Topología<a class="headerlink" href="#topologia" title="Permanent link">&para;</a></h2>
+<h2 id="topology">Topología<a class="headerlink" href="#topology" title="Permanent link">&para;</a></h2>
 <p>Como se muestra a continuación, el GL-MT2500 es un servidor WireGuard y el GL-AXT1800 es un cliente WireGuard conectado a él. Puede acceder desde el lado del servidor a los dispositivos del lado LAN del GL-AXT1800, por ejemplo una cámara IP o un NAS.</p>
 <p><img alt="Topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/Topology.jpg" /></p>
-<h2 id="1-anadir-una-regla-de-ruta-en-el-servidor">1. Añadir una regla de ruta en el servidor<a class="headerlink" href="#1-anadir-una-regla-de-ruta-en-el-servidor" title="Permanent link">&para;</a></h2>
+<h2 id="1-add-route-rule-on-server">1. Añadir una regla de ruta en el servidor<a class="headerlink" href="#1-add-route-rule-on-server" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Para firmware v4.7 y anteriores</summary>
 <p>Inicie sesión en el panel de administración web de <u>su servidor WireGuard</u> y luego vaya a <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Server</strong>.</p>
@@ -7228,7 +7228,7 @@
 <p>Por lo tanto, configure <strong>Gateway</strong> como <strong>10.1.0.2</strong> y luego haga clic en <strong>Apply</strong>.</p>
 <p><img alt="add route rule 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-3.png" /></p>
 </details>
-<h2 id="2-permitir-el-acceso-remoto-a-la-lan-del-cliente">2. Permitir el acceso remoto a la LAN del cliente<a class="headerlink" href="#2-permitir-el-acceso-remoto-a-la-lan-del-cliente" title="Permanent link">&para;</a></h2>
+<h2 id="2-allow-remote-access-to-client-lan">2. Permitir el acceso remoto a la LAN del cliente<a class="headerlink" href="#2-allow-remote-access-to-client-lan" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Para firmware v4.7 y anteriores</summary>
 <p>Inicie sesión en el panel de administración web de <u>su cliente WireGuard</u> y vaya a <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Client</strong>.</p>
@@ -7253,7 +7253,7 @@
 <p>En la ventana emergente, habilite <strong>Allow Remote Access the LAN Subnet</strong> y haga clic en <strong>Apply</strong>.</p>
 <p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.9-allow-remote-access-lan.png" width="600" /></p>
 </details>
-<h2 id="3-probar-la-conexion">3. Probar la conexión<a class="headerlink" href="#3-probar-la-conexion" title="Permanent link">&para;</a></h2>
+<h2 id="3-test-connection">3. Probar la conexión<a class="headerlink" href="#3-test-connection" title="Permanent link">&para;</a></h2>
 <p>Compruebe si puede acceder desde el lado del servidor a los dispositivos LAN de su cliente WireGuard.</p>
 <p>Puede probar la conexión con <code>ping</code>. Por ejemplo, en un dispositivo conectado al servidor WireGuard, es decir, el GL-MT2500, haga <code>ping</code> a la dirección IP de un dispositivo dentro de la LAN de su cliente WireGuard, es decir, el GL-AXT1800, y compruebe si responde correctamente.</p>
 <p><img alt="ping" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/ping.jpg" /></p>
@@ -7283,7 +7283,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 de octubre de 2026 08:30:23 UTC">16 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 de octubre de 2026 09:53:39 UTC">20 de octubre de 2026</span>
   </span>
 
     

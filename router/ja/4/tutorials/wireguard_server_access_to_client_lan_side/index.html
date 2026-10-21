@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wireguardlan" class="md-skip">
+        <a href="#how-to-access-wireguard-client-lan-side-from-server" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -3373,7 +3373,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#topology" class="md-nav__link">
     <span class="md-ellipsis">
       トポロジー
     </span>
@@ -3382,7 +3382,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-add-route-rule-on-server" class="md-nav__link">
     <span class="md-ellipsis">
       1. サーバーでルートルールを追加する
     </span>
@@ -3391,7 +3391,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-lan" class="md-nav__link">
+  <a href="#2-allow-remote-access-to-client-lan" class="md-nav__link">
     <span class="md-ellipsis">
       2. クライアントLANへのリモートアクセスを許可する
     </span>
@@ -3400,7 +3400,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-test-connection" class="md-nav__link">
     <span class="md-ellipsis">
       3. 接続をテストする
     </span>
@@ -7137,7 +7137,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#topology" class="md-nav__link">
     <span class="md-ellipsis">
       トポロジー
     </span>
@@ -7146,7 +7146,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-add-route-rule-on-server" class="md-nav__link">
     <span class="md-ellipsis">
       1. サーバーでルートルールを追加する
     </span>
@@ -7155,7 +7155,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-lan" class="md-nav__link">
+  <a href="#2-allow-remote-access-to-client-lan" class="md-nav__link">
     <span class="md-ellipsis">
       2. クライアントLANへのリモートアクセスを許可する
     </span>
@@ -7164,7 +7164,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-test-connection" class="md-nav__link">
     <span class="md-ellipsis">
       3. 接続をテストする
     </span>
@@ -7196,12 +7196,12 @@
   
 
   <!-- Markdown content -->
-  <h1 id="wireguardlan">サーバー側からWireGuardクライアントのLAN側へアクセスする方法<a class="headerlink" href="#wireguardlan" title="Permanent link">&para;</a></h1>
+  <h1 id="how-to-access-wireguard-client-lan-side-from-server">サーバー側からWireGuardクライアントのLAN側へアクセスする方法<a class="headerlink" href="#how-to-access-wireguard-client-lan-side-from-server" title="Permanent link">&para;</a></h1>
 <p>このチュートリアルでは、WireGuardサーバー側から、WireGuardクライアントのLANサブネット（IPカメラ、NAS など）へアクセスする手順を紹介します。</p>
-<h2 id="_1">トポロジー<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="topology">トポロジー<a class="headerlink" href="#topology" title="Permanent link">&para;</a></h2>
 <p>以下の図のように、GL-MT2500 がWireGuardサーバー、GL-AXT1800 が接続先のWireGuardクライアントです。サーバー側から GL-AXT1800 のLAN側にあるデバイス（IPカメラやNASなど）へアクセスできます。</p>
 <p><img alt="Topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/Topology.jpg" /></p>
-<h2 id="1">1. サーバーでルートルールを追加する<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h2 id="1-add-route-rule-on-server">1. サーバーでルートルールを追加する<a class="headerlink" href="#1-add-route-rule-on-server" title="Permanent link">&para;</a></h2>
 <details>
 <summary>ファームウェア v4.7 以前</summary>
 <p><u>WireGuardサーバー側</u>のWeb管理パネルにログインし、<strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Server</strong> に移動します。</p>
@@ -7228,7 +7228,7 @@
 <p>したがって、Gateway を <strong>10.1.0.2</strong> に設定し、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="add route rule 3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.8-route-rule-3.png" /></p>
 </details>
-<h2 id="2-lan">2. クライアントLANへのリモートアクセスを許可する<a class="headerlink" href="#2-lan" title="Permanent link">&para;</a></h2>
+<h2 id="2-allow-remote-access-to-client-lan">2. クライアントLANへのリモートアクセスを許可する<a class="headerlink" href="#2-allow-remote-access-to-client-lan" title="Permanent link">&para;</a></h2>
 <details>
 <summary>ファームウェア v4.7 以前</summary>
 <p><u>WireGuardクライアント側</u>のWeb管理パネルにログインし、<strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Client</strong> に移動します。</p>
@@ -7253,7 +7253,7 @@
 <p>ポップアップウィンドウで <strong>Allow Remote Access the LAN Subnet</strong> を有効にし、<strong>Apply</strong> をクリックします。</p>
 <p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/4.9-allow-remote-access-lan.png" width="600" /></p>
 </details>
-<h2 id="3">3. 接続をテストする<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h2 id="3-test-connection">3. 接続をテストする<a class="headerlink" href="#3-test-connection" title="Permanent link">&para;</a></h2>
 <p>サーバー側からWireGuardクライアントのLANデバイスへアクセスできるかテストします。</p>
 <p>ping でテストできます。たとえば、WireGuardサーバー（GL-MT2500）に接続されたデバイスから、WireGuardクライアント（GL-AXT1800）のLAN内デバイスのIPアドレスへ ping を送信し、正常に応答するか確認してください。</p>
 <p><img alt="ping" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/wiregaurd_server_access_client_lan_side/ping.jpg" /></p>
@@ -7283,7 +7283,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月16日 08:30:23 UTC">2026年10月16日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月20日 09:53:39 UTC">2026年10月20日</span>
   </span>
 
     

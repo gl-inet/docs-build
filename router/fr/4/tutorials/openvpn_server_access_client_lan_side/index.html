@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#comment-acceder-au-lan-du-client-openvpn-depuis-le-serveur" class="md-skip">
+        <a href="#how-to-access-openvpn-client-lan-side-from-server" class="md-skip">
           Aller au contenu
         </a>
       
@@ -3352,7 +3352,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#topologie" class="md-nav__link">
+  <a href="#topology" class="md-nav__link">
     <span class="md-ellipsis">
       Topologie
     </span>
@@ -3361,7 +3361,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-ajouter-une-regle-de-routage-sur-le-serveur" class="md-nav__link">
+  <a href="#1-add-route-rule-on-server" class="md-nav__link">
     <span class="md-ellipsis">
       1. Ajouter une règle de routage sur le serveur
     </span>
@@ -3370,7 +3370,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-autoriser-lacces-a-distance-au-lan-du-client" class="md-nav__link">
+  <a href="#2-allow-remote-access-to-client-lan" class="md-nav__link">
     <span class="md-ellipsis">
       2. Autoriser l'accès à distance au LAN du client
     </span>
@@ -3379,7 +3379,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-tester-la-connexion" class="md-nav__link">
+  <a href="#3-test-connection" class="md-nav__link">
     <span class="md-ellipsis">
       3. Tester la connexion
     </span>
@@ -7137,7 +7137,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#topologie" class="md-nav__link">
+  <a href="#topology" class="md-nav__link">
     <span class="md-ellipsis">
       Topologie
     </span>
@@ -7146,7 +7146,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-ajouter-une-regle-de-routage-sur-le-serveur" class="md-nav__link">
+  <a href="#1-add-route-rule-on-server" class="md-nav__link">
     <span class="md-ellipsis">
       1. Ajouter une règle de routage sur le serveur
     </span>
@@ -7155,7 +7155,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-autoriser-lacces-a-distance-au-lan-du-client" class="md-nav__link">
+  <a href="#2-allow-remote-access-to-client-lan" class="md-nav__link">
     <span class="md-ellipsis">
       2. Autoriser l'accès à distance au LAN du client
     </span>
@@ -7164,7 +7164,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-tester-la-connexion" class="md-nav__link">
+  <a href="#3-test-connection" class="md-nav__link">
     <span class="md-ellipsis">
       3. Tester la connexion
     </span>
@@ -7196,12 +7196,12 @@
   
 
   <!-- Markdown content -->
-  <h1 id="comment-acceder-au-lan-du-client-openvpn-depuis-le-serveur">Comment accéder au LAN du client OpenVPN depuis le serveur<a class="headerlink" href="#comment-acceder-au-lan-du-client-openvpn-depuis-le-serveur" title="Permanent link">&para;</a></h1>
+  <h1 id="how-to-access-openvpn-client-lan-side-from-server">Comment accéder au LAN du client OpenVPN depuis le serveur<a class="headerlink" href="#how-to-access-openvpn-client-lan-side-from-server" title="Permanent link">&para;</a></h1>
 <p>Ce tutoriel présente les étapes pour accéder au sous-réseau LAN du client OpenVPN (tel qu'un NAS, une caméra IP, etc.) depuis votre serveur OpenVPN.</p>
-<h2 id="topologie">Topologie<a class="headerlink" href="#topologie" title="Permanent link">&para;</a></h2>
+<h2 id="topology">Topologie<a class="headerlink" href="#topology" title="Permanent link">&para;</a></h2>
 <p>Comme indiqué ci-dessous, le GL-AXT1800 est un serveur OpenVPN et le GL-MT2500 est un client OpenVPN connecté à celui-ci. Vous pouvez accéder aux appareils situés côté LAN du GL-MT2500 (tel qu'un NAS ou le GL-MT3000, un sous-routeur) depuis le côté serveur.</p>
 <p><img alt="topology" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/ovpnlantop.jpg" /></p>
-<h2 id="1-ajouter-une-regle-de-routage-sur-le-serveur">1. Ajouter une règle de routage sur le serveur<a class="headerlink" href="#1-ajouter-une-regle-de-routage-sur-le-serveur" title="Permanent link">&para;</a></h2>
+<h2 id="1-add-route-rule-on-server">1. Ajouter une règle de routage sur le serveur<a class="headerlink" href="#1-add-route-rule-on-server" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Pour le firmware v4.7 et les versions antérieures</summary>
 <p>Connectez-vous au panneau d'administration web de <u>votre serveur OpenVPN</u>, puis accédez à <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Server</strong>.</p>
@@ -7226,7 +7226,7 @@
 <p><img alt="ovpnserver route rule" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.8-ovpn-route-rule-3.jpg" /></p>
 <p>Remarque : Si vous avez plusieurs clients OpenVPN dont les sous-réseaux LAN doivent être accessibles, veuillez consulter <a href="../reserve_fixed_IP_for_ovpn_client/">ce lien</a> pour réserver une IP client pour chaque client OpenVPN avant de définir les règles de routage.</p>
 </details>
-<h2 id="2-autoriser-lacces-a-distance-au-lan-du-client">2. Autoriser l'accès à distance au LAN du client<a class="headerlink" href="#2-autoriser-lacces-a-distance-au-lan-du-client" title="Permanent link">&para;</a></h2>
+<h2 id="2-allow-remote-access-to-client-lan">2. Autoriser l'accès à distance au LAN du client<a class="headerlink" href="#2-allow-remote-access-to-client-lan" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Pour le firmware v4.7 et les versions antérieures</summary>
 <p>Connectez-vous au panneau d'administration web de <u>votre client OpenVPN</u>, puis accédez à <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong> -&gt; <strong>VPN Client</strong>.</p>
@@ -7251,7 +7251,7 @@
 <p>Dans la fenêtre contextuelle, activez <strong>Allow Remote Access the LAN Subnet</strong>, puis cliquez sur <strong>Apply</strong>.</p>
 <p><img alt="allow remote access lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/openvpn_server-access_client_lan_side/4.9-allow-remote-access-lan.png" width="600" /></p>
 </details>
-<h2 id="3-tester-la-connexion">3. Tester la connexion<a class="headerlink" href="#3-tester-la-connexion" title="Permanent link">&para;</a></h2>
+<h2 id="3-test-connection">3. Tester la connexion<a class="headerlink" href="#3-test-connection" title="Permanent link">&para;</a></h2>
 <p>Voici un exemple d'accès au GL-MT3000 (un appareil dans le LAN du client OpenVPN) avec l'IP <strong>192.168.48.211</strong>.</p>
 <p>Sur un appareil connecté à votre serveur OpenVPN, envoyez un ping à l'adresse IP <strong>192.168.48.211</strong> du GL-MT3000. Il s'agit de l'adresse IP que le client OpenVPN (GL-MT2500) attribue au GL-MT3000 dans son LAN.</p>
 <p>Si vous pouvez effectuer le ping avec succès, cela signifie que les paramètres sont corrects. Vous pourrez accéder à tous les autres appareils du sous-réseau LAN du client OpenVPN via leurs adresses IP.</p>
@@ -7282,7 +7282,7 @@
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 octobre 2026 08:30:23 UTC">16 octobre 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 octobre 2026 09:53:39 UTC">20 octobre 2026</span>
   </span>
 
     

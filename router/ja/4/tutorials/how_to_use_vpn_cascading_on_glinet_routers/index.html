@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#glinetvpn-cascading" class="md-skip">
+        <a href="#how-to-use-vpn-cascading-on-glinet-routers" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -3457,7 +3457,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
       はじめに
     </span>
@@ -3466,7 +3466,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vpn-cascading" class="md-nav__link">
+  <a href="#how-to-enable-vpn-cascading" class="md-nav__link">
     <span class="md-ellipsis">
       VPN Cascadingを有効にする方法
     </span>
@@ -3476,7 +3476,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#v47" class="md-nav__link">
+  <a href="#for-firmware-v47-and-earlier" class="md-nav__link">
     <span class="md-ellipsis">
       ファームウェア v4.7 以前
     </span>
@@ -3485,7 +3485,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#v48" class="md-nav__link">
+  <a href="#for-firmware-v48-and-higher" class="md-nav__link">
     <span class="md-ellipsis">
       ファームウェア v4.8 以降
     </span>
@@ -7143,7 +7143,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
       はじめに
     </span>
@@ -7152,7 +7152,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vpn-cascading" class="md-nav__link">
+  <a href="#how-to-enable-vpn-cascading" class="md-nav__link">
     <span class="md-ellipsis">
       VPN Cascadingを有効にする方法
     </span>
@@ -7162,7 +7162,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#v47" class="md-nav__link">
+  <a href="#for-firmware-v47-and-earlier" class="md-nav__link">
     <span class="md-ellipsis">
       ファームウェア v4.7 以前
     </span>
@@ -7171,7 +7171,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#v48" class="md-nav__link">
+  <a href="#for-firmware-v48-and-higher" class="md-nav__link">
     <span class="md-ellipsis">
       ファームウェア v4.8 以降
     </span>
@@ -7208,15 +7208,15 @@
   
 
   <!-- Markdown content -->
-  <h1 id="glinetvpn-cascading">GL.iNetルーターでVPN Cascadingを使う方法<a class="headerlink" href="#glinetvpn-cascading" title="Permanent link">&para;</a></h1>
-<h2 id="_1">はじめに<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+  <h1 id="how-to-use-vpn-cascading-on-glinet-routers">GL.iNetルーターでVPN Cascadingを使う方法<a class="headerlink" href="#how-to-use-vpn-cascading-on-glinet-routers" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">はじめに<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>VPN Cascading は、一部の文脈では「Double VPN」とも呼ばれますが、GL.iNetルーターでの動作は少し異なります。基本的な考え方は次のとおりです。</p>
 <p><img alt="gl.inet vpn cascading" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/vpn_cascading/mt2500_vpn-cascading.jpg" /></p>
 <p><strong>VPN 1（ルーターをVPNサーバーとして使用）</strong>: ルーターがVPNサーバーとして動作している場合、このサーバーに接続したクライアントは、デフォルトでルーターのISPネットワーク経由でインターネットにアクセスします。</p>
 <p><strong>VPN 2（ルーターをVPNクライアントとして使用）</strong>: ルーターはVPNクライアントとしても動作し、サードパーティのVPNサービスに接続します。</p>
 <p><strong>VPN Cascading</strong>: ルーターは VPN 1 のトンネルから VPN 2 のトンネルへトラフィックを転送します。これにより、VPN 1 経由でルーターに接続したデバイスは、ルーターのISPネットワークではなく、サードパーティのVPNサービス（VPN 2）経由でインターネットにアクセスできます。</p>
-<h2 id="vpn-cascading">VPN Cascadingを有効にする方法<a class="headerlink" href="#vpn-cascading" title="Permanent link">&para;</a></h2>
-<h3 id="v47">ファームウェア v4.7 以前<a class="headerlink" href="#v47" title="Permanent link">&para;</a></h3>
+<h2 id="how-to-enable-vpn-cascading">VPN Cascadingを有効にする方法<a class="headerlink" href="#how-to-enable-vpn-cascading" title="Permanent link">&para;</a></h2>
+<h3 id="for-firmware-v47-and-earlier">ファームウェア v4.7 以前<a class="headerlink" href="#for-firmware-v47-and-earlier" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>まず、ルーターをVPNサーバーとして設定します。より高速に利用するには WireGuard プロトコルを推奨します。詳しくは<a href="../../interface_guide/wireguard_server/" target="_blank">こちら</a>をご覧ください。</p>
@@ -7239,7 +7239,7 @@
 <p>これで VPN Cascading が有効になります。VPN経由でルーターに接続したデバイスは、ルーターのISPネットワークではなく、サードパーティのVPNサービス経由でインターネットにアクセスします。</p>
 </li>
 </ol>
-<h3 id="v48">ファームウェア v4.8 以降<a class="headerlink" href="#v48" title="Permanent link">&para;</a></h3>
+<h3 id="for-firmware-v48-and-higher">ファームウェア v4.8 以降<a class="headerlink" href="#for-firmware-v48-and-higher" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>まず、ルーターをVPNサーバーとして設定します。より高速に利用するには WireGuard プロトコルを推奨します。詳しくは<a href="../../interface_guide/wireguard_server/" target="_blank">こちら</a>をご覧ください。</p>
@@ -7316,7 +7316,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年6月12日 01:48:41 UTC">2026年6月12日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月20日 09:53:39 UTC">2026年10月20日</span>
   </span>
 
     

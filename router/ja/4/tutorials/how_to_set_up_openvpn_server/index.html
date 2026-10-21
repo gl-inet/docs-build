@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#glinetopenvpn" class="md-skip">
+        <a href="#how-to-set-up-openvpn-server-on-glinet-routers" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -3247,7 +3247,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-log-in-to-your-router" class="md-nav__link">
     <span class="md-ellipsis">
       1. ルーターにログインする
     </span>
@@ -3256,7 +3256,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-dynamic-dns" class="md-nav__link">
+  <a href="#2-enable-dynamic-dns-optional" class="md-nav__link">
     <span class="md-ellipsis">
       2. Dynamic DNSを有効にする（任意）
     </span>
@@ -3265,7 +3265,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-download-configuration-file" class="md-nav__link">
     <span class="md-ellipsis">
       3. 設定ファイルをダウンロードする
     </span>
@@ -3274,7 +3274,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-openvpn" class="md-nav__link">
+  <a href="#4-connect-to-openvpn-server" class="md-nav__link">
     <span class="md-ellipsis">
       4. OpenVPNサーバーに接続する
     </span>
@@ -3283,7 +3283,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-vpn" class="md-nav__link">
+  <a href="#5-verify-vpn-connection" class="md-nav__link">
     <span class="md-ellipsis">
       5. VPN接続を確認する
     </span>
@@ -7146,7 +7146,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-log-in-to-your-router" class="md-nav__link">
     <span class="md-ellipsis">
       1. ルーターにログインする
     </span>
@@ -7155,7 +7155,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-dynamic-dns" class="md-nav__link">
+  <a href="#2-enable-dynamic-dns-optional" class="md-nav__link">
     <span class="md-ellipsis">
       2. Dynamic DNSを有効にする（任意）
     </span>
@@ -7164,7 +7164,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-download-configuration-file" class="md-nav__link">
     <span class="md-ellipsis">
       3. 設定ファイルをダウンロードする
     </span>
@@ -7173,7 +7173,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-openvpn" class="md-nav__link">
+  <a href="#4-connect-to-openvpn-server" class="md-nav__link">
     <span class="md-ellipsis">
       4. OpenVPNサーバーに接続する
     </span>
@@ -7182,7 +7182,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-vpn" class="md-nav__link">
+  <a href="#5-verify-vpn-connection" class="md-nav__link">
     <span class="md-ellipsis">
       5. VPN接続を確認する
     </span>
@@ -7214,7 +7214,7 @@
   
 
   <!-- Markdown content -->
-  <h1 id="glinetopenvpn">GL.iNetルーターでOpenVPNサーバーを設定する方法<a class="headerlink" href="#glinetopenvpn" title="Permanent link">&para;</a></h1>
+  <h1 id="how-to-set-up-openvpn-server-on-glinet-routers">GL.iNetルーターでOpenVPNサーバーを設定する方法<a class="headerlink" href="#how-to-set-up-openvpn-server-on-glinet-routers" title="Permanent link">&para;</a></h1>
 <p>このチュートリアルでは、GL.iNetルーターでOpenVPNサーバーを設定する方法を紹介します。VPNサーバーを使うと、自宅やオフィスのネットワークへ安全にリモート接続できます。GL.iNetルーターなら、数分でOpenVPNサーバーを設定できます。</p>
 <div class="admonition note">
 <p class="admonition-title">開始前に、以下の要件を満たしていることを確認してください</p>
@@ -7223,10 +7223,10 @@
 <p><strong>ポートフォワーディング</strong></p>
 <p>GL.iNetルーターが上位ルーターの配下に接続されている場合は、<a href="https://docs.gl-inet.com/router/en/4/tutorials/how_to_set_up_port_forwarding/">上位ルーターでポートフォワーディングを設定</a>してください。</p>
 </div>
-<h2 id="1">1. ルーターにログインする<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h2 id="1-log-in-to-your-router">1. ルーターにログインする<a class="headerlink" href="#1-log-in-to-your-router" title="Permanent link">&para;</a></h2>
 <p>Webブラウザを開き、ルーターのWeb管理パネル（デフォルトIP: 192.168.8.1）にアクセスします。管理者パスワードでログインしてください。</p>
 <p><img alt="log in" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/router-login.jpeg" /></p>
-<h2 id="2-dynamic-dns">2. Dynamic DNSを有効にする（任意）<a class="headerlink" href="#2-dynamic-dns" title="Permanent link">&para;</a></h2>
+<h2 id="2-enable-dynamic-dns-optional">2. Dynamic DNSを有効にする（任意）<a class="headerlink" href="#2-enable-dynamic-dns-optional" title="Permanent link">&para;</a></h2>
 <p>通常、OpenVPNサーバーの設定には、他のデバイスがVPNサーバーへアクセスするための固定された接続先となる<strong>固定パブリックIPアドレス</strong>が必要です。</p>
 <p>ただし、固定パブリックIPアドレスがなく、代わりに動的IPアドレスを使用している場合は、GL.iNetルーターで<strong>Dynamic DNS (DDNS)</strong> を有効にする必要があることがあります。これにより、パブリックIPアドレスが変動してもOpenVPNサーバーへの接続を維持できます。</p>
 <p>以下の手順でDynamic DNSを有効にしてください。</p>
@@ -7236,7 +7236,7 @@
 <li><strong>Enable DDNS</strong> をオンにし、<strong>Terms of Service &amp; Privacy Policy</strong> を確認して同意したうえで、<strong>Apply</strong> をクリックします。
 <img alt="apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_openvpn_server/dynamic-dns-click-apply.png" /></li>
 </ol>
-<h2 id="3">3. 設定ファイルをダウンロードする<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h2 id="3-download-configuration-file">3. 設定ファイルをダウンロードする<a class="headerlink" href="#3-download-configuration-file" title="Permanent link">&para;</a></h2>
 <ol>
 <li>ルーターのWeb管理パネルで、<strong>VPN</strong> &gt; <strong>OpenVPN Server</strong> に移動します。</li>
 <li><strong>Generate Configuration</strong> をクリックします。</li>
@@ -7270,7 +7270,7 @@
 </li>
 </ol>
 </details>
-<h2 id="4-openvpn">4. OpenVPNサーバーに接続する<a class="headerlink" href="#4-openvpn" title="Permanent link">&para;</a></h2>
+<h2 id="4-connect-to-openvpn-server">4. OpenVPNサーバーに接続する<a class="headerlink" href="#4-connect-to-openvpn-server" title="Permanent link">&para;</a></h2>
 <p>OpenVPNサーバーに接続するには、OpenVPNクライアントが必要です。以下のいずれかの方法で設定できます。</p>
 <details>
 <summary>方法1: サードパーティ製OpenVPNクライアントアプリを使う（OpenVPNクライアントを設定できる追加のルーターがない場合はこちらを使用）</summary>
@@ -7316,7 +7316,7 @@
 <li>OpenVPNクライアントを実行しているルーターにデバイスを接続します。</li>
 </ol>
 </details>
-<h2 id="5-vpn">5. VPN接続を確認する<a class="headerlink" href="#5-vpn" title="Permanent link">&para;</a></h2>
+<h2 id="5-verify-vpn-connection">5. VPN接続を確認する<a class="headerlink" href="#5-verify-vpn-connection" title="Permanent link">&para;</a></h2>
 <p>Webブラウザを開き、自分のIPアドレスと所在地を検索します。表示された情報がインターネットサービスプロバイダーのIPと所在地ではなく、VPNサーバーのIPと所在地に一致していれば、VPN接続は成功しています。</p>
 <hr />
 <p>ご不明な点がありましたら、<a href="https://forum.gl-inet.com" target="_blank">コミュニティフォーラム</a>をご覧いただくか、<a href="https://www.gl-inet.com/contacts/" target="_blank">お問い合わせ</a>ください。</p>
@@ -7344,7 +7344,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年4月7日 14:30:51 UTC">2026年4月7日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月20日 09:53:39 UTC">2026年10月20日</span>
   </span>
 
     

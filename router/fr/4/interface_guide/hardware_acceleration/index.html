@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#acceleration-materielle" class="md-skip">
+        <a href="#hardware-acceleration" class="md-skip">
           Aller au contenu
         </a>
       
@@ -6006,7 +6006,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modeles-pris-en-charge" class="md-nav__link">
+  <a href="#supported-models" class="md-nav__link">
     <span class="md-ellipsis">
       Modèles pris en charge
     </span>
@@ -6015,7 +6015,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-rapide" class="md-nav__link">
+  <a href="#quick-setup" class="md-nav__link">
     <span class="md-ellipsis">
       Configuration rapide
     </span>
@@ -6024,7 +6024,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nat-materiel-ou-nat-logiciel" class="md-nav__link">
+  <a href="#hardware-nat-vs-software-nat" class="md-nav__link">
     <span class="md-ellipsis">
       NAT matériel ou NAT logiciel
     </span>
@@ -7128,7 +7128,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modeles-pris-en-charge" class="md-nav__link">
+  <a href="#supported-models" class="md-nav__link">
     <span class="md-ellipsis">
       Modèles pris en charge
     </span>
@@ -7137,7 +7137,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-rapide" class="md-nav__link">
+  <a href="#quick-setup" class="md-nav__link">
     <span class="md-ellipsis">
       Configuration rapide
     </span>
@@ -7146,7 +7146,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nat-materiel-ou-nat-logiciel" class="md-nav__link">
+  <a href="#hardware-nat-vs-software-nat" class="md-nav__link">
     <span class="md-ellipsis">
       NAT matériel ou NAT logiciel
     </span>
@@ -7178,12 +7178,12 @@
   
 
   <!-- Markdown content -->
-  <h1 id="acceleration-materielle">Accélération matérielle<a class="headerlink" href="#acceleration-materielle" title="Permanent link">&para;</a></h1>
+  <h1 id="hardware-acceleration">Accélération matérielle<a class="headerlink" href="#hardware-acceleration" title="Permanent link">&para;</a></h1>
 <p><strong>Note</strong>: Ce guide s'applique au firmware v4.2 et aux versions antérieures. Pour les versions plus récentes, veuillez consulter <a href="../network_acceleration/">Network Acceleration</a>. </p>
 <hr />
 <p>L'accélération matérielle (parfois appelée <em>hardware NAT</em>, <em>flow offloading</em> ou <em>offloading</em>) réduit la charge du processeur en déplaçant le transfert des paquets du CPU vers le matériel SoC/NIC du routeur. Cela augmente généralement le débit maximal et réduit l'utilisation du CPU, mais cela implique des compromis importants, en particulier pour les fonctionnalités qui reposent sur la pile réseau Linux (netfilter/iptables/nftables) ou sur les disciplines de mise en file d'attente du noyau (qdisc) utilisées par SQM (Smart Queue Management).</p>
 <p>Lorsque l'accélération matérielle est activée, les fonctions suivantes ne fonctionnent pas correctement : les statistiques de vitesse et de trafic des clients, ainsi que la limitation de vitesse par client.</p>
-<h2 id="modeles-pris-en-charge">Modèles pris en charge<a class="headerlink" href="#modeles-pris-en-charge" title="Permanent link">&para;</a></h2>
+<h2 id="supported-models">Modèles pris en charge<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Modèles pris en charge</summary>
 <ul>
@@ -7224,12 +7224,12 @@
 <li>GL-X300B (Collie)</li>
 </ul>
 </details>
-<h2 id="configuration-rapide">Configuration rapide<a class="headerlink" href="#configuration-rapide" title="Permanent link">&para;</a></h2>
+<h2 id="quick-setup">Configuration rapide<a class="headerlink" href="#quick-setup" title="Permanent link">&para;</a></h2>
 <p>Dans le panneau d'administration web, accédez à <strong>NETWORK</strong> -&gt; <strong>Hardware Acceleration</strong>.</p>
 <p><img alt="Hardware Acceleration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/hardware_acceleration/hardware_acceleration.png" /></p>
 <p>Activez l'interrupteur, puis cliquez sur <strong>Apply</strong>.</p>
 <hr />
-<h2 id="nat-materiel-ou-nat-logiciel">NAT matériel ou NAT logiciel<a class="headerlink" href="#nat-materiel-ou-nat-logiciel" title="Permanent link">&para;</a></h2>
+<h2 id="hardware-nat-vs-software-nat">NAT matériel ou NAT logiciel<a class="headerlink" href="#hardware-nat-vs-software-nat" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>Si votre priorité est le débit (par exemple une connexion Internet multi-gigabit) et que vous n'avez pas besoin de SQM sur le routeur ni de limitation par client, activez <strong>Hardware NAT / Network Acceleration</strong>. C'est ce qui offre le débit le plus élevé et la plus faible utilisation du CPU.</p>
@@ -7264,7 +7264,7 @@
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 octobre 2026 08:30:23 UTC">16 octobre 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 octobre 2026 09:53:39 UTC">20 octobre 2026</span>
   </span>
 
     

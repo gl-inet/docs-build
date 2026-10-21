@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#hardware-acceleration" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -6006,7 +6006,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#supported-models" class="md-nav__link">
     <span class="md-ellipsis">
       対応モデル
     </span>
@@ -6015,7 +6015,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#quick-setup" class="md-nav__link">
     <span class="md-ellipsis">
       クイック設定
     </span>
@@ -6024,7 +6024,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hardware-nat-software-nat" class="md-nav__link">
+  <a href="#hardware-nat-vs-software-nat" class="md-nav__link">
     <span class="md-ellipsis">
       Hardware NAT と Software NAT
     </span>
@@ -7128,7 +7128,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#supported-models" class="md-nav__link">
     <span class="md-ellipsis">
       対応モデル
     </span>
@@ -7137,7 +7137,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#quick-setup" class="md-nav__link">
     <span class="md-ellipsis">
       クイック設定
     </span>
@@ -7146,7 +7146,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hardware-nat-software-nat" class="md-nav__link">
+  <a href="#hardware-nat-vs-software-nat" class="md-nav__link">
     <span class="md-ellipsis">
       Hardware NAT と Software NAT
     </span>
@@ -7178,12 +7178,12 @@
   
 
   <!-- Markdown content -->
-  <h1 id="_1">ハードウェアアクセラレーション<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+  <h1 id="hardware-acceleration">ハードウェアアクセラレーション<a class="headerlink" href="#hardware-acceleration" title="Permanent link">&para;</a></h1>
 <p><strong>注意</strong>: このガイドはファームウェア v4.2 以前に適用されます。新しいバージョンについては、<a href="../network_acceleration/">Network Acceleration</a> を参照してください。</p>
 <hr />
 <p>ハードウェアアクセラレーション（hardware NAT、flow offloading、offloading とも呼ばれます）は、パケット転送処理を CPU からルーターの SoC/NIC ハードウェアへ移すことで CPU 負荷を軽減します。通常は最大スループットの向上と CPU 使用率の低減が期待できますが、Linux ネットワークスタック（netfilter/iptables/nftables）や、SQM（Smart Queue Management）で使われるカーネルのキューイング制御（qdisc）に依存する機能では重要なトレードオフがあります。</p>
 <p>ハードウェアアクセラレーションを有効にすると、次の機能は正しく動作しません: Client Speed and Traffic Statistics、Client Speed Limit。</p>
-<h2 id="_2">対応モデル<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="supported-models">対応モデル<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h2>
 <details>
 <summary>対応モデル</summary>
 <ul>
@@ -7224,12 +7224,12 @@
 <li>GL-X300B (Collie)</li>
 </ul>
 </details>
-<h2 id="_3">クイック設定<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="quick-setup">クイック設定<a class="headerlink" href="#quick-setup" title="Permanent link">&para;</a></h2>
 <p>Web Admin Panel の左側で、<strong>NETWORK</strong> -&gt; <strong>Hardware Acceleration</strong> に移動します。</p>
 <p><img alt="Hardware Acceleration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/hardware_acceleration/hardware_acceleration.png" /></p>
 <p>スイッチをオンにして、<strong>Apply</strong> をクリックします。</p>
 <hr />
-<h2 id="hardware-nat-software-nat">Hardware NAT と Software NAT<a class="headerlink" href="#hardware-nat-software-nat" title="Permanent link">&para;</a></h2>
+<h2 id="hardware-nat-vs-software-nat">Hardware NAT と Software NAT<a class="headerlink" href="#hardware-nat-vs-software-nat" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>スループット（例: マルチギガビット回線）を最優先し、ルーター上で SQM やクライアントごとの帯域制御を使わない場合は、Hardware NAT / Network Acceleration を有効にしてください。最も高いスループットと低い CPU 使用率を実現できます。</p>
@@ -7264,7 +7264,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月16日 08:30:23 UTC">2026年10月16日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月20日 09:53:39 UTC">2026年10月20日</span>
   </span>
 
     

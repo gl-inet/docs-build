@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aceleracion-por-hardware" class="md-skip">
+        <a href="#hardware-acceleration" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -6006,7 +6006,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modelos-compatibles" class="md-nav__link">
+  <a href="#supported-models" class="md-nav__link">
     <span class="md-ellipsis">
       Modelos compatibles
     </span>
@@ -6015,7 +6015,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuracion-rapida" class="md-nav__link">
+  <a href="#quick-setup" class="md-nav__link">
     <span class="md-ellipsis">
       Configuración rápida
     </span>
@@ -6024,7 +6024,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hardware-nat-frente-a-software-nat" class="md-nav__link">
+  <a href="#hardware-nat-vs-software-nat" class="md-nav__link">
     <span class="md-ellipsis">
       Hardware NAT frente a Software NAT
     </span>
@@ -7128,7 +7128,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modelos-compatibles" class="md-nav__link">
+  <a href="#supported-models" class="md-nav__link">
     <span class="md-ellipsis">
       Modelos compatibles
     </span>
@@ -7137,7 +7137,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuracion-rapida" class="md-nav__link">
+  <a href="#quick-setup" class="md-nav__link">
     <span class="md-ellipsis">
       Configuración rápida
     </span>
@@ -7146,7 +7146,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hardware-nat-frente-a-software-nat" class="md-nav__link">
+  <a href="#hardware-nat-vs-software-nat" class="md-nav__link">
     <span class="md-ellipsis">
       Hardware NAT frente a Software NAT
     </span>
@@ -7178,12 +7178,12 @@
   
 
   <!-- Markdown content -->
-  <h1 id="aceleracion-por-hardware">Aceleración por hardware<a class="headerlink" href="#aceleracion-por-hardware" title="Permanent link">&para;</a></h1>
+  <h1 id="hardware-acceleration">Aceleración por hardware<a class="headerlink" href="#hardware-acceleration" title="Permanent link">&para;</a></h1>
 <p><strong>Nota</strong>: Esta guía se aplica al firmware v4.2 y anteriores. Para versiones más recientes, consulte <a href="../network_acceleration/">Network Acceleration</a>.</p>
 <hr />
 <p>La aceleración por hardware, a veces llamada <em>hardware NAT</em>, <em>flow offloading</em> u <em>offloading</em>, reduce la carga de la CPU al trasladar el reenvío de paquetes desde la CPU al hardware SoC/NIC del router. Esto suele aumentar el rendimiento máximo y reducir el uso de CPU, pero implica compensaciones importantes, especialmente para funciones que dependen de la pila de red de Linux, como netfilter, iptables o nftables, o de las disciplinas de cola del kernel, qdisc, utilizadas por SQM, Smart Queue Management.</p>
 <p>Cuando la aceleración por hardware está habilitada, las siguientes funciones no funcionan correctamente: Client Speed and Traffic Statistics y Client Speed Limit.</p>
-<h2 id="modelos-compatibles">Modelos compatibles<a class="headerlink" href="#modelos-compatibles" title="Permanent link">&para;</a></h2>
+<h2 id="supported-models">Modelos compatibles<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h2>
 <details>
 <summary>Modelos compatibles</summary>
 <ul>
@@ -7224,12 +7224,12 @@
 <li>GL-X300B (Collie)</li>
 </ul>
 </details>
-<h2 id="configuracion-rapida">Configuración rápida<a class="headerlink" href="#configuracion-rapida" title="Permanent link">&para;</a></h2>
+<h2 id="quick-setup">Configuración rápida<a class="headerlink" href="#quick-setup" title="Permanent link">&para;</a></h2>
 <p>En el lado izquierdo del panel de administración web, vaya a <strong>NETWORK</strong> -&gt; <strong>Hardware Acceleration</strong>.</p>
 <p><img alt="Hardware Acceleration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/hardware_acceleration/hardware_acceleration.png" /></p>
 <p>Active el interruptor para habilitar la función y haga clic en Apply.</p>
 <hr />
-<h2 id="hardware-nat-frente-a-software-nat">Hardware NAT frente a Software NAT<a class="headerlink" href="#hardware-nat-frente-a-software-nat" title="Permanent link">&para;</a></h2>
+<h2 id="hardware-nat-vs-software-nat">Hardware NAT frente a Software NAT<a class="headerlink" href="#hardware-nat-vs-software-nat" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>Si lo que más le importa es el rendimiento, por ejemplo banda ancha de varios gigabits, y no necesita SQM en el router ni limitación por cliente, habilite Hardware NAT o Network Acceleration. Esto ofrece el mayor rendimiento y el menor uso de CPU.</p>
@@ -7264,7 +7264,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="16 de octubre de 2026 08:30:23 UTC">16 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 de octubre de 2026 09:53:39 UTC">20 de octubre de 2026</span>
   </span>
 
     
