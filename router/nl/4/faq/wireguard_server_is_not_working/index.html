@@ -7231,20 +7231,20 @@
 <p>Volg de stappen die bij jouw probleem horen.</p>
 <h2 id="situation-1-the-wireguard-server-is-starting-but-cant-be-connected">Situatie 1. De WireGuard-server start, maar er kan geen verbinding worden gemaakt<a class="headerlink" href="#situation-1-the-wireguard-server-is-starting-but-cant-be-connected" title="Permanent link">&para;</a></h2>
 <details>
-<summary>Follow these steps</summary>
+<summary>Volg deze stappen</summary>
 <p><img alt="client" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/troubleshooting/my_wireguard_server_is_not_working/client.jpg" /></p>
 <p>Port forwarding op de primaire router naar de secundaire GL.iNet-router werkt mogelijk niet goed.
 Stuur de HTTPS-poort van de primaire router door naar de WireGuard-server om port forwarding te controleren:</p>
 <ol>
 <li>
-<p>Forward your primary router's HTTPS port to your WireGuard server</p>
+<p>Stuur de HTTPS-poort van de primaire router door naar de WireGuard-server</p>
 <ol>
-<li>Sign in to your primary router's admin panel.</li>
-<li>Go to the port forwarding screen.</li>
-<li>Create a new port and name it <strong>HTTPS</strong>.</li>
-<li>Enter the following information:<ul>
-<li><strong>External port/Internal port:</strong> Enter <strong>443</strong>.</li>
-<li><strong>Protocol:</strong> Choose <strong>All</strong> or <strong>UDP/TCP</strong>.</li>
+<li>Meld je aan bij het beheerpaneel van de primaire router.</li>
+<li>Ga naar het scherm voor port forwarding.</li>
+<li>Maak een nieuwe poortregel aan en noem deze <strong>HTTPS</strong>.</li>
+<li>Voer de volgende gegevens in:<ul>
+<li><strong>External port/Internal port:</strong> voer <strong>443</strong> in.</li>
+<li><strong>Protocol:</strong> kies <strong>All</strong> of <strong>UDP/TCP</strong>.</li>
 <li><strong>Internal IP</strong> (of <strong>Host IP</strong>): voer het WAN-IP-adres van de secundaire router in of selecteer deze in de keuzelijst.
 <img alt="DDNS1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/troubleshooting/my_wireguard_server_is_not_working/ddns1.jpg" /></li>
 </ul>
@@ -7260,19 +7260,19 @@ Stuur de HTTPS-poort van de primaire router door naar de WireGuard-server om por
     <img alt="DDNS2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/troubleshooting/my_wireguard_server_is_not_working/ddns2.jpg" /></li>
 <li>Noteer de hostnaam voor later gebruik en klik op <strong>Apply</strong>.</li>
 <li>Klik links op <strong>System</strong> &gt; <strong>Security</strong>.</li>
-<li>Under <strong>Remote Access Control</strong>, toggle <strong>HTTPS Remote Access</strong> to on.
+<li>Schakel onder <strong>Remote Access Control</strong> de optie <strong>HTTPS Remote Access</strong> in.
     <img alt="DDNS3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/troubleshooting/my_wireguard_server_is_not_working/ddns3.jpg" /></li>
-<li>Click <strong>Apply</strong>.</li>
+<li>Klik op <strong>Apply</strong>.</li>
 </ol>
 </li>
 <li>
 <p>Controleren of je het beheerpaneel van de GL.iNet-router kunt openen</p>
 <ol>
-<li>On another device (e.g., laptop or mobile device), connect to a different Wi-Fi network or the cellular network.</li>
+<li>Verbind een ander apparaat (bijvoorbeeld een laptop of mobiel apparaat) met een ander Wi-Fi-netwerk of met het mobiele netwerk.</li>
 <li>Voer in de adresbalk de eerder opgeslagen hostnaam in, bijvoorbeeld abcd123.glddns.com.</li>
-<li>Click <strong>Advanced</strong>.
+<li>Klik op <strong>Advanced</strong>.
     <img alt="DDNS4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/troubleshooting/my_wireguard_server_is_not_working/ddns4.jpg" /></li>
-<li>Click <strong>Proceed to abcd123.glddns.com(unsafe)</strong>.
+<li>Klik op <strong>Proceed to abcd123.glddns.com(unsafe)</strong>.
     <img alt="DDNS5" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/troubleshooting/my_wireguard_server_is_not_working/ddns5.jpg" /></li>
 </ol>
 </li>
@@ -7283,90 +7283,90 @@ Stuur de HTTPS-poort van de primaire router door naar de WireGuard-server om por
 </details>
 <h2 id="situation-2-the-wireguard-server-shows-connected-client-but-the-vpn-client-cannot-access-the-internet">Situatie 2. De WireGuard-server toont een verbonden client, maar de VPN-client heeft geen internet<a class="headerlink" href="#situation-2-the-wireguard-server-shows-connected-client-but-the-vpn-client-cannot-access-the-internet" title="Permanent link">&para;</a></h2>
 <details>
-<summary>Follow these steps</summary>
+<summary>Volg deze stappen</summary>
 <p>Volg de stappen voor elke mogelijke oorzaak en controleer of het probleem is opgelost. Sla de rest over zodra het werkt.</p>
-<p><strong>Possible cause 1: You internet service provider may not be able to resolve GL.iNet's DNS servers</strong></p>
-<p>Try to manually configure the DNS server addresses by following these steps:</p>
+<p><strong>Mogelijke oorzaak 1: je internetprovider kan de DNS-servers van GL.iNet mogelijk niet omzetten</strong></p>
+<p>Probeer de DNS-serveradressen handmatig in te stellen met de volgende stappen:</p>
 <ol>
 <li>Open in een webbrowser het beheerpaneel van de GL.iNet-router, bijvoorbeeld via 192.168.8.1, en meld je aan.</li>
 <li>Klik links op <strong>Network</strong> &gt; <strong>DNS</strong>.</li>
-<li>For <strong>Mode</strong>, select <strong>Manual DNS</strong>.</li>
-<li>For <strong>DNS Server 1</strong>, select <strong>Google Public DNS</strong>.</li>
-<li>Click <strong>Apply</strong>.</li>
+<li>Selecteer bij <strong>Mode</strong> de optie <strong>Manual DNS</strong>.</li>
+<li>Selecteer bij <strong>DNS Server 1</strong> de optie <strong>Google Public DNS</strong>.</li>
+<li>Klik op <strong>Apply</strong>.</li>
 </ol>
-<p><strong>Possible cause 2: Your primary router's gateway IP is in conflict with the WireGuard server's IP address</strong></p>
-<p>Try to change the IPv4 address by following these steps:</p>
+<p><strong>Mogelijke oorzaak 2: het gateway-IP van je primaire router conflicteert met het IP-adres van de WireGuard-server</strong></p>
+<p>Probeer het IPv4-adres te wijzigen met de volgende stappen:</p>
 <ol>
 <li>Open in een webbrowser het beheerpaneel van de GL.iNet-router, bijvoorbeeld via 192.168.8.1, en meld je aan.</li>
 <li>Klik links op <strong>VPN</strong> &gt; <strong>WireGuard Server</strong>.</li>
 <li>Voer op het tabblad <strong>Configuration</strong> bij <strong>IPv4 Address</strong> een nieuw IP-adres in, bijvoorbeeld 10.1.0.1/24.</li>
-<li>Click <strong>Apply</strong>.</li>
+<li>Klik op <strong>Apply</strong>.</li>
 </ol>
-<p><strong>Possible cause 3: If both your WireGuard server and WireGuard client were set up on GL.iNet routers, their LAN IP addersses are in conflict</strong></p>
-<p>Try to change the LAN IP address on either router by following these steps:</p>
+<p><strong>Mogelijke oorzaak 3: als zowel de WireGuard-server als de WireGuard-client op GL.iNet-routers zijn ingesteld, conflicteren hun LAN-IP-adressen</strong></p>
+<p>Probeer het LAN-IP-adres van een van beide routers te wijzigen met de volgende stappen:</p>
 <ol>
-<li>In a web browser, sign in to the admin panel of either GL.iNet router (e.g., 192.168.8.1).</li>
+<li>Meld je in een webbrowser aan bij het beheerpaneel van een van beide GL.iNet-routers (bijvoorbeeld 192.168.8.1).</li>
 <li>Klik links op <strong>Network</strong> &gt; <strong>LAN</strong>.</li>
-<li>In the <strong>Router IP address</strong> field, enter a new LAN IP address (e.g., 192.168.10.1).</li>
-<li>Click <strong>Apply</strong>.</li>
+<li>Voer in het veld <strong>Router IP address</strong> een nieuw LAN-IP-adres in (bijvoorbeeld 192.168.10.1).</li>
+<li>Klik op <strong>Apply</strong>.</li>
 </ol>
-<p><strong>Possible cause 4: The WireGuard server's IP address was updated but the subnet is missing</strong></p>
-<p>Add a subnet to your WireGuard server IP address by following these steps:</p>
+<p><strong>Mogelijke oorzaak 4: het IP-adres van de WireGuard-server is gewijzigd, maar het subnet ontbreekt</strong></p>
+<p>Voeg met de volgende stappen een subnet toe aan het IP-adres van de WireGuard-server:</p>
 <ol>
 <li>Open in een webbrowser het beheerpaneel van de GL.iNet-router, bijvoorbeeld via 192.168.8.1, en meld je aan.</li>
 <li>Klik links op <strong>VPN</strong> &gt; <strong>WireGuard Server</strong>.</li>
 <li>Voeg op het tabblad <strong>Configuration</strong> bij <strong>IPv4 Address</strong> <strong>/24</strong> toe na <strong>10.0.0.1</strong>.</li>
-<li>Click <strong>Apply</strong>.</li>
+<li>Klik op <strong>Apply</strong>.</li>
 </ol>
 </details>
 <h2 id="situation-3-the-wireguard-server-is-running-but-vpn-client-cannot-connect-to-it">Situatie 3. De WireGuard-server draait, maar de VPN-client kan geen verbinding maken<a class="headerlink" href="#situation-3-the-wireguard-server-is-running-but-vpn-client-cannot-connect-to-it" title="Permanent link">&para;</a></h2>
 <details>
-<summary>Follow these steps</summary>
+<summary>Volg deze stappen</summary>
 <p>Volg de stappen voor elke mogelijke oorzaak en controleer of het probleem is opgelost. Sla de rest over zodra het werkt.</p>
-<p><strong>Possible cause 1: The port forwarding you have set up on your primary router may not be working properly</strong></p>
+<p><strong>Mogelijke oorzaak 1: port forwarding op je primaire router werkt mogelijk niet goed</strong></p>
 <p>Controleer port forwarding door de HTTPS-poort naar de WireGuard-server door te sturen volgens de stappen in situatie 1.</p>
-<p><strong>Possible cause 2: You may not have a public IP address</strong></p>
+<p><strong>Mogelijke oorzaak 2: je hebt mogelijk geen openbaar IP-adres</strong></p>
 <p>Volg <a href="../../tutorials/how_to_check_if_isp_assigns_you_a_public_ip_address/">deze pagina</a> om dit te controleren.</p>
-<p><strong>Possible cause 3: If both your WireGuard server and WireGuard client were set up on GL.iNet routers, their LAN IP addersses are in conflict</strong></p>
-<p>Change the LAN IP address on either router by following these steps:</p>
+<p><strong>Mogelijke oorzaak 3: als zowel de WireGuard-server als de WireGuard-client op GL.iNet-routers zijn ingesteld, conflicteren hun LAN-IP-adressen</strong></p>
+<p>Wijzig het LAN-IP-adres van een van beide routers met de volgende stappen:</p>
 <ol>
-<li>In a web browser, sign in to the admin panel of either GL.iNet router (e.g., 192.168.8.1).</li>
+<li>Meld je in een webbrowser aan bij het beheerpaneel van een van beide GL.iNet-routers (bijvoorbeeld 192.168.8.1).</li>
 <li>Klik links op <strong>Network</strong> &gt; <strong>LAN</strong>.</li>
-<li>In the <strong>Router IP address</strong> field, enter a new LAN IP address (e.g., 192.168.10.1).</li>
-<li>Click <strong>Apply</strong>.</li>
+<li>Voer in het veld <strong>Router IP address</strong> een nieuw LAN-IP-adres in (bijvoorbeeld 192.168.10.1).</li>
+<li>Klik op <strong>Apply</strong>.</li>
 </ol>
-<p><strong>Possible cause 4: The device you are using to connect to the WireGuard server is connected to its Wi-Fi network or its LAN port</strong></p>
-<p>Connect your device to a different Wi-Fi network or its cellular network.</p>
-<p><strong>Possible cause 5: Some lines may be missing in the configuration file you uploaded to your client device</strong></p>
-<p>Upload your configuration information again.</p>
+<p><strong>Mogelijke oorzaak 4: het apparaat waarmee je verbinding maakt met de WireGuard-server, is verbonden met het Wi-Fi-netwerk of een LAN-poort van die server</strong></p>
+<p>Verbind je apparaat met een ander Wi-Fi-netwerk of met het mobiele netwerk.</p>
+<p><strong>Mogelijke oorzaak 5: er ontbreken mogelijk regels in het configuratiebestand dat je naar je clientapparaat hebt geüpload</strong></p>
+<p>Upload je configuratiegegevens opnieuw.</p>
 </details>
 <h2 id="situation-4-the-wireguard-server-is-connected-but-the-connection-is-not-stable">Situatie 4. De WireGuard-server is verbonden, maar de verbinding is instabiel<a class="headerlink" href="#situation-4-the-wireguard-server-is-connected-but-the-connection-is-not-stable" title="Permanent link">&para;</a></h2>
 <details>
-<summary>Follow these steps</summary>
+<summary>Volg deze stappen</summary>
 <p>Volg de onderstaande stappen en controleer na elke stap of het probleem is opgelost. Sla daarna de overige stappen over.</p>
 <ol>
 <li>Verlaag op de VPN-client de MTU van <strong>1420</strong> naar bijvoorbeeld 1380.</li>
 <li>Schakel VPN passthrough op de primaire router in als dit beschikbaar is.</li>
-<li>Try to manually configure DNS servers on your GL.iNet router by following these steps:<ol>
+<li>Probeer de DNS-servers op je GL.iNet-router handmatig in te stellen met de volgende stappen:<ol>
 <li>Open in een webbrowser het beheerpaneel van de GL.iNet-router, bijvoorbeeld via 192.168.8.1, en meld je aan.</li>
 <li>Klik links op <strong>Network</strong> &gt; <strong>DNS</strong>.</li>
-<li>For Mode, select <strong>Manual DNS</strong>.</li>
-<li>For <strong>DNS Server 1</strong>, select <strong>Google Public DNS</strong>.</li>
-<li>Click <strong>Apply</strong>.</li>
+<li>Selecteer bij Mode de optie <strong>Manual DNS</strong>.</li>
+<li>Selecteer bij <strong>DNS Server 1</strong> de optie <strong>Google Public DNS</strong>.</li>
+<li>Klik op <strong>Apply</strong>.</li>
 </ol>
 </li>
 </ol>
 </details>
 <h2 id="situation-5-the-wireguard-server-suddenly-stopped-working">Situatie 5. De WireGuard-server werkt plotseling niet meer<a class="headerlink" href="#situation-5-the-wireguard-server-suddenly-stopped-working" title="Permanent link">&para;</a></h2>
 <details>
-<summary>Follow these steps</summary>
+<summary>Volg deze stappen</summary>
 <p>Volg de stappen voor elke mogelijke oorzaak en controleer of het probleem is opgelost. Sla de rest over zodra het werkt.</p>
-<p><strong>Possible cause 1: There may be a power outage in where you set up your WireGuard server</strong></p>
+<p><strong>Mogelijke oorzaak 1: er is mogelijk een stroomstoring op de locatie van je WireGuard-server</strong></p>
 <p>Controleer via de stappen in situatie 1 of via <a href="../../interface_guide/cloud/">GoodCloud</a>, als de router daaraan is gekoppeld, of de WireGuard-server nog online is.</p>
-<p><strong>Possible cause 2: You did not enable the Dynamic DNS (DDNS)</strong></p>
+<p><strong>Mogelijke oorzaak 2: je hebt Dynamic DNS (DDNS) niet ingeschakeld</strong></p>
 <p>Bij een dynamisch IP-adres, wat meestal het geval is, moet je DDNS inschakelen. <a href="https://www.youtube.com/watch?v=qLEj9zoiYRs&amp;t=26s">Schakel DDNS in</a> en volg de overige stappen om de WireGuard-server opnieuw in te stellen.</p>
-<p><strong>Possible cause 3: The port forwarding stopped working for unknown reasons</strong></p>
-<p><a href="../../tutorials/how_to_set_up_port_forwarding/">Set up port forwarding</a> again with another port.</p>
+<p><strong>Mogelijke oorzaak 3: port forwarding werkt om onbekende redenen niet meer</strong></p>
+<p><a href="../../tutorials/how_to_set_up_port_forwarding/">Stel port forwarding opnieuw in</a> met een andere poort.</p>
 </details>
 <hr />
 <p>Heb je nog vragen? Bezoek ons <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> of <a href="https://www.gl-inet.com/contacts/" target="_blank">neem contact met ons op</a>.</p>
@@ -7394,7 +7394,7 @@ Stuur de HTTPS-poort van de primaire router door naar de WireGuard-server om por
     <span class="md-icon" title="Laatst geüpdatet">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 oktober 2026 12:05:42 UTC">21 oktober 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="22 oktober 2026 08:42:03 UTC">22 oktober 2026</span>
   </span>
 
     
