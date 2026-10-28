@@ -6442,6 +6442,8 @@
       
         
       
+        
+      
     
     
     
@@ -6484,6 +6486,27 @@
   
   <span class="md-ellipsis">
     セキュリティスキャン
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface_guide/upnp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UPnP
   </span>
   
 
@@ -7418,7 +7441,7 @@
   <!-- Markdown content -->
   <h1 id="spitz-plus-gl-x2000-user-guide">Spitz Plus (GL-X2000) ユーザーガイド<a class="headerlink" href="#spitz-plus-gl-x2000-user-guide" title="Permanent link">&para;</a></h1>
 <h2 id="product-overview">製品概要<a class="headerlink" href="#product-overview" title="Permanent link">&para;</a></h2>
-<p>Spitz Plus (GL-X2000) は、特に遠隔地やロードトリップ中に高速で安定した接続を提供するために設計された、デュアル SIM 対応の 4G LTE Wi-Fi 6 セルラーゲートウェイです。3 キャリアアグリゲーション（3-Carrier Aggregation）に対応し、3 つのキャリアバンドで同時にデータを送受信することで利用可能な帯域幅を 3 倍にし、混雑を回避します。Cellular（SIM カード）、Ethernet、Repeater、Tethering の 4 種類のインターネット接続方式に対応しています。また、Multi-WAN（フェイルオーバーとロードバランシング）、VPN（OpenVPN と WireGuard）、ペアレンタルコントロール、AdGuard Home、ポートフォワーディング、Tailscale などにも対応しています。</p>
+<p>Spitz Plus (GL-X2000) は、特に遠隔地やロードトリップ中に高速で安定した接続を提供するために設計された、デュアル SIM 対応の 4G LTE Wi-Fi 6 セルラーゲートウェイです。3キャリアアグリゲーション（3CA）により、Cat 4のシングルキャリア接続と比べて最大3倍の理論チャンネル帯域幅を提供できます。これは、集約するキャリアの帯域幅、および通信事業者と地域の基地局によるLTE 3CAのサポート状況に依存します。Cellular（SIM カード）、Ethernet、Repeater、Tethering の 4 種類のインターネット接続方式に対応しています。また、Multi-WAN（フェイルオーバーとロードバランシング）、VPN（OpenVPN と WireGuard）、ペアレンタルコントロール、AdGuard Home、ポートフォワーディング、Tailscale などにも対応しています。</p>
 <p><img alt="gl-x2000 interface" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/user_guide/gl-x2000/hardware_info/x2000_interface.jpg" /></p>
 <h2 id="package-contents">パッケージ内容<a class="headerlink" href="#package-contents" title="Permanent link">&para;</a></h2>
 <ul>
@@ -7513,8 +7536,7 @@
 </li>
 <li>
 <p>Wi-Fi</p>
-<p>デバイスで Settings -&gt; WLAN に移動し、利用可能なネットワーク一覧からルーターの Wi-Fi ネットワーク名を探してパスワードを入力します。（デフォルトのネットワーク名とパスワードは、ルーターのラベルに印刷されています。）</p>
-<p>デバイスで、利用可能なネットワーク一覧からルーターの Wi-Fi ネットワーク名を探し、パスワードを入力してネットワークに接続します。デフォルトのネットワーク名とパスワードは、ルーターのラベルに印刷されています。</p>
+<p>デバイスでSettings -&gt; WLANに移動し、利用可能なネットワーク一覧からルーターのWi-Fiネットワーク名を探してパスワードを入力します。デフォルトのネットワーク名とパスワードは、ルーターのラベルに印刷されています。</p>
 </li>
 </ul>
 <h3 id="3-log-in-to-web-admin-panel">3. Web 管理パネルにログインする<a class="headerlink" href="#3-log-in-to-web-admin-panel" title="Permanent link">&para;</a></h3>
@@ -7665,7 +7687,7 @@
 <p>ゲストネットワークの設定については、<a href="../../interface_guide/guest_network/">ゲストネットワーク</a>を参照してください。</p>
 </div>
 <div class="tabbed-block">
-<p>DNS ページでは、カスタム DNS サーバーの設定、DNS rebinding attack protection の有効化、すべてのクライアントの DNS 設定の上書き、カスタム DNS による VPN DNS の上書き許可、DNS サーバー設定モードを自動にするか、Ethernet 接続の DNS サーバーを手動で指定するかを設定できます。</p>
+<p>DNSページでは、カスタムDNSサーバーの設定、DNSリバインディング攻撃対策の有効化、すべてのクライアントのDNS設定の上書き、およびカスタムDNSによるVPN DNSの上書きの許可を設定できます。上流デバイスから自動的に取得したDNSサーバーを使用するか、カスタムDNSサーバーを手動で指定できます。</p>
 <p>DNS の設定については、<a href="../../interface_guide/dns/">DNS</a>を参照してください。</p>
 </div>
 <div class="tabbed-block">
@@ -7815,7 +7837,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月22日 08:15:38 UTC">2026年10月22日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月28日 06:42:10 UTC">2026年10月28日</span>
   </span>
 
     

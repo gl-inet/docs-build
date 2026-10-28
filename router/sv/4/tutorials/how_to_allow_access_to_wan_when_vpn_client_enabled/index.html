@@ -3562,9 +3562,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#for-firmware-v48-and-higher" class="md-nav__link">
+  <a href="#for-firmware-v48" class="md-nav__link">
     <span class="md-ellipsis">
-      För firmware v4.8 och senare
+      För firmware v4.8
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-firmware-v49-and-above" class="md-nav__link">
+    <span class="md-ellipsis">
+      För firmware v4.9 och senare
     </span>
   </a>
   
@@ -6044,6 +6053,8 @@
       
         
       
+        
+      
     
     
     
@@ -6086,6 +6097,27 @@
   
   <span class="md-ellipsis">
     Säkerhetskontroll
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface_guide/upnp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UPnP
   </span>
   
 
@@ -7140,9 +7172,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#for-firmware-v48-and-higher" class="md-nav__link">
+  <a href="#for-firmware-v48" class="md-nav__link">
     <span class="md-ellipsis">
-      För firmware v4.8 och senare
+      För firmware v4.8
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-firmware-v49-and-above" class="md-nav__link">
+    <span class="md-ellipsis">
+      För firmware v4.9 och senare
     </span>
   </a>
   
@@ -7182,7 +7223,7 @@
 <p>Aktivera <strong>Allow Access WAN</strong> och klicka på <strong>Apply</strong>.</p>
 <p><img alt="allow access" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/4.7-allow-access-wan.png" /></p>
 <p>När det här alternativet är aktiverat kan klientenheter fortfarande komma åt WAN-tjänster i det överordnade subnätet, till exempel skrivare och NAS, medan VPN-anslutningen är aktiv.</p>
-<h2 id="for-firmware-v48-and-higher">För firmware v4.8 och senare<a class="headerlink" href="#for-firmware-v48-and-higher" title="Permanent link">&para;</a></h2>
+<h2 id="for-firmware-v48">För firmware v4.8<a class="headerlink" href="#for-firmware-v48" title="Permanent link">&para;</a></h2>
 <p>Alternativet <strong>Allow Access WAN</strong> har tagits bort från VPN Dashboard i firmware v4.8. Du kan i stället använda en VPN-policy för att ge åtkomst till det lokala WAN-nätverket.</p>
 <p>Följ stegen nedan.</p>
 <ol>
@@ -7201,7 +7242,7 @@
 <p>Välj <strong>Exclude specified Domain / IP List</strong>, ange routerns WAN-subnät och klicka sedan på <strong>Apply</strong>.</p>
 <p>Detta gör att all trafik till WAN-subnätet dirigeras genom det lokala WAN-nätverket i stället för genom VPN-tunneln.</p>
 <p><img alt="exclude target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/exclude-target.png" /></p>
-<p>Här använder vi subnätet 192.168.0.1/24 som exempel. Ange subnätet och tillämpa inställningen. VPN-tunneln visas då enligt nedan.</p>
+<p>Här använder vi subnätet 192.168.1.0/24 som exempel. Ange subnätet och tillämpa inställningen. VPN-tunneln visas då enligt nedan.</p>
 <p><img alt="exclude target apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/target-apply.png" /></p>
 <details>
 <summary>Hur tar jag reda på GL.iNet-routerns WAN-subnät?</summary>
@@ -7232,6 +7273,50 @@
 <p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/ping-test.png" /></p>
 </li>
 </ol>
+<h2 id="for-firmware-v49-and-above">För firmware v4.9 och senare<a class="headerlink" href="#for-firmware-v49-and-above" title="Permanent link">&para;</a></h2>
+<p>Följ stegen nedan för att ge VPN-klientens LAN-enheter åtkomst till lokala WAN-tjänster.</p>
+<ol>
+<li>
+<p>Logga in på VPN-klientens webbadministrationspanel och gå till <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>.</p>
+<p>Klicka på <strong>Add VPN Tunnel</strong> för att börja.</p>
+<p><img alt="add vpn tunnel" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/add_vpn_tunnel.png" width="700" /></p>
+</li>
+<li>
+<p>Välj en eller flera profiler, justera deras prioritet till höger efter behov och klicka sedan på <strong>Next</strong>.</p>
+<p><img alt="select profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/select_profiles_4.9.png" width="600" /></p>
+<p>Välj <strong>All Clients</strong> och klicka sedan på <strong>Next</strong>. Du kan även välja specifika klienter efter behov.</p>
+<p><img alt="all clients" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/all_clients_4.9.png" width="600" /></p>
+<p>Välj <strong>Exclude specified Domain / IP List</strong>, ange routerns WAN-subnät och klicka sedan på <strong>Apply</strong>. Detta gör att all trafik till WAN-subnätet dirigeras genom det lokala WAN-nätverket i stället för genom VPN-tunneln.</p>
+<p>Här använder vi subnätet 192.168.1.0/24 som exempel. Ange subnätet och tillämpa inställningen.</p>
+<p><img alt="exclude target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/exclude-target_4.9.png" width="600" /></p>
+<details>
+<summary>Hur tar jag reda på GL.iNet-routerns WAN-subnät?</summary>
+<p>GL.iNet-routerns WAN-subnät visas vanligtvis på sidan INTERNET. Det bestäms av den uppströmsenhet som routerns WAN-gränssnitt är anslutet till, till exempel ett modem från internetleverantören eller en uppströmsgateway.</p>
+<p>Om routern till exempel används som sekundär router och dess WAN-port är ansluten till ett annat lokalt nätverk, såsom ett modem från internetleverantören eller huvudrouterns LAN-port, och routerns WAN-IP är 192.168.1.165, gatewayen är 192.168.1.1 och nätmasken är 255.255.255.0 (en vanlig nätmask för små nätverk), är motsvarande WAN-subnät 192.168.1.0/24. Det är även den uppströmsenhetens LAN-subnät.</p>
+<p><img alt="check wan subnet" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/local-wan-details.png" /></p>
+<p><strong>Obs!</strong> Prefixlängden för 192.168.1.0/24 är 24, vilket motsvarar nätmasken 255.255.255.0. Om routerns WAN-nätmask inte är 255.255.255.0 är prefixlängden för WAN-subnätet inte "/24". Fastställ WAN-subnätet utifrån den faktiska WAN-konfigurationen.</p>
+</details>
+</li>
+<li>
+<p>Klicka på kugghjulsikonen uppe till höger för att ange en policy för trafik som inte matchar någon VPN-tunnel.</p>
+<p><img alt="select config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/select-config_4.9.png" /></p>
+<p>Välj <strong>Allow Non-VPN Traffic</strong> och klicka sedan på <strong>Apply</strong>.</p>
+<p><img alt="allow non-vpn traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/allow_non-vpn_traffic.png" width="500" /></p>
+</li>
+<li>
+<p>Klicka på strömknappen för att aktivera VPN-tunneln. Anslutningen startar.</p>
+<p><img alt="enable vpn" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/enable_vpn_4.9.png" width="700" /></p>
+<p>Vänta några minuter. När VPN-anslutningen har upprättats blir tunnelns statusindikator grön.</p>
+<p><img alt="vpn connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/vpn_connected_4.9.png" width="700" /></p>
+<p>Sök efter din offentliga IP-adress för att testa VPN-anslutningen. Öppna till exempel en webbläsare och besök <a href="https://whatismyipaddress.com/" target="_blank">whatismyip</a>. Sidan visar din offentliga IP-adress och plats enligt nedan.</p>
+<p><img alt="vpn test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/ipcheck_4.9.png" /></p>
+</li>
+<li>
+<p>Öppna enheter eller tjänster i WAN-subnätet och kontrollera att de är åtkomliga.</p>
+<p>Du kan testa anslutningen med kommandot ping.</p>
+<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/ping-test_4.9.png" width="500" /></p>
+</li>
+</ol>
 <hr />
 <p>Har du fortfarande frågor? Besök vårt <a href="https://forum.gl-inet.com" target="_blank">communityforum</a> eller <a href="https://www.gl-inet.com/contacts/" target="_blank">kontakta oss</a>.</p>
 
@@ -7258,7 +7343,7 @@
     <span class="md-icon" title="Senast uppdaterad">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 oktober 2026 12:05:42 UTC">21 oktober 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 oktober 2026 06:42:10 UTC">28 oktober 2026</span>
   </span>
 
     

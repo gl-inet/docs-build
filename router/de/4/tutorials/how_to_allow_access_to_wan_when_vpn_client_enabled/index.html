@@ -3562,9 +3562,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#for-firmware-v48-and-higher" class="md-nav__link">
+  <a href="#for-firmware-v48" class="md-nav__link">
     <span class="md-ellipsis">
-      Für Firmware v4.8 und höher
+      Für Firmware v4.8
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-firmware-v49-and-above" class="md-nav__link">
+    <span class="md-ellipsis">
+      Für Firmware v4.9 und höher
     </span>
   </a>
   
@@ -6321,6 +6330,8 @@
       
         
       
+        
+      
     
     
     
@@ -6363,6 +6374,27 @@
   
   <span class="md-ellipsis">
     Sicherheitsprüfung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface_guide/upnp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UPnP
   </span>
   
 
@@ -7140,9 +7172,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#for-firmware-v48-and-higher" class="md-nav__link">
+  <a href="#for-firmware-v48" class="md-nav__link">
     <span class="md-ellipsis">
-      Für Firmware v4.8 und höher
+      Für Firmware v4.8
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-firmware-v49-and-above" class="md-nav__link">
+    <span class="md-ellipsis">
+      Für Firmware v4.9 und höher
     </span>
   </a>
   
@@ -7182,7 +7223,7 @@
 <p>Aktivieren Sie <strong>Allow Access WAN</strong> und klicken Sie auf <strong>Apply</strong>.</p>
 <p><img alt="allow access" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/4.7-allow-access-wan.png" /></p>
 <p>Wenn diese Option aktiviert ist, können Client-Geräte auch bei aktiver VPN-Verbindung weiterhin auf WAN-Dienste im vorgelagerten Subnetz zugreifen, z. B. auf Drucker, NAS usw.</p>
-<h2 id="for-firmware-v48-and-higher">Für Firmware v4.8 und höher<a class="headerlink" href="#for-firmware-v48-and-higher" title="Permanent link">&para;</a></h2>
+<h2 id="for-firmware-v48">Für Firmware v4.8<a class="headerlink" href="#for-firmware-v48" title="Permanent link">&para;</a></h2>
 <p>Die Option <strong>Allow Access WAN</strong> wurde in Firmware v4.8 aus dem VPN Dashboard entfernt. Der Zugriff auf das lokale WAN lässt sich jedoch weiterhin über eine VPN-Richtlinie umsetzen.</p>
 <p>Führen Sie dazu die folgenden Schritte aus.</p>
 <ol>
@@ -7201,7 +7242,7 @@
 <p>Wählen Sie <strong>Exclude specified Domain / IP List</strong>, geben Sie das WAN-Subnetz Ihres Routers ein und klicken Sie dann auf <strong>Apply</strong>.</p>
 <p>Dadurch wird sichergestellt, dass der gesamte Datenverkehr zum WAN-Subnetz über das lokale WAN und nicht über den VPN-Tunnel geleitet wird.</p>
 <p><img alt="exclude target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/exclude-target.png" /></p>
-<p>Hier verwenden wir das Subnetz <code>192.168.0.1/24</code> als Beispiel. Geben Sie dieses Subnetz ein und übernehmen Sie die Einstellung; der VPN-Tunnel wird dann wie unten dargestellt angezeigt.</p>
+<p>Hier verwenden wir das Subnetz <code>192.168.1.0/24</code> als Beispiel. Geben Sie dieses Subnetz ein und übernehmen Sie die Einstellung; der VPN-Tunnel wird dann wie unten dargestellt angezeigt.</p>
 <p><img alt="exclude target apply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/target-apply.png" /></p>
 <details>
 <summary>Wie erkenne ich das WAN-Subnetz meines GL.iNet-Routers?</summary>
@@ -7232,6 +7273,50 @@
 <p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/ping-test.png" /></p>
 </li>
 </ol>
+<h2 id="for-firmware-v49-and-above">Für Firmware v4.9 und höher<a class="headerlink" href="#for-firmware-v49-and-above" title="Permanent link">&para;</a></h2>
+<p>Führen Sie die folgenden Schritte aus, damit die LAN-Geräte des VPN-Clients auf lokale WAN-Dienste zugreifen können.</p>
+<ol>
+<li>
+<p>Melden Sie sich am webbasierten Admin Panel Ihres VPN-Clients an und gehen Sie zu <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>.</p>
+<p>Klicken Sie auf <strong>Add VPN Tunnel</strong>, um zu beginnen.</p>
+<p><img alt="add vpn tunnel" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/add_vpn_tunnel.png" width="700" /></p>
+</li>
+<li>
+<p>Wählen Sie ein oder mehrere Profile aus, passen Sie bei Bedarf rechts deren Priorität an und klicken Sie auf <strong>Next</strong>.</p>
+<p><img alt="select profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/select_profiles_4.9.png" width="600" /></p>
+<p>Wählen Sie <strong>All Clients</strong> und klicken Sie auf <strong>Next</strong>. Sie können bei Bedarf auch bestimmte Clients auswählen.</p>
+<p><img alt="all clients" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/all_clients_4.9.png" width="600" /></p>
+<p>Wählen Sie <strong>Exclude specified Domain / IP List</strong>, geben Sie das WAN-Subnetz Ihres Routers ein und klicken Sie dann auf <strong>Apply</strong>. Dadurch wird sichergestellt, dass der gesamte Datenverkehr zum WAN-Subnetz über das lokale WAN und nicht über den VPN-Tunnel geleitet wird.</p>
+<p>Hier verwenden wir das Subnetz 192.168.1.0/24 als Beispiel. Geben Sie dieses Subnetz ein und übernehmen Sie die Einstellung.</p>
+<p><img alt="exclude target" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/exclude-target_4.9.png" width="600" /></p>
+<details>
+<summary>Wie erkenne ich das WAN-Subnetz meines GL.iNet-Routers?</summary>
+<p>Das WAN-Subnetz eines GL.iNet-Routers finden Sie normalerweise auf der Seite INTERNET. Es wird durch das vorgelagerte Gerät bestimmt, mit dem die WAN-Schnittstelle des Routers verbunden ist (z. B. ein ISP-Modem oder ein Upstream-Gateway).</p>
+<p>Wenn Ihr Router beispielsweise als sekundärer Router arbeitet (sein WAN-Port also mit einem anderen lokalen Netzwerk verbunden ist, etwa mit einem ISP-Modem oder dem LAN-Port eines Hauptrouters) und seine WAN-IP <code>192.168.1.165</code>, das Gateway <code>192.168.1.1</code> und die Subnetzmaske <code>255.255.255.0</code> (eine übliche Maske für kleine Netzwerke) lautet, dann ist das zugehörige WAN-Subnetz <code>192.168.1.0/24</code>. Das ist zugleich das LAN-Subnetz des vorgelagerten Geräts.</p>
+<p><img alt="check wan subnet" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/de/4/tutorials/allow_access_to_vpn_server_wan/local-wan-details.png" /></p>
+<p><strong>Hinweis</strong>: Die Präfixlänge von <code>192.168.1.0/24</code> ist <code>24</code> und entspricht der Subnetzmaske <code>255.255.255.0</code>. Wenn die WAN-Subnetzmaske Ihres Routers nicht <code>255.255.255.0</code> ist, lautet die Präfixlänge Ihres WAN-Subnetzes nicht <code>/24</code>. Ermitteln Sie das WAN-Subnetz daher bitte anhand der tatsächlichen WAN-Konfiguration.</p>
+</details>
+</li>
+<li>
+<p>Klicken Sie oben rechts auf das Zahnradsymbol, um eine Richtlinie für Datenverkehr festzulegen, der keinem VPN-Tunnel entspricht.</p>
+<p><img alt="select config" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/select-config_4.9.png" /></p>
+<p>Wählen Sie <strong>Allow Non-VPN Traffic</strong> und klicken Sie auf <strong>Apply</strong>.</p>
+<p><img alt="allow non-vpn traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/allow_non-vpn_traffic.png" width="500" /></p>
+</li>
+<li>
+<p>Klicken Sie auf die Einschalttaste, um diesen VPN-Tunnel zu aktivieren. Der Verbindungsaufbau beginnt.</p>
+<p><img alt="enable vpn" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/enable_vpn_4.9.png" width="700" /></p>
+<p>Warten Sie einige Minuten. Sobald die VPN-Verbindung hergestellt ist, wird die Statusanzeige des Tunnels grün.</p>
+<p><img alt="vpn connected" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/vpn_connected_4.9.png" width="700" /></p>
+<p>Prüfen Sie Ihre öffentliche IP, um die VPN-Verbindung zu testen. Öffnen Sie dazu zum Beispiel einen Browser und rufen Sie <a href="https://whatismyipaddress.com/" target="_blank">whatismyip</a> auf. Dort werden Ihre öffentliche IP-Adresse und Ihr Standort angezeigt, wie unten dargestellt.</p>
+<p><img alt="vpn test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/ipcheck_4.9.png" /></p>
+</li>
+<li>
+<p>Greifen Sie auf Geräte oder Dienste im WAN-Subnetz zu und prüfen Sie, ob der Zugriff erfolgreich ist.</p>
+<p>Sie können die Erreichbarkeit mit dem Befehl <code>ping</code> testen.</p>
+<p><img alt="ping test" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/allow_access_to_vpn_server_wan/ping-test_4.9.png" width="500" /></p>
+</li>
+</ol>
 <hr />
 <p>Haben Sie noch Fragen? Besuchen Sie unser <a href="https://forum.gl-inet.com" target="_blank">Community Forum</a> oder <a href="https://www.gl-inet.com/contacts/" target="_blank">kontaktieren Sie uns</a>.</p>
 
@@ -7258,7 +7343,7 @@
     <span class="md-icon" title="Letztes Update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20. Oktober 2026 09:53:39 UTC">20. Oktober 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28. Oktober 2026 06:42:10 UTC">28. Oktober 2026</span>
   </span>
 
     

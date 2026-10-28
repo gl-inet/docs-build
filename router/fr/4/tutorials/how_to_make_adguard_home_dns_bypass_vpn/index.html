@@ -6273,6 +6273,8 @@
       
         
       
+        
+      
     
     
     
@@ -6315,6 +6317,27 @@
   
   <span class="md-ellipsis">
     Analyse de sécurité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface_guide/upnp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UPnP
   </span>
   
 
@@ -7100,12 +7123,11 @@
   <!-- Markdown content -->
   <h1 id="how-to-make-adguard-home-dns-bypass-the-vpn-tunnel">Comment faire en sorte que le DNS d'AdGuard Home contourne le tunnel VPN<a class="headerlink" href="#how-to-make-adguard-home-dns-bypass-the-vpn-tunnel" title="Permanent link">&para;</a></h1>
 <p>Normalement, VPN et AdGuard Home peuvent fonctionner simultanément sur les routeurs GL.iNet. Aucun problème ne survient lorsque AdGuard Home n'est pas configuré pour gérer les requêtes DNS.</p>
-<p>Cependant, si vous configurez AdGuard Home pour gérer tout le trafic DNS et transférer les requêtes vers des <strong>serveurs DNS publics en amont</strong>, l'activation du VPN provoquera des échecs de résolution DNS.</p>
+<p>Cependant, si vous configurez AdGuard Home pour gérer tout le trafic DNS et transférer les requêtes vers des <strong>serveurs DNS publics en amont</strong>, ces requêtes peuvent passer par le tunnel VPN selon vos paramètres de routage VPN. Si ces serveurs ne sont pas accessibles via le tunnel, les clients LAN utilisant AdGuard Home pour la résolution DNS risquent de ne pas pouvoir résoudre les noms de domaine.</p>
 <p><img alt="adguardhome" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/make_adguard_home_dns_bypass_vpn/adguardhome.jpg" />
 <br><small>(AdGuard Home activé et gère les requêtes DNS)</small></p>
 <p><img alt="adguard dns" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/make_adguard_home_dns_bypass_vpn/upstream_dns.png" />
 <br><small>(Paramètres DNS en amont d'AdGuard Home)</small></p>
-<p>Par défaut, tout le trafic sortant est acheminé via le tunnel VPN. Cela force le trafic DNS en amont d'AdGuard Home à passer par le VPN, qui ne peut pas atteindre vos serveurs DNS publics en amont. En conséquence, tous les clients connectés ne pourront pas résoudre les noms de domaine.</p>
 <p>Pour qu'AdGuard Home reste fonctionnel lorsque le VPN est actif, vous pouvez ajouter une route statique dans LuCI pour acheminer le trafic DNS en amont vers la passerelle WAN habituelle en contournant le tunnel VPN. Suivez les étapes ci-dessous.</p>
 <ol>
 <li>
@@ -7187,7 +7209,7 @@ cp -r /rom/etc/init.d/adguardhome /etc/init.d/adguardhome
     <span class="md-icon" title="Dernière mise à jour">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 octobre 2026 09:53:39 UTC">20 octobre 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 octobre 2026 06:42:10 UTC">28 octobre 2026</span>
   </span>
 
     

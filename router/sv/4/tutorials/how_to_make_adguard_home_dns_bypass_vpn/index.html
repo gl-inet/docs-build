@@ -5996,6 +5996,8 @@
       
         
       
+        
+      
     
     
     
@@ -6038,6 +6040,27 @@
   
   <span class="md-ellipsis">
     Säkerhetskontroll
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface_guide/upnp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UPnP
   </span>
   
 
@@ -7100,12 +7123,11 @@
   <!-- Markdown content -->
   <h1 id="how-to-make-adguard-home-dns-bypass-the-vpn-tunnel">Låt AdGuard Home DNS kringgå VPN-tunneln<a class="headerlink" href="#how-to-make-adguard-home-dns-bypass-the-vpn-tunnel" title="Permanent link">&para;</a></h1>
 <p>VPN och AdGuard Home kan normalt köras samtidigt på GL.iNet-routrar. Inga problem uppstår när AdGuard Home inte är inställt på att hantera DNS-förfrågningar.</p>
-<p>Om du däremot konfigurerar AdGuard Home för att hantera all DNS-trafik och vidarebefordra frågor till <strong>public upstream DNS servers</strong> leder aktivering av VPN till fel vid DNS-uppslagning.</p>
+<p>Om du däremot konfigurerar AdGuard Home för att hantera all DNS-trafik och vidarebefordra frågor till <strong>offentliga uppströms DNS-servrar</strong> kan frågorna dirigeras genom VPN-tunneln beroende på dina VPN-routningsinställningar. Om servrarna inte kan nås genom tunneln kan LAN-klienter som använder AdGuard Home för DNS-uppslagning misslyckas med att slå upp domännamn.</p>
 <p><img alt="adguardhome" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/make_adguard_home_dns_bypass_vpn/adguardhome.jpg" />
 <br><small>(AdGuard Home är aktiverat och hanterar DNS-förfrågningar)</small></p>
 <p><img alt="adguard dns" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/make_adguard_home_dns_bypass_vpn/upstream_dns.png" />
 <br><small>(AdGuard Homes inställningar för uppströms DNS)</small></p>
-<p>Som standard dirigeras all utgående trafik genom VPN-tunneln. Det tvingar AdGuard Homes uppströms DNS-trafik genom VPN, där den inte kan nå de offentliga uppströms DNS-servrarna. Därför kan inga anslutna klienter slå upp domännamn.</p>
 <p>För att AdGuard Home ska fortsätta fungera när VPN är aktivt kan du lägga till en statisk rutt i LuCI som vidarebefordrar uppströms DNS-trafik till den vanliga WAN-gatewayen och kringgår VPN-tunneln. Följ stegen nedan.</p>
 <ol>
 <li>
@@ -7187,7 +7209,7 @@ cp -r /rom/etc/init.d/adguardhome /etc/init.d/adguardhome
     <span class="md-icon" title="Senast uppdaterad">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 oktober 2026 12:05:42 UTC">21 oktober 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 oktober 2026 06:42:10 UTC">28 oktober 2026</span>
   </span>
 
     

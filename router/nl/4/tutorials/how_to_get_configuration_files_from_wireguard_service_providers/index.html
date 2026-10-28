@@ -3682,6 +3682,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#vpn-safe" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPN Safe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vpn-unlimitedkeepsolid" class="md-nav__link">
     <span class="md-ellipsis">
       VPN Unlimited(KeepSolid)
@@ -6233,6 +6242,8 @@
       
         
       
+        
+      
     
     
     
@@ -6275,6 +6286,27 @@
   
   <span class="md-ellipsis">
     Beveiligingsscan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface_guide/upnp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UPnP
   </span>
   
 
@@ -7491,6 +7523,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#vpn-safe" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPN Safe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vpn-unlimitedkeepsolid" class="md-nav__link">
     <span class="md-ellipsis">
       VPN Unlimited(KeepSolid)
@@ -7593,7 +7634,7 @@
 </li>
 </ol>
 <p><strong>Opmerking:</strong> de sleutel in het Hide.me VPN-configuratiebestand wordt vóór elke verbinding opnieuw gegenereerd en wordt na het verbreken van de verbinding ongeldig. Als je dit configuratiebestand naar andere apparaten kopieert, kunnen deze daarom geen verbinding maken.</p>
-<p><a href="https://github.com/eventure/hide.client.routers" target="_blank">Referentiekoppeling</a></p>
+<p>Referentie: <a href="https://github.com/eventure/hide.client.routers" target="_blank">hide.me VPN for Routers - GitHub</a></p>
 </details>
 <details>
 <summary>Mullvad</summary>
@@ -7647,7 +7688,6 @@
 <p>Volg daarna <a href="../../interface_guide/wireguard_client/#set-up-surfshark">deze handleiding</a> om door te gaan.</p>
 </li>
 </ol>
-<p><a href="https://support.surfshark.com/hc/en-us/articles/6585805139474-How-to-set-up-a-manual-WireGuard-connection-on-Android-" target="_blank">Referentiekoppeling</a></p>
 </details>
 <details>
 <summary>AirVPN</summary>
@@ -7708,7 +7748,7 @@
 </li>
 <li>
 <p>Open de configuratie in een teksteditor en kopieer de inhoud.</p>
-<p>De configuratie kan IPv6-inhoud bevatten. Omdat GL.iNet-routers IPv6 niet volledig ondersteunen, moet je deze IPv6-inhoud verwijderen. In het onderstaande voorbeeld is de IPv6-inhoud gemarkeerd.</p>
+<p>De configuratie kan een IPv6-adres bevatten. Open het .conf-bestand en verwijder het IPv6-adres om compatibiliteits- en verbindingsproblemen te voorkomen. De gemarkeerde inhoud hieronder is de IPv6-inhoud.</p>
 <p><img alt="remove wireguard ipv6 content" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/ovpn/remove_wireguard_ipv6_content.jpg" /></p>
 </li>
 <li>
@@ -7781,9 +7821,11 @@
 <p><img alt="purevpn manual4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/purevpn/purevpn-manual-4.png" /></p>
 <p><strong>Opmerking</strong>: de WireGuard-configuratie verloopt na 30 minuten. Activeer de verbinding binnen de geldigheidsduur. Anders moet je een nieuwe configuratie genereren.</p>
 </li>
-</ol>
+<li>
 <p>Volg daarna <a href="../../interface_guide/wireguard_client/#set-up-wireguard-client-manually-for-other-providers">deze handleiding</a> om de configuratie te voltooien.</p>
-<p><a href="https://support.purevpn.com/router/how-to-setup-purevpn-on-glinet-router" target="_blank">Referentiekoppeling</a></p>
+</li>
+</ol>
+<p>Referentie: <a href="https://support.purevpn.com/router/how-to-setup-purevpn-on-glinet-router" target="_blank">How to set up PureVPN on GL.iNet router</a></p>
 </details>
 <details>
 <summary>SpiderVPN</summary>
@@ -7889,6 +7931,39 @@
 </ol>
 </details>
 <details>
+<summary>VPN Safe</summary>
+<h3 id="vpn-safe">VPN Safe<a class="headerlink" href="#vpn-safe" title="Permanent link">&para;</a></h3>
+<p><a href="https://secure.vpnsafe.net/aff.php?aff=6" target="_blank">Officiële website</a></p>
+<ol>
+<li>
+<p>Meld je aan bij het <strong>VPN Safe Dashboard</strong> en klik op je actieve VPN-dienst.</p>
+<p><img alt="vpnsafe1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/vpnsafe/vpnsafe1.jpg" /></p>
+</li>
+<li>
+<p>Scrol in de productdetails omlaag naar <strong>WireGuard Configuration</strong>.</p>
+<p><img alt="vpnsafe2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/vpnsafe/vpnsafe2.jpg" /></p>
+</li>
+<li>
+<p>Er zijn twee manieren om VPN Safe WireGuard-configuraties te downloaden, afhankelijk van het aantal configuraties dat je nodig hebt:</p>
+<ul>
+<li>
+<p>Als je één configuratie wilt downloaden, selecteer je de gewenste server in de vervolgkeuzelijst en klik je op <strong>Download Config</strong>. Je kunt ook de QR-code rechts met de WireGuard-app scannen om snel verbinding te maken.</p>
+<p><img alt="vpnsafe3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/vpnsafe/vpnsafe3.jpg" /></p>
+<p><img alt="vpnsafe4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/vpnsafe/vpnsafe4.jpg" /></p>
+</li>
+<li>
+<p>Als je alle configuraties wilt downloaden, klik je op <strong>Download All</strong> om een ZIP-bestand te krijgen. Pak het uit om alle beschikbare configuratiebestanden te verkrijgen.</p>
+<p><img alt="vpnsafe5" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/vpnsafe/vpnsafe5.jpg" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Volg daarna <a href="../../interface_guide/wireguard_client/#set-up-wireguard-client-manually-for-other-providers">deze handleiding</a> om verder te gaan.</p>
+</li>
+</ol>
+<p>Referentie: <a href="https://www.youtube.com/watch?v=W-ycLZPeygA&amp;list=PLY3TuHSEidyQ&amp;index=12" target="_blank">How to Add a VPN Safe WireGuard Config to a GL.iNet Router</a></p>
+</details>
+<details>
 <summary>VPN Unlimited(KeepSolid)</summary>
 <h3 id="vpn-unlimitedkeepsolid">VPN Unlimited(KeepSolid)<a class="headerlink" href="#vpn-unlimitedkeepsolid" title="Permanent link">&para;</a></h3>
 <p><a href="https://keepsolid.g2afse.com/click?pid=270&amp;offer_id=7" target="_blank">Officiële website</a></p>
@@ -7923,8 +7998,7 @@ Endpoint = <i>plak de Endpoint-informatie</i><br>
 <p>Volg daarna <a href="../../interface_guide/wireguard_client/#set-up-wireguard-client-manually-for-other-providers">deze handleiding</a> om door te gaan.</p>
 </li>
 </ol>
-<p><a href="https://www.vpnunlimited.com/help/manuals/wireguard-setup-on-glinet-router" target="_blank">Referentiekoppeling 1</a></p>
-<p><a href="https://www.vpnunlimited.com/help/manuals/wireguard/windows" target="_blank">Referentiekoppeling 2</a></p>
+<p>Referentie: <a href="https://www.vpnunlimited.com/help/manuals/wireguard-setup-on-glinet-router" target="_blank">How to Configure WireGuard Client on GLiNet Router</a></p>
 </details>
 <details>
 <summary>Windscribe</summary>
@@ -8002,7 +8076,7 @@ Endpoint = <i>plak de Endpoint-informatie</i><br>
     <span class="md-icon" title="Laatst geüpdatet">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 oktober 2026 12:05:42 UTC">21 oktober 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 oktober 2026 06:42:10 UTC">28 oktober 2026</span>
   </span>
 
     

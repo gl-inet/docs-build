@@ -3682,6 +3682,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#vpn-safe" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPN Safe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vpn-unlimitedkeepsolid" class="md-nav__link">
     <span class="md-ellipsis">
       VPN Unlimited(KeepSolid)
@@ -6510,6 +6519,8 @@
       
         
       
+        
+      
     
     
     
@@ -6552,6 +6563,27 @@
   
   <span class="md-ellipsis">
     Skanowanie zabezpieczeń
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface_guide/upnp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UPnP
   </span>
   
 
@@ -7491,6 +7523,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#vpn-safe" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPN Safe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vpn-unlimitedkeepsolid" class="md-nav__link">
     <span class="md-ellipsis">
       VPN Unlimited(KeepSolid)
@@ -7593,7 +7634,7 @@
 </li>
 </ol>
 <p><strong>Uwaga:</strong> Klucz w pliku konfiguracyjnym Hide.me VPN jest generowany na nowo przed każdym połączeniem i traci ważność po rozłączeniu. Skopiowanie tego pliku konfiguracyjnego na inne urządzenie nie umożliwi nawiązania połączenia.</p>
-<p><a href="https://github.com/eventure/hide.client.routers" target="_blank">Odnośnik</a></p>
+<p>Źródło: <a href="https://github.com/eventure/hide.client.routers" target="_blank">hide.me VPN for Routers - GitHub</a></p>
 </details>
 <details>
 <summary>Mullvad</summary>
@@ -7645,7 +7686,6 @@
 <p>Następnie postępuj zgodnie z <a href="../../interface_guide/wireguard_client/#set-up-surfshark">tym przewodnikiem</a>.</p>
 </li>
 </ol>
-<p><a href="https://support.surfshark.com/hc/en-us/articles/6585805139474-How-to-set-up-a-manual-WireGuard-connection-on-Android-" target="_blank">Link referencyjny</a></p>
 </details>
 <details>
 <summary>AirVPN</summary>
@@ -7706,7 +7746,7 @@
 </li>
 <li>
 <p>Otwórz konfigurację w edytorze tekstu i skopiuj jej zawartość.</p>
-<p>Konfiguracja może zawierać ustawienia IPv6. Ponieważ routery GL.iNet nie obsługują IPv6 wystarczająco dobrze, usuń treść dotyczącą IPv6. Poniżej znajduje się przykład — zaznaczony fragment to właśnie ustawienia IPv6.</p>
+<p>Konfiguracja może zawierać adres IPv6. Aby uniknąć problemów ze zgodnością i łącznością, otwórz plik .conf i usuń adres IPv6. Zaznaczony poniżej fragment to ustawienia IPv6.</p>
 <p><img alt="remove wireguard ipv6 content" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/ovpn/remove_wireguard_ipv6_content.jpg" /></p>
 </li>
 <li>
@@ -7779,9 +7819,11 @@
 <p><img alt="purevpn manual4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/purevpn/purevpn-manual-4.png" /></p>
 <p><strong>Uwaga</strong>: Konfiguracja WireGuard wygasa po 30 minutach. Aktywuj połączenie w okresie ważności. W przeciwnym razie trzeba wygenerować nową.</p>
 </li>
-</ol>
+<li>
 <p>Następnie postępuj zgodnie z <a href="../../interface_guide/wireguard_client/#set-up-wireguard-client-manually-for-other-providers">tym przewodnikiem</a>, aby dokończyć konfigurację.</p>
-<p><a href="https://support.purevpn.com/router/how-to-setup-purevpn-on-glinet-router" target="_blank">Link referencyjny</a></p>
+</li>
+</ol>
+<p>Źródło: <a href="https://support.purevpn.com/router/how-to-setup-purevpn-on-glinet-router" target="_blank">How to set up PureVPN on GL.iNet router</a></p>
 </details>
 <details>
 <summary>SpiderVPN</summary>
@@ -7887,6 +7929,39 @@
 </ol>
 </details>
 <details>
+<summary>VPN Safe</summary>
+<h3 id="vpn-safe">VPN Safe<a class="headerlink" href="#vpn-safe" title="Permanent link">&para;</a></h3>
+<p><a href="https://secure.vpnsafe.net/aff.php?aff=6" target="_blank">Oficjalna strona</a></p>
+<ol>
+<li>
+<p>Zaloguj się do <strong>VPN Safe Dashboard</strong> i kliknij aktywną usługę VPN.</p>
+<p><img alt="vpnsafe1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/vpnsafe/vpnsafe1.jpg" /></p>
+</li>
+<li>
+<p>W szczegółach produktu przewiń w dół do <strong>WireGuard Configuration</strong>.</p>
+<p><img alt="vpnsafe2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/vpnsafe/vpnsafe2.jpg" /></p>
+</li>
+<li>
+<p>Konfiguracje WireGuard VPN Safe można pobrać na dwa sposoby, zależnie od liczby potrzebnych konfiguracji:</p>
+<ul>
+<li>
+<p>Aby pobrać pojedynczą konfigurację, wybierz z listy rozwijanej serwer, z którym chcesz się połączyć, a następnie kliknij <strong>Download Config</strong>. Możesz też zeskanować kod QR po prawej stronie w aplikacji WireGuard, aby szybko się połączyć.</p>
+<p><img alt="vpnsafe3" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/vpnsafe/vpnsafe3.jpg" /></p>
+<p><img alt="vpnsafe4" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/vpnsafe/vpnsafe4.jpg" /></p>
+</li>
+<li>
+<p>Aby pobrać wszystkie konfiguracje, kliknij <strong>Download All</strong>, aby uzyskać archiwum ZIP. Rozpakuj je, aby uzyskać wszystkie dostępne pliki konfiguracyjne.</p>
+<p><img alt="vpnsafe5" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/get_wg_configs/vpnsafe/vpnsafe5.jpg" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Następnie skorzystaj z <a href="../../interface_guide/wireguard_client/#set-up-wireguard-client-manually-for-other-providers">tego przewodnika</a>, aby kontynuować.</p>
+</li>
+</ol>
+<p>Źródło: <a href="https://www.youtube.com/watch?v=W-ycLZPeygA&amp;list=PLY3TuHSEidyQ&amp;index=12" target="_blank">How to Add a VPN Safe WireGuard Config to a GL.iNet Router</a></p>
+</details>
+<details>
 <summary>VPN Unlimited(KeepSolid)</summary>
 <h3 id="vpn-unlimitedkeepsolid">VPN Unlimited(KeepSolid)<a class="headerlink" href="#vpn-unlimitedkeepsolid" title="Permanent link">&para;</a></h3>
 <p><a href="https://keepsolid.g2afse.com/click?pid=270&amp;offer_id=7" target="_blank">Oficjalna strona</a></p>
@@ -7921,8 +7996,7 @@ Endpoint = <i>wklej informacje z pola Endpoint</i><br>
 <p>Następnie postępuj zgodnie z <a href="../../interface_guide/wireguard_client/#set-up-wireguard-client-manually-for-other-providers">tym przewodnikiem</a>.</p>
 </li>
 </ol>
-<p><a href="https://www.vpnunlimited.com/help/manuals/wireguard-setup-on-glinet-router" target="_blank">Link referencyjny 1</a></p>
-<p><a href="https://www.vpnunlimited.com/help/manuals/wireguard/windows" target="_blank">Link referencyjny 2</a></p>
+<p>Źródło: <a href="https://www.vpnunlimited.com/help/manuals/wireguard-setup-on-glinet-router" target="_blank">How to Configure WireGuard Client on GLiNet Router</a></p>
 </details>
 <details>
 <summary>Windscribe</summary>
@@ -8000,7 +8074,7 @@ Endpoint = <i>wklej informacje z pola Endpoint</i><br>
     <span class="md-icon" title="Ostatnia aktualizacja">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 października 2026 09:53:39 UTC">20 października 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="28 października 2026 06:42:10 UTC">28 października 2026</span>
   </span>
 
     
