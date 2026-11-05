@@ -7232,25 +7232,30 @@
 
   <!-- Markdown content -->
   <h1 id="connect-glinet-routers-to-an-eap-network">EAPネットワークにGL.iNetルーターを接続する方法<a class="headerlink" href="#connect-glinet-routers-to-an-eap-network" title="Permanent link">&para;</a></h1>
-<p>一部の GL.iNet ルーターは、EAP（Extensible Authentication Protocol）Wi-Fi ネットワークへの接続をサポートしています。</p>
+<p>一部の GL.iNet ルーターは、EAP（Extensible Authentication Protocol）Wi-Fi ネットワークへのリピーターとしての接続をサポートしています。</p>
 <p>EAP は、<strong>802.1X 認証</strong>を使用する <strong>WPA2‑Enterprise / WPA3‑Enterprise</strong> ネットワークで一般的に利用される認証フレームワークです。代表的な例として、802.1X と EAP に基づく教育・研究向けのグローバル Wi‑Fi ローミングサービス <strong>eduroam</strong> があります。</p>
-<p>このガイドでは、GL.iNet ルーターを EAP Wi-Fi ネットワークに接続する 2 つの方法を紹介します。1 つは GL.iNet Web 管理パネル、もう 1 つは LuCI を使用する方法です。</p>
-<h2 id="supported-models">対応モデル<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h2>
+<p>このフレームワークには、EAP-PEAP、EAP-TLS、EAP-TTLS、EAP-FAST など、複数の EAP 認証方式があります。ただし、すべての EAP 方式がすべてのルーターのインターフェースやモデルでサポートされているわけではありません。</p>
+<p>このガイドでは、GL.iNet ルーターを EAP Wi-Fi ネットワークに接続する 2 つの方法を紹介します。1 つは GL.iNet Web 管理パネル、もう 1 つは LuCI を使用する方法です。それぞれ対応する EAP 認証方式が異なり、前者は <strong>EAP-PEAP</strong> のみ、後者は <strong>EAP-TLS</strong>、<strong>EAP-TTLS</strong>、<strong>EAP-PEAP</strong>、<strong>EAP-FAST</strong> に対応しています。</p>
+<p>一部の GL.iNet ルーターでは、この 2 つの方法のうち一方でのみ EAP リピーター機能を利用できます。以下の対応モデルを確認してください。</p>
+<h3 id="supported-models">対応モデル<a class="headerlink" href="#supported-models" title="Permanent link">&para;</a></h3>
 <details>
 <summary>対応モデル</summary>
 <ul>
 <li>GL-MG1300 (Mango 2)</li>
+<li>GL-E5800 (Mudi 7)</li>
 <li><u>GL-BE14000 (Flint 4)</u><sup>1</sup></li>
 <li><u>GL-BE10000 (Slate 7 Pro)</u><sup>1</sup></li>
 <li><u>GL-MT3600BE (Beryl 7)</u><sup>1</sup></li>
-<li>GL-E5800 (Mudi 7)</li>
-<li>GL-BE6500 (Flint 3e)</li>
-<li>GL-BE9300 (Flint 3)</li>
+<li><u>GL-BE6500 (Flint 3e)</u><sup>1</sup></li>
+<li><u>GL-BE9300 (Flint 3)</u><sup>1</sup></li>
 <li><u>GL-BE3600 (Slate 7)</u><sup>1</sup></li>
 <li>GL-X2000 (Spitz Plus)</li>
 <li>GL-B3000 (Marble)</li>
+<li><u>GL-MT6000 (Flint 2)</u><sup>2</sup></li>
+<li><u>GL-MT3000 (Beryl AX)</u><sup>2</sup></li>
 <li>GL-AX1800 (Flint)</li>
 <li>GL-AXT1800 (Slate AX)</li>
+<li><u>GL-SFT1200 (Opal)</u><sup>3</sup></li>
 <li>GL-A1300 (Slate Plus)</li>
 <li>GL-XE300 (Puli)</li>
 <li>GL-E750/GL-E750V2 (Mudi)</li>
@@ -7261,27 +7266,28 @@
 <li>GL-B1300 (Convexa-B)</li>
 <li>GL-AP1300 (Cirrus)</li>
 <li>GL-X300B (Collie)</li>
-<li><u>GL-MT6000 (Flint 2)</u><sup>2</sup></li>
-<li><u>GL-MT3000 (Beryl AX)</u><sup>2</sup></li>
-<li><u>GL-SFT1200 (Opal)</u><sup>3</sup></li>
 </ul>
 <hr />
-<p><strong>脚注:</strong>  </p>
+<p><strong>注意</strong>:</p>
 <ol>
 <li>
-<p>WPA/WPA2/WPA3-Enterpriseネットワークに接続する場合、GL-BE14000 (Flint 4)、GL-BE10000 (Slate 7 Pro)、GL-MT3600BE (Beryl 7)、GL-BE3600 (Slate 7) はPEAP認証ネットワークのみ対応しています。その他のEAP方式（EAP-TLS、EAP-TTLS、EAP-MD5など）はサポートされていません。</p>
+<p>GL-BE14000 (Flint 4)、GL-BE10000 (Slate 7 Pro)、GL-MT3600BE (Beryl 7)、GL-BE6500 (Flint 3e)、GL-BE9300 (Flint 3)、GL-BE3600 (Slate 7) は、GL.iNet Web 管理パネルからのみ、リピーターとして EAP-PEAP ネットワークに接続できます。その他の EAP 方式（EAP-TLS、EAP-TTLS、EAP-FAST など）はサポートされていません。</p>
 </li>
 <li>
-<p>GL-MT6000 (Fortify)、GL-MT6000 (Flint 2)、GL-MT3000 (Beryl AX) は、デフォルトファームウェアでは EAP ネットワークへの接続をサポートしていません。ただし、GL.iNet はこれらのモデル向けにネイティブ OpenWrt 24 ファームウェアを提供しており、これをインストールすると EAP ネットワークに接続できるようになります。詳細は <a href="https://dl.gl-inet.com/" target="_blank">Download Center</a> でモデルを検索し、OPENWRT 24 タブを確認してください。</p>
+<p>GL-MT6000 (Flint 2) と GL-MT3000 (Beryl AX) は、デフォルトファームウェアでは、GL.iNet Web 管理パネルと LuCI のどちらを使用しても、リピーターとして EAP ネットワークに接続できません。ただし、GL.iNet はこれらのモデル向けに、EAP（EAP-PEAP、EAP-TLS、EAP-TTLS、EAP-FAST を含む）に対応した OpenWrt ファームウェアを提供しています。詳細は <a href="https://dl.gl-inet.com/" target="_blank">Download Center</a> でモデルを検索し、OPENWRT タブを選択してください。</p>
 </li>
 <li>
-<p>GL-SFT1200 (Opal) は、ファームウェア v4.8 以降で EAP ネットワークへの接続をサポートしています。</p>
+<p>GL-SFT1200 (Opal) は、ファームウェア v4.8 以降で、リピーターとして EAP ネットワークに接続できます。対応する EAP 認証方式には、EAP-PEAP、EAP-TLS、EAP-TTLS、EAP-FAST があります。</p>
+</li>
+<li>
+<p>上記の注意事項に記載した特定のモデルを除き、その他のすべての対応モデルは、リピーターとして EAP ネットワークに接続できます。対応する EAP 認証方式には、EAP-PEAP、EAP-TLS、EAP-TTLS、EAP-FAST があります。</p>
 </li>
 </ol>
 </details>
 <details>
 <summary>非対応モデル</summary>
 <ul>
+<li>GL-MT6000 (Fortify)</li>
 <li>GL-MT5000 (Brume 3)</li>
 <li>GL-X3000 (Spitz AX)</li>
 <li>GL-XE3000 (Puli AX)</li>
@@ -7291,6 +7297,7 @@
 </ul>
 </details>
 <h2 id="connect-via-web-admin-panel">Web 管理パネルから接続する<a class="headerlink" href="#connect-via-web-admin-panel" title="Permanent link">&para;</a></h2>
+<p>GL.iNet Web 管理パネルから、ルーターをリピーターとして EAP-PEAP ネットワークに接続できます。</p>
 <ol>
 <li>
 <p>Web 管理パネルにログインし、<strong>INTERNET</strong> -&gt; <strong>Repeater</strong> に移動して <strong>Connect</strong> をクリックします。</p>
@@ -7314,11 +7321,8 @@
 </li>
 </ol>
 <h2 id="connect-via-luci">LuCI から接続する<a class="headerlink" href="#connect-via-luci" title="Permanent link">&para;</a></h2>
-<p>GL.iNet の Web 管理パネルで対応している EAP タイプは限られています。</p>
-<p>接続したい EAP ネットワークに Web 管理パネルから接続できない場合は、LuCI インターフェースから接続してみてください。</p>
-<blockquote>
-<p><strong>注意</strong>: 以下の手順はあくまで参考です。実際のデバイスの LuCI ページをご参照ください。</p>
-</blockquote>
+<p>LuCI から、ルーターをリピーターとして EAP-TLS、EAP-TTLS、EAP-PEAP、または EAP-FAST ネットワークに接続できます。</p>
+<p>以下の手順は参考です。お使いのデバイスの実際の LuCI ページを参照してください。</p>
 <ol>
 <li>
 <p>Web 管理パネルにログインし、<strong>SYSTEM</strong> -&gt; <strong>Advanced Settings</strong> に移動します。LuCI をインストールし、<strong>Go to LuCI</strong> をクリックします。</p>
@@ -7441,7 +7445,7 @@
     <span class="md-icon" title="最終更新日">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年10月28日 06:42:10 UTC">2026年10月28日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年11月4日 23:37:25 UTC">2026年11月4日</span>
   </span>
 
     
