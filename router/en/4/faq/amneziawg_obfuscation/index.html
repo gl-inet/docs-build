@@ -2634,23 +2634,62 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supported-model" class="md-nav__link">
+    <nav class="md-nav" aria-label="AmneziaWG V2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amneziawg-v20-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Supported Model
+      Overview
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#parameter-overview" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#amneziawg-v20-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Parameter Overview
+      Parameters
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amneziawg-v31" class="md-nav__link">
+    <span class="md-ellipsis">
+      AmneziaWG V3.1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AmneziaWG V3.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amneziawg-v31-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amneziawg-v31-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7265,23 +7304,62 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supported-model" class="md-nav__link">
+    <nav class="md-nav" aria-label="AmneziaWG V2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amneziawg-v20-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Supported Model
+      Overview
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#parameter-overview" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#amneziawg-v20-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Parameter Overview
+      Parameters
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amneziawg-v31" class="md-nav__link">
+    <span class="md-ellipsis">
+      AmneziaWG V3.1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AmneziaWG V3.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amneziawg-v31-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amneziawg-v31-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7311,7 +7389,7 @@
   <!-- Markdown content -->
   <h1 id="amneziawg-obfuscation">AmneziaWG Obfuscation<a class="headerlink" href="#amneziawg-obfuscation" title="Permanent link">&para;</a></h1>
 <p>AmneziaWG is a WireGuard-based VPN protocol featuring built-in traffic obfuscation. Its obfuscation parameters control how traffic is disguised to evade detection under restrictive network inspection.</p>
-<p>Below is a detailed introduction of AmneziaWG, version differences, AmneziaWG on GL.iNet routers, and parameters overview.</p>
+<p>Below is a detailed introduction to AmneziaWG and different versions.</p>
 <h2 id="why-amneziawg">Why AmneziaWG?<a class="headerlink" href="#why-amneziawg" title="Permanent link">&para;</a></h2>
 <p>The predecessor of AmneziaWG, WireGuard, has established itself as a fast and reliable VPN protocol thanks to its compact codebase and high efficiency. However, its fixed packet headers and predictable packet sizes create an easily recognizable signature. DPI systems can effortlessly identify these packets and immediately terminate connections — a critical issue in countries with strict internet censorship.</p>
 <p>AmneziaWG inherits the architectural simplicity and high performance of the original WireGuard implementation, while adding a dedicated obfuscation module to hide VPN traffic patterns. This helps consumer and business users safeguard online privacy and maintain stable connections under restrictive network environments.</p>
@@ -7325,11 +7403,14 @@
 </li>
 </ul>
 <h2 id="amneziawg-v20">AmneziaWG V2.0<a class="headerlink" href="#amneziawg-v20" title="Permanent link">&para;</a></h2>
+<h3 id="amneziawg-v20-overview">Overview<a class="headerlink" href="#amneziawg-v20-overview" title="Permanent link">&para;</a></h3>
+<p><font color="red"><strong>Note</strong>: AmneziaWG 2.0 is supported on GL.iNet routers running firmware v4.9 or later.</font></p>
 <p>Compared with AmneziaWG v1.0, v2.0 provides stronger obfuscation by adding new parameters (<strong>S3~S4</strong>) and using dynamic headers for packet types (<strong>H1~H4</strong> as ranges instead of fixed values). In addition, AmneziaWG 2.0 supports the <strong>I1~I5</strong> parameters, which send formatted UDP packets before each handshake to disguise AmneziaWG traffic as ordinary non‑VPN traffic, effectively bypassing deep packet inspection and enhancing connectivity in restricted networks. </p>
+<p>A typical obfuscation section of a v2.0 configuration looks like this:</p>
 <p><img alt="parameters" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/amneziawg_obfuscation_parameters/parameters.png" /></p>
 <p>These enhancements make VPN traffic more difficult to detect while preserving WireGuard's high speed and low latency.</p>
 <div class="admonition tip">
-<p class="admonition-title">How to identify the AmneziaWG version?</p>
+<p class="admonition-title">How to distinguish between AmneziaWG 1.0 and 2.0?</p>
 <p><strong>V1.0</strong>: No S3-S4 parameters; H1-H4 are fixed single integers.</p>
 <p><strong>V2.0</strong>: It is V2.0 if any of the conditions below is met:</p>
 <ul>
@@ -7341,10 +7422,7 @@
 <p>Note: I1-I5 are not auto-generated. Users can manually add them as extra lines in the configuration file to make AmneziaWG traffic look like other common protocols, such as QUIC or WebRTC.</p>
 </blockquote>
 </div>
-<h2 id="supported-model">Supported Model<a class="headerlink" href="#supported-model" title="Permanent link">&para;</a></h2>
-<p>AmneziaWG 2.0 is available on GL.iNet routers with firmware v4.9 or later.</p>
-<p>To set up VPN obfuscation on GL.iNet routers, refer to <a href="../../tutorials/how_to_set_up_vpn_obfuscation_on_glinet_routers/">this tutorial</a>.</p>
-<h2 id="parameter-overview">Parameter Overview<a class="headerlink" href="#parameter-overview" title="Permanent link">&para;</a></h2>
+<h3 id="amneziawg-v20-parameters">Parameters<a class="headerlink" href="#amneziawg-v20-parameters" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -7412,6 +7490,120 @@
 </tbody>
 </table>
 <p>References: <a href="https://docs.amnezia.org/documentation/amnezia-wg" target="_blank">AmneziaWG Official Documentation</a></p>
+<h2 id="amneziawg-v31">AmneziaWG V3.1<a class="headerlink" href="#amneziawg-v31" title="Permanent link">&para;</a></h2>
+<h3 id="amneziawg-v31-overview">Overview<a class="headerlink" href="#amneziawg-v31-overview" title="Permanent link">&para;</a></h3>
+<p><font color="red"><strong>Note</strong>: AmneziaWG 3.1 is supported on GL.iNet routers running firmware v4.12 or later.</font></p>
+<p>AmneziaWG 3.1 keeps the full v2.0 obfuscation set — random prefixes for every packet type (<strong>S1–S4</strong>), dynamic headers (<strong>H1–H4</strong>), the pre-handshake signature packets (<strong>I1–I5</strong>) and the junk train (<strong>Jc</strong>, <strong>Jmin</strong>, <strong>Jmax</strong>) — and adds mechanisms that give users more control over packet headers, packet lengths and handshake timing, making the traffic harder to fingerprint.</p>
+<ul>
+<li><strong>Header Protection</strong>: Uses ChaCha20 to hide fields in WireGuard packet headers that would otherwise remain unencrypted.</li>
+<li><strong>Content Padding</strong>: Adds a randomly selected amount of padding to transport data packets, subject to the available MTU space.</li>
+<li><strong>Custom Timings</strong>: Allows configurable values or ranges for rekeying, handshake retries, keepalives, and related connection behavior.</li>
+<li><strong>Random Trailers</strong>: Adds variable-length trailers to handshake and transport data packets to further vary packet sizes.</li>
+<li><strong>Disable Cookies</strong>: Allows a device to stop sending handshake cookie replies while retaining cookie-reply reception and other handshake processing.</li>
+</ul>
+<h3 id="amneziawg-v31-parameters">Parameters<a class="headerlink" href="#amneziawg-v31-parameters" title="Permanent link">&para;</a></h3>
+<p>The following parameters are introduced in AmneziaWG V3.1. For V2.0 parameters, refer to the AmneziaWG V2.0 parameters above.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Constraints</th>
+<th>GL.iNet Range/Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HeaderProtectionKey</code></td>
+<td>Enables ChaCha20-based protection of otherwise unencrypted packet-header fields</td>
+<td>Exactly 32 bytes. When enabled, S1, S2, S3 and S4 must all be set and each must be ≥ 12. <code>H1=1</code>, <code>H2=2</code>, <code>H3=3</code>, <code>H4=4</code> is the recommended combination: the custom header mechanism is switched off and the message type is hidden by Header Protection instead</td>
+<td>32-byte key</td>
+</tr>
+<tr>
+<td><code>ContentPaddingAddition</code></td>
+<td>Adds a random number of bytes to transport data packets, drawn from the configured range for each packet</td>
+<td><code>range&lt;uint16&gt;</code>, 0–65535, min ≤ max; <code>0</code> or <code>0-0</code> disables it.</td>
+<td>0–65535 (example: <code>10-50</code>)</td>
+</tr>
+<tr>
+<td><code>RekeyAfterTime</code></td>
+<td>How long the current key is used before an active rekey is initiated (seconds)</td>
+<td><code>range&lt;uint16&gt;</code>, 0–65535, min ≤ max; <code>0</code> or <code>0-0</code> falls back to the WireGuard default</td>
+<td>100–150 (WireGuard default 120)</td>
+</tr>
+<tr>
+<td><code>RekeyTimeout</code></td>
+<td>How long a single handshake request waits for a response before retrying (seconds)</td>
+<td><code>range&lt;uint16&gt;</code>, 0–65535, min ≤ max; <code>0</code> or <code>0-0</code> falls back to the WireGuard default</td>
+<td>4–7 (WireGuard default 5)</td>
+</tr>
+<tr>
+<td><code>RejectAfterTime</code></td>
+<td>How long without receiving data before the connection initiates a new handshake (seconds)</td>
+<td><code>range&lt;uint16&gt;</code>, 0–65535, min ≤ max; <code>0</code> or <code>0-0</code> falls back to the WireGuard default</td>
+<td>180–240 (WireGuard default 180)</td>
+</tr>
+<tr>
+<td><code>KeepaliveTimeout</code></td>
+<td>How long without sending data before an internal keepalive is sent (seconds)</td>
+<td><code>range&lt;uint16&gt;</code>, 0–65535, min ≤ max; <code>0</code> or <code>0-0</code> falls back to the WireGuard default</td>
+<td>8–20 (WireGuard default 10)</td>
+</tr>
+<tr>
+<td><code>MaxHandshakeAttempts</code></td>
+<td>Maximum number of handshake retries</td>
+<td><code>range&lt;uint16&gt;</code>, 0–65535, min ≤ max; <code>0</code> or <code>0-0</code> falls back to the WireGuard default</td>
+<td>12–18 (WireGuard default 18)</td>
+</tr>
+<tr>
+<td><code>RandomTrailers</code></td>
+<td>Appends a variable number of bytes to the end of packets: random data for handshake packets, zeros after the inner IP packet for transport packets. Trailer length is dynamically selected so that neither side's MTU is exceeded</td>
+<td><code>off</code> disables it. <code>S1 = S2 = S3 = S4</code> is recommended when enabled, to reduce the risk of incorrect packet-type detection caused by random packet sizes</td>
+<td><code>on</code> / <code>off</code></td>
+</tr>
+<tr>
+<td><code>DisableCookies</code></td>
+<td>Stops the local device from sending Handshake Cookie Replies. Cookie replies received from the peer and the rest of the handshake handling are unaffected</td>
+<td><code>off</code> disables it. S3/H3 must still be kept valid, because the receive path may still use them</td>
+<td><code>on</code> / <code>off</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Ranges in the last column can be left to the router to generate. <code>HeaderProtectionKey</code> must be identical on the client and the server. <code>RandomTrailers</code> and <code>DisableCookies</code> are switches set per device. Timing values outside the listed ranges are replaced at runtime by a random value inside the range.</li>
+<li><code>ContentPaddingAddition</code> and <code>S4</code> both change the transport packet length but act on different parts of the packet, and they are not mutually exclusive.</li>
+<li>Header Protection and dynamic <code>H</code> are not strictly mutually exclusive; <code>H1–H4</code> can stay dynamic, although <code>1/2/3/4</code> is the recommended setting.</li>
+</ul>
+<hr />
+<p>An example v3.1 obfuscation section:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[Interface]</span>
+<span class="na">Address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10.1.0.2/24</span>
+<span class="na">PrivateKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;client private key&gt;</span>
+<span class="na">DNS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10.1.0.1</span>
+<span class="na">MTU</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1420</span>
+
+<span class="na">Jc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">11</span>
+<span class="na">Jmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">472</span>
+<span class="na">Jmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1277</span>
+<span class="na">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">122</span>
+<span class="na">S2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">134</span>
+<span class="na">S3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">13</span>
+<span class="na">S4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">13</span>
+<span class="na">H1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<span class="na">H2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2</span>
+<span class="na">H3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">3</span>
+<span class="na">H4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">4</span>
+
+<span class="na">HeaderProtectionKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&lt;32-byte key&gt;</span>
+<span class="na">ContentPaddingAddition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10-50</span>
+<span class="na">RekeyAfterTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">100-150</span>
+<span class="na">RekeyTimeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">4-7</span>
+<span class="na">RejectAfterTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">180-240</span>
+<span class="na">KeepaliveTimeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">8-20</span>
+<span class="na">MaxHandshakeAttempts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">12-18</span>
+</code></pre></div>
+<p>References: <a href="https://docs.amnezia.org/documentation/amnezia-wg/" target="_blank">AmneziaWG Official Documentation</a></p>
 <hr />
 <p>Related Article:</p>
 <ul>
@@ -7443,7 +7635,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 20, 2026 09:53:39 UTC">October 20, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 9, 2026 12:24:13 UTC">November 9, 2026</span>
   </span>
 
     
