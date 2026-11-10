@@ -7492,17 +7492,17 @@
 <p>References: <a href="https://docs.amnezia.org/documentation/amnezia-wg" target="_blank">AmneziaWG Official Documentation</a></p>
 <h2 id="amneziawg-v31">AmneziaWG V3.1<a class="headerlink" href="#amneziawg-v31" title="Permanent link">&para;</a></h2>
 <h3 id="amneziawg-v31-overview">Overview<a class="headerlink" href="#amneziawg-v31-overview" title="Permanent link">&para;</a></h3>
-<p><font color="red"><strong>Note</strong>: AmneziaWG 3.1 is supported on GL.iNet routers running firmware v4.12 or later.</font></p>
-<p>AmneziaWG 3.1 keeps the full v2.0 obfuscation set — random prefixes for every packet type (<strong>S1–S4</strong>), dynamic headers (<strong>H1–H4</strong>), the pre-handshake signature packets (<strong>I1–I5</strong>) and the junk train (<strong>Jc</strong>, <strong>Jmin</strong>, <strong>Jmax</strong>) — and adds mechanisms that give users more control over packet headers, packet lengths and handshake timing, making the traffic harder to fingerprint.</p>
+<p><font color="red"><strong>Note</strong>: AmneziaWG 3.1 is supported on GL.iNet routers running firmware v4.11.1 or later.</font></p>
+<p>AmneziaWG 3.1 keeps the full v2.0 obfuscation set — random prefixes for every packet type (<strong>S1–S4</strong>), dynamic headers (<strong>H1–H4</strong>), the pre-handshake signature packets (<strong>I1–I5</strong>) and the junk train (<strong>Jc</strong>, <strong>Jmin</strong>, <strong>Jmax</strong>) — and adds the following mechanisms to make the traffic harder to fingerprint.</p>
 <ul>
 <li><strong>Header Protection</strong>: Uses ChaCha20 to hide fields in WireGuard packet headers that would otherwise remain unencrypted.</li>
 <li><strong>Content Padding</strong>: Adds a randomly selected amount of padding to transport data packets, subject to the available MTU space.</li>
-<li><strong>Custom Timings</strong>: Allows configurable values or ranges for rekeying, handshake retries, keepalives, and related connection behavior.</li>
+<li><strong>Custom Timings</strong>: Allows configurable values or ranges for rekeying, handshake retries, keepalives, and related connection behavior. The auto-generated values are recommended on both the server and the client.</li>
 <li><strong>Random Trailers</strong>: Adds variable-length trailers to handshake and transport data packets to further vary packet sizes.</li>
 <li><strong>Disable Cookies</strong>: Allows a device to stop sending handshake cookie replies while retaining cookie-reply reception and other handshake processing.</li>
 </ul>
 <h3 id="amneziawg-v31-parameters">Parameters<a class="headerlink" href="#amneziawg-v31-parameters" title="Permanent link">&para;</a></h3>
-<p>The following parameters are introduced in AmneziaWG V3.1. For V2.0 parameters, refer to the AmneziaWG V2.0 parameters above.</p>
+<p>The following parameters are introduced in AmneziaWG V3.1.</p>
 <table>
 <thead>
 <tr>
@@ -7571,7 +7571,9 @@
 </table>
 <p><strong>Notes</strong></p>
 <ul>
-<li>Ranges in the last column can be left to the router to generate. <code>HeaderProtectionKey</code> must be identical on the client and the server. <code>RandomTrailers</code> and <code>DisableCookies</code> are switches set per device. Timing values outside the listed ranges are replaced at runtime by a random value inside the range.</li>
+<li>Ranges in the last column can be left to the router to generate. <code>RandomTrailers</code> and <code>DisableCookies</code> are switches set per device.</li>
+<li><code>HeaderProtectionKey</code> must be identical on the client and the server.</li>
+<li>Timing values outside the listed ranges are replaced at runtime by a random value inside the range, so a custom value may not take effect as typed.</li>
 <li><code>ContentPaddingAddition</code> and <code>S4</code> both change the transport packet length but act on different parts of the packet, and they are not mutually exclusive.</li>
 <li>Header Protection and dynamic <code>H</code> are not strictly mutually exclusive; <code>H1–H4</code> can stay dynamic, although <code>1/2/3/4</code> is the recommended setting.</li>
 </ul>
@@ -7635,7 +7637,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 9, 2026 12:24:13 UTC">November 9, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 10, 2026 02:41:26 UTC">November 10, 2026</span>
   </span>
 
     
