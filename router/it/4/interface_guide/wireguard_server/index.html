@@ -7435,13 +7435,30 @@
 </li>
 <li>
 <p>Controlla la configurazione.</p>
-<p>La configurazione predefinita funziona nella maggior parte dei casi, come mostrato di seguito. Non è necessario modificare l'indirizzo IPv4 se non entra in conflitto con il gateway del router a monte.</p>
+<p>La configurazione predefinita mostrata di seguito è adatta alla maggior parte dei casi.</p>
 <p><img alt="check configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_server/check_configuration.png" /></p>
-<p>(IPv6 su GL.iNet è disabilitato per impostazione predefinita. Se vuoi usare un indirizzo IPv6, abilita IPv6 sul router.)</p>
-<p>L'indirizzo IPv4 è l'IP del tunnel del server WireGuard. Se entra in conflitto con il gateway del router a monte, modificarlo, ad esempio in <strong>10.1.0.1/24</strong>, quindi fare clic su <strong>Apply</strong>. Assicurarsi di includere la notazione CIDR "/24" per evitare problemi di connettività.</p>
-<p><img alt="modify configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_server/modify_configuration.png" /></p>
+<ul>
+<li>
+<p><strong>IPv4 Address</strong>: È l’indirizzo IP del tunnel del server WireGuard. Modificalo solo se è in conflitto con il gateway del router a monte.</p>
+<p>Se entra in conflitto con il gateway del router a monte, modificarlo, ad esempio in <strong>10.1.0.1/24</strong>, quindi fare clic su <strong>Apply</strong>. Assicurarsi di includere la notazione CIDR "/24" per evitare problemi di connettività.</p>
+<p><img alt="modify configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_server/modify_ipv4.png" /></p>
 <p>Ad esempio, se a monte del router GL.iNet è presente un router Xfinity, l'indirizzo IP di quest'ultimo potrebbe essere 10.0.0.1 e quindi entrare in conflitto con il Tunnel IP di WireGuard Server quando il router GL.iNet è configurato come server WireGuard. In tal caso potrebbe essere necessario apportare la modifica descritta sopra. Se non esiste alcun conflitto, ignorare questo passaggio.</p>
 <p><img alt="xfinity gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/interface_guide/wireguard_server/xfinitygateway.jpg" /></p>
+</li>
+<li>
+<p><strong>IPv6 Address</strong>: IPv6 è disabilitato per impostazione predefinita sui router GL.iNet. Per usare un indirizzo IPv6, abilita <a href="../ipv6/">IPv6</a> sul router.</p>
+</li>
+<li>
+<p><strong>Listen Port</strong>: La porta UDP su cui è in ascolto il server WireGuard. Per impostazione predefinita viene usata <code>51820</code>, la porta abituale di WireGuard. Mantienila se la porta è libera nella tua rete. Se la modifichi, aggiorna l’<code>Endpoint</code> di ogni client e le regole di inoltro porte a monte.</p>
+</li>
+<li>
+<p><strong>Enable Obfuscation</strong>: Se l’opzione è abilitata, il server usa AmneziaWG e richiede client compatibili con l’offuscamento AmneziaWG. Ti consigliamo di mantenere le impostazioni predefinite a meno che tu conosca bene i parametri. Consulta le guide seguenti.</p>
+<ul>
+<li><a href="../../faq/amneziawg_obfuscation/">Offuscamento AmneziaWG sui router GL.iNet</a></li>
+<li><a href="../../tutorials/how_to_set_up_vpn_obfuscation_on_glinet_routers/">Configurare l’offuscamento VPN sui router GL.iNet</a></li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
 <p>Aggiungi un profilo.</p>
@@ -7561,7 +7578,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 ottobre 2026 03:20:23 UTC">21 ottobre 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="25 novembre 2026 04:59:15 UTC">25 novembre 2026</span>
   </span>
 
     

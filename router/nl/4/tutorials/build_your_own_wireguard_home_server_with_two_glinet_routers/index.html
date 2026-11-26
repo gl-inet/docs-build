@@ -3280,9 +3280,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-you-need-to-build-your-own-wireguard-home-server" class="md-nav__link">
+  <a href="#why-build-your-own-wireguard-home-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Waarom je een eigen WireGuard-thuisserver nodig hebt
+      Waarom een eigen WireGuard-thuisserver bouwen?
     </span>
   </a>
   
@@ -3327,30 +3327,6 @@
       De WireGuard-server instellen
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="De WireGuard-server instellen">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enable-ddns-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      DDNS inschakelen (optioneel)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generate-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Een configuratie genereren
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -7262,9 +7238,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-you-need-to-build-your-own-wireguard-home-server" class="md-nav__link">
+  <a href="#why-build-your-own-wireguard-home-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Waarom je een eigen WireGuard-thuisserver nodig hebt
+      Waarom een eigen WireGuard-thuisserver bouwen?
     </span>
   </a>
   
@@ -7309,30 +7285,6 @@
       De WireGuard-server instellen
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="De WireGuard-server instellen">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enable-ddns-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      DDNS inschakelen (optioneel)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generate-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Een configuratie genereren
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -7425,12 +7377,12 @@
 <p>GL-MT3000, een reisrouter, wordt ingesteld als WireGuard VPN-client die op afstand verbinding maakt met de VPN-server thuis.</p>
 </li>
 </ul>
-<h2 id="why-you-need-to-build-your-own-wireguard-home-server">Waarom je een eigen WireGuard-thuisserver nodig hebt<a class="headerlink" href="#why-you-need-to-build-your-own-wireguard-home-server" title="Permanent link">&para;</a></h2>
+<h2 id="why-build-your-own-wireguard-home-server">Waarom een eigen WireGuard-thuisserver bouwen?<a class="headerlink" href="#why-build-your-own-wireguard-home-server" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Gebruik je IP-adres thuis als internetadres, alsof je thuis bent.</li>
-<li>Je betaalt geen maandelijkse kosten zoals bij een VPN-service van derden.</li>
-<li>Leid al het internetverkeer via een versleutelde VPN-tunnel naar je thuisnetwerk om je privacy te beschermen.</li>
-<li>Krijg eenvoudig toegang tot je interne bronnen en lokale streamingdiensten.</li>
+<li>Gebruik je IP-adres thuis als openbaar IP-adres, zodat het lijkt alsof je verkeer van thuis komt.</li>
+<li>Vermijd de maandelijkse kosten van VPN-diensten van derden.</li>
+<li>Versleutel al je internetverkeer via de tunnel naar je thuisnetwerk om je privacy te beschermen.</li>
+<li>Krijg overal toegang tot je apparaten thuis en je lokale streamingdiensten.</li>
 </ol>
 <h2 id="preparations">Voorbereidingen<a class="headerlink" href="#preparations" title="Permanent link">&para;</a></h2>
 <h3 id="check-if-you-have-a-public-ip">Controleren of je een openbaar IP-adres hebt<a class="headerlink" href="#check-if-you-have-a-public-ip" title="Permanent link">&para;</a></h3>
@@ -7449,26 +7401,17 @@
 <summary>GL.iNet als hoofdrouter</summary>
 <p>Als je GL.iNet-router met een ethernetkabel rechtstreeks op een ISP-modem is aangesloten, is de GL.iNet-router de hoofdrouter.</p>
 <p><strong>Hoe controleer je of je GL.iNet-router rechtstreeks met het ISP-modem is verbonden?</strong></p>
-<p>Stappen:</p>
-<ol>
-<li>
-<p>Meld je aan bij het GL.iNet Admin Panel.</p>
-</li>
-<li>
-<p>Selecteer INTERNET in de linkerzijbalk. Controleer de topologie en verbindingsgegevens:</p>
+<p>Meld je aan bij het GL.iNet-webbeheerpaneel. Selecteer <strong>INTERNET</strong> in de linkerzijbalk. Bekijk de netwerktopologie en de verbindingsgegevens.</p>
 <p>Bij een rechtstreekse ethernetverbinding zie je een gedeelte met de naam "Ethernet", met gegevens zoals Protocol, IP address en Gateway.</p>
-<p>In de volgende afbeelding is het gemarkeerde IP Address het WAN-IP-adres dat de ISP aan deze GL-iNet-router heeft toegewezen.</p>
+<p>In de volgende afbeelding is het gemarkeerde IP Address het WAN-IP-adres dat de ISP aan deze GL.iNet-router heeft toegewezen.</p>
 <p><img alt="mt6000-home" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/mt6000_home.png" /></p>
 <p>Dit WAN-IP-adres is een openbaar IP-adres. Deze GL.iNet-router fungeert dus als hoofdrouter, heeft een openbaar IP-adres en <strong>hiervoor hoeft geen port forwarding te worden ingesteld</strong>.</p>
-<p>Je hoeft deze GL.iNet-router alleen als WireGuard-server in te stellen en een reisrouter als WireGuard Client die met de server verbinding maakt. Er wordt vervolgens een VPN-tunnel tussen beide routers opgebouwd.</p>
+<p>Stel deze GL.iNet-router in als WireGuard-server en stel de reisrouter in als WireGuard-client die verbinding maakt met de server. Er wordt vervolgens een VPN-tunnel tussen beide routers opgebouwd.</p>
 <p><img alt="topologywg" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/topologywg.jpg" /></p>
-</li>
-</ol>
 </details>
 <details>
 <summary>GL.iNet als subrouter</summary>
 <p>Stel <strong>Port Forwarding</strong> op je hoofdrouter in voor de GL.iNet-router als deze zich achter NAT bevindt.</p>
-<p>Topologie</p>
 <p><img alt="togologywgtp" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/topologywgtp.jpg" /></p>
 <p>Voorbeeld: een TP-Link-router als hoofdrouter thuis.</p>
 <p>Maak verbinding met het Wi-Fi-netwerk of LAN van je thuisrouter. Meld je vervolgens aan bij het webbeheerpaneel. Controleer welk WAN-IP-adres de router van je ISP ontvangt. In de onderstaande afbeelding is je openbare IP-adres <strong>42.200.00.00</strong>.</p>
@@ -7493,30 +7436,86 @@
 <p><strong>Meer voorbeelden van <a href="../how_to_set_up_port_forwarding/">Port Forward</a></strong></p>
 </details>
 <h2 id="set-up-wireguard-server">De WireGuard-server instellen<a class="headerlink" href="#set-up-wireguard-server" title="Permanent link">&para;</a></h2>
-<h3 id="enable-ddns-optional">DDNS inschakelen (optioneel)<a class="headerlink" href="#enable-ddns-optional" title="Permanent link">&para;</a></h3>
-<p>Schakel de DDNS-functie in als je geen statisch openbaar IP-adres hebt, maar alleen een dynamisch openbaar IP-adres.</p>
-<p>Meld je aan bij het webbeheerpaneel van de GL-MT6000 en ga naar <strong>APPLICATIONS</strong> -&gt; <strong>Dynamic DNS</strong>. Schakel <strong>Enable DDNS</strong> in.</p>
-<p>Schakel het selectievakje voor <strong>Terms of Service &amp; Privacy Policy</strong> in en klik op <strong>Apply</strong>.</p>
-<p><img alt="ddnsapply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/enable_ddns.jpg" /></p>
-<p>Ga vervolgens naar <strong>WireGuard Server</strong> -&gt; het tabblad Configuration, controleer of Listen Port is ingesteld op 51820 en klik op <strong>Apply</strong>.</p>
-<p><img alt="wgserver" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgserver-apply.png" /></p>
-<h3 id="generate-configuration">Een configuratie genereren<a class="headerlink" href="#generate-configuration" title="Permanent link">&para;</a></h3>
-<p>Klik op dezelfde pagina naast het tabblad Configuration op het tabblad <strong>Profiles</strong> en klik vervolgens op <strong>Add</strong> (gemarkeerd met 1 in de onderstaande afbeelding).</p>
-<p>Er wordt automatisch een clientconfiguratie gegenereerd. Klik op het <strong>doorstuurpictogram</strong> (gemarkeerd met 2).</p>
-<p>Schakel in het pop-upvenster DDNS Domain in (gemarkeerd met 3). Dit is optioneel en mag alleen worden ingeschakeld als je een dynamisch openbaar IP-adres hebt.</p>
-<p><img alt="wgservergen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgconfiggen.jpg" /></p>
-<p>Je kunt vervolgens de QR-code met de WireGuard-<a href="https://www.wireguard.com/install/">mobiele app</a> scannen om de server te testen. Klik <a href="../../interface_guide/wireguard_server/#check-if-wireguard-server-is-working-properly">hier</a> voor meer informatie.</p>
-<p>Je kunt ook een configuratie in tekstindeling exporteren voor verbinding met een VPN-client.</p>
-<p>Schakel de configuratie om van een QR-code naar tekstindeling door op het tabblad <strong>Configuration File</strong> te klikken.</p>
-<p>Kopieer de tekst voor de client of klik op Download en sla het bestand op voor later gebruik.</p>
-<p><img alt="configload" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/configload.jpg" /></p>
+<ol>
+<li>
+<p>Meld je aan bij het webbeheerpaneel en ga naar <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong>. Klik op <strong>Generate Configuration</strong>. Dit is alleen nodig als je de VPN-server voor het eerst instelt.</p>
+<p><img alt="generate configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/generate_configuration.png" /></p>
+</li>
+<li>
+<p>Controleer de configuratie.</p>
+<p>De standaardconfiguratie hieronder werkt in de meeste gevallen.</p>
+<p><img alt="check configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wg_configuration.png" /></p>
+<ul>
+<li>
+<p><strong>IPv4 Address</strong>: Dit is het tunnel-IP-adres van de WireGuard-server. Je hoeft het alleen te wijzigen als het conflicteert met de gateway van je upstream router.</p>
+<p>Kies bij een conflict een ander adres, bijvoorbeeld <strong>10.1.0.1/24</strong>, en klik op <strong>Apply</strong>. Neem de CIDR-notatie "/24" op om verbindingsproblemen te voorkomen.</p>
+<p><img alt="modify configuration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/modify_ipv4.png" /></p>
+<p>Een upstream Xfinity-router kan bijvoorbeeld het IP-adres 10.0.0.1 gebruiken. Op sommige GL.iNet-routers die als WireGuard-server zijn ingesteld, kan dit adres conflicteren met het tunnel-IP-adres. Wijzig het tunnel-IP-adres alleen bij een conflict.</p>
+<p><img alt="xfinity gateway" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/xfinitygateway.jpg" /></p>
+</li>
+<li>
+<p><strong>IPv6 Address</strong>: Op GL.iNet-routers is IPv6 standaard uitgeschakeld. Schakel <a href="../../interface_guide/ipv6/">IPv6</a> op je router in als je een IPv6-adres wilt gebruiken.</p>
+</li>
+<li>
+<p><strong>Listen Port</strong>: De WireGuard-server luistert standaard op UDP-poort <code>51820</code>. Wijzig je de luisterpoort en gebruik je port forwarding, werk dan de regel op de upstream router bij zodat die verkeer doorstuurt naar de nieuwe luisterpoort. Gebruik in het veld <code>Endpoint</code> van elk clientprofiel de externe poort uit de portforwardingregel. Is de server rechtstreeks bereikbaar, gebruik dan de luisterpoort van de server.</p>
+</li>
+<li>
+<p><strong>Enable Obfuscation</strong>: Als je deze optie inschakelt, gebruikt de VPN-server het AmneziaWG-obfuscatieprotocol om VPN-verkeer te verhullen. We raden aan de standaardinstellingen voor obfuscatie te behouden en ze alleen te wijzigen als je de parameters goed kent. Raadpleeg de volgende handleidingen.</p>
+<ul>
+<li><a href="../../faq/amneziawg_obfuscation/">AmneziaWG-obfuscatie op GL.iNet-routers</a></li>
+<li><a href="../how_to_set_up_vpn_obfuscation_on_glinet_routers/">VPN-obfuscatie instellen op GL.iNet-routers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Voeg een profiel toe.</p>
+<p>Open het tabblad <strong>Profiles</strong> en klik op <strong>Add</strong> om een profiel voor je apparaat te genereren.</p>
+<p><img alt="add profiles" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/add_profiles.png" /></p>
+<p>Geef het profiel een beschrijvende naam en klik op <strong>Apply</strong> om door te gaan.</p>
+<p><img alt="profile name" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/add_profiles_name.png" /></p>
+<p>Klik voor geavanceerde instellingen op <strong>Set More</strong> en vervolgens op <strong>Apply</strong> om door te gaan.</p>
+<p><img alt="profile settings" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/add_profiles_set_more.png" /></p>
+<details>
+<summary>Zo nodig routeringsregels toevoegen</summary>
+<p>In de meeste gevallen zijn geen routeringsregels nodig.</p>
+<p>Wil je vanaf de server toegang tot LAN-apparaten van de WireGuard-client, open dan het tabblad <strong>Route Rules</strong> op de pagina <strong>WireGuard Server</strong> om de routeringsregels in te stellen. Zie de <a href="../wireguard_server_access_to_client_lan_side/">instructies voor toegang tot het LAN van de client</a>.</p>
+<p><img alt="route rules" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/route_rules.png" /></p>
+<p>Ga anders naar stap 4 om een clientconfiguratie te downloaden.</p>
+</details>
+</li>
+<li>
+<p>Download de configuratie.</p>
+<p>Nadat je een profiel hebt toegevoegd en op <strong>Apply</strong> hebt geklikt, biedt de router de configuratie aan als QR-code, platte tekst of een downloadbaar <code>.conf</code>-bestand.</p>
+<ul>
+<li>
+<p><strong>QR-code</strong>. Scan de code in de WireGuard-app om een standaard WireGuard-profiel te importeren. Als je obfuscatie hebt ingeschakeld, gebruik dan de AmneziaWG-app of een andere client die AmneziaWG-obfuscatie ondersteunt.</p>
+<p><img alt="client configuration qrcode" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/download_config_qrcode.png" /></p>
+</li>
+<li>
+<p><strong>Platte tekst</strong>. Bekijk en kopieer de configuratiegegevens voor handmatige configuratie, bijvoorbeeld in de WireGuard-app of op een GL.iNet-router.</p>
+<p><img alt="client configuration plain text" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/download_config_text.png" /></p>
+</li>
+<li>
+<p><strong>.conf-bestand</strong>. Klik op <strong>Download</strong> om het <code>.conf</code>-bestand op je apparaat op te slaan. Je kunt het bestand rechtstreeks uploaden naar de WireGuard-app of een GL.iNet-router.</p>
+<p><img alt="client configuration file" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/download_config_file.png" /></p>
+</li>
+</ul>
+<p>Vanaf firmware v4.8 kun je zo nodig het openbare IP-adres, het DDNS-domein of het huidige WAN-IP-adres als serveradres kiezen. Als je het serveradres wijzigt, wordt het tegelijk bijgewerkt in het configuratiebestand.</p>
+<p>Wijzigt het openbare IP-adres van je netwerk regelmatig, schakel dan <a href="../../interface_guide/ddns/">DDNS</a> in en gebruik het DDNS-domein als serveradres.</p>
+<p><img alt="change server address" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/change_server_address.png" /></p>
+</li>
+<li>
+<p>Klik rechtsboven op <strong>Start</strong> om de WireGuard-server te starten. De verbindingsstatus wordt op dezelfde pagina weergegeven.</p>
+<p><img alt="start wireguard server" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/start_wgserver.png" /></p>
+</li>
+</ol>
 <h2 id="set-up-wireguard-client">De WireGuard-client instellen<a class="headerlink" href="#set-up-wireguard-client" title="Permanent link">&para;</a></h2>
 <h3 id="change-the-lan-ip">Het LAN-IP-adres wijzigen<a class="headerlink" href="#change-the-lan-ip" title="Permanent link">&para;</a></h3>
 <p>In deze handleiding gebruiken we GL-MT6000 en GL-MT3000 als voorbeelden. Beide hebben standaard het LAN-IP-adres <strong>192.168.8.1</strong>. Om conflicten te voorkomen, moeten we het LAN-IP-adres van een van de routers wijzigen.</p>
 <p>Volg deze stappen om het LAN-IP-adres van de GL-MT3000, de WireGuard-client, te wijzigen.</p>
-<p>Meld je aan bij het webbeheerpaneel van de GL-MT3000 en ga in de linkerzijbalk naar <strong>NETWORK</strong> -&gt; <strong>LAN</strong> om het LAN-IP-adres te wijzigen. Je kunt het LAN-IP-adres bijvoorbeeld wijzigen van de standaardwaarde 192.168.8.1 in <code>192.168.10.1</code>.</p>
+<p>Meld je aan bij het webbeheerpaneel van de GL-MT3000 en ga naar <strong>NETWORK</strong> -&gt; <strong>LAN</strong> om het LAN-IP-adres te wijzigen. Je kunt het LAN-IP-adres bijvoorbeeld wijzigen van de standaardwaarde 192.168.8.1 in <code>192.168.20.1</code>.</p>
 <p><img alt="change lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/change_lan_ip.png" /></p>
-<p>Klik <a href="../../interface_guide/lan/">hier</a> voor meer informatie over de LAN-interface.</p>
 <h3 id="add-the-configuration">De configuratie toevoegen<a class="headerlink" href="#add-the-configuration" title="Permanent link">&para;</a></h3>
 <p>Ga in het webbeheerpaneel van de GL-MT3000 naar <strong>VPN</strong> -&gt; <strong>WireGuard Client</strong> en klik op <strong>Add Manually</strong>.</p>
 <p><img alt="addwgclient1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/addwgclient-1.png" /></p>
@@ -7546,6 +7545,7 @@
 <hr />
 <p>Gerelateerde artikelen</p>
 <ul>
+<li><a href="../../interface_guide/wireguard_server/">Een WireGuard-server instellen op GL.iNet-routers</a></li>
 <li><a href="../../interface_guide/cloud/">GL.iNet GoodCloud</a></li>
 </ul>
 <hr />
@@ -7574,7 +7574,7 @@
     <span class="md-icon" title="Laatst geüpdatet">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="29 oktober 2026 03:56:18 UTC">29 oktober 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="25 november 2026 04:59:15 UTC">25 november 2026</span>
   </span>
 
     

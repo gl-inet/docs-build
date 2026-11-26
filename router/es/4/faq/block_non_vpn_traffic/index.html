@@ -2586,13 +2586,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#for-firmware-v48-or-later" class="md-nav__link">
+  <a href="#for-firmware-v48" class="md-nav__link">
     <span class="md-ellipsis">
-      Para firmware v4.8 o posterior
+      Para firmware v4.8
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Para firmware v4.8 o posterior">
+    <nav class="md-nav" aria-label="Para firmware v4.8">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2606,6 +2606,39 @@
         
           <li class="md-nav__item">
   <a href="#enhanced-kill-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhanced Kill Switch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-firmware-v49-and-above" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para firmware v4.9 o posterior
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Para firmware v4.9 o posterior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-firmware-v49-and-above-tunnel-kill-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tunnel Kill Switch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-firmware-v49-and-above-enhanced-kill-switch" class="md-nav__link">
     <span class="md-ellipsis">
       Enhanced Kill Switch
     </span>
@@ -7265,13 +7298,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#for-firmware-v48-or-later" class="md-nav__link">
+  <a href="#for-firmware-v48" class="md-nav__link">
     <span class="md-ellipsis">
-      Para firmware v4.8 o posterior
+      Para firmware v4.8
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Para firmware v4.8 o posterior">
+    <nav class="md-nav" aria-label="Para firmware v4.8">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -7285,6 +7318,39 @@
         
           <li class="md-nav__item">
   <a href="#enhanced-kill-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhanced Kill Switch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-firmware-v49-and-above" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para firmware v4.9 o posterior
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Para firmware v4.9 o posterior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-firmware-v49-and-above-tunnel-kill-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tunnel Kill Switch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-firmware-v49-and-above-enhanced-kill-switch" class="md-nav__link">
     <span class="md-ellipsis">
       Enhanced Kill Switch
     </span>
@@ -7330,7 +7396,7 @@
 <p>Active <strong>Block Non-VPN Traffic</strong> (también llamado Kill Switch en algunas versiones de firmware) y luego haga clic en <strong>Apply</strong>.</p>
 <p><img alt="global options 2" class="glboxshadow gl-80-desktop" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/4.7-global-options-2.png" /></p>
 <p><strong>Nota:</strong> Cuando <strong>Block Non-VPN Traffic</strong> o <strong>Kill Switch</strong> está activado, si su VPN se desactiva o se desconecta, todos los dispositivos conectados al router tendrán restringido el acceso a Internet para evitar fugas de DNS.</p>
-<h2 id="for-firmware-v48-or-later">Para firmware v4.8 o posterior<a class="headerlink" href="#for-firmware-v48-or-later" title="Permanent link">&para;</a></h2>
+<h2 id="for-firmware-v48">Para firmware v4.8<a class="headerlink" href="#for-firmware-v48" title="Permanent link">&para;</a></h2>
 <p>En el firmware v4.8, el VPN Kill Switch se ha dividido en dos modos.</p>
 <ul>
 <li>
@@ -7355,8 +7421,31 @@
 <p>Esta opción está disponible en <strong>Policy Mode</strong>.</p>
 <p>En el panel de administración web del router, vaya a <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>, cambie el modo VPN a <strong>Policy Mode</strong> y luego busque una sección llamada <strong>All Other Traffic</strong> en la parte inferior. Esta sección puede variar ligeramente según la versión del firmware.</p>
 <p><img alt="all other traffic" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/4.8-all-other-traffic.png" /></p>
-<p><strong>All Other Traffic</strong> es un túnel predeterminado que garantiza el acceso normal a Internet para el tráfico no cubierto por los túneles VPN y las políticas anteriores, o para el tráfico que haya pasado por conmutación por error desde conexiones VPN. Este túnel está activado de forma predeterminada y es mutuamente excluyente con <strong>Enhanced Kill Switch</strong>.</p>
-<p><strong>Nota</strong>: Si desactiva <strong>All Other Traffic</strong>, solo podrá acceder a Internet a través de la VPN. Todo el tráfico no coincidente se bloqueará. Esta configuración no anula el Kill Switch individual de cada túnel.</p>
+<p><strong>All Other Traffic</strong> es el túnel predeterminado. El tráfico que no coincide con los túneles VPN ni con las políticas anteriores, así como el tráfico redirigido aquí por conmutación por error de la VPN, conserva el acceso normal a Internet. El túnel está habilitado de forma predeterminada. Si lo deshabilita, se bloquea todo ese tráfico, incluido el que se redirigiría aquí por conmutación por error. Solo el tráfico gestionado por los túneles VPN configurados puede acceder a Internet. Esta protección equivale a la de <strong>Enhanced Kill Switch</strong>.</p>
+<p><strong>All Other Traffic</strong> El ajuste <strong>All Other Traffic</strong> no anula el Kill Switch de cada túnel.</p>
+<h2 id="for-firmware-v49-and-above">Para firmware v4.9 o posterior<a class="headerlink" href="#for-firmware-v49-and-above" title="Permanent link">&para;</a></h2>
+<p>A partir del firmware v4.9 hay dos tipos de Kill Switch de VPN, <strong>Tunnel Kill Switch</strong> y <strong>Enhanced Kill Switch</strong>.</p>
+<h3 id="for-firmware-v49-and-above-tunnel-kill-switch">Tunnel Kill Switch<a class="headerlink" href="#for-firmware-v49-and-above-tunnel-kill-switch" title="Permanent link">&para;</a></h3>
+<p>En el panel de administración web del router, vaya a <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>.</p>
+<p>Si configura el router como cliente VPN, el Kill Switch de este túnel VPN se activa de forma predeterminada una vez que la VPN está activa.</p>
+<p><img alt="tunnel kill switch" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/4.9-tunnel-kill-switch.png" /></p>
+<p>Haga clic en el icono de engranaje situado junto al nombre del túnel para entrar en <strong>Tunnel Options</strong>.</p>
+<p><img alt="tunnel options 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/4.9-tunnel-options-1.png" /></p>
+<p>El Kill Switch de este túnel está activado de forma predeterminada.</p>
+<p><img alt="tunnel options 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/4.9-tunnel-options-2.png" width="600" /></p>
+<h3 id="for-firmware-v49-and-above-enhanced-kill-switch">Enhanced Kill Switch<a class="headerlink" href="#for-firmware-v49-and-above-enhanced-kill-switch" title="Permanent link">&para;</a></h3>
+<p>En el panel de administración web del router, vaya a <strong>VPN</strong> -&gt; <strong>VPN Dashboard</strong>. A continuación, haga clic en el icono de engranaje de la esquina superior derecha.</p>
+<p><img alt="all other traffic 1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/4.9-all-other-traffic-1.png" /></p>
+<p>El control de políticas de tráfico ofrece las opciones <strong>Allow Non-VPN Traffic</strong> y <strong>Enhanced Kill Switch</strong>.</p>
+<p><img alt="all other traffic 2" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/faq/block_non_vpn_traffic/4.9-all-other-traffic-2.png" width="600" /></p>
+<ul>
+<li>
+<p><strong>Allow Non-VPN Traffic</strong>: Habilitado de forma predeterminada. El tráfico que no coincide con los túneles VPN ni con las políticas anteriores, así como el tráfico redirigido aquí por conmutación por error de la VPN, conserva el acceso normal a Internet.</p>
+</li>
+<li>
+<p><strong>Enhanced Kill Switch</strong>: Cuando se habilita, todos los dispositivos deben usar una VPN para acceder a Internet. El tráfico que no coincide con ningún túnel VPN se bloquea. Este ajuste no anula el Kill Switch de cada túnel.</p>
+</li>
+</ul>
 <hr />
 <p>¿Todavía tiene preguntas? Visite nuestro <a href="https://forum.gl-inet.com" target="_blank">foro de la comunidad</a> o <a href="https://www.gl-inet.com/contacts/" target="_blank">contáctenos</a>.</p>
 
@@ -7383,7 +7472,7 @@
     <span class="md-icon" title="Última actualización">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 de octubre de 2026 09:53:39 UTC">20 de octubre de 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="25 de noviembre de 2026 04:59:15 UTC">25 de noviembre de 2026</span>
   </span>
 
     

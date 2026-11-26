@@ -3280,9 +3280,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-you-need-to-build-your-own-wireguard-home-server" class="md-nav__link">
+  <a href="#why-build-your-own-wireguard-home-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Därför kan du behöva en egen WireGuard-hemmaserver
+      Därför kan det vara bra att ha en egen WireGuard-server hemma
     </span>
   </a>
   
@@ -3327,30 +3327,6 @@
       Konfigurera WireGuard-servern
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Konfigurera WireGuard-servern">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enable-ddns-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      Aktivera DDNS (valfritt)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generate-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Skapa konfigurationen
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -7262,9 +7238,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-you-need-to-build-your-own-wireguard-home-server" class="md-nav__link">
+  <a href="#why-build-your-own-wireguard-home-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Därför kan du behöva en egen WireGuard-hemmaserver
+      Därför kan det vara bra att ha en egen WireGuard-server hemma
     </span>
   </a>
   
@@ -7309,30 +7285,6 @@
       Konfigurera WireGuard-servern
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Konfigurera WireGuard-servern">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enable-ddns-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      Aktivera DDNS (valfritt)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generate-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Skapa konfigurationen
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -7425,12 +7377,12 @@
 <p>GL-MT3000, som är reserouter, konfigureras som WireGuard VPN-klient och ansluter på distans till VPN-servern hemma.</p>
 </li>
 </ul>
-<h2 id="why-you-need-to-build-your-own-wireguard-home-server">Därför kan du behöva en egen WireGuard-hemmaserver<a class="headerlink" href="#why-you-need-to-build-your-own-wireguard-home-server" title="Permanent link">&para;</a></h2>
+<h2 id="why-build-your-own-wireguard-home-server">Därför kan det vara bra att ha en egen WireGuard-server hemma<a class="headerlink" href="#why-build-your-own-wireguard-home-server" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Använd hemmets IP-adress som internetadress, som om du befann dig hemma.</li>
-<li>Undvik månadsavgiften för en VPN-tjänst från tredje part.</li>
-<li>Dirigera all internettrafik till hemnätverket genom en krypterad VPN-tunnel och skydda din integritet.</li>
-<li>Få enkel åtkomst till interna resurser och lokala strömningstjänster.</li>
+<li>Använd hemmets IP-adress som offentlig IP-adress så att trafiken ser ut att komma från ditt hemnätverk.</li>
+<li>Slipp månadsavgifterna för VPN-tjänster från tredje part.</li>
+<li>Kryptera all internettrafik genom tunneln till hemnätverket för att skydda din integritet.</li>
+<li>Nå dina enheter hemma och lokala strömningstjänster var du än befinner dig.</li>
 </ol>
 <h2 id="preparations">Förberedelser<a class="headerlink" href="#preparations" title="Permanent link">&para;</a></h2>
 <h3 id="check-if-you-have-a-public-ip">Kontrollera om du har en offentlig IP-adress<a class="headerlink" href="#check-if-you-have-a-public-ip" title="Permanent link">&para;</a></h3>
@@ -7449,26 +7401,17 @@
 <summary>GL.iNet som primär router</summary>
 <p>Om GL.iNet-routern är direkt ansluten till internetleverantörens modem med en Ethernet-kabel är GL.iNet-routern den primära routern.</p>
 <p><strong>Hur kontrollerar du om GL.iNet-routern är direkt ansluten till internetleverantörens modem?</strong></p>
-<p>Gör så här:</p>
-<ol>
-<li>
-<p>Logga in på GL.iNet-administrationspanelen.</p>
-</li>
-<li>
-<p>Välj INTERNET i det vänstra sidofältet. Kontrollera topologin och anslutningsinformationen:</p>
+<p>Logga in på GL.iNets webbadministrationspanel. Välj <strong>INTERNET</strong> i det vänstra sidofältet och kontrollera topologin och anslutningsinformationen.</p>
 <p>Vid direkt Ethernet-anslutning visas ett avsnitt som heter "Ethernet" med uppgifter som Protocol, IP address och Gateway.</p>
 <p>I följande bild är den markerade IP Address den WAN-IP-adress som internetleverantören har tilldelat GL.iNet-routern.</p>
 <p><img alt="mt6000-home" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/mt6000_home.png" /></p>
 <p>WAN-IP-adressen är offentlig. GL.iNet-routern fungerar därmed som primär router, har en offentlig IP-adress och <strong>behöver ingen portvidarebefordran</strong>.</p>
 <p>Konfigurera bara GL.iNet-routern som WireGuard-server och en reserouter som WireGuard-klient som ansluter till servern. En VPN-tunnel upprättas då mellan dem.</p>
 <p><img alt="topologywg" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/topologywg.jpg" /></p>
-</li>
-</ol>
 </details>
 <details>
 <summary>GL.iNet som sekundär router</summary>
 <p>Konfigurera <strong>portvidarebefordran</strong> på den primära routern för GL.iNet-routern om den senare finns bakom NAT.</p>
-<p>Topologi</p>
 <p><img alt="togologywgtp" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/topologywgtp.jpg" /></p>
 <p>Exempel: En TP-Link-router används som primär hemrouter.</p>
 <p>Anslut till hemrouterns Wi-Fi eller LAN. Logga sedan in på webbadministrationspanelen. Kontrollera WAN-IP-adressen som routern får från internetleverantören. I bilden nedan är den offentliga IP-adressen <strong>42.200.00.00</strong>.</p>
@@ -7493,30 +7436,86 @@
 <p><strong>Fler exempel på <a href="../how_to_set_up_port_forwarding/">portvidarebefordran</a></strong></p>
 </details>
 <h2 id="set-up-wireguard-server">Konfigurera WireGuard-servern<a class="headerlink" href="#set-up-wireguard-server" title="Permanent link">&para;</a></h2>
-<h3 id="enable-ddns-optional">Aktivera DDNS (valfritt)<a class="headerlink" href="#enable-ddns-optional" title="Permanent link">&para;</a></h3>
-<p>Aktivera DDNS om du har en dynamisk offentlig IP-adress i stället för en statisk offentlig IP-adress.</p>
-<p>Logga in på webbadministrationspanelen för GL-MT6000 och gå till <strong>APPLICATIONS</strong> -&gt; <strong>Dynamic DNS</strong>. Aktivera reglaget <strong>Enable DDNS</strong>.</p>
-<p>Markera kryssrutan <strong>Terms of Service &amp; Privacy Policy</strong> och klicka på <strong>Apply</strong>.</p>
-<p><img alt="ddnsapply" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/enable_ddns.jpg" /></p>
-<p>Gå sedan till fliken <strong>WireGuard Server</strong> -&gt; Configuration, kontrollera att Listen Port är 51820 och klicka på <strong>Apply</strong>.</p>
-<p><img alt="wgserver" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgserver-apply.png" /></p>
-<h3 id="generate-configuration">Skapa konfigurationen<a class="headerlink" href="#generate-configuration" title="Permanent link">&para;</a></h3>
-<p>Klicka på fliken <strong>Profiles</strong> bredvid Configuration på samma sida och klicka sedan på <strong>Add</strong> (markerat med 1 i bilden nedan).</p>
-<p>En klientkonfiguration skapas automatiskt. Klicka på <strong>framåtpilen</strong> (markerad med 2).</p>
-<p>Aktivera DDNS Domain i popup-fönstret (markerat med 3). Detta är valfritt och ska endast aktiveras om du har en dynamisk offentlig IP-adress.</p>
-<p><img alt="wgservergen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wgconfiggen.jpg" /></p>
-<p>Du kan sedan skanna QR-koden med WireGuards <a href="https://www.wireguard.com/install/">mobilapp</a> för att testa servern. Klicka <a href="../../interface_guide/wireguard_server/#check-if-wireguard-server-is-working-properly">här</a> för mer information.</p>
-<p>Du kan även exportera en konfiguration i textformat för VPN-klientanslutningen.</p>
-<p>Byt från QR-kod till textformat genom att klicka på fliken <strong>Configuration File</strong>.</p>
-<p>Kopiera klienttexten eller klicka på Download och spara filen för senare användning.</p>
-<p><img alt="configload" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/configload.jpg" /></p>
+<ol>
+<li>
+<p>Logga in på webbadministrationspanelen och gå till <strong>VPN</strong> -&gt; <strong>WireGuard Server</strong>. Klicka på <strong>Generate Configuration</strong> (endast när du konfigurerar VPN-servern för första gången).</p>
+<p><img alt="skapa konfiguration" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/generate_configuration.png" /></p>
+</li>
+<li>
+<p>Kontrollera konfigurationen.</p>
+<p>Standardkonfigurationen nedan fungerar i de flesta fall.</p>
+<p><img alt="kontrollera konfigurationen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/wg_configuration.png" /></p>
+<ul>
+<li>
+<p><strong>IPv4 Address</strong> – Det här är WireGuard-serverns tunnel-IP-adress. Ändra bara adressen om den står i konflikt med gatewayadressen på den uppströms routern.</p>
+<p>Vid en konflikt ändrar du adressen, till exempel till <strong>10.1.0.1/24</strong>, och klickar på <strong>Apply</strong>. Ta med CIDR-notationen <code>/24</code> för att undvika anslutningsproblem.</p>
+<p><img alt="ändra konfigurationen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/modify_ipv4.png" /></p>
+<p>En uppströms Xfinity-router kan till exempel ha IP-adressen 10.0.0.1, som kan stå i konflikt med tunnelns IP-adress på vissa GL.iNet-routrar som konfigurerats som WireGuard-servrar. Gör ändringen ovan om adresserna står i konflikt.</p>
+<p><img alt="Xfinity-routerns gatewayadress" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/xfinitygateway.jpg" /></p>
+</li>
+<li>
+<p><strong>IPv6 Address</strong> – IPv6 är inaktiverat som standard på GL.iNet-routrar. Aktivera <a href="../../interface_guide/ipv6/">IPv6</a> på routern om du vill använda en IPv6-adress.</p>
+</li>
+<li>
+<p><strong>Listen Port</strong> – WireGuard-servern lyssnar som standard på UDP-port <code>51820</code>. Om du ändrar porten och använder portvidarebefordran ska du uppdatera regeln på den uppströms routern så att den vidarebefordrar till serverns nya lyssningsport. Ange den externa port som vidarebefordras i <code>Endpoint</code> i varje klientprofil. Om servern kan nås direkt använder du serverns lyssningsport.</p>
+</li>
+<li>
+<p><strong>Enable Obfuscation</strong> – När alternativet är aktiverat använder VPN-servern protokollet AmneziaWG för att maskera VPN-trafiken. Vi rekommenderar att du behåller standardinställningarna för obfuskering och bara ändrar dem om du är bekant med parametrarna. Se följande guider.</p>
+<ul>
+<li><a href="../../faq/amneziawg_obfuscation/">AmneziaWG-obfuskering på GL.iNet-routrar</a></li>
+<li><a href="../how_to_set_up_vpn_obfuscation_on_glinet_routers/">Konfigurera VPN-obfuskering på GL.iNet-routrar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Lägg till en profil.</p>
+<p>Öppna fliken <strong>Profiles</strong> och klicka på <strong>Add</strong> för att skapa en profil för din enhet.</p>
+<p><img alt="lägg till en profil" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/add_profiles.png" /></p>
+<p>Ange ett beskrivande namn och klicka på <strong>Apply</strong> för att fortsätta.</p>
+<p><img alt="profilnamn" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/add_profiles_name.png" /></p>
+<p>Klicka på <strong>Set More</strong> om du behöver ändra avancerade inställningar. Klicka sedan på <strong>Apply</strong> för att fortsätta.</p>
+<p><img alt="profilinställningar" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/add_profiles_set_more.png" /></p>
+<details>
+<summary>Lägg till routningsregler vid behov</summary>
+<p>I de flesta fall behövs inga routningsregler.</p>
+<p>Om du vill nå enheter i WireGuard-klientens LAN från servern konfigurerar du reglerna på fliken <strong>Route Rules</strong> på sidan <strong>WireGuard Server</strong>. Se <a href="../wireguard_server_access_to_client_lan_side/">guiden för åtkomst till klientens LAN</a> för instruktioner.</p>
+<p><img alt="routningsregler" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/route_rules.png" /></p>
+<p>Gå annars vidare till steg 4 för att ladda ned en klientkonfiguration.</p>
+</details>
+</li>
+<li>
+<p>Ladda ned konfigurationen.</p>
+<p>När du har lagt till en profil och klickat på <strong>Apply</strong> blir konfigurationen tillgänglig som QR-kod, klartext eller en nedladdningsbar <code>.conf</code>-fil.</p>
+<ul>
+<li>
+<p><strong>QR-kod</strong> – Skanna koden i WireGuard-appen för att importera en vanlig WireGuard-profil. Om du har aktiverat obfuskering använder du AmneziaWG-appen eller en annan klient med stöd för AmneziaWG-obfuskering.</p>
+<p><img alt="klientkonfiguration som QR-kod" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/download_config_qrcode.png" /></p>
+</li>
+<li>
+<p><strong>Klartext</strong> – Granska konfigurationen och kopiera den för manuell konfiguration, till exempel i WireGuard-appen eller på en GL.iNet-router.</p>
+<p><img alt="klientkonfiguration i klartext" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/download_config_text.png" /></p>
+</li>
+<li>
+<p><strong>.conf-fil</strong> – Klicka på <strong>Download</strong> för att spara .conf-filen på din enhet. Du kan sedan ladda upp filen direkt till WireGuard-appen eller en GL.iNet-router.</p>
+<p><img alt="klientkonfigurationsfil" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/download_config_file.png" /></p>
+</li>
+</ul>
+<p>Vid behov kan du välja den offentliga IP-adressen, DDNS-domänen eller den aktuella WAN-IP-adressen som serveradress. Funktionen finns sedan firmware v4.8. När du ändrar serveradressen uppdateras den även i konfigurationsfilen.</p>
+<p>Om nätverkets offentliga IP-adress till exempel ändras ofta kan du aktivera <a href="../../interface_guide/ddns/">DDNS</a> och använda DDNS-domänen som serveradress.</p>
+<p><img alt="ändra serveradress" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/change_server_address.png" /></p>
+</li>
+<li>
+<p>Klicka på <strong>Start</strong> uppe till höger för att starta WireGuard-servern. Anslutningsstatusen visas på samma sida.</p>
+<p><img alt="starta WireGuard-servern" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/start_wgserver.png" /></p>
+</li>
+</ol>
 <h2 id="set-up-wireguard-client">Konfigurera WireGuard-klienten<a class="headerlink" href="#set-up-wireguard-client" title="Permanent link">&para;</a></h2>
 <h3 id="change-the-lan-ip">Ändra LAN-IP-adressen<a class="headerlink" href="#change-the-lan-ip" title="Permanent link">&para;</a></h3>
 <p>I den här guiden används GL-MT6000 och GL-MT3000, vars standard-IP-adress för LAN är <strong>192.168.8.1</strong> på båda modellerna. Därför måste vi ändra LAN-IP-adressen på en av dem för att undvika en konflikt.</p>
 <p>Så här ändrar du LAN-IP-adressen för GL-MT3000 (WireGuard-klienten).</p>
-<p>Logga in på webbadministrationspanelen för GL-MT3000 och gå till <strong>NETWORK</strong> i det vänstra sidofältet -&gt; <strong>LAN</strong> för att ändra LAN-IP-adressen. Du kan till exempel ändra den från standardadressen 192.168.8.1 till <code>192.168.10.1</code>.</p>
-<p><img alt="change lan" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/change_lan_ip.png" /></p>
-<p>Mer information om LAN-gränssnittet finns <a href="../../interface_guide/lan/">här</a>.</p>
+<p>Logga in på webbadministrationspanelen för GL-MT3000 och gå till <strong>NETWORK</strong> -&gt; <strong>LAN</strong> för att ändra LAN-IP-adressen. Du kan till exempel ändra den från standardadressen 192.168.8.1 till <code>192.168.20.1</code>.</p>
+<p><img alt="ändra LAN-IP-adressen" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/change_lan_ip.png" /></p>
 <h3 id="add-the-configuration">Lägg till konfigurationen<a class="headerlink" href="#add-the-configuration" title="Permanent link">&para;</a></h3>
 <p>Gå till <strong>VPN</strong> -&gt; <strong>WireGuard Client</strong> på webbadministrationspanelen för GL-MT3000 och klicka på <strong>Add Manually</strong>.</p>
 <p><img alt="addwgclient1" class="glboxshadow" src="https://static.gl-inet.com/docs/router/en/4/tutorials/build_your_own_wireguard_server/addwgclient-1.png" /></p>
@@ -7546,6 +7545,7 @@
 <hr />
 <p>Relaterade artiklar</p>
 <ul>
+<li><a href="../../interface_guide/wireguard_server/">Konfigurera en WireGuard-server på GL.iNet-routrar</a></li>
 <li><a href="../../interface_guide/cloud/">GL.iNet GoodCloud</a></li>
 </ul>
 <hr />
@@ -7574,7 +7574,7 @@
     <span class="md-icon" title="Senast uppdaterad">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="29 oktober 2026 03:56:18 UTC">29 oktober 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="25 november 2026 04:59:15 UTC">25 november 2026</span>
   </span>
 
     
